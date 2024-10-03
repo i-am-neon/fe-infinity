@@ -12,5 +12,6 @@ export WINEDEBUG=-all
 # Run the .bat file using Wine
 wine cmd /c AssembleAll.bat
 
-# To run AssembleMusic, do:
-# WINEDEBUG=-all wine cmd /c AssembleMusicTest.bat noPause noRefs
+# To run individually, do:
+# WINEDEBUG=-all wine cmd /c AssembleMusic.bat noPause noRefs
+# WINEDEBUG=-all wine cmd /c AssembleDefs.bat noPause
