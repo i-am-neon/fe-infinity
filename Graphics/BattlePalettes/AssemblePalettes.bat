@@ -1,42 +1,65 @@
-
 @echo off
 
 setlocal enabledelayedexpansion
 
-rem png2dmp.exe: Calls png2dmp.exe for all .png files in folder & subfolders
-rem does not call png2dmp for files where the existing .dmp file is newer than the .png file
+rem png2dmp.exe: Processes all .png files in folder & subfolders
+rem Skips processing if the existing .dmp file is newer than the .png file
 
-set FILE_MATCH=*.png
-set png2dmp=%~dp0Png2Dmp.exe
+set "FILE_MATCH=*.png"
+set "png2dmp=%~dp0png2dmp.exe"
+set "paletteCondenser=%~dp0PaletteCondenser.exe"
+set "compress=%~dp0compress.exe"
 
-if not exist cache ( mkdir cache )
+rem Adjust the path to your actual Graphics\BattlePalettes directory
+set "BASE_DIR=%~dp0"
 
-for /R "%~dp0" %%F in (%FILE_MATCH%) do (
-    set SHOULD_COMPILE=0
-	set DUMP_FILE=%%~dF%%~pFcache\%%~nF%.dmp
+for /R "%BASE_DIR%" %%F in (%FILE_MATCH%) do (
+    set "SHOULD_COMPILE=0"
+    set "CACHE_DIR=%%~dpFcache"
+
+    rem Create the cache directory if it doesn't exist
+    if not exist "!CACHE_DIR!" (
+        mkdir "!CACHE_DIR!"
+    )
+
+    rem Set the path for the output .dmp file in the cache directory
+    set "DUMP_FILE=!CACHE_DIR!\%%~nF.dmp"
+
     if exist "!DUMP_FILE!" (
-		set NEWER=%%F
-		xcopy /DYLR "%%F" "!DUMP_FILE!*" | findstr /BC:"0" >nul && set NEWER=!DUMP_FILE!
-		if "!NEWER!" == "%%F" (
-			set SHOULD_COMPILE=1
-		)
+        xcopy /D /L /Y /R "%%F" "!DUMP_FILE!" >nul
+        if errorlevel 1 (
+            set "SHOULD_COMPILE=1"
+        )
     ) else (
-		set SHOULD_COMPILE=1
+        set "SHOULD_COMPILE=1"
     )
-    if /I "!SHOULD_COMPILE!" EQU "1" (
-		echo Assembling "%%~nxF"...
-		cd "%%~dpF"
-		png2dmp "%%~nxF" -po "temp.dmp"
-		del "%%~dF%%~pF%%~nF%.dmp"
-		
-		PaletteCondenser "temp.dmp" "temp.dmp"
-		
-		compress "temp.dmp" >> "!DUMP_FILE!"
-		del "temp.dmp"
-    )
+
+    if "!SHOULD_COMPILE!"=="1" (
+        echo Assembling "%%~nxF"...
+
+        rem Change to the directory of the .png file
+        cd "%%~dpF"
+
+        rem Run png2dmp to generate temp.dmp
+        "%png2dmp%" "%%~nxF" -po "temp.dmp"
+
+        rem Run PaletteCondenser on temp.dmp
+        "%paletteCondenser%" "temp.dmp" "temp.dmp"
+
+        rem Compress temp.dmp to create the final .dmp file
+        "%compress%" "temp.dmp" "%%~nF.dmp"
+
+        rem Move the final .dmp file to the cache directory
+        move "%%~nF.dmp" "!DUMP_FILE!"
+
+        rem Delete temp.dmp
+        del "temp.dmp"
+    ) else (
+				echo "%%~nxF" is up to date.
+		)
 )
 
 echo Done!
-if /I not [%1]==[noPause] (
-	pause
+if /I not "%1"=="noPause" (
+    pause
 )
