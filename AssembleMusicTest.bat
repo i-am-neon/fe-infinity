@@ -12,7 +12,7 @@ if not exist "MusicTest/cache" ( mkdir "MusicTest/cache" )
 
 for /R "%~dp0MusicTest" %%F in (%FILE_MATCH%) do (
     set SHOULD_COMPILE=0
-    set EVENT_FILE="%%~dF%%~pFcache\%%~nF.event"
+    set "EVENT_FILE=%%~dF%%~pFcache\%%~nF.event"
     if exist "!EVENT_FILE!" (
         set NEWER=%%F
         xcopy /DYLR "%%F" "!EVENT_FILE!" | findstr /BC:"0" >nul && set NEWER=!EVENT_FILE!
