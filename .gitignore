@@ -1,4 +1,3 @@
-
 # Global file types to ignore.
 *.sav
 *.sgm
@@ -15,6 +14,7 @@
 desktop.ini
 *.ss*
 *.token
+.DS_Store
 
 # Base directories to ignore.
 save/
