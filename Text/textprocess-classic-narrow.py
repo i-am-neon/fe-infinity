@@ -13,10 +13,14 @@
 # modified by Bly for use with Scraiza and MintX font extensions
 
 import os, sys, re
+import logging
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def show_exception_and_exit(exc_type, exc_value, tb):
 	import traceback
 	
+	logging.error("Uncaught exception:", exc_info=(exc_type, exc_value, tb))
 	traceback.print_exception(exc_type, exc_value, tb)
 	sys.exit(-1)
 
@@ -84,61 +88,65 @@ class Preprocessor:
 		return string
 
 	def preprocess(self, fileName):
-		if fileName in self.includeSet:
-			sys.stderr.write("WARNING: file `{}` was already included once, ignoring.\n".format(fileName))
-			return None
+			if fileName in self.includeSet:
+					logging.warning("File `{}` was already included once, ignoring.".format(fileName))
+					return None
 
-		self.includeSet.add(fileName)
+			self.includeSet.add(fileName)
 
-		if self.doTrace:
-			sys.stderr.write("TRACE: [preprocess] opening `{}`\n".format(fileName))
+			logging.debug("Opening `{}` for preprocessing.".format(fileName))
 
-		with open(fileName, 'r') as f:
-			for iLine, line in enumerate(f.readlines()):
-				line = self.strip_comment(line)
-				stripped = line.strip()
+			with open(fileName, 'r') as f:
+					for iLine, line in enumerate(f.readlines()):
+							line = self.strip_comment(line)
+							stripped = line.strip()
 
-				m = RE_DIRECTIVE.match(stripped)
+							m = RE_DIRECTIVE.match(stripped)
 
-				if m:
-					directive = m.group(1).strip().lower()
+							if m:
+									directive = m.group(1).strip().lower()
 
-					if directive == 'include':
-						# include directive
+									if directive == 'include':
+											# include directive
 
-						includee = m.group(2).strip()
+											includee = m.group(2).strip()
 
-						if (includee[0] == '"'):
-							includee = includee.strip('"')
+											if (includee[0] == '"'):
+													includee = includee.strip('"')
 
-						dirpath = os.path.dirname(fileName)
+											dirpath = os.path.dirname(fileName)
 
-						if len(dirpath) > 0:
-							includee = os.path.join(dirpath, includee)
+											if len(dirpath) > 0:
+													includee = os.path.join(dirpath, includee)
 
-						for otherLine in self.preprocess(includee):
-							yield otherLine
+											logging.debug("Including file `{}`.".format(includee))
 
-					elif directive == 'define':
-						m2 = RE_DEFINE_PARTS.match(m.group(2).strip())
+											for otherLine in self.preprocess(includee):
+													yield otherLine
 
-						if not m2:
-							raise TextProcessError(fileName, iLine+1, "Bad define! Replacement string is probably missing.")
+									elif directive == 'define':
+											m2 = RE_DEFINE_PARTS.match(m.group(2).strip())
 
-						defname = m2.group(1)
-						defvalu = m2.group(2)
+											if not m2:
+													raise TextProcessError(fileName, iLine+1, "Bad define! Replacement string is probably missing.")
 
-						if (defvalu[0] == '"'):
-							defvalu = defvalu.strip('"')
+											defname = m2.group(1)
+											defvalu = m2.group(2)
 
-						self.definitions[defname] = defvalu
+											if (defvalu[0] == '"'):
+													defvalu = defvalu.strip('"')
 
-					else:
-						sys.stderr.write('WARNING: {}:{}: What is a "#{}"? is this is comment? consider using "//" for comments instead!\n'.format(
-							fileName, iLine+1, directive))
+											self.definitions[defname] = defvalu
+											logging.debug("Defined macro `{}` as `{}`.".format(defname, defvalu))
 
-				else:
-					yield (fileName, iLine, self.expand_macros(line))
+									else:
+											logging.warning('{}:{}: Unknown directive "#{}", treating as comment.'.format(
+													fileName, iLine+1, directive))
+
+							else:
+									expanded_line = self.expand_macros(line)
+									logging.debug("Expanded line {}: {}".format(iLine+1, expanded_line.strip()))
+									yield (fileName, iLine, expanded_line)
 
 	def _get_expanded_expr(self, m):
 		defname = m.group(0)[1:-1]
@@ -152,92 +160,95 @@ class Preprocessor:
 		return RE_MACRO_INVOKE.sub(lambda m: self._get_expanded_expr(m), string)
 
 def generate_text_entries(lines, doTrace):
-	"""takes a compiled file and returns a list of individual text entries"""
+    result = []
 
-	result = []
+    currentStringId = 0
 
-	currentStringId = 0
+    currentText = None
+    currentDefinition = None
 
-	currentText = None
-	currentDefinition = None
+    # for checking narrow
+    narrow = False
+    menu = False
+    constantNarrow = False
+    constantMenu = False
+    lastNarrow = False
 
-	# for checking narrow
-	narrow = False
-	menu = False
-	constantNarrow = False
-	constantMenu = False
-	lastNarrow = False
+    for (fileName, iLine, line) in lines:
+        l = line.strip()
+        logging.debug("Processing line {}: {}".format(iLine+1, l))
 
-	for (fileName, iLine, line) in lines:
-		l = line.strip()
+        if currentText == None: # no current text, reading entry header
+            if l == "":
+                continue  # Skip empty lines
 
-		if currentText == None: # no current text, reading entry header
-			if l == "":
-				next # Skip empty lines
+            else:
+                match = RE_TEXT_ENTRY.match(l)
 
-			else:
-				match = RE_TEXT_ENTRY.match(l)
+                if not match:
+                    raise TextProcessError(fileName, iLine+1, "Expected entry header, got '{}'.".format(l))
 
-				if not match:
-					raise TextProcessError(fileName, iLine+1, "expected entry header!")
+                if match.group(1) == '#': # if no ID given, use the previous one + 1
+                    currentStringId = currentStringId+1
 
-				if match.group(1) == '#': # if no ID given, use the previous one + 1
-					currentStringId = currentStringId+1
+                else:
+                    currentStringId = int(match.group(1), base = 0)
 
-				else:
-					currentStringId = int(match.group(1), base = 0)
+                currentDefinition = match.group(2)
+                currentText = ""
 
+                logging.debug("Started new text entry ID {:03X}, definition '{}'.".format(
+                    currentStringId, currentDefinition))
 
-				currentDefinition = match.group(2)
-				currentText = ""
+                if match.group(3) is not None:
+                    if '*' in match.group(3):
+                        narrow = True
+                        menu = False
+                    elif '^' in match.group(3):
+                        narrow = True
+                        menu = True
+                    if narrow or constantNarrow:
+                        if '{' in match.group(3):
+                            constantNarrow = True
+                            constantMenu = menu
+                        elif '}' in match.group(3):
+                            lastNarrow = True
 
-				if match.group(3) is not None:
-					if '*' in match.group(3):
-						narrow = True
-						menu = False
-					elif '^' in match.group(3):
-						narrow = True
-						menu = True
-					if narrow or constantNarrow:
-						if '{' in match.group(3):
-							constantNarrow = True
-							constantMenu = menu
-						elif '}' in match.group(3):
-							lastNarrow = True
+        else:
+            if constantNarrow:  # narrow block
+                line = narrowText(line, constantMenu)
+                logging.debug("Applied constant narrow to line: {}".format(line.strip()))
+            elif narrow:  # narrow entry
+                line = narrowText(line, menu)
+                logging.debug("Applied narrow to line: {}".format(line.strip()))
+            elif RE_NARROW_SEC.search(line):  # check for narrow section
+                sections = RE_NARROW_SEC.split(line)
+                line = ""
+                for section in sections:
+                    if section.startswith('^'):
+                        line += narrowText(section[2:-1], True)
+                    elif section.startswith('*'):
+                        line += narrowText(section[2:-1], False)
+                    else:
+                        line += section
+                logging.debug("Processed narrow sections in line: {}".format(line.strip()))
 
-		else:
-			if constantNarrow: # narrow block
-				line = narrowText(line, constantMenu)
-			elif narrow: # narrow entry
-				line = narrowText(line, menu)
-			elif RE_NARROW_SEC.search(line): # check for narrow section
-				sections = RE_NARROW_SEC.split(line)
-				line = ""
-				for section in sections:
-					if section.startswith('^'):
-						line += narrowText(section[2:-1], True)
-					elif section.startswith('*'):
-						line += narrowText(section[2:-1], False)
-					else:
-						line += section
+            currentText += line
 
-			currentText += line
+            if l[-3:] == "[X]":  # Line ends in [X] (end of text entry)
+                logging.debug("Completed text entry ID {:03X}, definition '{}'.".format(
+                    currentStringId, currentDefinition))
+                result.append(TextEntry(currentText, currentStringId, currentDefinition))
 
-			if l[-3:] == "[X]": # Line ends in [X] (end of text entry)
-				result.append(TextEntry(currentText, currentStringId, currentDefinition))
+                currentText = None
+                currentDefinition = None
+                narrow = False
 
-				if doTrace:
-					sys.stderr.write("TRACE: [generate_text_entries] read {}\n".format(result[-1].get_pretty_identifier()))
+                if lastNarrow:  # done with a narrow block
+                    constantNarrow = False
+                    lastNarrow = False
 
-				currentText = None
-				currentDefinition = None
-				narrow = False
-
-				if lastNarrow: # done with a narrow block
-					constantNarrow = False
-					lastNarrow = False
-
-	return result
+    return result
 
 def narrowText(line, menuToggle):
 	sections = RE_BRACKETS.split(line)
@@ -267,16 +278,28 @@ def generate_definitions_lines(name, textEntries):
 	yield "\n#endif // TEXT_DEFINITIONS_{}\n".format(name)
 
 def generate_text_binary(parseFileExe, textEntry, sourceFile, targetFile):
-	import subprocess as sp
+    import subprocess as sp
 
-	result = sp.run([parseFileExe, sourceFile, "--to-stdout"], stdout = sp.PIPE)
+    logging.debug("Generating text binary for ID {:03X}, using parser '{}'.".format(
+        textEntry.stringId, parseFileExe))
 
-	if result.stdout[:6] == b"ERROR:":
-		os.remove(sourceFile)
-		raise ParseFileError(textEntry, result.stdout[6:].strip().decode("utf-8"))
+    result = sp.run([parseFileExe, sourceFile, "--to-stdout"], stdout=sp.PIPE, stderr=sp.PIPE)
 
-	with open(targetFile, 'wb') as f:
-		f.write(result.stdout)
+    if result.returncode != 0:
+        logging.error("Parser error: {}".format(result.stderr.decode('utf-8')))
+        os.remove(sourceFile)
+        raise ParseFileError(textEntry, result.stderr.decode('utf-8'))
+
+    if result.stdout[:6] == b"ERROR:":
+        os.remove(sourceFile)
+        error_message = result.stdout[6:].strip().decode("utf-8")
+        logging.error("Parser reported error: {}".format(error_message))
+        raise ParseFileError(textEntry, error_message)
+
+    with open(targetFile, 'wb') as f:
+        f.write(result.stdout)
+
+    logging.debug("Generated binary file '{}'.".format(targetFile))
 
 def main(args):
 	import argparse
@@ -300,6 +323,8 @@ def main(args):
 	forceRefresh  = True if arguments.force_refresh else False
 	verbose       = True if arguments.verbose else False
 
+	logging.debug("Starting text processing with input file '{}'.".format(inputPath))
+
 	timeThreshold = 0.0
 
 	if not arguments.depends:
@@ -322,6 +347,7 @@ def main(args):
 
 	# Read the entries
 
+	logging.debug("Reading text entries from input.")
 	if verbose:
 		sys.stderr.write("TRACE: [global] start reading input\n")
 
@@ -332,30 +358,33 @@ def main(args):
 	hasParser = parserExePath and os.path.exists(parserExePath)
 
 	try:
-		usedStringIds   = []
-		usedDefinitions = []
+			usedStringIds   = []
+			usedDefinitions = []
 
-		for entry in generate_text_entries(Preprocessor(verbose).preprocess(inputPath), verbose): # create separate files for each text entry
-			if entry.stringId in usedStringIds:
-				sys.stderr.write("WARNING: Duplicate entry for text Id {:03X}! (ignoring)\n".format(entry.stringId))
+			for entry in generate_text_entries(Preprocessor(verbose).preprocess(inputPath), verbose):
+					if entry.stringId in usedStringIds:
+							logging.warning("Duplicate entry for text ID {:03X}! (ignoring)".format(entry.stringId))
 
-				if entry.definition:
-					sys.stderr.write("NOTE: Second entry was defined as `{}`\n".format(entry.definition))
+							if entry.definition:
+									logging.warning("Second entry was defined as '{}'.".format(entry.definition))
 
-				continue
+							continue
 
-			usedStringIds.append(entry.stringId)
+					usedStringIds.append(entry.stringId)
 
-			if entry.definition and (entry.definition in usedDefinitions):
-				sys.stderr.write("WARNING: Duplicate entry definition {}! (ignoring)\n".format(entry.definition))
+					if entry.definition and (entry.definition in usedDefinitions):
+							logging.warning("Duplicate entry definition '{}'! (ignoring)".format(entry.definition))
+							continue
 
-				continue
+					logging.debug("Added text entry ID {:03X}, definition '{}'.".format(
+							entry.stringId, entry.definition))
 
-			entryList.append(entry)
+					entryList.append(entry)
 
 	except TextProcessError as e:
-		sys.exit("ERROR: {}:{}:\n  {}".format(e.fileName, e.lineNumber, e.errDesc))
-
+			logging.error("Text processing error in file '{}', line {}: {}".format(
+					e.fileName, e.lineNumber, e.errDesc))
+			sys.exit(1)
 	# Write the entries
 
 	# Doing it late to avoid leaving the generated files half done
@@ -370,6 +399,7 @@ def main(args):
 		os.mkdir(textFolder)
 
 	try:
+		logging.debug("Starting to write output files.")
 		with open(outputPath, 'w') as f:
 			f.write("// Text Data Installer generated by text-process\n")
 			f.write("// Do not edit! (or do but it won't be of any use)\n\n")
@@ -447,3 +477,4 @@ def main(args):
 
 if __name__ == '__main__':
 	main(sys.argv[1:])
+	logging.debug("Text processing completed successfully.")
