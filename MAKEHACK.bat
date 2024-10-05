@@ -1,4 +1,3 @@
-
 @echo off
 setlocal enabledelayedexpansion
 
@@ -6,28 +5,28 @@ echo ---------------------------
 
 set "currDir=%~dp0"
 
-copy "!currDir!WithAnimations.gba" "!currDir!Avenir.gba"
+copy "%currDir%WithAnimations.gba" "%currDir%Avenir.gba"
 
-rem if /I not [%2]==[noSaveCopy] (
-rem	if exist "!currDir!Avenir.sav" (
-rem		copy "!currDir!Avenir.sav" "!currDir!../Tools/No$GBADebugger/BATTERY/Avenir.SAV"
-rem	)
-rem )
-
-cd "!currDir!EA"
+echo "Copied WithAnimations.gba to Avenir.gba"
+echo "File size of Avenir.gba before assembly:"
+dir /b /os "%currDir%Avenir.gba"
 
 echo ---------------------------
 echo Assembling ROM. Please wait...
 echo ---------------------------
 
-ColorzCore A FE8 "-output:!currDir!Avenir.gba" "-input:!currDir!Ultrafile.event" "--nocash-sym"
+"%currDir%EA\ColorzCore.exe" A FE8 "-output:%currDir%Avenir.gba" "-input:%currDir%Ultrafile.event" "--nocash-sym"
 
-cd "!currDir!sym"
-SymCombo "!currDir!Avenir.sym" "!currDir!Avenir.sym" "!currDir!Clean.sym"
+echo "ColorzCore command completed."
+echo "File size of Avenir.gba after assembly:"
+dir /b /os "%currDir%Avenir.gba"
 
-cd "!currDir!ups"
-ups diff -b "!currDir!Clean.gba" -m "!currDir!Avenir.gba" -o "!currDir!Avenir.ups"
+pause
+
+"%currDir%sym\SymCombo.exe" "%currDir%Avenir.sym" "%currDir%Avenir.sym" "%currDir%Clean.sym"
+
+"%currDir%ups\ups.exe" diff -b "%currDir%Clean.gba" -m "%currDir%Avenir.gba" -o "%currDir%Avenir.ups"
 
 if /I not [%1]==[noPause] (
-	pause
+    pause
 )
