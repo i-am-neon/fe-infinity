@@ -1,4 +1,3 @@
-
 @echo off
 setlocal enabledelayedexpansion
 
@@ -6,28 +5,19 @@ echo ---------------------------
 
 set "currDir=%~dp0"
 
-copy "!currDir!WithAnimations.gba" "!currDir!Avenir.gba"
-
-rem if /I not [%2]==[noSaveCopy] (
-rem	if exist "!currDir!Avenir.sav" (
-rem		copy "!currDir!Avenir.sav" "!currDir!../Tools/No$GBADebugger/BATTERY/Avenir.SAV"
-rem	)
-rem )
-
-cd "!currDir!EA"
+copy "%currDir%WithAnimations.gba" "%currDir%temp.gba"
 
 echo ---------------------------
 echo Assembling ROM. Please wait...
 echo ---------------------------
 
-ColorzCore A FE8 "-output:!currDir!Avenir.gba" "-input:!currDir!Ultrafile.event" "--nocash-sym"
+"%currDir%EA\ColorzCore.exe" A FE8 "-output:%currDir%temp.gba" "-input:%currDir%Ultrafile.event" "--nocash-sym"
 
-cd "!currDir!sym"
-SymCombo "!currDir!Avenir.sym" "!currDir!Avenir.sym" "!currDir!Clean.sym"
+@REM for some reason it needs to be a different name to work...
+copy "%currDir%temp.gba" "%currDir%hack.gba"
 
-cd "!currDir!ups"
-ups diff -b "!currDir!Clean.gba" -m "!currDir!Avenir.gba" -o "!currDir!Avenir.ups"
+"%currDir%sym\SymCombo.exe" "%currDir%hack.sym" "%currDir%hack.sym" "%currDir%Clean.sym"
+"%currDir%ups\ups.exe" diff -b "%currDir%Clean.gba" -m "%currDir%hack.gba" -o "%currDir%hack.ups"
 
-if /I not [%1]==[noPause] (
-	pause
-)
+@REM Delete temp.gba
+del "%currDir%temp.gba"
