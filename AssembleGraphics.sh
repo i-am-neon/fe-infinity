@@ -39,4 +39,4 @@ echo "Assembling portraits..."
 
 cd "$currDir/Graphics/WorldMap"
 
-./AssembleSmallWM.sh
+./AssembleSmallWM.sh "$tools_dir"
