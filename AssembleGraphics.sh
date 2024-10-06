@@ -7,12 +7,6 @@ set -e
 currDir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 tools_dir="$currDir/../../MacOSTools"
 
-cd "$currDir/Graphics/TitleScreen"
-
-echo "Assembling title screen..."
-
-./AssembleTitleScreen.sh
-
 cd "$currDir/Graphics/ItemIcons"
 
 echo "Assembling icons..."
