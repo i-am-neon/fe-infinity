@@ -12,33 +12,35 @@ FILE_MATCH="*.s"
 echo "Assembling music..."
 
 # Find all .s files recursively in the Music directory
-find "$script_dir/Music" -type f -name "$FILE_MATCH" -print0 | while IFS= read -r -d '' F; do
-  SHOULD_COMPILE=0
-  dir="$(dirname "$F")"
-  filename="$(basename "$F" .s)"
-  EVENT_FILE="$dir/cache/${filename}.event"
+s_files=$(find "$script_dir/Music" -type f -name "$FILE_MATCH")
 
-  # Create the cache directory if it doesn't exist
-  mkdir -p "$dir/cache"
+# If there are any .s files, process them
+if [ -n "$s_files" ]; then
+  for F in $s_files; do
+    dir="$(dirname "$F")"
+    filename="$(basename "$F" .s)"
+    EVENT_FILE="$dir/cache/${filename}.event"
 
-  if [ ! -e "$EVENT_FILE" ]; then
-    SHOULD_COMPILE=1
-  elif [ "$F" -nt "$EVENT_FILE" ]; then
-    SHOULD_COMPILE=1
-  fi
+    # Create the cache directory if it doesn't exist
+    mkdir -p "$dir/cache"
 
-  if [ "$SHOULD_COMPILE" -eq 1 ]; then
-    echo "Assembling \"$filename.s\"..."
-    # Change to the directory of the .s file
-    cd "$dir" || exit
+    SHOULD_COMPILE=0
+    if [ ! -e "$EVENT_FILE" ]; then
+      SHOULD_COMPILE=1
+    elif [ "$F" -nt "$EVENT_FILE" ]; then
+      SHOULD_COMPILE=1
+    fi
 
-    # Run s2ea.exe via wine, specifying the full path to s2ea.exe
-    wine "$script_dir/Music/s2ea.exe" "$filename.s"
+    if [ "$SHOULD_COMPILE" -eq 1 ]; then
+      echo "Assembling \"$filename.s\"..."
+      # Run s2ea.py via python instead of using Wine and s2ea.exe
+      python3 "$script_dir/Music/s2ea.py" "$F"
 
-    # Move the new .event file to the cache directory
-    mv "$filename.event" "$dir/cache/"
-  fi
-done
+      # Move the new .event file to the cache directory
+      mv "$dir/$filename.event" "$dir/cache/"
+    fi
+  done
+fi
 
 # Run MusicRef.py script
 cd "$script_dir/Music"
