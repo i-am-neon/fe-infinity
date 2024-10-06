@@ -43,9 +43,7 @@ cd "$currDir"
 # Assemble maps in parallel
 echo "Assembling maps..."
 cd "$currDir"
-wine ./AssembleMaps.bat &
-# tmx2ea.py DOES NOT WORK (I got it from the Sacred Echoes repo)
-# ./AssembleMaps.sh &
+./AssembleMaps.sh &
 
 # Wait for all parallel jobs to finish
 wait
