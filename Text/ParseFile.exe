@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# Run the macOS version of ParseFile (ParseFileMac)
-$(dirname "$0")/ParseFileMac "$@"
