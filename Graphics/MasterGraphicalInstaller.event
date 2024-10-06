@@ -23,7 +23,7 @@ POP
 ALIGN 4
 NewStatScreen:
 // #incext Png2Dmp "StatScreen.png" --lz77
-#incbin "StatScreen.dmp" // lz77 compressed with png2dmp.
+#incbin "StatScreen.dmp" // terminal: `./Png2DmpMac StatScreen.png --lz77`
 NewStatScreenPal:
 // #incext Png2Dmp "StatScreen.png" --palette-only
 #incbin "StatScreenPalette.dmp" // terminal: `./Png2DmpMac StatScreen.png --palette-only -po StatScreenPalette.dmp`
