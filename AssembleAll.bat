@@ -2,6 +2,12 @@
 @echo off
 setlocal enabledelayedexpansion
 
+@REM if Clean.gba does not exist, throw an error
+if not exist "Clean.gba" (
+    echo Clean.gba not found. Please place a clean ROM in the same directory as this script.
+    exit
+)
+
 set currDir=%~dp0
 
 echo -----------------------------------
