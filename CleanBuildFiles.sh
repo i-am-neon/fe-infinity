@@ -3,9 +3,9 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-# Remove all .dmp and .event files from Maps directory, excluding Tilesets and its subdirectories
-# Can't get the excluded dir to work
-# find Maps \( -type d -name Tilesets -prune \) -o -type f \( -name "*.dmp" -o -name "*.event" \) -delete
+# Remove all .dmp and .event files from Maps/data directory
+find Maps/data/ -type f -name "*.dmp" -delete
+find Maps/data/ -type f -name "*.event" -delete
 
 # Remove all .dmp files from Graphics/WorldMap directory, excluding Glowy and its subdirectories
 # Can't get the excluded dir to work
@@ -37,6 +37,7 @@ FILES_TO_REMOVE=(
   "Text/TextDefinitions.event"
   "Definitions/Definitions.event"
   "Definitions/Skills.s"
+  "Maps/MasterMapInstaller.event"
 )
 
 # Clean directories: remove all files from each directory listed
