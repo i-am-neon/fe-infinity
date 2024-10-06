@@ -431,6 +431,7 @@ def main(args):
 					f.write('#incbin "{}"\n'.format(os.path.relpath(dataFileName, os.path.dirname(outputPath))))
 				else:
 					f.write('#incext ParseFile "{}"\n'.format(os.path.relpath(textFileName, os.path.dirname(outputPath))))
+					f.write('MESSAGE Text Added "{}"\n'.format(textFileName))
 
 				f.write("setText(${:X}, {})\n\n".format(entry.stringId, textDataLabel))
 
