@@ -5,7 +5,8 @@ set -e
 
 # Get the directory where the script is located
 currDir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-tools_dir="$currDir/../../MacOSTools"
+# AssembleGraphics is at the top level
+tools_dir="$currDir/MacOSTools"
 
 cd "$currDir/Graphics/ItemIcons"
 
