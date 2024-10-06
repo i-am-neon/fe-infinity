@@ -15,57 +15,56 @@ if not exist "Music/cache" (
 )
 
 for /R "%~dp0Music" %%F in (%FILE_MATCH%) do (
-    echo ------------------------------------------------------------
-    echo Processing file: "%%F"
+    @REM echo ------------------------------------------------------------
+    @REM echo Processing file: "%%F"
     set SHOULD_COMPILE=0
 
     rem Define the event file path inside the cache directory
     set "EVENT_FILE=%%~dF%%~pFcache\%%~nF.event"
-    echo Event file path: "!EVENT_FILE!"
+    @REM echo Event file path: "!EVENT_FILE!"
 
     rem Check if the event file exists and if it is up to date
     if exist "!EVENT_FILE!" (
-        echo Event file exists. Checking if it is up to date...
+        @REM echo Event file exists. Checking if it is up to date...
         xcopy /DYLR "%%F" "!EVENT_FILE!*" >nul
         if errorlevel 1 (
-            echo Source file is newer. Will recompile.
+            @REM echo Source file is newer. Will recompile.
             set SHOULD_COMPILE=1
         ) else (
-            echo Event file is up to date. Skipping compilation.
+            @REM echo Event file is up to date. Skipping compilation.
         )
     ) else (
-        echo Event file does not exist. Will compile.
+        @REM echo Event file does not exist. Will compile.
         set SHOULD_COMPILE=1
     )
 
     rem Compile if necessary
     if "!SHOULD_COMPILE!"=="1" (
-        echo Assembling "%%~nxF"...
+        @REM echo Assembling "%%~nxF"...
         pushd "%%~dpF"
-        echo Current directory: "%CD%"
+        @REM echo Current directory: "%CD%"
         s2ea "%%~nxF"
 
         rem Check if the .event file was created
         if exist "%%~nF.event" (
-            echo .event file created successfully: "%%~nF.event"
+            @REM echo .event file created successfully: "%%~nF.event"
         ) else (
-            echo ERROR: .event file was not created!
+            @REM echo ERROR: .event file was not created!
             popd
             goto :EOF
         )
 
         rem Move the new .event file to the cache directory
-        echo Moving "%%~nF.event" to "!EVENT_FILE!"
+        @REM echo Moving "%%~nF.event" to "!EVENT_FILE!"
         move /Y "%%~nF.event" "!EVENT_FILE!"
         if exist "!EVENT_FILE!" (
-            echo Successfully moved "%%~nF.event" to "!EVENT_FILE!"
+            @REM echo Successfully moved "%%~nF.event" to "!EVENT_FILE!"
         ) else (
-            echo ERROR: Failed to move "%%~nF.event" to "!EVENT_FILE!"
+            @REM echo ERROR: Failed to move "%%~nF.event" to "!EVENT_FILE!"
         )
         popd
     )
-    echo Finished processing "%%~nxF"
-    echo ------------------------------------------------------------
+    echo Music: Finished processing "%%~nxF"
 )
 
 rem Run MusicRef.py if the second argument is not "noRefs"
