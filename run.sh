@@ -10,5 +10,4 @@ fi
 export WINEDEBUG=-all
 
 # Run the .bat file using Wine
-# wine cmd /c AssembleAll.bat
 ./AssembleAll.sh
