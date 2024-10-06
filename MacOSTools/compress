@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 import sys
 
 READ_AHEAD_BUFFER_SIZE = 0x00000012
@@ -32,42 +32,42 @@ def blocks(data):
     position = 0
     while position < len(data):
         compressionFlags = 0
-        temp = ''
+        temp = bytearray()
         for bit in (128, 64, 32, 16, 8, 4, 2, 1):
             if position >= len(data): break
 
             size, where = search(data, position)
 
             if size > 2:
-                temp += chr((((size - 3) & 0xF) << 4) + (((where - 1) >> 8) & 0xF))
-                temp += chr((where - 1) & 0xFF)
+                temp.append((((size - 3) & 0xF) << 4) + (((where - 1) >> 8) & 0xF))
+                temp.append((where - 1) & 0xFF)
                 position += size
                 compressionFlags |= bit
             else:
-                temp += data[position]
+                temp.append(data[position])
                 position += 1
 
-        yield chr(compressionFlags) + temp
+        yield bytes([compressionFlags]) + temp
 
 
 def compress(data):
     l = len(data)
 
-    result = ''.join(
-        ('\x10', chr(l & 0xff), chr((l >> 8) & 0xff), chr((l >> 16) & 0xff)) +
+    result = b''.join(
+        (b'\x10', bytes([l & 0xff]), bytes([(l >> 8) & 0xff]), bytes([(l >> 16) & 0xff])) +
         tuple(blocks(data))
     )
 
-    return result + '\x00' * (-len(result) % 4)
+    return result + b'\x00' * (-len(result) % 4)
 
 
 def main(filename):
     with open(filename, 'rb') as f:
         data = f.read()
     data = compress(data)
-    # with open(filename, 'w') as f:
-    #    f.write(data)
-    print(data)
+    # Write to a file or output compressed data
+    sys.stdout.buffer.write(data)
 
 
-main(sys.argv[1])
+if __name__ == "__main__":
+    main(sys.argv[1])

@@ -17,7 +17,7 @@ cd "$currDir/Graphics/BattlePalettes"
 
 echo "Assembling battle palettes..."
 
-./AssemblePalettes.sh
+./AssemblePalettes.sh "$tools_dir"
 
 cd "$currDir/Graphics/ClassCards"
 
