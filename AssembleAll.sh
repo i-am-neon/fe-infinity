@@ -34,8 +34,7 @@ cd "$currDir"
 # Assemble music
 echo "Assembling music..."
 cd "$currDir"
-# ./AssembleMusic.sh noPause noRefs
-wine cmd /c AssembleMusic.bat noPause noRefs
+./AssembleMusic.sh noPause noRefs
 
 # Assemble maps
 echo "Assembling maps..."
