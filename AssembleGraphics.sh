@@ -23,7 +23,7 @@ cd "$currDir/Graphics/ClassCards"
 
 echo "Assembling class cards..."
 
-./AssembleCards.sh
+./AssembleCards.sh "$tools_dir"
 
 cd "$currDir/Graphics/MapSprites"
 
