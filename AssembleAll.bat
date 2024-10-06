@@ -62,5 +62,3 @@ call "MAKEAnims.bat" noPause
 cd "!currDir!"
 
 call "MAKEHACK.bat" noPause noSaveCopy
-
-pause
