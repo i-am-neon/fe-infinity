@@ -51,11 +51,9 @@ wait
 # Make animations
 cd "$currDir"
 echo "Making animations..."
-# ./MAKEAnims.sh noPause
-wine cmd /c MAKEAnims.bat noPause
+./MAKEAnims.sh
 
 # Final make
 cd "$currDir"
 echo "Final make..."
 ./MAKEHACK.sh noPause noSaveCopy
-# wine cmd /c MAKEHACK.bat noPause noSaveCopy
