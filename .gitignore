@@ -31,8 +31,9 @@ CSV/Tables/**/*.event
 !CSV/Tables/TableDefinitions.event
 
 # Map-related ignores.
-Maps/*.event
-Maps/*.dmp
+Maps/MasterMapInstaller.event
+Maps/data/*.event
+Maps/data/*.dmp
 
 # Music-related ignores.
 Music/WAVs
@@ -57,3 +58,4 @@ Graphics/ItemIcons/*.dmp
 
 # Misc ignores.
 FE-CLib-master
+.DS_Store

@@ -10,7 +10,7 @@
 	ALIGN 4
 	
 	titlebackgroundpalette:
-	#incext png2dmp "titlebackgroundimage.png" --palette-only
+	#incbin titlebackgroundimage_palette.dmp
 	
 	ALIGN 4
 	

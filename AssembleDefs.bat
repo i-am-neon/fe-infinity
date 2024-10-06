@@ -10,7 +10,3 @@ echo: | (Enumerate DefinitionsAssembler.s Definitions.event --clean)
 
 rem py MakeParseDefs.py Definitions.event ParseDefinitions.txt ../Text/ParseDefinitions.txt Mug
 echo: | (MakeParseDefs Definitions.event ParseDefinitions.txt ../Text/ParseDefinitions.txt Mug)
-
-if /I not [%1]==[noPause] (
-	pause
-)

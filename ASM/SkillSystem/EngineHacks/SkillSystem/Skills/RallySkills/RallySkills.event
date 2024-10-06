@@ -44,40 +44,49 @@ gpRallyDebuffsAddr:
 ALIGN 4
 gRallyPreviewPalette:
 gRallyGenericPalette:
-	#incext Png2Dmp "data/fx-preview.png" --palette-only
+	// #incext Png2Dmp "data/fx-preview.png" --palette-only
+	#incbin "data/fx-preview_palette.dmp"
 
 ALIGN 4
 gRallyStrengthPalette:
-	#incext Png2Dmp "data/fx-strength.png" --palette-only
+	// #incext Png2Dmp "data/fx-strength.png" --palette-only
+	#incbin "data/fx-strength_palette.dmp"
 
 ALIGN 4
 gRallySkillPalette:
-	#incext Png2Dmp "data/fx-skill.png" --palette-only
+	// #incext Png2Dmp "data/fx-skill.png" --palette-only
+	#incbin "data/fx-skill_palette.dmp"
 
 ALIGN 4
 gRallySpeedPalette:
-	#incext Png2Dmp "data/fx-speed.png" --palette-only
+	// #incext Png2Dmp "data/fx-speed.png" --palette-only
+	#incbin "data/fx-speed_palette.dmp"
 
 ALIGN 4
 gRallyDefensePalette:
-	#incext Png2Dmp "data/fx-defense.png" --palette-only
+	// #incext Png2Dmp "data/fx-defense.png" --palette-only
+	#incbin "data/fx-defense_palette.dmp"
 
 ALIGN 4
 gRallyResistancePalette:
-	#incext Png2Dmp "data/fx-resistance.png" --palette-only
+	// #incext Png2Dmp "data/fx-resistance.png" --palette-only
+	#incbin "data/fx-resistance_palette.dmp"
 
 ALIGN 4
 gRallyLuckPalette:
-	#incext Png2Dmp "data/fx-luck.png" --palette-only
+	// #incext Png2Dmp "data/fx-luck.png" --palette-only
+	#incbin "data/fx-luck_palette.dmp"
 
 ALIGN 4
 gRallyMovePalette:
-	#incext Png2Dmp "data/fx-move.png" --palette-only
+	// #incext Png2Dmp "data/fx-move.png" --palette-only
+	#incbin "data/fx-move_palette.dmp"
 	
 #ifdef USE_STRMAG_SPLIT
 	ALIGN 4
 	gRallyMagicPalette:
-		#incext Png2Dmp "data/fx-magic.png" --palette-only
+		// #incext Png2Dmp "data/fx-magic.png" --palette-only
+		#incbin "data/fx-magic_palette.dmp"
 #endif // USE_STRMAG_SPLIT
 
 #endif // HAX_RALLIES

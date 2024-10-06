@@ -1,5 +1,5 @@
 
 // Container folder is called "Avenir" because that's where the project name setter gets the name of the project from.
 
-#inctext "Avenir/ProjectNameSetter"
-#inctext DateTimeSetter
+// #inctext "Avenir/ProjectNameSetter"
+// #inctext DateTimeSetter

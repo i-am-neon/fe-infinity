@@ -3,7 +3,7 @@
 
 ALIGN 4
 TitleScroll:
-#incext png2dmp "Scroll.png"
+#incbin Scroll.dmp
 
 PUSH
 ORG $c5830

@@ -12,7 +12,8 @@
 	POP
 	
 	TxtData0x184:
-	#incext ParseFile "Arrow.txt"
+	// #incext ParseFile "Arrow.txt"
+	#incbin "Arrow.dmp"
 	setText(0x184,TxtData0x184)
 	
 	ALIGN 4

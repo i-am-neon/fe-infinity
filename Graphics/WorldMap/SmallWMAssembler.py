@@ -46,44 +46,46 @@ def isTileBlank(tile):
 # We're going to read from a small script. Format will be separated by lines as: <Filepath to image to use> (Palette ID this image represents).
 
 parser = argparse.ArgumentParser()
-parser.add_argument('input',help='Filepath for desired input script.',type=argparse.FileType('r'))
-parser.add_argument('graphics_output',help='Filepath for desired compressed graphics dump.')
-parser.add_argument('palette_output',help='Filepath for desired uncompressed palette dump.')
-parser.add_argument('tsa_output',help='Filepath for desired compressed TSA dump.')
-parser.add_argument('png2dmp',help='Filepath to Png2Dmp.exe.')
-parser.add_argument('compress',help='Filepath to Compress.exe.')
+parser.add_argument('input', help='Filepath for desired input script.', type=argparse.FileType('r'))
+parser.add_argument('graphics_output', help='Filepath for desired compressed graphics dump.')
+parser.add_argument('palette_output', help='Filepath for desired uncompressed palette dump.')
+parser.add_argument('tsa_output', help='Filepath for desired compressed TSA dump.')
+parser.add_argument('png2dmp', help='Filepath to Png2Dmp.')
+parser.add_argument('compress', help='Filepath to Compress.')
 args = parser.parse_args()
 
 if __name__ == '__main__':
-    files = [] # List of tupples read from the script: (Filepath, palette ID).
-    
-    for i, line in enumerate(args.input,1):
-        if line.strip() == '': continue # Ignore whitespace lines.
-        splitted = line.split() # Default split on whitespace.
+    files = []  # List of tuples read from the script: (Filepath, palette ID)
+
+    # Ensure args.png2dmp and args.compress are absolute paths
+    args.png2dmp = os.path.abspath(args.png2dmp)
+    args.compress = os.path.abspath(args.compress)
+
+    for i, line in enumerate(args.input, 1):
+        if line.strip() == '':
+            continue  # Ignore whitespace lines
+        splitted = line.split()  # Default split on whitespace
         if len(splitted) != 2:
             exit(f'Error in reading {args.input} at line {i}.\nScript entries must follow <Image filepath> (palette number starting at 0).')
         try:
-            files.append( (splitted[0],int(splitted[1],0)) )
+            files.append((splitted[0], int(splitted[1], 0)))
         except ValueError:
             exit(f'Error in reading {args.input} at line {i}.\nScript entry palettes must be numbers.')
-    
-    # files has been populated.
-    # Now let's read the Png2Dmp graphics output, grab graphics data for each tile.
-    tiles = [None]*30*20 # Generate a list of 600 empty tiles.
-    
-    for j,e in enumerate(files):
-        subprocess.run([args.png2dmp,e[0],'-o','temp'],stdout=subprocess.PIPE) # Call png2dmp with this file. Outputs to 'temp'.
-        # We can't compress the file right now because we need to gather TSA data from it.
-        with open('temp','rb') as t: # This method will allow us to read in tile-size chunks.
-            callable = lambda: t.read(4*8)
+
+    # Ensure that tiles is filled with None to represent 600 empty tiles
+    tiles = [None] * 30 * 20
+
+    # Process each file in the input
+    for j, e in enumerate(files):
+        subprocess.run([args.png2dmp, e[0], '-o', 'temp'], stdout=subprocess.PIPE)  # Call Png2Dmp
+        with open('temp', 'rb') as t:
+            callable = lambda: t.read(4 * 8)
             sentinel = bytes()
-            for i, chunk in enumerate(iter(callable,sentinel)):
-                # chunk is a tile. We need to check if the tile data we're grabbing in blank.
+            for i, chunk in enumerate(iter(callable, sentinel)):
                 if not isTileBlank(chunk):
-                    # The tile we're writing is not blank. Let's ensure that there isn't already a tile here.
                     if tiles[i]:
                         exit(f'Error in formatting tiles: {tiles[i].file} and {e[0]} overlap at tile ID {i}.')
-                    tiles[i] = Tile(chunk,e[1],e[0])
+                    tiles[i] = Tile(chunk, e[1], e[0])
     
     # At this point, tiles is full of the tile data "orr"ed from all files.
     # An error should have been thrown if there was any overlap. Let's check to see if there are any blank tiles.
