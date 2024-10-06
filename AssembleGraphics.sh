@@ -6,6 +6,12 @@ set -e
 # Get the directory where the script is located
 currDir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+cd "$currDir/Graphics/TitleScreen"
+
+echo "Assembling title screen..."
+
+./AssembleTitleScreen.sh
+
 cd "$currDir/Graphics/ItemIcons"
 
 echo "Assembling icons..."
