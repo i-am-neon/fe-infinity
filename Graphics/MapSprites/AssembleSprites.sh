@@ -1,11 +1,20 @@
 #!/bin/bash
 
-# png2dmp.exe: Calls png2dmp.exe for all .png files in folder & subfolders
+# Calls png2dmp from the tools_dir passed as an argument for all .png files in folder & subfolders
 # Does not call png2dmp for files where the existing .dmp file is newer than the .png file
 
+# Check if the tools directory is passed as an argument
+if [ -z "$1" ]; then
+  echo "Usage: $0 <tools_dir>"
+  exit 1
+fi
+
+tools_dir="$1"
+png2dmp="$tools_dir/Png2Dmp"
+
+# Define the pattern to search for PNG files
 FILE_MATCH="*.png"
 script_dir="$(dirname "$0")"
-png2dmp="$script_dir/Png2Dmp.exe"
 
 # Create cache directory if it doesn't exist
 [ ! -d "$script_dir/cache" ] && mkdir "$script_dir/cache"
@@ -13,13 +22,15 @@ png2dmp="$script_dir/Png2Dmp.exe"
 # Find all .png files recursively
 find "$script_dir" -type f -name "$FILE_MATCH" -print0 | while IFS= read -r -d '' F; do
   SHOULD_COMPILE=0
-  # Get directory and basename
+  # Get the directory, basename, and filename
   dir="$(dirname "$F")"
   basename="$(basename "$F")"
   filename="${basename%.*}"
 
+  # Construct the DUMP_FILE path in the cache directory
   DUMP_FILE="$dir/cache/${filename}.dmp"
 
+  # Check if the DUMP_FILE needs to be recompiled
   if [ -e "$DUMP_FILE" ]; then
     # Compare modification times
     if [ "$F" -nt "$DUMP_FILE" ]; then
@@ -29,15 +40,12 @@ find "$script_dir" -type f -name "$FILE_MATCH" -print0 | while IFS= read -r -d '
     SHOULD_COMPILE=1
   fi
 
+  # If the .png file is newer than the .dmp or the .dmp file doesn't exist
   if [ "$SHOULD_COMPILE" -eq 1 ]; then
     echo "Assembling \"$basename\"..."
-    # Convert paths to Windows format
-    png2dmp_win=$(winepath -w "$png2dmp")
-    input_png_win=$(winepath -w "$F")
-    DUMP_FILE_WIN=$(winepath -w "$DUMP_FILE")
 
-    # Run png2dmp with --lz77 option
-    wine "$png2dmp_win" "$input_png_win" --lz77 -o "$DUMP_FILE_WIN"
+    # Run png2dmp with the --lz77 option and store the output in the cache directory
+    "$png2dmp" "$F" --lz77 -o "$DUMP_FILE"
   fi
 done
 

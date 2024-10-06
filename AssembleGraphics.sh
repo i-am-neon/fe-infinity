@@ -29,7 +29,7 @@ cd "$currDir/Graphics/MapSprites"
 
 echo "Assembling map sprites..."
 
-./AssembleSprites.sh
+./AssembleSprites.sh "$tools_dir"
 
 cd "$currDir/Graphics/Portraits"
 
