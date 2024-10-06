@@ -48,5 +48,5 @@ wine cmd /c MAKEAnims.bat noPause
 
 # Final make
 cd "$currDir"
-# ./MAKEHACK.sh noPause noSaveCopy
-wine cmd /c MAKEHACK.bat noPause noSaveCopy
+./MAKEHACK.sh noPause noSaveCopy
+# wine cmd /c MAKEHACK.bat noPause noSaveCopy

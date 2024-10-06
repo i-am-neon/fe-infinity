@@ -86,7 +86,8 @@ String("WorldMapFace") ; BYTE 0
 
 ALIGN 4
 NewWMTextTiles:
-#incext png2dmp "TextTiles.png" "--lz77"
+// #incext png2dmp "TextTiles.png" "--lz77"
+#incbin "TextTiles.dmp"
 
 ALIGN 4
 NewWMTextTSA:
