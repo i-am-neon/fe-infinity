@@ -35,7 +35,7 @@ cd "$currDir/Graphics/Portraits"
 
 echo "Assembling portraits..."
 
-./AssemblePortraits.sh
+./AssemblePortraits.sh "$tools_dir"
 
 cd "$currDir/Graphics/WorldMap"
 
