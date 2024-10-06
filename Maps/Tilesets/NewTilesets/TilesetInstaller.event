@@ -10,7 +10,8 @@ DesertTempleTilesetPalette:
 
 ALIGN 4
 DesertTempleTilesetTileConfig:
-#incext compress "DesertTemple.mapchip_config"
+// #incext compress "DesertTemple.mapchip_config"
+#incbin "DesertTemple.mapchip_config.dmp"
 
 EventPointerTable(DesertTempleObjectSet,DesertTempleTilesetObjects)
 EventPointerTable(DesertTemplePalette,DesertTempleTilesetPalette)
@@ -27,7 +28,8 @@ OutdoorSnowyTilesetPalette:
 
 ALIGN 4
 OutdoorSnowyTilesetTileConfig:
-#incext compress "SnowyTilesetOutdoorTileConfiguration.mapchip_config"
+// #incext compress "SnowyTilesetOutdoorTileConfiguration.mapchip_config"
+#incbin "SnowyTilesetOutdoorTileConfiguration.mapchip_config.dmp"
 
 EventPointerTable(OutdoorSnowyObjectSet,OutdoorSnowyTilesetObjects)
 EventPointerTable(OutdoorSnowyPalette,OutdoorSnowyTilesetPalette)
@@ -44,7 +46,8 @@ IndoorSnowyTilesetPalette:
 
 ALIGN 4
 IndoorSnowyTilesetTileConfig:
-#incext compress "SnowyTilesetIndoorTileConfiguration.mapchip_config"
+// #incext compress "SnowyTilesetIndoorTileConfiguration.mapchip_config"
+#incbin "SnowyTilesetIndoorTileConfiguration.mapchip_config.dmp"
 
 EventPointerTable(IndoorSnowyObjectSet,IndoorSnowyTilesetObjects)
 EventPointerTable(IndoorSnowyPalette,IndoorSnowyTilesetPalette)
@@ -61,7 +64,8 @@ WesternIslesTilesetPalette:
 
 ALIGN 4
 WesternIslesTilesetTileConfig:
-#incext compress "WesternIsles-Extended-Config.mapchip_config"
+// #incext compress "WesternIsles-Extended-Config.mapchip_config"
+#incbin "WesternIsles-Extended-Config.mapchip_config.dmp"
 
 EventPointerTable(WesternIslesObjectSet,WesternIslesTilesetObjects)
 EventPointerTable(WesternIslesPalette,WesternIslesTilesetPalette)
@@ -78,7 +82,8 @@ ImprovedCastleTilesetPalette:
 
 ALIGN 4
 ImprovedCastleTilesetTileConfig:
-#incext compress "ImprovedCastle.mapchip_config"
+// #incext compress "ImprovedCastle.mapchip_config"
+#incbin "ImprovedCastle.mapchip_config.dmp"
 
 EventPointerTable(ImprovedCastleObjectSet,ImprovedCastleTilesetObjects)
 EventPointerTable(ImprovedCastlePalette,ImprovedCastleTilesetPalette)
