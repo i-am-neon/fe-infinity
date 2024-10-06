@@ -39,8 +39,7 @@ cd "$currDir"
 # Assemble maps
 echo "Assembling maps..."
 cd "$currDir"
-# ./AssembleMaps.sh noPause
-wine cmd /c AssembleMaps.bat noPause
+./AssembleMaps.sh noPause
 
 # Make animations
 cd "$currDir"
