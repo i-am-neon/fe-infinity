@@ -461,7 +461,6 @@ Reunion
 	Mercenary5BanditBandit.event
 	Mercenary4Bandit.event
 Ringabel
-	Prologue.event
 	Military1.event
 	Player phase theme: Prologue
 	Player phase theme: Military1
@@ -600,7 +599,6 @@ The_Devoted
 The_Final_Battle
 	Player phase theme: MercenaryMilitiaWaitArcanae7
 The_First_Campaign
-	Prologue.event
 	Military1.event
 The_Guardian_Spirit
 	Military7PassAltia.event

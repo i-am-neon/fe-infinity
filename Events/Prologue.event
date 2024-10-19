@@ -17,8 +17,6 @@ POIN BeginningScene EndingScene
 
 //Label TurnBasedEvents
 TurnBasedEvents:
-TurnEventPlayer(0x00,Turn3,3)
-InfiniteTurnEventPlayer(0x13,MoveForrest,1)
 END_MAIN
 
 //Label CharacterBasedEvents
@@ -34,8 +32,6 @@ END_MAIN
 MiscBasedEvents:
 CauseGameOverIfLordDies
 DefeatAll(EndingScene)
-AREA 0x12 ForrestTrigger [5,9] [14,14]
-AREA 0x12 ForrestTrigger [8,1] [14,3]
 END_MAIN
 
 //Label TrapData
@@ -58,7 +54,6 @@ Text(Prologue_BeginningText)
 FadeOutMusic
 EndConvo
 STAL 0x30
-// LOAD3 0x1 PlayerLoading1
 LOAD1 0x1 LoadDerekJasper
 ENUN
 STAL 0x30
@@ -79,7 +74,6 @@ CLEE 0x0
 CLEN 0x0
 ASMC RefreshAll|1
 CAM1 [7,7]
-LOAD3 0x1 PlayerLoading2
 LOAD2 0x1 EndingFriends
 LOAD1 0x1 EndingMeanies
 ENUN
@@ -87,83 +81,12 @@ SetBackground(0x27)
 Text(Prologue_FinishedText)
 EndConvo
 STAL 0x20
-ASMC CallMilitary1Menu|1
-BNE 0x0 0x0 0xC
-	// Accept the promotion
-	Text(Prologue_PromotionText)
-	MoveToChapter(MilitaryAccept2)
-	GOTO 0x1
-LABEL 0x0
-	// Pass the promotion
-	Text(Prologue_PassText)
-	MoveToChapter(MilitaryPass2)
-LABEL 0x1
-ENDA
-
-//Label Turn events
-Turn3:
-SVAL 0x1 1
-CHECK_ENEMIES
-BEQ 0x0 0x1 0xC
-	MUSC Ringabel
-	GOTO 0x1
-LABEL 0x0
-	MUSC The_First_Campaign // Near-victory music.
-LABEL 0x1
-CAM1 BossChristina
-STAL 0x10
-FlashCursor(BossChristina,60)
-STAL 0x10
-SVAL 0x1 0x0000
-CHAI BossChristina
-Text(Prologue_ChristinaComingText)
-NoFade
-EndA2
-
-MoveForrest:
-SVAL 0x1 1
-CHECK_ENEMIES
-BEQ 0x0 0x1 0xC
-	MUSC Ringabel
-	GOTO 0x1
-LABEL 0x0
-	MUSC The_First_Campaign // Near-victory music.
-LABEL 0x1
-CHECK_EVENTID 0x12
-BEQ 0x2 0x0 0xC
-	CAM1 BossForrest
-	STAL 0x10
-	FlashCursor(BossForrest,60)
-	STAL 0x10
-	SVAL 0x1 0x0000
-	CHAI BossForrest
-	Text(Prologue_ForrestComingText)
-	GOTO 0x3
-LABEL 0x2
-	ENUF 0x13
-LABEL 0x3
-NoFade
+MoveToChapter(MilitaryAccept2)
 ENDA
 
 //Label Area events
-ForrestTrigger:
-CHECK_ALLEGIANCE 0xFFFF
-BEQ 0x0 0x0 0xC
-	ENUF 0x12
-LABEL 0x0
-NoFade
-ENDA
 
-	/*UNIT DATA*/
-
-//Label PlayerLoading
-PlayerLoading1:
-UNIT PlayerMCavalier 0x00 0x00 Level(1,Ally,True) [0,10] 0x00 0x00 0x01 REDA3R7 [0] NoAI
-UNIT
-
-PlayerLoading2:
-UNIT PlayerMCavalier 0x00 0x00 Level(5,Ally,True) [6,7] 0x00 0x00 0x00 0x00 [0] NoAI
-EndUnit
+/*UNIT DATA*/
 
 //Label Starting people
 LoadSylvaine:
@@ -181,18 +104,9 @@ EndUnit
 
 //Label ChapterMeanies
 LoadChristinaForrest:
-UNIT BossChristina Cavalier_F BossChristina Level(7,Enemy,True) [6,6] 0x00 0x00 0x00 0x00 [IronLance] GuardAI
-UNIT BossForrest Cavalier BossForrest Level(8,Enemy,True) [6,8] 0x00 0x00 0x00 0x00 [SteelSword] GuardAI
+UNIT BossChristina Cavalier_F BossChristina Level(1,Enemy,True) [6,6] 0x00 0x00 0x00 0x00 [IronLance] GuardAI
+UNIT BossForrest Cavalier BossForrest Level(1,Enemy,True) [6,8] 0x00 0x00 0x00 0x00 [SteelSword] GuardAI
 UNIT
-
-ChapterMeanies:
-UNIT Cesarian Knight BossChristina Level(5,Enemy,True) [14,11] 0x00 0x00 0x01 REDA7R8 [IronLance] AttackInRangeAI
-UNIT Cesarian Fighter BossChristina Level(4,Enemy,True) [14,1] 0x00 0x00 0x01 REDA8R2 [IronAxe] NoAI
-UNIT Cesarian Soldier BossChristina Level(4,Enemy,True) [14,13] 0x00 0x00 0x01 REDA6R13 [SteelLance] AttackInRangeAI
-UNIT Cesarian Mercenary BossChristina Level(5,Enemy,True) [11,9] 0x00 0x00 0x01 REDA13R9 [SlimSword] ChaseOnceApproachedAI
-UNIT Cesarian Soldier BossChristina Level(4,Enemy,True) [14,3] 0x00 0x00 0x01 REDA12R3 [IronLance] AttackInRangeAI
-UNIT Cesarian Cavalier BossChristina Level(5,Enemy,True) [1,14] 0x00 0x00 0x01 REDA1R13 [SteelSword] NoAI
-EndUnit
 
 //Label Ending People
 EndingFriends:
