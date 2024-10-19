@@ -114,6 +114,10 @@ Reach Efil.[X]
 Defeat Xylia.[X]
 
 
+## PrologueStatusText
+Defeat all[NL]
+units.[X]
+
 ## Military1StatusText
 Defeat all[NL]
 units.[X]

@@ -43,8 +43,6 @@ Anchoret
 	Military4AcceptRetreat.event
 	Mercenary7BanditDisband.event
 	Mercenary6BanditDisband.event
-Aquatic_Dystopia
-	Prologue.event
 Aquatic_Ruin
 	Mercenary6MilitiaWaitCesaria.event
 	Player phase theme: MilitaryAcceptHold6
@@ -65,8 +63,6 @@ Assault
 	Enemy phase theme: MercenaryBandit4
 	Enemy phase theme: MercenaryBanditBandit5
 	Enemy phase theme: MercenaryBanditDisband5
-Avatars_of_Avenir
-	Prologue.event
 Avenir_Healing
 	Healing
 Battle_Two
@@ -251,6 +247,7 @@ FE5_Searching_the_Enemy
 	Enemy phase theme: MilitaryAcceptRetreatLeave5
 	Enemy phase theme: MilitaryAcceptRetreatLeave6
 FE5_Victory
+	Prologue.event
 	Military3Pass.event
 	Military3Accept.event
 	Military1.event
@@ -393,6 +390,7 @@ Life_of_a_Mercenary
 Lights_in_the_Dark
 	Mercenary7BanditDisband.event
 Lloyd
+	Prologue.event
 	Military5PassHaedric.event
 	Military7AcceptRetreatLeave.event
 	Military1.event
@@ -463,6 +461,7 @@ Reunion
 	Mercenary5BanditBandit.event
 	Mercenary4Bandit.event
 Ringabel
+	Prologue.event
 	Military1.event
 	Player phase theme: Prologue
 	Player phase theme: Military1
@@ -559,6 +558,7 @@ Sorrow
 	Mercenary7BanditDisband.event
 	Mercenary7MilitiaWaitArcanae.event
 Stage_One
+	Prologue.event
 	Mage2Leave.event
 	Military5PassHaedric.event
 	Military3Pass.event
@@ -600,6 +600,7 @@ The_Devoted
 The_Final_Battle
 	Player phase theme: MercenaryMilitiaWaitArcanae7
 The_First_Campaign
+	Prologue.event
 	Military1.event
 The_Guardian_Spirit
 	Military7PassAltia.event
@@ -816,6 +817,7 @@ Cutting_Edge_of_Notion
 Team_Making
 Blindly_Charging
 Annihilate_Em
+Aquatic_Dystopia
 Cataclysm
 Crossroads
 Fields_of_Avenir
@@ -823,6 +825,7 @@ Light_Em_Up
 We_Will_Endure
 We_Will_Hold_the_Line
 Winds_across_the_Plains_of_Avenir
+Avatars_of_Avenir
 
 
 List of vanilla music being used:

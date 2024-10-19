@@ -1,6 +1,6 @@
 
 ## PrologueNameText
-Prologue[X]
+HACK FACTORY Prologue[X]
 
 ## Merc1NameText
 1: Lone Wolf[X]

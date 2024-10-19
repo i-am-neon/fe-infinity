@@ -17,6 +17,8 @@ POIN BeginningScene EndingScene
 
 //Label TurnBasedEvents
 TurnBasedEvents:
+TurnEventPlayer(0x00,Turn3,3)
+InfiniteTurnEventPlayer(0x13,MoveForrest,1)
 END_MAIN
 
 //Label CharacterBasedEvents
@@ -31,6 +33,9 @@ END_MAIN
 //Label MiscBasedEvents
 MiscBasedEvents:
 CauseGameOverIfLordDies
+DefeatAll(EndingScene)
+AREA 0x12 ForrestTrigger [5,9] [14,14]
+AREA 0x12 ForrestTrigger [8,1] [14,3]
 END_MAIN
 
 //Label TrapData
@@ -44,332 +49,159 @@ EndUnit
 
 //Label BeginingScene
 BeginningScene:
-//ASMC SetName|1
-ASMC NewTimer|1
-ASMC SetDifficulty|1 // For now, force difficulty to Normal.
-MUSC Aquatic_Dystopia
-ENUF 0x69
-ENUF 0x6A
-ENUF 0x6B
-ENUF 0x6C
-SVAL 0x1 False // This indicates that we DON'T want to do things associated with our world map proc.
-ASMC LoadSmallWorldMap|1
-FADU 0x5
-STAL 0x20
-Text(PrologueStartingText)
-STAL 0x10
-EnterStop
+CAM1 [7,7]
+LOAD1 0x1 LoadSylvaine
+ENUN
+MUSC Lloyd
+SetBackground(0x10)
+Text(Prologue_BeginningText)
+FadeOutMusic
+EndConvo
+STAL 0x30
+// LOAD3 0x1 PlayerLoading1
+LOAD1 0x1 LoadDerekJasper
+ENUN
+STAL 0x30
+MUSC Stage_One
 FADI 0x5
-STAL 0x10
-ASMC 0x48281 // Name selector.
-STAL 0x10
-CLEAN
-SVAL 0x1 False
-ASMC LoadSmallWorldMap|1
-FADU 0x5
-STAL 0x10
-ASMC BurnRNs|1
-ASMC EndTimer|1
-RANDOMNUMBER 6 // Randomly show some text!
-SVAL 0x1 0x1
-SVAL 0x2 0x2
-SVAL 0x3 0x3
-SVAL 0x4 0x4
-SVAL 0x5 0x5
-SVAL 0x6 0x6
-TEXTSTART
-BNE 0x0 0x0 0xC
-	TEXTSHOW PrologueNameText1
-	GOTO 0x6
-LABEL 0x0
-BNE 0x1 0x1 0xC
-	TEXTSHOW PrologueNameText2
-	GOTO 0x6
-LABEL 0x1
-BNE 0x2 0x2 0xC
-	TEXTSHOW PrologueNameText3
-	GOTO 0x6
-LABEL 0x2
-BNE 0x3 0x3 0xC
-	TEXTSHOW PrologueNameText4
-	GOTO 0x6
-LABEL 0x3
-BNE 0x4 0x4 0xC
-	TEXTSHOW PrologueNameText5
-	GOTO 0x6
-LABEL 0x4
-BNE 0x5 0x5 0xC
-	TEXTSHOW PrologueNameText6
-	GOTO 0x6
-LABEL 0x5
-BNE 0x6 0x6 0xC
-	TEXTSHOW PrologueNameText7
-LABEL 0x6
-TEXTEND
-TEXTSHOW2 PrologueAlmostCreatorText
-TEXTEND
-REMA
-
-MUSC Avatars_of_Avenir
-ASMC CallCharacterCreator|1 // This fades in and out on its own.
-
-EVBIT_T 0x8 // Tell the event engine we're faded in.
-
-SVAL 0x1 True
-SVAL 0x2 PrologueWorldMapEvents|IsPointer
-//SVAL 0x2 PrologueWorldMapTestEvents|IsPointer
-ASMC StartSmallWorldMap|1
-
-ASMC GetMode|1
-SVAL 0x1 0x1
-SVAL 0x2 0x2
-SVAL 0x3 0x3
-BNE 0x7 0x1 0xC
-	MoveToChapter(Mercenary1)
-	GOTO 0x9
-LABEL 0x7
-BNE 0x8 0x2 0xC
-	MoveToChapter(Military1)
-	GOTO 0x9
-LABEL 0x8
-BNE 0x9 0x3 0xC
-	MoveToChapter(Mage1)
-LABEL 0x9
+LOAD1 0x1 LoadChristinaForrest
+ENUN
 NoFade
 ENDA
 
 //Label EndingScene
 EndingScene:
+EnterStop
+FADI 0x5
+MUSC FE5_Victory
+CLEA 0x0
+CLEE 0x0
+CLEN 0x0
+ASMC RefreshAll|1
+CAM1 [7,7]
+LOAD3 0x1 PlayerLoading2
+LOAD2 0x1 EndingFriends
+LOAD1 0x1 EndingMeanies
+ENUN
+SetBackground(0x27)
+Text(Prologue_FinishedText)
+EndConvo
+STAL 0x20
+ASMC CallMilitary1Menu|1
+BNE 0x0 0x0 0xC
+	// Accept the promotion
+	Text(Prologue_PromotionText)
+	MoveToChapter(MilitaryAccept2)
+	GOTO 0x1
+LABEL 0x0
+	// Pass the promotion
+	Text(Prologue_PassText)
+	MoveToChapter(MilitaryPass2)
+LABEL 0x1
 ENDA
 
-//Label WorldMapEvents
-PrologueWorldMapTestEvents:
-EVBIT_MODIFY 0x1
-WM_MAKELORDDISAPPEAR
-_0xC220
-STAL 32
-WM_FADEOUT 0x0 0x0 0x0
-MUSC Aquatic_Dystopia
-
-EVBIT_MODIFY 0x0
-STAL 0x40
-Text(ProloguePrepForMapText)
+//Label Turn events
+Turn3:
+SVAL 0x1 1
+CHECK_ENEMIES
+BEQ 0x0 0x1 0xC
+	MUSC Ringabel
+	GOTO 0x1
+LABEL 0x0
+	MUSC The_First_Campaign // Near-victory music.
+LABEL 0x1
+CAM1 BossChristina
 STAL 0x10
-//WM_LOADLOCATION2 0 0 0
-//PLACEDOT 0x0 0x14 0x1
-//PLACEDOT 0x1 0x12 0x1
-//WM_MOVECAM Coords(0,0) Coords(100,100) 0x60
-//WM_WAITFORCAM
-STAL 0x20
-
-/*PUTSPRITE 0x2 Soldier Enemy 0x0 // THIS WORKED FOR A MOVING SPRITE (except that the starting position of the sprite relies on the location coords).
-WM_PUTMOVINGSPRITE 0x2 0x0 20 20 80 80 120 0x3 0x0
-WM_WAITFORSPRITES 0x0*/
-//WM_MOVECAM Coords(0,0) Coords(240,30) 0x60
-//WM_WAITFORCAM
-//WM_CREATENEXTDESTINATION
-//WM_WAITFORFX
-//#define LoadGMObjGraphics $B8E14
-//ASMC LoadGMObjGraphics|1
-STAL 26
-STAL 20
-WM_LOADLOCATION3 0x00 0x0 // Handled by Event95_.
-WM_WAITFORFX
-STAL 40
-WM_LOADLOCATION3 0x02 0x0
-WM_WAITFORFX
-STAL 40 
-
-/*PUTSPRITE 0x2 Soldier Enemy 0x0 // THIS WORKED TO FADE IN A SPRITE!
-WM_PUTSPRITE 0x2 Enemy 20 20
-WM_FADEINSPRITE 0x2 60*/
-
-//WM_PUTMOVINGSPRITE 0x2 Soldier 0x0 216 216 85 65 210 0x3 10 0
-//WM_WAITFORSPRITES 0x0 0x0 0x0
-//WM_PUTSPRITE 0x1 Cavalier Ally 20 20
-/*STAL 0x20
-WM_MOVECAM Coords(0,0) Coords(200,20) 0x60
-WM_WAITFORCAM
-STAL 0x20
-WM_MOVECAM Coords(200,20) Coords(180,100) 0x60
-WM_WAITFORCAM*/
-
-STAL 0x80
-SVAL 0xB 0x1
-ENDA
-
-PrologueWorldMapEvents:
-EVBIT_MODIFY 0x1
-_0xC220
-STAL 32
-WM_SHOWDRAWNMAP 0x0 0x0 0x0 0x10 0x0
-STAL 2 // This STAL is necessary, or else palettes get borked.
-WM_FADEOUT 0x0 0x0 0x0
-MUSC Aquatic_Dystopia
-
-EVBIT_MODIFY 0x0
-STAL 0x40
-Text(ProloguePrepForMapText)
+FlashCursor(BossChristina,60)
 STAL 0x10
-WM_TEXTDECORATE
-EVBIT_MODIFY 0x0
-WM_SHOWTEXTWINDOW 0x0 0x28 0x1
-WM_WAITFORTEXT
+SVAL 0x1 0x0000
+CHAI BossChristina
+Text(Prologue_ChristinaComingText)
+NoFade
+EndA2
 
-/*	WM_SHOWPORTRAIT LeonMug 80|RightWMFace
-	STAL 0x60
-	WM_CLEARPORTRAIT 0x0 0x0 0x0
-	STAL 0x60
-	WM_SHOWPORTRAIT LeonMug 80|LeftWMFace
-	STAL 0x60
-	WM_CLEARPORTRAIT 0x0 0x0 0x0
-	STAL 0x60
-
-	STAL 16
-	ASMC WorldMapStartNameProc|1
-	SVAL 0x1 JasperNameText
-	ASMC WorldMapSetNameProcParams|1
-	STAL 16*/
-WM_TEXTSTART
-WM_TEXT PrologueWMMainText
-TEXTEND
-/*	STAL 16
-	SVAL 0x1 DerekNameText
-	ASMC WorldMapSetNameProcParams|1
-	STAL 16
-	TEXTCONT
-	TEXTEND
-	STAL 16
-	SVAL 0x1 0x00
-	ASMC WorldMapSetNameProcParams|1
-	STAL 16
-	TEXTCONT
-	TEXTEND*/
-
-STAL 0x10
-WM_MOVECAM2 0x0 0x0 0x00 0x0 0x10 0x3C 0x0 // WM_MOVECAM2 Value1 *Starting X* *Starting Y* *Ending X* *Ending Y* Speed Delay 
-STAL 90
-WM_HIGHLIGHT 0x0 CesariaGlowy 0x0
-TEXTCONT
-TEXTEND
-STAL 0x08
-WM_HIGHLIGHTCLEAR1 0x0 CesariaGlowy 0x0
-WM_HIGHLIGHTCLEAR2 0x0 CesariaGlowy 0x0
-STAL 0x10
-WM_MOVECAM2 0x0 0x0 0x10 0x0 0x30 0x3C 0x0 
-STAL 90
-WM_HIGHLIGHT 0x0 ArcanaeGlowy 0x0
-STAL 0x10
-TEXTCONT
-TEXTEND
-STAL 0x08
-WM_HIGHLIGHTCLEAR1 0x0 ArcanaeGlowy 0x0
-WM_HIGHLIGHTCLEAR2 0x0 ArcanaeGlowy 0x0
-STAL 0x10
-WM_MOVECAM2 0x0 0x0 0x30 0x0 (-0x02) 0x3C 0x0
-STAL 90
-WM_HIGHLIGHT 0x0 HaedricGlowy 0x0
-STAL 0x10
-TEXTCONT
-TEXTEND
-STAL 0x08
-WM_HIGHLIGHTCLEAR1 0x0 HaedricGlowy 0x0
-WM_HIGHLIGHTCLEAR2 0x0 HaedricGlowy 0x0
-STAL 0x10
-WM_MOVECAM2 0x0 0x0 (-0x02) 0x0 (-0x0C) 0x3C 0x0
-STAL 90
-WM_HIGHLIGHT 0x0 AltiaGlowy 0x0
-STAL 0x10
-TEXTCONT
-TEXTEND
-STAL 0x08
-WM_HIGHLIGHTCLEAR1 0x0 AltiaGlowy 0x0
-WM_HIGHLIGHTCLEAR2 0x0 AltiaGlowy 0x0
-STAL 0x10
-
-ASMC GetMode|1
-WM_TEXTSTART
-SVAL 0x1 0x1
-SVAL 0x2 0x2
-SVAL 0x3 0x3
-BNE 0x7 0x1 0xC
-	WM_TEXT PrologueWMMercenaryText
-	TEXTEND
-	WM_MOVECAM2 0x0 0x0 (-0x0C) 0x0 (-0x02) 0x3C 0x0
-	STAL 0x08
-	TEXTCONT
-	TEXTEND
-	WM_HIGHLIGHT 0x0 HaedricGlowy 0x0
-	STAL 0x08
-	TEXTCONT
-	TEXTEND
-	WM_SHOWPORTRAIT LeonMug 80|RightWMFace
-	STAL 6 26
-	TEXTCONT
-	TEXTEND
-	STAL 30
-	WM_HIGHLIGHTCLEAR1 0x0 HaedricGlowy 0x0
-	WM_HIGHLIGHTCLEAR2 0x0 HaedricGlowy 0x0
-	WM_CLEARPORTRAIT 0x0 0x100 0x0
-	STAL 0x20
-	GOTO 0x9
-LABEL 0x7
-BNE 0x8 0x2 0xC
-	WM_TEXT PrologueWMMilitaryText
-	TEXTEND
-	WM_MOVECAM2 0x0 0x0 (-0x0C) 0x0 0x10 0x3C 0x0
-	STAL 0x08
-	TEXTCONT
-	TEXTEND
-	WM_HIGHLIGHT 0x0 CesariaGlowy 0x0
-	STAL 0x08
-	TEXTCONT
-	TEXTEND
-	STAL 10
-	WM_HIGHLIGHTCLEAR1 0x0 CesariaGlowy 0x0
-	WM_HIGHLIGHTCLEAR2 0x0 CesariaGlowy 0x0
-	TEXTCONT
-	TEXTEND
-	WM_SHOWPORTRAIT RexMug 190|LeftWMFace // The top byte of this is a bitfield! Bit 0 is direction to slide in from. Bit 2 is direction for facing. idk what bit 3 and 4 do.
-	STAL 6 26
-	TEXTCONT
-	TEXTEND
-	WM_CLEARPORTRAIT 0x0 0x100 0x0
-	STAL 32
-	TEXTCONT
-	TEXTEND
-	WM_SHOWPORTRAIT EmperorMug 190|LeftWMFace
-	STAL 6 26
-	TEXTCONT
-	TEXTEND
-	STAL 30
-	WM_CLEARPORTRAIT 0x0 0x100 0x0
-	STAL 0x20
-	GOTO 0x9
-LABEL 0x8
-BNE 0x9 0x3 0xC
-	WM_TEXT PrologueWMMageText
-	TEXTEND
-	WM_MOVECAM2 0x0 0x0 (-0x0C) 0x0 0x30 0x3C 0x0
-	STAL 0x08
-	TEXTCONT
-	TEXTEND
-	WM_HIGHLIGHT 0x0 ArcanaeGlowy 0x0
-	STAL 0x08
-	TEXTCONT
-	TEXTEND
-	STAL 30
-	WM_HIGHLIGHTCLEAR1 0x0 ArcanaeGlowy 0x0
-	WM_HIGHLIGHTCLEAR2 0x0 ArcanaeGlowy 0x0
-LABEL 0x9
-STAL 0x20
-
-WM_TEXTSTART
-WM_TEXT PrologueWMEndingText
-TEXTEND
-FADI 0x3
-STAL 0x10
-WM_REMOVETEXT
-SVAL 0xB 0x1
+MoveForrest:
+SVAL 0x1 1
+CHECK_ENEMIES
+BEQ 0x0 0x1 0xC
+	MUSC Ringabel
+	GOTO 0x1
+LABEL 0x0
+	MUSC The_First_Campaign // Near-victory music.
+LABEL 0x1
+CHECK_EVENTID 0x12
+BEQ 0x2 0x0 0xC
+	CAM1 BossForrest
+	STAL 0x10
+	FlashCursor(BossForrest,60)
+	STAL 0x10
+	SVAL 0x1 0x0000
+	CHAI BossForrest
+	Text(Prologue_ForrestComingText)
+	GOTO 0x3
+LABEL 0x2
+	ENUF 0x13
+LABEL 0x3
 NoFade
 ENDA
+
+//Label Area events
+ForrestTrigger:
+CHECK_ALLEGIANCE 0xFFFF
+BEQ 0x0 0x0 0xC
+	ENUF 0x12
+LABEL 0x0
+NoFade
+ENDA
+
+	/*UNIT DATA*/
+
+//Label PlayerLoading
+PlayerLoading1:
+UNIT PlayerMCavalier 0x00 0x00 Level(1,Ally,True) [0,10] 0x00 0x00 0x01 REDA3R7 [0] NoAI
+UNIT
+
+PlayerLoading2:
+UNIT PlayerMCavalier 0x00 0x00 Level(5,Ally,True) [6,7] 0x00 0x00 0x00 0x00 [0] NoAI
+EndUnit
+
+//Label Starting people
+LoadSylvaine:
+UNIT Sylvaine MaligKnight Sylvaine Level(9,NPC,True) [5,7] 0x00 0x00 0x00 0x00 [SilverAxe] GuardAI
+UNIT
+
+LoadDerekJasper:
+UNIT Derek Knight 0x00 Level(4,Ally,True) [0,9] 0x00 0x00 0x01 REDA3R8 [SteelLance,IronAxe,Vulnerary] NoAI
+UNIT Jasper Cavalier 0x00 Level(5,Ally,True) [0,8] 0x00 0x00 0x01 REDA3R6 [SteelSword,Javelin,Vulnerary] NoAI
+UNIT
+
+LoadSylvaine2:
+UNIT Sylvaine MaligKnight Sylvaine Level(9,NPC,True) [2,0] 0x00 0x00 0x00 0x00 [SilverAxe] GuardAI
+EndUnit
+
+//Label ChapterMeanies
+LoadChristinaForrest:
+UNIT BossChristina Cavalier_F BossChristina Level(7,Enemy,True) [6,6] 0x00 0x00 0x00 0x00 [IronLance] GuardAI
+UNIT BossForrest Cavalier BossForrest Level(8,Enemy,True) [6,8] 0x00 0x00 0x00 0x00 [SteelSword] GuardAI
+UNIT
+
+ChapterMeanies:
+UNIT Cesarian Knight BossChristina Level(5,Enemy,True) [14,11] 0x00 0x00 0x01 REDA7R8 [IronLance] AttackInRangeAI
+UNIT Cesarian Fighter BossChristina Level(4,Enemy,True) [14,1] 0x00 0x00 0x01 REDA8R2 [IronAxe] NoAI
+UNIT Cesarian Soldier BossChristina Level(4,Enemy,True) [14,13] 0x00 0x00 0x01 REDA6R13 [SteelLance] AttackInRangeAI
+UNIT Cesarian Mercenary BossChristina Level(5,Enemy,True) [11,9] 0x00 0x00 0x01 REDA13R9 [SlimSword] ChaseOnceApproachedAI
+UNIT Cesarian Soldier BossChristina Level(4,Enemy,True) [14,3] 0x00 0x00 0x01 REDA12R3 [IronLance] AttackInRangeAI
+UNIT Cesarian Cavalier BossChristina Level(5,Enemy,True) [1,14] 0x00 0x00 0x01 REDA1R13 [SteelSword] NoAI
+EndUnit
+
+//Label Ending People
+EndingFriends:
+UNIT Derek 0x00 0x00 Level(4,Ally,True) [5,6] 0x00 0x00 0x00 0x00 [SteelLance] NoAI
+UNIT Jasper 0x00 0x00 Level(5,Ally,True) [5,8] 0x00 0x00 0x00 0x00 [SteelSword,Javelin] NoAI
+UNIT
+
+EndingMeanies:
+UNIT Sylvaine ArmoredWyvernLord 0x00 Level(1,NPC,True) [8,8] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Christina Cavalier_F 0x00 Level(1,NPC,True) [7,5] 0x00 0x00 0x00 0x00 [0] NoAI
+UNIT Forrest Cavalier 0x00 Level(1,NPC,True) [8,6] 0x00 0x00 0x00 0x00 [0] NoAI
+EndUnit

@@ -1,234 +1,243 @@
 
-## PrologueStartingText
-[ConversationText]
-[Right][LoadNarrator]
-WELCOME TO THE HACK FACTORY!!! *Ahem* Well, well, well. Who do we have here in my realm? A lost soul... looking for another chance at life, eh?
-[FarFarLeft]Who... are you?
-[Right]A silly question to ask, given that you won't remember... But I'll indulge you. I am the Guardian Spirit, overseer of Avenir and guide of lost souls. That is all, nothing more. For now, what is your name?[X]
+## Prologue_BeginningText
+[FarRight][LoadDerek][Right][LoadJasper]
+PLAYER_NAME! Wake up![A]
+[MidLeft][CloseEyes][LoadVillagerOldMan]Huh...?[A]
+[Right]Did you forget so quickly?[NL]
+It's the big day today![A]
+[MidLeft]Big day?[A]
+[FarRight]Our test day! This could be[NL]
+the last day of us being cadets![A][MidLeft][OpenEyes][LoadVillagerOldMan]
+Oh! You're right! I[NL]
+don't know how I forgot...[A]
+[Right]Captain Sylvaine is administering[NL]
+the test. We'll want to do our best. She[A][NL]
+definitely has high expectations[A][NL]
+of any graduating cadets.[A]
+[MidLeft]Captain Sylvaine? What about[NL]
+Captain Maximus? He's normally[A][NL]
+the one to grade these...[A]
+[Right]I think Captain Maximus is in the field[NL]
+facing down Arcanae right now.[A][NL]
+I'd rather be here than there...[A]
+[MidLeft]That's our future, Jasper.[NL]
+Whether we like it or not.[A]
+[Right]There's so much to war than just battles![NL]
+We still don't know where Haedric or[A][NL]
+even Altia stands on this conflict.[A]
+[FarRight]Come on guys, now's not the time to[NL]
+be bickering anyway! We have to pass[A][NL]
+this test first! Besides, no Captain would[NL]
+just allow a few recently graduated[A][NL]
+Cadets to make their own choice about[NL]
+the role they'll play in the war![A]
+[MidLeft]Right. Thanks, Derek. We have to[NL]
+work as a team. I'm sorry, Jasper.[A]
+[Right]Eh, don't worry about it. We're[NL]
+teammates, and more importantly,[A][NL]
+friends. Let's go ace this test![A][X]
 
-## PrologueNameText1
-[ConversationText]
-[Right][LoadNarrator]
-An interesting choice...[X]
+## Prologue_SylvaineBriefingText
+[FarLeft][LoadJasper][Left][LoadVillagerOldMan][MidRight][LoadSylvaine]
+Cadets! There you are. Right on time.[A]
+[Left]Captain Sylvaine! Cadet[NL]
+PLAYER_NAME, reporting in.[A]
+[MidRight]PLAYER_NAME, it is?[A]
+[Left]Yes, ma'am.[A]
+[FarLeft]I'm Cadet Jasper. This[NL]
+here is Cadet Derek.[A]
+[MidRight]I see, I see. Do you all know[NL]
+the test you face today?[A]
+[FarLeft]Actually... No, ma'am. Our instructor told[NL]
+us each Captain liked to do a different test[A][NL]
+and it would depend on who administered it.[A]
+[MidRight]Ha! He knows his stuff, then. Today, you'll[NL]
+be facing off against some of my soldiers[A][NL]
+from the Leopard Brigade. Your objective[NL]
+is to defeat all of them without[A][NL]
+any of yourselves falling.[A][FarLeft][ClearFace][LoadDerek]
+All of them?[A]
+[MidRight]They will hold back, but only slightly.[NL]
+I expect any graduating Cadet to have[A][NL]
+equivalent skills of even a seasoned[NL]
+Cesarian soldier. Your main opponents[A][NL]
+will be Sergeants Christina and Forrest,[NL]
+two of my battalion commanders.[A]
+[Left]Battalion commanders?[A]
+[MidRight]Yes. We Captains command our brigades as[NL]
+a whole, but we also have small[A][NL]
+battalions under the command of Sergeants.[NL]
+When a team of Cadets graduates, the[A][NL]
+one that shows the strongest leadership[NL]
+is offered the rank of Corporal.[A][NL]
+These Corporals often rise to[NL]
+become Sergeants, and thus,[A][NL]
+battalion commanders within our ranks.[A]
+[Left]Understood.[A]
+[MidRight]Christina! Forrest![A][CloseSpeech][MoveRight][FarRight][LoadForrest]
+Aye, Captain?[A][ClearFace][LoadChristina]
+What is it?[A]
+[Right]I'll expect you to analyze all three of[NL]
+these Cadets. While fighting. I will[A][NL]
+consult with you afterwards as to which[NL]
+you believe the most suited to[A][NL]
+receive the promotion to Corporal.[A][FarRight][ClearFace][LoadForrest]
+Understood.[A][ClearFace][LoadChristina]
+You can count on me.[A]
+[Right]Good luck, Cadets. I will be[NL]
+observing to make sure the test[A][NL]
+stays fair and to make my decision.[A]
+[Left]Thank you, Captain.[A][X]
 
-## PrologueNameText2
-[ConversationText]
-[Right][LoadNarrator]
-Your mother really didn't think too highly of you, eh?[X]
+## Prologue_EndingBeginningText
+[MidLeft][LoadVillagerOldMan][Right][LoadDerek][FarRight][LoadJasper]
+Don't worry, PLAYER_NAME. We've got this![A]
+[Right]I should have eaten[NL]
+a smaller breakfast...[A]
+[FarRight]Derek, just...[.....] Focus on the[NL]
+task at hand, okay?[A]
+[Right]Right. Sorry, Jasper.[A]
+[MidLeft]We'll want to play it safe. We all have[NL]
+vulneraries. Let's stick together. You heard[A][NL]
+the Captain. None of us can be defeated.[A]
+[Right]Right. Let's do this.[A][X]
 
-## PrologueNameText3
-[ConversationText]
-[Right][LoadNarrator]
-You sure?[....] Eh, too bad, you already made your choice.[X]
+## Prologue_ForrestBattleText
+[FarLeft][LoadForrest]
+You're doing pretty well[NL]
+out there, Cadets...[A][NL]
+Let's see how you[NL]
+face against me![A][X]
 
-## PrologueNameText4
-[ConversationText]
-[Right][LoadNarrator]
-Ha! [.][MoveRight][....]Have fun teaching people how to pronounce that one...[X]
+## Prologue_ForrestDeathText
+[FarLeft][LoadForrest]
+Heh... Not bad.[NL]
+Not bad at all.[A][X]
 
-## PrologueNameText5
-[ConversationText]
-[Right][LoadNarrator]
-Very well done! You chose a name![X]
+## Prologue_ChristinaBattleText
+[BattleText]
+[FarLeft][LoadChristina]
+Great work so far, Cadets! Can you defeat me, I wonder?[X]
 
-## PrologueNameText6
-[ConversationText]
-[Right][LoadNarrator]
-A good, solid choice.[X]
+## Prologue_ChristinaDeathText
+[FarLeft][LoadChristina]
+Impressive. I look[NL]
+forward to seeing[A][NL]
+Sylvaine's assessment.[A][X]
 
-## PrologueNameText7
-[ConversationText]
-[Right][LoadNarrator]
-Good, good.[X]
+## Prologue_FinishedText
+[Right][LoadDerek][Left][LoadVillagerOldMan][FarLeft][LoadJasper]
+Phew! That was a tough one...[A]
+[Left]You're telling me...[A]
+[Right]I suppose this is the[NL]
+strength of Cesarian soldiers.[A][FarRight][LoadSylvaine]
+Cadets! Very well done![A][Right][ClearFace][LoadChristina]
+I agree! Forrest?[A][ClearFace][LoadForrest]
+Definitely one of the most impressive[NL]
+groups I've ever seen.[A]
+[FarRight]I'm inclined to agree with you two.[NL]
+Jasper, Derek, and PLAYER_NAME. All[A][NL]
+three of you are soldiers I would be[NL]
+more than happy to have in my brigade,[A][NL]
+and I'm sure the other Captains would[NL]
+agree with me. You work remarkably[A][NL]
+well as a team, and all three of[NL]
+you are very skilled in combat.[A]
+[FarLeft]Thank you, Captain.[A]
+[FarRight]However, only one of you can[NL]
+be named Corporal[A][Right][ClearFace][LoadChristina]
+I think I know your choice,[NL]
+and I agree wholeheartedly.[A][ClearFace][LoadForrest]
+Whatever you think is best, Captain.[NL]
+I've never been one to question you.[A]
+[FarRight]Thanks, you two. PLAYER_NAME, you demonstrated[NL]
+excellent leadership today. You are our[A][NL]
+first choice for becoming Corporal[NL]
+and being a squadron commander.[A]
+[Left][LoadVillagerOldMan]What?[A]
+[FarLeft]PLAYER_NAME! Congrats![A][Right][ClearFace][LoadDerek]
+Yeah! I'm not even[NL]
+remotely surprised, haha![A]
+[Left]Do I...[....] have to accept?[A]
+[FarRight]Of course not. You may be a soldier now,[NL]
+but you're also human. It is your choice.[A][X]
 
-## PrologueAlmostCreatorText
-[ConversationText]
-[CloseSpeech]
-[Right]
-Now that that's taken care of, it's time to decide what exactly you may want to be when you enter the realm of Avenir. Do you wish to be a strong mercenary of Haedric, yearning for wealth? A soldier in the Empire of Cesaria's military? Or a fledgling mage in the wise country of Arcanae? Be certain in your choice.[X]
+## Prologue_PromotionMenuText
+Accept the promotion[X]
 
-## ProloguePrepForMapText
-[ConversationText]
-[Right][LoadNarrator]
-It is time. Let us prepare you for the realm of Avenir...[X]
+## Prologue_PassMenuText
+Decline the promotion[X]
 
-## PrologueWMMainText
-The continent of Avenir.[.....] Four main countries[NL]
-dot the main landmass of the continent.[A][0x02][NL]
-[Events]
-The Empire of Cesaria;[A][0x02][NL]
-[Events]
-the country of magic, Arcanae;[A][0x02][NL]
-[Events]
-the warrior country of Haedric;[A][0x02][NL]
-[Events]
-and the avian realm of Altia.[A][X]
+## Prologue_PromotionText
+[FarLeft][LoadJasper][MidRight][LoadSylvaine][Left][LoadVillagerOldMan]
+[TMM]...[......][TMM] It would be my honor.[A]
+[MidRight]Wonderful! Welcome to the[NL]
+Cesarian Army, Corporal.[A]
+[Left]Thank you, Captain. What are my orders?[A]
+[MidRight]Much of the brigade is diverted to the[NL]
+west, fighting along the border with[A][NL]
+Arcanae under the leadership of[NL]
+Captain Jurgen. However, I have been[A][NL]
+assigned to take some soldiers north[NL]
+to Altia, in order to arrange a[A][NL]
+treaty with their Anguis. I[NL]
+leave the choice to you, Corporal.[A]
+[Left][TMM]...[....][TMM] Jasper?[A]
+[FarLeft]You got the promotion. I'll follow you[NL]
+in whatever choice you make.[A][ClearFace][LoadDerek]
+I don't have an opinion either way. We're[NL]
+a team, aren't we? We'll stick together.[A]
+[Left]Captain, I'd like to go to the border[NL]
+and join the battle against Arcanae.[A]
+[MidRight]Very well. I will have your post[NL]
+assignments to you this evening. For now,[A][NL]
+rest up. You'll be leaving tomorrow morning.[A]
+[Left]Understood! Thank you, Captain![A]
+[MidRight]Don't thank me yet...[A][X]
 
-## PrologueWMMercenaryText
-As a mercenary, [Events][....]you will begin your journey[NL]
-in Haedric.[Events][......] The warriors of Haedric pride[A][NL]
-themselves on personal strength, and their[NL]
-leader,[Events][....] the Basileus, is renowned as the[A][NL]
-strongest warrior in all of Avenir...[A][X]
+## Prologue_PassText
+[FarLeft][LoadDerek][MidRight][LoadSylvaine][Left][LoadVillagerOldMan]
+I'm sorry, but... I just don't feel[NL]
+ready to take on this responsibility.[A]
+[FarLeft]PLAYER_NAME, are you serious?[A]
+[Left]Yes, Derek.[A]
+[MidRight]Very well. It is your choice, after all.[NL]
+Cadet Jasper, would you be willing to take[A][NL]
+on leadership and the title of Corporal?[A][FarLeft][ClearFace][LoadJasper]
+Are you sure about this, PLAYER_NAME?[A]
+[Left]Yes! Just get on with it.[A][CloseSpeech][FarLeft][MoveLeft]
+Right. Yes, Captain. I accept your offer.[A]
+[MidRight]Very well. Congratulations, Corporal.[A]
+[Left]What are our orders, Captain?[A]
+[MidRight]The Emperor has been arranging for me to[NL]
+go to Altia and meet with the Anguis[A][NL]
+and High Priest to discuss terms of an[NL]
+alliance. It seems like it would be a[A][NL]
+fairly easy job for your squadron to[NL]
+accompany me. Of course, if you'd[A][NL]
+rather go to war against Arcanae, that[NL]
+can also very easily be arranged...[A]
+[Left]Yes, ma'am! Altia sounds wonderful.[NL]
+It would be our honor.[A]
+[FarLeft]Are you sure about this, Jasper?[A]
+[Left]I'd rather we take steps to end the war this[NL]
+way than just being three more corpses on[A][NL]
+the border. I'm sure we'll still[NL]
+see plenty of action, PLAYER_NAME.[A]
+[FarLeft]If you say so, Jasper.[A]
+[MidRight]Glad to hear of your decision, Corporal.[NL]
+Welcome to the Leopard Brigade. Get[A][NL]
+some rest, you three. We set out[NL]
+early tomorrow morning.[A]
+[Left]Yes, ma'am![A][X]
 
-## PrologueWMMilitaryText
-As a member of the military, [Events][....]you will begin[NL]
-your journey in Cesaria.[Events][......] They boast the[A][NL]
-largest military on the continent,[Events][.] led by[NL]
-their Captains and General.[Events][....] Every Cesarian[A][0x02][NL][Events]
-is fiercely loyal to their Emperor.[Events][......][A][X]
+## Prologue_ChristinaComingText
+[MidRight][LoadChristina]
+Ready yourselves, cadets![NL]
+Here I come.[A][X]
 
-## PrologueWMMageText
-As a magic scholar, [Events][....]you will begin your journey[NL]
-in Arcanae.[Events][.....] They have found themselves locked[A][NL]
-in a civil war between two halves of their[NL]
-Grand Magi, but like most Arcanians, you[A][NL]
-only truly seek knowledge of the world.[A][X]
-
-## PrologueWMEndingText
-I wish you luck, [Tact].[....] Make your mark[NL]
-on Avenir.[....] I will be watching...[A][X]
-
-## GenderMenuText
-Form[X]
-
-## RouteMenuText
-Route[X]
-
-## ClassMenuText
-Class[X]
-
-## BaneMenuText
-Bane[X]
-
-## BoonMenuText
-Boon[X]
-
-## RandomMenuText
-Random[X]
-
-## DoneMenuText
-Done[X]
-
-## MaleMenuText
-Male[X]
-
-## FemaleMenuText
-Female[X]
-
-## MercenaryMenuText
-Mercenary[X]
-
-## MilitaryMenuText
-Military[X]
-
-## MageMenuText
-Mage[X]
-
-## CreatorGenderText
-Your form can affect your[NL]
-appearance, your stats,[NL]
-and what classes may be[NL]
-available. It will not affect[NL]
-supports, endings, or[NL]
-interactions in the story.[X]
-
-## CreatorMercenaryRouteText
-Become a wandering[NL]
-mercenary in the neutral[NL]
-warrior state of Haedric.[NL]
-Play as a Mercenary,[NL]
-Myrmidon, Fighter, Pirate,[NL]
-Brigand, or Pegasus Knight.[X]
-
-## CreatorMilitaryRouteText
-Become a cadet in the[NL]
-Cesarian Army about to[NL]
-join the fight against[NL]
-New Arcanae. Play as a[NL]
-Cavalier, Knight, Soldier,[NL]
-Wyvern Rider, or Archer.[X]
-
-## CreatorMageRouteText
-Become a scholar in[NL]
-Arcanae about to[NL]
-unearth something that[NL]
-could change the outcome[NL]
-of the war. Play as a[NL]
-Mage, Monk, or Shaman.[X]
-
-## ClassMenuErrorText
-Select a gender and route[NL]
-before choosing a class.[X]
-
-## BaneMenuErrorText
-Select a gender, route, and[NL]
-class before choosing a bane.[X]
-
-## BoonMenuErrorText
-Select a gender, route, and[NL]
-class before choosing a boon.[X]
-
-## HPMenuText
-HP[X]
-
-## StrMenuText
-Strength[X]
-
-## MagMenuText
-Magic[X]
-
-## SklMenuText
-Skill[X]
-
-## SpdMenuText
-Speed[X]
-
-## DefMenuText
-Defense[X]
-
-## ResMenuText
-Resistance[X]
-
-## LukMenuText
-Luck[X]
-
-## BaneMenuItemErrorText
-You've already chosen[NL]
-this stat as a boon![X]
-
-## BoonMenuItemErrorText
-You've already chosen this[NL]
-stat as a bane![X]
-
-## PegasusKnightNameNotNarrowText
-Pegasus Kn.[X]
-
-## WyvernRiderNameNotNarrowText
-W. Rider[X]
-
-## RandomDescText
-Randomize your character![X]
-
-## FormDescText
-Choose the form your[NL]
-character will take.[X]
-
-## RouteDescText
-Choose the set of chapters you[NL]
-will progress through. This affects[NL]
-what classes are available to you.[X]
-
-## ClassDescText
-Choose the class you will play as.[X]
-
-## BoonDescText
-Choose a stat bonus[NL]
-for your character.[X]
-
-## BaneDescText
-Choose a stat debuff[NL]
-for your character.[X]
-
-## DoneDescText
-Finalize your character![X]
+## Prologue_ForrestComingText
+[MidRight][LoadForrest]
+You're lucky, cadets. The[NL]
+enemy won't let you know[A][NL]
+when they choose to strike![A][X]
