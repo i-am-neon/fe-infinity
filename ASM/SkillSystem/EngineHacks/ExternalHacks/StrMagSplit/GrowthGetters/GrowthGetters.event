@@ -60,6 +60,5 @@
 	POIN SkillTester
 	WORD BlossomID
 	WORD AptitudeID
-	// Remove Avenir boon/bane for main character
-	// POIN CreatorApplyBoonBaneGrowth
+	POIN CreatorApplyBoonBaneGrowth
 	

@@ -139,6 +139,8 @@ for one turn[X]
 
 #include "SkillSystem/SkillDesc.s"
 
+#include "SkillSystem/CharacterCreator.s"
+
 #include "Chapters/Sassy.s"
 
 ## BaseConvoTextID1
