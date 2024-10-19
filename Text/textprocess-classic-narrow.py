@@ -94,7 +94,7 @@ class Preprocessor:
 
 			self.includeSet.add(fileName)
 
-			logging.debug("Opening `{}` for preprocessing.".format(fileName))
+			# logging.debug("Opening `{}` for preprocessing.".format(fileName))
 
 			with open(fileName, 'r') as f:
 					for iLine, line in enumerate(f.readlines()):
@@ -119,7 +119,7 @@ class Preprocessor:
 											if len(dirpath) > 0:
 													includee = os.path.join(dirpath, includee)
 
-											logging.debug("Including file `{}`.".format(includee))
+											# logging.debug("Including file `{}`.".format(includee))
 
 											for otherLine in self.preprocess(includee):
 													yield otherLine
