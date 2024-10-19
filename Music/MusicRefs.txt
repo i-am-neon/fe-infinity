@@ -76,6 +76,7 @@ Binding_Vow
 	Mercenary6MilitiaWaitArcanae.event
 	Mercenary6BanditDisband.event
 	Mercenary4Bandit.event
+	NPC phase theme: Prologue
 	NPC phase theme: Mage1
 	NPC phase theme: MageLeave2
 	NPC phase theme: Military1
@@ -137,6 +138,7 @@ Bloodpool
 Bloody_Tears
 	Player phase theme: MilitaryAcceptRetreatHelp7
 Boss_Theme
+	Enemy phase theme: Prologue
 	Enemy phase theme: Military1
 Cavern_of_Splendor
 	Mage prep theme
@@ -362,6 +364,7 @@ Kakariko_Village
 	Military5AcceptRetreatLeave.event
 	Military6AcceptRetreatLeave.event
 Knock_Em_Around
+	Attack theme: Prologue
 	Attack theme: Military1
 	Attack theme: MilitaryAccept2
 	Attack theme: MilitaryAccept3
@@ -436,10 +439,6 @@ Overwhelming_Advance
 	Military7PassAltia.event
 	Military5AcceptRetreatHelp.event
 	Military7AcceptHold.event
-PrologueMusic
-	Player phase theme: Prologue
-	Enemy phase theme: Prologue
-	NPC phase theme: Prologue
 Promotions_of_Avenir
 	Promotions
 Pub_Theme
@@ -465,6 +464,7 @@ Reunion
 	Mercenary4Bandit.event
 Ringabel
 	Military1.event
+	Player phase theme: Prologue
 	Player phase theme: Military1
 Rise_Above
 	Player phase theme: MercenaryMilitia2
@@ -693,6 +693,7 @@ We_Can_Handle_Em
 	Attack theme: MilitaryPassAltia6
 	Attack theme: MilitaryPassAltia7
 We_Stand
+	Defense theme: Prologue
 	Defense theme: Military1
 	Defense theme: MilitaryAccept2
 	Defense theme: MilitaryAccept3
@@ -857,6 +858,7 @@ Binding_Vow
 	Mercenary6MilitiaWaitArcanae.event
 	Mercenary6BanditDisband.event
 	Mercenary4Bandit.event
+	NPC phase theme: Prologue
 	NPC phase theme: Mage1
 	NPC phase theme: MageLeave2
 	NPC phase theme: Military1
@@ -985,10 +987,6 @@ Lost_Heart
 LyonTheme
 	Mercenary6BanditDisband.event
 	Mercenary6MilitiaKill.event
-PrologueMusic
-	Player phase theme: Prologue
-	Enemy phase theme: Prologue
-	NPC phase theme: Prologue
 Raid
 	Military7AcceptRetreatLeave.event
 	Military3Accept.event

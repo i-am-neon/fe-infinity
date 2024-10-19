@@ -2,7 +2,7 @@
 ## PrologueStartingText
 [ConversationText]
 [Right][LoadNarrator]
-Well, well, well. Who do we have here in my realm? A lost soul... looking for another chance at life, eh?
+WELCOME TO THE HACK FACTORY!!! *Ahem* Well, well, well. Who do we have here in my realm? A lost soul... looking for another chance at life, eh?
 [FarFarLeft]Who... are you?
 [Right]A silly question to ask, given that you won't remember... But I'll indulge you. I am the Guardian Spirit, overseer of Avenir and guide of lost souls. That is all, nothing more. For now, what is your name?[X]
 

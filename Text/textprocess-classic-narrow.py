@@ -137,7 +137,7 @@ class Preprocessor:
 													defvalu = defvalu.strip('"')
 
 											self.definitions[defname] = defvalu
-											logging.debug("Defined macro `{}` as `{}`.".format(defname, defvalu))
+											# logging.debug("Defined macro `{}` as `{}`.".format(defname, defvalu))
 
 									else:
 											logging.warning('{}:{}: Unknown directive "#{}", treating as comment.'.format(
@@ -145,7 +145,7 @@ class Preprocessor:
 
 							else:
 									expanded_line = self.expand_macros(line)
-									logging.debug("Expanded line {}: {}".format(iLine+1, expanded_line.strip()))
+									# logging.debug("Expanded line {}: {}".format(iLine+1, expanded_line.strip()))
 									yield (fileName, iLine, expanded_line)
 
 	def _get_expanded_expr(self, m):
@@ -176,7 +176,7 @@ def generate_text_entries(lines, doTrace):
 
     for (fileName, iLine, line) in lines:
         l = line.strip()
-        logging.debug("Processing line {}: {}".format(iLine+1, l))
+        # logging.debug("Processing line {}: {}".format(iLine+1, l))
 
         if currentText == None: # no current text, reading entry header
             if l == "":
@@ -197,8 +197,8 @@ def generate_text_entries(lines, doTrace):
                 currentDefinition = match.group(2)
                 currentText = ""
 
-                logging.debug("Started new text entry ID {:03X}, definition '{}'.".format(
-                    currentStringId, currentDefinition))
+                # logging.debug("Started new text entry ID {:03X}, definition '{}'.".format(
+                #     currentStringId, currentDefinition))
 
                 if match.group(3) is not None:
                     if '*' in match.group(3):
@@ -217,10 +217,10 @@ def generate_text_entries(lines, doTrace):
         else:
             if constantNarrow:  # narrow block
                 line = narrowText(line, constantMenu)
-                logging.debug("Applied constant narrow to line: {}".format(line.strip()))
+                # logging.debug("Applied constant narrow to line: {}".format(line.strip()))
             elif narrow:  # narrow entry
                 line = narrowText(line, menu)
-                logging.debug("Applied narrow to line: {}".format(line.strip()))
+                # logging.debug("Applied narrow to line: {}".format(line.strip()))
             elif RE_NARROW_SEC.search(line):  # check for narrow section
                 sections = RE_NARROW_SEC.split(line)
                 line = ""
@@ -231,13 +231,13 @@ def generate_text_entries(lines, doTrace):
                         line += narrowText(section[2:-1], False)
                     else:
                         line += section
-                logging.debug("Processed narrow sections in line: {}".format(line.strip()))
+                # logging.debug("Processed narrow sections in line: {}".format(line.strip()))
 
             currentText += line
 
             if l[-3:] == "[X]":  # Line ends in [X] (end of text entry)
-                logging.debug("Completed text entry ID {:03X}, definition '{}'.".format(
-                    currentStringId, currentDefinition))
+                # logging.debug("Completed text entry ID {:03X}, definition '{}'.".format(
+                    # currentStringId, currentDefinition))
                 result.append(TextEntry(currentText, currentStringId, currentDefinition))
 
                 currentText = None
@@ -280,8 +280,8 @@ def generate_definitions_lines(name, textEntries):
 def generate_text_binary(parseFileExe, textEntry, sourceFile, targetFile):
     import subprocess as sp
 
-    logging.debug("Generating text binary for ID {:03X}, using parser '{}'.".format(
-        textEntry.stringId, parseFileExe))
+    # logging.debug("Generating text binary for ID {:03X}, using parser '{}'.".format(
+    #     textEntry.stringId, parseFileExe))
 
     result = sp.run([parseFileExe, sourceFile, "--to-stdout"], stdout=sp.PIPE, stderr=sp.PIPE)
 
@@ -299,7 +299,7 @@ def generate_text_binary(parseFileExe, textEntry, sourceFile, targetFile):
     with open(targetFile, 'wb') as f:
         f.write(result.stdout)
 
-    logging.debug("Generated binary file '{}'.".format(targetFile))
+    # logging.debug("Generated binary file '{}'.".format(targetFile))
 
 def main(args):
 	import argparse
@@ -323,7 +323,7 @@ def main(args):
 	forceRefresh  = True if arguments.force_refresh else False
 	verbose       = True if arguments.verbose else False
 
-	logging.debug("Starting text processing with input file '{}'.".format(inputPath))
+	# logging.debug("Starting text processing with input file '{}'.".format(inputPath))
 
 	timeThreshold = 0.0
 
@@ -347,7 +347,7 @@ def main(args):
 
 	# Read the entries
 
-	logging.debug("Reading text entries from input.")
+	# logging.debug("Reading text entries from input.")
 	if verbose:
 		sys.stderr.write("TRACE: [global] start reading input\n")
 
@@ -376,8 +376,8 @@ def main(args):
 							logging.warning("Duplicate entry definition '{}'! (ignoring)".format(entry.definition))
 							continue
 
-					logging.debug("Added text entry ID {:03X}, definition '{}'.".format(
-							entry.stringId, entry.definition))
+					# logging.debug("Added text entry ID {:03X}, definition '{}'.".format(
+					# 		entry.stringId, entry.definition))
 
 					entryList.append(entry)
 
@@ -399,7 +399,7 @@ def main(args):
 		os.mkdir(textFolder)
 
 	try:
-		logging.debug("Starting to write output files.")
+		# logging.debug("Starting to write output files.")
 		with open(outputPath, 'w') as f:
 			f.write("// Text Data Installer generated by text-process\n")
 			f.write("// Do not edit! (or do but it won't be of any use)\n\n")
@@ -478,4 +478,4 @@ def main(args):
 
 if __name__ == '__main__':
 	main(sys.argv[1:])
-	logging.debug("Text processing completed successfully.")
+	# logging.debug("Text processing completed successfully.")

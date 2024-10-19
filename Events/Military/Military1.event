@@ -58,7 +58,7 @@ Text(Military1BeginningText)
 FadeOutMusic
 EndConvo
 STAL 0x30
-LOAD3 0x1 PlayerLoading1
+// LOAD3 0x1 PlayerLoading1
 LOAD1 0x1 LoadDerekJasper
 ENUN
 STAL 0x30
@@ -66,24 +66,6 @@ MUSC Stage_One
 FADI 0x5
 LOAD1 0x1 LoadChristinaForrest
 ENUN
-EnterStop
-SetBackground(0x21)
-Text(Military1SylvaineBriefingText)
-EndConvo
-STAL 0x8
-MOVE 0x0 Sylvaine [6,0]
-ENUN
-DISA Sylvaine
-MOVE 0x0 BossChristina [11,6]
-STAL 0x4	
-MOVE 0x0 BossForrest [11,8]
-LOAD1 0x1 ChapterMeanies
-ENUN
-LOAD1 0x1 LoadSylvaine2
-Text(Military1EndingBeginningText)
-SetSupport(Jasper,Derek,CSupport)
-SetSupport(Derek,0xFF,CSupport)
-SetSupport(Jasper,0xFF,CSupport)
 NoFade
 ENDA
 
