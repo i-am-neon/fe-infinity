@@ -2,9 +2,11 @@ import type { ChapterData } from "../types/ChapterData.ts";
 import { chapterDataCsvHeaders } from "./chapter-data-csv-headers.ts";
 import chapterDataToCsv from "./chapter-data-to-csv.ts";
 
-export default async function assembleChapterDataCSV(
-  chapterDatas: ChapterData[]
-): Promise<string> {
+export default async function assembleChapterDataCSV({
+  chapterDatas,
+}: {
+  chapterDatas: ChapterData[];
+}): Promise<string> {
   // Start with headers
   let csvContent = chapterDataCsvHeaders.join(",") + "\n";
 
@@ -17,3 +19,4 @@ export default async function assembleChapterDataCSV(
 
   return csvContent;
 }
+

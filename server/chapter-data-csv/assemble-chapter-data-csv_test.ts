@@ -95,7 +95,7 @@ Deno.test(
 
     const expectedCsv = `${expectedCsvHeader}\n${expectedCsvValues1}\n${expectedCsvValues2}`;
 
-    const csvResult = await assembleChapterDataCSV(testData);
+    const csvResult = await assembleChapterDataCSV({ chapterDatas: testData });
 
     assertEquals(csvResult, expectedCsv);
   }
