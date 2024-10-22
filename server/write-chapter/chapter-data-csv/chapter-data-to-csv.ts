@@ -1,4 +1,4 @@
-import type { ChapterDataForCsv } from "../types/ChapterDataForCsv.ts";
+import type { ChapterDataForCsv } from "../../types/ChapterDataForCsv.ts";
 
 export default async function chapterDataToCsv(
   data: ChapterDataForCsv

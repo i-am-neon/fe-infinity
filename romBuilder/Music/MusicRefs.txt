@@ -59,7 +59,6 @@ Binding_Vow
 	Mercenary6BanditDisband.event
 	Mercenary4Bandit.event
 	NPC phase theme: Prologue
-	NPC phase theme: MilitaryAccept2
 Bloodpool
 	Military5AcceptHold.event
 	Military3Accept.event
@@ -119,8 +118,6 @@ Emergency
 	Military5PassAltia.event
 	Military2Pass.event
 	Mercenary7MilitiaWaitCesaria.event
-Encounter_with_Renegades
-	Enemy phase theme: MilitaryAccept2
 Encroaching_Foe
 	Military5PassAltia.event
 	Military4AcceptRetreat.event
@@ -155,8 +152,6 @@ FE5_Victory_Minor
 	Military5AcceptRetreatLeave.event
 	Mercenary6MilitiaWaitCesaria.event
 	Mercenary5MilitiaWaitCesaria.event
-Fodlan_Winds
-	Player phase theme: MilitaryAccept2
 Forbidden_Forest
 	Military3Pass.event
 	Military4AcceptHold.event
@@ -230,7 +225,6 @@ Kakariko_Village
 	Military6AcceptRetreatLeave.event
 Knock_Em_Around
 	Attack theme: Prologue
-	Attack theme: MilitaryAccept2
 Kratos
 	Military2Accept.event
 	Military7AcceptRetreatHelp.event
@@ -470,7 +464,6 @@ Victory_March
 	Military2Pass.event
 We_Stand
 	Defense theme: Prologue
-	Defense theme: MilitaryAccept2
 Wild_Fields
 	Military6AcceptRetreatHelp.event
 	Military2Accept.event
@@ -491,6 +484,7 @@ Zelos
 
 List of custom music never referenced:
 Avenir_Healing2
+Encounter_with_Renegades
 Last_Battle_Decision
 Burning_Fighting_Spirit
 Town_of_Winds_and_Ruins
@@ -530,6 +524,7 @@ Showdown_with_Hector_New
 A_Hero_Falls
 We_Can_Handle_Em
 All_Is_Lost
+Fodlan_Winds
 Oil_Ocean
 Casino_Night
 Hill_Top
@@ -591,7 +586,6 @@ Binding_Vow
 	Mercenary6BanditDisband.event
 	Mercenary4Bandit.event
 	NPC phase theme: Prologue
-	NPC phase theme: MilitaryAccept2
 Combat_Preparation
 	Mercenary5BanditDisband.event
 Comrades

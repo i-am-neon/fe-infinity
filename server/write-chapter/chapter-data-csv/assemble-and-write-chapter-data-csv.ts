@@ -1,6 +1,6 @@
-import getPathWithinRomBuilderDir from "../fileIO/get-path-within-rom-builder-dir.ts";
-import writeFile from "../fileIO/write-file.ts";
-import type { ChapterDataForCsv } from "../types/ChapterDataForCsv.ts";
+import getPathWithinRomBuilderDir from "../../fileIO/get-path-within-rom-builder-dir.ts";
+import writeFile from "../../fileIO/write-file.ts";
+import type { ChapterDataForCsv } from "../../types/ChapterDataForCsv.ts";
 import assembleChapterDataCSV from "./assemble-chapter-data-csv.ts";
 
 export default async function asssembleAndWriteChapterDataCsv({

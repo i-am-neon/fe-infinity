@@ -1,4 +1,4 @@
-import type { ChapterDataForCsv } from "../types/ChapterDataForCsv.ts";
+import type { ChapterDataForCsv } from "../../types/ChapterDataForCsv.ts";
 import { chapterDataCsvHeaders } from "./chapter-data-csv-headers.ts";
 import chapterDataToCsv from "./chapter-data-to-csv.ts";
 

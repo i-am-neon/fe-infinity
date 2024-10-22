@@ -1,6 +1,6 @@
 import { assertEquals } from "@std/assert";
-import assembleChapterDataCSV from "../chapter-data-csv/assemble-chapter-data-csv.ts";
-import type { ChapterDataForCsv } from "../types/ChapterDataForCsv.ts";
+import assembleChapterDataCSV from "./assemble-chapter-data-csv.ts";
+import type { ChapterDataForCsv } from "../../types/ChapterDataForCsv.ts";
 
 Deno.test(
   "assembleChapterDataCSV - should return correct CSV format",

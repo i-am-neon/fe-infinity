@@ -1,31 +1,47 @@
-import getPathWithinRomBuilderDir from "../fileIO/get-path-within-rom-builder-dir.ts";
-import writeFile from "../fileIO/write-file.ts";
-import type { ChapterEvent } from "../types/ChapterEvent.ts";
-import assembleChapterEvent from "./assemble-chapter-event.ts";
+import type { Chapter } from "../../types/Chapter.ts";
 
-export default async function asssembleAndWriteChapterEventAndText({
-  chapterEvent,
-  chapterName,
-}: {
-  chapterEvent: ChapterEvent;
-  chapterName: string;
-}): Promise<void> {
-  const chapterEventString = assembleChapterEvent(chapterEvent);
-  await writeFile(
-    getPathWithinRomBuilderDir(`Events/${chapterName}.event`),
-    chapterEventString
-  );
-  if (chapterEvent.text) {
-    await writeFile(
-      getPathWithinRomBuilderDir(`Text/Chapters/${chapterName}.s`),
-      chapterEvent.text
-    );
-  }
-}
-
-// For manual testing: `deno run chapter-event/assemble-and-write-chapter-event.ts`
-if (import.meta.main) {
-  const testData: ChapterEvent = {
+export const TEST_CHAPTER: Chapter = {
+  name: "Prologue",
+  chapterDataForCsv: {
+    chapterName: "Prologue",
+    chapterNumberPointer: "0x0",
+    objectType: "0x0",
+    palette: "0x0",
+    tileConfiguration: "0x0",
+    map: "TrainingFortressMap",
+    tileAnimation1: "0x0",
+    tileAnimation2: "0x0",
+    triggerableMapChanges: "0x0",
+    fogOfWarSightLevel: 0,
+    gasTrapLevel: 4,
+    battlePreparations: 0,
+    chapterID: "PrologueChapter",
+    supplyList: "",
+    weatherCondition: "0",
+    battleTileset: "0x0",
+    playerPhaseMusic: "Ringabel",
+    enemyPhaseMusic: "Boss_Theme",
+    npcPhaseMusic: "Binding_Vow",
+    playerPhaseMusic2: "Ringabel",
+    enemyPhaseMusic2: "Boss_Theme",
+    npcPhaseMusic2: "Binding_Vow",
+    attackTheme: "Knock_Em_Around",
+    defenseTheme: "We_Stand",
+    destructibleWallsHP: 50,
+    chapterNameID: "PrologueNameText",
+    chapterNameID2: "PrologueNameText",
+    eventDataReference: "PrologueEvent",
+    worldmapChapterPrologueScene: "0x1",
+    prepScreenNumberTimes2: 2,
+    chapterTitleDisplayFadeOut: "0x1",
+    statusObjectiveText: "PrologueStatusText",
+    goalWindowText: "DefeatAllText",
+    goalWindowInformation: "EnemyCountGoal",
+    turnsToCountDownToPlus1: 0,
+    tileMarkerXCoordinate: 255,
+    tileMarkerYCoordinate: 0,
+  },
+  chapterEvent: {
     eventDataReference: "PrologueEvent",
     turnBasedEvents: undefined,
     characterBasedEvents: undefined,
@@ -206,14 +222,6 @@ You're lucky, cadets. The[NL]
 enemy won't let you know[A][NL]
 when they choose to strike![A][X]
 `,
-  };
-
-  console.log(
-    "Path to rom builder dir:",
-    asssembleAndWriteChapterEventAndText({
-      chapterEvent: testData,
-      chapterName: "Prologue",
-    })
-  );
-}
+  },
+};
 
