@@ -1,8 +1,6 @@
 import type { ChapterDataForCsv } from "../../types/ChapterDataForCsv.ts";
 
-export default async function chapterDataToCsv(
-  data: ChapterDataForCsv
-): Promise<string> {
+export default function chapterDataToCsv(data: ChapterDataForCsv): string {
   const values = [
     data.chapterName,
     data.chapterNumberPointer,
@@ -63,10 +61,6 @@ export default async function chapterDataToCsv(
     "0xc",
   ];
 
-  // Convert arrays into CSV format
-  // const csv = `${headers.join(",")}\n${values.join(",")}`;
-
-  // return csv;
   return values.join(",");
 }
 
