@@ -12,6 +12,7 @@ export default function writeCharacterDatasToCsv(
       pathWithinRomBuilder: "CSV/Tables/Characters/CharacterTable.csv",
       content: characterDataToCsv(characterData),
       isOnNewLine: true,
+      createIfFileDoesNotExist: false,
     });
   });
 }

@@ -4,10 +4,12 @@ export default function appendToFileInRomBuilderSync({
   pathWithinRomBuilder,
   content,
   isOnNewLine,
+  createIfFileDoesNotExist,
 }: {
   pathWithinRomBuilder: string;
   content: string;
   isOnNewLine: boolean;
+  createIfFileDoesNotExist: boolean;
 }): void {
   // Add a new line before the content if isOnNewLine is true
   const contentToWrite = isOnNewLine ? `\n${content}` : content;
@@ -17,7 +19,7 @@ export default function appendToFileInRomBuilderSync({
     read: true,
     write: true,
     append: true, // ensures content is added at the end of the file
-    create: false, // ensures the file must already exist, will throw if it doesn't
+    create: createIfFileDoesNotExist,
   });
 
   const encoder = new TextEncoder();
@@ -29,6 +31,8 @@ if (import.meta.main) {
   appendToFileInRomBuilderSync({
     pathWithinRomBuilder: "hello.txt",
     content: "Hello World!!",
+    createIfFileDoesNotExist: true,
     isOnNewLine: true,
   });
 }
+
