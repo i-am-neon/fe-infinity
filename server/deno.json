@@ -1,7 +1,7 @@
 {
   "tasks": {
     "dev": "deno run --watch main.ts",
-    "write-test": "deno run --allow-write write-chapter/whole-chapter/assemble-and-write-whole-chapter.ts"
+    "write-test": "deno run --allow-write --allow-read write-chapter/whole-chapter/assemble-and-write-whole-chapter.ts"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1"

@@ -50,8 +50,6 @@ export const TEST_CHAPTER: Chapter = {
     trapData: undefined,
     units: undefined,
     beginningScene: `CAM1 [7,7]
-LOAD1 0x1 LoadSylvaine
-ENUN
 MUSC Lloyd
 SetBackground(0x10)
 Text(Prologue_BeginningText)
@@ -83,16 +81,10 @@ EndConvo
 STAL 0x20
 MoveToChapter(MilitaryAccept2)`,
     unitLoadData: [
-      `LoadSylvaine:
-UNIT Sylvaine MaligKnight Sylvaine Level(9,NPC,True) [5,7] 0x00 0x00 0x00 0x00 [SilverAxe] GuardAI
-UNIT`,
       `LoadDerekJasper:
 UNIT Derek Knight 0x00 Level(4,Ally,True) [0,9] 0x00 0x00 0x01 REDA3R8 [SteelLance,IronAxe,Vulnerary] NoAI
 UNIT Jasper Cavalier 0x00 Level(5,Ally,True) [0,8] 0x00 0x00 0x01 REDA3R6 [SteelSword,Javelin,Vulnerary] NoAI
 UNIT`,
-      `LoadSylvaine2:
-UNIT Sylvaine MaligKnight Sylvaine Level(9,NPC,True) [2,0] 0x00 0x00 0x00 0x00 [SilverAxe] GuardAI
-EndUnit`,
       `LoadChristinaForrest:
 UNIT BossChristina Cavalier_F BossChristina Level(1,Enemy,True) [6,6] 0x00 0x00 0x00 0x00 [IronLance] GuardAI
 UNIT BossForrest Cavalier BossForrest Level(1,Enemy,True) [6,8] 0x00 0x00 0x00 0x00 [SteelSword] GuardAI
