@@ -1,11 +1,11 @@
 import { assertEquals } from "@std/assert";
 import chapterDataToCsv from "../chapter-data-csv/chapter-data-to-csv.ts";
-import type { ChapterData } from "../types/ChapterData.ts";
+import type { ChapterDataForCsv } from "../types/ChapterDataForCsv.ts";
 
 Deno.test(
   "createChapterDataTableCsv - should return correct CSV format",
   async () => {
-    const testData: ChapterData = {
+    const testData: ChapterDataForCsv = {
       chapterName: "Prologue",
       chapterNumberPointer: "0x0",
       objectType: "0x0",

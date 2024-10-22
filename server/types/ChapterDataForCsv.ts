@@ -1,4 +1,4 @@
-export interface ChapterData {
+export interface ChapterDataForCsv {
   chapterName: string;
   chapterNumberPointer: string;
   objectType: string;

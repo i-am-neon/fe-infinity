@@ -1,7 +1,7 @@
-import type { ChapterData } from "../types/ChapterData.ts";
+import type { ChapterDataForCsv } from "../types/ChapterDataForCsv.ts";
 
 export default async function chapterDataToCsv(
-  data: ChapterData
+  data: ChapterDataForCsv
 ): Promise<string> {
   const values = [
     data.chapterName,

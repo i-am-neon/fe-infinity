@@ -1,12 +1,12 @@
 import getPathWithinRomBuilderDir from "../fileIO/get-path-within-rom-builder-dir.ts";
 import writeFile from "../fileIO/write-file.ts";
-import type { ChapterData } from "../types/ChapterData.ts";
+import type { ChapterDataForCsv } from "../types/ChapterDataForCsv.ts";
 import assembleChapterDataCSV from "./assemble-chapter-data-csv.ts";
 
 export default async function asssembleAndWriteChapterDataCsv({
   chapterDatas,
 }: {
-  chapterDatas: ChapterData[];
+  chapterDatas: ChapterDataForCsv[];
 }): Promise<void> {
   const csvContent = await assembleChapterDataCSV({ chapterDatas });
   await writeFile(
@@ -17,7 +17,7 @@ export default async function asssembleAndWriteChapterDataCsv({
 
 // For manual testing: `deno run chapter-data-csv/assemble-and-write-chapter-data-csv.ts`
 if (import.meta.main) {
-  const testData: ChapterData[] = [
+  const testData: ChapterDataForCsv[] = [
     {
       chapterName: "Prologue",
       chapterNumberPointer: "0x0",
