@@ -1,14 +1,14 @@
 import appendToFileInRomBuilderSync from "../../fileIO/append-to-file-in-rom-builder-sync.ts";
 
 export default function writeCharacterDescriptionText({
-  characterDisplayName,
+  characterName,
   formattedDescription,
 }: {
-  characterDisplayName: string;
+  characterName: string;
   formattedDescription: string;
 }): void {
   const characterNameText = `
-## ${characterDisplayName}DescText
+## ${characterName}DescText
 ${formattedDescription}`;
 
   appendToFileInRomBuilderSync({
@@ -21,7 +21,7 @@ ${formattedDescription}`;
 
 if (import.meta.main) {
   writeCharacterDescriptionText({
-    characterDisplayName: "TestCharacter",
+    characterName: "TestCharacter",
     formattedDescription: `The Captain of the Tiger Brigade,[NL]
 a bold and skilled strategist.[X]`,
   });

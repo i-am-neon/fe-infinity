@@ -4,9 +4,9 @@ import writeCharacterDescriptionText from "./write-character-description-text.ts
 import writeCharacterNameText from "./write-character-name-text.ts";
 
 export default function writeAllCharacterData(character: Character): void {
-  writeCharacterNameText({ characterDisplayName: character.displayName });
+  writeCharacterNameText({ name: character.name });
   writeCharacterDescriptionText({
-    characterDisplayName: character.displayName,
+    characterName: character.name,
     formattedDescription: character.formattedDescription,
   });
   writeCharacterDataToCsv(character.csvData);
