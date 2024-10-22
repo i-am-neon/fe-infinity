@@ -1,10 +1,10 @@
+import type { Chapter } from "../../types/Chapter.ts";
+import initializeCharacterTableCsv from "../chapter-characters/character-table-csv/initialize-character-table-csv.ts";
+import writeAllCharacterData from "../chapter-characters/write-all-character-data.ts";
 import assembleAndWriteChapterDataCsv from "../chapter-data-csv/assemble-and-write-chapter-data-csv.ts";
 import assembleAndWriteChapterEventAndText from "../chapter-event/assemble-and-write-chapter-event-and-text.ts";
-import type { Chapter } from "../../types/Chapter.ts";
-import { TEST_CHAPTER } from "./test-data.ts";
 import writeChapterMap from "../chapter-map/write-chapter-map.ts";
-import initializeCharacterTableCsv from "../chapter-characters/initialize-character-table-csv.ts";
-import writeCharacterDatasToCsv from "../chapter-characters/write-character-datas-to-csv.ts";
+import { TEST_CHAPTER } from "./test-data.ts";
 
 export default async function assembleAndWriteWholeChapter(
   chapter: Chapter
@@ -24,7 +24,8 @@ export default async function assembleAndWriteWholeChapter(
     chapterMap: chapter.chapterMap,
     chapterName: chapter.name,
   });
-  writeCharacterDatasToCsv(chapter.characters);
+  // TODO: write all characters in a loop?
+  await writeAllCharacterData(chapter.characters[0]);
 }
 
 if (import.meta.main) {
