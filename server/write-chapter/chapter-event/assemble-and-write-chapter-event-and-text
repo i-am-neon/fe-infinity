@@ -3,7 +3,7 @@ import writeFile from "../../fileIO/write-file.ts";
 import type { ChapterEvent } from "../../types/ChapterEvent.ts";
 import assembleChapterEvent from "./assemble-chapter-event.ts";
 
-export default async function asssembleAndWriteChapterEventAndText({
+export default async function assembleAndWriteChapterEventAndText({
   chapterEvent,
   chapterName,
 }: {
@@ -210,7 +210,7 @@ when they choose to strike![A][X]
 
   console.log(
     "Path to rom builder dir:",
-    asssembleAndWriteChapterEventAndText({
+    assembleAndWriteChapterEventAndText({
       chapterEvent: testData,
       chapterName: "Prologue",
     })

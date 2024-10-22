@@ -3,7 +3,7 @@ import writeFile from "../../fileIO/write-file.ts";
 import type { ChapterDataForCsv } from "../../types/ChapterDataForCsv.ts";
 import assembleChapterDataCSV from "./assemble-chapter-data-csv.ts";
 
-export default async function asssembleAndWriteChapterDataCsv({
+export default async function assembleAndWriteChapterDataCsv({
   chapterDatas,
 }: {
   chapterDatas: ChapterDataForCsv[];
@@ -100,7 +100,7 @@ if (import.meta.main) {
 
   console.log(
     "Path to rom builder dir:",
-    asssembleAndWriteChapterDataCsv({ chapterDatas: testData })
+    assembleAndWriteChapterDataCsv({ chapterDatas: testData })
   );
 }
 
