@@ -9,5 +9,6 @@ export type ChapterEvent = {
   beginningScene?: string;
   endingScene?: string;
   unitLoadData?: string[];
+  text?: string;
 };
 

@@ -8,8 +8,8 @@ export default function getPathToRomBuilderDir(): string {
   const parentDir = join(thisScriptDir, "../..");
   const romBuilderDir = join(parentDir, "romBuilder");
 
-  console.log("thisScriptDir :>> ", thisScriptDir);
-  console.log("romBuilderDir :>> ", romBuilderDir);
+  // console.log("thisScriptDir :>> ", thisScriptDir);
+  // console.log("romBuilderDir :>> ", romBuilderDir);
 
   return romBuilderDir;
 }
