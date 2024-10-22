@@ -18,7 +18,7 @@ export default function writeCharacterDatasToCsv(
 }
 
 if (import.meta.main) {
-  await initializeCharacterTableCsv();
-  writeCharacterDatasToCsv(TEST_CHAPTER.characters);
+  // await initializeCharacterTableCsv();
+  // writeCharacterDatasToCsv(TEST_CHAPTER.characters);
 }
 
