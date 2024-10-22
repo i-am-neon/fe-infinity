@@ -1,5 +1,5 @@
 import assembleAndWriteChapterDataCsv from "../chapter-data-csv/assemble-and-write-chapter-data-csv.ts";
-import assembleAndWriteChapterEventAndText from "../chapter-event/assemble-and-write-chapter-event-and-text";
+import assembleAndWriteChapterEventAndText from "../chapter-event/assemble-and-write-chapter-event-and-text.ts";
 import type { Chapter } from "../../types/Chapter.ts";
 import { TEST_CHAPTER } from "./test-data.ts";
 import writeChapterMap from "../chapter-map/write-chapter-map.ts";

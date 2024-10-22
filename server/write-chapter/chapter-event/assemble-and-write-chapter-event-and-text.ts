@@ -1,5 +1,4 @@
-import getPathWithinRomBuilderDir from "../../fileIO/get-path-within-rom-builder-dir.ts";
-import writeFile from "../../fileIO/write-file.ts";
+import writeFile from "../../fileIO/write-file-to-rom-builder.ts";
 import type { ChapterEvent } from "../../types/ChapterEvent.ts";
 import assembleChapterEvent from "./assemble-chapter-event.ts";
 
@@ -11,15 +10,9 @@ export default async function assembleAndWriteChapterEventAndText({
   chapterName: string;
 }): Promise<void> {
   const chapterEventString = assembleChapterEvent(chapterEvent);
-  await writeFile(
-    getPathWithinRomBuilderDir(`Events/${chapterName}.event`),
-    chapterEventString
-  );
+  await writeFile(`Events/${chapterName}.event`, chapterEventString);
   if (chapterEvent.text) {
-    await writeFile(
-      getPathWithinRomBuilderDir(`Text/Chapters/${chapterName}.s`),
-      chapterEvent.text
-    );
+    await writeFile(`Text/Chapters/${chapterName}.s`, chapterEvent.text);
   }
 }
 

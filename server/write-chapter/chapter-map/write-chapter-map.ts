@@ -1,5 +1,4 @@
-import getPathWithinRomBuilderDir from "../../fileIO/get-path-within-rom-builder-dir.ts";
-import writeFile from "../../fileIO/write-file.ts";
+import writeFileToRomBuilder from "../../fileIO/write-file-to-rom-builder.ts";
 import type { ChapterMap } from "../../types/ChapterMap.ts";
 
 export default async function writeChapterMap({
@@ -9,10 +8,8 @@ export default async function writeChapterMap({
   chapterMap: ChapterMap;
   chapterName: string;
 }): Promise<void> {
-  await writeFile(
-    getPathWithinRomBuilderDir(
-      `Maps/data/${chapterName}_${chapterMap.mapName}.tmx`
-    ),
+  await writeFileToRomBuilder(
+    `Maps/data/${chapterName}_${chapterMap.mapName}.tmx`,
     chapterMap.tmx
   );
 }

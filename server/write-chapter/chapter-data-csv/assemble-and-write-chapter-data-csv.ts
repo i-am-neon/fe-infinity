@@ -1,5 +1,4 @@
-import getPathWithinRomBuilderDir from "../../fileIO/get-path-within-rom-builder-dir.ts";
-import writeFile from "../../fileIO/write-file.ts";
+import writeFileToRomBuilder from "../../fileIO/write-file-to-rom-builder.ts";
 import type { ChapterDataForCsv } from "../../types/ChapterDataForCsv.ts";
 import assembleChapterDataCSV from "./assemble-chapter-data-csv.ts";
 
@@ -9,8 +8,8 @@ export default async function assembleAndWriteChapterDataCsv({
   chapterDatas: ChapterDataForCsv[];
 }): Promise<void> {
   const csvContent = await assembleChapterDataCSV({ chapterDatas });
-  await writeFile(
-    getPathWithinRomBuilderDir("CSV/Tables/ChapterData/ChapterDataTable.csv"),
+  await writeFileToRomBuilder(
+    "CSV/Tables/ChapterData/ChapterDataTable.csv",
     csvContent
   );
 }
