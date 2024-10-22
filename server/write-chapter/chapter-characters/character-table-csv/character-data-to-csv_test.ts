@@ -1,6 +1,6 @@
 import { assertEquals } from "@std/assert";
-import characterDataToCsv from "./character-data-to-csv.ts";
-import type { CharacterDataForCsv } from "../../types/CharacterDataForCsv.ts";
+import characterDataToCsv from "../character-table-csv/character-data-to-csv.ts";
+import type { CharacterDataForCsv } from "../../../types/CharacterDataForCsv.ts";
 
 Deno.test("Jasper characterDataToCsv", () => {
   const jasperCharacterData: CharacterDataForCsv = {
