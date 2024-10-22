@@ -1,8 +1,10 @@
 import appendToFileInRomBuilderSync from "../../fileIO/append-to-file-in-rom-builder-sync.ts";
 
-export default function writeCharacterNameText(
-  characterDisplayName: string
-): void {
+export default function writeCharacterNameText({
+  characterDisplayName,
+}: {
+  characterDisplayName: string;
+}): void {
   const characterNameText = `
 ## ${characterDisplayName}NameText
 ${characterDisplayName}[X]`;
@@ -16,6 +18,6 @@ ${characterDisplayName}[X]`;
 }
 
 if (import.meta.main) {
-  writeCharacterNameText("TestCharacter");
+  writeCharacterNameText({ characterDisplayName: "TestCharacter" });
 }
 

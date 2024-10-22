@@ -6,5 +6,6 @@ export type Character = {
   csvData: CharacterDataForCsv;
   age: "child" | "young adult" | "mature adult" | "elderly";
   eyeColor: string;
+  formattedDescription: string;
 };
 
