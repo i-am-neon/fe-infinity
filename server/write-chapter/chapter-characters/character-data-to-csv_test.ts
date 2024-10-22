@@ -80,59 +80,60 @@ Deno.test("Derek characterDataToCsv", () => {
 });
 
 Deno.test("Forrest characterDataToCsv", () => {
-  const forrestCharacterData: CharacterDataForCsv = {
-    name: "Forrest",
+  const bossForrestCharacterData: CharacterDataForCsv = {
+    name: "BossForrest",
     nameTextPointer: "ForrestNameText",
     descriptionTextPointer: "ForrestDescText",
-    characterNumber: "Forrest",
+    characterNumber: "BossForrest",
     defaultClass: "Cavalier",
     portrait: "ForrestMug",
     affinity: "WindAff",
     baseLevel: 1,
     baseHP: 6,
-    basePwr: 4,
-    baseMagic: 0,
+    basePwr: 5,
+    baseMagic: 1,
     baseSkl: 5,
-    baseSpd: 2,
-    baseDef: 2,
-    baseRes: 1,
+    baseSpd: 3,
+    baseDef: 1,
+    baseRes: 2,
     baseLck: 6,
     baseCon: 3,
-    swordRank: "Brank",
-    lanceRank: "Crank",
+    swordRank: "Srank",
+    lanceRank: "Srank",
     hpGrowth: 90,
     pwrGrowth: 35,
-    magicGrowth: 10,
+    magicGrowth: 5,
     sklGrowth: 50,
     spdGrowth: 45,
     defGrowth: 20,
     resGrowth: 10,
     lckGrowth: 40,
     levelUpSkillList: "ForrestSkillList|IsPointer",
+    characterAbility2: "IsBoss",
   };
-  const csvResult = characterDataToCsv(forrestCharacterData);
+  const csvResult = characterDataToCsv(bossForrestCharacterData);
 
   const expectedCsvValues =
-    "Forrest,ForrestNameText,ForrestDescText,Forrest,Cavalier,ForrestMug,0x0,WindAff,,1,6,4,0,5,2,2,1,6,3,Brank,Crank,0,0,0,0,0,0,90,35,10,50,45,20,10,40,ForrestSkillList|IsPointer,0x0,0x0,,0x0,0x0,0x0,0x0,0x0,,,,0x0,0x0,0x0";
+    "BossForrest,ForrestNameText,ForrestDescText,BossForrest,Cavalier,ForrestMug,0x0,WindAff,,1,6,5,1,5,3,1,2,6,3,Srank,Srank,0,0,0,0,0,0,90,35,5,50,45,20,10,40,ForrestSkillList|IsPointer,0x0,0x0,,0x0,IsBoss,0x0,0x0,0x0,,,,0x0,0x0,0x0";
   assertEquals(csvResult, expectedCsvValues);
 });
 
 Deno.test("Christina characterDataToCsv", () => {
-  const christinaCharacterData: CharacterDataForCsv = {
-    name: "Christina",
+  const bossChristinaCharacterData: CharacterDataForCsv = {
+    name: "BossChristina",
     nameTextPointer: "ChristinaNameText",
     descriptionTextPointer: "ChristinaDescText",
-    characterNumber: "Christina",
+    characterNumber: "BossChristina",
     defaultClass: "Cavalier_F",
     portrait: "ChristinaMug",
     affinity: "FireAff",
     baseLevel: 1,
     baseHP: 5,
-    basePwr: 4,
-    baseMagic: 1,
-    baseSkl: 3,
-    baseSpd: 1,
-    baseDef: 4,
+    basePwr: 5,
+    baseMagic: 0,
+    baseSkl: 4,
+    baseSpd: 2,
+    baseDef: 0,
     baseRes: 5,
     baseLck: 4,
     baseCon: 4,
@@ -140,18 +141,19 @@ Deno.test("Christina characterDataToCsv", () => {
     lanceRank: "Brank",
     hpGrowth: 95,
     pwrGrowth: 40,
-    magicGrowth: 15,
+    magicGrowth: 10,
     sklGrowth: 45,
     spdGrowth: 40,
-    defGrowth: 35,
+    defGrowth: 30,
     resGrowth: 30,
     lckGrowth: 45,
     levelUpSkillList: "ChristinaSkillList|IsPointer",
+    characterAbility2: "IsBoss",
   };
-  const csvResult = characterDataToCsv(christinaCharacterData);
+  const csvResult = characterDataToCsv(bossChristinaCharacterData);
 
   const expectedCsvValues =
-    "Christina,ChristinaNameText,ChristinaDescText,Christina,Cavalier_F,ChristinaMug,0x0,FireAff,,1,5,4,1,3,1,4,5,4,4,Drank,Brank,0,0,0,0,0,0,95,40,15,45,40,35,30,45,ChristinaSkillList|IsPointer,0x0,0x0,,0x0,0x0,0x0,0x0,0x0,,,,0x0,0x0,0x0";
+    "BossChristina,ChristinaNameText,ChristinaDescText,BossChristina,Cavalier_F,ChristinaMug,0x0,FireAff,,1,5,5,0,4,2,0,5,4,4,Drank,Brank,0,0,0,0,0,0,95,40,10,45,40,30,30,45,ChristinaSkillList|IsPointer,0x0,0x0,,0x0,IsBoss,0x0,0x0,0x0,,,,0x0,0x0,0x0";
   assertEquals(csvResult, expectedCsvValues);
 });
 
