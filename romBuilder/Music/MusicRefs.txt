@@ -2,176 +2,20 @@
 
 List of all music references:
 
-A_Formidable_Friend_Joins_in_the_Fray
-	Military2Accept.event
-	Military3Accept.event
-	Military4AcceptRetreat.event
-	Military4AcceptHold.event
-A_Tragic_Decision
-	Military7PassAltia.event
-	Military6AcceptRetreatHelp.event
-	Military7AcceptRetreatLeave.event
-	Military7AcceptRetreatHelp.event
-	Military5AcceptHold.event
-	Military3Accept.event
-	Military4AcceptRetreat.event
-	Military6AcceptRetreatLeave.event
-	Military4AcceptHold.event
-	Mercenary5MilitiaWaitCesaria.event
-Advance
-	Military5AcceptHold.event
-	Military3Pass.event
-	Military4Pass.event
-	Mercenary5MilitiaWaitArcanae.event
-	Mercenary3Bandit.event
-	Mercenary5MilitiaKill.event
-	Mercenary2Militia.event
-	Mercenary6BanditBandit.event
-	Mercenary7BanditDisband.event
-	Mercenary4MilitiaWait.event
-	Mercenary3MilitiaKill.event
-	Mercenary6BanditDisband.event
-	Mercenary3MilitiaWait.event
-	Mercenary2Bandit.event
-	Mercenary7MilitiaWaitArcanae.event
-	Mercenary1.event
-	Mercenary4Bandit.event
-Anchoret
-	Mage2Leave.event
-	Military7PassAltia.event
-	Military5AcceptRetreatLeave.event
-	Military4AcceptRetreat.event
-	Mercenary7BanditDisband.event
-	Mercenary6BanditDisband.event
-Aquatic_Ruin
-	Mercenary6MilitiaWaitCesaria.event
 Armories_of_Avenir
 	Armories
-Ascent
-	Mage2Leave.event
 Avenir_Healing
 	Healing
-Battle_Two
-	Military5PassAltia.event
-	Mercenary7MilitiaWaitCesaria.event
 Binding_Vow
-	Mercenary6MilitiaWaitArcanae.event
-	Mercenary6BanditDisband.event
-	Mercenary4Bandit.event
 	NPC phase theme: Prologue
-Bloodpool
-	Military5AcceptHold.event
-	Military3Accept.event
-	Military4AcceptRetreat.event
-	Military6AcceptRetreatLeave.event
-	Mercenary7MilitiaWaitCesaria.event
 Boss_Theme
 	Enemy phase theme: Prologue
 Cavern_of_Splendor
 	Mage prep theme
-Chinese_Tea
-	Military4AcceptHold.event
-Combat_Preparation
-	Mercenary5BanditDisband.event
-Comrades
-	Mercenary5MilitiaKill.event
-	Mercenary3MilitiaKill.event
-	Mercenary3MilitiaWait.event
-	Mercenary2Bandit.event
-	Mercenary5BanditDisband.event
-Confront_the_Past
-	Mercenary6MilitiaWaitArcanae.event
-Dark_Clouds_Gather
-	Mage2Leave.event
-Darker
-	Mage2Leave.event
-	Mage1.event
-	Mercenary6MilitiaWaitCesaria.event
-Derris_Kharlan_Appear
-	Military6AcceptRetreatHelp.event
-	Military7AcceptRetreatLeave.event
-	Military7PassHaedric.event
-	Military5AcceptRetreatLeave.event
-	Military3Accept.event
-	Military4AcceptRetreat.event
-	Military6AcceptRetreatLeave.event
-	Mercenary7BanditDisband.event
-Determination
-	Military5PassHaedric.event
-Distant_Roads
-	Mercenary7MilitiaKill.event
-	Mercenary1.event
-Divine_Providence
-	Military6AcceptHold.event
-Dry_Trail
-	Military5AcceptRetreatHelp.event
-	Military5AcceptHold.event
-	Military4Pass.event
-Earthbound
-	Military6AcceptRetreatHelp.event
-	Military5AcceptRetreatHelp.event
-Emergency
-	Mage2Leave.event
-	Military7PassAltia.event
-	Military6PassAltia.event
-	Military7AcceptHold.event
-	Military5PassAltia.event
-	Military2Pass.event
-	Mercenary7MilitiaWaitCesaria.event
-Encroaching_Foe
-	Military5PassAltia.event
-	Military4AcceptRetreat.event
 End_Em
 	Battle theme at Mage1 for Lakshmi
-End_of_the_World
-	Military7AcceptRetreatLeave.event
-	Military7AcceptRetreatHelp.event
-	Military4Pass.event
-	Military4AcceptRetreat.event
-	Military4AcceptHold.event
-FE5_Adversity
-	Military5AcceptHold.event
-FE5_In_Search_of_Victory
-	Military3Pass.event
-	Military7PassHaedric.event
-	Mercenary5MilitiaWaitCesaria.event
-FE5_Loptr_B
-	Military7PassAltia.event
-	Military6PassAltia.event
-FE5_Map_A
-	Military6PassHaedric.event
 FE5_Victory
 	Prologue.event
-	Military3Pass.event
-	Military3Accept.event
-	Military1.event
-	Mercenary6MilitiaWaitCesaria.event
-FE5_Victory_Minor
-	Military6PassAltia.event
-	Military5PassHaedric.event
-	Military5AcceptRetreatLeave.event
-	Mercenary6MilitiaWaitCesaria.event
-	Mercenary5MilitiaWaitCesaria.event
-Forbidden_Forest
-	Military3Pass.event
-	Military4AcceptHold.event
-	Mercenary5MilitiaWaitCesaria.event
-From_the_Darkness
-	Military7PassAltia.event
-	Mercenary6MilitiaWaitArcanae.event
-Green_Emerald
-	Mercenary7MilitiaWaitCesaria.event
-Heavens_Rock_Seat
-	Military6AcceptRetreatHelp.event
-	Military5PassHaedric.event
-	Military7AcceptRetreatLeave.event
-	Military7AcceptRetreatHelp.event
-	Military5PassAltia.event
-	Military3Accept.event
-	Military4Pass.event
-	Military4AcceptRetreat.event
-Hollow_Bastion
-	Military5AcceptHold.event
 I_Dont_Think_We_Can_Take_Em
 	Battle theme at Military1 for BossChristina
 	Battle theme at Military1 for BossForrest
@@ -183,73 +27,16 @@ I_Dont_Think_We_Can_Take_Em
 	Battle theme at MilitaryAccept3 for Sean
 	Battle theme at MilitaryAcceptRetreat4 for BossArya
 	Battle theme at MilitaryAcceptHold4 for BossVal
-Indignation
-	Military5PassAltia.event
-	Military5AcceptRetreatLeave.event
-	Mercenary5MilitiaKill.event
-	Mercenary5BanditBandit.event
-	Mercenary6BanditBandit.event
-	Mercenary4MilitiaKill.event
-	Mercenary7BanditBandit.event
-	Mercenary6MilitiaWaitArcanae.event
-	Mercenary4MilitiaWait.event
-	Mercenary3MilitiaKill.event
-	Mercenary6BanditDisband.event
-	Mercenary2Bandit.event
-	Mercenary7MilitiaKill.event
-	Mercenary7MilitiaWaitArcanae.event
-Into_the_Shadow_of_Victory
-	Military6AcceptHold.event
-	Military7AcceptHold.event
-	Military7PassHaedric.event
-	Military4AcceptRetreat.event
-	Mercenary5MilitiaWaitArcanae.event
-	Mercenary3Bandit.event
-	Mercenary2Militia.event
-	Mercenary6BanditBandit.event
-	Mercenary6MilitiaWaitArcanae.event
-	Mercenary7BanditDisband.event
-	Mercenary3MilitiaWait.event
-	Mercenary2Bandit.event
-	Mercenary7MilitiaKill.event
-	Mercenary4Bandit.event
-	Mercenary6MilitiaKill.event
-Jugdral_Calls
-	Mercenary6MilitiaWaitCesaria.event
-Justice
-	Mercenary6MilitiaWaitCesaria.event
-	Mercenary5MilitiaWaitCesaria.event
-Kakariko_Village
-	Mage1.event
-	Military5AcceptRetreatLeave.event
-	Military6AcceptRetreatLeave.event
 Knock_Em_Around
 	Attack theme: Prologue
-Kratos
-	Military2Accept.event
-	Military7AcceptRetreatHelp.event
-Legacy
-	Mercenary5BanditDisband.event
 Legends_of_Avenir
 	Main Theme
 Life_in_the_Military
 	Military prep theme
 Life_of_a_Mercenary
 	Mercenary prep theme
-Lights_in_the_Dark
-	Mercenary7BanditDisband.event
 Lloyd
 	Prologue.event
-	Military5PassHaedric.event
-	Military7AcceptRetreatLeave.event
-	Military1.event
-	Mercenary7BanditDisband.event
-Lost_Heart
-	Mercenary5MilitiaWaitArcanae.event
-	Mercenary7BanditDisband.event
-LyonTheme
-	Mercenary6BanditDisband.event
-	Mercenary6MilitiaKill.event
 Make_Em_Pay
 	Battle theme at MilitaryPassAltia5 for Richter
 	Battle theme at MilitaryPassAltia7 for BossXavus
@@ -265,64 +52,12 @@ Make_Em_Pay
 	Battle theme at MilitaryAcceptHold6 for Clint
 	Battle theme at MilitaryAcceptHold7 for BossUzkalis
 	Battle theme at MilitaryAcceptHold7 for BossXavus
-March
-	Military3Pass.event
-	Military5AcceptRetreatLeave.event
-	Military4AcceptHold.event
-Mars_Lighthouse
-	Military6PassHaedric.event
-Metropolis
-	Mercenary7MilitiaWaitCesaria.event
-Old_Familiar_Scent
-	Mage1.event
-Ordon_Village
-	Military2Pass.event
-	Military6PassHaedric.event
-	Military4AcceptHold.event
-Overwhelming_Advance
-	Mage2Leave.event
-	Military7PassAltia.event
-	Military5AcceptRetreatHelp.event
-	Military7AcceptHold.event
 Promotions_of_Avenir
 	Promotions
 Pub_Theme
 	Support Theme
-Raid
-	Military7AcceptRetreatLeave.event
-	Military3Accept.event
-	Mercenary5MilitiaKill.event
-	Mercenary7BanditBandit.event
-	Mercenary7BanditDisband.event
-	Mercenary6BanditDisband.event
-	Mercenary6MilitiaKill.event
-Rest_of_the_Heart
-	Mage2Leave.event
-	Military7PassHaedric.event
-Reunion
-	Mercenary3Bandit.event
-	Mercenary5BanditBandit.event
-	Mercenary4Bandit.event
 Ringabel
-	Military1.event
 	Player phase theme: Prologue
-Roar_of_Dominion
-	Military5PassHaedric.event
-	Military6PassHaedric.event
-	Mercenary7MilitiaWaitCesaria.event
-Shadow_of_the_Enemy
-	Mercenary1.event
-Shadows_Approach
-	Mercenary4MilitiaWait.event
-Shihna
-	Military7PassAltia.event
-	Military6AcceptHold.event
-	Military5PassHaedric.event
-	Military7AcceptHold.event
-	Military7AcceptRetreatLeave.event
-	Military7PassHaedric.event
-	Military4AcceptHold.event
-	Mercenary7BanditDisband.event
 Show_Em_Whats_What
 	Battle theme at MercenaryMilitiaKill5 for BossGhost
 	Battle theme at MercenaryMilitiaKill6 for BossJurgen
@@ -342,78 +77,6 @@ Show_Em_Whats_What
 	Battle theme at MercenaryBanditBandit7 for BossXavus
 	Battle theme at MercenaryBanditDisband5 for Mason
 	Battle theme at MercenaryBanditDisband7 for BossXylia
-Snow_Battle
-	Military2Accept.event
-	Military3Accept.event
-	Military2Pass.event
-	Military6PassHaedric.event
-Solve_the_Riddle
-	Mercenary5MilitiaWaitArcanae.event
-	Mercenary5BanditBandit.event
-	Mercenary6BanditBandit.event
-	Mercenary4MilitiaKill.event
-	Mercenary7BanditBandit.event
-	Mercenary6MilitiaWaitArcanae.event
-	Mercenary4MilitiaWait.event
-	Mercenary3MilitiaWait.event
-	Mercenary7MilitiaWaitArcanae.event
-	Mercenary4Bandit.event
-Sorrow
-	Mercenary6BanditBandit.event
-	Mercenary7BanditDisband.event
-	Mercenary7MilitiaWaitArcanae.event
-Stage_One
-	Mage2Leave.event
-	Military5PassHaedric.event
-	Military3Pass.event
-	Military5AcceptRetreatLeave.event
-	Military1.event
-Stage_One_Conquest
-	Military2Accept.event
-	Military4Pass.event
-Strong_Wind_Sound
-	Military4AcceptHold.event
-Tension
-	Military2Accept.event
-	Military5AcceptRetreatHelp.event
-	Military7PassHaedric.event
-	Military6PassHaedric.event
-	Mercenary5MilitiaWaitArcanae.event
-	Mercenary3Bandit.event
-	Mercenary2Militia.event
-	Mercenary5BanditBandit.event
-	Mercenary4MilitiaKill.event
-	Mercenary6MilitiaWaitArcanae.event
-	Mercenary4MilitiaWait.event
-	Mercenary3MilitiaKill.event
-	Mercenary6BanditDisband.event
-	Mercenary2Bandit.event
-	Mercenary5BanditDisband.event
-	Mercenary4Bandit.event
-	Mercenary6MilitiaKill.event
-The_Devoted
-	Military6AcceptRetreatHelp.event
-	Military2Accept.event
-	Military6PassAltia.event
-	Military6PassHaedric.event
-	Military4AcceptHold.event
-	Mercenary5MilitiaWaitCesaria.event
-The_First_Campaign
-	Military1.event
-The_Guardian_Spirit
-	Military7PassAltia.event
-	Military7AcceptHold.event
-	Military7AcceptRetreatLeave.event
-	Military7AcceptRetreatHelp.event
-	Military7PassHaedric.event
-	Mercenary7MilitiaWaitCesaria.event
-	Mercenary7BanditBandit.event
-	Mercenary7BanditDisband.event
-	Mercenary7MilitiaKill.event
-	Mercenary7MilitiaWaitArcanae.event
-The_Law_of_Battle
-	Military7AcceptRetreatHelp.event
-	Military4AcceptRetreat.event
 Thrash_Em
 	Battle theme at Mercenary1 for Henning
 	Battle theme at MercenaryMilitia2 for Gerwick
@@ -425,81 +88,49 @@ Thrash_Em
 	Battle theme at MercenaryBandit3 for Roger
 	Battle theme at MercenaryBandit4 for Mayor
 	Battle theme at MercenaryBandit4 for Tyrone
-Ties_of_Friendship
-	Mercenary5MilitiaWaitArcanae.event
-	Mercenary5BanditDisband.event
-Twinrova
-	Military5AcceptRetreatHelp.event
-	Military7AcceptRetreatLeave.event
-	Military6AcceptRetreatLeave.event
-Twisted_ShadowsB
-	Mercenary7MilitiaKill.event
-Twisted_Shadows_A
-	Mercenary7BanditBandit.event
-Twisted_Shadows_B
-	Military6AcceptHold.event
-	Military7AcceptHold.event
 Vendors_of_Avenir
 	Vendors
-Venus_Lighthouse
-	Military6AcceptRetreatLeave.event
-Victory
-	Military7PassAltia.event
-	Military2Accept.event
-	Military5AcceptRetreatHelp.event
-	Military7AcceptRetreatHelp.event
-	Military7PassHaedric.event
-	Mercenary3Bandit.event
-	Mercenary5BanditBandit.event
-	Mercenary7BanditBandit.event
-	Mercenary7BanditDisband.event
-	Mercenary5BanditDisband.event
-	Mercenary7MilitiaKill.event
-	Mercenary7MilitiaWaitArcanae.event
-	Mercenary1.event
-Victory_March
-	Mage1.event
-	Military4Pass.event
-	Military2Pass.event
 We_Stand
 	Defense theme: Prologue
-Wild_Fields
-	Military6AcceptRetreatHelp.event
-	Military2Accept.event
-	Military5AcceptRetreatHelp.event
-	Military6AcceptRetreatLeave.event
-	Military6PassHaedric.event
-Wind_Sound
-	Military4AcceptHold.event
-With_Us
-	Mercenary2Militia.event
-	Mercenary5MilitiaWaitCesaria.event
-Zelos
-	Military6AcceptRetreatHelp.event
-	Military5AcceptRetreatHelp.event
-	Mercenary4MilitiaKill.event
-	Mercenary5BanditDisband.event
 
 
 List of custom music never referenced:
 Avenir_Healing2
 Encounter_with_Renegades
+Dry_Trail
 Last_Battle_Decision
+Mars_Lighthouse
+Old_Familiar_Scent
+Rest_of_the_Heart
 Burning_Fighting_Spirit
+Snow_Battle
+Wild_Fields
 Town_of_Winds_and_Ruins
+Derris_Kharlan_Appear
+Shihna
 Fatalize
 Fighting_of_the_Spirit
+Anchoret
+Kratos
 Beedles_Shop
+A_Tragic_Decision
+Venus_Lighthouse
 Nara_and_Mara_Battle
 Nekonin
 Victorys_Delight
+Zelos
+Stage_One
 Full_Force
 Fury_Sparks
 Church
 Kavoc
 Like_a_Glint_of_Light
 Off_Key
+The_Law_of_Battle
+Twinrova
 Presidents_Office
+Bloodpool
+Stage_One_Conquest
 Agatio_and_Karst_Battle
 Alachest_Final
 A_Formidable_Foe_Stands_in_the_Way
@@ -507,41 +138,72 @@ Good_Song
 Satorl_Marsh
 Seventh_Saga_Dungeon
 Locked_Girl
+Kakariko_Village
 Boss_Battle
 Bloody_Tears
 Bergentruckung
+Battle_Two
 Battle_against_Demons
+Ordon_Village
 Isaac_Battle
+The_Devoted
+March
+Ascent
+Hollow_Bastion
+The_First_Campaign
+Heavens_Rock_Seat
 Heavens_Gate
+Forbidden_Forest
 Puppet_Ganon
+End_of_the_World
+Earthbound
+Chinese_Tea
 Zelda_Twighlight_Shop
 UN_Owen_Was_Her
 Showdown_with_Hector
 Saturos_Battle
 Inanimate_Dream
+With_Us
 Showdown_with_Hector_New
 A_Hero_Falls
+Emergency
 We_Can_Handle_Em
+Overwhelming_Advance
+Encroaching_Foe
 All_Is_Lost
+Divine_Providence
 Fodlan_Winds
 Oil_Ocean
 Casino_Night
+Aquatic_Ruin
 Hill_Top
+Green_Emerald
 Chemical_Plant
+Metropolis
 Marble_Corridor
 FE5_Advance
+FE5_Adversity
 FE5_Destiny
 FE5_Field
+FE5_In_Search_of_Victory
+FE5_Loptr_B
+FE5_Map_A
 FE5_Searching_the_Enemy
+FE5_Victory_Minor
+Victory_March
 Battle_One
 Courage_and_Pride_from_the_Heart
 Cutting_Edge_of_Notion
 Hand_Combat
+Justice
 Team_Making
+Dark_Clouds_Gather
 Wrath_Strike
 Blindly_Charging
+Darker
 Evil_Approaches
 Judgral_Calls
+Roar_of_Dominion
 Annihilate_Em
 Aquatic_Dystopia
 Cataclysm
@@ -558,168 +220,11 @@ We_Will_Overcome
 We_Will_Persevere
 We_Wont_Give_In
 Winds_across_the_Plains_of_Avenir
+A_Formidable_Friend_Joins_in_the_Fray
 Avatars_of_Avenir
+The_Guardian_Spirit
 
 
 List of vanilla music being used:
-Advance
-	Military5AcceptHold.event
-	Military3Pass.event
-	Military4Pass.event
-	Mercenary5MilitiaWaitArcanae.event
-	Mercenary3Bandit.event
-	Mercenary5MilitiaKill.event
-	Mercenary2Militia.event
-	Mercenary6BanditBandit.event
-	Mercenary7BanditDisband.event
-	Mercenary4MilitiaWait.event
-	Mercenary3MilitiaKill.event
-	Mercenary6BanditDisband.event
-	Mercenary3MilitiaWait.event
-	Mercenary2Bandit.event
-	Mercenary7MilitiaWaitArcanae.event
-	Mercenary1.event
-	Mercenary4Bandit.event
 Binding_Vow
-	Mercenary6MilitiaWaitArcanae.event
-	Mercenary6BanditDisband.event
-	Mercenary4Bandit.event
 	NPC phase theme: Prologue
-Combat_Preparation
-	Mercenary5BanditDisband.event
-Comrades
-	Mercenary5MilitiaKill.event
-	Mercenary3MilitiaKill.event
-	Mercenary3MilitiaWait.event
-	Mercenary2Bandit.event
-	Mercenary5BanditDisband.event
-Confront_the_Past
-	Mercenary6MilitiaWaitArcanae.event
-Determination
-	Military5PassHaedric.event
-Distant_Roads
-	Mercenary7MilitiaKill.event
-	Mercenary1.event
-From_the_Darkness
-	Military7PassAltia.event
-	Mercenary6MilitiaWaitArcanae.event
-Indignation
-	Military5PassAltia.event
-	Military5AcceptRetreatLeave.event
-	Mercenary5MilitiaKill.event
-	Mercenary5BanditBandit.event
-	Mercenary6BanditBandit.event
-	Mercenary4MilitiaKill.event
-	Mercenary7BanditBandit.event
-	Mercenary6MilitiaWaitArcanae.event
-	Mercenary4MilitiaWait.event
-	Mercenary3MilitiaKill.event
-	Mercenary6BanditDisband.event
-	Mercenary2Bandit.event
-	Mercenary7MilitiaKill.event
-	Mercenary7MilitiaWaitArcanae.event
-Into_the_Shadow_of_Victory
-	Military6AcceptHold.event
-	Military7AcceptHold.event
-	Military7PassHaedric.event
-	Military4AcceptRetreat.event
-	Mercenary5MilitiaWaitArcanae.event
-	Mercenary3Bandit.event
-	Mercenary2Militia.event
-	Mercenary6BanditBandit.event
-	Mercenary6MilitiaWaitArcanae.event
-	Mercenary7BanditDisband.event
-	Mercenary3MilitiaWait.event
-	Mercenary2Bandit.event
-	Mercenary7MilitiaKill.event
-	Mercenary4Bandit.event
-	Mercenary6MilitiaKill.event
-Jugdral_Calls
-	Mercenary6MilitiaWaitCesaria.event
-Legacy
-	Mercenary5BanditDisband.event
-Lights_in_the_Dark
-	Mercenary7BanditDisband.event
-Lost_Heart
-	Mercenary5MilitiaWaitArcanae.event
-	Mercenary7BanditDisband.event
-LyonTheme
-	Mercenary6BanditDisband.event
-	Mercenary6MilitiaKill.event
-Raid
-	Military7AcceptRetreatLeave.event
-	Military3Accept.event
-	Mercenary5MilitiaKill.event
-	Mercenary7BanditBandit.event
-	Mercenary7BanditDisband.event
-	Mercenary6BanditDisband.event
-	Mercenary6MilitiaKill.event
-Reunion
-	Mercenary3Bandit.event
-	Mercenary5BanditBandit.event
-	Mercenary4Bandit.event
-Shadow_of_the_Enemy
-	Mercenary1.event
-Shadows_Approach
-	Mercenary4MilitiaWait.event
-Solve_the_Riddle
-	Mercenary5MilitiaWaitArcanae.event
-	Mercenary5BanditBandit.event
-	Mercenary6BanditBandit.event
-	Mercenary4MilitiaKill.event
-	Mercenary7BanditBandit.event
-	Mercenary6MilitiaWaitArcanae.event
-	Mercenary4MilitiaWait.event
-	Mercenary3MilitiaWait.event
-	Mercenary7MilitiaWaitArcanae.event
-	Mercenary4Bandit.event
-Sorrow
-	Mercenary6BanditBandit.event
-	Mercenary7BanditDisband.event
-	Mercenary7MilitiaWaitArcanae.event
-Strong_Wind_Sound
-	Military4AcceptHold.event
-Tension
-	Military2Accept.event
-	Military5AcceptRetreatHelp.event
-	Military7PassHaedric.event
-	Military6PassHaedric.event
-	Mercenary5MilitiaWaitArcanae.event
-	Mercenary3Bandit.event
-	Mercenary2Militia.event
-	Mercenary5BanditBandit.event
-	Mercenary4MilitiaKill.event
-	Mercenary6MilitiaWaitArcanae.event
-	Mercenary4MilitiaWait.event
-	Mercenary3MilitiaKill.event
-	Mercenary6BanditDisband.event
-	Mercenary2Bandit.event
-	Mercenary5BanditDisband.event
-	Mercenary4Bandit.event
-	Mercenary6MilitiaKill.event
-Ties_of_Friendship
-	Mercenary5MilitiaWaitArcanae.event
-	Mercenary5BanditDisband.event
-Twisted_ShadowsB
-	Mercenary7MilitiaKill.event
-Twisted_Shadows_A
-	Mercenary7BanditBandit.event
-Twisted_Shadows_B
-	Military6AcceptHold.event
-	Military7AcceptHold.event
-Victory
-	Military7PassAltia.event
-	Military2Accept.event
-	Military5AcceptRetreatHelp.event
-	Military7AcceptRetreatHelp.event
-	Military7PassHaedric.event
-	Mercenary3Bandit.event
-	Mercenary5BanditBandit.event
-	Mercenary7BanditBandit.event
-	Mercenary7BanditDisband.event
-	Mercenary5BanditDisband.event
-	Mercenary7MilitiaKill.event
-	Mercenary7MilitiaWaitArcanae.event
-	Mercenary1.event
-Wind_Sound
-	Military4AcceptHold.event
