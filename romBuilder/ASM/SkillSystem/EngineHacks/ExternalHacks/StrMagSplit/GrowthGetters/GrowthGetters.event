@@ -55,10 +55,16 @@
 	ALIGN 4
 	Extra_Growth_Boosts:
 	#incbin "Extra_Growth_Boosts.dmp"
-    WORD Growth_Options
-    POIN ItemTable
-	POIN SkillTester
-	WORD BlossomID
-	WORD AptitudeID
-	POIN CreatorApplyBoonBaneGrowth
-	
+			WORD Growth_Options
+			POIN ItemTable
+			POIN SkillTester
+			WORD BlossomID
+			WORD AptitudeID
+			POIN DummyGrowthModifier|1  // Note the '|1' to set bit 0 for Thumb mode
+
+	ALIGN 4
+	DummyGrowthModifier:
+			SHORT 0xB500     // push {lr}
+			SHORT 0x1C08     // mov r0, r1
+			SHORT 0xBD00     // pop {pc}
+			ALIGN 4

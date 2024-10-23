@@ -59,11 +59,7 @@ BYTE 4 (-6) (-45) (-6) // These debuffs at 4 range.
 ALIGN 4
 #include "ChapterNames/fe8_chnames.event"
 
-#include "CharacterCreator/CharacterCreator.event"
-
 #include "ClassExpansion.event"
-
-#include "CopyUnit/Installer.event"
 
 ALIGN 4
 #include "DisplayAllWeaponLevelUps/PromotionRanksFixInstaller.event"
@@ -72,8 +68,6 @@ ALIGN 4
 
 //ALIGN 4
 //#include "Escape-Arrive/Escape Installer.event"
-
-#include "EventParameters/EventParameters.event"
 
 #include "FillAIRangeMap/FillAIDangerMap.event"
 

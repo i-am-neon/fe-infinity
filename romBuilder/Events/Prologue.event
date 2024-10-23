@@ -75,4 +75,5 @@ ENDA
 
 LoadSeraphina:
 UNIT Seraphina Cleric 0x00 Level(5,Ally,True) [0,8] 0x00 0x00 0x01 REDA3R6 [Mend,Vulnerary] NoAI
+//UNIT 0x0 Cleric 0x00 Level(5,Ally,True) [0,8] 0x00 0x00 0x01 0x0 [Mend,Vulnerary] NoAI
 UNIT
