@@ -6,3 +6,7 @@ PortraitTable:
 SeraphinaPortrait:
 #incbin "cache/Seraphina.dmp"
 setMugEntry(SeraphinaMug,SeraphinaPortrait,3,6,3,4)
+
+LiraPortrait:
+#incbin "cache/Lira.dmp"
+setMugEntry(LiraMug,LiraPortrait,3,6,3,4)

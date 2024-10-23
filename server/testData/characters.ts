@@ -16,7 +16,7 @@ export const seraphinaCsvData: CharacterDataForCsv = {
   nameTextPointer: "SeraphinaNameText",
   descriptionTextPointer: "SeraphinaDescText",
   characterNumber: "Seraphina",
-  defaultClass: "Troubadour",
+  defaultClass: "Thief",
   portrait: "SeraphinaMug",
   affinity: "WaterAff",
   baseLevel: 5,
@@ -29,7 +29,7 @@ export const seraphinaCsvData: CharacterDataForCsv = {
   baseRes: 2,
   baseLck: 7,
   baseCon: 3,
-  staffRank: "Drank",
+  swordRank: "Srank",
   hpGrowth: 90,
   pwrGrowth: 35,
   magicGrowth: 10,
@@ -51,3 +51,51 @@ I couldn't save you...[X]`,
   portraitMetadata: seraphinaPortraitMetadata,
 };
 
+export const liraPortraitMetadata: PortraitMetadata = {
+  originalImageName: "Kanna F2E OC 15.png",
+  gender: "female",
+  age: "young adult",
+  hairColor: "blonde",
+  eyeColor: "green",
+  headgear: "none",
+};
+
+export const liraCsvData: CharacterDataForCsv = {
+  name: "Lira",
+  nameTextPointer: "LiraNameText",
+  descriptionTextPointer: "LiraDescText",
+  characterNumber: "Lira",
+  defaultClass: "ArcherF2",
+  portrait: "LiraMug",
+  affinity: "WindAff",
+  baseLevel: 5,
+  baseHP: 10,
+  basePwr: 6,
+  baseMagic: 1,
+  baseSkl: 5,
+  baseSpd: 5,
+  baseDef: 3,
+  baseRes: 4,
+  baseLck: 8,
+  baseCon: 4,
+  bowRank: "Drank",
+  hpGrowth: 80,
+  pwrGrowth: 30,
+  magicGrowth: 50,
+  sklGrowth: 45,
+  spdGrowth: 50,
+  defGrowth: 25,
+  resGrowth: 40,
+  lckGrowth: 55,
+};
+
+export const liraCharacter: Character = {
+  name: "Lira",
+  formattedDescription: `A talented archer who[NL]
+fights with both magic and[NL]
+healing skills.[X]`,
+  formattedDeathQuote: `I failed...[NL]
+I wanted to do more...[X]`,
+  csvData: liraCsvData,
+  portraitMetadata: liraPortraitMetadata,
+};

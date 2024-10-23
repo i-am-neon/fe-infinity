@@ -1,6 +1,6 @@
 import appendToFileInRomBuilderSync from "../../../fileIO/append-to-file-in-rom-builder-sync.ts";
 import type { CharacterDataForCsv } from "../../../types/CharacterDataForCsv.ts";
-import { TEST_CHAPTER } from "../../whole-chapter/test-data.ts";
+import { TEST_CHAPTER } from "../../../testData/test-data.ts";
 import characterDataToCsv from "./character-data-to-csv.ts";
 import initializeCharacterTableCsv from "./initialize-character-table-csv.ts";
 

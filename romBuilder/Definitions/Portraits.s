@@ -10,3 +10,4 @@ SpellswordMCard
 SpellswordFCard
 
 SeraphinaMug
+LiraMug

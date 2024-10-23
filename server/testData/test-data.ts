@@ -1,5 +1,5 @@
-import { seraphinaCharacter } from "../../testData/characters.ts";
-import type { Chapter } from "../../types/Chapter.ts";
+import { liraCharacter, seraphinaCharacter } from "./characters.ts";
+import type { Chapter } from "../types/Chapter.ts";
 
 export const TEST_CHAPTER: Chapter = {
   name: "Prologue",
@@ -58,6 +58,7 @@ FadeOutMusic
 EndConvo
 STAL 0x30
 LOAD1 0x1 LoadSeraphina
+LOAD1 0x1 LoadLira
 ENUN
 NoFade`,
     endingScene: `EnterStop
@@ -71,7 +72,10 @@ STAL 0x20
 MoveToChapter(MilitaryAccept2)`,
     unitLoadData: [
       `LoadSeraphina:
-UNIT Seraphina Cleric 0x00 Level(5,Ally,True) [0,8] 0x00 0x00 0x01 REDA3R6 [Mend,Vulnerary] NoAI
+UNIT Seraphina Thief 0x00 Level(5,Ally,True) [0,8] 0x00 0x00 0x01 REDA3R6 [SilverSword,Vulnerary] NoAI
+UNIT`,
+      `LoadLira:
+UNIT Lira ArcherF2 0x00 Level(5,Enemy,True) [0, 9] 0x00 0x00 0x01 0x0 [IronBow,Vulnerary] AttackInRangeAI
 UNIT`,
     ],
     text: `
@@ -115,6 +119,6 @@ This is Prologue finished text![A][X]
 `,
     mapName: "SkirmishMap",
   },
-  characters: [seraphinaCharacter],
+  characters: [seraphinaCharacter, liraCharacter],
 };
 

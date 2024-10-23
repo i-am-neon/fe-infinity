@@ -52,6 +52,7 @@ FadeOutMusic
 EndConvo
 STAL 0x30
 LOAD1 0x1 LoadSeraphina
+LOAD1 0x1 LoadLira
 ENUN
 NoFade
 ENDA
@@ -74,6 +75,9 @@ ENDA
 /*UNIT DATA*/
 
 LoadSeraphina:
-UNIT Seraphina Cleric 0x00 Level(5,Ally,True) [0,8] 0x00 0x00 0x01 REDA3R6 [Mend,Vulnerary] NoAI
-//UNIT 0x0 Cleric 0x00 Level(5,Ally,True) [0,8] 0x00 0x00 0x01 0x0 [Mend,Vulnerary] NoAI
+UNIT Seraphina Thief 0x00 Level(5,Ally,True) [0,8] 0x00 0x00 0x01 REDA3R6 [SilverSword,Vulnerary] NoAI
+UNIT
+
+LoadLira:
+UNIT Lira ArcherF2 0x00 Level(5,Enemy,True) [0, 9] 0x00 0x00 0x01 0x0 [IronBow,Vulnerary] AttackInRangeAI
 UNIT

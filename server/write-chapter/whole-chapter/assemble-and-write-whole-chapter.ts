@@ -9,7 +9,7 @@ import assembleAndWriteChapterEventAndText from "../chapter-event/assemble-and-w
 import writeChapterMap from "../chapter-map/write-chapter-map.ts";
 import initializeChaptersDotS from "../initialize-chapters-dot-s.ts";
 import writeChapterName from "../write-chapter-name.ts";
-import { TEST_CHAPTER } from "./test-data.ts";
+import { TEST_CHAPTER } from "../../testData/test-data.ts";
 
 export default async function assembleAndWriteWholeChapter(
   chapter: Chapter
@@ -77,8 +77,10 @@ PortraitTable:
     chapterMap: chapter.chapterMap,
     chapterName: chapter.name,
   });
-  // TODO: write all characters in a loop?
-  writeAllCharacterData(chapter.characters[0]);
+
+  for (const character of chapter.characters) {
+    writeAllCharacterData(character);
+  }
 
   /////////////////////////////////////////////
   // DO THESE AFTER ALL CHAPTERS

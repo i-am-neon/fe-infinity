@@ -1,3 +1,4 @@
 //DeathQuote(Character,Chapter,EventID,TextID)
 
 DeathQuote(Seraphina,AllChapters,0x00,SeraphinaDeathText)
+DeathQuote(Lira,AllChapters,0x00,LiraDeathText)
