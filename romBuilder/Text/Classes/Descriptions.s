@@ -163,3 +163,11 @@ fighters. Equip: Swords, Dark.[X]
 ## MurielSageDescText
 Advanced scholars of magical[NL]
 codices. Equip: Anima, staves.[X]
+
+## NarratorDescText
+The current Guardian Spirit[NL]
+who keeps the world in order.[X]
+
+## EmperorDescText
+The emperor of Cesaria. Perhaps[NL]
+the most powerful mortal in Avenir.[X]

@@ -111,3 +111,12 @@ Shade Knight[X]
 
 ## ExecutionerNameText
 Executioner[X]
+
+## GuardianNameText
+Guardian[X]
+
+## NarratorNameText
+Guar. Spirit[X]
+
+## EmperorNameText
+Emperor[X]
