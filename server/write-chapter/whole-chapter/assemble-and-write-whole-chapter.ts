@@ -6,6 +6,8 @@ import assembleAndWriteChapterDataCsv from "../chapter-data-csv/assemble-and-wri
 import initializeChapterDataCsv from "../chapter-data-csv/initialize-chapter-data-csv.ts";
 import assembleAndWriteChapterEventAndText from "../chapter-event/assemble-and-write-chapter-event-and-text.ts";
 import writeChapterMap from "../chapter-map/write-chapter-map.ts";
+import initializeChaptersDotS from "../initialize-chapters-dot-s.ts";
+import writeChapterName from "../write-chapter-name.ts";
 import { TEST_CHAPTER } from "./test-data.ts";
 
 export default async function assembleAndWriteWholeChapter(
@@ -14,10 +16,12 @@ export default async function assembleAndWriteWholeChapter(
   // DO THESE BEFORE WRITING ALL CHAPTERS:
   await initializeCharacterTableCsv();
   await initializeChapterDataCsv();
+  // Initialize Chapter Data files
+  await initializeChaptersDotS();
+  await writeFileToRomBuilder("Text/Chapters/DeathQuotes.s", "");
   // Initialize character data files
   await writeFileToRomBuilder("Text/Characters/Names.s", "");
   await writeFileToRomBuilder("Text/Characters/Descriptions.s", "");
-  await writeFileToRomBuilder("Text/Chapters/DeathQuotes.s", "");
   // Initialize portrait data files
   await writeFileToRomBuilder("Definitions/Portraits.s", "");
   await writeFileToRomBuilder("Definitions/Characters.s", "");
@@ -25,8 +29,7 @@ export default async function assembleAndWriteWholeChapter(
     "Graphics/Portraits/PortraitInstaller.event",
     "ALIGN 4"
   );
-
-  // TODO: writing appends to the last row in the CSV. At the beginning write the header row.
+  writeChapterName(chapter.name);
   await assembleAndWriteChapterDataCsv({
     chapterDatas: [chapter.chapterDataForCsv],
   });
