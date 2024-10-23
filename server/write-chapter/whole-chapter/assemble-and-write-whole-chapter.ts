@@ -23,11 +23,27 @@ export default async function assembleAndWriteWholeChapter(
   await writeFileToRomBuilder("Text/Characters/Names.s", "");
   await writeFileToRomBuilder("Text/Characters/Descriptions.s", "");
   // Initialize portrait data files
-  await writeFileToRomBuilder("Definitions/Portraits.s", "");
+  await writeFileToRomBuilder(
+    "Definitions/Portraits.s",
+    `BattleSageMCard
+BattleSageFCard
+DreadFighterMCard
+DreadFighterFCard
+MaligKnightCard
+AssassinCard
+HalberdierCard
+SentinelCard
+SpellswordMCard
+SpellswordFCard
+`
+  );
   await writeFileToRomBuilder("Definitions/Characters.s", "");
   await writeFileToRomBuilder(
     "Graphics/Portraits/PortraitInstaller.event",
-    "ALIGN 4"
+    `ALIGN 4
+PortraitTable:
+#incbin "VanillaPortraitTable.dmp"
+`
   );
   writeChapterName(chapter.name);
   await assembleAndWriteChapterDataCsv({

@@ -163,7 +163,5 @@ ENDB
 	}
 #endif
 
-#include "Sassy.event"
-
 EndMainPointer:
 END_MAIN

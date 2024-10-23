@@ -5,8 +5,6 @@ export default async function initializeChaptersDotS(): Promise<void> {
 
 #include "Objectives.s"
 
-#include "Escapes.s"
-
 #include "DeathQuotes.s"
 `;
 

@@ -1,2 +1,12 @@
+BattleSageMCard
+BattleSageFCard
+DreadFighterMCard
+DreadFighterFCard
+MaligKnightCard
+AssassinCard
+HalberdierCard
+SentinelCard
+SpellswordMCard
+SpellswordFCard
 
 SeraphinaMug

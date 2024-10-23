@@ -1,4 +1,7 @@
 ALIGN 4
+PortraitTable:
+#incbin "VanillaPortraitTable.dmp"
+
 
 SeraphinaPortrait:
 #incbin "cache/Seraphina.dmp"
