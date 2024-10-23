@@ -342,8 +342,6 @@ WORD 0x203EE80
 ORG 0xD5B80
 WORD 0x203EE80
 
-ORG (TextTable+(4*TactNameText))
-WORD 0x8202bd10//tactician name
 
 // MNC2 Fix
 ORG 0xBD070
