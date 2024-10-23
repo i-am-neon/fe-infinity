@@ -1,4 +1,4 @@
-import writeFileToRomBuilder from "../../fileIO/write-file-to-rom-builder.ts";
+import appendToFileInRomBuilderSync from "../../fileIO/append-to-file-in-rom-builder-sync.ts";
 import type { ChapterDataForCsv } from "../../types/ChapterDataForCsv.ts";
 import assembleChapterDataCSV from "./assemble-chapter-data-csv.ts";
 
@@ -8,10 +8,11 @@ export default async function assembleAndWriteChapterDataCsv({
   chapterDatas: ChapterDataForCsv[];
 }): Promise<void> {
   const csvContent = await assembleChapterDataCSV({ chapterDatas });
-  await writeFileToRomBuilder(
-    "CSV/Tables/ChapterData/ChapterDataTable.csv",
-    csvContent
-  );
+  appendToFileInRomBuilderSync({
+    pathWithinRomBuilder: "CSV/Tables/ChapterData/ChapterDataTable.csv",
+    content: csvContent,
+    isOnNewLine: true,
+  });
 }
 
 // For manual testing: `deno run chapter-data-csv/assemble-and-write-chapter-data-csv.ts`

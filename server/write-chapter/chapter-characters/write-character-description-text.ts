@@ -15,7 +15,6 @@ ${formattedDescription}`;
     pathWithinRomBuilder: "Text/Characters/Descriptions.s",
     content: characterNameText,
     isOnNewLine: true,
-    createIfFileDoesNotExist: true,
   });
 }
 

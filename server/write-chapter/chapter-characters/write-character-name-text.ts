@@ -13,7 +13,6 @@ ${name}[X]`;
     pathWithinRomBuilder: "Text/Characters/Names.s",
     content: characterNameText,
     isOnNewLine: true,
-    createIfFileDoesNotExist: true,
   });
 }
 

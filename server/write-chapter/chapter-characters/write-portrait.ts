@@ -16,7 +16,6 @@ export default async function writePortrait({
     pathWithinRomBuilder: "Definitions/Portraits.s",
     content: `${characterName}Mug`,
     isOnNewLine: true,
-    createIfFileDoesNotExist: true,
   });
 
   // Write character name to Definitions/Characters.s so the script will generate a [LoadFace] definition for the portrait
@@ -24,7 +23,6 @@ export default async function writePortrait({
     pathWithinRomBuilder: "Definitions/Characters.s",
     content: `${characterName}`,
     isOnNewLine: true,
-    createIfFileDoesNotExist: true,
   });
 
   // Write to PortraitInstaller.event
@@ -34,8 +32,8 @@ export default async function writePortrait({
 ${characterName}Portrait:
 #incbin "cache/${characterName}.dmp"
 setMugEntry(${characterName}Mug,${characterName}Portrait,3,6,3,4)`,
+    // setMugEntry(mugEntry, mugLocation, mouthX, mouthY, eyeX, eyeY)
     isOnNewLine: true,
-    createIfFileDoesNotExist: true,
   });
 
   // copy portrait image from assets to rom builder and rename
