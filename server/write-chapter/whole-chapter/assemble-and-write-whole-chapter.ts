@@ -21,6 +21,10 @@ export default async function assembleAndWriteWholeChapter(
   await initializeChaptersDotS();
   await writeFileToRomBuilder("Text/Chapters/DeathQuotes.s", "");
   await writeFileToRomBuilder(
+    "CSV/EAFiles/DeathQuotes.event",
+    "//DeathQuote(Character,Chapter,EventID,TextID)\n"
+  );
+  await writeFileToRomBuilder(
     "Events/MasterEventInstaller.event",
     `
 ALIGN 4

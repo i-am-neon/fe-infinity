@@ -17,6 +17,14 @@ ${formattedDeathQuote}`;
     content: characterDeathQuote,
     isOnNewLine: true,
   });
+
+  // Add the macro to DeathQuotes.event
+  appendToFileInRomBuilderSync({
+    pathWithinRomBuilder: "CSV/EAFiles/DeathQuotes.event",
+    // DeathQuote(Character,Chapter,EventID,TextID)
+    content: `DeathQuote(${characterName},AllChapters,0x00,${characterName}DeathText)`,
+    isOnNewLine: true,
+  });
 }
 
 if (import.meta.main) {
