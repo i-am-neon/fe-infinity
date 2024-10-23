@@ -12,21 +12,8 @@ Boss_Theme
 	Enemy phase theme: Prologue
 Cavern_of_Splendor
 	Mage prep theme
-End_Em
-	Battle theme at Mage1 for Lakshmi
 FE5_Victory
 	Prologue.event
-I_Dont_Think_We_Can_Take_Em
-	Battle theme at Military1 for BossChristina
-	Battle theme at Military1 for BossForrest
-	Battle theme at MilitaryPass2 for Sam
-	Battle theme at MilitaryPass3 for BossConnor
-	Battle theme at MilitaryPass3 for BossAdlez
-	Battle theme at MilitaryPass4 for Dunlas
-	Battle theme at MilitaryAccept2 for Gerald
-	Battle theme at MilitaryAccept3 for Sean
-	Battle theme at MilitaryAcceptRetreat4 for BossArya
-	Battle theme at MilitaryAcceptHold4 for BossVal
 Knock_Em_Around
 	Attack theme: Prologue
 Legends_of_Avenir
@@ -37,57 +24,12 @@ Life_of_a_Mercenary
 	Mercenary prep theme
 Lloyd
 	Prologue.event
-Make_Em_Pay
-	Battle theme at MilitaryPassAltia5 for Richter
-	Battle theme at MilitaryPassAltia7 for BossXavus
-	Battle theme at MilitaryPassHaedric5 for BossShanley
-	Battle theme at MilitaryPassHaedric6 for Dunlas
-	Battle theme at MilitaryPassHaedric7 for BossUzkalis
-	Battle theme at MilitaryAcceptRetreatLeave5 for Halleck
-	Battle theme at MilitaryAcceptRetreatLeave7 for BossEfil
-	Battle theme at MilitaryAcceptRetreatHelp5 for BossShanley
-	Battle theme at MilitaryAcceptRetreatHelp6 for Pascal
-	Battle theme at MilitaryAcceptRetreatHelp7 for XeximClone
-	Battle theme at MilitaryAcceptHold5 for BossHelmer
-	Battle theme at MilitaryAcceptHold6 for Clint
-	Battle theme at MilitaryAcceptHold7 for BossUzkalis
-	Battle theme at MilitaryAcceptHold7 for BossXavus
 Promotions_of_Avenir
 	Promotions
 Pub_Theme
 	Support Theme
 Ringabel
 	Player phase theme: Prologue
-Show_Em_Whats_What
-	Battle theme at MercenaryMilitiaKill5 for BossGhost
-	Battle theme at MercenaryMilitiaKill6 for BossJurgen
-	Battle theme at MercenaryMilitiaKill7 for BossRex
-	Battle theme at MercenaryMilitiaWaitArcanae5 for William
-	Battle theme at MercenaryMilitiaWaitArcanae6 for BossRex
-	Battle theme at MercenaryMilitiaWaitArcanae6 for BossZalius
-	Battle theme at MercenaryMilitiaWaitArcanae7 for BossMaximus
-	Battle theme at MercenaryMilitiaWaitArcanae7 for BossLeyos
-	Battle theme at MercenaryMilitiaWaitArcanae7 for Emperor
-	Battle theme at MercenaryMilitiaWaitCesaria5 for Kaid
-	Battle theme at MercenaryMilitiaWaitCesaria6 for Edward
-	Battle theme at MercenaryMilitiaWaitCesaria7 for BossUzkalis
-	Battle theme at MercenaryBanditBandit5 for BossLeon
-	Battle theme at MercenaryBanditBandit6 for Harken
-	Battle theme at MercenaryBanditBandit7 for BossRex
-	Battle theme at MercenaryBanditBandit7 for BossXavus
-	Battle theme at MercenaryBanditDisband5 for Mason
-	Battle theme at MercenaryBanditDisband7 for BossXylia
-Thrash_Em
-	Battle theme at Mercenary1 for Henning
-	Battle theme at MercenaryMilitia2 for Gerwick
-	Battle theme at MercenaryMilitiaKill3 for Weston
-	Battle theme at MercenaryMilitiaKill4 for Robert
-	Battle theme at MercenaryMilitiaWait3 for BossConnor
-	Battle theme at MercenaryMilitiaWait4 for BossAdlez
-	Battle theme at MercenaryBandit2 for BossArc
-	Battle theme at MercenaryBandit3 for Roger
-	Battle theme at MercenaryBandit4 for Mayor
-	Battle theme at MercenaryBandit4 for Tyrone
 Vendors_of_Avenir
 	Vendors
 We_Stand
@@ -209,10 +151,15 @@ Aquatic_Dystopia
 Cataclysm
 Crossroads
 Drop_Em
+End_Em
 Fields_of_Avenir
+I_Dont_Think_We_Can_Take_Em
 Light_Em_Up
+Make_Em_Pay
+Show_Em_Whats_What
 Sock_It_to_Em
 Take_Em_Down
+Thrash_Em
 We_Strive
 We_Will_Endure
 We_Will_Hold_the_Line

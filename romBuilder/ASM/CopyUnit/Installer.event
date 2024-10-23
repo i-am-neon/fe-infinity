@@ -6,6 +6,4 @@
 ALIGN 4
 gMatchTable:
 //BYTE Character1 Character2
-BYTE Adeline Remus
-BYTE Jasper Derek
 BYTE 0x00 0x00

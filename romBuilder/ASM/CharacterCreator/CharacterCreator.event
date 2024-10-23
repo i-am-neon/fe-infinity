@@ -163,12 +163,6 @@
 	
 	ALIGN 4
 	gAvatarPortraitLookup: // BYTE (gender) (route) ; SHORT (mugID). Used to get a portrait in the main menu based on chosen gender and route.
-	BYTE CreatorMale CreatorMercenary ; SHORT MaleMercMug
-	BYTE CreatorFemale CreatorMercenary ; SHORT FemaleMercMug
-	BYTE CreatorMale CreatorMilitary ; SHORT MaleMilitaryMug
-	BYTE CreatorFemale CreatorMilitary ; SHORT FemaleMilitaryMug
-	BYTE CreatorMale CreatorMage ; SHORT MaleMageMug
-	BYTE CreatorFemale CreatorMage ; SHORT FemaleMageMug
 	WORD 0
 	
 	ALIGN 4
@@ -221,12 +215,6 @@
 	
 	#define ClassMenuOption(Gender,Route,Character1,Class1,Character2,Class2,Character3,Class3,Character4,Class4,Character5,Class5) "BYTE Gender Route Character1 Class1 Character2 Class2 Character3 Class3 Character4 Class4 Character5 Class5"
 	gClassMenuOptions:
-	ClassMenuOption(CreatorMale,CreatorMercenary,PlayerMMercenary,MercenaryM2,PlayerMMyrmidon,MyrmidonM2,PlayerMFighter,Fighter2,PlayerMPirate,Pirate2,PlayerMBrigand,Brigand2)
-	ClassMenuOption(CreatorFemale,CreatorMercenary,PlayerFMercenary,MercenaryF2,PlayerFMyrmidon,MyrmidonF2,PlayerFPegasusKnight,PegasusKnight2,0,0,0,0)
-	ClassMenuOption(CreatorMale,CreatorMilitary,PlayerMCavalier,CavalierM2,PlayerMKnight,KnightM2,PlayerMSoldier,SoldierM2,PlayerMWyvernRider,WyvernRiderM2,PlayerMArcher,ArcherM2)
-	ClassMenuOption(CreatorFemale,CreatorMilitary,PlayerFCavalier,CavalierF2,PlayerFKnight,KnightF2,PlayerFSoldier,SoldierF2,PlayerFWyvernRider,WyvernRiderF2,PlayerFArcher,ArcherF2)
-	ClassMenuOption(CreatorMale,CreatorMage,PlayerMMage,MageM2,PlayerMMonk,MonkM2,PlayerMShaman,ShamanM2,PlayerMSpellsword,SpellswordM2,0,0)
-	ClassMenuOption(CreatorFemale,CreatorMage,PlayerFMage,MageF2,PlayerFMonk,MonkF2,PlayerFShaman,ShamanF2,PlayerFSpellsword,SpellswordF2,0,0)
 	WORD 0 0 0
 	
 	SkillGetter:
@@ -240,16 +228,6 @@
 	
 	ALIGN 4
 	gCreatorRealInventoryList: // BYTE CharacterID Item1 Item2 Item3 Item4 Item5. Special list of different weapons to give aside from (Appropriate item) and (Vulnerary).
-	BYTE PlayerMCavalier SteelSword IronLance Vulnerary 0 0
-	BYTE PlayerFCavalier SteelSword IronLance Vulnerary 0 0
-	BYTE PlayerMKnight SteelLance IronAxe Vulnerary 0 0
-	BYTE PlayerFKnight SteelLance IronAxe Vulnerary 0 0
-	BYTE PlayerMArcher SteelBow Vulnerary 0 0 0
-	BYTE PlayerMArcher SteelBow Vulnerary 0 0 0
-	BYTE PlayerMMonk Lightning Heal Vulnerary 0 0
-	BYTE PlayerFMonk Lightning Heal Vulnerary 0 0
-	BYTE PlayerMSpellsword IronSword Fire Vulnerary 0 0
-	BYTE PlayerFSpellsword IronSword Fire Vulnerary 0 0
 	SHORT 0 0 0
 	
 	gCreatorVulnerary:
