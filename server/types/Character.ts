@@ -5,6 +5,7 @@ export type Character = {
   name: string;
   csvData: CharacterDataForCsv;
   formattedDescription: string;
+  formattedDeathQuote: string;
   portraitMetadata: PortraitMetadata;
 };
 

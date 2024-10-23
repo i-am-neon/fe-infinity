@@ -45,6 +45,8 @@ export const seraphinaCharacter: Character = {
   formattedDescription: `Have you ever seen a main[NL]
 character that starts as a healer?[NL]
 You have now![X]`,
+  formattedDeathQuote: `I'm sorry[NL]
+I couldn't save you...[X]`,
   csvData: seraphinaCsvData,
   portraitMetadata: seraphinaPortraitMetadata,
 };

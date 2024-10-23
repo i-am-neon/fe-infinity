@@ -17,6 +17,7 @@ export default async function assembleAndWriteWholeChapter(
   // Initialize character data files
   await writeFileToRomBuilder("Text/Characters/Names.s", "");
   await writeFileToRomBuilder("Text/Characters/Descriptions.s", "");
+  await writeFileToRomBuilder("Text/Chapters/DeathQuotes.s", "");
   // Initialize portrait data files
   await writeFileToRomBuilder("Definitions/Portraits.s", "");
   await writeFileToRomBuilder("Definitions/Characters.s", "");
