@@ -1,3 +1,4 @@
+import appendToFileInRomBuilderSync from "../../fileIO/append-to-file-in-rom-builder-sync.ts";
 import writeFile from "../../fileIO/write-file-to-rom-builder.ts";
 import type { ChapterEvent } from "../../types/ChapterEvent.ts";
 import assembleChapterEvent from "./assemble-chapter-event.ts";
@@ -14,6 +15,13 @@ export default async function assembleAndWriteChapterEventAndText({
   if (chapterEvent.text) {
     await writeFile(`Text/Chapters/${chapterName}.s`, chapterEvent.text);
   }
+
+  // Add to MasterEventInstaller.event
+  appendToFileInRomBuilderSync({
+    pathWithinRomBuilder: "Events/MasterEventInstaller.event",
+    content: `#include "${chapterName}.event"`,
+    isOnNewLine: true,
+  });
 }
 
 // For manual testing: `deno run chapter-event/assemble-and-write-chapter-event.ts`

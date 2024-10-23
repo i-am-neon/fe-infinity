@@ -1,3 +1,4 @@
+import appendToFileInRomBuilderSync from "../../fileIO/append-to-file-in-rom-builder-sync.ts";
 import writeFileToRomBuilder from "../../fileIO/write-file-to-rom-builder.ts";
 import type { Chapter } from "../../types/Chapter.ts";
 import initializeCharacterTableCsv from "../chapter-characters/character-table-csv/initialize-character-table-csv.ts";
@@ -19,6 +20,18 @@ export default async function assembleAndWriteWholeChapter(
   // Initialize Chapter Data files
   await initializeChaptersDotS();
   await writeFileToRomBuilder("Text/Chapters/DeathQuotes.s", "");
+  await writeFileToRomBuilder(
+    "Events/MasterEventInstaller.event",
+    `
+ALIGN 4
+GameOverStart:
+ASMC 0x800D391
+NoFade
+ENDB
+
+#include "REDAs.event"
+`
+  );
   // Initialize character data files
   await writeFileToRomBuilder("Text/Characters/Names.s", "");
   await writeFileToRomBuilder("Text/Characters/Descriptions.s", "");
@@ -45,6 +58,9 @@ PortraitTable:
 #incbin "VanillaPortraitTable.dmp"
 `
   );
+
+  /////////////////////////////////////////////
+
   writeChapterName(chapter.name);
   await assembleAndWriteChapterDataCsv({
     chapterDatas: [chapter.chapterDataForCsv],
@@ -59,6 +75,16 @@ PortraitTable:
   });
   // TODO: write all characters in a loop?
   writeAllCharacterData(chapter.characters[0]);
+
+  /////////////////////////////////////////////
+  // DO THESE AFTER ALL CHAPTERS
+  // Finalize Chapter data files
+  appendToFileInRomBuilderSync({
+    pathWithinRomBuilder: "Events/MasterEventInstaller.event",
+    content: `EndMainPointer:
+END_MAIN`,
+    isOnNewLine: true,
+  });
 }
 
 if (import.meta.main) {
