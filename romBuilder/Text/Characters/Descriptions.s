@@ -381,3 +381,9 @@ of the Lion Brigade.[X]
 ## LakshmiDescText
 A servant to Uzkalis[NL]
 hunting for artifacts.[X]
+
+
+## SeraphinaDescText
+Have you ever seen a main[NL]
+character that starts as a healer?[NL]
+You have now![X]

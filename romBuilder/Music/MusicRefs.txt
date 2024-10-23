@@ -363,7 +363,6 @@ Sorrow
 	Mercenary7BanditDisband.event
 	Mercenary7MilitiaWaitArcanae.event
 Stage_One
-	Prologue.event
 	Mage2Leave.event
 	Military5PassHaedric.event
 	Military3Pass.event

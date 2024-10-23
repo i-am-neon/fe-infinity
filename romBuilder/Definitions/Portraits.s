@@ -81,3 +81,5 @@ HalberdierCard
 SentinelCard
 SpellswordMCard
 SpellswordFCard
+
+SeraphinaMug

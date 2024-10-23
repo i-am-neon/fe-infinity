@@ -538,3 +538,8 @@ setMugEntry(ZaliusMug,KendrickPortrait,3,6,3,4)
 
 setMugEntry(0x02,KendrickPortrait,3,6,3,4)
 setMugEntry(0x14,KendrickPortrait,3,6,3,4) // Set Eirika and Ephraim to be Maximus and Uzkalis (Debug screen)*/
+
+
+SeraphinaPortrait:
+#incbin "cache/Seraphina.dmp"
+setMugEntry(SeraphinaMug,SeraphinaPortrait,3,5,3,3)

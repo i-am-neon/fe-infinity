@@ -274,3 +274,7 @@ Mistlain[X]
 
 ## AlexisNameText
 Alexis[X]
+
+
+## SeraphinaNameText
+Seraphina[X]

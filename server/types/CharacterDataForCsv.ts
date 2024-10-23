@@ -51,7 +51,7 @@ export interface CharacterDataForCsv {
   defGrowth: number;
   resGrowth: number;
   lckGrowth: number;
-  levelUpSkillList?: string;
+  levelUpSkillList?: string; // if any, would be written in the CSV as `DerekSkillList|IsPointer`. See in romBuilder/ASM/SkillSystem/EngineHacks/SkillSystem/character_skill_lists.event
   personalSkill?: string;
   characterAbility1?: string;
   characterAbility2?: string;
