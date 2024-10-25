@@ -51,7 +51,7 @@ export const TEST_CHAPTER: Chapter = {
     eventDataReference: "PrologueEvent",
     turnBasedEvents: undefined,
     characterBasedEvents: undefined,
-    locationBasedEvents: undefined,
+    locationBasedEvents: `Armory(ArmoryList,0,6)`,
     miscBasedEvents: "DefeatAll(EndingScene)",
     trapData: undefined,
     units: undefined,
@@ -80,10 +80,13 @@ MoveToChapter(MilitaryAccept2)`,
 UNIT Seraphina Valkyrie 0x00 Level(5,Ally,True) [0,8] 0x00 0x00 0x01 REDA3R6 [Shine,Mend,Elixir] NoAI
 UNIT`,
       `LoadLira:
-UNIT Lira ArcherF2 0x00 Level(5,Ally,True) [0, 9] 0x00 0x00 0x01 REDA3R7 [IronBow,Vulnerary] AttackInRangeAI
+UNIT Lira ArcherF2 0x00 Level(5,Ally,True) [0, 9] 0x00 0x00 0x01 REDA3R7 [IronBow,Vulnerary] NoAI
 UNIT Igor ArcherM2 0x00 Level(5,Ally,True) [0, 8] 0x00 0x00 0x01 REDA4R7 [IronBow,Vulnerary] NoAI
-UNIT Ligma ArcherM2 0x00 Level(5,Enemy,True) [0, 7] 0x00 0x00 0x01 REDA3R8 [IronBow,Vulnerary] AttackInRangeAI
+UNIT Ligma ArcherM2 0x00 Level(15,Enemy,True) [12, 7] 0x00 0x00 0x01 0x0 [IronBow,Vulnerary] AttackInRangeAI
 UNIT`,
+      `ArmoryList:
+SHLI SteelSword IronBlade SteelLance ShortSpear SteelAxe ShortAxe SteelBow SteelLongbow SteelShortbow 0x0
+ALIGN 4`,
     ],
     text: `
 ## Prologue_BeginningText

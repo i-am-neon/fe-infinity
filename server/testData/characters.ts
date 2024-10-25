@@ -47,7 +47,7 @@ export const seraphinaCharacter: Character = {
 fights with both magic and[NL]
 healing skills.[X]`,
   formattedDeathQuote: `I failed...[NL]
-I wanted to do more...[X]`,
+I wanted to do more...[A][A][X]`,
   csvData: seraphinaCsvData,
   portraitMetadata: seraphinaPortraitMetadata,
 };
@@ -96,7 +96,7 @@ export const liraCharacter: Character = {
 fights with both magic and[NL]
 healing skills.[X]`,
   formattedDeathQuote: `I failed...[NL]
-I wanted to do more...[X]`,
+I wanted to do more...[A][X]`,
   csvData: liraCsvData,
   portraitMetadata: liraPortraitMetadata,
 };
@@ -145,7 +145,7 @@ export const igorCharacter: Character = {
 fights with both magic and[NL]
 healing skills.[X]`,
   formattedDeathQuote: `I failed...[NL]
-I wanted to do more...[X]`,
+I wanted to do more...[A][A][X]`,
   csvData: igorCsvData,
   portraitMetadata: igorPortraitMetadata,
 };
@@ -194,7 +194,7 @@ export const ligmaCharacter: Character = {
 fights with both magic and[NL]
 healing skills.[X]`,
   formattedDeathQuote: `I failed...[NL]
-I wanted to do more...[X]`,
+I wanted to do more...[A][X]`,
   csvData: ligmaCsvData,
   portraitMetadata: ligmaPortraitMetadata,
 };
