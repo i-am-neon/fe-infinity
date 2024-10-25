@@ -3,6 +3,14 @@ PortraitTable:
 #incbin "VanillaPortraitTable.dmp"
 
 
+IgorPortrait:
+#incbin "cache/Igor.dmp"
+setMugEntry(IgorMug,IgorPortrait,3,6,3,4)
+
+LigmaPortrait:
+#incbin "cache/Ligma.dmp"
+setMugEntry(LigmaMug,LigmaPortrait,3,6,3,4)
+
 SeraphinaPortrait:
 #incbin "cache/Seraphina.dmp"
 setMugEntry(SeraphinaMug,SeraphinaPortrait,3,6,3,4)

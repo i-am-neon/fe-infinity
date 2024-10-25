@@ -16,37 +16,37 @@ export const seraphinaCsvData: CharacterDataForCsv = {
   nameTextPointer: "SeraphinaNameText",
   descriptionTextPointer: "SeraphinaDescText",
   characterNumber: "Seraphina",
-  defaultClass: "Thief",
+  defaultClass: "ArcherM2",
   portrait: "SeraphinaMug",
-  affinity: "WaterAff",
+  affinity: "WindAff",
   baseLevel: 5,
-  baseHP: 9,
-  basePwr: 0,
-  baseMagic: 5,
+  baseHP: 10,
+  basePwr: 6,
+  baseMagic: 1,
   baseSkl: 5,
-  baseSpd: 4,
-  baseDef: 2,
-  baseRes: 2,
-  baseLck: 7,
-  baseCon: 3,
-  swordRank: "Srank",
-  hpGrowth: 90,
-  pwrGrowth: 35,
-  magicGrowth: 10,
-  sklGrowth: 40,
-  spdGrowth: 40,
-  defGrowth: 30,
-  resGrowth: 20,
-  lckGrowth: 50,
+  baseSpd: 5,
+  baseDef: 3,
+  baseRes: 4,
+  baseLck: 8,
+  baseCon: 4,
+  bowRank: "Drank",
+  hpGrowth: 80,
+  pwrGrowth: 30,
+  magicGrowth: 50,
+  sklGrowth: 45,
+  spdGrowth: 50,
+  defGrowth: 25,
+  resGrowth: 40,
+  lckGrowth: 55,
 };
 
 export const seraphinaCharacter: Character = {
   name: "Seraphina",
-  formattedDescription: `Have you ever seen a main[NL]
-character that starts as a healer?[NL]
-You have now![X]`,
-  formattedDeathQuote: `I'm sorry[NL]
-I couldn't save you...[X]`,
+  formattedDescription: `A talented archer who[NL]
+fights with both magic and[NL]
+healing skills.[X]`,
+  formattedDeathQuote: `I failed...[NL]
+I wanted to do more...[X]`,
   csvData: seraphinaCsvData,
   portraitMetadata: seraphinaPortraitMetadata,
 };
@@ -99,3 +99,102 @@ I wanted to do more...[X]`,
   csvData: liraCsvData,
   portraitMetadata: liraPortraitMetadata,
 };
+
+export const igorPortraitMetadata: PortraitMetadata = {
+  originalImageName: "OC Samael Portrait.png",
+  gender: "female",
+  age: "young adult",
+  hairColor: "blonde",
+  eyeColor: "green",
+  headgear: "none",
+};
+
+export const igorCsvData: CharacterDataForCsv = {
+  name: "Igor",
+  nameTextPointer: "IgorNameText",
+  descriptionTextPointer: "IgorDescText",
+  characterNumber: "Igor",
+  defaultClass: "Thief",
+  portrait: "IgorMug",
+  affinity: "WindAff",
+  baseLevel: 5,
+  baseHP: 10,
+  basePwr: 6,
+  baseMagic: 1,
+  baseSkl: 5,
+  baseSpd: 5,
+  baseDef: 3,
+  baseRes: 4,
+  baseLck: 8,
+  baseCon: 4,
+  swordRank: "Drank",
+  hpGrowth: 80,
+  pwrGrowth: 30,
+  magicGrowth: 50,
+  sklGrowth: 45,
+  spdGrowth: 50,
+  defGrowth: 25,
+  resGrowth: 40,
+  lckGrowth: 55,
+};
+
+export const igorCharacter: Character = {
+  name: "Igor",
+  formattedDescription: `A talented archer who[NL]
+fights with both magic and[NL]
+healing skills.[X]`,
+  formattedDeathQuote: `I failed...[NL]
+I wanted to do more...[X]`,
+  csvData: igorCsvData,
+  portraitMetadata: igorPortraitMetadata,
+};
+
+export const ligmaPortraitMetadata: PortraitMetadata = {
+  originalImageName: "OC 1 from Goldblitzx.png",
+  gender: "female",
+  age: "young adult",
+  hairColor: "blonde",
+  eyeColor: "green",
+  headgear: "none",
+};
+
+export const ligmaCsvData: CharacterDataForCsv = {
+  name: "Ligma",
+  nameTextPointer: "LigmaNameText",
+  descriptionTextPointer: "LigmaDescText",
+  characterNumber: "Ligma",
+  defaultClass: "ArcherM2",
+  portrait: "LigmaMug",
+  affinity: "WindAff",
+  baseLevel: 5,
+  baseHP: 10,
+  basePwr: 6,
+  baseMagic: 1,
+  baseSkl: 5,
+  baseSpd: 5,
+  baseDef: 3,
+  baseRes: 4,
+  baseLck: 8,
+  baseCon: 4,
+  bowRank: "Drank",
+  hpGrowth: 80,
+  pwrGrowth: 30,
+  magicGrowth: 50,
+  sklGrowth: 45,
+  spdGrowth: 50,
+  defGrowth: 25,
+  resGrowth: 40,
+  lckGrowth: 55,
+};
+
+export const ligmaCharacter: Character = {
+  name: "Ligma",
+  formattedDescription: `A talented archer who[NL]
+fights with both magic and[NL]
+healing skills.[X]`,
+  formattedDeathQuote: `I failed...[NL]
+I wanted to do more...[X]`,
+  csvData: ligmaCsvData,
+  portraitMetadata: ligmaPortraitMetadata,
+};
+

@@ -2,7 +2,7 @@
 ## Prologue_BeginningText
 [FarRight][LoadSeraphina]
 This is Prologue beginning text![A]
-[MidLeft][CloseEyes][LoadVillagerOldMan]Huh...?[A]
+[MidLeft][CloseEyes][LoadLigma]Huh...?[A]
 [Right]Yep.[A][X]
 
 ## Prologue_FinishedText

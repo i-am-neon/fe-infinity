@@ -9,5 +9,7 @@ SentinelCard
 SpellswordMCard
 SpellswordFCard
 
+IgorMug
+LigmaMug
 SeraphinaMug
 LiraMug

@@ -1,9 +1,19 @@
 
 
+## IgorDescText
+A talented archer who[NL]
+fights with both magic and[NL]
+healing skills.[X]
+
+## LigmaDescText
+A talented archer who[NL]
+fights with both magic and[NL]
+healing skills.[X]
+
 ## SeraphinaDescText
-Have you ever seen a main[NL]
-character that starts as a healer?[NL]
-You have now![X]
+A talented archer who[NL]
+fights with both magic and[NL]
+healing skills.[X]
 
 ## LiraDescText
 A talented archer who[NL]

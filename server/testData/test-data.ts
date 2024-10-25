@@ -1,4 +1,9 @@
-import { liraCharacter, seraphinaCharacter } from "./characters.ts";
+import {
+  liraCharacter,
+  seraphinaCharacter,
+  igorCharacter,
+  ligmaCharacter,
+} from "./characters.ts";
 import type { Chapter } from "../types/Chapter.ts";
 
 export const TEST_CHAPTER: Chapter = {
@@ -72,17 +77,19 @@ STAL 0x20
 MoveToChapter(MilitaryAccept2)`,
     unitLoadData: [
       `LoadSeraphina:
-UNIT Seraphina Thief 0x00 Level(5,Ally,True) [0,8] 0x00 0x00 0x01 REDA3R6 [SilverSword,Vulnerary] NoAI
+UNIT Seraphina ArcherM2 0x00 Level(5,Ally,True) [0,8] 0x00 0x00 0x01 REDA3R6 [IronBow,Vulnerary] NoAI
 UNIT`,
       `LoadLira:
-UNIT Lira ArcherF2 0x00 Level(5,Enemy,True) [0, 9] 0x00 0x00 0x01 0x0 [IronBow,Vulnerary] AttackInRangeAI
+UNIT Lira ArcherF2 0x00 Level(5,Ally,True) [0, 9] 0x00 0x00 0x01 REDA3R7 [IronBow,Vulnerary] AttackInRangeAI
+UNIT Igor ArcherM2 0x00 Level(5,Ally,True) [0, 8] 0x00 0x00 0x01 REDA4R7 [IronBow,Vulnerary] NoAI
+UNIT Ligma ArcherM2 0x00 Level(5,Enemy,True) [0, 7] 0x00 0x00 0x01 REDA3R8 [IronBow,Vulnerary] AttackInRangeAI
 UNIT`,
     ],
     text: `
 ## Prologue_BeginningText
 [FarRight][LoadSeraphina]
 This is Prologue beginning text![A]
-[MidLeft][CloseEyes][LoadVillagerOldMan]Huh...?[A]
+[MidLeft][CloseEyes][LoadLigma]Huh...?[A]
 [Right]Yep.[A][X]
 
 ## Prologue_FinishedText
@@ -119,6 +126,11 @@ This is Prologue finished text![A][X]
 `,
     mapName: "SkirmishMap",
   },
-  characters: [seraphinaCharacter, liraCharacter],
+  characters: [
+    seraphinaCharacter,
+    liraCharacter,
+    igorCharacter,
+    ligmaCharacter,
+  ],
 };
 
