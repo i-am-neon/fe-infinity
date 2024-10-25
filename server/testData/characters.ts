@@ -198,3 +198,101 @@ I wanted to do more...[X]`,
   portraitMetadata: ligmaPortraitMetadata,
 };
 
+export const oneyPortraitMetadata: PortraitMetadata = {
+  originalImageName: "OC 1 from Goldblitzx.png",
+  gender: "female",
+  age: "young adult",
+  hairColor: "blonde",
+  eyeColor: "green",
+  headgear: "none",
+};
+
+export const oneyCsvData: CharacterDataForCsv = {
+  name: "Oney",
+  nameTextPointer: "OneyNameText",
+  descriptionTextPointer: "OneyDescText",
+  characterNumber: "Oney",
+  defaultClass: "ArcherM2",
+  portrait: "OneyMug",
+  affinity: "WindAff",
+  baseLevel: 5,
+  baseHP: 10,
+  basePwr: 6,
+  baseMagic: 1,
+  baseSkl: 5,
+  baseSpd: 5,
+  baseDef: 3,
+  baseRes: 4,
+  baseLck: 8,
+  baseCon: 4,
+  bowRank: "Drank",
+  hpGrowth: 80,
+  pwrGrowth: 30,
+  magicGrowth: 50,
+  sklGrowth: 45,
+  spdGrowth: 50,
+  defGrowth: 25,
+  resGrowth: 40,
+  lckGrowth: 55,
+};
+
+export const oneyCharacter: Character = {
+  name: "Oney",
+  formattedDescription: `A talented archer who[NL]
+fights with both magic and[NL]
+healing skills.[X]`,
+  formattedDeathQuote: `I failed...[NL]
+I wanted to do more...[X]`,
+  csvData: oneyCsvData,
+  portraitMetadata: oneyPortraitMetadata,
+};
+
+export const twoeyPortraitMetadata: PortraitMetadata = {
+  originalImageName: "OC 1 from Goldblitzx.png",
+  gender: "female",
+  age: "young adult",
+  hairColor: "blonde",
+  eyeColor: "green",
+  headgear: "none",
+};
+
+export const twoeyCsvData: CharacterDataForCsv = {
+  name: "Twoey",
+  nameTextPointer: "TwoeyNameText",
+  descriptionTextPointer: "TwoeyDescText",
+  characterNumber: "Twoey",
+  defaultClass: "ArcherM2",
+  portrait: "TwoeyMug",
+  affinity: "WindAff",
+  baseLevel: 5,
+  baseHP: 10,
+  basePwr: 6,
+  baseMagic: 1,
+  baseSkl: 5,
+  baseSpd: 5,
+  baseDef: 3,
+  baseRes: 4,
+  baseLck: 8,
+  baseCon: 4,
+  bowRank: "Drank",
+  hpGrowth: 80,
+  pwrGrowth: 30,
+  magicGrowth: 50,
+  sklGrowth: 45,
+  spdGrowth: 50,
+  defGrowth: 25,
+  resGrowth: 40,
+  lckGrowth: 55,
+};
+
+export const twoeyCharacter: Character = {
+  name: "Twoey",
+  formattedDescription: `A talented archer who[NL]
+fights with both magic and[NL]
+healing skills.[X]`,
+  formattedDeathQuote: `I failed...[NL]
+I wanted to do more...[X]`,
+  csvData: twoeyCsvData,
+  portraitMetadata: twoeyPortraitMetadata,
+};
+

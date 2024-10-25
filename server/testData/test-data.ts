@@ -3,6 +3,8 @@ import {
   seraphinaCharacter,
   igorCharacter,
   ligmaCharacter,
+  oneyCharacter,
+  twoeyCharacter,
 } from "./characters.ts";
 import type { Chapter } from "../types/Chapter.ts";
 
@@ -127,6 +129,8 @@ This is Prologue finished text![A][X]
     mapName: "SkirmishMap",
   },
   characters: [
+    oneyCharacter,
+    twoeyCharacter,
     seraphinaCharacter,
     liraCharacter,
     igorCharacter,
