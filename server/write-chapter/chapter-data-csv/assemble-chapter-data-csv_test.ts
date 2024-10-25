@@ -86,14 +86,12 @@ Deno.test(
       },
     ];
 
-    const expectedCsvHeader =
-      ",Chapter Number Pointer,Object Type,Palette,Tile Configuration,Map,Tile Animation 1,Tile Animation 2,Triggerable Map Changes,Fog of War sight level (0 = No fog),Gas Trap Level,Battle Preparations,Chapter ID,Supply List,,Weather Condition,Battle tileset,,Player Phase music,Enemy Phase music,NPC Phase music,Player Phase music 2,Enemy Phase music 2,NPC Phase music 2,Attack Theme,Defense Theme,,Destructible Walls HP,,Chapter Name ID,Chapter Name ID 2,Event Data Reference,Worldmap Chapter Prologue Scene,,Prep Screen Number * 2,,No. of enemies left for Grasping at Victory,Chapter Title Display Fade-out,Status - Objective Text,Goal Window Text,Goal Window Information,Turns to count down to +1,Protect Character Marker,Tile Marker - X-Coordinate,Tile Marker - Y-Coordinate,,,,ChapterDataUnknown16,ChapterDataUnknown20,ChapterDataUnknown34,ChapterDataUnknown45,ChapterDataUnknown118,ChapterDataUnknown129,ChapterDataUnknown145";
     const expectedCsvValues1 =
       "Prologue,0x0,0x0,0x0,0x0,TrainingFortressMap,0x0,0x0,0x0,0,4,0,PrologueChapter,0,,0,0x0,,Ringabel,Boss_Theme,Binding_Vow,Ringabel,Boss_Theme,Binding_Vow,Knock_Em_Around,We_Stand,,50,,PrologueNameText,PrologueNameText,PrologueEvent,0x1,,2,,1,0x1,PrologueStatusText,DefeatAllText,EnemyCountGoal,0,0x0,255,0,,,,0x100,0x244,0xffffffff000bffffffff,0x42400000424000004240000042400000028002800280028003c003c003c003c005000500050005000640064006400640008080808070707070606060605050505,0xffff00,0x0,0xc";
     const expectedCsvValues2 =
       "MilitaryAccept2,0x0,0x0,0x0,0x0,SkirmishMap,0x0,0x0,0x0,0,4,0,MilitaryAccept2,NormalSupplyList|IsPointer,,0,0x0,,Fodlan_Winds,Encounter_with_Renegades,Binding_Vow,Fodlan_Winds,Encounter_with_Renegades,Binding_Vow,Knock_Em_Around,We_Stand,,50,,Military2AcceptNameText,Military2AcceptNameText,Military2AcceptEvents,0x1,,4,,1,0x1,Military2AcceptStatusText,DefeatBossText,0x0,0,0x0,255,0,,,,0x100,0x244,0xffffffff000bffffffff,0x42400000424000004240000042400000028002800280028003c003c003c003c005000500050005000640064006400640008080808070707070606060605050505,0xffff00,0x0,0xc";
 
-    const expectedCsv = `${expectedCsvHeader}\n${expectedCsvValues1}\n${expectedCsvValues2}`;
+    const expectedCsv = `${expectedCsvValues1}\n${expectedCsvValues2}`;
 
     const csvResult = await assembleChapterDataCSV({ chapterDatas: testData });
 
