@@ -5,16 +5,16 @@ PortraitTable:
 
 SeraphinaPortrait:
 #incbin "cache/Seraphina.dmp"
-setMugEntry(SeraphinaMug,SeraphinaPortrait,3,6,3,4)
+setMugEntry(SeraphinaMug,SeraphinaPortrait,3,5,3,3)
 
 LiraPortrait:
 #incbin "cache/Lira.dmp"
-setMugEntry(LiraMug,LiraPortrait,3,6,3,4)
+setMugEntry(LiraMug,LiraPortrait,3,5,3,3)
 
 IgorPortrait:
 #incbin "cache/Igor.dmp"
-setMugEntry(IgorMug,IgorPortrait,3,6,3,4)
+setMugEntry(IgorMug,IgorPortrait,3,5,3,3)
 
 LigmaPortrait:
 #incbin "cache/Ligma.dmp"
-setMugEntry(LigmaMug,LigmaPortrait,3,6,3,4)
+setMugEntry(LigmaMug,LigmaPortrait,3,5,3,3)

@@ -25,13 +25,15 @@ export default async function writePortrait({
     isOnNewLine: true,
   });
 
+  const { mouthX, mouthY, eyeX, eyeY } = portraitMetadata.eyeMouthOffsets;
+
   // Write to PortraitInstaller.event
   appendToFileInRomBuilderSync({
     pathWithinRomBuilder: "Graphics/Portraits/PortraitInstaller.event",
     content: `
 ${characterName}Portrait:
 #incbin "cache/${characterName}.dmp"
-setMugEntry(${characterName}Mug,${characterName}Portrait,3,6,3,4)`,
+setMugEntry(${characterName}Mug,${characterName}Portrait,${mouthX},${mouthY},${eyeX},${eyeY})`,
     // setMugEntry(mugEntry, mugLocation, mouthX, mouthY, eyeX, eyeY)
     isOnNewLine: true,
   });

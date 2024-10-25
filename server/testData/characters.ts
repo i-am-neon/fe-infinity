@@ -9,6 +9,12 @@ export const seraphinaPortraitMetadata: PortraitMetadata = {
   hairColor: "cyan",
   eyeColor: "red",
   headgear: "hood",
+  eyeMouthOffsets: {
+    mouthX: 3,
+    mouthY: 5,
+    eyeX: 3,
+    eyeY: 3,
+  },
 };
 
 export const seraphinaCsvData: CharacterDataForCsv = {
@@ -59,6 +65,12 @@ export const liraPortraitMetadata: PortraitMetadata = {
   hairColor: "blonde",
   eyeColor: "green",
   headgear: "none",
+  eyeMouthOffsets: {
+    mouthX: 3,
+    mouthY: 5,
+    eyeX: 3,
+    eyeY: 3,
+  },
 };
 
 export const liraCsvData: CharacterDataForCsv = {
@@ -108,6 +120,12 @@ export const igorPortraitMetadata: PortraitMetadata = {
   hairColor: "blonde",
   eyeColor: "green",
   headgear: "none",
+  eyeMouthOffsets: {
+    mouthX: 3,
+    mouthY: 5,
+    eyeX: 3,
+    eyeY: 3,
+  },
 };
 
 export const igorCsvData: CharacterDataForCsv = {
@@ -157,6 +175,12 @@ export const ligmaPortraitMetadata: PortraitMetadata = {
   hairColor: "blonde",
   eyeColor: "green",
   headgear: "none",
+  eyeMouthOffsets: {
+    mouthX: 3,
+    mouthY: 5,
+    eyeX: 3,
+    eyeY: 3,
+  },
 };
 
 export const ligmaCsvData: CharacterDataForCsv = {
