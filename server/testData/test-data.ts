@@ -1,12 +1,10 @@
+import type { Chapter } from "../types/Chapter.ts";
 import {
-  liraCharacter,
-  seraphinaCharacter,
   igorCharacter,
   ligmaCharacter,
-  oneyCharacter,
-  twoeyCharacter,
+  liraCharacter,
+  seraphinaCharacter,
 } from "./characters.ts";
-import type { Chapter } from "../types/Chapter.ts";
 
 export const TEST_CHAPTER: Chapter = {
   name: "Prologue",
@@ -79,7 +77,7 @@ STAL 0x20
 MoveToChapter(MilitaryAccept2)`,
     unitLoadData: [
       `LoadSeraphina:
-UNIT Seraphina ArcherM2 0x00 Level(5,Ally,True) [0,8] 0x00 0x00 0x01 REDA3R6 [IronBow,Vulnerary] NoAI
+UNIT Seraphina Valkyrie 0x00 Level(5,Ally,True) [0,8] 0x00 0x00 0x01 REDA3R6 [Shine,Mend,Elixir] NoAI
 UNIT`,
       `LoadLira:
 UNIT Lira ArcherF2 0x00 Level(5,Ally,True) [0, 9] 0x00 0x00 0x01 REDA3R7 [IronBow,Vulnerary] AttackInRangeAI
@@ -129,8 +127,6 @@ This is Prologue finished text![A][X]
     mapName: "SkirmishMap",
   },
   characters: [
-    oneyCharacter,
-    twoeyCharacter,
     seraphinaCharacter,
     liraCharacter,
     igorCharacter,

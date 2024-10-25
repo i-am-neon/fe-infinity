@@ -54,7 +54,14 @@ SpellswordMCard
 SpellswordFCard
 `
   );
-  await writeFileToRomBuilder("Definitions/Characters.s", "");
+  await writeFileToRomBuilder(
+    "Definitions/Characters.s",
+    `
+// For some reason the first two character data pointers can't be used
+Dummy1
+Dummy2
+`
+  );
   await writeFileToRomBuilder(
     "Graphics/Portraits/PortraitInstaller.event",
     `ALIGN 4
