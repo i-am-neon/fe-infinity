@@ -18,13 +18,6 @@ export default async function writePortrait({
     isOnNewLine: true,
   });
 
-  // Write character name to Definitions/Characters.s so the script will generate a [LoadFace] definition for the portrait
-  appendToFileInRomBuilderSync({
-    pathWithinRomBuilder: "Definitions/Characters.s",
-    content: `${characterName}`,
-    isOnNewLine: true,
-  });
-
   const { mouthX, mouthY, eyeX, eyeY } = portraitMetadata.eyeMouthOffsets;
 
   // Write to PortraitInstaller.event

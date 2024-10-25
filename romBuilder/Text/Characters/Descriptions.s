@@ -19,3 +19,6 @@ healing skills.[X]
 A talented archer who[NL]
 fights with both magic and[NL]
 healing skills.[X]
+
+## CesarianDescText
+A generic enemy soldier.[X]

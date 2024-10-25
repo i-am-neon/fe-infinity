@@ -1,15 +1,15 @@
-import appendToFileInRomBuilderSync from "../../fileIO/append-to-file-in-rom-builder-sync.ts";
-import writeFileToRomBuilder from "../../fileIO/write-file-to-rom-builder.ts";
-import type { Chapter } from "../../types/Chapter.ts";
-import initializeCharacterTableCsv from "../chapter-characters/character-table-csv/initialize-character-table-csv.ts";
-import writeAllCharacterData from "../chapter-characters/write-all-character-data.ts";
-import assembleAndWriteChapterDataCsv from "../chapter-data-csv/assemble-and-write-chapter-data-csv.ts";
-import initializeChapterDataCsv from "../chapter-data-csv/initialize-chapter-data-csv.ts";
-import assembleAndWriteChapterEventAndText from "../chapter-event/assemble-and-write-chapter-event-and-text.ts";
-import writeChapterMap from "../chapter-map/write-chapter-map.ts";
-import initializeChaptersDotS from "../initialize-chapters-dot-s.ts";
-import writeChapterName from "../write-chapter-name.ts";
-import { TEST_CHAPTER } from "../../testData/test-data.ts";
+import appendToFileInRomBuilderSync from "../fileIO/append-to-file-in-rom-builder-sync.ts";
+import writeFileToRomBuilder from "../fileIO/write-file-to-rom-builder.ts";
+import type { Chapter } from "../types/Chapter.ts";
+import initializeCharacterTableCsv from "./chapter-characters/character-table-csv/initialize-character-table-csv.ts";
+import writeAllCharacterData from "./chapter-characters/write-all-character-data.ts";
+import assembleAndWriteChapterDataCsv from "./chapter-data-csv/assemble-and-write-chapter-data-csv.ts";
+import initializeChapterDataCsv from "./chapter-data-csv/initialize-chapter-data-csv.ts";
+import assembleAndWriteChapterEventAndText from "./chapter-event/assemble-and-write-chapter-event-and-text.ts";
+import writeChapterMap from "./chapter-map/write-chapter-map.ts";
+import initializeChaptersDotS from "./initialize-chapters-dot-s.ts";
+import writeChapterName from "./write-chapter-name.ts";
+import { TEST_CHAPTER } from "../testData/test-data.ts";
 
 export default async function assembleAndWriteWholeChapter(
   chapter: Chapter
@@ -85,7 +85,10 @@ PortraitTable:
     chapterName: chapter.name,
   });
 
-  for (const character of chapter.characters) {
+  for (const character of [
+    ...chapter.characters,
+    ...chapter.genericCharacters,
+  ]) {
     writeAllCharacterData(character);
   }
 

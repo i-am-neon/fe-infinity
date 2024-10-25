@@ -24,6 +24,7 @@ export interface CharacterDataForCsv {
   characterNumber: string;
   defaultClass: string;
   portrait: string;
+  isGeneric: boolean;
   affinity: Affinity;
   baseLevel: number;
   baseHP: number;

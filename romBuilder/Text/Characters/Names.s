@@ -11,3 +11,6 @@ Igor[X]
 
 ## LigmaNameText
 Ligma[X]
+
+## CesarianNameText
+Cesarian[X]

@@ -8,7 +8,7 @@ export default function characterDataToCsv(data: CharacterDataForCsv): string {
     data.characterNumber,
     data.defaultClass,
     data.portrait,
-    "0x0", // "Mini Portrait" is not used... however for some reason some in Avenir are "0x3" - are they all Bosses?
+    data.isGeneric ? "0x3" : "0x0", // "Mini Portrait" - 0x0 for non-generic characters, 0x3 for generic characters
     data.affinity,
     "", // empty
     data.baseLevel.toString(),

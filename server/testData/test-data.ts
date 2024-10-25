@@ -1,5 +1,6 @@
 import type { Chapter } from "../types/Chapter.ts";
 import {
+  cesarianGenericCharacter,
   igorCharacter,
   ligmaCharacter,
   liraCharacter,
@@ -83,6 +84,7 @@ UNIT`,
 UNIT Lira ArcherF2 0x00 Level(5,Ally,True) [0, 9] 0x00 0x00 0x01 REDA3R7 [IronBow,Vulnerary] NoAI
 UNIT Igor ArcherM2 0x00 Level(5,Ally,True) [0, 8] 0x00 0x00 0x01 REDA4R7 [IronBow,Vulnerary] NoAI
 UNIT Ligma ArcherM2 0x00 Level(15,Enemy,True) [12, 7] 0x00 0x00 0x01 0x0 [IronBow,Vulnerary] AttackInRangeAI
+UNIT Cesarian Knight Ligma Level(5,Enemy,True) [14,11] 0x00 0x00 0x01 REDA7R8 [IronLance] AttackInRangeAI
 UNIT`,
       `ArmoryList:
 SHLI SteelSword IronBlade SteelLance ShortSpear SteelAxe ShortAxe SteelBow SteelLongbow SteelShortbow 0x0
@@ -135,5 +137,6 @@ This is Prologue finished text![A][X]
     igorCharacter,
     ligmaCharacter,
   ],
+  genericCharacters: [cesarianGenericCharacter],
 };
 
