@@ -4,6 +4,8 @@ import {
   type CharacterIdea,
 } from "@/types/ai/CharacterIdea.ts";
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
+import type { WorldSummary } from "@/types/ai/WorldSummary.ts";
+import { worldSummaryExample } from "@/testData/ai.ts";
 
 const systemMessage = `You are a Fire Emblem Fangame Main Character Builder!
 
@@ -14,21 +16,22 @@ Ensure the character fits within the world's and history and societies.
 The "firstSeenAs" property will always be set to "ally" for the main character.`;
 
 export default async function generateMainCharacterIdea({
-  worldIdea,
+  worldSummary,
 }: {
-  worldIdea: string;
+  worldSummary: WorldSummary;
 }): Promise<CharacterIdea> {
+  const prompt = `World Summary: ${JSON.stringify(worldSummary, null, 2)}`;
+
   return await generateStructuredData({
     schema: CharacterIdeaSchema,
     systemMessage,
-    prompt: worldIdea,
+    prompt,
   });
 }
 
 if (import.meta.main) {
   generateMainCharacterIdea({
-    worldIdea:
-      "In the land of Valdoria, five elemental kingdoms vie for control over the ancient Nexus Crystals, powerful relics that bind their world together, but a dark cult threatens to shatter this balance, awakening an ancient curse.",
+    worldSummary: worldSummaryExample,
   }).then(console.log);
 }
 

@@ -1,6 +1,9 @@
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import type { WorldSummary } from "@/types/ai/WorldSummary.ts";
 
+export const worldIdeaExample =
+  "In the fractured realm of Eldralis, rival kingdoms wield ancient sigils that grant immense power but corrupt the soul, forcing unlikely heroes to unite against a shadowy order seeking to awaken a slumbering god and plunge the world into eternal darkness.";
+
 export const characterIdeaExample: CharacterIdea = {
   name: "Elara Windrider",
   gender: "female",
