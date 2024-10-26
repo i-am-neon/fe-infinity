@@ -11,6 +11,8 @@ export const PortraitMetadataSchema = z.object({
   ]),
   hairColor: z.string(),
   eyeColor: z.string(),
+  vibe: z.string(),
+  // .describe("A three-word description of the character's vibe."),
   eyeMouthOffsets: z.object({
     mouthX: z.number(),
     mouthY: z.number(),
@@ -19,7 +21,7 @@ export const PortraitMetadataSchema = z.object({
   }),
   headgear: z.string().optional(),
   facialHair: z.string().optional(),
-  jewelry: z.string().optional(),
+  accessories: z.string().optional(), // e.g. eye wear, jewelry, etc.
 });
 
 export type PortraitMetadata = z.infer<typeof PortraitMetadataSchema>;
@@ -30,3 +32,4 @@ export const AIPortraitMetadataSchema = PortraitMetadataSchema.omit({
 });
 
 export type AIPortraitMetadata = z.infer<typeof AIPortraitMetadataSchema>;
+
