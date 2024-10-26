@@ -1,6 +1,7 @@
 import {
   AIPortraitMetadataSchema,
   type AIPortraitMetadata,
+  type PortraitMetadata,
 } from "@/types/PortraitMetadata.ts";
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
@@ -16,9 +17,9 @@ export default async function choosePortrait({
   portraitOptions,
   characterIdea,
 }: {
-  portraitOptions: AIPortraitMetadata[];
+  portraitOptions: PortraitMetadata[];
   characterIdea: CharacterIdea;
-}): Promise<AIPortraitMetadata> {
+}): Promise<PortraitMetadata> {
   const systemMessage = `Given a character idea and a list of portrait options, choose the portrait that best fits the character idea.
 Return the index of the chosen portrait option.`;
 
@@ -28,9 +29,10 @@ Portrait Options:
 ${portraitOptions
   .map(
     (portrait, index) => `Index ${index}:
-${JSON.stringify(portrait, null, 2)}`
+${JSON.stringify(AIPortraitMetadataSchema.parse(portrait), null, 2)}`
   )
   .join("\n")}`;
+  // ^ AIPortraitMetadataSchema.parse turns the PortraitMetadata into an AIPortraitMetadata (omits properties we don't need the AI to see)
 
   const { chosenPortraitIndex } = await generateStructuredData({
     systemMessage,
@@ -47,12 +49,11 @@ ${JSON.stringify(portrait, null, 2)}`
 }
 
 if (import.meta.main) {
-  // using the zod schema to omit the extra things in PortraitMetadata that AIPortraitMetadata doesn't have
-  const portraitOptions: AIPortraitMetadata[] = [
-    AIPortraitMetadataSchema.parse(seraphinaPortraitMetadata),
-    AIPortraitMetadataSchema.parse(liraPortraitMetadata),
-    AIPortraitMetadataSchema.parse(igorPortraitMetadata),
-    AIPortraitMetadataSchema.parse(ligmaPortraitMetadata),
+  const portraitOptions: PortraitMetadata[] = [
+    seraphinaPortraitMetadata,
+    liraPortraitMetadata,
+    igorPortraitMetadata,
+    ligmaPortraitMetadata,
   ];
   const characterIdea: CharacterIdea = {
     name: "Elara",
