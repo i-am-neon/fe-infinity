@@ -5,13 +5,9 @@ import generateCharacterClass from "@/ai/assemble-rom-character/assemble-charact
 export default async function assembleCharacterCsvData(
   characterIdea: CharacterIdea
 ): Promise<CharacterDataForCsv> {
-  // generate-character-class (for now only do pre-promoted classes to keep it simple)
-  // programmatically create name and desc pointer, portrait, isGeneric (always false for now)
+  const characterClass = await generateCharacterClass({ characterIdea });
   // generate-character-stats (base and growths)
 
-  const characterClass = await generateCharacterClass({ characterIdea });
-
-  // PLACEHOLDER
   return {
     name: characterIdea.name,
     nameTextPointer: `${characterIdea.name}NameText`,
@@ -19,7 +15,7 @@ export default async function assembleCharacterCsvData(
     characterNumber: characterIdea.name,
     defaultClass: characterClass,
     portrait: `${characterIdea.name}Mug`,
-    isGeneric: false,
+    isGeneric: false, // PLACEHOLDER for now
     affinity: "WindAff",
     baseLevel: 1,
     baseHP: 20,
