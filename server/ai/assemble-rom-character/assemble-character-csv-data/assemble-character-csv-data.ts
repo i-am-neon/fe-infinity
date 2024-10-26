@@ -9,7 +9,24 @@ export default async function assembleCharacterCsvData(
 ): Promise<CharacterDataForCsv> {
   const characterClass = await generateCharacterClass({ characterIdea });
   const affinity = await generateAffinity({ characterIdea });
-  // generate-character-stats (base and growths)
+
+  // Helper function to get ranks for each weapon type
+  const weaponTypes = [
+    "sword",
+    "lance",
+    "axe",
+    "bow",
+    "staff",
+    "anima",
+    "light",
+    "dark",
+  ] as const;
+  const weaponRanks = Object.fromEntries(
+    weaponTypes.map((weaponType) => [
+      `${weaponType}Rank`,
+      getWeaponRank({ romClassName: characterClass, weaponType }),
+    ])
+  );
 
   return {
     name: characterIdea.name,
@@ -20,6 +37,7 @@ export default async function assembleCharacterCsvData(
     portrait: `${characterIdea.name}Mug`,
     isGeneric: false, // PLACEHOLDER for now
     affinity,
+    ...weaponRanks,
     baseLevel: 1,
     baseHP: 20,
     basePwr: 5,
@@ -30,32 +48,6 @@ export default async function assembleCharacterCsvData(
     baseRes: 5,
     baseLck: 5,
     baseCon: 5,
-    swordRank: getWeaponRank({
-      romClassName: characterClass,
-      weaponType: "sword",
-    }),
-    lanceRank: getWeaponRank({
-      romClassName: characterClass,
-      weaponType: "lance",
-    }),
-    axeRank: getWeaponRank({ romClassName: characterClass, weaponType: "axe" }),
-    bowRank: getWeaponRank({ romClassName: characterClass, weaponType: "bow" }),
-    staffRank: getWeaponRank({
-      romClassName: characterClass,
-      weaponType: "staff",
-    }),
-    animaRank: getWeaponRank({
-      romClassName: characterClass,
-      weaponType: "anima",
-    }),
-    lightRank: getWeaponRank({
-      romClassName: characterClass,
-      weaponType: "light",
-    }),
-    darkRank: getWeaponRank({
-      romClassName: characterClass,
-      weaponType: "dark",
-    }),
     hpGrowth: 50,
     pwrGrowth: 50,
     magicGrowth: 50,
