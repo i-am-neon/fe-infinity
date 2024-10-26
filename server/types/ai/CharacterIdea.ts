@@ -19,7 +19,7 @@ export const CharacterIdeaSchema = z.object({
     z.literal("enemy non-boss"),
     z.literal("boss"),
   ]),
-  description: z.string().max(20, "Description must be no more than 20 words"),
+  description: z.string(),
 });
 
 export type CharacterIdea = z.infer<typeof CharacterIdeaSchema>;
