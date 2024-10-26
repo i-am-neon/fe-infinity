@@ -1,4 +1,4 @@
-type Affinity =
+export type Affinity =
   | "NoAff"
   | "FireAff"
   | "ThunderAff"

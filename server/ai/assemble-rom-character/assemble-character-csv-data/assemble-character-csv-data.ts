@@ -1,11 +1,13 @@
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import type { CharacterDataForCsv } from "@/types/CharacterDataForCsv.ts";
 import generateCharacterClass from "@/ai/assemble-rom-character/assemble-character-csv-data/generate-character-class.ts";
+import generateAffinity from "@/ai/assemble-rom-character/assemble-character-csv-data/generate-affinity.ts";
 
 export default async function assembleCharacterCsvData(
   characterIdea: CharacterIdea
 ): Promise<CharacterDataForCsv> {
   const characterClass = await generateCharacterClass({ characterIdea });
+  const affinity = await generateAffinity({ characterIdea });
   // generate-character-stats (base and growths)
 
   return {
@@ -16,7 +18,7 @@ export default async function assembleCharacterCsvData(
     defaultClass: characterClass,
     portrait: `${characterIdea.name}Mug`,
     isGeneric: false, // PLACEHOLDER for now
-    affinity: "WindAff",
+    affinity,
     baseLevel: 1,
     baseHP: 20,
     basePwr: 5,
