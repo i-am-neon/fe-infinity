@@ -4,7 +4,7 @@ import type { ChapterMap } from "./ChapterMap.ts";
 import type { RomCharacter } from "./RomCharacter.ts";
 import type { GenericCharacter } from "./GenericCharacter.ts";
 
-export type Chapter = {
+export type RomChapter = {
   name: string;
   chapterDataForCsv: ChapterDataForCsv;
   chapterEvent: ChapterEvent;

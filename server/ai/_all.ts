@@ -3,9 +3,14 @@ import { allPortraitOptions, worldIdeaExample } from "@/testData/ai.ts";
 import generateMainCharacterIdea from "@/ai/generate-main-character-idea.ts";
 import choosePortrait from "@/ai/choose-portrait.ts";
 import assembleCharacterCsvData from "@/ai/assemble-rom-character/assemble-character-csv-data/assemble-character-csv-data.ts";
+import type { RomChapter } from "@/types/RomChapter.ts";
 
-export default async function allAI(): Promise<void> {
-  const worldSummary = await generateWorldSummary(worldIdeaExample);
+export default async function allAI({
+  worldIdea,
+}: {
+  worldIdea: string;
+}): Promise<RomChapter[]> {
+  const worldSummary = await generateWorldSummary(worldIdea);
   const mainCharacterIdea = await generateMainCharacterIdea({ worldSummary });
 
   const [mainCharacterChosenPortrait, mainCharacterCsvData] = await Promise.all(
@@ -20,9 +25,11 @@ export default async function allAI(): Promise<void> {
 
   console.log(JSON.stringify(mainCharacterChosenPortrait, null, 2));
   console.log(JSON.stringify(mainCharacterCsvData, null, 2));
+
+  return [];
 }
 
 if (import.meta.main) {
-  await allAI();
+  await allAI({ worldIdea: worldIdeaExample });
 }
 

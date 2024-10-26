@@ -1,4 +1,4 @@
-import type { Chapter } from "@/types/Chapter.ts";
+import type { RomChapter } from "../types/RomChapter.ts";
 import {
   cesarianGenericCharacter,
   igorCharacter,
@@ -7,7 +7,7 @@ import {
   seraphinaCharacter,
 } from "@/testData/test-characters.ts";
 
-export const TEST_CHAPTER: Chapter = {
+export const TEST_CHAPTER: RomChapter = {
   name: "Prologue",
   chapterDataForCsv: {
     chapterName: "Prologue",
