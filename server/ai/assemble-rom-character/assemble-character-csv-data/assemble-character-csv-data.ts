@@ -1,5 +1,6 @@
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import type { CharacterDataForCsv } from "@/types/CharacterDataForCsv.ts";
+import generateCharacterClass from "@/ai/assemble-rom-character/assemble-character-csv-data/generate-character-class.ts";
 
 export default async function assembleCharacterCsvData(
   characterIdea: CharacterIdea
@@ -8,14 +9,16 @@ export default async function assembleCharacterCsvData(
   // programmatically create name and desc pointer, portrait, isGeneric (always false for now)
   // generate-character-stats (base and growths)
 
+  const characterClass = await generateCharacterClass({ characterIdea });
+
   // PLACEHOLDER
   return {
     name: characterIdea.name,
-    nameTextPointer: "",
-    descriptionTextPointer: "",
-    characterNumber: "",
-    defaultClass: "",
-    portrait: "",
+    nameTextPointer: `${characterIdea.name}NameText`,
+    descriptionTextPointer: `${characterIdea.name}DescText`,
+    characterNumber: characterIdea.name,
+    defaultClass: characterClass,
+    portrait: `${characterIdea.name}Mug`,
     isGeneric: false,
     affinity: "WindAff",
     baseLevel: 1,

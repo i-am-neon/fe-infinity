@@ -145,3 +145,4 @@ export const allPortraitOptions: PortraitMetadata[] = [
   igorPortraitMetadata,
   ligmaPortraitMetadata,
 ];
+

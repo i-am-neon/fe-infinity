@@ -7,6 +7,7 @@ import {
   classOptionsFemaleOnly,
   classOptionsAllGenders,
 } from "@/ai/assemble-rom-character/assemble-character-csv-data/class-options.ts";
+import classNameToRomClassName from "@/ai/assemble-rom-character/assemble-character-csv-data/class-name-to-rom-class-name.ts";
 
 export default async function generateCharacterClass({
   characterIdea,
@@ -38,7 +39,10 @@ ${JSON.stringify(genderedClassOptions, null, 2)}`;
     }),
   });
 
-  return className;
+  return classNameToRomClassName({
+    className,
+    characterGender: characterIdea.gender,
+  });
 }
 
 if (import.meta.main) {
