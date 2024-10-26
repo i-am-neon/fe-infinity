@@ -4,7 +4,7 @@ import "jsr:@std/dotenv/load";
 import {
   AIPortraitMetadataSchema,
   type AIPortraitMetadata,
-} from "../../types/PortraitMetadata.ts";
+} from "../types/PortraitMetadata.ts";
 
 const systemMessage = `Generate metadata for a portrait of this character.
 Guidelines:
