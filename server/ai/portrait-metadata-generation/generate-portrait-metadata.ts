@@ -9,7 +9,9 @@ import {
 const systemMessage = `Generate metadata for a portrait of this character.
 Guidelines:
 - "vibe" should be a three-word description of the character's vibe separated by commas.
-- "accessories" should include any eye wear, jewelry, etc.`;
+- "accessories" should include any eye wear, jewelry, etc.
+
+If the thing does not exist, simply do not include it in the return value. For example if there is no facial hair or accessories, simply don't include the "facialHair" or "accessories" field in the return value.`;
 
 async function generatePortraitMetadata({
   url,
@@ -43,18 +45,18 @@ if (import.meta.main) {
       name: "Seraphina",
       url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Ghostblade/%7BGhostblade%7D%20OC%201%20%5BF2E%5D.png",
     },
-    // {
-    //   name: "Lira",
-    //   url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Kanna/%7BKanna%7D%20%5BF2E%5D%20OC%2015.png",
-    // },
-    // {
-    //   name: "Igor",
-    //   url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Ghostblade/%7BGhostblade%7D%20OC%20Miyas%20Lord%20%5BF2E%5D.png",
-    // },
-    // {
-    //   name: "Ligma",
-    //   url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Goldblitzx/%7BGoldblitzx%7D%20%5BF2U%5D%20OC%201.png",
-    // },
+    {
+      name: "Lira",
+      url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Kanna/%7BKanna%7D%20%5BF2E%5D%20OC%2015.png",
+    },
+    {
+      name: "Igor",
+      url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Ghostblade/%7BGhostblade%7D%20OC%20Miyas%20Lord%20%5BF2E%5D.png",
+    },
+    {
+      name: "Ligma",
+      url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Goldblitzx/%7BGoldblitzx%7D%20%5BF2U%5D%20OC%201.png",
+    },
   ];
 
   const results = await Promise.all(

@@ -12,6 +12,7 @@ export const PortraitMetadataSchema = z.object({
   hairColor: z.string(),
   eyeColor: z.string(),
   vibe: z.string(),
+  clothing: z.string(),
   // .describe("A three-word description of the character's vibe."),
   eyeMouthOffsets: z.object({
     mouthX: z.number(),

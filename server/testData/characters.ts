@@ -11,7 +11,7 @@ export const seraphinaPortraitMetadata: PortraitMetadata = {
   eyeColor: "red",
   vibe: "mystical, serene, wise",
   headgear: "hood",
-  accessories: "none",
+  clothing: "hooded cloak",
   eyeMouthOffsets: {
     mouthX: 3,
     mouthY: 5,
@@ -69,6 +69,7 @@ export const liraPortraitMetadata: PortraitMetadata = {
   hairColor: "blonde",
   eyeColor: "green",
   vibe: "calm, serene, gentle",
+  clothing: "green scarf, dark top",
   accessories: "hair clip",
   eyeMouthOffsets: {
     mouthX: 3,
@@ -126,9 +127,8 @@ export const igorPortraitMetadata: PortraitMetadata = {
   hairColor: "silver",
   eyeColor: "unknown",
   vibe: "serious, noble, determined",
+  clothing: "military uniform",
   headgear: "crown",
-  facialHair: "none",
-  accessories: "none",
   eyeMouthOffsets: {
     mouthX: 3,
     mouthY: 5,
@@ -186,6 +186,7 @@ export const ligmaPortraitMetadata: PortraitMetadata = {
   eyeColor: "green",
   vibe: "confident, adventurous, friendly",
   accessories: "scarf",
+  clothing: "green tunic with a red scarf",
   eyeMouthOffsets: {
     mouthX: 3,
     mouthY: 5,
