@@ -8,7 +8,7 @@ export type Affinity =
   | "LightAff"
   | "AnimaAff";
 
-type WeaponRank =
+export type WeaponRank =
   | "0"
   | "Erank"
   | "Drank"

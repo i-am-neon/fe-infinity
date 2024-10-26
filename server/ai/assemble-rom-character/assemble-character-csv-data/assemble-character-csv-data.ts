@@ -2,6 +2,7 @@ import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import type { CharacterDataForCsv } from "@/types/CharacterDataForCsv.ts";
 import generateCharacterClass from "@/ai/assemble-rom-character/assemble-character-csv-data/generate-character-class.ts";
 import generateAffinity from "@/ai/assemble-rom-character/assemble-character-csv-data/generate-affinity.ts";
+import getWeaponRank from "@/ai/assemble-rom-character/assemble-character-csv-data/get-weapon-rank.ts";
 
 export default async function assembleCharacterCsvData(
   characterIdea: CharacterIdea
@@ -29,14 +30,32 @@ export default async function assembleCharacterCsvData(
     baseRes: 5,
     baseLck: 5,
     baseCon: 5,
-    swordRank: "0",
-    lanceRank: "0",
-    axeRank: "0",
-    bowRank: "0",
-    staffRank: "0",
-    animaRank: "0",
-    lightRank: "0",
-    darkRank: "0",
+    swordRank: getWeaponRank({
+      romClassName: characterClass,
+      weaponType: "sword",
+    }),
+    lanceRank: getWeaponRank({
+      romClassName: characterClass,
+      weaponType: "lance",
+    }),
+    axeRank: getWeaponRank({ romClassName: characterClass, weaponType: "axe" }),
+    bowRank: getWeaponRank({ romClassName: characterClass, weaponType: "bow" }),
+    staffRank: getWeaponRank({
+      romClassName: characterClass,
+      weaponType: "staff",
+    }),
+    animaRank: getWeaponRank({
+      romClassName: characterClass,
+      weaponType: "anima",
+    }),
+    lightRank: getWeaponRank({
+      romClassName: characterClass,
+      weaponType: "light",
+    }),
+    darkRank: getWeaponRank({
+      romClassName: characterClass,
+      weaponType: "dark",
+    }),
     hpGrowth: 50,
     pwrGrowth: 50,
     magicGrowth: 50,
