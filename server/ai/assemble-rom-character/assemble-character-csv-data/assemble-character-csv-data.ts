@@ -4,12 +4,20 @@ import generateCharacterClass from "@/ai/assemble-rom-character/assemble-charact
 import generateAffinity from "@/ai/assemble-rom-character/assemble-character-csv-data/generate-affinity.ts";
 import getWeaponRank from "@/ai/assemble-rom-character/assemble-character-csv-data/get-weapon-rank.ts";
 import generateCharacterStats from "@/ai/assemble-rom-character/assemble-character-csv-data/generate-character-stats.ts";
+import { characterIdeaExample } from "@/testData/ai.ts";
 
 export default async function assembleCharacterCsvData(
   characterIdea: CharacterIdea
 ): Promise<CharacterDataForCsv> {
-  const characterClass = await generateCharacterClass({ characterIdea });
-  const affinity = await generateAffinity({ characterIdea });
+  // Run async calls concurrently
+  const [characterClass, affinity, stats] = await Promise.all([
+    generateCharacterClass({ characterIdea }),
+    generateAffinity({ characterIdea }),
+    generateCharacterStats({
+      characterIdea,
+      characterClass: await generateCharacterClass({ characterIdea }),
+    }),
+  ]);
 
   // Helper function to get ranks for each weapon type
   const weaponTypes = [
@@ -29,8 +37,6 @@ export default async function assembleCharacterCsvData(
     ])
   );
 
-  const stats = await generateCharacterStats({ characterIdea, characterClass });
-
   return {
     name: characterIdea.name,
     nameTextPointer: `${characterIdea.name}NameText`,
@@ -46,3 +52,7 @@ export default async function assembleCharacterCsvData(
   };
 }
 
+if (import.meta.main) {
+  const result = await assembleCharacterCsvData(characterIdeaExample);
+  console.log(JSON.stringify(result, null, 2));
+}
