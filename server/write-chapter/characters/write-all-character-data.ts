@@ -1,5 +1,5 @@
 import appendToFileInRomBuilderSync from "@/fileIO/append-to-file-in-rom-builder-sync.ts";
-import type { Character } from "@/types/Character.ts";
+import type { RomCharacter } from "../../types/RomCharacter.ts";
 import type { GenericCharacter } from "@/types/GenericCharacter.ts";
 import writeCharacterDataToCsv from "@/write-chapter/characters/character-table-csv/write-character-data-to-csv.ts";
 import writeCharacterDescriptionText from "@/write-chapter/characters/write-character-description-text.ts";
@@ -8,7 +8,7 @@ import writeDeathQuote from "@/write-chapter/characters/write-death-quote.ts";
 import writePortrait from "@/write-chapter/characters/write-portrait.ts";
 
 export default function writeAllCharacterData(
-  character: Character | GenericCharacter
+  character: RomCharacter | GenericCharacter
 ): void {
   writeCharacterNameText({ name: character.name });
   writeCharacterDescriptionText({

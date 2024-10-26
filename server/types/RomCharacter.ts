@@ -1,7 +1,7 @@
 import type { CharacterDataForCsv } from "./CharacterDataForCsv.ts";
 import type { PortraitMetadata } from "./PortraitMetadata.ts";
 
-export type Character = {
+export type RomCharacter = {
   name: string;
   csvData: CharacterDataForCsv;
   formattedDescription: string;

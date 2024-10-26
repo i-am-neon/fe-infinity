@@ -1,4 +1,4 @@
-import type { Character } from "@/types/Character.ts";
+import type { RomCharacter } from "../types/RomCharacter.ts";
 import type { CharacterDataForCsv } from "@/types/CharacterDataForCsv.ts";
 import type { GenericCharacter } from "@/types/GenericCharacter.ts";
 import type { PortraitMetadata } from "@/types/PortraitMetadata.ts";
@@ -51,7 +51,7 @@ export const seraphinaCsvData: CharacterDataForCsv = {
   lckGrowth: 55,
 };
 
-export const seraphinaCharacter: Character = {
+export const seraphinaCharacter: RomCharacter = {
   name: "Seraphina",
   formattedDescription: `A talented archer who[NL]
 fights with both magic and[NL]
@@ -109,7 +109,7 @@ export const liraCsvData: CharacterDataForCsv = {
   lckGrowth: 55,
 };
 
-export const liraCharacter: Character = {
+export const liraCharacter: RomCharacter = {
   name: "Lira",
   formattedDescription: `A talented archer who[NL]
 fights with both magic and[NL]
@@ -167,7 +167,7 @@ export const igorCsvData: CharacterDataForCsv = {
   lckGrowth: 55,
 };
 
-export const igorCharacter: Character = {
+export const igorCharacter: RomCharacter = {
   name: "Igor",
   formattedDescription: `A talented archer who[NL]
 fights with both magic and[NL]
@@ -225,7 +225,7 @@ export const ligmaCsvData: CharacterDataForCsv = {
   lckGrowth: 55,
 };
 
-export const ligmaCharacter: Character = {
+export const ligmaCharacter: RomCharacter = {
   name: "Ligma",
   formattedDescription: `A talented archer who[NL]
 fights with both magic and[NL]

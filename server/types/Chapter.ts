@@ -1,7 +1,7 @@
 import type { ChapterDataForCsv } from "./ChapterDataForCsv.ts";
 import type { ChapterEvent } from "./ChapterEvent.ts";
 import type { ChapterMap } from "./ChapterMap.ts";
-import type { Character } from "./Character.ts";
+import type { RomCharacter } from "./RomCharacter.ts";
 import type { GenericCharacter } from "./GenericCharacter.ts";
 
 export type Chapter = {
@@ -9,7 +9,7 @@ export type Chapter = {
   chapterDataForCsv: ChapterDataForCsv;
   chapterEvent: ChapterEvent;
   chapterMap: ChapterMap;
-  characters: Character[];
+  characters: RomCharacter[];
   genericCharacters: GenericCharacter[];
 };
 

@@ -1,7 +1,7 @@
-import type { Character } from "./Character.ts";
+import type { RomCharacter } from "./RomCharacter.ts";
 
 export type GenericCharacter = Omit<
-  Character,
+  RomCharacter,
   "formattedDeathQuote" | "portraitMetadata"
 >;
 
