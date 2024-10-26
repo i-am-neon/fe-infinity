@@ -8,7 +8,7 @@ export type ChapterEvent = {
   units?: string;
   beginningScene?: string;
   endingScene?: string;
-  unitLoadData?: string[];
+  localDefinitions?: string[];
   text?: string;
 };
 

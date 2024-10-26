@@ -44,7 +44,7 @@ Text(Prologue_FinishedText)
 EndConvo
 STAL 0x20
 MoveToChapter(MilitaryAccept2)`,
-    unitLoadData: [
+    localDefinitions: [
       `LoadSylvaine:
 UNIT Sylvaine MaligKnight Sylvaine Level(9,NPC,True) [5,7] 0x00 0x00 0x00 0x00 [SilverAxe] GuardAI
 UNIT`,
@@ -156,9 +156,7 @@ STAL 0x20
 MoveToChapter(MilitaryAccept2)
 ENDA
 
-//Label Area events
-
-/*UNIT DATA*/
+//Label Local Definitions
 
 LoadSylvaine:
 UNIT Sylvaine MaligKnight Sylvaine Level(9,NPC,True) [5,7] 0x00 0x00 0x00 0x00 [SilverAxe] GuardAI

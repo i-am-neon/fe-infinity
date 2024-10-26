@@ -76,7 +76,7 @@ Text(Prologue_FinishedText)
 EndConvo
 STAL 0x20
 MoveToChapter(MilitaryAccept2)`,
-    unitLoadData: [
+    localDefinitions: [
       `LoadSeraphina:
 UNIT Seraphina Valkyrie 0x00 Level(5,Ally,True) [0,8] 0x00 0x00 0x01 REDA3R6 [Shine,Mend,Elixir] NoAI
 UNIT`,

@@ -68,10 +68,8 @@ ENDA
 EndingScene:${chapterEvent.endingScene ? "\n" + chapterEvent.endingScene : ""}
 ENDA
 
-//Label Area events
+//Label Local Definitions
 
-/*UNIT DATA*/
-
-${chapterEvent.unitLoadData?.join("\n\n")}`;
+${chapterEvent.localDefinitions?.join("\n\n")}`;
 }
 
