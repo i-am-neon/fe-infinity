@@ -8,16 +8,18 @@ export default async function allAI(): Promise<void> {
   const worldSummary = await generateWorldSummary(worldIdeaExample);
   const mainCharacterIdea = await generateMainCharacterIdea({ worldSummary });
 
-  const [chosenPortrait, characterCsvData] = await Promise.all([
-    choosePortrait({
-      portraitOptions: allPortraitOptions,
-      characterIdea: mainCharacterIdea,
-    }),
-    assembleCharacterCsvData(mainCharacterIdea),
-  ]);
+  const [mainCharacterChosenPortrait, mainCharacterCsvData] = await Promise.all(
+    [
+      choosePortrait({
+        portraitOptions: allPortraitOptions,
+        characterIdea: mainCharacterIdea,
+      }),
+      assembleCharacterCsvData(mainCharacterIdea),
+    ]
+  );
 
-  console.log(JSON.stringify(chosenPortrait, null, 2));
-  console.log(JSON.stringify(characterCsvData, null, 2));
+  console.log(JSON.stringify(mainCharacterChosenPortrait, null, 2));
+  console.log(JSON.stringify(mainCharacterCsvData, null, 2));
 }
 
 if (import.meta.main) {
