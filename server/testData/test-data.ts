@@ -5,7 +5,7 @@ import {
   ligmaCharacter,
   liraCharacter,
   seraphinaCharacter,
-} from "./characters.ts";
+} from "@/testData/test-characters.ts";
 
 export const TEST_CHAPTER: Chapter = {
   name: "Prologue",

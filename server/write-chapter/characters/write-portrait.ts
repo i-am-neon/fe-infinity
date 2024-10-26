@@ -1,7 +1,7 @@
 import appendToFileInRomBuilderSync from "@/fileIO/append-to-file-in-rom-builder-sync.ts";
 import getPathWithinAssetsPortraitsDir from "@/fileIO/get-path-within-assets-portraits-dir.ts";
 import getPathWithinRomBuilderDir from "@/fileIO/get-path-within-rom-builder-dir.ts";
-import { seraphinaPortraitMetadata } from "@/testData/characters.ts";
+import { seraphinaPortraitMetadata } from "@/testData/test-characters.ts";
 import type { PortraitMetadata } from "@/types/PortraitMetadata.ts";
 
 export default async function writePortrait({
