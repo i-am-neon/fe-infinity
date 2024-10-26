@@ -1,10 +1,9 @@
 import "jsr:@std/dotenv/load";
-import { generateObject } from "ai";
-import { openai } from "@ai-sdk/openai";
 import {
   CharacterIdeaSchema,
   type CharacterIdea,
 } from "../types/ai/CharacterIdea.ts";
+import generateStructuredData from "./utilities/generate-structured-data.ts";
 
 const systemMessage = `You are a Fire Emblem Fangame Main Character Builder!
 
@@ -14,20 +13,22 @@ Ensure the character fits within the world's and history and societies.
 
 The "firstSeenAs" property will always be set to "ally" for the main character.`;
 
-export default async function generateMainCharacterIdea(): Promise<CharacterIdea> {
-  const prompt = "Generate a main character idea for a fantasy novel.";
-
-  const { object: result } = await generateObject({
-    model: openai("gpt-4o-mini"),
+export default async function generateMainCharacterIdea({
+  worldIdea,
+}: {
+  worldIdea: string;
+}): Promise<CharacterIdea> {
+  return await generateStructuredData({
     schema: CharacterIdeaSchema,
-    system: systemMessage,
-    prompt,
+    systemMessage,
+    prompt: worldIdea,
   });
-
-  return result;
 }
 
 if (import.meta.main) {
-  generateMainCharacterIdea().then(console.log);
+  generateMainCharacterIdea({
+    worldIdea:
+      "In the land of Valdoria, five elemental kingdoms vie for control over the ancient Nexus Crystals, powerful relics that bind their world together, but a dark cult threatens to shatter this balance, awakening an ancient curse.",
+  }).then(console.log);
 }
 
