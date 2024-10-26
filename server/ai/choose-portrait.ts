@@ -12,6 +12,7 @@ import {
   liraPortraitMetadata,
   seraphinaPortraitMetadata,
 } from "@/testData/test-characters.ts";
+import { allPortraitOptions } from "@/testData/ai.ts";
 
 export default async function choosePortrait({
   portraitOptions,
@@ -49,12 +50,7 @@ ${JSON.stringify(AIPortraitMetadataSchema.parse(portrait), null, 2)}`
 }
 
 if (import.meta.main) {
-  const portraitOptions: PortraitMetadata[] = [
-    seraphinaPortraitMetadata,
-    liraPortraitMetadata,
-    igorPortraitMetadata,
-    ligmaPortraitMetadata,
-  ];
+  const portraitOptions: PortraitMetadata[] = allPortraitOptions;
   const characterIdea: CharacterIdea = {
     name: "Elara",
     gender: "female",
