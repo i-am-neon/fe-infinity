@@ -13,6 +13,8 @@ Based on the world provided, create a compelling protagonist.
 Within their "backstory" property, define their strengths, weaknesses, motivations, and personal journey.
 Ensure the character fits within the world's and history and societies.
 
+The "name" property should be only the first name.
+
 The "firstSeenAs" property will always be set to "ally" for the main character.`;
 
 export default async function generateMainCharacterIdea({
