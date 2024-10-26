@@ -1,4 +1,4 @@
-import getPathWithinRomBuilderDir from "./get-path-within-rom-builder-dir.ts";
+import getPathWithinRomBuilderDir from "@/fileIO/get-path-within-rom-builder-dir.ts";
 
 export default async function writeFileToRomBuilder(
   pathWithinRomBuilder: string,

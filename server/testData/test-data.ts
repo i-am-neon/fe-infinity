@@ -1,4 +1,4 @@
-import type { Chapter } from "../types/Chapter.ts";
+import type { Chapter } from "@/types/Chapter.ts";
 import {
   cesarianGenericCharacter,
   igorCharacter,

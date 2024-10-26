@@ -1,7 +1,7 @@
-import appendToFileInRomBuilderSync from "../../fileIO/append-to-file-in-rom-builder-sync.ts";
-import writeFile from "../../fileIO/write-file-to-rom-builder.ts";
-import type { ChapterEvent } from "../../types/ChapterEvent.ts";
-import assembleChapterEvent from "./assemble-chapter-event.ts";
+import appendToFileInRomBuilderSync from "@/fileIO/append-to-file-in-rom-builder-sync.ts";
+import writeFile from "@/fileIO/write-file-to-rom-builder.ts";
+import type { ChapterEvent } from "@/types/ChapterEvent.ts";
+import assembleChapterEvent from "@/write-chapter/chapter-event/assemble-chapter-event.ts";
 
 export default async function assembleAndWriteChapterEventAndText({
   chapterEvent,

@@ -2,8 +2,8 @@ import "jsr:@std/dotenv/load";
 import {
   CharacterIdeaSchema,
   type CharacterIdea,
-} from "../types/ai/CharacterIdea.ts";
-import generateStructuredData from "./utilities/generate-structured-data.ts";
+} from "@/types/ai/CharacterIdea.ts";
+import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
 
 const systemMessage = `You are a Fire Emblem Fangame Main Character Builder!
 

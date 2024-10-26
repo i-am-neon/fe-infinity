@@ -1,6 +1,6 @@
-import appendToFileInRomBuilderSync from "../../fileIO/append-to-file-in-rom-builder-sync.ts";
-import type { ChapterDataForCsv } from "../../types/ChapterDataForCsv.ts";
-import assembleChapterDataCSV from "./assemble-chapter-data-csv.ts";
+import appendToFileInRomBuilderSync from "@/fileIO/append-to-file-in-rom-builder-sync.ts";
+import type { ChapterDataForCsv } from "@/types/ChapterDataForCsv.ts";
+import assembleChapterDataCSV from "@/write-chapter/chapter-data-csv/assemble-chapter-data-csv.ts";
 
 export default async function assembleAndWriteChapterDataCsv({
   chapterDatas,

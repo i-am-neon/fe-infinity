@@ -1,5 +1,5 @@
-import type { ChapterDataForCsv } from "../../types/ChapterDataForCsv.ts";
-import chapterDataToCsv from "./chapter-data-to-csv.ts";
+import type { ChapterDataForCsv } from "@/types/ChapterDataForCsv.ts";
+import chapterDataToCsv from "@/write-chapter/chapter-data-csv/chapter-data-to-csv.ts";
 
 export default async function assembleChapterDataCSV({
   chapterDatas,

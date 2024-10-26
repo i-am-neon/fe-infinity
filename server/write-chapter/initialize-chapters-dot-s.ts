@@ -1,4 +1,4 @@
-import writeFileToRomBuilder from "../fileIO/write-file-to-rom-builder.ts";
+import writeFileToRomBuilder from "@/fileIO/write-file-to-rom-builder.ts";
 
 export default async function initializeChaptersDotS(): Promise<void> {
   const chaptersDotSInit = `#include "Names.s"

@@ -1,4 +1,4 @@
-import type { ChapterDataForCsv } from "../../types/ChapterDataForCsv.ts";
+import type { ChapterDataForCsv } from "@/types/ChapterDataForCsv.ts";
 
 export default function chapterDataToCsv(data: ChapterDataForCsv): string {
   const values = [

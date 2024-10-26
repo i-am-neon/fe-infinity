@@ -1,7 +1,7 @@
-import type { Character } from "../types/Character.ts";
-import type { CharacterDataForCsv } from "../types/CharacterDataForCsv.ts";
-import type { GenericCharacter } from "../types/GenericCharacter.ts";
-import type { PortraitMetadata } from "../types/PortraitMetadata.ts";
+import type { Character } from "@/types/Character.ts";
+import type { CharacterDataForCsv } from "@/types/CharacterDataForCsv.ts";
+import type { GenericCharacter } from "@/types/GenericCharacter.ts";
+import type { PortraitMetadata } from "@/types/PortraitMetadata.ts";
 
 export const seraphinaPortraitMetadata: PortraitMetadata = {
   originalImageName: "Ghostblade OC 1.png",

@@ -1,5 +1,5 @@
 import { join } from "node:path";
-import getPathToAssetsPortraitsDir from "./get-path-to-assets-portraits-dir.ts";
+import getPathToAssetsPortraitsDir from "@/fileIO/get-path-to-assets-portraits-dir.ts";
 
 export default function getPathWithinAssetsPortraitsDir(
   subPath: string

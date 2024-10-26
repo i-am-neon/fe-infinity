@@ -2,9 +2,9 @@ import { openai } from "@ai-sdk/openai";
 import { generateObject } from "ai";
 import "jsr:@std/dotenv/load";
 import {
-  AIPortraitMetadataSchema,
   type AIPortraitMetadata,
-} from "../types/PortraitMetadata.ts";
+  AIPortraitMetadataSchema,
+} from "@/types/PortraitMetadata.ts";
 
 const systemMessage = `Generate metadata for a portrait of this character.
 Guidelines:
@@ -45,18 +45,18 @@ if (import.meta.main) {
       name: "Seraphina",
       url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Ghostblade/%7BGhostblade%7D%20OC%201%20%5BF2E%5D.png",
     },
-    {
-      name: "Lira",
-      url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Kanna/%7BKanna%7D%20%5BF2E%5D%20OC%2015.png",
-    },
-    {
-      name: "Igor",
-      url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Ghostblade/%7BGhostblade%7D%20OC%20Miyas%20Lord%20%5BF2E%5D.png",
-    },
-    {
-      name: "Ligma",
-      url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Goldblitzx/%7BGoldblitzx%7D%20%5BF2U%5D%20OC%201.png",
-    },
+    // {
+    //   name: "Lira",
+    //   url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Kanna/%7BKanna%7D%20%5BF2E%5D%20OC%2015.png",
+    // },
+    // {
+    //   name: "Igor",
+    //   url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Ghostblade/%7BGhostblade%7D%20OC%20Miyas%20Lord%20%5BF2E%5D.png",
+    // },
+    // {
+    //   name: "Ligma",
+    //   url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Goldblitzx/%7BGoldblitzx%7D%20%5BF2U%5D%20OC%201.png",
+    // },
   ];
 
   const results = await Promise.all(

@@ -1,6 +1,6 @@
 import { assertEquals } from "@std/assert";
-import type { ChapterEvent } from "../../types/ChapterEvent.ts";
-import assembleChapterEvent from "./assemble-chapter-event.ts";
+import type { ChapterEvent } from "@/types/ChapterEvent.ts";
+import assembleChapterEvent from "@/write-chapter/chapter-event/assemble-chapter-event.ts";
 
 Deno.test("assemble chapter event", () => {
   const prologueEventData: ChapterEvent = {

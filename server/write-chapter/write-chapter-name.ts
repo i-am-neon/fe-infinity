@@ -1,4 +1,4 @@
-import appendToFileInRomBuilderSync from "../fileIO/append-to-file-in-rom-builder-sync.ts";
+import appendToFileInRomBuilderSync from "@/fileIO/append-to-file-in-rom-builder-sync.ts";
 
 export default function writeChapterName(chapterName: string): void {
   appendToFileInRomBuilderSync({

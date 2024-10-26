@@ -1,5 +1,5 @@
-import writeFileToRomBuilder from "../../fileIO/write-file-to-rom-builder.ts";
-import type { ChapterMap } from "../../types/ChapterMap.ts";
+import writeFileToRomBuilder from "@/fileIO/write-file-to-rom-builder.ts";
+import type { ChapterMap } from "@/types/ChapterMap.ts";
 
 export default async function writeChapterMap({
   chapterMap,

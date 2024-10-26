@@ -1,4 +1,4 @@
-import type { CharacterIdea } from "../types/ai/CharacterIdea.ts";
+import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 
 export const characterIdeaExample: CharacterIdea = {
   name: "Elara Windrider",
@@ -12,3 +12,4 @@ export const characterIdeaExample: CharacterIdea = {
   description:
     "Elara is a young woman with long, flowing auburn hair and bright green eyes that reflect her connection to nature. She wears a simple yet elegant tunic adorned with leaves and flowers, symbolizing her bond with the earth. Her demeanor is warm and inviting, but her resolve is unyielding when it comes to protecting those she loves.",
 };
+

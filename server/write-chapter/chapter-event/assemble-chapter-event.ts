@@ -1,4 +1,4 @@
-import type { ChapterEvent } from "../../types/ChapterEvent.ts";
+import type { ChapterEvent } from "@/types/ChapterEvent.ts";
 
 export default function assembleChapterEvent(
   chapterEvent: ChapterEvent

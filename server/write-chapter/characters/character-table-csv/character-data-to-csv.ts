@@ -1,4 +1,4 @@
-import type { CharacterDataForCsv } from "../../../types/CharacterDataForCsv.ts";
+import type { CharacterDataForCsv } from "@/types/CharacterDataForCsv.ts";
 
 export default function characterDataToCsv(data: CharacterDataForCsv): string {
   const values = [

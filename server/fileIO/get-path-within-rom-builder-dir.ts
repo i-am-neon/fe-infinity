@@ -1,5 +1,5 @@
 import { join } from "node:path";
-import getPathToRomBuilderDir from "../fileIO/get-path-to-rom-builder-dir.ts";
+import getPathToRomBuilderDir from "@/fileIO/get-path-to-rom-builder-dir.ts";
 
 export default function getPathWithinRomBuilderDir(subPath: string): string {
   return join(getPathToRomBuilderDir(), subPath);
