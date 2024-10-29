@@ -1,10 +1,10 @@
 
 
-## KaelinDescText
+## LyraDescText
 TODO: Desc text[X]
 
-## LioraDescText
+## EiraDescText
 TODO: Desc text[X]
 
-## DariusDescText
+## MalikDescText
 TODO: Desc text[X]

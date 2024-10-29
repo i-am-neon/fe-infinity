@@ -5,6 +5,7 @@ import generateScene from "@/ai/assemble-chapter-event/generate-scene.ts";
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import type { RomCharacter } from "@/types/RomCharacter.ts";
 import { randomInt } from "node:crypto";
+import replaceApostrophes from "@/ai/assemble-chapter-event/replace-apostrophes.ts";
 
 export default async function assembleChapterEvent({
   storyArc,
@@ -70,12 +71,12 @@ export default async function assembleChapterEvent({
     miscBasedEvents: undefined,
     trapData: undefined,
     units: unitsArray.join("\n"),
-    beginningScene: replaceApostrophes(
-      "LOAD1 0x1 Units\n" + preBattleSceneContent
-    ),
-    endingScene: replaceApostrophes(postBattleSceneContent),
+    beginningScene: "LOAD1 0x1 Units\n" + preBattleSceneContent,
+    endingScene: postBattleSceneContent,
     localDefinitions: [""],
-    text: `## ${preBattleTextSceneName}\n[ConversationText]\n${preBattleTextSceneContent}[X]\n\n## ${postBattleTextSceneName}\n[ConversationText]\n${postBattleTextSceneContent}[X]`,
+    text: replaceApostrophes(
+      `## ${preBattleTextSceneName}\n[ConversationText]\n${preBattleTextSceneContent}[X]\n\n## ${postBattleTextSceneName}\n[ConversationText]\n${postBattleTextSceneContent}[X]`
+    ),
   };
 }
 
@@ -87,9 +88,5 @@ if (import.meta.main) {
     allRomCharacters: [],
   });
   console.log(JSON.stringify(res, null, 2));
-}
-
-function replaceApostrophes(text: string) {
-  return text.replace(/’/g, "'");
 }
 

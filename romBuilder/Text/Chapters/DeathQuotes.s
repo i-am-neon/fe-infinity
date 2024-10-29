@@ -1,13 +1,13 @@
 
 
-## KaelinDeathText
-[FarRight][LoadKaelin]
+## LyraDeathText
+[FarRight][LoadLyra]
 TODO: death quote[X]
 
-## LioraDeathText
-[FarRight][LoadLiora]
+## EiraDeathText
+[FarRight][LoadEira]
 TODO: death quote[X]
 
-## DariusDeathText
-[FarRight][LoadDarius]
+## MalikDeathText
+[FarRight][LoadMalik]
 TODO: death quote[X]

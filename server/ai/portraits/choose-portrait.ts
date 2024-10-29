@@ -21,8 +21,6 @@ export default async function choosePortrait({
   portraitOptions: PortraitMetadata[];
   characterIdea: CharacterIdea;
 }): Promise<PortraitMetadata> {
-  console.log("choosePortrait called 🔥");
-
   const systemMessage = `Given a character idea and a list of portrait options, choose the portrait that best fits the character idea.
 Return the index of the chosen portrait option.`;
 

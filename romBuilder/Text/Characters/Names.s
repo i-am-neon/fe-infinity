@@ -1,10 +1,10 @@
 
 
-## KaelinNameText
-Kaelin[X]
+## LyraNameText
+Lyra[X]
 
-## LioraNameText
-Liora[X]
+## EiraNameText
+Eira[X]
 
-## DariusNameText
-Darius[X]
+## MalikNameText
+Malik[X]

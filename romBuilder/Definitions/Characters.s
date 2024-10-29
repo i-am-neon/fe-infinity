@@ -3,6 +3,6 @@
 Dummy1
 Dummy2
 
-Kaelin
-Liora
-Darius
+Lyra
+Eira
+Malik

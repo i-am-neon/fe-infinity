@@ -24,7 +24,7 @@ if (import.meta.main) {
 
   const endTime = performance.now();
   console.log(
-    `Execution time: ${(endTime - startTime).toFixed(2)} milliseconds`
+    `Execution time: ${((endTime - startTime) / 1000).toFixed(2)} seconds`
   );
 }
 
