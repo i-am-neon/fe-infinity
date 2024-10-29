@@ -39,9 +39,9 @@ ALIGN 4
 
 //Label Units
 Units:
-UNIT Lyra Cleric 0x00 Level(1, Ally, True) [18, 11] 0x00 0x00 0x0 0x00 [Rapier, Elixir, WhiteGem] NoAI
-UNIT Eira Thief 0x00 Level(1, Ally, True) [17, 14] 0x00 0x00 0x0 0x00 [Rapier, Elixir, WhiteGem] NoAI
-UNIT Malik Shaman 0x00 Level(1, Enemy, True) [16, 17] 0x00 0x00 0x0 0x00 [Rapier, Elixir, WhiteGem] GuardTileAI
+UNIT Lyra Cleric 0x00 Level(1, Ally, True) [0, 0] 0x00 0x00 0x0 0x00 [Rapier, Elixir, WhiteGem] NoAI
+UNIT Eira Thief 0x00 Level(1, Ally, True) [1, 1] 0x00 0x00 0x0 0x00 [Rapier, Elixir, WhiteGem] NoAI
+UNIT Malik Shaman 0x00 Level(1, Enemy, True) [2, 2] 0x00 0x00 0x0 0x00 [Rapier, Elixir, WhiteGem] GuardTileAI
 EndUnit
 
 //Label BeginingScene

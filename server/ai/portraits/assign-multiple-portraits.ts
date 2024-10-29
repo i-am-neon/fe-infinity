@@ -8,13 +8,13 @@ export async function assignMultiplePortraits({
 }: {
   characterIdeas: CharacterIdea[];
   portraitOptions: PortraitMetadata[];
-}): Promise<{ character: CharacterIdea; portrait: PortraitMetadata }[]> {
+}): Promise<{ characterIdea: CharacterIdea; portrait: PortraitMetadata }[]> {
   if (characterIdeas.length > portraitOptions.length) {
     throw new Error("Not enough portraits to assign to each character");
   }
 
   const assignedPortraits: {
-    character: CharacterIdea;
+    characterIdea: CharacterIdea;
     portrait: PortraitMetadata;
   }[] = [];
 
@@ -25,7 +25,7 @@ export async function assignMultiplePortraits({
     });
 
     assignedPortraits.push({
-      character: characterIdea,
+      characterIdea: characterIdea,
       portrait: chosenPortrait,
     });
 
@@ -39,3 +39,4 @@ export async function assignMultiplePortraits({
 }
 
 export const _internals = { choosePortrait };
+

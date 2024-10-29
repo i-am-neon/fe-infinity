@@ -9,6 +9,7 @@ import { assignMultiplePortraits } from "@/ai/portraits/assign-multiple-portrait
 import assembleRomCharacter from "@/ai/assemble-rom-character/assemble-rom-character.ts";
 import assembleChapterEvent from "@/ai/assemble-chapter-event/assemble-chapter-event.ts";
 import { TEST_CHAPTER } from "@/testData/test-data.ts";
+import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 
 export default async function allAI({
   worldIdea,
@@ -30,35 +31,53 @@ export default async function allAI({
     }),
   ]);
 
-  const allCharacterIdeas = storyArc.chapterIdeas
-    .map((chapterIdea) => [
-      ...(chapterIdea.newPlayableCharacters || []),
-      chapterIdea.boss,
-    ])
-    .flat();
+  const allCharacterIdeasWithChapterJoined: {
+    idea: CharacterIdea;
+    chapterJoined: number;
+  }[] = [];
+  storyArc.chapterIdeas.forEach((chapterIdea, chapterIndex) => {
+    (chapterIdea.newPlayableCharacters || []).forEach((characterIdea) => {
+      allCharacterIdeasWithChapterJoined.push({
+        idea: characterIdea,
+        chapterJoined: chapterIndex,
+      });
+    });
+    allCharacterIdeasWithChapterJoined.push({
+      idea: chapterIdea.boss,
+      chapterJoined: chapterIndex,
+    });
+  });
+  allCharacterIdeasWithChapterJoined.push({
+    idea: mainCharacterIdea,
+    chapterJoined: 0,
+  });
 
   const remainingPortraitOptions = allPortraitOptions.filter(
     (p) => p.originalImageName !== mainCharacterChosenPortrait.originalImageName
   );
 
   // TODO: could speed up assigning portraits by separating streams by gender and age and running those in parallel, only feeding in filtered options from the appropriate gender and age
-  const [allCharacterPortraits, mainRomCharacter] = await Promise.all([
+  const [allCharacterIdeasAndPortraits, mainRomCharacter] = await Promise.all([
     assignMultiplePortraits({
       portraitOptions: remainingPortraitOptions,
-      characterIdeas: allCharacterIdeas,
+      characterIdeas: allCharacterIdeasWithChapterJoined.map((c) => c.idea),
     }),
     assembleRomCharacter({
       characterIdea: mainCharacterIdea,
       portraitMetadata: mainCharacterChosenPortrait,
+      chapterJoined: 0,
     }),
   ]);
 
   // Map each character idea with corresponding portrait metadata and run in parallel
-  const romCharacterPromises = allCharacterPortraits.map(
-    ({ character, portrait }) =>
+  const romCharacterPromises = allCharacterIdeasAndPortraits.map(
+    ({ characterIdea, portrait }) =>
       assembleRomCharacter({
-        characterIdea: character,
+        characterIdea: characterIdea,
         portraitMetadata: portrait,
+        chapterJoined: allCharacterIdeasWithChapterJoined.find(
+          (c) => c.idea === characterIdea
+        )!.chapterJoined,
       })
   );
 

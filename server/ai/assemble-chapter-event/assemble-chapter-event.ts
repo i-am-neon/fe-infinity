@@ -47,8 +47,8 @@ export default async function assembleChapterEvent({
   const unitsArray = [];
   for (const romCharacter of allRomCharacters) {
     const isBoss = romCharacter.name === thisChapterIdea.boss.name;
-    const xCoord = randomInt(0, 20);
-    const yCoord = randomInt(0, 20);
+    const xCoord = randomInt(0, 5);
+    const yCoord = randomInt(0, 5);
     unitsArray.push(
       `UNIT ${romCharacter.name} ${
         romCharacter.csvData.defaultClass

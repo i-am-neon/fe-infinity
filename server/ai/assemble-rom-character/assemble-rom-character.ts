@@ -6,18 +6,21 @@ import assembleCharacterCsvData from "@/ai/assemble-rom-character/assemble-chara
 export default async function assembleRomCharacter({
   characterIdea,
   portraitMetadata,
+  chapterJoined,
 }: {
   characterIdea: CharacterIdea;
   portraitMetadata: PortraitMetadata;
+  chapterJoined: number;
 }): Promise<RomCharacter> {
   const csvData = await assembleCharacterCsvData(characterIdea);
 
   return {
-    name: characterIdea.name,
+    ...characterIdea,
     portraitMetadata,
     csvData,
     formattedDescription: "TODO: Desc text[X]",
     formattedDeathQuote: "TODO: death quote[X]",
+    chapterJoined,
   };
 }
 
