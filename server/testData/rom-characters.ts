@@ -13,7 +13,7 @@ export const exampleRomCharacters: RomCharacter[] = [
     description:
       "A young woman with long, flowing auburn hair and bright green eyes, often seen wearing practical yet elegant clothing suitable for travel. She carries a staff adorned with symbols of healing.",
     portraitMetadata: {
-      originalImageName: "Kanna F2E OC 15.png",
+      originalImageName: "test/Kanna F2E OC 15.png",
       gender: "female",
       age: "young adult",
       hairColor: "blonde",
@@ -80,7 +80,7 @@ export const exampleRomCharacters: RomCharacter[] = [
     description:
       "A rugged man with short, dark hair and piercing blue eyes, often clad in worn armor that tells tales of past battles.",
     portraitMetadata: {
-      originalImageName: "Kanna F2E OC 10.png",
+      originalImageName: "test/Kanna F2E OC 10.png",
       gender: "male",
       age: "young adult",
       hairColor: "red",
@@ -147,7 +147,7 @@ export const exampleRomCharacters: RomCharacter[] = [
     description:
       "A young woman with long, flowing auburn hair and bright green eyes, often seen wearing practical yet elegant clothing suitable for travel. She carries a staff adorned with symbols of healing.",
     portraitMetadata: {
-      originalImageName: "Kanna F2E OC 31.png",
+      originalImageName: "test/Kanna F2E OC 31.png",
       gender: "female",
       age: "young adult",
       hairColor: "blonde",
@@ -214,7 +214,7 @@ export const exampleRomCharacters: RomCharacter[] = [
     description:
       "A tall woman with long, dark hair and an imposing presence, often dressed in dark robes that shimmer with sigil-like patterns.",
     portraitMetadata: {
-      originalImageName: "Ghostblade OC 1.png",
+      originalImageName: "test/Ghostblade OC 1.png",
       gender: "female",
       age: "young adult",
       hairColor: "blue",

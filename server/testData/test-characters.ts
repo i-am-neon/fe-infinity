@@ -4,7 +4,7 @@ import type { GenericCharacter } from "@/types/GenericCharacter.ts";
 import type { PortraitMetadata } from "@/types/PortraitMetadata.ts";
 
 export const seraphinaPortraitMetadata: PortraitMetadata = {
-  originalImageName: "Ghostblade OC 1.png",
+  originalImageName: "test/Ghostblade OC 1.png",
   gender: "female",
   age: "young adult",
   hairColor: "blue",
@@ -63,7 +63,7 @@ I wanted to do more...[A][A][X]`,
 };
 
 export const liraPortraitMetadata: PortraitMetadata = {
-  originalImageName: "Kanna F2E OC 15.png",
+  originalImageName: "test/Kanna F2E OC 15.png",
   gender: "female",
   age: "young adult",
   hairColor: "blonde",
@@ -121,7 +121,7 @@ I wanted to do more...[A][X]`,
 };
 
 export const igorPortraitMetadata: PortraitMetadata = {
-  originalImageName: "Miyas Lord Portrait.png",
+  originalImageName: "test/Miyas Lord Portrait.png",
   gender: "male",
   age: "mature adult",
   hairColor: "silver",
@@ -179,7 +179,7 @@ I wanted to do more...[A][A][X]`,
 };
 
 export const ligmaPortraitMetadata: PortraitMetadata = {
-  originalImageName: "OC 1 from Goldblitzx.png",
+  originalImageName: "test/OC 1 from Goldblitzx.png",
   gender: "male",
   age: "young adult",
   hairColor: "gray",
@@ -272,7 +272,7 @@ export const cesarianGenericCharacter: GenericCharacter = {
 };
 
 export const pinkDancerPortraitMetadata: PortraitMetadata = {
-  originalImageName: "Kanna F2E OC 31.png",
+  originalImageName: "test/Kanna F2E OC 31.png",
   gender: "female",
   age: "young adult",
   hairColor: "blonde",
@@ -289,7 +289,7 @@ export const pinkDancerPortraitMetadata: PortraitMetadata = {
 };
 
 export const tealHairGirlPortraitMetadata: PortraitMetadata = {
-  originalImageName: "Kanna F2E OC 1.png",
+  originalImageName: "test/Kanna F2E OC 1.png",
   gender: "female",
   age: "young adult",
   hairColor: "teal",
@@ -306,7 +306,7 @@ export const tealHairGirlPortraitMetadata: PortraitMetadata = {
 };
 
 export const fireElfPortraitMetadata: PortraitMetadata = {
-  originalImageName: "Kanna F2E OC 10.png",
+  originalImageName: "test/Kanna F2E OC 10.png",
   gender: "male",
   age: "young adult",
   hairColor: "red",
@@ -321,3 +321,4 @@ export const fireElfPortraitMetadata: PortraitMetadata = {
     eyeY: 3,
   },
 };
+
