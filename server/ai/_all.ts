@@ -5,6 +5,7 @@ import choosePortrait from "./portraits/choose-portrait.ts";
 import assembleCharacterCsvData from "@/ai/assemble-rom-character/assemble-character-csv-data/assemble-character-csv-data.ts";
 import type { RomChapter } from "@/types/RomChapter.ts";
 import generateStoryArc from "@/ai/generate-story-arc.ts";
+import { assignMultiplePortraits } from "@/ai/portraits/assign-multiple-portraits.ts";
 
 export default async function allAI({
   worldIdea,
@@ -27,6 +28,23 @@ export default async function allAI({
         numberOfChapters: 3,
       }),
     ]);
+
+  const allCharacterIdeas = storyArc.chapterIdeas
+    .map((chapterIdea) => [
+      ...(chapterIdea.newPlayableCharacters || []),
+      chapterIdea.boss,
+    ])
+    .flat();
+
+  const remainingPortraitOptions = allPortraitOptions.filter(
+    (p) => p.originalImageName !== mainCharacterChosenPortrait.originalImageName
+  );
+  const [characterPortraits] = await Promise.all([
+    assignMultiplePortraits({
+      characterIdeas: allCharacterIdeas,
+      portraitOptions: remainingPortraitOptions,
+    }),
+  ]);
 
   return [];
 }
