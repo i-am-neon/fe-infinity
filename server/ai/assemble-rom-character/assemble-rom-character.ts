@@ -16,8 +16,8 @@ export default async function assembleRomCharacter({
     name: characterIdea.name,
     portraitMetadata,
     csvData,
-    formattedDescription: "",
-    formattedDeathQuote: "",
+    formattedDescription: "TODO: Desc text[X]",
+    formattedDeathQuote: "TODO: death quote[X]",
   };
 }
 

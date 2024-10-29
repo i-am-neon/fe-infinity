@@ -1,21 +1,13 @@
 
 
-## SeraphinaDeathText
-[FarRight][LoadSeraphina]
-I failed...[NL]
-I wanted to do more...[A][A][X]
+## KaelinDeathText
+[FarRight][LoadKaelin]
+TODO: death quote[X]
 
-## LiraDeathText
-[FarRight][LoadLira]
-I failed...[NL]
-I wanted to do more...[A][X]
+## LioraDeathText
+[FarRight][LoadLiora]
+TODO: death quote[X]
 
-## IgorDeathText
-[FarRight][LoadIgor]
-I failed...[NL]
-I wanted to do more...[A][A][X]
-
-## LigmaDeathText
-[FarRight][LoadLigma]
-I failed...[NL]
-I wanted to do more...[A][X]
+## DariusDeathText
+[FarRight][LoadDarius]
+TODO: death quote[X]

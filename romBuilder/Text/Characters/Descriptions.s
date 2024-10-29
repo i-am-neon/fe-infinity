@@ -1,24 +1,10 @@
 
 
-## SeraphinaDescText
-A talented archer who[NL]
-fights with both magic and[NL]
-healing skills.[X]
+## KaelinDescText
+TODO: Desc text[X]
 
-## LiraDescText
-A talented archer who[NL]
-fights with both magic and[NL]
-healing skills.[X]
+## LioraDescText
+TODO: Desc text[X]
 
-## IgorDescText
-A talented archer who[NL]
-fights with both magic and[NL]
-healing skills.[X]
-
-## LigmaDescText
-A talented archer who[NL]
-fights with both magic and[NL]
-healing skills.[X]
-
-## CesarianDescText
-A generic enemy soldier.[X]
+## DariusDescText
+TODO: Desc text[X]

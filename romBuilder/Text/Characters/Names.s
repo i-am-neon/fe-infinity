@@ -1,16 +1,10 @@
 
 
-## SeraphinaNameText
-Seraphina[X]
+## KaelinNameText
+Kaelin[X]
 
-## LiraNameText
-Lira[X]
+## LioraNameText
+Liora[X]
 
-## IgorNameText
-Igor[X]
-
-## LigmaNameText
-Ligma[X]
-
-## CesarianNameText
-Cesarian[X]
+## DariusNameText
+Darius[X]

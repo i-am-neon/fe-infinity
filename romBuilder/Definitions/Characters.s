@@ -3,8 +3,6 @@
 Dummy1
 Dummy2
 
-Seraphina
-Lira
-Igor
-Ligma
-Cesarian
+Kaelin
+Liora
+Darius

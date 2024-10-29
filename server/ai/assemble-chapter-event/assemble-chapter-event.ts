@@ -50,8 +50,8 @@ export default async function assembleChapterEvent({
     miscBasedEvents: undefined,
     trapData: undefined,
     units: undefined,
-    beginningScene: preBattleSceneContent,
-    endingScene: postBattleSceneContent,
+    beginningScene: replaceApostrophes(preBattleSceneContent),
+    endingScene: replaceApostrophes(postBattleSceneContent),
     localDefinitions: [""],
     text: `## ${preBattleTextSceneName}\n[ConversationText]\n${preBattleTextSceneContent}[X]\n\n## ${postBattleTextSceneName}\n[ConversationText]\n${postBattleTextSceneContent}[X]`,
   };
@@ -64,5 +64,9 @@ if (import.meta.main) {
     existingPartyCharacters: [characterIdeaExample],
   });
   console.log(JSON.stringify(res, null, 2));
+}
+
+function replaceApostrophes(text: string) {
+  return text.replace(/’/g, "'");
 }
 
