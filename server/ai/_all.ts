@@ -7,6 +7,8 @@ import type { RomChapter } from "@/types/RomChapter.ts";
 import generateStoryArc from "@/ai/generate-story-arc.ts";
 import { assignMultiplePortraits } from "@/ai/portraits/assign-multiple-portraits.ts";
 import assembleRomCharacter from "@/ai/assemble-rom-character/assemble-rom-character.ts";
+import assembleChapterEvent from "@/ai/assemble-chapter-event/assemble-chapter-event.ts";
+import { TEST_CHAPTER } from "@/testData/test-data.ts";
 
 export default async function allAI({
   worldIdea,
@@ -24,7 +26,7 @@ export default async function allAI({
     generateStoryArc({
       worldSummary,
       mainCharacterIdea,
-      numberOfChapters: 3,
+      numberOfChapters: 1,
     }),
   ]);
 
@@ -64,7 +66,22 @@ export default async function allAI({
   const romCharacters = await Promise.all(romCharacterPromises);
   const allRomCharacters = [mainRomCharacter, ...romCharacters];
 
-  return [];
+  // TODO: put this in a loop to do over multiple chapters
+  const chapterEvent = await assembleChapterEvent({
+    storyArc,
+    chapterNumberToAssemble: 0,
+    existingPartyCharacters: [mainCharacterIdea],
+  });
+
+  const romChapter: RomChapter = {
+    name: "Generated Prologue",
+    chapterDataForCsv: TEST_CHAPTER.chapterDataForCsv,
+    chapterEvent,
+    chapterMap: TEST_CHAPTER.chapterMap,
+    characters: allRomCharacters,
+    genericCharacters: [],
+  };
+  return [romChapter];
 }
 
 if (import.meta.main) {
