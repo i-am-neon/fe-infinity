@@ -74,7 +74,7 @@ export default async function allAI({
   });
 
   const romChapter: RomChapter = {
-    name: "Generated Prologue",
+    name: "Prologue",
     chapterDataForCsv: TEST_CHAPTER.chapterDataForCsv,
     chapterEvent,
     chapterMap: TEST_CHAPTER.chapterMap,
