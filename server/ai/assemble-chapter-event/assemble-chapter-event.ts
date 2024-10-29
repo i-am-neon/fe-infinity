@@ -1,12 +1,11 @@
+import generateScene from "@/ai/assemble-chapter-event/generate-scene.ts";
+import replaceApostrophes from "@/ai/assemble-chapter-event/replace-apostrophes.ts";
+import { storyArcExample } from "@/testData/ai.ts";
+import { exampleRomCharacters } from "@/testData/rom-characters.ts";
 import type { StoryArc } from "@/types/ai/StoryArc.ts";
 import type { ChapterEvent } from "@/types/ChapterEvent.ts";
-import { mainCharacterIdeaExample, storyArcExample } from "@/testData/ai.ts";
-import generateScene from "@/ai/assemble-chapter-event/generate-scene.ts";
-import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import type { RomCharacter } from "@/types/RomCharacter.ts";
 import { randomInt } from "node:crypto";
-import replaceApostrophes from "@/ai/assemble-chapter-event/replace-apostrophes.ts";
-import { exampleRomCharacters } from "@/testData/rom-characters.ts";
 
 export default async function assembleChapterEvent({
   storyArc,

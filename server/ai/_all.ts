@@ -94,10 +94,12 @@ export default async function allAI({
       (c) => c.chapterJoined < chapterNumberToAssemble
     ),
     newPlayableCharacters: allRomCharacters.filter(
-      (c) => c.chapterJoined === chapterNumberToAssemble
+      (c) =>
+        c.chapterJoined === chapterNumberToAssemble && c.firstSeenAs !== "boss"
     ),
     boss: allRomCharacters.find(
-      (c) => c.name === storyArc.chapterIdeas[chapterNumberToAssemble].boss.name
+      (c) =>
+        c.chapterJoined === chapterNumberToAssemble && c.firstSeenAs === "boss"
     )!,
   });
 
