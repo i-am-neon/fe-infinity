@@ -7,6 +7,7 @@ import {
   igorPortraitMetadata,
   ligmaPortraitMetadata,
 } from "@/testData/test-characters.ts";
+import type { StoryArc } from "@/types/ai/StoryArc.ts";
 
 export const worldIdeaExample =
   "In the fractured realm of Eldralis, rival kingdoms wield ancient sigils that grant immense power but corrupt the soul, forcing unlikely heroes to unite against a shadowy order seeking to awaken a slumbering god and plunge the world into eternal darkness.";
@@ -145,4 +146,103 @@ export const allPortraitOptions: PortraitMetadata[] = [
   igorPortraitMetadata,
   ligmaPortraitMetadata,
 ];
+
+export const storyArcExample: StoryArc = {
+  premise:
+    "In the fractured realm of Eldralis, Elara, a determined young herbalist, embarks on a quest to confront a dark sorcerer who threatens her village and the balance of nature. As she navigates the rivalries between kingdoms and the allure of ancient sigils, she must unite unlikely allies to thwart the shadowy order known as the Veil, which seeks to awaken a slumbering god. Along her journey, Elara will uncover the truth about her family's past and her own potential as a powerful force for good.",
+  chapterIdeas: [
+    {
+      chapterTitle: "The Call to Adventure",
+      newPlayableCharacters: [
+        {
+          name: "Kiran",
+          gender: "male",
+          personality:
+            "Brash and adventurous, with a love for freedom and a knack for trouble.",
+          age: "young adult",
+          backstory:
+            "Kiran hails from the rugged mountains of Drakthar, where he trained as a dragon rider. He left his home in search of adventure and to prove himself as a warrior. His carefree attitude often leads him into trouble, but his loyalty to friends is unwavering.",
+          firstSeenAs: "ally",
+          description:
+            "Kiran is a tall young man with tousled black hair and a mischievous grin. He wears a leather vest and trousers suited for riding, with a dragon insignia emblazoned on his back.",
+        },
+      ],
+      boss: {
+        name: "Sorren",
+        gender: "male",
+        personality:
+          "Cunning and manipulative, with a deep-seated desire for power.",
+        age: "mature adult",
+        backstory:
+          "Once a respected member of the Council of Sigils, Sorren turned to dark magic in his quest for power. He seeks to harness the sigils to awaken the slumbering god, believing it will grant him ultimate control over Eldralis.",
+        firstSeenAs: "boss",
+        description:
+          "Sorren is a tall man with sharp features and piercing blue eyes. He wears dark robes adorned with sigils, and his presence exudes an aura of danger.",
+      },
+      preChapterScene:
+        "Elara receives word that the dark sorcerer Sorren has been corrupting the forests near her village, threatening the balance of nature. Determined to protect her home, she sets out to confront him, seeking allies along the way. In her journey, she encounters Kiran, a brash dragon rider eager for adventure.",
+      battleOverview:
+        "Elara and Kiran must navigate through the corrupted forest, battling Sorren's minions and overcoming obstacles to reach his lair. The environment is treacherous, with corrupted wildlife and traps set by Sorren. They must work together to defeat Sorren and cleanse the forest of his dark magic.",
+      postChapterScene:
+        "After a fierce battle, Elara and Kiran manage to defeat Sorren, but not without realizing the depth of the corruption that has spread across Eldralis. They learn of the Veil's plans to awaken the slumbering god, which could spell disaster for all kingdoms. With newfound resolve, they decide to journey to the Emerald City to seek the Council of Sigils' aid.",
+    },
+    {
+      chapterTitle: "The Council's Dilemma",
+      newPlayableCharacters: [
+        {
+          name: "Lyra",
+          gender: "female",
+          personality:
+            "Wise and diplomatic, with a strong sense of duty and a hidden past.",
+          age: "mature adult",
+          backstory:
+            "Lyra is a member of the Council of Sigils, tasked with maintaining order in Valoria. She has seen the rise and fall of many leaders and carries the weight of her decisions heavily. Her past is shrouded in mystery, and she harbors secrets about the sigils that could change everything.",
+          firstSeenAs: "allied NPC",
+          description:
+            "Lyra is a dignified woman with silver hair and deep-set eyes that seem to hold centuries of wisdom. She wears elegant robes adorned with sigils, symbolizing her status within the Council.",
+        },
+      ],
+      boss: {
+        name: "Varek",
+        gender: "male",
+        personality:
+          "Ambitious and ruthless, willing to do anything to gain power.",
+        age: "mature adult",
+        backstory:
+          "Varek is a former member of the Council who was ousted for his extreme views on the use of sigils. He now leads a faction that seeks to control the sigils for their own gain, believing that only through power can peace be achieved.",
+        firstSeenAs: "boss",
+        description:
+          "Varek is a muscular man with a commanding presence, dressed in ornate armor that reflects his status. His eyes burn with ambition, and he carries a large sigil-imbued weapon.",
+      },
+      preChapterScene:
+        "Elara and Kiran arrive at the Emerald City, seeking the Council's guidance on the Veil's plans. They are met with skepticism, as the Council is divided on how to handle the growing threat.",
+      battleOverview:
+        "The chapter takes place in the Council's chamber, where Varek and his faction attempt to seize control of the sigils. Elara, Kiran, and Lyra must defend the Council from Varek's forces while navigating political intrigue and betrayal. The battle tests their resolve and unity as they fight to protect the sigils from falling into the wrong hands. When spoken to on the battlefield, Lyra, sensing the urgency, decides to help them uncover the truth behind the sigils.",
+      postChapterScene:
+        "After a hard-fought battle, Elara and her allies manage to thwart Varek's coup, but the Council remains divided on how to proceed. Lyra reveals her knowledge of the Veil's true intentions and the existence of a powerful sigil that could either save or doom Eldralis. With this knowledge, they prepare to journey to the Ruins of Eldar to uncover the secrets of the past.",
+    },
+    {
+      chapterTitle: "The Awakening",
+      newPlayableCharacters: [],
+      boss: {
+        name: "Morrigan",
+        gender: "female",
+        personality:
+          "Mysterious and powerful, with a deep connection to the ancient sigils.",
+        age: "elderly",
+        backstory:
+          "Morrigan is a guardian of the Ruins of Eldar, tasked with protecting the secrets of the sigils. She has witnessed the rise and fall of kingdoms and knows the true nature of the slumbering god. Her motives are unclear, and she tests those who seek her knowledge.",
+        firstSeenAs: "boss",
+        description:
+          "Morrigan is an ancient woman with long, flowing white hair and eyes that seem to hold the wisdom of ages. She wears robes that shimmer with sigils, and her presence commands respect.",
+      },
+      preChapterScene:
+        "Elara, Kiran, and Lyra arrive at the Ruins of Eldar, where they hope to uncover the truth about the sigils and the slumbering god. As they explore the ancient site, they are confronted by visions of the past, revealing the consequences of the sigils' misuse. Morrigan appears, challenging their intentions and testing their resolve.",
+      battleOverview:
+        "The final battle takes place within the heart of the Ruins, where Morrigan tests Elara and her allies with illusions and powerful sigil magic. They must confront their own fears and desires while battling Morrigan's formidable powers. The outcome will determine the fate of Eldralis and whether the slumbering god will awaken or remain sealed.",
+      postChapterScene:
+        "After a climactic battle, Elara and her allies manage to convince Morrigan of their noble intentions. She reveals the truth about the sigils and the slumbering god, offering them a choice: to harness the sigils' power for good or to seal them away forever. With newfound wisdom, Elara embraces her destiny as a protector of Eldralis, ready to face the challenges ahead.",
+    },
+  ],
+};
 
