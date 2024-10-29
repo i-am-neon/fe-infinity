@@ -4,7 +4,7 @@ import {
   type CharacterStats,
 } from "@/types/ai/CharacterStats.ts";
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
-import { characterIdeaExample } from "@/testData/ai.ts";
+import { mainCharacterIdeaExample } from "@/testData/ai.ts";
 
 export default async function generateCharacterStats({
   characterIdea,
@@ -33,7 +33,7 @@ Character Class: ${characterClass}`,
 
 if (import.meta.main) {
   generateCharacterStats({
-    characterIdea: characterIdeaExample,
+    characterIdea: mainCharacterIdeaExample,
     characterClass: "Cleric",
   }).then(console.log);
 }

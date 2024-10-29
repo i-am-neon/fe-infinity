@@ -4,7 +4,7 @@ import generateCharacterClass from "@/ai/assemble-rom-character/assemble-charact
 import generateAffinity from "@/ai/assemble-rom-character/assemble-character-csv-data/generate-affinity.ts";
 import getWeaponRank from "@/ai/assemble-rom-character/assemble-character-csv-data/get-weapon-rank.ts";
 import generateCharacterStats from "@/ai/assemble-rom-character/assemble-character-csv-data/generate-character-stats.ts";
-import { characterIdeaExample } from "@/testData/ai.ts";
+import { mainCharacterIdeaExample } from "@/testData/ai.ts";
 
 export default async function assembleCharacterCsvData(
   characterIdea: CharacterIdea
@@ -53,6 +53,7 @@ export default async function assembleCharacterCsvData(
 }
 
 if (import.meta.main) {
-  const result = await assembleCharacterCsvData(characterIdeaExample);
+  const result = await assembleCharacterCsvData(mainCharacterIdeaExample);
   console.log(JSON.stringify(result, null, 2));
 }
+

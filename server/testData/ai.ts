@@ -15,7 +15,7 @@ import type { StoryArc } from "@/types/ai/StoryArc.ts";
 export const worldIdeaExample =
   "In the fractured realm of Eldralis, rival kingdoms wield ancient sigils that grant immense power but corrupt the soul, forcing unlikely heroes to unite against a shadowy order seeking to awaken a slumbering god and plunge the world into eternal darkness.";
 
-export const characterIdeaExample: CharacterIdea = {
+export const mainCharacterIdeaExample: CharacterIdea = {
   name: "Elara",
   gender: "female",
   personality:

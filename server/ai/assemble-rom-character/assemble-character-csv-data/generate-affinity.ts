@@ -1,7 +1,7 @@
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
 import { z } from "zod";
-import { characterIdeaExample } from "@/testData/ai.ts";
+import { mainCharacterIdeaExample } from "@/testData/ai.ts";
 import type { Affinity } from "@/types/CharacterDataForCsv.ts";
 
 export default async function generateAffinity({
@@ -32,6 +32,8 @@ export default async function generateAffinity({
 }
 
 if (import.meta.main) {
-  generateAffinity({ characterIdea: characterIdeaExample }).then(console.log);
+  generateAffinity({ characterIdea: mainCharacterIdeaExample }).then(
+    console.log
+  );
 }
 

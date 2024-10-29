@@ -7,10 +7,14 @@ LyraPortrait:
 #incbin "cache/Lyra.dmp"
 setMugEntry(LyraMug,LyraPortrait,3,5,3,3)
 
-EiraPortrait:
-#incbin "cache/Eira.dmp"
-setMugEntry(EiraMug,EiraPortrait,3,5,3,3)
+EliasPortrait:
+#incbin "cache/Elias.dmp"
+setMugEntry(EliasMug,EliasPortrait,3,5,3,3)
 
-MalikPortrait:
-#incbin "cache/Malik.dmp"
-setMugEntry(MalikMug,MalikPortrait,3,5,3,3)
+MiraPortrait:
+#incbin "cache/Mira.dmp"
+setMugEntry(MiraMug,MiraPortrait,3,5,3,3)
+
+LyraPortrait:
+#incbin "cache/Lyra.dmp"
+setMugEntry(LyraMug,LyraPortrait,3,5,3,3)

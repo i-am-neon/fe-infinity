@@ -1,7 +1,7 @@
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
 import { z } from "zod";
-import { characterIdeaExample } from "@/testData/ai.ts";
+import { mainCharacterIdeaExample } from "@/testData/ai.ts";
 import {
   classOptionsMaleOnly,
   classOptionsFemaleOnly,
@@ -46,7 +46,7 @@ ${JSON.stringify(genderedClassOptions, null, 2)}`;
 }
 
 if (import.meta.main) {
-  generateCharacterClass({ characterIdea: characterIdeaExample }).then(
+  generateCharacterClass({ characterIdea: mainCharacterIdeaExample }).then(
     console.log
   );
 }

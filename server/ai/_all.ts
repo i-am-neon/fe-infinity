@@ -86,11 +86,19 @@ export default async function allAI({
   const allRomCharacters = [mainRomCharacter, ...romCharacters];
 
   // TODO: put this in a loop to do over multiple chapters
+  const chapterNumberToAssemble = 0;
   const chapterEvent = await assembleChapterEvent({
     storyArc,
-    chapterNumberToAssemble: 0,
-    existingPartyCharacters: [mainCharacterIdea],
-    allRomCharacters,
+    chapterNumberToAssemble: chapterNumberToAssemble,
+    existingPartyCharacters: allRomCharacters.filter(
+      (c) => c.chapterJoined < chapterNumberToAssemble
+    ),
+    newPlayableCharacters: allRomCharacters.filter(
+      (c) => c.chapterJoined === chapterNumberToAssemble
+    ),
+    boss: allRomCharacters.find(
+      (c) => c.name === storyArc.chapterIdeas[chapterNumberToAssemble].boss.name
+    )!,
   });
 
   const romChapter: RomChapter = {

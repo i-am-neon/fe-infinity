@@ -1,22 +1,25 @@
 import type { StoryArc } from "@/types/ai/StoryArc.ts";
 import type { ChapterEvent } from "@/types/ChapterEvent.ts";
-import { characterIdeaExample, storyArcExample } from "@/testData/ai.ts";
+import { mainCharacterIdeaExample, storyArcExample } from "@/testData/ai.ts";
 import generateScene from "@/ai/assemble-chapter-event/generate-scene.ts";
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import type { RomCharacter } from "@/types/RomCharacter.ts";
 import { randomInt } from "node:crypto";
 import replaceApostrophes from "@/ai/assemble-chapter-event/replace-apostrophes.ts";
+import { exampleRomCharacters } from "@/testData/rom-characters.ts";
 
 export default async function assembleChapterEvent({
   storyArc,
   chapterNumberToAssemble,
   existingPartyCharacters,
-  allRomCharacters,
+  newPlayableCharacters,
+  boss,
 }: {
   storyArc: StoryArc;
   chapterNumberToAssemble: number;
-  existingPartyCharacters: CharacterIdea[];
-  allRomCharacters: RomCharacter[];
+  existingPartyCharacters: RomCharacter[];
+  newPlayableCharacters: RomCharacter[];
+  boss: RomCharacter;
 }): Promise<ChapterEvent> {
   const thisChapterIdea = storyArc.chapterIdeas[chapterNumberToAssemble];
 
@@ -45,7 +48,11 @@ export default async function assembleChapterEvent({
   });
 
   const unitsArray = [];
-  for (const romCharacter of allRomCharacters) {
+  for (const romCharacter of [
+    ...existingPartyCharacters,
+    ...newPlayableCharacters,
+    boss,
+  ]) {
     const isBoss = romCharacter.name === thisChapterIdea.boss.name;
     const xCoord = randomInt(0, 5);
     const yCoord = randomInt(0, 5);
@@ -84,8 +91,13 @@ if (import.meta.main) {
   const res = await assembleChapterEvent({
     storyArc: storyArcExample,
     chapterNumberToAssemble: 0,
-    existingPartyCharacters: [characterIdeaExample],
-    allRomCharacters: [],
+    existingPartyCharacters: [],
+    newPlayableCharacters: [
+      exampleRomCharacters[0],
+      exampleRomCharacters[1],
+      exampleRomCharacters[2],
+    ],
+    boss: exampleRomCharacters[3],
   });
   console.log(JSON.stringify(res, null, 2));
 }

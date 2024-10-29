@@ -10,5 +10,6 @@ SpellswordMCard
 SpellswordFCard
 
 LyraMug
-EiraMug
-MalikMug
+EliasMug
+MiraMug
+LyraMug

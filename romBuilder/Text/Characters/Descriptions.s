@@ -3,8 +3,11 @@
 ## LyraDescText
 TODO: Desc text[X]
 
-## EiraDescText
+## EliasDescText
 TODO: Desc text[X]
 
-## MalikDescText
+## MiraDescText
+TODO: Desc text[X]
+
+## LyraDescText
 TODO: Desc text[X]

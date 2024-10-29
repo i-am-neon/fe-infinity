@@ -2,7 +2,10 @@ import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import { StoryArcSchema, type StoryArc } from "@/types/ai/StoryArc.ts";
 import type { WorldSummary } from "@/types/ai/WorldSummary.ts";
-import { characterIdeaExample, worldSummaryExample } from "@/testData/ai.ts";
+import {
+  mainCharacterIdeaExample,
+  worldSummaryExample,
+} from "@/testData/ai.ts";
 
 export default async function generateStoryArc({
   worldSummary,
@@ -56,7 +59,7 @@ Your task is to create the general idea of the story for the game based on the p
 if (import.meta.main) {
   const res = await generateStoryArc({
     worldSummary: worldSummaryExample,
-    mainCharacterIdea: characterIdeaExample,
+    mainCharacterIdea: mainCharacterIdeaExample,
     numberOfChapters: 3,
   });
   console.log(JSON.stringify(res, null, 2));

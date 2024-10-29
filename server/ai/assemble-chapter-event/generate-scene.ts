@@ -1,7 +1,7 @@
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
 import { z } from "zod";
-import { characterIdeaExample, storyArcExample } from "@/testData/ai.ts";
+import { mainCharacterIdeaExample, storyArcExample } from "@/testData/ai.ts";
 import { backgroundOptions } from "@/ai/assemble-chapter-event/background-options.ts";
 
 export default async function generateScene({
@@ -115,7 +115,7 @@ That's a short example of an opening scene. Yours may be longer.
 if (import.meta.main) {
   const res = await generateScene({
     sceneOverview: storyArcExample.chapterIdeas[0].preChapterScene,
-    existingPartyCharacters: [characterIdeaExample], // example main character
+    existingPartyCharacters: [mainCharacterIdeaExample], // example main character
     newPlayableCharacters:
       storyArcExample.chapterIdeas[0].newPlayableCharacters!,
     boss: storyArcExample.chapterIdeas[0].boss,
