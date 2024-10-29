@@ -6,6 +6,9 @@ import {
   liraPortraitMetadata,
   igorPortraitMetadata,
   ligmaPortraitMetadata,
+  pinkDancerPortraitMetadata,
+  tealHairGirlPortraitMetadata,
+  fireElfPortraitMetadata,
 } from "@/testData/test-characters.ts";
 import type { StoryArc } from "@/types/ai/StoryArc.ts";
 
@@ -145,6 +148,9 @@ export const allPortraitOptions: PortraitMetadata[] = [
   liraPortraitMetadata,
   igorPortraitMetadata,
   ligmaPortraitMetadata,
+  pinkDancerPortraitMetadata,
+  tealHairGirlPortraitMetadata,
+  fireElfPortraitMetadata,
 ];
 
 export const storyArcExample: StoryArc = {

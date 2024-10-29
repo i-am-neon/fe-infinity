@@ -271,3 +271,53 @@ export const cesarianGenericCharacter: GenericCharacter = {
   formattedDescription: `A generic enemy soldier.[X]`,
 };
 
+export const pinkDancerPortraitMetadata: PortraitMetadata = {
+  originalImageName: "Kanna F2E OC 31.png",
+  gender: "female",
+  age: "young adult",
+  hairColor: "blonde",
+  eyeColor: "purple",
+  vibe: "elegant, serene, confident",
+  clothing: "purple dress with flowing sleeves",
+  headgear: "headband",
+  eyeMouthOffsets: {
+    mouthX: 3,
+    mouthY: 5,
+    eyeX: 3,
+    eyeY: 3,
+  },
+};
+
+export const tealHairGirlPortraitMetadata: PortraitMetadata = {
+  originalImageName: "Kanna F2E OC 1.png",
+  gender: "female",
+  age: "young adult",
+  hairColor: "teal",
+  eyeColor: "purple",
+  vibe: "mystical, serene, confident",
+  clothing: "white dress with purple accents",
+  accessories: "necklace",
+  eyeMouthOffsets: {
+    mouthX: 3,
+    mouthY: 5,
+    eyeX: 3,
+    eyeY: 3,
+  },
+};
+
+export const fireElfPortraitMetadata: PortraitMetadata = {
+  originalImageName: "Kanna F2E OC 10.png",
+  gender: "male",
+  age: "young adult",
+  hairColor: "red",
+  eyeColor: "unknown",
+  vibe: "confident, adventurous, charismatic",
+  clothing: "cloak with fur trim",
+  accessories: "none",
+  eyeMouthOffsets: {
+    mouthX: 3,
+    mouthY: 5,
+    eyeX: 3,
+    eyeY: 3,
+  },
+};

@@ -71,6 +71,7 @@ export default async function allAI({
     storyArc,
     chapterNumberToAssemble: 0,
     existingPartyCharacters: [mainCharacterIdea],
+    allRomCharacters,
   });
 
   const romChapter: RomChapter = {

@@ -42,17 +42,17 @@ async function generatePortraitMetadata({
 if (import.meta.main) {
   const characters = [
     {
-      name: "Seraphina",
-      url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Ghostblade/%7BGhostblade%7D%20OC%201%20%5BF2E%5D.png",
+      name: "1",
+      url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Kanna/%7BKanna%7D%20%5BF2E%5D%20OC%2031.png",
     },
-    // {
-    //   name: "Lira",
-    //   url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Kanna/%7BKanna%7D%20%5BF2E%5D%20OC%2015.png",
-    // },
-    // {
-    //   name: "Igor",
-    //   url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Ghostblade/%7BGhostblade%7D%20OC%20Miyas%20Lord%20%5BF2E%5D.png",
-    // },
+    {
+      name: "2",
+      url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Kanna/%7BKanna%7D%20%5BF2E%5D%20OC%201.png",
+    },
+    {
+      name: "3",
+      url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Kanna/%7BKanna%7D%20%5BF2E%5D%20OC%2010.png",
+    },
     // {
     //   name: "Ligma",
     //   url: "https://raw.githubusercontent.com/Klokinator/FE-Repo/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Goldblitzx/%7BGoldblitzx%7D%20%5BF2U%5D%20OC%201.png",

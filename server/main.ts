@@ -18,6 +18,13 @@ export async function doEverything({
 
 // Learn more at https://docs.deno.com/runtime/manual/examples/module_metadata#concepts
 if (import.meta.main) {
+  const startTime = performance.now();
+
   await doEverything({ worldIdea: worldIdeaExample });
+
+  const endTime = performance.now();
+  console.log(
+    `Execution time: ${(endTime - startTime).toFixed(2)} milliseconds`
+  );
 }
 
