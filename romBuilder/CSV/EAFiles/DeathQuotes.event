@@ -1,6 +1,6 @@
 //DeathQuote(Character,Chapter,EventID,TextID)
 
 DeathQuote(Lyra,AllChapters,0x00,LyraDeathText)
-DeathQuote(Elias,AllChapters,0x00,EliasDeathText)
-DeathQuote(Mira,AllChapters,0x00,MiraDeathText)
+DeathQuote(Eira,AllChapters,0x00,EiraDeathText)
+DeathQuote(Korrin,AllChapters,0x00,KorrinDeathText)
 DeathQuote(Lyra,AllChapters,0x00,LyraDeathText)

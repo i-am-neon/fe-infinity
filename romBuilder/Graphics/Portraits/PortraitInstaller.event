@@ -5,16 +5,16 @@ PortraitTable:
 
 LyraPortrait:
 #incbin "cache/Lyra.dmp"
-setMugEntry(LyraMug,LyraPortrait,3,5,3,3)
+setMugEntry(LyraMug,LyraPortrait,3,5,3,5)
 
-EliasPortrait:
-#incbin "cache/Elias.dmp"
-setMugEntry(EliasMug,EliasPortrait,3,5,3,3)
+EiraPortrait:
+#incbin "cache/Eira.dmp"
+setMugEntry(EiraMug,EiraPortrait,3,5,3,5)
 
-MiraPortrait:
-#incbin "cache/Mira.dmp"
-setMugEntry(MiraMug,MiraPortrait,3,5,3,3)
+KorrinPortrait:
+#incbin "cache/Korrin.dmp"
+setMugEntry(KorrinMug,KorrinPortrait,3,5,3,5)
 
 LyraPortrait:
 #incbin "cache/Lyra.dmp"
-setMugEntry(LyraMug,LyraPortrait,3,5,3,3)
+setMugEntry(LyraMug,LyraPortrait,3,5,3,5)

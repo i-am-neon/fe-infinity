@@ -4,6 +4,6 @@ Dummy1
 Dummy2
 
 Lyra
-Elias
-Mira
+Eira
+Korrin
 Lyra

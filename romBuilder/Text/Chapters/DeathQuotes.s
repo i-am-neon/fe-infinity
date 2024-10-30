@@ -4,12 +4,12 @@
 [FarRight][LoadLyra]
 TODO: death quote[X]
 
-## EliasDeathText
-[FarRight][LoadElias]
+## EiraDeathText
+[FarRight][LoadEira]
 TODO: death quote[X]
 
-## MiraDeathText
-[FarRight][LoadMira]
+## KorrinDeathText
+[FarRight][LoadKorrin]
 TODO: death quote[X]
 
 ## LyraDeathText

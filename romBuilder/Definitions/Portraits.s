@@ -10,6 +10,6 @@ SpellswordMCard
 SpellswordFCard
 
 LyraMug
-EliasMug
-MiraMug
+EiraMug
+KorrinMug
 LyraMug

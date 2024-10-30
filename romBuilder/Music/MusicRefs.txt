@@ -15,6 +15,7 @@ Cavern_of_Splendor
 Knock_Em_Around
 	Attack theme: Prologue
 Legends_of_Avenir
+	Prologue.event
 	Main Theme
 Life_in_the_Military
 	Military prep theme

@@ -1,24 +1,29 @@
-## EliasJoins
+## PreBattleScene
 [ConversationText]
-[MidLeft][LoadLyra][MidRight][LoadElias]
-Lyra! I heard rumors of Veil members gathering in Elderwood Grove.
-[MidLeft]Yes, I need to stop them before they seize the ancient sigils!
-[MidRight]And why should I care? I've seen enough bloodshed to last a lifetime.[CloseSpeech][MoveLeft][FarLeft][LoadMira]
-You think you can just walk away? The power of the sigils is too great to ignore!
-[MidLeft]I can't let them use that power for their own gain. We need to gather allies!
-[FarLeft]Allies? You think anyone would follow a lost cause like yours?
-[MidRight]I may be disillusioned, but I can't stand by while they threaten the world. I'll join you, but don't expect me to be your cheerleader.[CloseSpeech][X]
+[FarRight][LoadEira][MidLeft][LoadLyra]
+Eira! We've reached the edge of the Whispering Woods.
+[FarRight]Yes, but we must tread carefully. The Cult of the Abyss is rumored to be lurking here.
+[MidLeft]And Korrin... I can't believe he's turned against us.
+[FarRight]He was once a protector, but the Obsidian Sigil has twisted him. We must be ready for anything.
+[MidLeft]We can't let him claim the sigil for himself. It's too dangerous in his hands.
+[FarRight]Agreed. The spirits of the woods are counting on us to restore balance.
+[MidLeft]Let's move forward, then. We'll confront Korrin and reclaim the woods for the Order of the Verdant Sigil.[X]
 
-## PostBattleVictory
+## PostBattleConfrontation
 [ConversationText]
-[MidRight][LoadElias][MidLeft][LoadMira]
-Elias! We did it! Mira is defeated!
-[MidRight]I can't believe it. But this is just the beginning, isn't it?
-[MidLeft]You know it is. The Veil won't stop until they have the sigils.
-[MidRight]We need to rally the kingdoms. If we don't unite, they'll pick us off one by one.
-[MidLeft]Right. We have to show them that together, we can stand against the darkness.
-[MidRight]But how do we convince them? They've been at each other's throats for so long.
-[MidLeft]We start by sharing our victory. If they see that we can defeat Mira, maybe they'll believe in hope again.
-[MidRight]Hope... It's a fragile thing, but it's all we have now.
-[MidLeft]Then let's not waste any time. We need to move quickly before the Veil regroups.
-[MidRight]Agreed. For Eldralis![X]
+[FarRight][LoadKorrin][MidLeft][LoadEira][MidRight][LoadLyra]
+Korrin! Your reign of terror ends here!
+[FarRight]You think you can defeat me? I will claim the sigil and bend this world to my will!
+[MidLeft]You were once a guardian, Korrin. The sigil was meant to protect, not destroy!
+[FarRight]Protect? Ha! The power of the Obsidian Sigil is beyond your comprehension!
+[MidRight]Eira, what is the true power of the sigil?
+[MidLeft][MoveLeft]It can unite the kingdoms against the Cult of the Abyss. We must not let it fall into the wrong hands!
+[FarRight]You are a fool, Eira! The sigil belongs to me!
+[MidRight]Not anymore! We will reclaim it!
+[FarRight][MoveFarLeft]You think you can stop me? I will show you the true meaning of power!
+[MidLeft]Together, we can restore balance to Eldralis!
+[FarRight]You will regret this!
+[MidRight]Lyra, now! Let's finish this!
+[FarRight]No! This cannot be happening!
+[MidLeft]The sigil is ours!
+[FarRight][CloseSpeech][MidRight]With Korrin defeated, we must gather our allies. The fight against the darkness has only just begun.[X]

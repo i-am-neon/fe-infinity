@@ -3,11 +3,11 @@
 ## LyraNameText
 Lyra[X]
 
-## EliasNameText
-Elias[X]
+## EiraNameText
+Eira[X]
 
-## MiraNameText
-Mira[X]
+## KorrinNameText
+Korrin[X]
 
 ## LyraNameText
 Lyra[X]

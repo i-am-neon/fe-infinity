@@ -49,7 +49,7 @@ Item options:
     null,
     2
   )}\n CharacterClass: ${characterClass}\n Available Weapon Types: ${availableWeaponTypes}\n Level: ${level}`;
-  console.log("systemMessage :>> ", systemMessage);
+
   const { inventory } = await generateStructuredData({
     systemMessage,
     prompt,
@@ -61,7 +61,8 @@ Item options:
     temperature: 0.5,
   });
 
-  return inventory;
+  // Take out all spaces from the items
+  return inventory.map((item) => item.replace(/\s+/g, ""));
 }
 
 if (import.meta.main) {
