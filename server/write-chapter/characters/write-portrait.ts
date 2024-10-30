@@ -33,7 +33,9 @@ setMugEntry(${characterName}Mug,${characterName}Portrait,${mouthX},${mouthY},${e
 
   // copy portrait image from assets to rom builder and rename
   await Deno.copyFile(
-    getPathWithinAssetsPortraitsDir(portraitMetadata.originalImageName),
+    getPathWithinAssetsPortraitsDir(
+      "images/" + portraitMetadata.originalImageName
+    ),
     getPathWithinRomBuilderDir(`Graphics/Portraits/${characterName}.png`)
   );
 }
@@ -41,7 +43,22 @@ setMugEntry(${characterName}Mug,${characterName}Portrait,${mouthX},${mouthY},${e
 if (import.meta.main) {
   await writePortrait({
     characterName: "Seraphina",
-    portraitMetadata: seraphinaPortraitMetadata,
+    portraitMetadata: {
+      originalImageName: "0.png",
+      gender: "female",
+      age: "young adult",
+      hairColor: "blue",
+      eyeColor: "red",
+      vibe: "mystical, serene, wise",
+      headgear: "hood",
+      clothing: "hooded cloak",
+      eyeMouthOffsets: {
+        mouthX: 3,
+        mouthY: 5,
+        eyeX: 3,
+        eyeY: 3,
+      },
+    },
   });
 }
 
