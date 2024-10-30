@@ -1,11 +1,11 @@
-import generateScene from "./generate-scene/generate-scene.ts";
-import replaceApostrophes from "./generate-scene/replace-apostrophes.ts";
 import { storyArcExample } from "@/testData/ai.ts";
 import { exampleRomCharacters } from "@/testData/rom-characters.ts";
 import type { StoryArc } from "@/types/ai/StoryArc.ts";
 import type { ChapterEvent } from "@/types/ChapterEvent.ts";
 import type { RomCharacter } from "@/types/RomCharacter.ts";
-import { randomInt } from "node:crypto";
+import generateScene from "./generate-scene/generate-scene.ts";
+import generateUnitLine from "@/ai/assemble-chapter-event/generate-unit-line/generate-unit-line.ts";
+import getUnitsArray from "@/ai/assemble-chapter-event/generate-unit-line/get-units-array.ts";
 
 export default async function assembleChapterEvent({
   storyArc,
@@ -46,25 +46,11 @@ export default async function assembleChapterEvent({
     preOrPostBattle: "post-battle",
   });
 
-  const unitsArray = [];
-  for (const romCharacter of [
+  const unitsArray = await getUnitsArray([
     ...existingPartyCharacters,
     ...newPlayableCharacters,
     boss,
-  ]) {
-    const isBoss = romCharacter.name === thisChapterIdea.boss.name;
-    const xCoord = randomInt(0, 5);
-    const yCoord = randomInt(0, 5);
-    unitsArray.push(
-      `UNIT ${romCharacter.name} ${
-        romCharacter.csvData.defaultClass
-      } 0x00 Level(1, ${
-        isBoss ? "Enemy" : "Ally"
-      }, True) [${xCoord}, ${yCoord}] 0x00 0x00 0x0 0x00 [Rapier, Elixir, WhiteGem] ${
-        isBoss ? "GuardTileAI" : "NoAI"
-      }`
-    );
-  }
+  ]);
 
   return {
     eventDataReference:
