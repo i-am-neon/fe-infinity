@@ -2,8 +2,8 @@ import { _internals, assignMultiplePortraits } from "@/ai/portraits/assign-multi
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import type { PortraitMetadata } from "@/types/PortraitMetadata.ts";
 import { assertEquals } from "@std/assert/equals";
-import { assertSpyCall, assertSpyCallAsync, assertSpyCalls, resolvesNext, stub } from "@std/testing/mock";
 import { assertRejects } from "@std/assert/rejects";
+import { assertSpyCallAsync, assertSpyCalls, resolvesNext, stub } from "@std/testing/mock";
 
 // Mock data for testing
 const mockCharacterIdeas: CharacterIdea[] = [

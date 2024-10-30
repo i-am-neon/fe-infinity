@@ -1,18 +1,11 @@
+import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
+import { allPortraitOptions } from "@/testData/ai.ts";
 import {
   AIPortraitMetadataSchema,
-  type AIPortraitMetadata,
   type PortraitMetadata,
 } from "@/types/PortraitMetadata.ts";
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
-import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
 import { z } from "zod";
-import {
-  igorPortraitMetadata,
-  ligmaPortraitMetadata,
-  liraPortraitMetadata,
-  seraphinaPortraitMetadata,
-} from "@/testData/test-characters.ts";
-import { allPortraitOptions } from "@/testData/ai.ts";
 
 export default async function choosePortrait({
   portraitOptions,
