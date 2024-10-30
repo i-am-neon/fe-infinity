@@ -1,4 +1,4 @@
-import replaceApostrophes from "@/ai/assemble-chapter-event/replace-apostrophes.ts";
+import replaceApostrophes from "@/ai/assemble-chapter-event/generate-scene/replace-apostrophes.ts";
 
 Deno.test(
   "replaces a single right single quotation mark with an apostrophe",
@@ -48,3 +48,4 @@ Deno.test("handles empty string input", () => {
     );
   }
 });
+

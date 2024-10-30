@@ -1,5 +1,5 @@
-import generateScene from "@/ai/assemble-chapter-event/generate-scene.ts";
-import replaceApostrophes from "@/ai/assemble-chapter-event/replace-apostrophes.ts";
+import generateScene from "./generate-scene/generate-scene.ts";
+import replaceApostrophes from "./generate-scene/replace-apostrophes.ts";
 import { storyArcExample } from "@/testData/ai.ts";
 import { exampleRomCharacters } from "@/testData/rom-characters.ts";
 import type { StoryArc } from "@/types/ai/StoryArc.ts";
@@ -80,9 +80,7 @@ export default async function assembleChapterEvent({
     beginningScene: "LOAD1 0x1 Units\n" + preBattleSceneContent,
     endingScene: postBattleSceneContent,
     localDefinitions: [""],
-    text: replaceApostrophes(
-      `## ${preBattleTextSceneName}\n[ConversationText]\n${preBattleTextSceneContent}[X]\n\n## ${postBattleTextSceneName}\n[ConversationText]\n${postBattleTextSceneContent}[X]`
-    ),
+    text: `## ${preBattleTextSceneName}\n[ConversationText]\n${preBattleTextSceneContent}[X]\n\n## ${postBattleTextSceneName}\n[ConversationText]\n${postBattleTextSceneContent}[X]`,
   };
 }
 

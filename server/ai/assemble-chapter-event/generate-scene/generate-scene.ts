@@ -2,7 +2,8 @@ import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
 import { z } from "zod";
 import { mainCharacterIdeaExample, storyArcExample } from "@/testData/ai.ts";
-import { backgroundOptions } from "@/ai/assemble-chapter-event/background-options.ts";
+import { backgroundOptions } from "./background-options.ts";
+import replaceApostrophes from "./replace-apostrophes.ts";
 
 export default async function generateScene({
   sceneOverview,
@@ -109,7 +110,11 @@ That's a short example of an opening scene. Yours may be longer.
       }),
     });
 
-  return { sceneContent, textSceneName, textSceneContent };
+  return {
+    sceneContent,
+    textSceneName,
+    textSceneContent: replaceApostrophes(textSceneContent),
+  };
 }
 
 if (import.meta.main) {
