@@ -1,4 +1,6 @@
-export const allPortraitOptions = [
+import type { PortraitMetadata } from "@/types/PortraitMetadata.ts";
+
+export const allPortraitOptions: PortraitMetadata[] = [
   {
     originalImageName: "0.png",
     eyeMouthOffsets: {

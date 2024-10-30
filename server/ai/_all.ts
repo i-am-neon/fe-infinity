@@ -4,11 +4,12 @@ import generateMainCharacterIdea from "@/ai/generate-main-character-idea.ts";
 import generateStoryArc from "@/ai/generate-story-arc.ts";
 import generateWorldSummary from "@/ai/generate-world-summary.ts";
 import { assignMultiplePortraits } from "@/ai/portraits/assign-multiple-portraits.ts";
-import { allPortraitOptions, worldIdeaExample } from "@/testData/ai.ts";
+import { worldIdeaExample } from "@/testData/ai.ts";
 import { TEST_CHAPTER } from "@/testData/test-data.ts";
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import type { RomChapter } from "@/types/RomChapter.ts";
 import choosePortrait from "./portraits/choose-portrait.ts";
+import { allPortraitOptions } from "@/ai/portraits/portrait-metadata-creation/all-portrait-options.ts";
 
 export default async function allAI({
   worldIdea,

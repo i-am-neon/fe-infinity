@@ -41,7 +41,11 @@ export default async function writeAllPortraitOptions(): Promise<void> {
     "./ai/portraits/portrait-metadata-creation/all-portrait-options.ts";
   await Deno.writeTextFile(
     outputFilePath,
-    `export const allPortraitOptions = ${JSON.stringify(allMetadata, null, 2)}`
+    `import type { PortraitMetadata } from "@/types/PortraitMetadata.ts";\n\nexport const allPortraitOptions: PortraitMetadata[] = ${JSON.stringify(
+      allMetadata,
+      null,
+      2
+    )}`
   );
 
   console.log(`Concatenated metadata written to ${outputFilePath}`);
