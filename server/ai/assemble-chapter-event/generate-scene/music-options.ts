@@ -1,5 +1,5 @@
 export const musicOptions = [
-  "Legends_of_Avenir",
+  // "Legends_of_Avenir",
   "Encounter_with_Renegades",
   "Dry_Trail",
   "Last_Battle_Decision",
@@ -118,3 +118,4 @@ export const musicOptions = [
   "Judgral_Calls",
   "Roar_of_Dominion",
 ];
+

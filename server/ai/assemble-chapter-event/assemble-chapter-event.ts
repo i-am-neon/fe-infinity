@@ -77,7 +77,9 @@ export default async function assembleChapterEvent({
     miscBasedEvents: undefined,
     trapData: undefined,
     units: unitsArray.join("\n"),
-    beginningScene: "LOAD1 0x1 Units\n" + preBattleSceneContent,
+    // For now hard-code music
+    beginningScene:
+      "LOAD1 0x1 Units\nMUSC Legends_of_Avenir\n" + preBattleSceneContent,
     endingScene: postBattleSceneContent,
     localDefinitions: [""],
     text: `## ${preBattleTextSceneName}\n[ConversationText]\n${preBattleTextSceneContent}[X]\n\n## ${postBattleTextSceneName}\n[ConversationText]\n${postBattleTextSceneContent}[X]`,

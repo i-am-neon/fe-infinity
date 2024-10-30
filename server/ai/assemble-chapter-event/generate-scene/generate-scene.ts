@@ -30,17 +30,12 @@ Here are the properties you need to return:
 
 Should be the entire scene, referencing the created text scene. For example:
 \`\`\`
-MUSC <musicName>
 Text(<backgroundSceneName>,<textSceneName>)
 \`\`\`
 
 Here's a list of backgroundSceneName options:
 
 ${JSON.stringify(backgroundOptions, null, 2)}
-
-Here's a list of music options:
-
-${JSON.stringify(musicOptions, null, 2)}
 
 ## textSceneName
 The name of the text scene you created. Should be one or two words, no spaces, in PascalCase.
