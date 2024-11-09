@@ -11,9 +11,9 @@ EiraPortrait:
 #incbin "cache/Eira.dmp"
 setMugEntry(EiraMug,EiraPortrait,3,5,3,5)
 
-KorrinPortrait:
-#incbin "cache/Korrin.dmp"
-setMugEntry(KorrinMug,KorrinPortrait,3,5,3,5)
+KieranPortrait:
+#incbin "cache/Kieran.dmp"
+setMugEntry(KieranMug,KieranPortrait,3,5,3,5)
 
 LyraPortrait:
 #incbin "cache/Lyra.dmp"

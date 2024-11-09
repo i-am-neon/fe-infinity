@@ -107,7 +107,8 @@ export const WEAPON_OPTIONS: Record<WeaponType, string[]> = {
     "Eclipse",
     "Fenrir",
     "Gleipnir",
-    "Dulam - Dark magic that drains a small amount of enemy HP.",
+    // Crashes for some reason
+    // "Dulam - Dark magic that drains a small amount of enemy HP.",
     "Slime - Dark magic that reduces the enemy’s speed and resilience.",
     "Swarm - Summons a swarm of dark energy to deal moderate damage.",
     "Worm - A powerful dark magic spell with a high chance to hit.",

@@ -39,10 +39,10 @@ ALIGN 4
 
 //Label Units
 Units:
-UNIT Lyra Cleric 0x00 Level(4, Ally, True) [1, 4] 0x00 0x00 0x0 0x00 [Heal, Vulnerary, Torch] NoAI
-UNIT Eira Mage_F 0x00 Level(2, Ally, True) [2, 1] 0x00 0x00 0x0 0x00 [Thunder, Vulnerary, PureWater] NoAI
+UNIT Lyra Cleric 0x00 Level(3, Ally, True) [4, 2] 0x00 0x00 0x0 0x00 [Heal, Vulnerary, Torch] NoAI
+UNIT Eira Mage_F 0x00 Level(4, Ally, True) [4, 2] 0x00 0x00 0x0 0x00 [Wind, Vulnerary, Elixir] NoAI
 UNIT Lyra Cleric 0x00 Level(4, Ally, True) [1, 2] 0x00 0x00 0x0 0x00 [Heal, Vulnerary, Torch] NoAI
-UNIT Korrin Shaman 0x00 Level(6, Enemy, True) [4, 0] 0x00 0x00 0x0 0x00 [Flux, Nosferatu, Vulnerary, Dulam] GuardTileAI
+UNIT Kieran Shaman 0x00 Level(3, Enemy, True) [3, 3] 0x00 0x00 0x0 0x00 [Flux, Nosferatu, Vulnerary] GuardTileAI
 EndUnit
 
 //Label BeginingScene
@@ -54,7 +54,7 @@ ENDA
 
 //Label EndingScene
 EndingScene:
-Text(Castle_Hall,PostBattleConfrontation)
+Text(PostBattleScene)
 ENDA
 
 //Label Local Definitions

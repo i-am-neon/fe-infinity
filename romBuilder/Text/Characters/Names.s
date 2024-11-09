@@ -6,8 +6,8 @@ Lyra[X]
 ## EiraNameText
 Eira[X]
 
-## KorrinNameText
-Korrin[X]
+## KieranNameText
+Kieran[X]
 
 ## LyraNameText
 Lyra[X]

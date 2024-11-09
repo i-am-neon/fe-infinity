@@ -1,29 +1,27 @@
 ## PreBattleScene
 [ConversationText]
-[FarRight][LoadEira][MidLeft][LoadLyra]
-Eira! We've reached the edge of the Whispering Woods.
-[FarRight]Yes, but we must tread carefully. The Cult of the Abyss is rumored to be lurking here.
-[MidLeft]And Korrin... I can't believe he's turned against us.
-[FarRight]He was once a protector, but the Obsidian Sigil has twisted him. We must be ready for anything.
-[MidLeft]We can't let him claim the sigil for himself. It's too dangerous in his hands.
-[FarRight]Agreed. The spirits of the woods are counting on us to restore balance.
-[MidLeft]Let's move forward, then. We'll confront Korrin and reclaim the woods for the Order of the Verdant Sigil.[X]
+[MidLeft][LoadLyra][MidRight][LoadEira]
+Lyra! I can feel the disturbance in the forest.
+[MidLeft]Eira, what do you mean?
+[MidRight]The Veil's actions have awakened something dark. We must hurry to the heart of the woods.
+[MidLeft]But what about the sigils? We need to find them before Kieran does!
+[MidRight]I know where they are hidden. Follow me, and stay close. The spirits will guide us.
+[MidLeft]Thank you, Eira. I don't know what I would do without your help.
+[MidRight]We are not alone in this fight. Kieran will stop at nothing to claim the power of the sigils for himself.
+[MidLeft]Then we must be ready. Together, we can protect the forest and its secrets.[X]
 
-## PostBattleConfrontation
+## PostBattleScene
 [ConversationText]
-[FarRight][LoadKorrin][MidLeft][LoadEira][MidRight][LoadLyra]
-Korrin! Your reign of terror ends here!
-[FarRight]You think you can defeat me? I will claim the sigil and bend this world to my will!
-[MidLeft]You were once a guardian, Korrin. The sigil was meant to protect, not destroy!
-[FarRight]Protect? Ha! The power of the Obsidian Sigil is beyond your comprehension!
-[MidRight]Eira, what is the true power of the sigil?
-[MidLeft][MoveLeft]It can unite the kingdoms against the Cult of the Abyss. We must not let it fall into the wrong hands!
-[FarRight]You are a fool, Eira! The sigil belongs to me!
-[MidRight]Not anymore! We will reclaim it!
-[FarRight][MoveFarLeft]You think you can stop me? I will show you the true meaning of power!
-[MidLeft]Together, we can restore balance to Eldralis!
-[FarRight]You will regret this!
-[MidRight]Lyra, now! Let's finish this!
-[FarRight]No! This cannot be happening!
-[MidLeft]The sigil is ours!
-[FarRight][CloseSpeech][MidRight]With Korrin defeated, we must gather our allies. The fight against the darkness has only just begun.[X]
+[MidRight][LoadLyra][MidLeft][LoadEira][FarLeft][LoadKieran]
+Lyra! We did it! Kieran has been defeated!
+[MidRight]Yes, but at what cost? The battle was fierce, and the forest still bears the scars of conflict.
+[MidLeft]The sigil is safe for now, but we must remain vigilant. The Veil will not give up so easily.
+[FarLeft]You think you can stop me? I will return, and next time, I will claim the sigil!
+[MidRight]Kieran, your ambitions will lead to your downfall. The spirits of the forest will protect what you seek to destroy.
+[FarLeft]Spirits? They are nothing but whispers in the wind! I will awaken the slumbering god and gain power beyond your comprehension!
+[MidLeft]You underestimate the bond between the forest and its guardians. Eira, will you stand with us?
+[MidLeft]I pledge my allegiance to your cause, Lyra. I have knowledge of the sigils and the spirits that protect them. Together, we can prevent the Veil from achieving their goals.
+[MidRight]Thank you, Eira. With your guidance, we can unite the kingdoms against the Veil.
+[FarLeft]You may have won this battle, but the war is far from over! I will return!
+[MidRight]Let him go. We have a greater purpose now. The Whispering Woods are safe, and we must move forward.
+[MidLeft]Yes, let us leave this place and prepare for what lies ahead. The kingdoms need us now more than ever.[X]

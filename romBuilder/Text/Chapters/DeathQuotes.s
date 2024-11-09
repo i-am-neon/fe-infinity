@@ -8,8 +8,8 @@ TODO: death quote[X]
 [FarRight][LoadEira]
 TODO: death quote[X]
 
-## KorrinDeathText
-[FarRight][LoadKorrin]
+## KieranDeathText
+[FarRight][LoadKieran]
 TODO: death quote[X]
 
 ## LyraDeathText

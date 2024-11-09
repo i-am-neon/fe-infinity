@@ -4,7 +4,7 @@ import type { GenericCharacter } from "@/types/GenericCharacter.ts";
 import type { PortraitMetadata } from "@/types/PortraitMetadata.ts";
 
 export const seraphinaPortraitMetadata: PortraitMetadata = {
-  originalImageName: "test/Ghostblade OC 1.png",
+  originalImageName: "0.png",
   gender: "female",
   age: "young adult",
   hairColor: "blue",

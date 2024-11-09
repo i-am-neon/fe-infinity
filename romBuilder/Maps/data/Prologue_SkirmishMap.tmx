@@ -11,7 +11,7 @@
  <layer name="Tile Layer 1" width="17" height="17">
   <properties>
    <property name="Anims" value="_01Anims"/>
-   <property name="ChapterID" value="PrologueChapter"/>
+   <property name="ChapterID" value="MilitaryAcceptRetreatHelp5"/>
    <property name="Main" value=""/>
    <property name="MapID" value="SkirmishMap"/>
    <property name="ObjectType" value="0x01"/>

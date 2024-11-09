@@ -6,7 +6,7 @@ TODO: Desc text[X]
 ## EiraDescText
 TODO: Desc text[X]
 
-## KorrinDescText
+## KieranDescText
 TODO: Desc text[X]
 
 ## LyraDescText
