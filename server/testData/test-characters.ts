@@ -72,7 +72,7 @@ I wanted to do more...[A][A][X]`,
 };
 
 export const liraPortraitMetadata: PortraitMetadata = {
-  originalImageName: "test/Kanna F2E OC 15.png",
+  originalImageName: "1.png",
   gender: "female",
   age: "young adult",
   hairColor: "blonde",
@@ -139,7 +139,7 @@ I wanted to do more...[A][X]`,
 };
 
 export const igorPortraitMetadata: PortraitMetadata = {
-  originalImageName: "test/Miyas Lord Portrait.png",
+  originalImageName: "2.png",
   gender: "male",
   age: "mature adult",
   hairColor: "silver",
@@ -206,7 +206,7 @@ I wanted to do more...[A][A][X]`,
 };
 
 export const ligmaPortraitMetadata: PortraitMetadata = {
-  originalImageName: "test/OC 1 from Goldblitzx.png",
+  originalImageName: "3.png",
   gender: "male",
   age: "young adult",
   hairColor: "gray",
@@ -317,7 +317,7 @@ export const cesarianGenericCharacter: GenericCharacter = {
 };
 
 export const pinkDancerPortraitMetadata: PortraitMetadata = {
-  originalImageName: "test/Kanna F2E OC 31.png",
+  originalImageName: "4.png",
   gender: "female",
   age: "young adult",
   hairColor: "blonde",
@@ -334,7 +334,7 @@ export const pinkDancerPortraitMetadata: PortraitMetadata = {
 };
 
 export const tealHairGirlPortraitMetadata: PortraitMetadata = {
-  originalImageName: "test/Kanna F2E OC 1.png",
+  originalImageName: "5.png",
   gender: "female",
   age: "young adult",
   hairColor: "teal",
@@ -351,7 +351,7 @@ export const tealHairGirlPortraitMetadata: PortraitMetadata = {
 };
 
 export const fireElfPortraitMetadata: PortraitMetadata = {
-  originalImageName: "test/Kanna F2E OC 10.png",
+  originalImageName: "6.png",
   gender: "male",
   age: "young adult",
   hairColor: "red",
