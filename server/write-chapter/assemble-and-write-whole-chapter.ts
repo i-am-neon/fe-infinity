@@ -10,6 +10,7 @@ import writeChapterMap from "@/write-chapter/map/write-chapter-map.ts";
 import initializeChaptersDotS from "@/write-chapter/initialize-chapters-dot-s.ts";
 import writeChapterName from "@/write-chapter/write-chapter-name.ts";
 import { TEST_CHAPTER } from "@/testData/test-data.ts";
+import initializeMapDirectory from "@/write-chapter/map/initialize-map-directory.ts";
 
 export default async function assembleAndWriteWholeChapter(
   chapter: RomChapter
@@ -19,6 +20,7 @@ export default async function assembleAndWriteWholeChapter(
   await initializeChapterDataCsv();
   // Initialize Chapter Data files
   await initializeChaptersDotS();
+  await initializeMapDirectory();
   await writeFileToRomBuilder("Text/Chapters/DeathQuotes.s", "");
   await writeFileToRomBuilder(
     "CSV/EAFiles/DeathQuotes.event",

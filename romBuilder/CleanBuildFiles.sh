@@ -3,10 +3,6 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-# Remove all .dmp and .event files from Maps/data directory
-find Maps/data/ -type f -name "*.dmp" -delete
-find Maps/data/ -type f -name "*.event" -delete
-
 # Remove all .dmp files from Graphics/WorldMap directory, excluding Glowy and its subdirectories
 # Can't get the excluded dir to work
 # find Graphics/WorldMap \( -type d -name Glowy -prune \) -o -type f -name "*.dmp" -delete
@@ -25,6 +21,7 @@ DIRS_TO_CLEAN=(
   "Graphics/ClassCards/cache"
   "Graphics/MapSprites/cache"
   "Graphics/Portraits/cache"
+  "Maps/data"
 )
 
 # List of specific files to remove
