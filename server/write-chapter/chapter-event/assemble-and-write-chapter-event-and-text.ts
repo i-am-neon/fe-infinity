@@ -15,6 +15,11 @@ export default async function assembleAndWriteChapterEventAndText({
   if (chapterEvent.text) {
     await writeFile(`Text/Chapters/${chapterName}.s`, chapterEvent.text);
   }
+  appendToFileInRomBuilderSync({
+    pathWithinRomBuilder: "Definitions/EventPointers.s",
+    content: chapterEvent.eventDataReference,
+    isOnNewLine: true,
+  });
 
   // Add to MasterEventInstaller.event
   appendToFileInRomBuilderSync({
