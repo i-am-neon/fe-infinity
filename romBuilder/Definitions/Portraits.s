@@ -9,7 +9,7 @@ SentinelCard
 SpellswordMCard
 SpellswordFCard
 
-LyraMug
-EiraMug
-KieranMug
-LyraMug
+SeraphinaMug
+LiraMug
+IgorMug
+LigmaMug

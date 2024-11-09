@@ -1,13 +1,16 @@
 
 
-## LyraNameText
-Lyra[X]
+## SeraphinaNameText
+Seraphina[X]
 
-## EiraNameText
-Eira[X]
+## LiraNameText
+Lira[X]
 
-## KieranNameText
-Kieran[X]
+## IgorNameText
+Igor[X]
 
-## LyraNameText
-Lyra[X]
+## LigmaNameText
+Ligma[X]
+
+## CesarianNameText
+Cesarian[X]

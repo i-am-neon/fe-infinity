@@ -3,18 +3,18 @@ PortraitTable:
 #incbin "VanillaPortraitTable.dmp"
 
 
-LyraPortrait:
-#incbin "cache/Lyra.dmp"
-setMugEntry(LyraMug,LyraPortrait,3,5,3,5)
+SeraphinaPortrait:
+#incbin "cache/Seraphina.dmp"
+setMugEntry(SeraphinaMug,SeraphinaPortrait,3,5,3,3)
 
-EiraPortrait:
-#incbin "cache/Eira.dmp"
-setMugEntry(EiraMug,EiraPortrait,3,5,3,5)
+LiraPortrait:
+#incbin "cache/Lira.dmp"
+setMugEntry(LiraMug,LiraPortrait,3,5,3,3)
 
-KieranPortrait:
-#incbin "cache/Kieran.dmp"
-setMugEntry(KieranMug,KieranPortrait,3,5,3,5)
+IgorPortrait:
+#incbin "cache/Igor.dmp"
+setMugEntry(IgorMug,IgorPortrait,3,5,3,3)
 
-LyraPortrait:
-#incbin "cache/Lyra.dmp"
-setMugEntry(LyraMug,LyraPortrait,3,5,3,5)
+LigmaPortrait:
+#incbin "cache/Ligma.dmp"
+setMugEntry(LigmaMug,LigmaPortrait,3,5,3,3)

@@ -12,15 +12,18 @@ Boss_Theme
 	Enemy phase theme: Prologue
 Cavern_of_Splendor
 	Mage prep theme
+FE5_Victory
+	Prologue.event
 Knock_Em_Around
 	Attack theme: Prologue
 Legends_of_Avenir
-	Prologue.event
 	Main Theme
 Life_in_the_Military
 	Military prep theme
 Life_of_a_Mercenary
 	Mercenary prep theme
+Lloyd
+	Prologue.event
 Promotions_of_Avenir
 	Promotions
 Pub_Theme
@@ -51,7 +54,6 @@ Fatalize
 Fighting_of_the_Spirit
 Anchoret
 Kratos
-Lloyd
 Beedles_Shop
 A_Tragic_Decision
 Venus_Lighthouse
@@ -129,7 +131,6 @@ FE5_In_Search_of_Victory
 FE5_Loptr_B
 FE5_Map_A
 FE5_Searching_the_Enemy
-FE5_Victory
 FE5_Victory_Minor
 Victory_March
 Battle_One

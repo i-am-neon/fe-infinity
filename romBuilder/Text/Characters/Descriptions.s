@@ -1,13 +1,24 @@
 
 
-## LyraDescText
-TODO: Desc text[X]
+## SeraphinaDescText
+A talented archer who[NL]
+fights with both magic and[NL]
+healing skills.[X]
 
-## EiraDescText
-TODO: Desc text[X]
+## LiraDescText
+A talented archer who[NL]
+fights with both magic and[NL]
+healing skills.[X]
 
-## KieranDescText
-TODO: Desc text[X]
+## IgorDescText
+A talented archer who[NL]
+fights with both magic and[NL]
+healing skills.[X]
 
-## LyraDescText
-TODO: Desc text[X]
+## LigmaDescText
+A talented archer who[NL]
+fights with both magic and[NL]
+healing skills.[X]
+
+## CesarianDescText
+A generic enemy soldier.[X]
