@@ -36,6 +36,7 @@ ENDB
 #include "REDAs.event"
 `
   );
+  await writeFileToRomBuilder("Definitions/Maps.s", "DummyMap 0x04");
   // Initialize character data files
   await writeFileToRomBuilder("Text/Characters/Names.s", "");
   await writeFileToRomBuilder("Text/Characters/Descriptions.s", "");

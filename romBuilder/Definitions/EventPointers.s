@@ -52,7 +52,6 @@ DesertyMap
 FarmyTownMap
 FortressMap
 AegrisMap
-KnightMap
 PortSelsingMap
 KilthelTempleMap
 HaedricHideoutMap
@@ -119,8 +118,6 @@ ClintManorMap
 MistlainThroneCutsceneMap
 ArcanaeEscapeMap
 LooterBaseMap
-
-KnightChanges
 
 ArcanaeCapitalChanges
 ArcanaePalaceChanges
