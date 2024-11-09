@@ -37,6 +37,7 @@ ENDB
 `
   );
   await writeFileToRomBuilder("Definitions/Maps.s", "DummyMap 0x04");
+  await writeFileToRomBuilder("Definitions/EventNames.s", "");
   // Initialize character data files
   await writeFileToRomBuilder("Text/Characters/Names.s", "");
   await writeFileToRomBuilder("Text/Characters/Descriptions.s", "");

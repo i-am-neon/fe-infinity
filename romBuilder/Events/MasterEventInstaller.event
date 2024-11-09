@@ -10,3 +10,4 @@ ENDB
 #include "Prologue.event"
 EndMainPointer:
 END_MAIN
+#include "Prologue.event"

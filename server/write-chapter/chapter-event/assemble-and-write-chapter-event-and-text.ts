@@ -15,6 +15,11 @@ export default async function assembleAndWriteChapterEventAndText({
   if (chapterEvent.text) {
     await writeFile(`Text/Chapters/${chapterName}.s`, chapterEvent.text);
   }
+  appendToFileInRomBuilderSync({
+    pathWithinRomBuilder: "Definitions/EventNames.s",
+    content: `${chapterEvent.eventDataReference}`,
+    isOnNewLine: true,
+  });
 
   // Add to MasterEventInstaller.event
   appendToFileInRomBuilderSync({
@@ -209,12 +214,9 @@ when they choose to strike![A][X]
 `,
   };
 
-  console.log(
-    "Path to rom builder dir:",
-    assembleAndWriteChapterEventAndText({
-      chapterEvent: testData,
-      chapterName: "Prologue",
-    })
-  );
+  await assembleAndWriteChapterEventAndText({
+    chapterEvent: testData,
+    chapterName: "Prologue",
+  });
 }
 

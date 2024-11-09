@@ -181,7 +181,6 @@ ImprovedCastleTileConfig
 FE6WaterAnimations
 ImprovedCastleAnims
 
-PrologueEvent
 Merc1Events
 Merc2MilitiaEvents
 Merc3MilitiaKillEvents
