@@ -1,0 +1,3 @@
+Dummy 0x04
+SkirmishMap
+SkirmishMapChanges

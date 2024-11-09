@@ -5,6 +5,7 @@
 .include Characters.s
 .include Classes.s
 .include EventPointers.s
+.include Maps.s
 .include Glowy.s
 .include Items.s
 .include ItemEffects.s

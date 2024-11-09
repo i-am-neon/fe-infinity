@@ -1,5 +1,6 @@
 import writeFileToRomBuilder from "@/fileIO/write-file-to-rom-builder.ts";
 import type { ChapterMap } from "@/types/ChapterMap.ts";
+import appendToFileInRomBuilderSync from "@/fileIO/append-to-file-in-rom-builder-sync.ts";
 
 export default async function writeChapterMap({
   chapterMap,
@@ -12,6 +13,16 @@ export default async function writeChapterMap({
     `Maps/data/${chapterName}_${chapterMap.mapName}.tmx`,
     chapterMap.tmx
   );
+  appendToFileInRomBuilderSync({
+    pathWithinRomBuilder: "Definitions/Maps.s",
+    content: chapterMap.mapName,
+    isOnNewLine: true,
+  });
+  appendToFileInRomBuilderSync({
+    pathWithinRomBuilder: "Definitions/Maps.s",
+    content: chapterMap.mapName + "Changes",
+    isOnNewLine: true,
+  });
 }
 
 if (import.meta.main) {
