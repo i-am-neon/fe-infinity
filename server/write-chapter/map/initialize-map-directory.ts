@@ -9,8 +9,6 @@ export default async function initializeMapDirectory(): Promise<void> {
 
     // Recreate the empty directory after clearing it
     await Deno.mkdir(mapDirectory, { recursive: true });
-
-    console.log(`Cleared all files within: ${mapDirectory}`);
   } catch (error) {
     console.error(`Failed to clear the directory: ${mapDirectory}`, error);
   }
@@ -19,3 +17,4 @@ export default async function initializeMapDirectory(): Promise<void> {
 if (import.meta.main) {
   await initializeMapDirectory();
 }
+
