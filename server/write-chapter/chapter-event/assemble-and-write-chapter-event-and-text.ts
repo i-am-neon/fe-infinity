@@ -11,7 +11,7 @@ export default async function assembleAndWriteChapterEventAndText({
   chapterName: string;
 }): Promise<void> {
   const chapterEventString = assembleChapterEvent(chapterEvent);
-  await writeFile(`Events/${chapterName}.event`, chapterEventString);
+  await writeFile(`Events/build/${chapterName}.event`, chapterEventString);
   if (chapterEvent.text) {
     await writeFile(`Text/Chapters/${chapterName}.s`, chapterEvent.text);
   }
@@ -23,7 +23,7 @@ export default async function assembleAndWriteChapterEventAndText({
 
   // Add to MasterEventInstaller.event
   appendToFileInRomBuilderSync({
-    pathWithinRomBuilder: "Events/MasterEventInstaller.event",
+    pathWithinRomBuilder: "Events/build/MasterEventInstaller.event",
     content: `#include "${chapterName}.event"`,
     isOnNewLine: true,
   });

@@ -27,7 +27,7 @@ export default async function assembleAndWriteWholeChapter(
     "//DeathQuote(Character,Chapter,EventID,TextID)\n"
   );
   await writeFileToRomBuilder(
-    "Events/MasterEventInstaller.event",
+    "Events/build/MasterEventInstaller.event",
     `
 ALIGN 4
 GameOverStart:
@@ -153,7 +153,7 @@ PortraitTable:
   // DO THESE AFTER ALL CHAPTERS
   // Finalize Chapter data files
   appendToFileInRomBuilderSync({
-    pathWithinRomBuilder: "Events/MasterEventInstaller.event",
+    pathWithinRomBuilder: "Events/build/MasterEventInstaller.event",
     content: `EndMainPointer:
 END_MAIN`,
     isOnNewLine: true,
