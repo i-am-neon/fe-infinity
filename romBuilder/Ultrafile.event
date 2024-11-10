@@ -31,21 +31,6 @@
 	#ifdef __PUBLIC__
 		MESSAGE Assembling PUBLIC release
 	#endif
-	#ifndef __NO_MERCENARY__
-		MESSAGE Assembling with mercenary
-	#else
-		MESSAGE Assembling without mercenary
-	#endif
-	#ifndef __NO_MILITARY__
-		MESSAGE Assembling with military
-	#else
-		MESSAGE Assembling without military
-	#endif
-	#ifndef __NO_MAGE__
-		MESSAGE Assembling with mage
-	#else
-		MESSAGE Assembling without mage
-	#endif
 	#ifdef __DEBUG__
 		MESSAGE Assembling with debug features
 	#endif
