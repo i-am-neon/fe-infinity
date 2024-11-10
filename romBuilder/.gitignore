@@ -50,11 +50,15 @@ AnimationAssembler/
 CSACreator/
 Graphics/BattlePalettes/cache
 Graphics/Portraits/cache
+Graphics/Portraits/build/*
 Graphics/MapSprites/cache
 Graphics/ClassCards/cache
 Graphics/WorldMap/*.dmp
 Graphics/ItemIcons/*.dmp
 !Graphics/VanillaPortraitTable.dmp
+
+# Chapter event-related ignores.
+Events/build/*
 
 # Misc ignores.
 FE-CLib-master

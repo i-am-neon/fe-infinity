@@ -22,6 +22,7 @@ DIRS_TO_CLEAN=(
   "Graphics/MapSprites/cache"
   "Graphics/Portraits/cache"
   "Maps/data"
+  "Events/build"
 )
 
 # List of specific files to remove
@@ -35,6 +36,12 @@ FILES_TO_REMOVE=(
   "Definitions/Definitions.event"
   "Definitions/Skills.s"
   "Maps/MasterMapInstaller.event"
+  "CSV/EAFiles/DeathQuotes.event"
+  "Text/Chapters/DeathQuotes.s"
+  "CSV/Tables/Characters/CharacterTable.csv"
+  "Definitions/Characters.s"
+  "Definitions/Portraits.s"
+  "Events/MasterEventInstaller.event"
 )
 
 # Clean directories: remove all files from each directory listed
