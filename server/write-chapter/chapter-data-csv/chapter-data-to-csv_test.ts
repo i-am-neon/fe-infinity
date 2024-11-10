@@ -37,7 +37,7 @@ Deno.test(
       worldmapChapterPrologueScene: "0x1",
       prepScreenNumberTimes2: 2,
       chapterTitleDisplayFadeOut: "0x1",
-      statusObjectiveText: "PrologueStatusText",
+      statusObjectiveTextPointer: "PrologueStatusText",
       goalWindowText: "DefeatAllText",
       goalWindowInformation: "EnemyCountGoal",
       turnsToCountDownToPlus1: 0,
