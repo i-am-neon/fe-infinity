@@ -21,7 +21,30 @@ export default async function assembleAndWriteWholeChapter(
   // Initialize Chapter Data files
   await initializeChaptersDotS();
   await initializeMapDirectory();
-  await writeFileToRomBuilder("Text/Chapters/DeathQuotes.s", "");
+  await writeFileToRomBuilder(
+    `Text/Chapters/build/Objectives.s`,
+    `
+## DefeatBossText
+Defeat Boss[X]
+
+## DefeatBossesText
+Defeat Bosses[X]
+
+## DefendText
+Defend[X]
+
+## DefeatAllText
+Defeat All[X]
+
+## UnknownText
+???[X]
+
+## EscapeText
+Escape[X]
+`
+  );
+  await writeFileToRomBuilder(`Text/Chapters/build/Names.s`, "");
+  await writeFileToRomBuilder("Text/Chapters/build/DeathQuotes.s", "");
   await writeFileToRomBuilder(
     "CSV/EAFiles/DeathQuotes.event",
     "//DeathQuote(Character,Chapter,EventID,TextID)\n"
@@ -136,6 +159,8 @@ PortraitTable:
   await assembleAndWriteChapterEventAndText({
     chapterName: chapter.name,
     chapterEvent: chapter.chapterEvent,
+    objectiveTextPointer: chapter.chapterDataForCsv.statusObjectiveTextPointer,
+    formattedObjectiveText: "TODO CHAPTER OBJECTIVE[X]",
   });
   await writeChapterMap({
     chapterMap: chapter.chapterMap,

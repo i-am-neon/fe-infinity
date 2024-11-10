@@ -2,7 +2,7 @@ import appendToFileInRomBuilderSync from "@/fileIO/append-to-file-in-rom-builder
 
 export default function writeChapterName(chapterName: string): void {
   appendToFileInRomBuilderSync({
-    pathWithinRomBuilder: "Text/Chapters/Chapters.s",
+    pathWithinRomBuilder: "Text/Chapters/build/Chapters.s",
     content: `#include "${chapterName}.s"`,
     isOnNewLine: true,
   });

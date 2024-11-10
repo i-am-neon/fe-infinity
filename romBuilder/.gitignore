@@ -47,7 +47,7 @@ InstallTextData.event
 TextDefinitions.event
 Text/ParseDefinitions.txt
 CSV/EAFiles/DeathQuotes.event
-Text/Chapters/DeathQuotes.s
+Text/Chapters/build/*
 Text/Characters/Descriptions.s
 Text/Characters/Names.s
 

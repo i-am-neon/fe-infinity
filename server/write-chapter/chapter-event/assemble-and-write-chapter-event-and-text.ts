@@ -1,20 +1,43 @@
 import appendToFileInRomBuilderSync from "@/fileIO/append-to-file-in-rom-builder-sync.ts";
-import writeFile from "@/fileIO/write-file-to-rom-builder.ts";
+import writeFileToRomBuilder from "@/fileIO/write-file-to-rom-builder.ts";
 import type { ChapterEvent } from "@/types/ChapterEvent.ts";
 import assembleChapterEvent from "@/write-chapter/chapter-event/assemble-chapter-event.ts";
 
 export default async function assembleAndWriteChapterEventAndText({
   chapterEvent,
   chapterName,
+  objectiveTextPointer,
+  formattedObjectiveText,
 }: {
   chapterEvent: ChapterEvent;
   chapterName: string;
+  objectiveTextPointer: string;
+  formattedObjectiveText: string;
 }): Promise<void> {
   const chapterEventString = assembleChapterEvent(chapterEvent);
-  await writeFile(`Events/build/${chapterName}.event`, chapterEventString);
-  if (chapterEvent.text) {
-    await writeFile(`Text/Chapters/${chapterName}.s`, chapterEvent.text);
-  }
+  await writeFileToRomBuilder(
+    `Events/build/${chapterName}.event`,
+    chapterEventString
+  );
+  await writeFileToRomBuilder(
+    `Text/Chapters/build/${chapterName}.s`,
+    chapterEvent.text ?? ""
+  );
+
+  appendToFileInRomBuilderSync({
+    pathWithinRomBuilder: "Text/Chapters/build/Names.s",
+    content: `## ${chapterName}NameText
+${chapterName}[X]`,
+    isOnNewLine: true,
+  });
+
+  appendToFileInRomBuilderSync({
+    pathWithinRomBuilder: "Text/Chapters/build/Objectives.s",
+    content: `## ${objectiveTextPointer}
+${formattedObjectiveText}`,
+    isOnNewLine: true,
+  });
+
   appendToFileInRomBuilderSync({
     pathWithinRomBuilder: "Definitions/EventPointers.s",
     content: chapterEvent.eventDataReference,
@@ -219,6 +242,8 @@ when they choose to strike![A][X]
     assembleAndWriteChapterEventAndText({
       chapterEvent: testData,
       chapterName: "Prologue",
+      objectiveTextPointer: "PrologueStatusText",
+      formattedObjectiveText: "Defeat all[NL]\nunits.[X]",
     })
   );
 }

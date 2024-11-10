@@ -30,7 +30,7 @@ export interface ChapterDataForCsv {
   worldmapChapterPrologueScene: string;
   prepScreenNumberTimes2?: number;
   chapterTitleDisplayFadeOut: string;
-  statusObjectiveText: string;
+  statusObjectiveTextPointer: string;
   goalWindowText: string;
   goalWindowInformation: string;
   turnsToCountDownToPlus1?: number;

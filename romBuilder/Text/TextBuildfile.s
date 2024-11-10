@@ -96,7 +96,7 @@ Enemy control ON[X]
 ## ControlOFFMessage
 Enemy control OFF[X]
 
-#include "Chapters/Chapters.s"
+#include "Chapters/build/Chapters.s"
 
 #include "Items/Names.s"
 #include "Items/Descriptions.s"

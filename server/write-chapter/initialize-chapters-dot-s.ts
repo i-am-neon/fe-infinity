@@ -8,7 +8,10 @@ export default async function initializeChaptersDotS(): Promise<void> {
 #include "DeathQuotes.s"
 `;
 
-  await writeFileToRomBuilder("Text/Chapters/Chapters.s", chaptersDotSInit);
+  await writeFileToRomBuilder(
+    "Text/Chapters/build/Chapters.s",
+    chaptersDotSInit
+  );
 }
 
 if (import.meta.main) {

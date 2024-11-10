@@ -13,7 +13,7 @@ export default function writeDeathQuote({
 ${formattedDeathQuote}`;
 
   appendToFileInRomBuilderSync({
-    pathWithinRomBuilder: "Text/Chapters/DeathQuotes.s",
+    pathWithinRomBuilder: "Text/Chapters/build/DeathQuotes.s",
     content: characterDeathQuote,
     isOnNewLine: true,
   });

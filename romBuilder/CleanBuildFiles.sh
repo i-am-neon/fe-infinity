@@ -23,6 +23,7 @@ DIRS_TO_CLEAN=(
   "Graphics/Portraits/build"
   "Maps/data"
   "Events/build"
+  "Text/Chapters/build"
 )
 
 # List of specific files to remove
@@ -37,7 +38,6 @@ FILES_TO_REMOVE=(
   "Definitions/Skills.s"
   "Maps/MasterMapInstaller.event"
   "CSV/EAFiles/DeathQuotes.event"
-  "Text/Chapters/DeathQuotes.s"
   "CSV/Tables/Characters/CharacterTable.csv"
   "Definitions/Characters.s"
   "Definitions/Portraits.s"

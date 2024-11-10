@@ -40,7 +40,7 @@ export default function chapterDataToCsv(data: ChapterDataForCsv): string {
     "",
     "1", // "No. of enemies left for Grasping at Victory" is always 1
     data.chapterTitleDisplayFadeOut,
-    data.statusObjectiveText,
+    data.statusObjectiveTextPointer,
     data.goalWindowText,
     data.goalWindowInformation,
     data.turnsToCountDownToPlus1?.toString() || "",
