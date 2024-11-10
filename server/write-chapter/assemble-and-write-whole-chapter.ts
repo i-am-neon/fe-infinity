@@ -35,7 +35,7 @@ ASMC 0x800D391
 NoFade
 ENDB
 
-#include "REDAs.event"
+#include "../REDAs.event"
 `
   );
   await writeFileToRomBuilder(
