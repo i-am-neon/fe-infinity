@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Calls portraitformatter from the tools_dir passed as an argument for all .png files in folder & subfolders
+# Calls portraitformatter from the tools_dir passed as an argument for all .png files in the build/ folder & subfolders
 # Does not call portraitformatter for files where the existing .dmp file is newer than the .png file
 
 # Check if the tools directory is passed as an argument
@@ -16,20 +16,22 @@ portraitformatter="$tools_dir/PortraitFormatter"
 FILE_MATCH="*.png"
 script_dir="$(dirname "$0")"
 
-# Find all .png files recursively
-find "$script_dir" -type f -name "$FILE_MATCH" -print0 | while IFS= read -r -d '' F; do
+# New base directory for PNG files
+base_dir="$script_dir/build/images"
+
+# Find all .png files recursively in the build/ directory
+find "$base_dir" -type f -name "$FILE_MATCH" -print0 | while IFS= read -r -d '' F; do
   SHOULD_COMPILE=0
   # Get directory, basename, and filename
   dir="$(dirname "$F")"
   basename="$(basename "$F")"
   filename="${basename%.*}"
 
-  # Construct DUMP_FILE in the cache directory within the same folder as the .png file
-  DUMP_DIR="$dir/cache"
-  DUMP_FILE="$DUMP_DIR/${filename}.dmp"
+  # Construct DUMP_FILE in the top-level cache directory
+  DUMP_FILE="$script_dir/build/dmp/${filename}.dmp"
 
   # Create cache directory if it doesn't exist
-  [ ! -d "$DUMP_DIR" ] && mkdir -p "$DUMP_DIR"
+  [ ! -d "$script_dir/build/dmp" ] && mkdir -p "$script_dir/build/dmp"
 
   # Check if the DUMP_FILE needs to be recompiled
   if [ -e "$DUMP_FILE" ]; then

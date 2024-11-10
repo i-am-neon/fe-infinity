@@ -22,10 +22,10 @@ export default async function writePortrait({
 
   // Write to PortraitInstaller.event
   appendToFileInRomBuilderSync({
-    pathWithinRomBuilder: "Graphics/Portraits/PortraitInstaller.event",
+    pathWithinRomBuilder: "Graphics/Portraits/build/PortraitInstaller.event",
     content: `
 ${characterName}Portrait:
-#incbin "cache/${characterName}.dmp"
+#incbin "dmp/${characterName}.dmp"
 setMugEntry(${characterName}Mug,${characterName}Portrait,${mouthX},${mouthY},${eyeX},${eyeY})`,
     // setMugEntry(mugEntry, mugLocation, mouthX, mouthY, eyeX, eyeY)
     isOnNewLine: true,
@@ -36,7 +36,9 @@ setMugEntry(${characterName}Mug,${characterName}Portrait,${mouthX},${mouthY},${e
     getPathWithinAssetsPortraitsDir(
       "images/" + portraitMetadata.originalImageName
     ),
-    getPathWithinRomBuilderDir(`Graphics/Portraits/${characterName}.png`)
+    getPathWithinRomBuilderDir(
+      `Graphics/Portraits/build/images/${characterName}.png`
+    )
   );
 }
 

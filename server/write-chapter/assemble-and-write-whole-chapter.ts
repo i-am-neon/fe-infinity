@@ -120,10 +120,10 @@ Dummy2
 `
   );
   await writeFileToRomBuilder(
-    "Graphics/Portraits/PortraitInstaller.event",
+    "Graphics/Portraits/build/PortraitInstaller.event",
     `ALIGN 4
 PortraitTable:
-#incbin "VanillaPortraitTable.dmp"
+#incbin "../VanillaPortraitTable.dmp"
 `
   );
 
