@@ -79,16 +79,20 @@ export default async function allAI({
   const chapterEvent = await assembleChapterEvent({
     storyArc,
     chapterNumberToAssemble: chapterNumberToAssemble,
-    existingPartyCharacters: allRomCharacters.filter(
-      (c) => c.chapterJoined < chapterNumberToAssemble
-    ),
-    newPlayableCharacters: allRomCharacters.filter(
+    existingPartyCharacters:
+      allCharacterIdeasWithChapterJoinedAndClassAndPortraits.filter(
+        (c) => c.chapterJoined < chapterNumberToAssemble
+      ),
+    newPlayableCharacters:
+      allCharacterIdeasWithChapterJoinedAndClassAndPortraits.filter(
+        (c) =>
+          c.chapterJoined === chapterNumberToAssemble &&
+          c.characterIdea.firstSeenAs !== "boss"
+      ),
+    boss: allCharacterIdeasWithChapterJoinedAndClassAndPortraits.find(
       (c) =>
-        c.chapterJoined === chapterNumberToAssemble && c.firstSeenAs !== "boss"
-    ),
-    boss: allRomCharacters.find(
-      (c) =>
-        c.chapterJoined === chapterNumberToAssemble && c.firstSeenAs === "boss"
+        c.chapterJoined === chapterNumberToAssemble &&
+        c.characterIdea.firstSeenAs === "boss"
     )!,
   });
 
