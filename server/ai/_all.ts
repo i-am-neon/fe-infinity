@@ -22,13 +22,14 @@ export default async function allAI({
     numberOfChapters: 1,
   });
 
+  // Technically choosing the portraits and creating RomCharacters can be done at the same time as each chapter event gets generated.
+  // So a TODO is make the chapter event generation not need a RomCharacter (a simpler object will do) and run in parallel
   const allCharacterIdeasAndPortraitsAndChapterJoined =
     await assignAllCharacterPortraits({
       storyArc,
       mainCharacterIdea,
     });
 
-  // Map each character idea with corresponding portrait metadata and run in parallel
   const romCharacterPromises =
     allCharacterIdeasAndPortraitsAndChapterJoined.map(
       ({ characterIdea, portrait, chapterJoined }) =>
@@ -38,8 +39,6 @@ export default async function allAI({
           chapterJoined,
         })
     );
-
-  // Wait for all promises to resolve and return the results
   const allRomCharacters = await Promise.all(romCharacterPromises);
 
   // TODO: put this in a loop to do over multiple chapters
