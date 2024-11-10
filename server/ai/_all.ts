@@ -7,6 +7,7 @@ import assignAllCharacterPortraits from "@/ai/portraits/assign-all-character-por
 import { worldIdeaExample } from "@/testData/ai.ts";
 import { TEST_CHAPTER } from "@/testData/test-data.ts";
 import type { RomChapter } from "@/types/RomChapter.ts";
+import getAllCharacterIdeasWithChapterJoined from "@/ai/get-all-character-ideas-with-chapter-joined.ts";
 
 export default async function allAI({
   worldIdea,
@@ -22,13 +23,16 @@ export default async function allAI({
     numberOfChapters: 1,
   });
 
-  // Technically choosing the portraits and creating RomCharacters can be done at the same time as each chapter event gets generated.
-  // So a TODO is make the chapter event generation not need a RomCharacter (a simpler object will do) and run in parallel
-  const allCharacterIdeasAndPortraitsAndChapterJoined =
-    await assignAllCharacterPortraits({
+  const allCharacterIdeasWithChapterJoined =
+    getAllCharacterIdeasWithChapterJoined({
       storyArc,
       mainCharacterIdea,
     });
+
+  // Technically choosing the portraits and creating RomCharacters can be done at the same time as each chapter event gets generated.
+  // So a TODO is make the chapter event generation not need a RomCharacter (a simpler object will do) and run in parallel
+  const allCharacterIdeasAndPortraitsAndChapterJoined =
+    await assignAllCharacterPortraits({ allCharacterIdeasWithChapterJoined });
 
   const romCharacterPromises =
     allCharacterIdeasAndPortraitsAndChapterJoined.map(
