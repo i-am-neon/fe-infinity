@@ -20,7 +20,7 @@ DIRS_TO_CLEAN=(
   "Graphics/BattlePalettes/cache"
   "Graphics/ClassCards/cache"
   "Graphics/MapSprites/cache"
-  "Graphics/Portraits/cache"
+  "Graphics/Portraits/build"
   "Maps/data"
   "Events/build"
 )
@@ -41,13 +41,14 @@ FILES_TO_REMOVE=(
   "CSV/Tables/Characters/CharacterTable.csv"
   "Definitions/Characters.s"
   "Definitions/Portraits.s"
-  "Events/MasterEventInstaller.event"
+  "Text/Characters/Descriptions.s"
+  "Text/Characters/Names.s"
 )
 
-# Clean directories: remove all files from each directory listed
+# Clean directories: remove all files from each directory listed, excluding .gitkeep
 for dir in "${DIRS_TO_CLEAN[@]}"; do
   if [ -d "$dir" ]; then
-    rm -rf "$dir"/*
+    find "$dir" -type f ! -name ".gitkeep" -delete
   fi
 done
 

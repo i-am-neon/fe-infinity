@@ -24,16 +24,18 @@ states/
 # Definition-related ignores.
 Definitions/Definitions.event
 Definitions/Skills.s
+Definitions/Characters.s
+Definitions/Portraits.s
 
 # CSV-related ignores.
 CSV/Tables/*.event
 CSV/Tables/**/*.event
 !CSV/Tables/TableDefinitions.event
+CSV/Tables/Characters/CharacterTable.csv
 
 # Map-related ignores.
 Maps/MasterMapInstaller.event
-Maps/data/*.event
-Maps/data/*.dmp
+Maps/data/*
 
 # Music-related ignores.
 Music/WAVs
@@ -44,6 +46,10 @@ Music/cache
 InstallTextData.event
 TextDefinitions.event
 Text/ParseDefinitions.txt
+CSV/EAFiles/DeathQuotes.event
+Text/Chapters/DeathQuotes.s
+Text/Characters/Descriptions.s
+Text/Characters/Names.s
 
 # Graphics-related ignores.
 AnimationAssembler/
