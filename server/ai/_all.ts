@@ -3,13 +3,10 @@ import assembleRomCharacter from "@/ai/assemble-rom-character/assemble-rom-chara
 import generateMainCharacterIdea from "@/ai/generate-main-character-idea.ts";
 import generateStoryArc from "@/ai/generate-story-arc.ts";
 import generateWorldSummary from "@/ai/generate-world-summary.ts";
-import { assignMultiplePortraits } from "@/ai/portraits/assign-multiple-portraits.ts";
+import assignAllCharacterPortraits from "@/ai/portraits/assign-all-character-portraits.ts";
 import { worldIdeaExample } from "@/testData/ai.ts";
 import { TEST_CHAPTER } from "@/testData/test-data.ts";
-import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import type { RomChapter } from "@/types/RomChapter.ts";
-import choosePortrait from "./portraits/choose-portrait.ts";
-import { allPortraitOptions } from "@/ai/portraits/portrait-metadata-creation/all-portrait-options.ts";
 
 export default async function allAI({
   worldIdea,
@@ -19,71 +16,31 @@ export default async function allAI({
   const worldSummary = await generateWorldSummary(worldIdea);
   const mainCharacterIdea = await generateMainCharacterIdea({ worldSummary });
 
-  const [mainCharacterChosenPortrait, storyArc] = await Promise.all([
-    choosePortrait({
-      portraitOptions: allPortraitOptions,
-      characterIdea: mainCharacterIdea,
-    }),
-    generateStoryArc({
-      worldSummary,
+  const storyArc = await generateStoryArc({
+    worldSummary,
+    mainCharacterIdea,
+    numberOfChapters: 1,
+  });
+
+  const allCharacterIdeasAndPortraitsAndChapterJoined =
+    await assignAllCharacterPortraits({
+      storyArc,
       mainCharacterIdea,
-      numberOfChapters: 1,
-    }),
-  ]);
-
-  const allCharacterIdeasWithChapterJoined: {
-    idea: CharacterIdea;
-    chapterJoined: number;
-  }[] = [];
-  storyArc.chapterIdeas.forEach((chapterIdea, chapterIndex) => {
-    (chapterIdea.newPlayableCharacters || []).forEach((characterIdea) => {
-      allCharacterIdeasWithChapterJoined.push({
-        idea: characterIdea,
-        chapterJoined: chapterIndex,
-      });
     });
-    allCharacterIdeasWithChapterJoined.push({
-      idea: chapterIdea.boss,
-      chapterJoined: chapterIndex,
-    });
-  });
-  allCharacterIdeasWithChapterJoined.push({
-    idea: mainCharacterIdea,
-    chapterJoined: 0,
-  });
-
-  const remainingPortraitOptions = allPortraitOptions.filter(
-    (p) => p.originalImageName !== mainCharacterChosenPortrait.originalImageName
-  );
-
-  // TODO: could speed up assigning portraits by separating streams by gender and age and running those in parallel, only feeding in filtered options from the appropriate gender and age
-  const [allCharacterIdeasAndPortraits, mainRomCharacter] = await Promise.all([
-    assignMultiplePortraits({
-      portraitOptions: remainingPortraitOptions,
-      characterIdeas: allCharacterIdeasWithChapterJoined.map((c) => c.idea),
-    }),
-    assembleRomCharacter({
-      characterIdea: mainCharacterIdea,
-      portraitMetadata: mainCharacterChosenPortrait,
-      chapterJoined: 0,
-    }),
-  ]);
 
   // Map each character idea with corresponding portrait metadata and run in parallel
-  const romCharacterPromises = allCharacterIdeasAndPortraits.map(
-    ({ characterIdea, portrait }) =>
-      assembleRomCharacter({
-        characterIdea: characterIdea,
-        portraitMetadata: portrait,
-        chapterJoined: allCharacterIdeasWithChapterJoined.find(
-          (c) => c.idea === characterIdea
-        )!.chapterJoined,
-      })
-  );
+  const romCharacterPromises =
+    allCharacterIdeasAndPortraitsAndChapterJoined.map(
+      ({ characterIdea, portrait, chapterJoined }) =>
+        assembleRomCharacter({
+          characterIdea: characterIdea,
+          portraitMetadata: portrait,
+          chapterJoined,
+        })
+    );
 
   // Wait for all promises to resolve and return the results
-  const romCharacters = await Promise.all(romCharacterPromises);
-  const allRomCharacters = [mainRomCharacter, ...romCharacters];
+  const allRomCharacters = await Promise.all(romCharacterPromises);
 
   // TODO: put this in a loop to do over multiple chapters
   const chapterNumberToAssemble = 0;
