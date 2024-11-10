@@ -31,6 +31,8 @@ export default async function allAI({
 
   // Technically choosing the portraits and creating RomCharacters can be done at the same time as each chapter event gets generated.
   // So a TODO is make the chapter event generation not need a RomCharacter (a simpler object will do) and run in parallel
+  // WAIT actually the chapter event generation needs to know the character's class which is only created in the CSV right now.
+  // TODO: choose character's class before generating CSV
   const allCharacterIdeasAndPortraitsAndChapterJoined =
     await assignAllCharacterPortraits({ allCharacterIdeasWithChapterJoined });
 
