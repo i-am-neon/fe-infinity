@@ -1,11 +1,10 @@
+import getUnitsArray from "@/ai/assemble-chapter-event/generate-unit-line/get-units-array.ts";
 import { storyArcExample } from "@/testData/ai.ts";
 import { exampleRomCharacters } from "@/testData/rom-characters.ts";
 import type { StoryArc } from "@/types/ai/StoryArc.ts";
 import type { ChapterEvent } from "@/types/ChapterEvent.ts";
 import type { RomCharacter } from "@/types/RomCharacter.ts";
 import generateScene from "./generate-scene/generate-scene.ts";
-import generateUnitLine from "@/ai/assemble-chapter-event/generate-unit-line/generate-unit-line.ts";
-import getUnitsArray from "@/ai/assemble-chapter-event/generate-unit-line/get-units-array.ts";
 
 export default async function assembleChapterEvent({
   storyArc,

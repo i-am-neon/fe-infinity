@@ -8,6 +8,7 @@ import { worldIdeaExample } from "@/testData/ai.ts";
 import { TEST_CHAPTER } from "@/testData/test-data.ts";
 import type { RomChapter } from "@/types/RomChapter.ts";
 import getAllCharacterIdeasWithChapterJoined from "@/ai/get-all-character-ideas-with-chapter-joined.ts";
+import generateCharacterClass from "@/ai/assemble-rom-character/assemble-character-csv-data/generate-character-class.ts";
 
 export default async function allAI({
   worldIdea,
@@ -29,18 +30,44 @@ export default async function allAI({
       mainCharacterIdea,
     });
 
-  // Technically choosing the portraits and creating RomCharacters can be done at the same time as each chapter event gets generated.
-  // So a TODO is make the chapter event generation not need a RomCharacter (a simpler object will do) and run in parallel
-  // WAIT actually the chapter event generation needs to know the character's class which is only created in the CSV right now.
-  // TODO: choose character's class before generating CSV
-  const allCharacterIdeasAndPortraitsAndChapterJoined =
-    await assignAllCharacterPortraits({ allCharacterIdeasWithChapterJoined });
+  const [
+    allCharacterIdeasWithChapterJoinedAndClass,
+    allCharacterIdeasAndPortraitsAndChapterJoined,
+  ] = await Promise.all([
+    Promise.all(
+      allCharacterIdeasWithChapterJoined.map(async ({ idea }) => {
+        const characterClass = await generateCharacterClass({
+          characterIdea: idea,
+        });
+        return {
+          characterIdea: idea,
+          characterClass,
+        };
+      })
+    ),
+    assignAllCharacterPortraits({ allCharacterIdeasWithChapterJoined }),
+  ]);
+
+  const allCharacterIdeasWithChapterJoinedAndClassAndPortraits =
+    allCharacterIdeasWithChapterJoinedAndClass.map(
+      ({ characterIdea, characterClass }) => {
+        const portrait = allCharacterIdeasAndPortraitsAndChapterJoined.find(
+          (c) => c.characterIdea === characterIdea
+        )!.portrait;
+        const chapterJoined =
+          allCharacterIdeasAndPortraitsAndChapterJoined.find(
+            (c) => c.characterIdea === characterIdea
+          )!.chapterJoined;
+        return { characterIdea, characterClass, portrait, chapterJoined };
+      }
+    );
 
   const romCharacterPromises =
-    allCharacterIdeasAndPortraitsAndChapterJoined.map(
-      ({ characterIdea, portrait, chapterJoined }) =>
+    allCharacterIdeasWithChapterJoinedAndClassAndPortraits.map(
+      ({ characterIdea, characterClass, portrait, chapterJoined }) =>
         assembleRomCharacter({
-          characterIdea: characterIdea,
+          characterIdea,
+          characterClass,
           portraitMetadata: portrait,
           chapterJoined,
         })

@@ -1,21 +1,23 @@
+import generateAffinity from "@/ai/assemble-rom-character/assemble-character-csv-data/generate-affinity.ts";
+import generateCharacterStats from "@/ai/assemble-rom-character/assemble-character-csv-data/generate-character-stats.ts";
+import getWeaponRank from "@/ai/assemble-rom-character/assemble-character-csv-data/get-weapon-rank.ts";
+import { mainCharacterIdeaExample } from "@/testData/ai.ts";
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import type { CharacterDataForCsv } from "@/types/CharacterDataForCsv.ts";
-import generateCharacterClass from "@/ai/assemble-rom-character/assemble-character-csv-data/generate-character-class.ts";
-import generateAffinity from "@/ai/assemble-rom-character/assemble-character-csv-data/generate-affinity.ts";
-import getWeaponRank from "@/ai/assemble-rom-character/assemble-character-csv-data/get-weapon-rank.ts";
-import generateCharacterStats from "@/ai/assemble-rom-character/assemble-character-csv-data/generate-character-stats.ts";
-import { mainCharacterIdeaExample } from "@/testData/ai.ts";
 
-export default async function assembleCharacterCsvData(
-  characterIdea: CharacterIdea
-): Promise<CharacterDataForCsv> {
+export default async function assembleCharacterCsvData({
+  characterIdea,
+  characterClass,
+}: {
+  characterIdea: CharacterIdea;
+  characterClass: string;
+}): Promise<CharacterDataForCsv> {
   // Run async calls concurrently
-  const [characterClass, affinity, stats] = await Promise.all([
-    generateCharacterClass({ characterIdea }),
+  const [affinity, stats] = await Promise.all([
     generateAffinity({ characterIdea }),
     generateCharacterStats({
       characterIdea,
-      characterClass: await generateCharacterClass({ characterIdea }),
+      characterClass,
     }),
   ]);
 
@@ -53,7 +55,10 @@ export default async function assembleCharacterCsvData(
 }
 
 if (import.meta.main) {
-  const result = await assembleCharacterCsvData(mainCharacterIdeaExample);
+  const result = await assembleCharacterCsvData({
+    characterIdea: mainCharacterIdeaExample,
+    characterClass: "Mage_F",
+  });
   console.log(JSON.stringify(result, null, 2));
 }
 

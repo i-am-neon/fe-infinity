@@ -5,14 +5,19 @@ import assembleCharacterCsvData from "@/ai/assemble-rom-character/assemble-chara
 
 export default async function assembleRomCharacter({
   characterIdea,
+  characterClass,
   portraitMetadata,
   chapterJoined,
 }: {
   characterIdea: CharacterIdea;
+  characterClass: string;
   portraitMetadata: PortraitMetadata;
   chapterJoined: number;
 }): Promise<RomCharacter> {
-  const csvData = await assembleCharacterCsvData(characterIdea);
+  const csvData = await assembleCharacterCsvData({
+    characterIdea,
+    characterClass,
+  });
 
   return {
     ...characterIdea,

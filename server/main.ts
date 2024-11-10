@@ -14,6 +14,8 @@ export async function doEverything({
   romChapters.forEach((romChapter) => {
     assembleAndWriteWholeChapter(romChapter);
   });
+
+  // TODO: if no errors, run `./run.sh` in romBuilder
 }
 
 // Learn more at https://docs.deno.com/runtime/manual/examples/module_metadata#concepts
