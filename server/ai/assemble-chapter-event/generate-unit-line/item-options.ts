@@ -95,10 +95,10 @@ export const WEAPON_OPTIONS: Record<WeaponType, string[]> = {
     "Purge",
     "Aura",
     "Ivaldi",
-    "Flare - Light magic that ignores enemy resistance.",
-    "Thani - A light-based spell effective against armored and mounted units.",
-    "Exordium - Powerful holy magic, highly effective against dark-aligned enemies.",
-    "Starlight - Legendary light magic with strong anti-dark properties.",
+    // "Flare - Light magic that ignores enemy resistance.",
+    // "Thani - A light-based spell effective against armored and mounted units.",
+    // "Exordium - Powerful holy magic, highly effective against dark-aligned enemies.",
+    // "Starlight - Legendary light magic with strong anti-dark properties.",
   ],
   Dark: [
     "Flux",
@@ -109,9 +109,9 @@ export const WEAPON_OPTIONS: Record<WeaponType, string[]> = {
     "Gleipnir",
     // Crashes for some reason
     // "Dulam - Dark magic that drains a small amount of enemy HP.",
-    "Slime - Dark magic that reduces the enemy’s speed and resilience.",
-    "Swarm - Summons a swarm of dark energy to deal moderate damage.",
-    "Worm - A powerful dark magic spell with a high chance to hit.",
+    // "Slime - Dark magic that reduces the enemy’s speed and resilience.",
+    // "Swarm - Summons a swarm of dark energy to deal moderate damage.",
+    // "Worm - A powerful dark magic spell with a high chance to hit.",
   ],
   Staff: [
     "Heal",

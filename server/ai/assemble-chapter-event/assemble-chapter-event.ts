@@ -6,6 +6,7 @@ import type { StoryArc } from "@/types/ai/StoryArc.ts";
 import type { ChapterEvent } from "@/types/ChapterEvent.ts";
 import { PortraitMetadata } from "@/types/PortraitMetadata.ts";
 import generateScene from "./generate-scene/generate-scene.ts";
+import { RomCharacter } from "@/types/RomCharacter.ts";
 
 export type CharacterIdeaWithChapterJoinedAndClassAndPortrait = {
   characterIdea: CharacterIdea;
@@ -23,9 +24,9 @@ export default async function assembleChapterEvent({
 }: {
   storyArc: StoryArc;
   chapterNumberToAssemble: number;
-  existingPartyCharacters: CharacterIdeaWithChapterJoinedAndClassAndPortrait[];
-  newPlayableCharacters: CharacterIdeaWithChapterJoinedAndClassAndPortrait[];
-  boss: CharacterIdeaWithChapterJoinedAndClassAndPortrait;
+  existingPartyCharacters: RomCharacter[];
+  newPlayableCharacters: RomCharacter[];
+  boss: RomCharacter;
 }): Promise<ChapterEvent> {
   const thisChapterIdea = storyArc.chapterIdeas[chapterNumberToAssemble];
 
@@ -35,11 +36,10 @@ export default async function assembleChapterEvent({
     textSceneContent: preBattleTextSceneContent,
   } = await generateScene({
     sceneOverview: thisChapterIdea.preChapterScene,
-    existingPartyCharacters: existingPartyCharacters.map(
-      (c) => c.characterIdea
-    ),
-    newPlayableCharacters: newPlayableCharacters.map((c) => c.characterIdea),
-    boss: boss.characterIdea,
+    // Extract the characterIdea
+    existingPartyCharacters: existingPartyCharacters.map((c) => ({ ...c })),
+    newPlayableCharacters: newPlayableCharacters.map((c) => ({ ...c })),
+    boss: { ...boss },
     preOrPostBattle: "pre-battle",
   });
 
@@ -49,18 +49,22 @@ export default async function assembleChapterEvent({
     textSceneContent: postBattleTextSceneContent,
   } = await generateScene({
     sceneOverview: thisChapterIdea.postChapterScene,
-    existingPartyCharacters: existingPartyCharacters.map(
-      (c) => c.characterIdea
-    ),
-    newPlayableCharacters: newPlayableCharacters.map((c) => c.characterIdea),
-    boss: boss.characterIdea,
+    existingPartyCharacters: existingPartyCharacters.map((c) => ({ ...c })),
+    newPlayableCharacters: newPlayableCharacters.map((c) => ({ ...c })),
+    boss: { ...boss },
     preOrPostBattle: "post-battle",
   });
 
   const unitsArray = await getUnitsArray([
-    ...existingPartyCharacters,
-    ...newPlayableCharacters,
-    boss,
+    ...existingPartyCharacters.map((c) => ({
+      characterIdea: { ...c },
+      characterClass: c.csvData.defaultClass,
+    })),
+    ...newPlayableCharacters.map((c) => ({
+      characterIdea: { ...c },
+      characterClass: c.csvData.defaultClass,
+    })),
+    { characterIdea: { ...boss }, characterClass: boss.csvData.defaultClass },
   ]);
 
   return {
@@ -89,31 +93,11 @@ if (import.meta.main) {
     chapterNumberToAssemble: 0,
     existingPartyCharacters: [],
     newPlayableCharacters: [
-      {
-        characterIdea: { ...exampleRomCharacters[0] },
-        characterClass: exampleRomCharacters[0].csvData.defaultClass,
-        chapterJoined: 0,
-        portrait: exampleRomCharacters[0].portraitMetadata,
-      },
-      {
-        characterIdea: { ...exampleRomCharacters[1] },
-        characterClass: exampleRomCharacters[1].csvData.defaultClass,
-        chapterJoined: 0,
-        portrait: exampleRomCharacters[1].portraitMetadata,
-      },
-      {
-        characterIdea: { ...exampleRomCharacters[2] },
-        characterClass: exampleRomCharacters[2].csvData.defaultClass,
-        chapterJoined: 0,
-        portrait: exampleRomCharacters[2].portraitMetadata,
-      },
+      exampleRomCharacters[0],
+      exampleRomCharacters[1],
+      exampleRomCharacters[2],
     ],
-    boss: {
-      characterIdea: { ...exampleRomCharacters[3] },
-      characterClass: exampleRomCharacters[3].csvData.defaultClass,
-      chapterJoined: 0,
-      portrait: exampleRomCharacters[3].portraitMetadata,
-    },
+    boss: exampleRomCharacters[3],
   });
   console.log(JSON.stringify(res, null, 2));
 }

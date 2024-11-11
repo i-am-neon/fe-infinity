@@ -12,9 +12,3 @@ export const ChapterIdeaSchema = z.object({
 
 export type ChapterIdea = z.infer<typeof ChapterIdeaSchema>;
 
-export const StoryArcSchema = z.object({
-  premise: z.string(),
-  chapterIdeas: z.array(ChapterIdeaSchema),
-});
-
-export type StoryArc = z.infer<typeof StoryArcSchema>;
