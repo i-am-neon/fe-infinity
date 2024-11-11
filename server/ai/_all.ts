@@ -12,6 +12,7 @@ import generateCharacterClass from "@/ai/assemble-rom-character/assemble-charact
 import chooseMapForChapterIdea from "@/ai/maps/choose-map-for-chapter-idea.ts";
 import { allMapOptions } from "@/ai/maps/map-metadata-creation/all-map-options.ts";
 import { ChapterMap } from "@/types/ChapterMap.ts";
+import getChapterDataForCsv from "@/ai/utilities/get-chapter-data-for-csv.ts";
 
 export default async function allAI({
   worldIdea,
@@ -83,7 +84,7 @@ export default async function allAI({
   const chapterName = "Prologue";
   const chapterEvent = await assembleChapterEvent({
     storyArc,
-    chapterNumberToAssemble: chapterNumberToAssemble,
+    chapterNumberToAssemble,
     existingPartyCharacters:
       allCharacterIdeasWithChapterJoinedAndClassAndPortraits.filter(
         (c) => c.chapterJoined < chapterNumberToAssemble
@@ -107,13 +108,18 @@ export default async function allAI({
     battleOverview: chapterIdea.battleOverview,
   });
   const chapterMap: ChapterMap = {
-    mapName: chapterMapMetadata.name,
+    name: chapterMapMetadata.name,
     tmx: chapterMapMetadata.rawTmx.replace(/<CHAPTERID>/g, chapterName),
   };
 
+  const chapterDataForCsv = getChapterDataForCsv({
+    chapterName,
+    mapName: chapterMap.name,
+  });
+
   const romChapter: RomChapter = {
     name: chapterName,
-    chapterDataForCsv: TEST_CHAPTER.chapterDataForCsv,
+    chapterDataForCsv,
     chapterEvent,
     chapterMap: chapterMap,
     characters: allRomCharacters,

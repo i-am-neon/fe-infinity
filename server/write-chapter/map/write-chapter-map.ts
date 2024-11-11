@@ -10,17 +10,17 @@ export default async function writeChapterMap({
   chapterName: string;
 }): Promise<void> {
   await writeFileToRomBuilder(
-    `Maps/data/${chapterName}_${chapterMap.mapName}.tmx`,
+    `Maps/data/${chapterName}_${chapterMap.name}.tmx`,
     chapterMap.tmx
   );
   appendToFileInRomBuilderSync({
     pathWithinRomBuilder: "Definitions/Maps.s",
-    content: chapterMap.mapName + "Map",
+    content: chapterMap.name + "Map",
     isOnNewLine: true,
   });
   appendToFileInRomBuilderSync({
     pathWithinRomBuilder: "Definitions/Maps.s",
-    content: chapterMap.mapName + "Changes",
+    content: chapterMap.name + "Changes",
     isOnNewLine: true,
   });
 }
@@ -48,7 +48,7 @@ if (import.meta.main) {
  </layer>
 </map>
 `,
-    mapName: "AltianDungeonCutsceneMap",
+    name: "AltianDungeonCutsceneMap",
   };
 
   await writeChapterMap({

@@ -173,7 +173,7 @@ This is Prologue finished text![A][X]
  </layer>
 </map>
 `,
-    mapName: "Knights10",
+    name: "Knights10",
   },
   characters: [
     seraphinaCharacter,

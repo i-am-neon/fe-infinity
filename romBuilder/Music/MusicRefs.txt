@@ -8,10 +8,12 @@ Avenir_Healing
 	Healing
 Binding_Vow
 	NPC phase theme: Prologue
-Boss_Theme
-	Enemy phase theme: Prologue
 Cavern_of_Splendor
 	Mage prep theme
+Encounter_with_Renegades
+	Enemy phase theme: Prologue
+Fodlan_Winds
+	Player phase theme: Prologue
 Knock_Em_Around
 	Attack theme: Prologue
 Legends_of_Avenir
@@ -25,8 +27,6 @@ Promotions_of_Avenir
 	Promotions
 Pub_Theme
 	Support Theme
-Ringabel
-	Player phase theme: Prologue
 Vendors_of_Avenir
 	Vendors
 We_Stand
@@ -35,7 +35,6 @@ We_Stand
 
 List of custom music never referenced:
 Avenir_Healing2
-Encounter_with_Renegades
 Dry_Trail
 Last_Battle_Decision
 Mars_Lighthouse
@@ -57,6 +56,7 @@ A_Tragic_Decision
 Venus_Lighthouse
 Nara_and_Mara_Battle
 Nekonin
+Ringabel
 Victorys_Delight
 Zelos
 Stage_One
@@ -79,6 +79,7 @@ Satorl_Marsh
 Seventh_Saga_Dungeon
 Locked_Girl
 Kakariko_Village
+Boss_Theme
 Boss_Battle
 Bloody_Tears
 Bergentruckung
@@ -112,7 +113,6 @@ Overwhelming_Advance
 Encroaching_Foe
 All_Is_Lost
 Divine_Providence
-Fodlan_Winds
 Oil_Ocean
 Casino_Night
 Aquatic_Ruin
