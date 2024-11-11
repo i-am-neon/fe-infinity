@@ -1,0 +1,17 @@
+{
+  "3C00CE3E": {
+    "Anims": "_3CAnims", // _<ObjectType>Anims
+    "ChapterID": "", // needs to be generated on the fly
+    "MapID": "", // Map name
+    "MapChangesID": "", // <MapID>Changes
+    "ObjectType": "0x3C", // 0x<first two digits>
+    "PaletteID": "0xCE", // 0x<fifth and sixth digits>
+    "TileConfig": "0x3E" // 0x<seventh and eighth digits>
+  },
+  "01000203": {
+    "ObjectType": "0x01",
+    "PaletteID": "0x02",
+    "TileConfig": "0x03"
+  }
+}
+
