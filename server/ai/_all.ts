@@ -9,6 +9,9 @@ import { TEST_CHAPTER } from "@/testData/test-data.ts";
 import type { RomChapter } from "@/types/RomChapter.ts";
 import getAllCharacterIdeasWithChapterJoined from "@/ai/get-all-character-ideas-with-chapter-joined.ts";
 import generateCharacterClass from "@/ai/assemble-rom-character/assemble-character-csv-data/generate-character-class.ts";
+import chooseMapForChapterIdea from "@/ai/maps/choose-map-for-chapter-idea.ts";
+import { allMapOptions } from "@/ai/maps/map-metadata-creation/all-map-options.ts";
+import { ChapterMap } from "@/types/ChapterMap.ts";
 
 export default async function allAI({
   worldIdea,
@@ -76,6 +79,8 @@ export default async function allAI({
 
   // TODO: put this in a loop to do over multiple chapters
   const chapterNumberToAssemble = 0;
+  // TODO: generate chapterName
+  const chapterName = "Prologue";
   const chapterEvent = await assembleChapterEvent({
     storyArc,
     chapterNumberToAssemble: chapterNumberToAssemble,
@@ -95,12 +100,22 @@ export default async function allAI({
         c.characterIdea.firstSeenAs === "boss"
     )!,
   });
+  const chapterIdea = storyArc.chapterIdeas[chapterNumberToAssemble];
+  // TODO: Choose all chapter maps one by one and take the one chosen out of the list (similar to choosing portraits)
+  const chapterMapMetadata = await chooseMapForChapterIdea({
+    mapOptions: allMapOptions,
+    battleOverview: chapterIdea.battleOverview,
+  });
+  const chapterMap: ChapterMap = {
+    mapName: chapterMapMetadata.name,
+    tmx: chapterMapMetadata.rawTmx.replace(/<CHAPTERID>/g, chapterName),
+  };
 
   const romChapter: RomChapter = {
-    name: "Prologue",
+    name: chapterName,
     chapterDataForCsv: TEST_CHAPTER.chapterDataForCsv,
     chapterEvent,
-    chapterMap: TEST_CHAPTER.chapterMap,
+    chapterMap: chapterMap,
     characters: allRomCharacters,
     genericCharacters: [],
   };
