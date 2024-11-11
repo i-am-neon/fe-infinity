@@ -2,8 +2,8 @@
   "3C00CE3E": {
     "Anims": "_3CAnims", // _<ObjectType>Anims
     "ChapterID": "", // needs to be generated on the fly
-    "MapID": "", // Map name
-    "MapChangesID": "", // <MapID>Changes
+    "MapID": "", // <MapName>Map
+    "MapChangesID": "", // <MapName>Changes
     "ObjectType": "0x3C", // 0x<first two digits>
     "PaletteID": "0xCE", // 0x<fifth and sixth digits>
     "TileConfig": "0x3E" // 0x<seventh and eighth digits>
@@ -15,3 +15,5 @@
   }
 }
 
+ISSUES
+No layers can be called "Wall" (no idea why, the err says unexpected mathematical expression), they should be renamed to "Broken_Wall"

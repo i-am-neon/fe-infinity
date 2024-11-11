@@ -7,7 +7,7 @@ export default function chapterDataToCsv(data: ChapterDataForCsv): string {
     data.objectType,
     data.palette,
     data.tileConfiguration,
-    data.map,
+    data.mapId,
     data.tileAnimation1,
     data.tileAnimation2,
     data.triggerableMapChanges,

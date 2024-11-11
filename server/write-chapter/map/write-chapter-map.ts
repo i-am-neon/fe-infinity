@@ -15,7 +15,7 @@ export default async function writeChapterMap({
   );
   appendToFileInRomBuilderSync({
     pathWithinRomBuilder: "Definitions/Maps.s",
-    content: chapterMap.mapName,
+    content: chapterMap.mapName + "Map",
     isOnNewLine: true,
   });
   appendToFileInRomBuilderSync({

@@ -1,3 +1,3 @@
 Dummy 0x04
-SkirmishMap
-SkirmishMapChanges
+Knights10Map
+Knights10Changes

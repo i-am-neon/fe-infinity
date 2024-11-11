@@ -62,6 +62,7 @@ Graphics/ClassCards/cache
 Graphics/WorldMap/*.dmp
 Graphics/ItemIcons/*.dmp
 !Graphics/VanillaPortraitTable.dmp
+Graphics/WorldMap/temp
 
 # Chapter event-related ignores.
 Events/build/*

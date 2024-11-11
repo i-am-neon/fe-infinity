@@ -4,7 +4,7 @@ export interface ChapterDataForCsv {
   objectType: string;
   palette: string;
   tileConfiguration: string;
-  map: string;
+  mapId: string;
   tileAnimation1: string;
   tileAnimation2: string;
   triggerableMapChanges: string;
