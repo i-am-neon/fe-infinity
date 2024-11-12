@@ -19,7 +19,8 @@ echo "Time to run: $real_time"
 # Check for the error message and log if it is found
 if echo "$output" | grep -q "Errors occurred; no changes written."; then
   echo "❌❌❌❌❌ Errors when building ROM ❌❌❌❌❌"
+  ./play-error-beep.sh
 else
   echo "✅✅✅✅✅ ROM built successfully ✅✅✅✅✅"
-  ./openEmulator.sh
+  ./open-emulator.sh
 fi
