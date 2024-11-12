@@ -7,13 +7,45 @@ export async function doEverything({
 }: {
   worldIdea: string;
 }): Promise<void> {
+  const startTime = performance.now();
+
   const game = await generateGame({ worldIdea });
 
   console.log("game", JSON.stringify(game, null, 2));
 
   await writeGame(game);
 
-  // TODO: if no errors, run `./run.sh` in romBuilder
+  const endTime = performance.now();
+
+  console.log(
+    `✅✅✅ AI time: ${((endTime - startTime) / 1000).toFixed(2)} seconds`
+  );
+
+  console.log("==================");
+  console.log("==================");
+  console.log("Building Rom...");
+  console.log("==================");
+  console.log("==================");
+
+  // Save the current working directory
+  const originalDir = Deno.cwd();
+
+  try {
+    // Change to the romBuilder directory
+    Deno.chdir("../romBuilder");
+
+    // Execute the shell script
+    const command = new Deno.Command("bash", {
+      args: ["./run.sh"],
+      stdout: "inherit",
+      stderr: "inherit",
+    });
+
+    const { success } = await command.output();
+  } finally {
+    // Change back to the original directory
+    Deno.chdir(originalDir);
+  }
 }
 
 // Learn more at https://docs.deno.com/runtime/manual/examples/module_metadata#concepts
@@ -24,7 +56,7 @@ if (import.meta.main) {
 
   const endTime = performance.now();
   console.log(
-    `Execution time: ${((endTime - startTime) / 1000).toFixed(2)} seconds`
+    `TOTAL time: ${((endTime - startTime) / 1000).toFixed(2)} seconds`
   );
 }
 

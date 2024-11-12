@@ -10,7 +10,15 @@ fi
 export WINEDEBUG=-all
 
 # Run the AssembleAll.sh, display its output, and capture the real time
-real_time=$({ /usr/bin/time -p ./AssembleAll.sh 2>&1 | tee /dev/tty; } 2>&1 | grep real | awk '{print $2 "s"}')
+output=$({ /usr/bin/time -p ./AssembleAll.sh 2>&1 | tee /dev/tty; })
+real_time=$(echo "$output" | grep real | awk '{print $2 "s"}')
 
 # Output the time in the desired format
 echo "Time to run: $real_time"
+
+# Check for the error message and log if it is found
+if echo "$output" | grep -q "Errors occurred; no changes written."; then
+  echo "❌❌❌❌❌ Errors when building ROM ❌❌❌❌❌"
+else
+  echo "✅✅✅✅✅ ROM built successfully ✅✅✅✅✅"
+fi
