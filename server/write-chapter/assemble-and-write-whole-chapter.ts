@@ -18,12 +18,14 @@ export default async function assembleAndWriteWholeChapter(
   chapter: RomChapter
 ): Promise<void> {
   // DO THESE BEFORE WRITING ALL CHAPTERS:
+  // Clear previously generated files
+  await clearDir(getPathWithinRomBuilderDir("Events/build"));
+  await clearDir(getPathWithinRomBuilderDir("Text/Chapters/build"));
   await initializeCharacterTableCsv();
   await initializeChapterDataCsv();
   // Initialize Chapter Data files
   await initializeTextChaptersDotS();
   await initializeMapDirectory();
-  await clearDir(getPathWithinRomBuilderDir("Events/build"));
   await writeFileToRomBuilder(
     "Definitions/Chapters.s",
     `.avoid 0x27 0x3A
@@ -161,12 +163,13 @@ PortraitTable:
 
   /////////////////////////////////////////////
 
-  writeChapterName(chapter.name);
+  writeChapterName(chapter.chapterId);
   await assembleAndWriteChapterDataCsv({
     chapterDatas: [chapter.chapterDataForCsv],
   });
   await assembleAndWriteChapterEventAndText({
-    chapterName: chapter.name,
+    chapterId: chapter.chapterId,
+    chapterTitle: chapter.displayName,
     chapterEvent: chapter.chapterEvent,
     objectiveTextPointer: chapter.chapterDataForCsv.statusObjectiveTextPointer,
     formattedObjectiveText: "TODO CHAPTER OBJECTIVE[X]",

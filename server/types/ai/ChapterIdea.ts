@@ -2,11 +2,7 @@ import { z } from "zod";
 import { CharacterIdeaSchema } from "@/types/ai/CharacterIdea.ts";
 
 export const ChapterIdeaSchema = z.object({
-  chapterTitle: z
-    .string()
-    .describe(
-      "The title of the chapter. All spaces must be converted to underscores."
-    ),
+  chapterTitle: z.string(),
   newPlayableCharacters: CharacterIdeaSchema.array().optional(),
   boss: CharacterIdeaSchema,
   preChapterScene: z.string(),

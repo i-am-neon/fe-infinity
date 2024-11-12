@@ -6,31 +6,32 @@ import writeChapterNameText from "@/write-chapter/chapter-event/write-chapter-na
 
 export default async function assembleAndWriteChapterEventAndText({
   chapterEvent,
-  chapterName,
+  chapterId,
+  chapterTitle,
   objectiveTextPointer,
   formattedObjectiveText,
   isPrologue,
 }: {
   chapterEvent: ChapterEvent;
-  chapterName: string;
+  chapterId: string;
+  chapterTitle: string;
   objectiveTextPointer: string;
   formattedObjectiveText: string;
   isPrologue: boolean;
 }): Promise<void> {
   const chapterEventString = assembleChapterEvent(chapterEvent);
   await writeFileToRomBuilder(
-    `Events/build/${chapterName}.event`,
+    `Events/build/${chapterId}.event`,
     chapterEventString
   );
   await writeFileToRomBuilder(
-    `Text/Chapters/build/${chapterName}.s`,
+    `Text/Chapters/build/${chapterId}.s`,
     chapterEvent.text ?? ""
   );
 
   writeChapterNameText({
-    chapterId: chapterName,
-    // TODO: use chapter title instead
-    chapterTitle: chapterName,
+    chapterId,
+    chapterTitle,
   });
 
   appendToFileInRomBuilderSync({
@@ -48,14 +49,14 @@ ${formattedObjectiveText}`,
 
   appendToFileInRomBuilderSync({
     pathWithinRomBuilder: "Definitions/Chapters.s",
-    content: isPrologue ? `${chapterName} 0x00` : chapterName,
+    content: isPrologue ? `${chapterId} 0x00` : chapterId,
     isOnNewLine: true,
   });
 
   // Add to MasterEventInstaller.event
   appendToFileInRomBuilderSync({
     pathWithinRomBuilder: "Events/build/MasterEventInstaller.event",
-    content: `#include "${chapterName}.event"`,
+    content: `#include "${chapterId}.event"`,
     isOnNewLine: true,
   });
 }
@@ -249,7 +250,8 @@ when they choose to strike![A][X]
     "Path to rom builder dir:",
     assembleAndWriteChapterEventAndText({
       chapterEvent: testData,
-      chapterName: "Prologue",
+      chapterId: "Some_Name",
+      chapterTitle: "Some Name",
       objectiveTextPointer: "PrologueStatusText",
       formattedObjectiveText: "Defeat all[NL]\nunits.[X]",
       isPrologue: true,

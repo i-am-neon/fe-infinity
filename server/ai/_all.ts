@@ -9,6 +9,7 @@ import getChapterDataForCsv from "@/ai/utilities/get-chapter-data-for-csv.ts";
 import { worldIdeaExample } from "@/testData/ai.ts";
 import { ChapterMap } from "@/types/ChapterMap.ts";
 import type { RomChapter } from "@/types/RomChapter.ts";
+import chapterTitleToChapterId from "@/ai/utilities/chapter-title-to-chapter-id.ts";
 
 export default async function allAI({
   worldIdea,
@@ -29,10 +30,11 @@ export default async function allAI({
     mainCharacterIdea,
   });
 
-  const chapterNameToMap = await assignMultipleMaps({
+  const chapterIdToMap = await assignMultipleMaps({
     chapterNameToBattleOverview: storyArc.chapterIdeas.reduce(
       (acc, chapterIdea) => {
-        acc[chapterIdea.chapterTitle] = chapterIdea.battleOverview;
+        acc[chapterTitleToChapterId(chapterIdea.chapterTitle)] =
+          chapterIdea.battleOverview;
         return acc;
       },
       {} as Record<string, string>
@@ -42,7 +44,6 @@ export default async function allAI({
 
   // TODO: put this in a loop to do over multiple chapters
   const chapterNumberToAssemble = 0;
-  // TODO: generate chapterName
   const chapterEvent = await assembleChapterEvent({
     storyArc,
     chapterNumberToAssemble,
@@ -59,16 +60,17 @@ export default async function allAI({
     )!,
   });
 
-  const chapterName = storyArc.chapterIdeas[0].chapterTitle;
-  const chapterMap: ChapterMap = chapterNameToMap[chapterName];
-
+  const thisChapterTitle = storyArc.chapterIdeas[0].chapterTitle;
+  const chapterId = chapterTitleToChapterId(thisChapterTitle);
+  const chapterMap: ChapterMap = chapterIdToMap[chapterId];
   const chapterDataForCsv = getChapterDataForCsv({
-    chapterName,
+    chapterId,
     mapName: chapterMap.name,
   });
 
   const romChapter: RomChapter = {
-    name: chapterName,
+    chapterId,
+    displayName: thisChapterTitle,
     number: chapterNumberToAssemble,
     chapterDataForCsv,
     chapterEvent,

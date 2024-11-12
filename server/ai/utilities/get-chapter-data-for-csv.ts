@@ -1,19 +1,19 @@
 import { ChapterDataForCsv } from "@/types/ChapterDataForCsv.ts";
-import getEventDataReferenceFromChapterName from "@/lib/get-event-data-reference-from-chapter-name.ts";
+import getEventDataReferenceFromChapterId from "@/lib/get-event-data-reference-from-chapter-name.ts";
 import getNameText from "@/lib/get-name-text.ts";
 import getMapIdFromMapName from "@/lib/get-map-id-from-map-name.ts";
 import getStatusTextFromChapterName from "@/lib/get-status-text-from-chapter-name.ts";
 import getMapChangesFromMapName from "@/lib/get-map-changes-from-map-name.ts";
 
 export default function getChapterDataForCsv({
-  chapterName,
+  chapterId,
   mapName,
 }: {
-  chapterName: string;
+  chapterId: string;
   mapName: string;
 }): ChapterDataForCsv {
   return {
-    chapterName: chapterName,
+    chapterName: chapterId,
     chapterNumberPointer: "0x0",
     objectType: "0x0",
     palette: "0x0",
@@ -25,7 +25,7 @@ export default function getChapterDataForCsv({
     fogOfWarSightLevel: 0,
     gasTrapLevel: 4,
     battlePreparations: 0,
-    chapterID: chapterName,
+    chapterID: chapterId,
     supplyList: "NormalSupplyList|IsPointer",
     weatherCondition: "0",
     battleTileset: "0x0",
@@ -38,13 +38,13 @@ export default function getChapterDataForCsv({
     attackTheme: "Knock_Em_Around",
     defenseTheme: "We_Stand",
     destructibleWallsHP: 25,
-    chapterNameID: getNameText(chapterName),
-    chapterNameID2: getNameText(chapterName),
-    eventDataReference: getEventDataReferenceFromChapterName(chapterName),
+    chapterNameID: getNameText(chapterId),
+    chapterNameID2: getNameText(chapterId),
+    eventDataReference: getEventDataReferenceFromChapterId(chapterId),
     worldmapChapterPrologueScene: "0x1",
     prepScreenNumberTimes2: 4,
     chapterTitleDisplayFadeOut: "0x1",
-    statusObjectiveTextPointer: getStatusTextFromChapterName(chapterName),
+    statusObjectiveTextPointer: getStatusTextFromChapterName(chapterId),
     goalWindowText: "DefeatAllText",
     goalWindowInformation: "EnemyCountGoal",
     turnsToCountDownToPlus1: 0,

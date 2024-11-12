@@ -7,7 +7,8 @@ import type { ChapterEvent } from "@/types/ChapterEvent.ts";
 import { PortraitMetadata } from "@/types/PortraitMetadata.ts";
 import generateScene from "./generate-scene/generate-scene.ts";
 import { RomCharacter } from "@/types/RomCharacter.ts";
-import getEventDataReferenceFromChapterName from "@/lib/get-event-data-reference-from-chapter-name.ts";
+import getEventDataReferenceFromChapterId from "@/lib/get-event-data-reference-from-chapter-name.ts";
+import chapterTitleToChapterId from "@/ai/utilities/chapter-title-to-chapter-id.ts";
 
 export type CharacterIdeaWithChapterJoinedAndClassAndPortrait = {
   characterIdea: CharacterIdea;
@@ -69,8 +70,8 @@ export default async function assembleChapterEvent({
   ]);
 
   return {
-    eventDataReference: getEventDataReferenceFromChapterName(
-      thisChapterIdea.chapterTitle
+    eventDataReference: getEventDataReferenceFromChapterId(
+      chapterTitleToChapterId(thisChapterIdea.chapterTitle)
     ),
     turnBasedEvents: undefined,
     characterBasedEvents: undefined,
@@ -80,7 +81,9 @@ export default async function assembleChapterEvent({
     units: unitsArray.join("\n"),
     // For now hard-code music
     beginningScene:
-      "LOAD1 0x1 Units\nMUSC Legends_of_Avenir\n" + preBattleSceneContent,
+      "LOAD1 0x1 Units\nMUSC Legends_of_Avenir\n" +
+      preBattleSceneContent +
+      "\nFadeOutMusic\n",
     endingScene: postBattleSceneContent,
     localDefinitions: [""],
     text: `## ${preBattleTextSceneName}\n[ConversationText]\n${preBattleTextSceneContent}[X]\n\n## ${postBattleTextSceneName}\n[ConversationText]\n${postBattleTextSceneContent}[X]`,

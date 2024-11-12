@@ -8,7 +8,7 @@ import {
 } from "@/testData/test-characters.ts";
 
 export const TEST_CHAPTER: RomChapter = {
-  name: "Prologue",
+  chapterId: "Prologue",
   number: 0,
   chapterDataForCsv: {
     chapterName: "Prologue",
