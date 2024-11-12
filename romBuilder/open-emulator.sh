@@ -19,12 +19,4 @@ EMULATOR_PATH="/Users/silver/Documents/Games/GBA/Utilities/visualboyadvance-m.ap
 ROM_PATH="$(pwd)/hack.gba"
 
 # Open the ROM file with VisualBoyAdvance-M using the full path
-echo "Opening $ROM_PATH with VisualBoyAdvance-M..."
 open -a "$EMULATOR_PATH" --args "$ROM_PATH"
-
-# Check if the emulator command was successful
-if [ $? -eq 0 ]; then
-  echo "✅ Emulator launched successfully!"
-else
-  echo "❌ Error: Failed to launch the emulator."
-fi
