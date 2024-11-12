@@ -8,15 +8,18 @@ export default async function assembleRomCharacter({
   characterClass,
   portraitMetadata,
   chapterJoined,
+  isLord,
 }: {
   characterIdea: CharacterIdea;
   characterClass: string;
   portraitMetadata: PortraitMetadata;
   chapterJoined: number;
+  isLord: boolean;
 }): Promise<RomCharacter> {
   const csvData = await assembleCharacterCsvData({
     characterIdea,
     characterClass,
+    isLord,
   });
 
   return {

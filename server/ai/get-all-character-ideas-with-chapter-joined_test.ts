@@ -1,7 +1,7 @@
 import { assertEquals } from "@std/assert/equals";
 import type { StoryArc } from "@/types/ai/StoryArc.ts";
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
-import getAllCharacterIdeasWithChapterJoined from "@/ai/get-all-character-ideas-with-chapter-joined.ts";
+import getAllCharacterIdeasWithChapterJoinedAndIsLord from "@/ai/get-all-character-ideas-with-chapter-joined.ts";
 
 // Mock data for testing
 const mockMainCharacter: CharacterIdea = {
@@ -79,7 +79,7 @@ const mockStoryArc: StoryArc = {
 Deno.test(
   "Returns all character ideas with correct chapterJoined values",
   () => {
-    const result = getAllCharacterIdeasWithChapterJoined({
+    const result = getAllCharacterIdeasWithChapterJoinedAndIsLord({
       storyArc: mockStoryArc,
       mainCharacterIdea: mockMainCharacter,
     });
@@ -97,7 +97,7 @@ Deno.test(
 );
 
 Deno.test("Includes main character as joined in chapter 0", () => {
-  const result = getAllCharacterIdeasWithChapterJoined({
+  const result = getAllCharacterIdeasWithChapterJoinedAndIsLord({
     storyArc: mockStoryArc,
     mainCharacterIdea: mockMainCharacter,
   });
@@ -115,7 +115,7 @@ Deno.test("Handles empty chapter ideas array", () => {
     chapterIdeas: [],
   };
 
-  const result = getAllCharacterIdeasWithChapterJoined({
+  const result = getAllCharacterIdeasWithChapterJoinedAndIsLord({
     storyArc: emptyStoryArc,
     mainCharacterIdea: mockMainCharacter,
   });
@@ -140,7 +140,7 @@ Deno.test("Handles chapter with no new playable characters", () => {
     ],
   };
 
-  const result = getAllCharacterIdeasWithChapterJoined({
+  const result = getAllCharacterIdeasWithChapterJoinedAndIsLord({
     storyArc: storyArcWithNoPlayableCharacters,
     mainCharacterIdea: mockMainCharacter,
   });
