@@ -11,6 +11,7 @@ import { ChapterMap } from "@/types/ChapterMap.ts";
 import type { RomChapter } from "@/types/RomChapter.ts";
 import chapterTitleToChapterId from "@/ai/utilities/chapter-title-to-chapter-id.ts";
 import { Game } from "@/types/Game.ts";
+import getChapterNumberDisplayText from "@/ai/utilities/get-chapter-number-display-text.ts";
 
 export default async function generateGame({
   worldIdea,
@@ -77,7 +78,9 @@ export default async function generateGame({
 
       return {
         chapterId,
-        displayName: thisChapterTitle,
+        displayName: `${getChapterNumberDisplayText(
+          chapterNumber
+        )}: ${thisChapterTitle}`,
         number: chapterNumber,
         chapterDataForCsv,
         chapterEvent,
