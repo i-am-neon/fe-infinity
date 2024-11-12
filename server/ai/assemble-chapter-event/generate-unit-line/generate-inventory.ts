@@ -33,7 +33,7 @@ export default async function generateInventory({
   const systemMessage = `You will decide the inventory of a given Fire Emblem 8 fangame character as they are first seen in the game.
 You will be given the character's idea, class, and level. You will return an array of strings representing the items in the character's inventory.
   
-You must return a list of item names that does not exceed 5. In most cases the character will have fewer than 5 items.
+You must return a list of item names that does not exceed 4. In most cases the character will have fewer than 4 items.
 
 Occasionally you can get creative and add in a special item.
 
@@ -56,7 +56,7 @@ Item options:
     schema: z.object({
       inventory: z
         .array(z.string())
-        .max(5, "Inventory must not exceed 5 items."),
+        .max(4, "Inventory must not exceed 4 items."),
     }),
     temperature: 0.5,
   });
