@@ -56,7 +56,8 @@ ${formattedObjectiveText}`,
   // Add to MasterEventInstaller.event
   appendToFileInRomBuilderSync({
     pathWithinRomBuilder: "Events/build/MasterEventInstaller.event",
-    content: `#include "${chapterId}.event"`,
+    // Must be surrounded by brackets so local definitions are kept local
+    content: `{\n#include "${chapterId}.event"\n}`,
     isOnNewLine: true,
   });
 }
