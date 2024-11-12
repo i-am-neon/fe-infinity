@@ -12,7 +12,7 @@ export async function assignMultipleMaps({
   if (
     Object.entries(chapterNameToBattleOverview).length > allMapOptions.length
   ) {
-    throw new Error("Not enough portraits to assign to each character");
+    throw new Error("Not enough maps to assign to each character");
   }
 
   const assignedMaps: Record<string, ChapterMap> = {};
@@ -31,7 +31,7 @@ export async function assignMultipleMaps({
     };
     assignedMaps[chapterName] = chapterMap;
 
-    // Remove the chosen portrait from the options
+    // Remove the chosen map from the options
     allMapOptions = allMapOptions.filter((map) => map !== chosenMapMetadata);
   }
 

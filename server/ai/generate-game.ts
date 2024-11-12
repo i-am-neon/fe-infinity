@@ -54,7 +54,9 @@ export default async function generateGame({
       return await assembleChapterEvent({
         chapterIdea,
         existingPartyCharacters: allRomCharacters.filter(
-          (c) => c.chapterJoined < chapterNumberToAssemble
+          (c) =>
+            c.firstSeenAs !== "boss" &&
+            c.chapterJoined < chapterNumberToAssemble
         ),
         newPlayableCharacters: allRomCharacters.filter(
           (c) =>

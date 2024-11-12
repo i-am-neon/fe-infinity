@@ -157,7 +157,8 @@ export const ITEMS = [
   "Guiding Ring - Promotes Mage, Monk, and Cleric classes.",
   "Ocean Seal - Promotes Pirate class.",
   "Master Seal - Promotes any class.",
-  "Metis's Tome - Increases growth rates slightly.",
+  // Can't handle apostrophes yet
+  // "Metis's Tome - Increases growth rates slightly.",
   "White Gem - Can be sold for a high price.",
   "Red Gem - Can be sold for a medium price.",
   "Blue Gem - Can be sold for a small price.",

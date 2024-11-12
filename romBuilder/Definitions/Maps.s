@@ -1,5 +1,5 @@
 Dummy 0x04
-Knights10_Map
-Knights10_Changes
 Knights12_Map
 Knights12_Changes
+Knights10_Map
+Knights10_Changes
