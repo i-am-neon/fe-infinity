@@ -1,4 +1,6 @@
 {
   "deno.enable": true,
   "deno.lint": true,
+  "search.useIgnoreFiles": false,
+  "search.useGlobalIgnoreFiles": false,
 }
