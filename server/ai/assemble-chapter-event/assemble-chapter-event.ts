@@ -1,22 +1,12 @@
 import getUnitsArray from "@/ai/assemble-chapter-event/generate-unit-line/get-units-array.ts";
+import chapterTitleToChapterId from "@/ai/utilities/chapter-title-to-chapter-id.ts";
+import getEventDataReferenceFromChapterId from "@/lib/get-event-data-reference-from-chapter-name.ts";
 import { storyArcExample } from "@/testData/ai.ts";
 import { exampleRomCharacters } from "@/testData/rom-characters.ts";
-import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
-import type { StoryArc } from "@/types/ai/StoryArc.ts";
-import type { ChapterEvent } from "@/types/ChapterEvent.ts";
-import { PortraitMetadata } from "@/types/PortraitMetadata.ts";
-import generateScene from "./generate-scene/generate-scene.ts";
-import { RomCharacter } from "@/types/RomCharacter.ts";
-import getEventDataReferenceFromChapterId from "@/lib/get-event-data-reference-from-chapter-name.ts";
-import chapterTitleToChapterId from "@/ai/utilities/chapter-title-to-chapter-id.ts";
 import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
-
-export type CharacterIdeaWithChapterJoinedAndClassAndPortrait = {
-  characterIdea: CharacterIdea;
-  characterClass: string;
-  portrait: PortraitMetadata;
-  chapterJoined: number;
-};
+import type { ChapterEvent } from "@/types/ChapterEvent.ts";
+import { RomCharacter } from "@/types/RomCharacter.ts";
+import generateScene from "./generate-scene/generate-scene.ts";
 
 export default async function assembleChapterEvent({
   chapterIdea,

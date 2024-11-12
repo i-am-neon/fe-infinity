@@ -1,4 +1,4 @@
-import allAI from "@/ai/_all.ts";
+import generateGame from "@/ai/generate-game.ts";
 import { worldIdeaExample } from "@/testData/ai.ts";
 import writeGame from "@/write-chapter/write-game.ts";
 
@@ -7,7 +7,7 @@ export async function doEverything({
 }: {
   worldIdea: string;
 }): Promise<void> {
-  const game = await allAI({ worldIdea });
+  const game = await generateGame({ worldIdea });
 
   console.log("game", JSON.stringify(game, null, 2));
 

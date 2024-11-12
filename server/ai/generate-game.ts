@@ -12,7 +12,7 @@ import type { RomChapter } from "@/types/RomChapter.ts";
 import chapterTitleToChapterId from "@/ai/utilities/chapter-title-to-chapter-id.ts";
 import { Game } from "@/types/Game.ts";
 
-export default async function allAI({
+export default async function generateGame({
   worldIdea,
 }: {
   worldIdea: string;
@@ -94,6 +94,6 @@ export default async function allAI({
 }
 
 if (import.meta.main) {
-  await allAI({ worldIdea: worldIdeaExample });
+  await generateGame({ worldIdea: worldIdeaExample });
 }
 
