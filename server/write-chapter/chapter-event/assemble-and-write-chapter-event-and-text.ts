@@ -2,17 +2,20 @@ import appendToFileInRomBuilderSync from "@/fileIO/append-to-file-in-rom-builder
 import writeFileToRomBuilder from "@/fileIO/write-file-to-rom-builder.ts";
 import type { ChapterEvent } from "@/types/ChapterEvent.ts";
 import assembleChapterEvent from "@/write-chapter/chapter-event/assemble-chapter-event.ts";
+import writeChapterNameText from "@/write-chapter/chapter-event/write-chapter-name-text.ts";
 
 export default async function assembleAndWriteChapterEventAndText({
   chapterEvent,
   chapterName,
   objectiveTextPointer,
   formattedObjectiveText,
+  isPrologue,
 }: {
   chapterEvent: ChapterEvent;
   chapterName: string;
   objectiveTextPointer: string;
   formattedObjectiveText: string;
+  isPrologue: boolean;
 }): Promise<void> {
   const chapterEventString = assembleChapterEvent(chapterEvent);
   await writeFileToRomBuilder(
@@ -24,11 +27,10 @@ export default async function assembleAndWriteChapterEventAndText({
     chapterEvent.text ?? ""
   );
 
-  appendToFileInRomBuilderSync({
-    pathWithinRomBuilder: "Text/Chapters/build/Names.s",
-    content: `## ${chapterName}NameText
-${chapterName}[X]`,
-    isOnNewLine: true,
+  writeChapterNameText({
+    chapterId: chapterName,
+    // TODO: use chapter title instead
+    chapterTitle: chapterName,
   });
 
   appendToFileInRomBuilderSync({
@@ -41,6 +43,12 @@ ${formattedObjectiveText}`,
   appendToFileInRomBuilderSync({
     pathWithinRomBuilder: "Definitions/EventPointers.s",
     content: chapterEvent.eventDataReference,
+    isOnNewLine: true,
+  });
+
+  appendToFileInRomBuilderSync({
+    pathWithinRomBuilder: "Definitions/Chapters.s",
+    content: isPrologue ? `${chapterName} 0x00` : chapterName,
     isOnNewLine: true,
   });
 
@@ -94,7 +102,7 @@ SetBackground(0x27)
 Text(Prologue_FinishedText)
 EndConvo
 STAL 0x20
-MoveToChapter(MilitaryAccept2)`,
+`,
     localDefinitions: [
       `LoadSylvaine:
 UNIT Sylvaine MaligKnight Sylvaine Level(9,NPC,True) [5,7] 0x00 0x00 0x00 0x00 [SilverAxe] GuardAI
@@ -244,6 +252,7 @@ when they choose to strike![A][X]
       chapterName: "Prologue",
       objectiveTextPointer: "PrologueStatusText",
       formattedObjectiveText: "Defeat all[NL]\nunits.[X]",
+      isPrologue: true,
     })
   );
 }

@@ -30,8 +30,8 @@ export const exampleRomCharacters: RomCharacter[] = [
     },
     csvData: {
       name: "Lyra",
-      nameTextPointer: "LyraNameText",
-      descriptionTextPointer: "LyraDescText",
+      nameTextPointer: "Lyra_NameText",
+      descriptionTextPointer: "Lyra_DescText",
       characterNumber: "Lyra",
       defaultClass: "Cleric",
       portrait: "LyraMug",
@@ -97,8 +97,8 @@ export const exampleRomCharacters: RomCharacter[] = [
     },
     csvData: {
       name: "Elias",
-      nameTextPointer: "EliasNameText",
-      descriptionTextPointer: "EliasDescText",
+      nameTextPointer: "Elias_NameText",
+      descriptionTextPointer: "Elias_DescText",
       characterNumber: "Elias",
       defaultClass: "Mercenary",
       portrait: "EliasMug",
@@ -164,8 +164,8 @@ export const exampleRomCharacters: RomCharacter[] = [
     },
     csvData: {
       name: "Lyra",
-      nameTextPointer: "LyraNameText",
-      descriptionTextPointer: "LyraDescText",
+      nameTextPointer: "Lyra_NameText",
+      descriptionTextPointer: "Lyra_DescText",
       characterNumber: "Lyra",
       defaultClass: "Cleric",
       portrait: "LyraMug",
@@ -231,8 +231,8 @@ export const exampleRomCharacters: RomCharacter[] = [
     },
     csvData: {
       name: "Mira",
-      nameTextPointer: "MiraNameText",
-      descriptionTextPointer: "MiraDescText",
+      nameTextPointer: "Mira_NameText",
+      descriptionTextPointer: "Mira_DescText",
       characterNumber: "Mira",
       defaultClass: "Shaman_F",
       portrait: "MiraMug",

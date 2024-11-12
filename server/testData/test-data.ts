@@ -9,20 +9,21 @@ import {
 
 export const TEST_CHAPTER: RomChapter = {
   name: "Prologue",
+  number: 0,
   chapterDataForCsv: {
     chapterName: "Prologue",
     chapterNumberPointer: "0x0",
     objectType: "0x0",
     palette: "0x0",
     tileConfiguration: "0x0",
-    mapId: "Knights10Map",
+    mapId: "Knights10_Map",
     tileAnimation1: "0x0",
     tileAnimation2: "0x0",
     triggerableMapChanges: "0x0",
     fogOfWarSightLevel: 0,
     gasTrapLevel: 4,
     battlePreparations: 0,
-    chapterID: "PrologueChapter",
+    chapterID: "Prologue",
     supplyList: "",
     weatherCondition: "0",
     battleTileset: "0x0",
@@ -35,13 +36,13 @@ export const TEST_CHAPTER: RomChapter = {
     attackTheme: "Knock_Em_Around",
     defenseTheme: "We_Stand",
     destructibleWallsHP: 50,
-    chapterNameID: "PrologueNameText",
-    chapterNameID2: "PrologueNameText",
-    eventDataReference: "PrologueEvent",
+    chapterNameID: "Prologue_NameText",
+    chapterNameID2: "Prologue_NameText",
+    eventDataReference: "Prologue_EventDataReference",
     worldmapChapterPrologueScene: "0x1",
     prepScreenNumberTimes2: 2,
     chapterTitleDisplayFadeOut: "0x1",
-    statusObjectiveTextPointer: "PrologueStatusText",
+    statusObjectiveTextPointer: "Prologue_StatusText",
     goalWindowText: "DefeatAllText",
     goalWindowInformation: "EnemyCountGoal",
     turnsToCountDownToPlus1: 0,
@@ -49,7 +50,7 @@ export const TEST_CHAPTER: RomChapter = {
     tileMarkerYCoordinate: 0,
   },
   chapterEvent: {
-    eventDataReference: "PrologueEvent",
+    eventDataReference: "Prologue_EventDataReference",
     turnBasedEvents: undefined,
     characterBasedEvents: undefined,
     locationBasedEvents: `Armory(ArmoryList,0,6)`,
@@ -75,7 +76,7 @@ SetBackground(0x27)
 Text(Prologue_FinishedText)
 EndConvo
 STAL 0x20
-MoveToChapter(MilitaryAccept2)`,
+`,
     localDefinitions: [
       `LoadSeraphina:
 UNIT Seraphina Valkyrie 0x00 Level(5,Ally,True) [0,8] 0x00 0x00 0x01 REDA3R6 [Shine,Mend,Elixir] NoAI
@@ -112,9 +113,9 @@ This is Prologue finished text![A][X]
   <properties>
    <property name="Main" value=""/>
    <property name="Anims" value="_3CAnims"/>
-   <property name="ChapterID" value="PrologueChapter"/>
-   <property name="MapChangesID" value="Knights10Changes"/>
-   <property name="MapID" value="Knights10Map"/>
+   <property name="ChapterID" value="Prologue"/>
+   <property name="MapChangesID" value="Knights10_Changes"/>
+   <property name="MapID" value="Knights10_Map"/>
    <property name="ObjectType" value="0x3C"/>
    <property name="PaletteID" value="0xCE"/>
    <property name="TileConfig" value="0x3E"/>

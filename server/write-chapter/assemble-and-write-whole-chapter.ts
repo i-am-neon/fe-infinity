@@ -7,10 +7,12 @@ import assembleAndWriteChapterDataCsv from "@/write-chapter/chapter-data-csv/ass
 import initializeChapterDataCsv from "@/write-chapter/chapter-data-csv/initialize-chapter-data-csv.ts";
 import assembleAndWriteChapterEventAndText from "@/write-chapter/chapter-event/assemble-and-write-chapter-event-and-text.ts";
 import writeChapterMap from "@/write-chapter/map/write-chapter-map.ts";
-import initializeChaptersDotS from "@/write-chapter/initialize-chapters-dot-s.ts";
+import initializeTextChaptersDotS from "@/write-chapter/initialize-chapters-dot-s.ts";
 import writeChapterName from "@/write-chapter/write-chapter-name.ts";
 import { TEST_CHAPTER } from "@/testData/test-data.ts";
 import initializeMapDirectory from "@/write-chapter/map/initialize-map-directory.ts";
+import getPathWithinRomBuilderDir from "@/fileIO/get-path-within-rom-builder-dir.ts";
+import clearDir from "@/fileIO/clear-dir.ts";
 
 export default async function assembleAndWriteWholeChapter(
   chapter: RomChapter
@@ -19,8 +21,15 @@ export default async function assembleAndWriteWholeChapter(
   await initializeCharacterTableCsv();
   await initializeChapterDataCsv();
   // Initialize Chapter Data files
-  await initializeChaptersDotS();
+  await initializeTextChaptersDotS();
   await initializeMapDirectory();
+  await clearDir(getPathWithinRomBuilderDir("Events/build"));
+  await writeFileToRomBuilder(
+    "Definitions/Chapters.s",
+    `.avoid 0x27 0x3A
+.avoid 0x4A
+`
+  );
   await writeFileToRomBuilder(
     `Text/Chapters/build/Objectives.s`,
     `
@@ -161,10 +170,10 @@ PortraitTable:
     chapterEvent: chapter.chapterEvent,
     objectiveTextPointer: chapter.chapterDataForCsv.statusObjectiveTextPointer,
     formattedObjectiveText: "TODO CHAPTER OBJECTIVE[X]",
+    isPrologue: chapter.number === 0,
   });
   await writeChapterMap({
     chapterMap: chapter.chapterMap,
-    chapterName: chapter.name,
   });
 
   for (const character of [

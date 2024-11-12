@@ -6,6 +6,7 @@ import type { GenericCharacter } from "./GenericCharacter.ts";
 
 export type RomChapter = {
   name: string;
+  number: number;
   chapterDataForCsv: ChapterDataForCsv;
   chapterEvent: ChapterEvent;
   chapterMap: ChapterMap;

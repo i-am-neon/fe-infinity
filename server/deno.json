@@ -1,6 +1,7 @@
 {
   "tasks": {
     "dev": "deno run --watch main.ts",
+    "test": "deno test --allow-all",
     "main": "deno run --allow-all main.ts",
     "write-test": "deno run --allow-all write-chapter/assemble-and-write-whole-chapter.ts"
   },

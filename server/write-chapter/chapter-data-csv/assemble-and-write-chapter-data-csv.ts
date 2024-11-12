@@ -31,7 +31,7 @@ if (import.meta.main) {
       fogOfWarSightLevel: 0,
       gasTrapLevel: 4,
       battlePreparations: 0,
-      chapterID: "PrologueChapter",
+      chapterID: "Prologue",
       supplyList: "",
       weatherCondition: "0",
       battleTileset: "0x0",

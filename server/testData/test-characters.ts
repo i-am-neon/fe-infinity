@@ -22,8 +22,8 @@ export const seraphinaPortraitMetadata: PortraitMetadata = {
 
 export const seraphinaCsvData: CharacterDataForCsv = {
   name: "Seraphina",
-  nameTextPointer: "SeraphinaNameText",
-  descriptionTextPointer: "SeraphinaDescText",
+  nameTextPointer: "Seraphina_NameText",
+  descriptionTextPointer: "Seraphina_DescText",
   characterNumber: "Seraphina",
   defaultClass: "Valkyrie",
   portrait: "SeraphinaMug",
@@ -90,8 +90,8 @@ export const liraPortraitMetadata: PortraitMetadata = {
 
 export const liraCsvData: CharacterDataForCsv = {
   name: "Lira",
-  nameTextPointer: "LiraNameText",
-  descriptionTextPointer: "LiraDescText",
+  nameTextPointer: "Lira_NameText",
+  descriptionTextPointer: "Lira_DescText",
   characterNumber: "Lira",
   defaultClass: "ArcherF2",
   portrait: "LiraMug",
@@ -157,8 +157,8 @@ export const igorPortraitMetadata: PortraitMetadata = {
 
 export const igorCsvData: CharacterDataForCsv = {
   name: "Igor",
-  nameTextPointer: "IgorNameText",
-  descriptionTextPointer: "IgorDescText",
+  nameTextPointer: "Igor_NameText",
+  descriptionTextPointer: "Igor_DescText",
   characterNumber: "Igor",
   defaultClass: "Thief",
   portrait: "IgorMug",
@@ -224,8 +224,8 @@ export const ligmaPortraitMetadata: PortraitMetadata = {
 
 export const ligmaCsvData: CharacterDataForCsv = {
   name: "Ligma",
-  nameTextPointer: "LigmaNameText",
-  descriptionTextPointer: "LigmaDescText",
+  nameTextPointer: "Ligma_NameText",
+  descriptionTextPointer: "Ligma_DescText",
   characterNumber: "Ligma",
   defaultClass: "ArcherM2",
   portrait: "LigmaMug",
@@ -274,8 +274,8 @@ I wanted to do more...[A][X]`,
 
 const cesarianCsvData: CharacterDataForCsv = {
   name: "Cesarian",
-  nameTextPointer: "CesarianNameText",
-  descriptionTextPointer: "CesarianDescText",
+  nameTextPointer: "Cesarian_NameText",
+  descriptionTextPointer: "Cesarian_DescText",
   characterNumber: "Cesarian",
   defaultClass: "0x0",
   portrait: "0x0",

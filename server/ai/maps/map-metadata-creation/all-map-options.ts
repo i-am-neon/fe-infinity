@@ -13,8 +13,8 @@ export const allMapOptions: MapMetadata[] = [
    <property name="Main" value=""/>
    <property name="Anims" value="_3CAnims"/>
    <property name="ChapterID" value="<CHAPTERID>"/>
-   <property name="MapChangesID" value="Knights10Changes"/>
-   <property name="MapID" value="Knights10Map"/>
+   <property name="MapChangesID" value="Knights10_Changes"/>
+   <property name="MapID" value="Knights10_Map"/>
    <property name="ObjectType" value="0x3C"/>
    <property name="PaletteID" value="0xCE"/>
    <property name="TileConfig" value="0x3E"/>
@@ -98,8 +98,8 @@ Potential Gameplay Mechanics:
    <property name="Anims" value="_01Anims"/>
    <property name="ChapterID" value="<CHAPTERID>"/>
    <property name="Main" value=""/>
-   <property name="MapChangesID" value="Knights12Changes"/>
-   <property name="MapID" value="Knights12Map"/>
+   <property name="MapChangesID" value="Knights12_Changes"/>
+   <property name="MapID" value="Knights12_Map"/>
    <property name="ObjectType" value="0x01"/>
    <property name="PaletteID" value="0x02"/>
    <property name="TileConfig" value="0x03"/>

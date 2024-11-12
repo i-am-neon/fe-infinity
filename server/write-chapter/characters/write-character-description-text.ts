@@ -1,4 +1,5 @@
 import appendToFileInRomBuilderSync from "@/fileIO/append-to-file-in-rom-builder-sync.ts";
+import getDescText from "@/lib/get-desc-text.ts";
 
 export default function writeCharacterDescriptionText({
   characterName,
@@ -8,7 +9,7 @@ export default function writeCharacterDescriptionText({
   formattedDescription: string;
 }): void {
   const characterNameText = `
-## ${characterName}DescText
+## ${getDescText(characterName)}
 ${formattedDescription}`;
 
   appendToFileInRomBuilderSync({

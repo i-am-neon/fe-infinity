@@ -1,4 +1,5 @@
 import appendToFileInRomBuilderSync from "@/fileIO/append-to-file-in-rom-builder-sync.ts";
+import getNameText from "@/lib/get-name-text.ts";
 
 export default function writeCharacterNameText({
   name,
@@ -6,7 +7,7 @@ export default function writeCharacterNameText({
   name: string;
 }): void {
   const characterNameText = `
-## ${name}NameText
+## ${getNameText(name)}
 ${name}[X]`;
 
   appendToFileInRomBuilderSync({

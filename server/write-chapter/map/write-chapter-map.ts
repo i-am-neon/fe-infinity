@@ -1,26 +1,26 @@
 import writeFileToRomBuilder from "@/fileIO/write-file-to-rom-builder.ts";
 import type { ChapterMap } from "@/types/ChapterMap.ts";
 import appendToFileInRomBuilderSync from "@/fileIO/append-to-file-in-rom-builder-sync.ts";
+import getMapIdFromMapName from "@/lib/get-map-id-from-map-name.ts";
+import getMapChangesFromMapName from "@/lib/get-map-changes-from-map-name.ts";
 
 export default async function writeChapterMap({
   chapterMap,
-  chapterName,
 }: {
   chapterMap: ChapterMap;
-  chapterName: string;
 }): Promise<void> {
   await writeFileToRomBuilder(
-    `Maps/data/${chapterName}_${chapterMap.name}.tmx`,
+    `Maps/data/${chapterMap.name}.tmx`,
     chapterMap.tmx
   );
   appendToFileInRomBuilderSync({
     pathWithinRomBuilder: "Definitions/Maps.s",
-    content: chapterMap.name + "Map",
+    content: getMapIdFromMapName(chapterMap.name),
     isOnNewLine: true,
   });
   appendToFileInRomBuilderSync({
     pathWithinRomBuilder: "Definitions/Maps.s",
-    content: chapterMap.name + "Changes",
+    content: getMapChangesFromMapName(chapterMap.name),
     isOnNewLine: true,
   });
 }
@@ -53,7 +53,6 @@ if (import.meta.main) {
 
   await writeChapterMap({
     chapterMap,
-    chapterName: "PrologueChapter",
   });
 }
 

@@ -1,4 +1,9 @@
 import { ChapterDataForCsv } from "@/types/ChapterDataForCsv.ts";
+import getEventDataReferenceFromChapterName from "@/lib/get-event-data-reference-from-chapter-name.ts";
+import getNameText from "@/lib/get-name-text.ts";
+import getMapIdFromMapName from "@/lib/get-map-id-from-map-name.ts";
+import getStatusTextFromChapterName from "@/lib/get-status-text-from-chapter-name.ts";
+import getMapChangesFromMapName from "@/lib/get-map-changes-from-map-name.ts";
 
 export default function getChapterDataForCsv({
   chapterName,
@@ -13,14 +18,14 @@ export default function getChapterDataForCsv({
     objectType: "0x0",
     palette: "0x0",
     tileConfiguration: "0x0",
-    mapId: `${mapName}Map`,
+    mapId: getMapIdFromMapName(mapName),
     tileAnimation1: "0x0",
     tileAnimation2: "0x0",
-    triggerableMapChanges: "0x0",
+    triggerableMapChanges: getMapChangesFromMapName(mapName),
     fogOfWarSightLevel: 0,
     gasTrapLevel: 4,
     battlePreparations: 0,
-    chapterID: `${chapterName}Chapter`,
+    chapterID: chapterName,
     supplyList: "NormalSupplyList|IsPointer",
     weatherCondition: "0",
     battleTileset: "0x0",
@@ -33,13 +38,13 @@ export default function getChapterDataForCsv({
     attackTheme: "Knock_Em_Around",
     defenseTheme: "We_Stand",
     destructibleWallsHP: 25,
-    chapterNameID: `${chapterName}NameText`,
-    chapterNameID2: `${chapterName}NameText`,
-    eventDataReference: `${chapterName}Event`,
+    chapterNameID: getNameText(chapterName),
+    chapterNameID2: getNameText(chapterName),
+    eventDataReference: getEventDataReferenceFromChapterName(chapterName),
     worldmapChapterPrologueScene: "0x1",
     prepScreenNumberTimes2: 4,
     chapterTitleDisplayFadeOut: "0x1",
-    statusObjectiveTextPointer: `${chapterName}StatusText`,
+    statusObjectiveTextPointer: getStatusTextFromChapterName(chapterName),
     goalWindowText: "DefeatAllText",
     goalWindowInformation: "EnemyCountGoal",
     turnsToCountDownToPlus1: 0,

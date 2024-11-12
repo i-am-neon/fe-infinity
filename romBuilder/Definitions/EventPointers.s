@@ -49,4 +49,4 @@ ImprovedCastleTileConfig
 FE6WaterAnimations
 ImprovedCastleAnims
 
-PrologueEvent
+Prologue_EventDataReference

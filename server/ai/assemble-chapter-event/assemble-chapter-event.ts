@@ -7,6 +7,7 @@ import type { ChapterEvent } from "@/types/ChapterEvent.ts";
 import { PortraitMetadata } from "@/types/PortraitMetadata.ts";
 import generateScene from "./generate-scene/generate-scene.ts";
 import { RomCharacter } from "@/types/RomCharacter.ts";
+import getEventDataReferenceFromChapterName from "@/lib/get-event-data-reference-from-chapter-name.ts";
 
 export type CharacterIdeaWithChapterJoinedAndClassAndPortrait = {
   characterIdea: CharacterIdea;
@@ -68,10 +69,9 @@ export default async function assembleChapterEvent({
   ]);
 
   return {
-    eventDataReference:
-      chapterNumberToAssemble === 0
-        ? "PrologueEvent"
-        : `Chapter${chapterNumberToAssemble}Event`,
+    eventDataReference: getEventDataReferenceFromChapterName(
+      thisChapterIdea.chapterTitle
+    ),
     turnBasedEvents: undefined,
     characterBasedEvents: undefined,
     locationBasedEvents: undefined,

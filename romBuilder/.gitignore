@@ -26,6 +26,7 @@ Definitions/Definitions.event
 Definitions/Skills.s
 Definitions/Characters.s
 Definitions/Portraits.s
+Definitions/Chapters.s
 
 # CSV-related ignores.
 CSV/Tables/*.event

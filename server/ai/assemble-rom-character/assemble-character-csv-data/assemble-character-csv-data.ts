@@ -4,6 +4,8 @@ import getWeaponRank from "@/ai/assemble-rom-character/assemble-character-csv-da
 import { mainCharacterIdeaExample } from "@/testData/ai.ts";
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import type { CharacterDataForCsv } from "@/types/CharacterDataForCsv.ts";
+import getNameText from "@/lib/get-name-text.ts";
+import getDescText from "@/lib/get-desc-text.ts";
 
 export default async function assembleCharacterCsvData({
   characterIdea,
@@ -41,11 +43,11 @@ export default async function assembleCharacterCsvData({
 
   return {
     name: characterIdea.name,
-    nameTextPointer: `${characterIdea.name}NameText`,
-    descriptionTextPointer: `${characterIdea.name}DescText`,
+    nameTextPointer: getNameText(characterIdea.name),
+    descriptionTextPointer: getDescText(characterIdea.name),
     characterNumber: characterIdea.name,
     defaultClass: characterClass,
-    portrait: `${characterIdea.name}Mug`,
+    portrait: `${characterIdea.name}Mug`, // the python file somewhere is looking for this exact pattern
     isGeneric: false, // PLACEHOLDER for now
     affinity,
     ...weaponRanks,

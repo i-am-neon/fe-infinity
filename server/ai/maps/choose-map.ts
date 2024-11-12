@@ -1,10 +1,9 @@
 import { allMapOptions } from "@/ai/maps/map-metadata-creation/all-map-options.ts";
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
 import { MapMetadata } from "@/types/MapMetadata.ts";
-import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
 import { z } from "zod";
 
-export default async function choosePortrait({
+export default async function chooseMap({
   mapOptions,
   battleOverview,
 }: {
@@ -43,8 +42,6 @@ if (import.meta.main) {
   const battleOverview =
     "Defend the abandoned fortress against waves of incoming enemies, using narrow corridors and fortified chambers to hold the line and control chokepoints.";
 
-  choosePortrait({ mapOptions: allMapOptions, battleOverview }).then(
-    console.log
-  );
+  chooseMap({ mapOptions: allMapOptions, battleOverview }).then(console.log);
 }
 
