@@ -21,4 +21,5 @@ if echo "$output" | grep -q "Errors occurred; no changes written."; then
   echo "❌❌❌❌❌ Errors when building ROM ❌❌❌❌❌"
 else
   echo "✅✅✅✅✅ ROM built successfully ✅✅✅✅✅"
+  ./openEmulator.sh
 fi
