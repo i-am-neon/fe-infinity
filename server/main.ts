@@ -1,19 +1,17 @@
-import { worldIdeaExample } from "@/testData/ai.ts";
 import allAI from "@/ai/_all.ts";
-import assembleAndWriteWholeChapter from "@/write-chapter/assemble-and-write-whole-chapter.ts";
+import { worldIdeaExample } from "@/testData/ai.ts";
+import writeGame from "@/write-chapter/write-game.ts";
 
 export async function doEverything({
   worldIdea,
 }: {
   worldIdea: string;
 }): Promise<void> {
-  const romChapters = await allAI({ worldIdea });
+  const game = await allAI({ worldIdea });
 
-  console.log("romChapters", JSON.stringify(romChapters, null, 2));
+  console.log("game", JSON.stringify(game, null, 2));
 
-  romChapters.forEach((romChapter) => {
-    assembleAndWriteWholeChapter(romChapter);
-  });
+  await writeGame(game);
 
   // TODO: if no errors, run `./run.sh` in romBuilder
 }

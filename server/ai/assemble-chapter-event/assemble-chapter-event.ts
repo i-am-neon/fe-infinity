@@ -9,6 +9,7 @@ import generateScene from "./generate-scene/generate-scene.ts";
 import { RomCharacter } from "@/types/RomCharacter.ts";
 import getEventDataReferenceFromChapterId from "@/lib/get-event-data-reference-from-chapter-name.ts";
 import chapterTitleToChapterId from "@/ai/utilities/chapter-title-to-chapter-id.ts";
+import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
 
 export type CharacterIdeaWithChapterJoinedAndClassAndPortrait = {
   characterIdea: CharacterIdea;
@@ -18,26 +19,22 @@ export type CharacterIdeaWithChapterJoinedAndClassAndPortrait = {
 };
 
 export default async function assembleChapterEvent({
-  storyArc,
-  chapterNumberToAssemble,
+  chapterIdea,
   existingPartyCharacters,
   newPlayableCharacters,
   boss,
 }: {
-  storyArc: StoryArc;
-  chapterNumberToAssemble: number;
+  chapterIdea: ChapterIdea;
   existingPartyCharacters: RomCharacter[];
   newPlayableCharacters: RomCharacter[];
   boss: RomCharacter;
 }): Promise<ChapterEvent> {
-  const thisChapterIdea = storyArc.chapterIdeas[chapterNumberToAssemble];
-
   const {
     sceneContent: preBattleSceneContent,
     textSceneName: preBattleTextSceneName,
     textSceneContent: preBattleTextSceneContent,
   } = await generateScene({
-    sceneOverview: thisChapterIdea.preChapterScene,
+    sceneOverview: chapterIdea.preChapterScene,
     // Extract the characterIdea
     existingPartyCharacters: existingPartyCharacters.map((c) => ({ ...c })),
     newPlayableCharacters: newPlayableCharacters.map((c) => ({ ...c })),
@@ -50,7 +47,7 @@ export default async function assembleChapterEvent({
     textSceneName: postBattleTextSceneName,
     textSceneContent: postBattleTextSceneContent,
   } = await generateScene({
-    sceneOverview: thisChapterIdea.postChapterScene,
+    sceneOverview: chapterIdea.postChapterScene,
     existingPartyCharacters: existingPartyCharacters.map((c) => ({ ...c })),
     newPlayableCharacters: newPlayableCharacters.map((c) => ({ ...c })),
     boss: { ...boss },
@@ -71,7 +68,7 @@ export default async function assembleChapterEvent({
 
   return {
     eventDataReference: getEventDataReferenceFromChapterId(
-      chapterTitleToChapterId(thisChapterIdea.chapterTitle)
+      chapterTitleToChapterId(chapterIdea.chapterTitle)
     ),
     turnBasedEvents: undefined,
     characterBasedEvents: undefined,
@@ -92,8 +89,7 @@ export default async function assembleChapterEvent({
 
 if (import.meta.main) {
   const res = await assembleChapterEvent({
-    storyArc: storyArcExample,
-    chapterNumberToAssemble: 0,
+    chapterIdea: storyArcExample.chapterIdeas[0],
     existingPartyCharacters: [],
     newPlayableCharacters: [
       exampleRomCharacters[0],

@@ -7,11 +7,19 @@ import {
   seraphinaCharacter,
 } from "@/testData/test-characters.ts";
 
+export const TEST_CHARACTERS = [
+  seraphinaCharacter,
+  liraCharacter,
+  igorCharacter,
+  ligmaCharacter,
+];
+
 export const TEST_CHAPTER: RomChapter = {
-  chapterId: "Prologue",
+  chapterId: "Hack_Factory_Prologue",
+  displayName: "Hack Factory Prologue",
   number: 0,
   chapterDataForCsv: {
-    chapterName: "Prologue",
+    chapterName: "Hack_Factory_Prologue",
     chapterNumberPointer: "0x0",
     objectType: "0x0",
     palette: "0x0",
@@ -23,7 +31,7 @@ export const TEST_CHAPTER: RomChapter = {
     fogOfWarSightLevel: 0,
     gasTrapLevel: 4,
     battlePreparations: 0,
-    chapterID: "Prologue",
+    chapterID: "Hack_Factory_Prologue",
     supplyList: "",
     weatherCondition: "0",
     battleTileset: "0x0",
@@ -36,13 +44,13 @@ export const TEST_CHAPTER: RomChapter = {
     attackTheme: "Knock_Em_Around",
     defenseTheme: "We_Stand",
     destructibleWallsHP: 50,
-    chapterNameID: "Prologue_NameText",
-    chapterNameID2: "Prologue_NameText",
-    eventDataReference: "Prologue_EventDataReference",
+    chapterNameID: "Hack_Factory_Prologue_NameText",
+    chapterNameID2: "Hack_Factory_Prologue_NameText",
+    eventDataReference: "Hack_Factory_Prologue_EventDataReference",
     worldmapChapterPrologueScene: "0x1",
     prepScreenNumberTimes2: 2,
     chapterTitleDisplayFadeOut: "0x1",
-    statusObjectiveTextPointer: "Prologue_StatusText",
+    statusObjectiveTextPointer: "Hack_Factory_Prologue_StatusText",
     goalWindowText: "DefeatAllText",
     goalWindowInformation: "EnemyCountGoal",
     turnsToCountDownToPlus1: 0,
@@ -50,7 +58,7 @@ export const TEST_CHAPTER: RomChapter = {
     tileMarkerYCoordinate: 0,
   },
   chapterEvent: {
-    eventDataReference: "Prologue_EventDataReference",
+    eventDataReference: "Hack_Factory_Prologue_EventDataReference",
     turnBasedEvents: undefined,
     characterBasedEvents: undefined,
     locationBasedEvents: `Armory(ArmoryList,0,6)`,
@@ -113,7 +121,7 @@ This is Prologue finished text![A][X]
   <properties>
    <property name="Main" value=""/>
    <property name="Anims" value="_3CAnims"/>
-   <property name="ChapterID" value="Prologue"/>
+   <property name="ChapterID" value="Hack_Factory_Prologue"/>
    <property name="MapChangesID" value="Knights10_Changes"/>
    <property name="MapID" value="Knights10_Map"/>
    <property name="ObjectType" value="0x3C"/>
@@ -176,12 +184,6 @@ This is Prologue finished text![A][X]
 `,
     name: "Knights10",
   },
-  characters: [
-    seraphinaCharacter,
-    liraCharacter,
-    igorCharacter,
-    ligmaCharacter,
-  ],
   genericCharacters: [cesarianGenericCharacter],
 };
 

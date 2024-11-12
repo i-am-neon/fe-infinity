@@ -10,75 +10,87 @@ import { worldIdeaExample } from "@/testData/ai.ts";
 import { ChapterMap } from "@/types/ChapterMap.ts";
 import type { RomChapter } from "@/types/RomChapter.ts";
 import chapterTitleToChapterId from "@/ai/utilities/chapter-title-to-chapter-id.ts";
+import { Game } from "@/types/Game.ts";
 
 export default async function allAI({
   worldIdea,
 }: {
   worldIdea: string;
-}): Promise<RomChapter[]> {
+}): Promise<Game> {
   const worldSummary = await generateWorldSummary(worldIdea);
   const mainCharacterIdea = await generateMainCharacterIdea({ worldSummary });
 
   const storyArc = await generateStoryArc({
     worldSummary,
     mainCharacterIdea,
-    numberOfChapters: 1,
+    numberOfChapters: 2,
   });
 
-  const allRomCharacters = await assembleAllRomCharacters({
-    storyArc,
-    mainCharacterIdea,
-  });
+  const [allRomCharacters, chapterIdToMap] = await Promise.all([
+    assembleAllRomCharacters({ storyArc, mainCharacterIdea }),
+    assignMultipleMaps({
+      chapterNameToBattleOverview: storyArc.chapterIdeas.reduce(
+        (acc, chapterIdea) => {
+          acc[chapterTitleToChapterId(chapterIdea.chapterTitle)] =
+            chapterIdea.battleOverview;
+          return acc;
+        },
+        {} as Record<string, string>
+      ),
+      allMapOptions,
+    }),
+  ]);
 
-  const chapterIdToMap = await assignMultipleMaps({
-    chapterNameToBattleOverview: storyArc.chapterIdeas.reduce(
-      (acc, chapterIdea) => {
-        acc[chapterTitleToChapterId(chapterIdea.chapterTitle)] =
-          chapterIdea.battleOverview;
-        return acc;
-      },
-      {} as Record<string, string>
-    ),
-    allMapOptions,
-  });
+  const chapterEventPromises = storyArc.chapterIdeas.map(
+    async (chapterIdea, index) => {
+      const chapterNumberToAssemble = index;
+      return await assembleChapterEvent({
+        chapterIdea,
+        existingPartyCharacters: allRomCharacters.filter(
+          (c) => c.chapterJoined < chapterNumberToAssemble
+        ),
+        newPlayableCharacters: allRomCharacters.filter(
+          (c) =>
+            c.chapterJoined === chapterNumberToAssemble &&
+            c.firstSeenAs !== "boss"
+        ),
+        boss: allRomCharacters.find(
+          (c) =>
+            c.chapterJoined === chapterNumberToAssemble &&
+            c.firstSeenAs === "boss"
+        )!,
+      });
+    }
+  );
+  const chapterEvents = await Promise.all(chapterEventPromises);
 
-  // TODO: put this in a loop to do over multiple chapters
-  const chapterNumberToAssemble = 0;
-  const chapterEvent = await assembleChapterEvent({
-    storyArc,
-    chapterNumberToAssemble,
-    existingPartyCharacters: allRomCharacters.filter(
-      (c) => c.chapterJoined < chapterNumberToAssemble
-    ),
-    newPlayableCharacters: allRomCharacters.filter(
-      (c) =>
-        c.chapterJoined === chapterNumberToAssemble && c.firstSeenAs !== "boss"
-    ),
-    boss: allRomCharacters.find(
-      (c) =>
-        c.chapterJoined === chapterNumberToAssemble && c.firstSeenAs === "boss"
-    )!,
-  });
+  const allRomChapters: RomChapter[] = chapterEvents.map(
+    (chapterEvent, chapterNumber) => {
+      const thisChapterTitle =
+        storyArc.chapterIdeas[chapterNumber].chapterTitle;
+      const chapterId = chapterTitleToChapterId(thisChapterTitle);
+      const chapterMap: ChapterMap = chapterIdToMap[chapterId];
+      const chapterDataForCsv = getChapterDataForCsv({
+        chapterId,
+        mapName: chapterMap.name,
+      });
 
-  const thisChapterTitle = storyArc.chapterIdeas[0].chapterTitle;
-  const chapterId = chapterTitleToChapterId(thisChapterTitle);
-  const chapterMap: ChapterMap = chapterIdToMap[chapterId];
-  const chapterDataForCsv = getChapterDataForCsv({
-    chapterId,
-    mapName: chapterMap.name,
-  });
+      return {
+        chapterId,
+        displayName: thisChapterTitle,
+        number: chapterNumber,
+        chapterDataForCsv,
+        chapterEvent,
+        chapterMap: chapterMap,
+        genericCharacters: [],
+      };
+    }
+  );
 
-  const romChapter: RomChapter = {
-    chapterId,
-    displayName: thisChapterTitle,
-    number: chapterNumberToAssemble,
-    chapterDataForCsv,
-    chapterEvent,
-    chapterMap: chapterMap,
+  return {
+    chapters: allRomChapters,
     characters: allRomCharacters,
-    genericCharacters: [],
   };
-  return [romChapter];
 }
 
 if (import.meta.main) {
