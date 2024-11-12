@@ -92,6 +92,6 @@ Deno.test(
       allMapOptions: [...mockMapOptions],
     });
 
-    assertEquals(assignedMaps["Chapter 1"].tmx, "Chapter 1_EventDataReference-map1.tmx");
+    assertEquals(assignedMaps["Chapter 1"].tmx, "Chapter 1-map1.tmx");
   }
 );

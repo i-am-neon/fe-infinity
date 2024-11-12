@@ -1,7 +1,6 @@
+import chooseMap from "@/ai/maps/choose-map.ts";
 import { ChapterMap } from "@/types/ChapterMap.ts";
 import { MapMetadata } from "@/types/MapMetadata.ts";
-import chooseMap from "@/ai/maps/choose-map.ts";
-import getEventDataReferenceFromChapterName from "@/lib/get-event-data-reference-from-chapter-name.ts";
 
 export async function assignMultipleMaps({
   chapterNameToBattleOverview,
@@ -28,10 +27,7 @@ export async function assignMultipleMaps({
 
     const chapterMap: ChapterMap = {
       name: chosenMapMetadata.name,
-      tmx: chosenMapMetadata.rawTmx.replace(
-        /<CHAPTERID>/g,
-        getEventDataReferenceFromChapterName(chapterName)
-      ),
+      tmx: chosenMapMetadata.rawTmx.replace(/<CHAPTERID>/g, chapterName),
     };
     assignedMaps[chapterName] = chapterMap;
 
