@@ -45,8 +45,8 @@ export default function getChapterDataForCsv({
     prepScreenNumberTimes2: 4,
     chapterTitleDisplayFadeOut: "0x1",
     statusObjectiveTextPointer: getStatusTextFromChapterName(chapterId),
-    goalWindowText: "DefeatAllText",
-    goalWindowInformation: "EnemyCountGoal",
+    goalWindowText: "DefeatAllText", // for now all chapters are defeat all (defeating the boss wouldn't work when i tried it)
+    goalWindowInformation: "EnemyCountGoal", // 0x0 for no window info
     turnsToCountDownToPlus1: 0,
     tileMarkerXCoordinate: 255,
     tileMarkerYCoordinate: 0,

@@ -53,6 +53,8 @@ export default async function assembleCharacterCsvData({
     ...weaponRanks,
     baseLevel: 1,
     ...stats,
+    characterAbility2:
+      characterIdea.firstSeenAs === "boss" ? "IsBoss" : undefined,
   };
 }
 

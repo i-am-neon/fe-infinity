@@ -11,9 +11,9 @@ export default async function generateUnitLine({
   characterClass: string;
 }): Promise<string> {
   const isBoss = characterIdea.firstSeenAs === "boss";
-  const xCoord = randomInt(0, 5);
-  const yCoord = randomInt(0, 5);
-  const level = isBoss ? randomInt(3, 7) : randomInt(2, 5);
+  const xCoord = randomInt(0, 7);
+  const yCoord = randomInt(0, 7);
+  const level = isBoss ? randomInt(1, 2) : randomInt(15, 20);
   const inventory = await generateInventory({
     characterIdea: characterIdea,
     characterClass: characterClass,
@@ -21,7 +21,11 @@ export default async function generateUnitLine({
     level,
   });
 
-  return `UNIT ${characterIdea.name} ${characterClass} 0x00 Level(${level}, ${
+  const commanderName = isBoss ? characterIdea.name : "0x00";
+
+  return `UNIT ${
+    characterIdea.name
+  } ${characterClass} ${commanderName} Level(${level}, ${
     isBoss ? "Enemy" : "Ally"
   }, True) [${xCoord}, ${yCoord}] 0x00 0x00 0x0 0x00 [${inventory.join(
     ", "

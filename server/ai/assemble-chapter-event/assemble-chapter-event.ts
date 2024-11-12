@@ -7,6 +7,7 @@ import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
 import type { ChapterEvent } from "@/types/ChapterEvent.ts";
 import { RomCharacter } from "@/types/RomCharacter.ts";
 import generateScene from "./generate-scene/generate-scene.ts";
+import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 
 export default async function assembleChapterEvent({
   chapterIdea,
@@ -19,6 +20,12 @@ export default async function assembleChapterEvent({
   newPlayableCharacters: RomCharacter[];
   boss: RomCharacter;
 }): Promise<ChapterEvent> {
+  const existingPartyCharacterIdeas: CharacterIdea[] =
+    existingPartyCharacters.map((c) => ({ ...c }));
+  const newPlayableCharacterIdeas: CharacterIdea[] = newPlayableCharacters.map(
+    (c) => ({ ...c })
+  );
+  const bossIdea: CharacterIdea = { ...boss };
   const {
     sceneContent: preBattleSceneContent,
     textSceneName: preBattleTextSceneName,
@@ -26,9 +33,9 @@ export default async function assembleChapterEvent({
   } = await generateScene({
     sceneOverview: chapterIdea.preChapterScene,
     // Extract the characterIdea
-    existingPartyCharacters: existingPartyCharacters.map((c) => ({ ...c })),
-    newPlayableCharacters: newPlayableCharacters.map((c) => ({ ...c })),
-    boss: { ...boss },
+    existingPartyCharacters: existingPartyCharacterIdeas,
+    newPlayableCharacters: newPlayableCharacterIdeas,
+    boss: bossIdea,
     preOrPostBattle: "pre-battle",
   });
 
@@ -38,9 +45,9 @@ export default async function assembleChapterEvent({
     textSceneContent: postBattleTextSceneContent,
   } = await generateScene({
     sceneOverview: chapterIdea.postChapterScene,
-    existingPartyCharacters: existingPartyCharacters.map((c) => ({ ...c })),
-    newPlayableCharacters: newPlayableCharacters.map((c) => ({ ...c })),
-    boss: { ...boss },
+    existingPartyCharacters: existingPartyCharacterIdeas,
+    newPlayableCharacters: newPlayableCharacterIdeas,
+    boss: bossIdea,
     preOrPostBattle: "post-battle",
   });
 
@@ -53,7 +60,7 @@ export default async function assembleChapterEvent({
       characterIdea: { ...c },
       characterClass: c.csvData.defaultClass,
     })),
-    { characterIdea: { ...boss }, characterClass: boss.csvData.defaultClass },
+    { characterIdea: bossIdea, characterClass: boss.csvData.defaultClass },
   ]);
 
   return {
@@ -63,7 +70,7 @@ export default async function assembleChapterEvent({
     turnBasedEvents: undefined,
     characterBasedEvents: undefined,
     locationBasedEvents: undefined,
-    miscBasedEvents: undefined,
+    miscBasedEvents: "DefeatAll(EndingScene)", // for now all chapters are defeat all
     trapData: undefined,
     units: unitsArray.join("\n"),
     // For now hard-code music
