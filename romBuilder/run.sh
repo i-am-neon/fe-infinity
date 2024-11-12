@@ -16,6 +16,10 @@ real_time=$(echo "$output" | grep real | awk '{print $2 "s"}')
 # Output the time in the desired format
 echo "Time to run: $real_time"
 
+# Check for the warning message and log if it is found
+if echo "$output" | grep -q "warning:"; then
+  echo "🙁🙁🙁 Warning(s) when building ROM 🙁🙁🙁"
+fi
 # Check for the error message and log if it is found
 if echo "$output" | grep -q "Errors occurred; no changes written."; then
   echo "❌❌❌❌❌ Errors when building ROM ❌❌❌❌❌"

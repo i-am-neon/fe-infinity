@@ -28,8 +28,10 @@ export default async function assembleChapterEvent({
     (c) => ({ ...c })
   );
   const bossIdea: CharacterIdea = { ...boss };
+  const chapterId = chapterTitleToChapterId(chapterIdea.chapterTitle);
+
   const {
-    sceneContent: preBattleSceneContent,
+    sceneContent: rawPreBattleSceneContent,
     textSceneName: preBattleTextSceneName,
     textSceneContent: preBattleTextSceneContent,
   } = await generateScene({
@@ -41,8 +43,20 @@ export default async function assembleChapterEvent({
     preOrPostBattle: "pre-battle",
   });
 
+  const preBattleTextSceneId = `${chapterId}_${preBattleTextSceneName}`;
+  const preBattleSceneContent = rawPreBattleSceneContent.replaceAll(
+    preBattleTextSceneName,
+    preBattleTextSceneId
+  );
+
+  // For now hard-code music
+  const beginningScene =
+    "LOAD1 0x1 Units\nMUSC Legends_of_Avenir\n" +
+    preBattleSceneContent +
+    "\nFadeOutMusic";
+
   const {
-    sceneContent: postBattleSceneContent,
+    sceneContent: rawPostBattleSceneContent,
     textSceneName: postBattleTextSceneName,
     textSceneContent: postBattleTextSceneContent,
   } = await generateScene({
@@ -52,6 +66,15 @@ export default async function assembleChapterEvent({
     boss: bossIdea,
     preOrPostBattle: "post-battle",
   });
+
+  const postBattleTextSceneId = `${chapterId}_${postBattleTextSceneName}`;
+  const postBattleSceneContent = rawPostBattleSceneContent.replaceAll(
+    postBattleTextSceneName,
+    postBattleTextSceneId
+  );
+  const endingScene =
+    postBattleSceneContent +
+    (nextChapterId ? `\nMoveToChapter(${nextChapterId})` : ""); // TODO: End of game
 
   const unitsArray = await getUnitsArray([
     ...existingPartyCharacters.map((c) => ({
@@ -65,28 +88,18 @@ export default async function assembleChapterEvent({
     { characterIdea: bossIdea, characterClass: boss.csvData.defaultClass },
   ]);
 
-  const endingScene =
-    postBattleSceneContent +
-    (nextChapterId ? `\nMoveToChapter(${nextChapterId})` : ""); // TODO: End of game
-
   return {
-    eventDataReference: getEventDataReferenceFromChapterId(
-      chapterTitleToChapterId(chapterIdea.chapterTitle)
-    ),
+    eventDataReference: getEventDataReferenceFromChapterId(chapterId),
     turnBasedEvents: undefined,
     characterBasedEvents: undefined,
     locationBasedEvents: undefined,
     miscBasedEvents: "DefeatAll(EndingScene)", // for now all chapters are defeat all
     trapData: undefined,
     units: unitsArray.join("\n"),
-    // For now hard-code music
-    beginningScene:
-      "LOAD1 0x1 Units\nMUSC Legends_of_Avenir\n" +
-      preBattleSceneContent +
-      "\nFadeOutMusic",
+    beginningScene,
     endingScene,
     localDefinitions: [""],
-    text: `## ${preBattleTextSceneName}\n[ConversationText]\n${preBattleTextSceneContent}[X]\n\n## ${postBattleTextSceneName}\n[ConversationText]\n${postBattleTextSceneContent}[X]`,
+    text: `## ${preBattleTextSceneId}\n[ConversationText]\n${preBattleTextSceneContent}[X]\n\n## ${postBattleTextSceneId}\n[ConversationText]\n${postBattleTextSceneContent}[X]`,
   };
 }
 
