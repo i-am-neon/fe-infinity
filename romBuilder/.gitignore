@@ -27,12 +27,14 @@ Definitions/Skills.s
 Definitions/Characters.s
 Definitions/Portraits.s
 Definitions/Chapters.s
+Definitions/EventPointers.s
 
 # CSV-related ignores.
 CSV/Tables/*.event
 CSV/Tables/**/*.event
 !CSV/Tables/TableDefinitions.event
 CSV/Tables/Characters/CharacterTable.csv
+CSV/Tables/ChapterData/ChapterDataTable.csv
 
 # Map-related ignores.
 Maps/MasterMapInstaller.event
@@ -67,6 +69,9 @@ Graphics/WorldMap/temp
 
 # Chapter event-related ignores.
 Events/build/*
+
+# Music
+Music/MusicRefs.txt
 
 # Misc ignores.
 FE-CLib-master
