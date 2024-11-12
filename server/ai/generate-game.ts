@@ -45,6 +45,12 @@ export default async function generateGame({
   const chapterEventPromises = storyArc.chapterIdeas.map(
     async (chapterIdea, index) => {
       const chapterNumberToAssemble = index;
+      const nextChapterId =
+        chapterNumberToAssemble < storyArc.chapterIdeas.length - 1
+          ? chapterTitleToChapterId(
+              storyArc.chapterIdeas[chapterNumberToAssemble + 1].chapterTitle
+            )
+          : undefined;
       return await assembleChapterEvent({
         chapterIdea,
         existingPartyCharacters: allRomCharacters.filter(
@@ -60,6 +66,7 @@ export default async function generateGame({
             c.chapterJoined === chapterNumberToAssemble &&
             c.firstSeenAs === "boss"
         )!,
+        nextChapterId,
       });
     }
   );

@@ -14,11 +14,13 @@ export default async function assembleChapterEvent({
   existingPartyCharacters,
   newPlayableCharacters,
   boss,
+  nextChapterId,
 }: {
   chapterIdea: ChapterIdea;
   existingPartyCharacters: RomCharacter[];
   newPlayableCharacters: RomCharacter[];
   boss: RomCharacter;
+  nextChapterId?: string;
 }): Promise<ChapterEvent> {
   const existingPartyCharacterIdeas: CharacterIdea[] =
     existingPartyCharacters.map((c) => ({ ...c }));
@@ -63,6 +65,10 @@ export default async function assembleChapterEvent({
     { characterIdea: bossIdea, characterClass: boss.csvData.defaultClass },
   ]);
 
+  const endingScene =
+    postBattleSceneContent +
+    (nextChapterId ? `\nMoveToChapter(${nextChapterId})` : ""); // TODO: End of game
+
   return {
     eventDataReference: getEventDataReferenceFromChapterId(
       chapterTitleToChapterId(chapterIdea.chapterTitle)
@@ -77,8 +83,8 @@ export default async function assembleChapterEvent({
     beginningScene:
       "LOAD1 0x1 Units\nMUSC Legends_of_Avenir\n" +
       preBattleSceneContent +
-      "\nFadeOutMusic\n",
-    endingScene: postBattleSceneContent,
+      "\nFadeOutMusic",
+    endingScene,
     localDefinitions: [""],
     text: `## ${preBattleTextSceneName}\n[ConversationText]\n${preBattleTextSceneContent}[X]\n\n## ${postBattleTextSceneName}\n[ConversationText]\n${postBattleTextSceneContent}[X]`,
   };
@@ -94,6 +100,7 @@ if (import.meta.main) {
       exampleRomCharacters[2],
     ],
     boss: exampleRomCharacters[3],
+    nextChapterId: "Chapter1",
   });
   console.log(JSON.stringify(res, null, 2));
 }
