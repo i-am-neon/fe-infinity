@@ -85,11 +85,11 @@ Deno.test(
     });
 
     const expected = [
-      { idea: mockPlayableCharacter1, chapterJoined: 0 },
-      { idea: mockBossCharacter1, chapterJoined: 0 },
-      { idea: mockPlayableCharacter2, chapterJoined: 1 },
-      { idea: mockBossCharacter2, chapterJoined: 1 },
-      { idea: mockMainCharacter, chapterJoined: 0 },
+      { idea: mockPlayableCharacter1, chapterJoined: 0, isLord: false },
+      { idea: mockBossCharacter1, chapterJoined: 0, isLord: false },
+      { idea: mockPlayableCharacter2, chapterJoined: 1, isLord: false },
+      { idea: mockBossCharacter2, chapterJoined: 1, isLord: false },
+      { idea: mockMainCharacter, chapterJoined: 0, isLord: true },
     ];
 
     assertEquals(result, expected);
@@ -120,7 +120,9 @@ Deno.test("Handles empty chapter ideas array", () => {
     mainCharacterIdea: mockMainCharacter,
   });
 
-  const expected = [{ idea: mockMainCharacter, chapterJoined: 0 }];
+  const expected = [
+    { idea: mockMainCharacter, chapterJoined: 0, isLord: true },
+  ];
 
   assertEquals(result, expected);
 });
@@ -146,8 +148,8 @@ Deno.test("Handles chapter with no new playable characters", () => {
   });
 
   const expected = [
-    { idea: mockBossCharacter1, chapterJoined: 0 },
-    { idea: mockMainCharacter, chapterJoined: 0 },
+    { idea: mockBossCharacter1, chapterJoined: 0, isLord: false },
+    { idea: mockMainCharacter, chapterJoined: 0, isLord: true },
   ];
 
   assertEquals(result, expected);
