@@ -3,6 +3,7 @@ import mapNameToData, { MapData } from "@/map-processing/map-name-to-data.ts";
 import { generateObject } from "ai";
 import { z } from "zod";
 import { openai } from "@ai-sdk/openai";
+import { MapArea, MapAreaSchema } from "@/types/ai/MapAreas.ts";
 
 const systemMessage = `You are an expert in Fire Emblem map design and analysis. Given a terrain grid and a description of the map, your task is to divide the map into Areas and Sub-Areas. Each Area is a larger, distinct section of the map (e.g., a building, an outdoor field), while Sub-Areas are smaller, specific regions within each Area (e.g., a treasure room, a corridor).
 
@@ -12,7 +13,9 @@ Follow these steps:
  - Create Sub-Areas: Within each Area, define smaller Sub-Areas that correspond to specific rooms, paths, or key locations (e.g., Throne Room, Treasure Room, Corridor).
  - List Coordinates: For each Area, provide a range of (x, y) coordinates that it encompasses. Assume the top-left corner of the grid is (0, 0). As X increases, it moves more right on the map. As Y increases, it moves more down on the map.`;
 
-export default async function defineMapAreas(mapData: MapData) {
+export default async function defineMapAreas(
+  mapData: MapData
+): Promise<{ description: string; areas: MapArea[] }> {
   const { object } = await generateObject({
     model: openai("gpt-4o-mini"),
     system: systemMessage,
@@ -34,28 +37,10 @@ export default async function defineMapAreas(mapData: MapData) {
       },
     ],
     schema: z.object({
-      areas: z.array(
-        z.object({
-          name: z.string(),
-          description: z.string(),
-          subAreas: z.array(
-            z.object({
-              name: z.string(),
-              description: z.string(),
-              coordinates: z.object({
-                from: z.object({
-                  x: z.number(),
-                  y: z.number(),
-                }),
-                to: z.object({
-                  x: z.number(),
-                  y: z.number(),
-                }),
-              }),
-            })
-          ),
-        })
-      ),
+      description: z
+        .string()
+        .describe("1 sentence text overview/Description of the map"),
+      areas: z.array(MapAreaSchema),
     }),
   });
 
