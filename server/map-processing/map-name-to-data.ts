@@ -1,7 +1,11 @@
-const mapNameToData: Record<
-  string,
-  { width: number; height: number; tileConfigId: string; encodedTiles: string }
-> = {
+export type MapData = {
+  width: number;
+  height: number;
+  tileConfigId: string;
+  encodedTiles: string;
+};
+
+const mapNameToData: Record<string, MapData> = {
   Knights10: {
     width: 20,
     height: 18,
