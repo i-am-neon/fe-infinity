@@ -3,18 +3,18 @@ import decompressMapData from "@/map-processing/decompress-map-data.ts";
 import terrainIdToName from "@/map-processing/terrain-id-to-name.ts";
 import mapNameToData from "@/map-processing/map-name-to-data.ts";
 
-export default function getTerrainFromMap() {
-  const mapData = mapNameToData["Knights10"];
-  const { width, height } = mapData;
+export default function getTerrainFromMap(mapName: string): string[][] {
+  const mapData = mapNameToData[mapName];
+  const { width, height, tileConfigId, encodedTiles } = mapData;
 
-  const terrainTags = tileConfigToTerrain["3E"];
+  const terrainTags = tileConfigToTerrain[tileConfigId];
   const terrainTagsArray = terrainTags.split(" ");
 
-  const mapTiles: number[] = decompressMapData(mapData.encodedTiles);
+  const mapTiles: number[] = decompressMapData(encodedTiles);
 
   // Initialize the 2D array
-  const terrainMap: (string | null)[][] = Array.from({ length: height }, () =>
-    Array(width).fill(null)
+  const terrainMap: string[][] = Array.from({ length: height }, () =>
+    Array(width).fill("--")
   );
 
   // Populate the 2D array with terrain names
@@ -23,7 +23,7 @@ export default function getTerrainFromMap() {
       const tileIndex = y * width + x;
       const terrainTag = terrainTagsArray[mapTiles[tileIndex] - 1];
       const terrainName = terrainIdToName[parseInt(terrainTag)];
-      terrainMap[y][x] = terrainName ?? null;
+      terrainMap[y][x] = terrainName ?? "--";
     }
   }
 
@@ -31,7 +31,7 @@ export default function getTerrainFromMap() {
 }
 
 if (import.meta.main) {
-  const terrainMap = getTerrainFromMap();
+  const terrainMap = getTerrainFromMap("Knights10");
   console.log("Terrain Map:", terrainMap);
 }
 
