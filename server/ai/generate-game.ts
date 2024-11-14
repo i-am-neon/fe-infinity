@@ -68,6 +68,7 @@ export default async function generateGame({
             c.chapterJoined === chapterNumberToAssemble &&
             c.firstSeenAs === "boss"
         )!,
+        map: chapterIdToMap[chapterTitleToChapterId(chapterIdea.chapterTitle)],
         nextChapterId,
       });
     }

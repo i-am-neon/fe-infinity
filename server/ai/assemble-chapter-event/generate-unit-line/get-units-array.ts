@@ -2,7 +2,12 @@ import generateUnitLine from "@/ai/assemble-chapter-event/generate-unit-line/gen
 import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 
 export default async function getUnitsArray(
-  characters: { characterIdea: CharacterIdea; characterClass: string }[]
+  characters: {
+    characterIdea: CharacterIdea;
+    characterClass: string;
+    xCoord: number;
+    yCoord: number;
+  }[]
 ): Promise<string[]> {
   return await Promise.all(
     characters.map(async (c) => {

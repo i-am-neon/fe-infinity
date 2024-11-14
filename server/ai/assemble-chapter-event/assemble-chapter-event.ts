@@ -8,18 +8,23 @@ import type { ChapterEvent } from "@/types/ChapterEvent.ts";
 import { RomCharacter } from "@/types/RomCharacter.ts";
 import generateScene from "./generate-scene/generate-scene.ts";
 import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
+import { ChapterMap } from "@/types/ChapterMap.ts";
+import { allMapOptions } from "@/ai/maps/map-metadata-creation/all-map-options.ts";
+import { randomInt } from "node:crypto";
 
 export default async function assembleChapterEvent({
   chapterIdea,
   existingPartyCharacters,
   newPlayableCharacters,
   boss,
+  map,
   nextChapterId,
 }: {
   chapterIdea: ChapterIdea;
   existingPartyCharacters: RomCharacter[];
   newPlayableCharacters: RomCharacter[];
   boss: RomCharacter;
+  map: ChapterMap;
   nextChapterId?: string;
 }): Promise<ChapterEvent> {
   const existingPartyCharacterIdeas: CharacterIdea[] =
@@ -80,12 +85,21 @@ export default async function assembleChapterEvent({
     ...existingPartyCharacters.map((c) => ({
       characterIdea: { ...c },
       characterClass: c.csvData.defaultClass,
+      xCoord: randomInt(0, 7),
+      yCoord: randomInt(0, 7),
     })),
     ...newPlayableCharacters.map((c) => ({
       characterIdea: { ...c },
       characterClass: c.csvData.defaultClass,
+      xCoord: randomInt(0, 7),
+      yCoord: randomInt(0, 7),
     })),
-    { characterIdea: bossIdea, characterClass: boss.csvData.defaultClass },
+    {
+      characterIdea: bossIdea,
+      characterClass: boss.csvData.defaultClass,
+      xCoord: map.bossCoords.x,
+      yCoord: map.bossCoords.y,
+    },
   ]);
 
   return {
@@ -113,6 +127,7 @@ if (import.meta.main) {
       exampleRomCharacters[2],
     ],
     boss: exampleRomCharacters[3],
+    map: allMapOptions[0],
     nextChapterId: "Chapter1",
   });
   console.log(JSON.stringify(res, null, 2));

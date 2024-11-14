@@ -6,13 +6,15 @@ import { randomInt } from "node:crypto";
 export default async function generateUnitLine({
   characterIdea,
   characterClass,
+  xCoord,
+  yCoord,
 }: {
   characterIdea: CharacterIdea;
   characterClass: string;
+  xCoord: number;
+  yCoord: number;
 }): Promise<string> {
   const isBoss = characterIdea.firstSeenAs === "boss";
-  const xCoord = randomInt(0, 7);
-  const yCoord = randomInt(0, 7);
   const level = isBoss ? randomInt(1, 2) : randomInt(15, 20);
   const inventory = await generateInventory({
     characterIdea: characterIdea,
