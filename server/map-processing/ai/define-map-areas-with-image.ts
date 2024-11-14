@@ -7,9 +7,10 @@ import { openai } from "@ai-sdk/openai";
 const systemMessage = `You are an expert in Fire Emblem map design and analysis. Given a terrain grid and a description of the map, your task is to divide the map into Areas and Sub-Areas. Each Area is a larger, distinct section of the map (e.g., a building, an outdoor field), while Sub-Areas are smaller, specific regions within each Area (e.g., a treasure room, a corridor).
 
 Follow these steps:
-	1.	Analyze the Map: Review the grid and identify distinct features or thematic sections (e.g., indoor sections, outdoor sections, pathways).
-	2.	Define Areas: Create Areas based on these features (e.g., Northern Building, Western Wing, Southern Plains, Treasure Room, Hallway leading to Throne Room, Beach, etc). Each map typically has three or more areas. Assume the top of the map is the north, the bottom is the south, the left is the west, and the right is the east.
-	3.	List Coordinates: For each Sub-Area, provide a list of (x, y) coordinates that it encompasses. Assume the top-left corner of the grid is (0, 0).`;
+ - Analyze the Map: Review the grid and identify distinct features or thematic sections (e.g., indoor sections, outdoor sections, pathways).
+ - Define Areas: Create Areas based on these features (e.g., Northern Building, Western Wing, Southern Plains, Beach, Southeastern Forest, etc). Each map typically has three or more areas. Assume the top of the map is the north, the bottom is the south, the left is the west, and the right is the east.
+ - Create Sub-Areas: Within each Area, define smaller Sub-Areas that correspond to specific rooms, paths, or key locations (e.g., Throne Room, Treasure Room, Corridor).
+ - List Coordinates: For each Area, provide a range of (x, y) coordinates that it encompasses. Assume the top-left corner of the grid is (0, 0). As X increases, it moves more right on the map. As Y increases, it moves more down on the map.`;
 
 export default async function defineMapAreas(mapData: MapData) {
   const { object } = await generateObject({
@@ -32,16 +33,25 @@ export default async function defineMapAreas(mapData: MapData) {
         ],
       },
     ],
-    // maxTokens: 512,
     schema: z.object({
       areas: z.array(
         z.object({
           name: z.string(),
           description: z.string(),
-          coordinates: z.array(
+          subAreas: z.array(
             z.object({
-              x: z.number(),
-              y: z.number(),
+              name: z.string(),
+              description: z.string(),
+              coordinates: z.object({
+                from: z.object({
+                  x: z.number(),
+                  y: z.number(),
+                }),
+                to: z.object({
+                  x: z.number(),
+                  y: z.number(),
+                }),
+              }),
             })
           ),
         })
