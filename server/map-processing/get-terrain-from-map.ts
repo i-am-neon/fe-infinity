@@ -26,21 +26,6 @@ export default function getTerrainFromMap() {
       terrainMap[y][x] = terrainName ?? null;
     }
   }
-  console.log(
-    "terrainTagsArray[787] :>> ",
-    terrainTagsArray[787 - 1],
-    terrainIdToName[parseInt(terrainTagsArray[787 - 1])]
-  );
-  console.log(
-    "terrainTagsArray[788] :>> ",
-    terrainTagsArray[788 - 1],
-    terrainIdToName[parseInt(terrainTagsArray[788 - 1])]
-  );
-  console.log(
-    "terrainTagsArray[789] :>> ",
-    terrainTagsArray[789 - 1],
-    terrainIdToName[parseInt(terrainTagsArray[789 - 1])]
-  );
 
   return terrainMap;
 }
