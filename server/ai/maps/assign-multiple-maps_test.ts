@@ -1,8 +1,8 @@
 import { _internals, assignMultipleMaps } from "@/ai/maps/assign-multiple-maps.ts";
-import type { MapMetadata } from "@/types/MapMetadata.ts";
 import { assertEquals } from "@std/assert/equals";
 import { assertRejects } from "@std/assert/rejects";
 import { assertSpyCallAsync, assertSpyCalls, resolvesNext, stub } from "@std/testing/mock";
+import { ChapterMap } from "@/types/ChapterMap.ts";
 
 // Mock data for testing
 const mockChapterNameToBattleOverview: Record<string, string> = {
@@ -10,15 +10,15 @@ const mockChapterNameToBattleOverview: Record<string, string> = {
   "Chapter 2": "desert skirmish",
 };
 
-const mockMapOptions: MapMetadata[] = [
+const mockMapOptions: ChapterMap[] = [
   {
     name: "Map 1",
-    rawTmx: "<CHAPTERID>-map1.tmx",
+    tmx: "<CHAPTERID>-map1.tmx",
     description: "intro battle",
   },
   {
     name: "Map 2",
-    rawTmx: "<CHAPTERID>-map2.tmx",
+    tmx: "<CHAPTERID>-map2.tmx",
     description: "desert skirmish",
   },
 ];
@@ -76,7 +76,7 @@ Deno.test(
           allMapOptions: [mockMapOptions[0]], // Insufficient options
         }),
       Error,
-      "Not enough portraits to assign to each character"
+      "Not enough maps to assign to each character"
     );
 
     // Verify `chooseMap` was never called because there were not enough maps

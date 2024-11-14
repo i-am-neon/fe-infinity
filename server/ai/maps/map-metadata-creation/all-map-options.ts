@@ -1,9 +1,9 @@
-import { MapMetadata } from "@/types/MapMetadata.ts";
+import { ChapterMap } from "@/types/ChapterMap.ts";
 
-export const allMapOptions: MapMetadata[] = [
+export const allMapOptions: ChapterMap[] = [
   {
     name: "Knights10",
-    rawTmx: `<?xml version="1.0" encoding="UTF-8"?>
+    tmx: `<?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="18" tilewidth="16" tileheight="16" nextobjectid="1">
  <tileset firstgid="1" name="3C00CE3E" tilewidth="16" tileheight="16">
   <image source="Tilesets/3C00CE3E.png" width="512" height="512"/>
@@ -88,7 +88,7 @@ Potential Gameplay Mechanics:
   },
   {
     name: "Knights12",
-    rawTmx: `<?xml version="1.0" encoding="UTF-8"?>
+    tmx: `<?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="17" tilewidth="16" tileheight="16" nextobjectid="1">
  <tileset firstgid="1" name="01000203" tilewidth="16" tileheight="16">
   <image source="Tilesets/01000203.png" width="512" height="512"/>
