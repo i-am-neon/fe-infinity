@@ -51,26 +51,24 @@ export default async function assembleChapterEvent({
       boss: bossIdea,
       preOrPostBattle: "post-battle",
     }),
-    getUnitsArray([
-      ...existingPartyCharacters.map((c) => ({
-        characterIdea: { ...c },
-        characterClass: c.csvData.defaultClass,
-        xCoord: randomInt(0, 7),
-        yCoord: randomInt(0, 7),
-      })),
-      ...newPlayableCharacters.map((c) => ({
-        characterIdea: { ...c },
-        characterClass: c.csvData.defaultClass,
-        xCoord: randomInt(0, 7),
-        yCoord: randomInt(0, 7),
-      })),
-      {
-        characterIdea: bossIdea,
-        characterClass: boss.csvData.defaultClass,
-        xCoord: 0,
-        yCoord: 0,
-      },
-    ]),
+    getUnitsArray({
+      characters: [
+        ...existingPartyCharacters.map((c) => ({
+          characterIdea: { ...c },
+          characterClass: c.csvData.defaultClass,
+        })),
+        ...newPlayableCharacters.map((c) => ({
+          characterIdea: { ...c },
+          characterClass: c.csvData.defaultClass,
+        })),
+        {
+          characterIdea: bossIdea,
+          characterClass: boss.csvData.defaultClass,
+        },
+      ],
+      map,
+      chapterData: { ...chapterIdea },
+    }),
   ]);
 
   // Extract pre-battle scene data
@@ -140,3 +138,4 @@ if (import.meta.main) {
   });
   console.log(JSON.stringify(res, null, 2));
 }
+
