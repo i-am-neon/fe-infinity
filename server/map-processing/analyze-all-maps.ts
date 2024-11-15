@@ -54,10 +54,11 @@ export default async function analyzeAllMaps(): Promise<void> {
 
     writeMapData(mapData);
     writeMapImage({ mapName, imageUrl: mapUrl.image });
-    Deno.writeTextFile(
-      getPathWithinAssetsDir("maps/" + mapName + ".tmx"),
-      finalTmx
-    );
+    // I don't think I need the tmx, since they're in the yaml
+    // Deno.writeTextFile(
+    //   getPathWithinAssetsDir("maps/" + mapName + ".tmx"),
+    //   finalTmx
+    // );
   }
 }
 
