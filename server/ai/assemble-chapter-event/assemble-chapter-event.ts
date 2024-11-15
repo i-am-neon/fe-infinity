@@ -9,7 +9,6 @@ import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
 import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import type { ChapterEvent } from "@/types/ChapterEvent.ts";
 import { RomCharacter } from "@/types/RomCharacter.ts";
-import { randomInt } from "node:crypto";
 import generateScene from "./generate-scene/generate-scene.ts";
 
 export default async function assembleChapterEvent({
