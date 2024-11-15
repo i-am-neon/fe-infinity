@@ -85,7 +85,6 @@ Potential Gameplay Mechanics:
 	•	Chokepoints: The narrow corridors and the throne room with limited access points provide opportunities for defensive strategies.
 	•	Open Courtyard: This central area is risky for crossing due to its openness, making it suitable for ambushes or ranged attacks.
 	•	Fortified Areas: Side chambers could serve as places to defend or retreat into during intense combat.`,
-    bossCoords: { x: 8, y: 0 },
   },
   {
     name: "Knights12",
@@ -173,7 +172,6 @@ Potential Gameplay Mechanics:
 	•	Castle Defense: The castle could serve as a stronghold that needs to be defended or attacked, depending on the scenario.
 	•	Natural Obstacles: The mountains and lake provide natural barriers, forcing characters to plan their routes carefully and consider alternative paths around these obstacles.
 	•	Forest Ambushes: The wooded areas offer opportunities for surprise attacks or hiding units for tactical advantage.`,
-    bossCoords: { x: 11, y: 2 },
   },
 ];
 

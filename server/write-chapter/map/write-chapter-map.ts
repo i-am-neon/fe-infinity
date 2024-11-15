@@ -49,6 +49,7 @@ if (import.meta.main) {
 </map>
 `,
     name: "AltianDungeonCutsceneMap",
+    description: "...",
   };
 
   await writeChapterMap({

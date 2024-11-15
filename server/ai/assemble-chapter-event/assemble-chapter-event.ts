@@ -97,8 +97,8 @@ export default async function assembleChapterEvent({
     {
       characterIdea: bossIdea,
       characterClass: boss.csvData.defaultClass,
-      xCoord: map.bossCoords.x,
-      yCoord: map.bossCoords.y,
+      xCoord: 0,
+      yCoord: 0,
     },
   ]);
 
