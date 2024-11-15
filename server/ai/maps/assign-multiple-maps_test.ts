@@ -15,11 +15,13 @@ const mockMapOptions: ChapterMap[] = [
     name: "Map 1",
     tmx: "<CHAPTERID>-map1.tmx",
     description: "intro battle",
+    bossCoords: { x: 0, y: 0 },
   },
   {
     name: "Map 2",
     tmx: "<CHAPTERID>-map2.tmx",
     description: "desert skirmish",
+    bossCoords: { x: 0, y: 0 },
   },
 ];
 
