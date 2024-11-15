@@ -31,7 +31,7 @@ export default function getTerrainFromMap(mapName: string): string[][] {
 }
 
 if (import.meta.main) {
-  const terrainMap = getTerrainFromMap("Knights10");
+  const terrainMap = getTerrainFromMap("Knights12");
   console.log("Terrain Map:", terrainMap);
 }
 
