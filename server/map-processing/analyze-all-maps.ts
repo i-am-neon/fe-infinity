@@ -26,14 +26,14 @@ export default async function analyzeAllMaps(): Promise<void> {
     const finalTmx = prepareTmx({
       mapName,
       tmx: rawTmx,
-      tileset: tileset,
+      tileset,
     });
 
     const mapDataPreAI: MapDataPreAI = {
-      width: width,
-      height: height,
-      terrainGrid: terrainGrid,
-      pointsOfInterest: pointsOfInterest,
+      width,
+      height,
+      terrainGrid,
+      pointsOfInterest,
       mapName,
       tmx: finalTmx,
     };
