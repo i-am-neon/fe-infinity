@@ -1,5 +1,5 @@
 import "jsr:@std/dotenv/load";
-import mapNameToData, { MapData } from "@/map-processing/map-name-to-data.ts";
+import mapNameToData, { MapData } from "../lookup-tables/map-name-to-data.ts";
 import { generateObject } from "ai";
 import { z } from "zod";
 import { openai } from "@ai-sdk/openai";

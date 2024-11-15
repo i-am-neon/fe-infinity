@@ -1,7 +1,7 @@
-import tileConfigToTerrain from "@/map-processing/tile-config-to-terrain.ts";
+import tileConfigToTerrain from "./lookup-tables/tile-config-to-terrain.ts";
 import decompressMapData from "@/map-processing/decompress-map-data.ts";
-import terrainIdToName from "@/map-processing/terrain-id-to-name.ts";
-import mapNameToData from "@/map-processing/map-name-to-data.ts";
+import terrainIdToName from "./lookup-tables/terrain-id-to-name.ts";
+import mapNameToData from "./lookup-tables/map-name-to-data.ts";
 
 export default function getTerrainFromMap(mapName: string): string[][] {
   const mapData = mapNameToData[mapName];
