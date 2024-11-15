@@ -5,6 +5,8 @@ import prepareTmx from "@/map-processing/prepare-tmx.ts";
 import { MapDataPreAI } from "@/map-processing/types/MapDataPreAI.ts";
 import defineMapAreas from "@/map-processing/ai/define-map-areas.ts";
 import { MapData } from "@/map-processing/types/MapData.ts";
+import writeMapData from "@/map-processing/fileIO/write-map-data.ts";
+import writeMapImage from "@/map-processing/fileIO/write-map-image.ts";
 
 export default async function analyzeAllMaps(): Promise<void> {
   let mapUrls = await getMapUrls();
@@ -48,7 +50,9 @@ export default async function analyzeAllMaps(): Promise<void> {
       pointsOfInterest,
       areas,
     };
-    console.log("mapData", JSON.stringify(mapData, null, 2));
+
+    writeMapData(mapData);
+    writeMapImage({ mapName, imageUrl: mapUrl.image });
   }
 }
 
