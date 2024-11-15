@@ -1,3 +1,6 @@
+import getMapChangesFromMapName from "@/lib/get-map-changes-from-map-name.ts";
+import getMapIdFromMapName from "@/lib/get-map-id-from-map-name.ts";
+
 export default function prepareTmx({
   tmx,
   mapName,
@@ -22,8 +25,8 @@ export default function prepareTmx({
   const additionalProperties = `
    <property name="Anims" value="_${objectType}Anims"/>
    <property name="ChapterID" value="<CHAPTERID>"/>
-   <property name="MapChangesID" value="${mapName}Changes"/>
-   <property name="MapID" value="${mapName}Map"/>
+   <property name="MapChangesID" value="${getMapChangesFromMapName(mapName)}"/>
+   <property name="MapID" value="${getMapIdFromMapName(mapName)}"/>
    <property name="ObjectType" value="0x${objectType}"/>
    <property name="PaletteID" value="0x${paletteID}"/>
    <property name="TileConfig" value="0x${tileConfig}"/>`;

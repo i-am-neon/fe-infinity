@@ -16,8 +16,8 @@ tmx: >
      <property name="Main" value=""/>
      <property name="Anims" value="_18Anims"/>
      <property name="ChapterID" value="<CHAPTERID>"/>
-     <property name="MapChangesID" value="NoblesEvilDoers11800191AChanges"/>
-     <property name="MapID" value="NoblesEvilDoers11800191AMap"/>
+     <property name="MapChangesID" value="NoblesEvilDoers11800191A_Changes"/>
+     <property name="MapID" value="NoblesEvilDoers11800191A_Map"/>
      <property name="ObjectType" value="0x18"/>
      <property name="PaletteID" value="0x19"/>
      <property name="TileConfig" value="0x1A"/>

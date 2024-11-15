@@ -16,8 +16,8 @@ tmx: >
      <property name="Main" value=""/>
      <property name="Anims" value="_01Anims"/>
      <property name="ChapterID" value="<CHAPTERID>"/>
-     <property name="MapChangesID" value="KnightsVillagersBandits1201000203Changes"/>
-     <property name="MapID" value="KnightsVillagersBandits1201000203Map"/>
+     <property name="MapChangesID" value="KnightsVillagersBandits1201000203_Changes"/>
+     <property name="MapID" value="KnightsVillagersBandits1201000203_Map"/>
      <property name="ObjectType" value="0x01"/>
      <property name="PaletteID" value="0x02"/>
      <property name="TileConfig" value="0x03"/>
