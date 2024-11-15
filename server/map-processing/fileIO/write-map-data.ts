@@ -1,56 +1,21 @@
-import "jsr:@std/dotenv/load";
-import { generateObject } from "ai";
-import { z } from "zod";
-import { openai } from "@ai-sdk/openai";
-import { MapArea, MapAreaSchema } from "@/types/ai/MapAreas.ts";
-import { MapDataPreAI } from "@/map-processing/types/MapDataPreAI.ts";
+import { MapData } from "@/map-processing/types/MapData.ts";
+import getPathWithinAssetsDir from "@/fileIO/get-path-within-assets-dir.ts";
+import { stringify } from "jsr:@std/yaml";
 
-const systemMessage = `You are an expert in Fire Emblem map design and analysis. Given a terrain grid and a description of the map, your task is to divide the map into Areas and Sub-Areas. Each Area is a larger, distinct section of the map (e.g., a building, an outdoor field), while Sub-Areas are smaller, specific regions within each Area (e.g., a treasure room, a corridor).
-
-Follow these steps:
- - Analyze the Map: Review the grid and identify distinct features or thematic sections (e.g., indoor sections, outdoor sections, pathways).
- - Define Areas: Create Areas based on these features (e.g., Northern Building, Western Wing, Southern Plains, Beach, Southeastern Forest, etc). Each map typically has three or more areas. Assume the top of the map is the north, the bottom is the south, the left is the west, and the right is the east.
- - Create Sub-Areas: Within each Area, define smaller Sub-Areas that correspond to specific rooms, paths, or key locations (e.g., Throne Room, Treasure Room, Corridor).
- - List Coordinates: For each Area, provide a range of (x, y) coordinates that it encompasses. Assume the top-left corner of the grid is (0, 0). As X increases, it moves more right on the map. As Y increases, it moves more down on the map.`;
-
-export default async function defineMapAreas(
-  mapData: MapDataPreAI
-): Promise<{ description: string; areas: MapArea[] }> {
-  const { object } = await generateObject({
-    model: openai("gpt-4o-mini"),
-    system: systemMessage,
-    messages: [
-      {
-        role: "user",
-        content: [
-          {
-            type: "text",
-            text: JSON.stringify(mapData, null, 2),
-          },
-          {
-            type: "image",
-            image: new URL(
-              "https://github.com/Klokinator/FE-Repo/blob/main/Maps/Map%20Pack%20Knights%20%7BAura%20Wolf%7D%20(13)/Knights%20Villagers%20Bandits%2010%20(3C%2000%20CE%203E).png?raw=true"
-            ),
-          },
-        ],
-      },
-    ],
-    schema: z.object({
-      description: z
-        .string()
-        .describe("1 sentence text overview/Description of the map"),
-      areas: z.array(MapAreaSchema),
-    }),
-  });
-
-  return object;
+export default async function writeMapData(mapData: MapData): Promise<void> {
+  const outputFilePath = getPathWithinAssetsDir(`maps/${mapData.name}.yaml`);
+  const yamlData = stringify(mapData);
+  await Deno.writeTextFile(outputFilePath, yamlData);
 }
 
 if (import.meta.main) {
-  const mapData: MapDataPreAI = {
-    width: 20,
+  const mapData: MapData = {
+    name: "Knights-Villagers-Bandits-10-3C-00-CE-3E",
+    description:
+      "A complex map featuring a mix of indoor and outdoor areas, with multiple staircases, walls, and points of interest including chests and stairs.",
+    tmx: '<?xml version="1.0" encoding="UTF-8"?>\n<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="18" tilewidth="16" tileheight="16" nextobjectid="1">\n <tileset firstgid="1" name="3C00CE3E" tilewidth="16" tileheight="16">\n  <image source="Tilesets/3C00CE3E.png" width="512" height="512"/>\n </tileset>\n <layer name="Main" width="20" height="18">\n  <properties>\n   <property name="Main" value=""/>\n   <property name="Anims" value="_3CAnims"/>\n   <property name="ChapterID" value="<CHAPTERID>"/>\n   <property name="MapChangesID" value="Knights-Villagers-Bandits-10-3C-00-CE-3E_Changes"/>\n   <property name="MapID" value="Knights-Villagers-Bandits-10-3C-00-CE-3E_Map"/>\n   <property name="ObjectType" value="0x3C"/>\n   <property name="PaletteID" value="0xCE"/>\n   <property name="TileConfig" value="0x3E"/>\n  </properties>\n  <data encoding="base64" compression="zlib">\n   eJx1lMFLVFEUxs97jzCLBGtW+QckaRBaqW0NMkQj0H9AR4KUrKi/oBQEEWzZNhujGNFZuosZUqioBqJNW1G0shFXtun7uN/l3l60+HHmnnfOd885994pZGZnxKnUrAHq4AAsghHwVGvv/xTFlRKzj2bWD2qgFTpjsu/w7bPiaUfBA/BIud7/CxxKexs5X2ALsO+lw9pOS68Rxcd6B5G/HtVLvW3ofMXvn7Cvk8AJ7e9j18BDUIk0lhDXnIacFTAMnRuqrwPfTqbOliPdRq4OWq9Djc4o7y50mpkHpi2Q193SPGkrOZ0mxL8EK2ADrMPXhpkNIKYFXIOvnNM9BmqJs76Pe5FOTVojiBmHrYI9cA7rOmxRMWXFf7Bwdi3qZT5xeRPgJjiLmnZ0X+jjrIalMy6NTTCrmZwHF0A3eJa6c+TeQ+AVeGx/nw/vyCp8z1XvD82CuZfw7bv8/M57wRkN8jzBLdVAjYLuXXymrJOxC2BfOv2aw4RyWc99cAdMmZs79fy7uJq5O+XrnOM8wYDyZ8BbsCVN7jEpraK+ez3Wx7d5JQt6t6Pz87Mvap5V5bOmpdzcyJvEvaUe9e17rupceBZP1CP7Ltm/b4O9sce+zNmK3nlvVGNJZ8v3+MLCjL1GbxY02FtPzl4Eo2AvcW9nQ/fud+rqO56G/b0Ga7gcafh17G/H7yOwa+6+UfMbWE7C/j7e15Bfe8t4/vfwzl03N0fet67E6eV7+d/6D92xtrA=\n  </data>\n </layer>\n <layer name="Broken_Wall" width="20" height="18" visible="0">\n  <properties>\n   <property name="Height" value="1"/>\n   <property name="ID" value="0"/>\n   <property name="Width" value="2"/>\n   <property name="X" value="3"/>\n   <property name="Y" value="0"/>\n  </properties>\n  <data encoding="base64" compression="zlib">\n   eJxjYEAAYWYGhk9MDKNgFIyCUTAKBgEAAM3eAQs=\n  </data>\n </layer>\n <layer name="Left Chest" width="20" height="18" visible="0">\n  <properties>\n   <property name="Height" value="1"/>\n   <property name="ID" value="1"/>\n   <property name="Width" value="1"/>\n   <property name="X" value="1"/>\n   <property name="Y" value="1"/>\n  </properties>\n  <data encoding="base64" compression="zlib">\n   eJxjYKA+cKKBmaNgFIyCUTDSAABjRwBD\n  </data>\n </layer>\n <layer name="Right Chest" width="20" height="18" visible="0">\n  <properties>\n   <property name="Height" value="1"/>\n   <property name="ID" value="2"/>\n   <property name="Width" value="1"/>\n   <property name="X" value="19"/>\n   <property name="Y" value="10"/>\n  </properties>\n  <data encoding="base64" compression="zlib">\n   eJxjYBgFo2AU0AM4DbQDRsGQAwCXCABD\n  </data>\n </layer>\n <layer name="Door" width="20" height="18" visible="0">\n  <properties>\n   <property name="Height" value="2"/>\n   <property name="ID" value="3"/>\n   <property name="Width" value="2"/>\n   <property name="X" value="18"/>\n   <property name="Y" value="12"/>\n  </properties>\n  <data encoding="base64" compression="zlib">\n   eJxjYBgFo2AUjHSwjpGBQZCZeuZZAs0yo6J5IxUAANEhATk=\n  </data>\n </layer>\n</map>\n',
     height: 18,
+    width: 20,
     terrainGrid: [
       [
         "Floor",
@@ -511,10 +476,135 @@ if (import.meta.main) {
         type: "Stairs",
       },
     ],
-    mapName: "Knights-Villagers-Bandits-10-3C-00-CE-3E",
-    tmx: '<?xml version="1.0" encoding="UTF-8"?>\n<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="18" tilewidth="16" tileheight="16" nextobjectid="1">\n <tileset firstgid="1" name="3C00CE3E" tilewidth="16" tileheight="16">\n  <image source="Tilesets/3C00CE3E.png" width="512" height="512"/>\n </tileset>\n <layer name="Main" width="20" height="18">\n  <properties>\n   <property name="Main" value=""/>\n   <property name="Anims" value="_3CAnims"/>\n   <property name="ChapterID" value="<CHAPTERID>"/>\n   <property name="MapChangesID" value="Knights-Villagers-Bandits-10-3C-00-CE-3E_Changes"/>\n   <property name="MapID" value="Knights-Villagers-Bandits-10-3C-00-CE-3E_Map"/>\n   <property name="ObjectType" value="0x3C"/>\n   <property name="PaletteID" value="0xCE"/>\n   <property name="TileConfig" value="0x3E"/>\n  </properties>\n  <data encoding="base64" compression="zlib">\n   eJx1lMFLVFEUxs97jzCLBGtW+QckaRBaqW0NMkQj0H9AR4KUrKi/oBQEEWzZNhujGNFZuosZUqioBqJNW1G0shFXtun7uN/l3l60+HHmnnfOd885994pZGZnxKnUrAHq4AAsghHwVGvv/xTFlRKzj2bWD2qgFTpjsu/w7bPiaUfBA/BIud7/CxxKexs5X2ALsO+lw9pOS68Rxcd6B5G/HtVLvW3ofMXvn7Cvk8AJ7e9j18BDUIk0lhDXnIacFTAMnRuqrwPfTqbOliPdRq4OWq9Djc4o7y50mpkHpi2Q193SPGkrOZ0mxL8EK2ADrMPXhpkNIKYFXIOvnNM9BmqJs76Pe5FOTVojiBmHrYI9cA7rOmxRMWXFf7Bwdi3qZT5xeRPgJjiLmnZ0X+jjrIalMy6NTTCrmZwHF0A3eJa6c+TeQ+AVeGx/nw/vyCp8z1XvD82CuZfw7bv8/M57wRkN8jzBLdVAjYLuXXymrJOxC2BfOv2aw4RyWc99cAdMmZs79fy7uJq5O+XrnOM8wYDyZ8BbsCVN7jEpraK+ez3Wx7d5JQt6t6Pz87Mvap5V5bOmpdzcyJvEvaUe9e17rupceBZP1CP7Ltm/b4O9sce+zNmK3nlvVGNJZ8v3+MLCjL1GbxY02FtPzl4Eo2AvcW9nQ/fud+rqO56G/b0Ga7gcafh17G/H7yOwa+6+UfMbWE7C/j7e15Bfe8t4/vfwzl03N0fet67E6eV7+d/6D92xtrA=\n  </data>\n </layer>\n <layer name="Broken_Wall" width="20" height="18" visible="0">\n  <properties>\n   <property name="Height" value="1"/>\n   <property name="ID" value="0"/>\n   <property name="Width" value="2"/>\n   <property name="X" value="3"/>\n   <property name="Y" value="0"/>\n  </properties>\n  <data encoding="base64" compression="zlib">\n   eJxjYEAAYWYGhk9MDKNgFIyCUTAKBgEAAM3eAQs=\n  </data>\n </layer>\n <layer name="Left Chest" width="20" height="18" visible="0">\n  <properties>\n   <property name="Height" value="1"/>\n   <property name="ID" value="1"/>\n   <property name="Width" value="1"/>\n   <property name="X" value="1"/>\n   <property name="Y" value="1"/>\n  </properties>\n  <data encoding="base64" compression="zlib">\n   eJxjYKA+cKKBmaNgFIyCUTDSAABjRwBD\n  </data>\n </layer>\n <layer name="Right Chest" width="20" height="18" visible="0">\n  <properties>\n   <property name="Height" value="1"/>\n   <property name="ID" value="2"/>\n   <property name="Width" value="1"/>\n   <property name="X" value="19"/>\n   <property name="Y" value="10"/>\n  </properties>\n  <data encoding="base64" compression="zlib">\n   eJxjYBgFo2AU0AM4DbQDRsGQAwCXCABD\n  </data>\n </layer>\n <layer name="Door" width="20" height="18" visible="0">\n  <properties>\n   <property name="Height" value="2"/>\n   <property name="ID" value="3"/>\n   <property name="Width" value="2"/>\n   <property name="X" value="18"/>\n   <property name="Y" value="12"/>\n  </properties>\n  <data encoding="base64" compression="zlib">\n   eJxjYBgFo2AUjHSwjpGBQZCZeuZZAs0yo6J5IxUAANEhATk=\n  </data>\n </layer>\n</map>\n',
+    areas: [
+      {
+        name: "Northern Building",
+        description:
+          "A large structure with multiple rooms and a central area, featuring walls and pillars.",
+        subAreas: [
+          {
+            name: "Throne Room",
+            description:
+              "The main room with a red carpet and decorative pillars.",
+            coordinates: {
+              from: {
+                x: 0,
+                y: 0,
+              },
+              to: {
+                x: 9,
+                y: 8,
+              },
+            },
+          },
+          {
+            name: "Treasure Room",
+            description:
+              "A room containing a chest, located in the northwest corner.",
+            coordinates: {
+              from: {
+                x: 1,
+                y: 1,
+              },
+              to: {
+                x: 1,
+                y: 1,
+              },
+            },
+          },
+          {
+            name: "Staircase Area",
+            description:
+              "Area with multiple staircases leading to different levels.",
+            coordinates: {
+              from: {
+                x: 16,
+                y: 0,
+              },
+              to: {
+                x: 16,
+                y: 2,
+              },
+            },
+          },
+        ],
+      },
+      {
+        name: "Southern Plains",
+        description:
+          "An open area with plains and forests, providing a contrast to the buildings.",
+        subAreas: [
+          {
+            name: "Forest Edge",
+            description:
+              "A region filled with trees and bushes, providing cover.",
+            coordinates: {
+              from: {
+                x: 16,
+                y: 6,
+              },
+              to: {
+                x: 19,
+                y: 10,
+              },
+            },
+          },
+          {
+            name: "Road",
+            description:
+              "A pathway connecting different areas, facilitating movement.",
+            coordinates: {
+              from: {
+                x: 8,
+                y: 6,
+              },
+              to: {
+                x: 19,
+                y: 10,
+              },
+            },
+          },
+        ],
+      },
+      {
+        name: "Western Wing",
+        description:
+          "A section of the map with walls and a door leading to the outside.",
+        subAreas: [
+          {
+            name: "Wall Corridor",
+            description:
+              "A narrow corridor lined with walls, leading to the main building.",
+            coordinates: {
+              from: {
+                x: 0,
+                y: 3,
+              },
+              to: {
+                x: 3,
+                y: 3,
+              },
+            },
+          },
+          {
+            name: "Entrance Door",
+            description:
+              "A door leading to the outside, located at the western edge.",
+            coordinates: {
+              from: {
+                x: 18,
+                y: 12,
+              },
+              to: {
+                x: 19,
+                y: 13,
+              },
+            },
+          },
+        ],
+      },
+    ],
   };
-  const res = await defineMapAreas(mapData);
-  console.log("res", JSON.stringify(res, null, 2));
+  await writeMapData(mapData);
 }
 

@@ -4,7 +4,6 @@ import generateMainCharacterIdea from "@/ai/generate-main-character-idea.ts";
 import generateStoryArc from "@/ai/generate-story-arc.ts";
 import generateWorldSummary from "@/ai/generate-world-summary.ts";
 import { assignMultipleMaps } from "@/ai/maps/assign-multiple-maps.ts";
-import { allMapOptions } from "@/ai/maps/map-metadata-creation/all-map-options.ts";
 import getChapterDataForCsv from "@/ai/utilities/get-chapter-data-for-csv.ts";
 import { worldIdeaExample } from "@/testData/ai.ts";
 import { ChapterMap } from "@/types/ChapterMap.ts";
@@ -12,6 +11,7 @@ import type { RomChapter } from "@/types/RomChapter.ts";
 import chapterTitleToChapterId from "@/ai/utilities/chapter-title-to-chapter-id.ts";
 import { Game } from "@/types/Game.ts";
 import getChapterNumberDisplayText from "@/ai/utilities/get-chapter-number-display-text.ts";
+import { allMapOptions } from "@/map-processing/all-map-options.ts";
 
 export default async function generateGame({
   worldIdea,

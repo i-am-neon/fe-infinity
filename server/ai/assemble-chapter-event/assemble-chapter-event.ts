@@ -1,16 +1,16 @@
 import getUnitsArray from "@/ai/assemble-chapter-event/generate-unit-line/get-units-array.ts";
 import chapterTitleToChapterId from "@/ai/utilities/chapter-title-to-chapter-id.ts";
 import getEventDataReferenceFromChapterId from "@/lib/get-event-data-reference-from-chapter-name.ts";
+import { allMapOptions } from "@/map-processing/all-map-options.ts";
+import { MapData } from "@/map-processing/types/MapData.ts";
 import { storyArcExample } from "@/testData/ai.ts";
 import { exampleRomCharacters } from "@/testData/rom-characters.ts";
 import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
+import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import type { ChapterEvent } from "@/types/ChapterEvent.ts";
 import { RomCharacter } from "@/types/RomCharacter.ts";
-import generateScene from "./generate-scene/generate-scene.ts";
-import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
-import { ChapterMap } from "@/types/ChapterMap.ts";
-import { allMapOptions } from "@/ai/maps/map-metadata-creation/all-map-options.ts";
 import { randomInt } from "node:crypto";
+import generateScene from "./generate-scene/generate-scene.ts";
 
 export default async function assembleChapterEvent({
   chapterIdea,
@@ -24,7 +24,7 @@ export default async function assembleChapterEvent({
   existingPartyCharacters: RomCharacter[];
   newPlayableCharacters: RomCharacter[];
   boss: RomCharacter;
-  map: ChapterMap;
+  map: MapData;
   nextChapterId?: string;
 }): Promise<ChapterEvent> {
   const existingPartyCharacterIdeas: CharacterIdea[] =
@@ -35,18 +35,50 @@ export default async function assembleChapterEvent({
   const bossIdea: CharacterIdea = { ...boss };
   const chapterId = chapterTitleToChapterId(chapterIdea.chapterTitle);
 
+  // Run async functions in parallel
+  const [preBattleScene, postBattleScene, unitsArray] = await Promise.all([
+    generateScene({
+      sceneOverview: chapterIdea.preChapterScene,
+      existingPartyCharacters: existingPartyCharacterIdeas,
+      newPlayableCharacters: newPlayableCharacterIdeas,
+      boss: bossIdea,
+      preOrPostBattle: "pre-battle",
+    }),
+    generateScene({
+      sceneOverview: chapterIdea.postChapterScene,
+      existingPartyCharacters: existingPartyCharacterIdeas,
+      newPlayableCharacters: newPlayableCharacterIdeas,
+      boss: bossIdea,
+      preOrPostBattle: "post-battle",
+    }),
+    getUnitsArray([
+      ...existingPartyCharacters.map((c) => ({
+        characterIdea: { ...c },
+        characterClass: c.csvData.defaultClass,
+        xCoord: randomInt(0, 7),
+        yCoord: randomInt(0, 7),
+      })),
+      ...newPlayableCharacters.map((c) => ({
+        characterIdea: { ...c },
+        characterClass: c.csvData.defaultClass,
+        xCoord: randomInt(0, 7),
+        yCoord: randomInt(0, 7),
+      })),
+      {
+        characterIdea: bossIdea,
+        characterClass: boss.csvData.defaultClass,
+        xCoord: 0,
+        yCoord: 0,
+      },
+    ]),
+  ]);
+
+  // Extract pre-battle scene data
   const {
     sceneContent: rawPreBattleSceneContent,
     textSceneName: preBattleTextSceneName,
     textSceneContent: preBattleTextSceneContent,
-  } = await generateScene({
-    sceneOverview: chapterIdea.preChapterScene,
-    // Extract the characterIdea
-    existingPartyCharacters: existingPartyCharacterIdeas,
-    newPlayableCharacters: newPlayableCharacterIdeas,
-    boss: bossIdea,
-    preOrPostBattle: "pre-battle",
-  });
+  } = preBattleScene;
 
   const preBattleTextSceneId = `${chapterId}_${preBattleTextSceneName}`;
   const preBattleSceneContent = rawPreBattleSceneContent.replaceAll(
@@ -54,60 +86,36 @@ export default async function assembleChapterEvent({
     preBattleTextSceneId
   );
 
-  // For now hard-code music
+  // Construct beginning scene
   const beginningScene =
     "LOAD1 0x1 Units\nMUSC Legends_of_Avenir\n" +
     preBattleSceneContent +
     "\nFadeOutMusic";
 
+  // Extract post-battle scene data
   const {
     sceneContent: rawPostBattleSceneContent,
     textSceneName: postBattleTextSceneName,
     textSceneContent: postBattleTextSceneContent,
-  } = await generateScene({
-    sceneOverview: chapterIdea.postChapterScene,
-    existingPartyCharacters: existingPartyCharacterIdeas,
-    newPlayableCharacters: newPlayableCharacterIdeas,
-    boss: bossIdea,
-    preOrPostBattle: "post-battle",
-  });
+  } = postBattleScene;
 
   const postBattleTextSceneId = `${chapterId}_${postBattleTextSceneName}`;
   const postBattleSceneContent = rawPostBattleSceneContent.replaceAll(
     postBattleTextSceneName,
     postBattleTextSceneId
   );
+
+  // Construct ending scene
   const endingScene =
     postBattleSceneContent +
-    (nextChapterId ? `\nMoveToChapter(${nextChapterId})` : ""); // TODO: End of game
-
-  const unitsArray = await getUnitsArray([
-    ...existingPartyCharacters.map((c) => ({
-      characterIdea: { ...c },
-      characterClass: c.csvData.defaultClass,
-      xCoord: randomInt(0, 7),
-      yCoord: randomInt(0, 7),
-    })),
-    ...newPlayableCharacters.map((c) => ({
-      characterIdea: { ...c },
-      characterClass: c.csvData.defaultClass,
-      xCoord: randomInt(0, 7),
-      yCoord: randomInt(0, 7),
-    })),
-    {
-      characterIdea: bossIdea,
-      characterClass: boss.csvData.defaultClass,
-      xCoord: map.bossCoords.x,
-      yCoord: map.bossCoords.y,
-    },
-  ]);
+    (nextChapterId ? `\nMoveToChapter(${nextChapterId})` : "");
 
   return {
     eventDataReference: getEventDataReferenceFromChapterId(chapterId),
     turnBasedEvents: undefined,
     characterBasedEvents: undefined,
     locationBasedEvents: undefined,
-    miscBasedEvents: "DefeatAll(EndingScene)", // for now all chapters are defeat all
+    miscBasedEvents: "DefeatAll(EndingScene)",
     trapData: undefined,
     units: unitsArray.join("\n"),
     beginningScene,
@@ -132,4 +140,3 @@ if (import.meta.main) {
   });
   console.log(JSON.stringify(res, null, 2));
 }
-
