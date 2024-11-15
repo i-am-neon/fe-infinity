@@ -1,4 +1,4 @@
-export default function getInfoFromTmx(tmx: string): {
+export default function extractValuesFromTmx(tmx: string): {
   tileset: string;
   width: number;
   height: number;
@@ -83,7 +83,7 @@ if (import.meta.main) {
  </layer>
 </map>`;
 
-  const info = getInfoFromTmx(tmx);
+  const info = extractValuesFromTmx(tmx);
   console.log("info", JSON.stringify(info, null, 2));
 }
 
