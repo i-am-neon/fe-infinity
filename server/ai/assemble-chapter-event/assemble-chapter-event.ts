@@ -35,18 +35,50 @@ export default async function assembleChapterEvent({
   const bossIdea: CharacterIdea = { ...boss };
   const chapterId = chapterTitleToChapterId(chapterIdea.chapterTitle);
 
+  // Run async functions in parallel
+  const [preBattleScene, postBattleScene, unitsArray] = await Promise.all([
+    generateScene({
+      sceneOverview: chapterIdea.preChapterScene,
+      existingPartyCharacters: existingPartyCharacterIdeas,
+      newPlayableCharacters: newPlayableCharacterIdeas,
+      boss: bossIdea,
+      preOrPostBattle: "pre-battle",
+    }),
+    generateScene({
+      sceneOverview: chapterIdea.postChapterScene,
+      existingPartyCharacters: existingPartyCharacterIdeas,
+      newPlayableCharacters: newPlayableCharacterIdeas,
+      boss: bossIdea,
+      preOrPostBattle: "post-battle",
+    }),
+    getUnitsArray([
+      ...existingPartyCharacters.map((c) => ({
+        characterIdea: { ...c },
+        characterClass: c.csvData.defaultClass,
+        xCoord: randomInt(0, 7),
+        yCoord: randomInt(0, 7),
+      })),
+      ...newPlayableCharacters.map((c) => ({
+        characterIdea: { ...c },
+        characterClass: c.csvData.defaultClass,
+        xCoord: randomInt(0, 7),
+        yCoord: randomInt(0, 7),
+      })),
+      {
+        characterIdea: bossIdea,
+        characterClass: boss.csvData.defaultClass,
+        xCoord: 0,
+        yCoord: 0,
+      },
+    ]),
+  ]);
+
+  // Extract pre-battle scene data
   const {
     sceneContent: rawPreBattleSceneContent,
     textSceneName: preBattleTextSceneName,
     textSceneContent: preBattleTextSceneContent,
-  } = await generateScene({
-    sceneOverview: chapterIdea.preChapterScene,
-    // Extract the characterIdea
-    existingPartyCharacters: existingPartyCharacterIdeas,
-    newPlayableCharacters: newPlayableCharacterIdeas,
-    boss: bossIdea,
-    preOrPostBattle: "pre-battle",
-  });
+  } = preBattleScene;
 
   const preBattleTextSceneId = `${chapterId}_${preBattleTextSceneName}`;
   const preBattleSceneContent = rawPreBattleSceneContent.replaceAll(
@@ -54,61 +86,36 @@ export default async function assembleChapterEvent({
     preBattleTextSceneId
   );
 
-  // For now hard-code music
+  // Construct beginning scene
   const beginningScene =
     "LOAD1 0x1 Units\nMUSC Legends_of_Avenir\n" +
     preBattleSceneContent +
     "\nFadeOutMusic";
 
+  // Extract post-battle scene data
   const {
     sceneContent: rawPostBattleSceneContent,
     textSceneName: postBattleTextSceneName,
     textSceneContent: postBattleTextSceneContent,
-  } = await generateScene({
-    sceneOverview: chapterIdea.postChapterScene,
-    existingPartyCharacters: existingPartyCharacterIdeas,
-    newPlayableCharacters: newPlayableCharacterIdeas,
-    boss: bossIdea,
-    preOrPostBattle: "post-battle",
-  });
+  } = postBattleScene;
 
   const postBattleTextSceneId = `${chapterId}_${postBattleTextSceneName}`;
   const postBattleSceneContent = rawPostBattleSceneContent.replaceAll(
     postBattleTextSceneName,
     postBattleTextSceneId
   );
+
+  // Construct ending scene
   const endingScene =
     postBattleSceneContent +
-    (nextChapterId ? `\nMoveToChapter(${nextChapterId})` : ""); // TODO: End of game
-
-  // TODO: use map in unitsArray, generate unitsArray in parallel as other things. Also i think everything in this file can be generated in parallel
-  const unitsArray = await getUnitsArray([
-    ...existingPartyCharacters.map((c) => ({
-      characterIdea: { ...c },
-      characterClass: c.csvData.defaultClass,
-      xCoord: randomInt(0, 7),
-      yCoord: randomInt(0, 7),
-    })),
-    ...newPlayableCharacters.map((c) => ({
-      characterIdea: { ...c },
-      characterClass: c.csvData.defaultClass,
-      xCoord: randomInt(0, 7),
-      yCoord: randomInt(0, 7),
-    })),
-    {
-      characterIdea: bossIdea,
-      characterClass: boss.csvData.defaultClass,
-      xCoord: 0,
-      yCoord: 0,
-    },
-  ]);
+    (nextChapterId ? `\nMoveToChapter(${nextChapterId})` : "");
 
   return {
     eventDataReference: getEventDataReferenceFromChapterId(chapterId),
     turnBasedEvents: undefined,
     characterBasedEvents: undefined,
     locationBasedEvents: undefined,
-    miscBasedEvents: "DefeatAll(EndingScene)", // for now all chapters are defeat all
+    miscBasedEvents: "DefeatAll(EndingScene)",
     trapData: undefined,
     units: unitsArray.join("\n"),
     beginningScene,
@@ -133,4 +140,3 @@ if (import.meta.main) {
   });
   console.log(JSON.stringify(res, null, 2));
 }
-
