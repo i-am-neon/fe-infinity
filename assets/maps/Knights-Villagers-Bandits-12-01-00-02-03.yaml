@@ -1,0 +1,480 @@
+name: Knights-Villagers-Bandits-12-01-00-02-03
+description: >-
+  A diverse map featuring plains, forests, and various structures including
+  houses, a vendor, and fortifications, set in a village environment with
+  strategic points of interest.
+tmx: >
+  <?xml version="1.0" encoding="UTF-8"?>
+
+  <map version="1.0" orientation="orthogonal" renderorder="right-down"
+  width="15" height="17" tilewidth="16" tileheight="16" nextobjectid="1">
+   <tileset firstgid="1" name="01000203" tilewidth="16" tileheight="16">
+    <image source="Tilesets/01000203.png" width="512" height="512"/>
+   </tileset>
+   <layer name="Main" width="15" height="17">
+    <properties>
+     <property name="Main" value=""/>
+     <property name="Anims" value="_01Anims"/>
+     <property name="ChapterID" value="<CHAPTERID>"/>
+     <property name="MapChangesID" value="Knights-Villagers-Bandits-12-01-00-02-03Changes"/>
+     <property name="MapID" value="Knights-Villagers-Bandits-12-01-00-02-03Map"/>
+     <property name="ObjectType" value="0x01"/>
+     <property name="PaletteID" value="0x02"/>
+     <property name="TileConfig" value="0x03"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxdk01LlFEUx++dh/BlkYISpG4lFRyl2pS2UsFxVuFHmBF1dCN+hGmMSEL7CukYgq8Lv4JBoBmUfQMXiePGkmjh73D+wzy4+HGfe8495/zPufeZDiE8gWnYhrNMCJuss7As32vYTULYg32o6twa6w4MwyKMQS/+POtbKMl+gu0UvsEb9p9Uq6LvCdlPYSGVz2pc4avBNXzF1hHd15a4/4zvSWz56PsHpi/jWqyPdfgOLfhfQVH2caufuP2K7xWDuGPW5uh1DoLnr3LuVnrKOmv2A+UxLf+VP83H4OtI9P76ONcPA3AhXef4jmKjRhfffxVn+z9QsB7x52Aqaei4SdXqhvPg60t4BDfSNgfzUEp8Lqv4/sVGjceq/0v1fsILbBvq8xA62T+MPs8jxdr5Uem1PD+0Nx1F1bZZXSiHzWsQ/7OUbsvRoxjbP4/+huyN1d/RJNRgRndQS+V5Cn2QjT4Ti2mHXPD3OaT5WR/vo99X+d5dVKX1nd78Z9iCrOxF9fBFd5++i4rek9XZQdsH2M14zg39D/UZWnz6Lupa63HN9h6hNXGNY+rXNOfQPqE3mVd/TaY104g3nVa7IN0FafgNl5rhkv5p+//uAB6ufEQ=
+    </data>
+   </layer>
+   <layer name="Left Village Destroyed" width="15" height="17" visible="0">
+    <properties>
+     <property name="Height" value="3"/>
+     <property name="ID" value="0"/>
+     <property name="Width" value="3"/>
+     <property name="X" value="1"/>
+     <property name="Y" value="6"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBgF9AIdzAwMnUDcxUy63hVAPSuBeBUZek8A9ZwE4lNk6B0FwxcAANNMBg0=
+    </data>
+   </layer>
+   <layer name="Left Village Visited" width="15" height="17" visible="0">
+    <properties>
+     <property name="Height" value="1"/>
+     <property name="ID" value="1"/>
+     <property name="Width" value="1"/>
+     <property name="X" value="2"/>
+     <property name="Y" value="8"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBgFIwEoDrQDRsGgAwBIkAAi
+    </data>
+   </layer>
+   <layer name="Right Village Destroyed" width="15" height="17" visible="0">
+    <properties>
+     <property name="Height" value="3"/>
+     <property name="ID" value="2"/>
+     <property name="Width" value="3"/>
+     <property name="X" value="10"/>
+     <property name="Y" value="12"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBgFo2DkgQ5mBoZOIO5iJl3vCqCelUC8igy9J4B6TgLxKTL0UhsAAHg1Bg0=
+    </data>
+   </layer>
+   <layer name="Right Village Visited" width="15" height="17" visible="0">
+    <properties>
+     <property name="Height" value="1"/>
+     <property name="ID" value="3"/>
+     <property name="Width" value="1"/>
+     <property name="X" value="11"/>
+     <property name="Y" value="14"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBgFo2AU0BMoDrQDoAAAFYQAIg==
+    </data>
+   </layer>
+  </map>
+height: 17
+width: 15
+terrainGrid:
+  - - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Forest
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Castle Wall
+    - Castle Wall
+    - Castle Wall
+    - Plains
+    - Forest
+  - - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - House
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Castle Wall
+    - Castle Wall
+    - Castle Wall
+    - Plains
+    - Plains
+  - - Plains
+    - Plains
+    - Plains
+    - Vendor
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Forest
+    - Castle Wall
+    - Fort Gate
+    - Castle Wall
+    - Plains
+    - Plains
+  - - Plains
+    - Forest
+    - Forest
+    - Plains
+    - Plains
+    - Plains
+    - Forest
+    - Cliff
+    - Cliff
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Sand
+  - - Plains
+    - Plains
+    - Plains
+    - Armory
+    - Plains
+    - Plains
+    - Plains
+    - Cliff
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Fort
+    - Sand
+  - - Forest
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Forest
+    - Cliff
+    - Sand
+    - Sand
+    - Sand
+    - Sand
+    - Plains
+    - Sand
+    - Sea
+  - - Plains
+    - Village Wall
+    - Village Wall
+    - Village Wall
+    - Plains
+    - Plains
+    - Cliff
+    - Plains
+    - Fort
+    - Sand
+    - Sea
+    - Sand
+    - Sand
+    - Sand
+    - Sea
+  - - Plains
+    - Village Wall
+    - Village Wall
+    - Village Wall
+    - Forest
+    - Plains
+    - Cliff
+    - Sand
+    - Sand
+    - Sea
+    - Sand
+    - Sea
+    - Sea
+    - Sea
+    - Sea
+  - - Forest
+    - Village Wall
+    - Village Entrance
+    - Village Wall
+    - Plains
+    - Plains
+    - Cliff
+    - Sand
+    - Sand
+    - Sea
+    - Fort
+    - Sand
+    - Sea
+    - Sea
+    - Sea
+  - - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Sand
+    - Sand
+    - Sea
+    - Sand
+    - Sand
+    - Sea
+    - Sea
+    - Sand
+  - - Plains
+    - Forest
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Sand
+    - Sand
+    - Sand
+    - Sea
+    - Sand
+    - Sand
+    - Plains
+  - - House
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Forest
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+  - - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Village Wall
+    - Village Wall
+    - Village Wall
+    - Plains
+    - Forest
+  - - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Forest
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Village Wall
+    - Village Wall
+    - Village Wall
+    - Plains
+    - Plains
+  - - Plains
+    - Hill
+    - Hill
+    - Hill
+    - Plains
+    - Plains
+    - House
+    - Plains
+    - Plains
+    - Plains
+    - Village Wall
+    - Village Entrance
+    - Village Wall
+    - Plains
+    - Plains
+  - - Hill
+    - Hill
+    - Peak
+    - Peak
+    - Plains
+    - Plains
+    - Plains
+    - Forest
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+  - - Peak
+    - Hill
+    - Hill
+    - Plains
+    - Hill
+    - Plains
+    - Forest
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+    - Plains
+pointsOfInterest:
+  - x: 5
+    'y': 1
+    type: House
+  - x: 3
+    'y': 2
+    type: Vendor
+  - x: 11
+    'y': 2
+    type: Fort Gate
+  - x: 3
+    'y': 4
+    type: Armory
+  - x: 13
+    'y': 4
+    type: Fort
+  - x: 8
+    'y': 6
+    type: Fort
+  - x: 2
+    'y': 8
+    type: Village Entrance
+  - x: 10
+    'y': 8
+    type: Fort
+  - x: 0
+    'y': 11
+    type: House
+  - x: 6
+    'y': 14
+    type: House
+  - x: 11
+    'y': 14
+    type: Village Entrance
+areas:
+  - name: Northern Plains
+    description: >-
+      An open area with plains and a few forest patches, providing a clear view
+      of the surroundings.
+    subAreas:
+      - name: Vendor Area
+        description: 'A small area with a vendor located at (3, 2).'
+        coordinates:
+          from:
+            x: 3
+            'y': 2
+          to:
+            x: 3
+            'y': 2
+      - name: House Area
+        description: 'A residential area with a house located at (5, 1).'
+        coordinates:
+          from:
+            x: 5
+            'y': 1
+          to:
+            x: 5
+            'y': 1
+  - name: Central Fortifications
+    description: >-
+      A fortified area with castle walls and a fort gate, serving as a defensive
+      position.
+    subAreas:
+      - name: Fort Gate
+        description: 'The entrance to the fort located at (11, 2).'
+        coordinates:
+          from:
+            x: 11
+            'y': 2
+          to:
+            x: 11
+            'y': 2
+      - name: Armory
+        description: 'An armory located at (3, 4) for equipping units.'
+        coordinates:
+          from:
+            x: 3
+            'y': 4
+          to:
+            x: 3
+            'y': 4
+      - name: Fort Area
+        description: 'A fortified area with a fort located at (13, 4).'
+        coordinates:
+          from:
+            x: 13
+            'y': 4
+          to:
+            x: 13
+            'y': 4
+  - name: Southern Village
+    description: >-
+      A village area with houses and village walls, providing shelter and
+      resources.
+    subAreas:
+      - name: Village Entrance
+        description: 'The entrance to the village located at (2, 8).'
+        coordinates:
+          from:
+            x: 2
+            'y': 8
+          to:
+            x: 2
+            'y': 8
+      - name: House Area 2
+        description: 'Another residential area with a house located at (0, 11).'
+        coordinates:
+          from:
+            x: 0
+            'y': 11
+          to:
+            x: 0
+            'y': 11
+      - name: House Area 3
+        description: 'A house located at (6, 14).'
+        coordinates:
+          from:
+            x: 6
+            'y': 14
+          to:
+            x: 6
+            'y': 14
+  - name: Coastal Region
+    description: >-
+      A sandy area leading to the sea, providing a strategic point for naval
+      units.
+    subAreas:
+      - name: Fort Area 2
+        description: 'A fort located at (10, 8) near the coast.'
+        coordinates:
+          from:
+            x: 10
+            'y': 8
+          to:
+            x: 10
+            'y': 8
+      - name: Sand Area
+        description: 'A sandy area with multiple sand tiles, providing difficult terrain.'
+        coordinates:
+          from:
+            x: 5
+            'y': 6
+          to:
+            x: 5
+            'y': 6

@@ -1,0 +1,649 @@
+name: Nobles-Evil-Doers-1-18-00-19-1A
+description: >-
+  A multi-level castle map featuring various rooms, staircases, and a throne
+  room, with areas of water and treasure chests.
+tmx: >
+  <?xml version="1.0" encoding="UTF-8"?>
+
+  <map version="1.0" orientation="orthogonal" renderorder="right-down"
+  width="17" height="26" tilewidth="16" tileheight="16" nextobjectid="1">
+   <tileset firstgid="1" name="1800191A" tilewidth="16" tileheight="16">
+    <image source="Tilesets/1800191A.png" width="512" height="512"/>
+   </tileset>
+   <layer name="Main" width="17" height="26">
+    <properties>
+     <property name="Main" value=""/>
+     <property name="Anims" value="_18Anims"/>
+     <property name="ChapterID" value="<CHAPTERID>"/>
+     <property name="MapChangesID" value="Nobles-Evil-Doers-1-18-00-19-1AChanges"/>
+     <property name="MapID" value="Nobles-Evil-Doers-1-18-00-19-1AMap"/>
+     <property name="ObjectType" value="0x18"/>
+     <property name="PaletteID" value="0x19"/>
+     <property name="TileConfig" value="0x1A"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJx1VM1qlEEQnPmWgHhzAz5AnsCL37q+gMHkInjzuMFsDhEEXyBRJB71GSIJGFfiJYmedE1y8OD+qAvmau5CxHOqmSqmHXYPRX/dX3dNTffM1I0QWkANDKoQbjq/5WK1i98AHhR5svo3Lf8buBaB9zGEN4T5+zHl7RXr7zH3KuNWfw5/DXYF/ibQAbqMW91uoXeXuV9jipu12AugD/837GfYrSrFa/IdI+8UOInJ7xccFnuI73ngXpXsHdbaus+QcxhCuIvvJeA24gchc4xjyr9AfAQ8BoZAkzym40qV62UPHccF7LVGqn8J3Adeka/J/RuH1U1Csguwj4q9aN192CfWc/qjKusw7f9CsoI43nKWNi/paXJ+7zgXm93zRp67zfTIcXSIuaL3c5xfTa3f4Y8JcfbI0bY+A6vF+VxlvOX2ux2TTvNXuHZ5zmedf3GMqsxhfO0Zdf6+DHg+rGc98qh/6su0uvI+1a5nX2L+7rh5iEt15Qxa7It0t51fci1ylj3uVTMo++X3f4t84nrq6qxvA575Wffd71+6dmLuu+EP8Jdn5oR3e8Od72n6xKH1xaV7pvuuvZ/H3Ef7lsahW18cB+H/+25v1CY5padLjX5OQ3eey/v+qZHfKO1zixrFP+ZZMrvB+ol7fya8sx94/y3+kTHx23vyOibbZ90Rcyx/m2/aL2Cd/8+Kd8FzaP0F5kvDT3JIxxljS4VuWatZdn0xTT+m6Lges87y3bwE1cLcfw==
+    </data>
+   </layer>
+   <layer name="Top Chest" width="17" height="26" visible="0">
+    <properties>
+     <property name="Height" value="1"/>
+     <property name="ID" value="0"/>
+     <property name="Width" value="1"/>
+     <property name="X" value="5"/>
+     <property name="Y" value="7"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBgFIwkwDbQDRsEoGAWjgM4AABDYAAM=
+    </data>
+   </layer>
+   <layer name="Bottom Chest" width="17" height="26" visible="0">
+    <properties>
+     <property name="Height" value="1"/>
+     <property name="ID" value="1"/>
+     <property name="Width" value="1"/>
+     <property name="X" value="1"/>
+     <property name="Y" value="24"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBgFo2AUjIJRMApoA5gG2gFAAAAH8AAD
+    </data>
+   </layer>
+  </map>
+height: 26
+width: 17
+terrainGrid:
+  - - Floor
+    - Floor
+    - Floor
+    - Pillar
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Pillar
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+  - - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Wall
+    - Brace
+    - Wall
+    - Wall
+    - Wall
+    - Brace
+    - Wall
+  - - Floor
+    - Wall
+    - Floor
+    - Floor
+    - Floor
+    - Wall
+    - Wall
+    - Wall
+    - Floor
+    - Wall
+    - Brace
+    - Brace
+    - Wall
+    - Wall
+    - Wall
+    - Brace
+    - Brace
+  - - Floor
+    - Brace
+    - Floor
+    - Floor
+    - Floor
+    - Brace
+    - Wall
+    - Wall
+    - Floor
+    - Wall
+    - Brace
+    - Brace
+    - Wall
+    - Wall
+    - Wall
+    - Brace
+    - Brace
+  - - Floor
+    - Brace
+    - Stairs
+    - Stairs
+    - Stairs
+    - Brace
+    - Wall
+    - Wall
+    - Floor
+    - Wall
+    - Brace
+    - Floor
+    - Floor
+    - Wall
+    - Floor
+    - Floor
+    - Brace
+  - - Floor
+    - Brace
+    - Water
+    - Floor
+    - Floor
+    - Water
+    - Water
+    - Wall
+    - Floor
+    - Wall
+    - Floor
+    - Floor
+    - Floor
+    - Throne
+    - Floor
+    - Floor
+    - Floor
+  - - Floor
+    - Stairs
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Water
+    - Wall
+    - Floor
+    - Wall
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+  - - Floor
+    - Stairs
+    - Floor
+    - Water
+    - Floor
+    - Chest
+    - Floor
+    - Wall
+    - Floor
+    - Wall
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+  - - Floor
+    - Stairs
+    - Water
+    - Water
+    - Water
+    - Water
+    - Water
+    - Wall
+    - Floor
+    - Wall
+    - Wall
+    - Wall
+    - Floor
+    - Floor
+    - Floor
+    - Wall
+    - Wall
+  - - Floor
+    - Wall
+    - Wall
+    - Wall
+    - Wall
+    - Wall
+    - Water
+    - Wall
+    - Floor
+    - Wall
+    - Wall
+    - Brace
+    - Stairs
+    - Stairs
+    - Stairs
+    - Brace
+    - Wall
+  - - Floor
+    - Wall
+    - Floor
+    - Floor
+    - Floor
+    - Wall
+    - Wall
+    - Wall
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+  - - Floor
+    - Wall
+    - Floor
+    - Stairs
+    - Floor
+    - Wall
+    - Wall
+    - Wall
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Pillar
+    - Floor
+    - Floor
+    - Floor
+  - - Floor
+    - Wall
+    - Floor
+    - Floor
+    - Floor
+    - Wall
+    - Stairs
+    - Floor
+    - Floor
+    - Floor
+    - Pillar
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Pillar
+  - - Floor
+    - Wall
+    - Wall
+    - Floor
+    - Wall
+    - Wall
+    - Wall
+    - Wall
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+  - - Floor
+    - Wall
+    - Wall
+    - Stairs
+    - Wall
+    - Wall
+    - Wall
+    - Wall
+    - Wall
+    - Wall
+    - Floor
+    - Floor
+    - Floor
+    - Wall
+    - Wall
+    - Wall
+    - Wall
+  - - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Wall
+    - Wall
+    - Wall
+    - Wall
+    - Brace
+    - Wall
+    - Wall
+    - Stairs
+    - Floor
+    - Floor
+  - - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Pillar
+    - Floor
+    - Floor
+    - Wall
+    - Wall
+    - Brace
+    - Floor
+    - Floor
+    - Floor
+    - Pillar
+    - Floor
+  - - Floor
+    - Floor
+    - Wall
+    - Wall
+    - Wall
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Stairs
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+  - - Stairs
+    - Stairs
+    - Brace
+    - Wall
+    - Wall
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Stairs
+    - Floor
+    - Pillar
+    - Floor
+    - Floor
+    - Floor
+  - - Floor
+    - Floor
+    - Brace
+    - Wall
+    - Wall
+    - Wall
+    - Brace
+    - Floor
+    - Floor
+    - Brace
+    - Wall
+    - Wall
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+  - - Water
+    - Floor
+    - Water
+    - Water
+    - Wall
+    - Wall
+    - Brace
+    - Floor
+    - Floor
+    - Brace
+    - Wall
+    - Wall
+    - Wall
+    - Wall
+    - Floor
+    - Wall
+    - Wall
+  - - Floor
+    - Floor
+    - Floor
+    - Water
+    - Wall
+    - Wall
+    - Brace
+    - Stairs
+    - Stairs
+    - Brace
+    - Wall
+    - Wall
+    - Wall
+    - Wall
+    - Floor
+    - Wall
+    - Wall
+  - - Floor
+    - Water
+    - Floor
+    - Floor
+    - Water
+    - Water
+    - Water
+    - Floor
+    - Floor
+    - Water
+    - Water
+    - Wall
+    - Wall
+    - Wall
+    - Stairs
+    - Wall
+    - Wall
+  - - Floor
+    - Water
+    - Water
+    - Floor
+    - Stairs
+    - Water
+    - Water
+    - Floor
+    - Floor
+    - Water
+    - Water
+    - Water
+    - Water
+    - Wall
+    - Stairs
+    - Wall
+    - Water
+  - - Floor
+    - Chest
+    - Floor
+    - Water
+    - Water
+    - Water
+    - Water
+    - Floor
+    - Floor
+    - Water
+    - Water
+    - Floor
+    - Floor
+    - Water
+    - Floor
+    - Water
+    - Floor
+  - - Water
+    - Floor
+    - Floor
+    - Floor
+    - Water
+    - Water
+    - Water
+    - Floor
+    - Floor
+    - Water
+    - Water
+    - Floor
+    - Stairs
+    - Floor
+    - Floor
+    - Floor
+    - Floor
+pointsOfInterest:
+  - x: 2
+    'y': 4
+    type: Stairs
+  - x: 3
+    'y': 4
+    type: Stairs
+  - x: 4
+    'y': 4
+    type: Stairs
+  - x: 13
+    'y': 5
+    type: Throne
+  - x: 1
+    'y': 6
+    type: Stairs
+  - x: 1
+    'y': 7
+    type: Stairs
+  - x: 5
+    'y': 7
+    type: Chest
+  - x: 1
+    'y': 8
+    type: Stairs
+  - x: 12
+    'y': 9
+    type: Stairs
+  - x: 13
+    'y': 9
+    type: Stairs
+  - x: 14
+    'y': 9
+    type: Stairs
+  - x: 3
+    'y': 11
+    type: Stairs
+  - x: 6
+    'y': 12
+    type: Stairs
+  - x: 3
+    'y': 14
+    type: Stairs
+  - x: 14
+    'y': 15
+    type: Stairs
+  - x: 11
+    'y': 17
+    type: Stairs
+  - x: 0
+    'y': 18
+    type: Stairs
+  - x: 1
+    'y': 18
+    type: Stairs
+  - x: 11
+    'y': 18
+    type: Stairs
+  - x: 7
+    'y': 21
+    type: Stairs
+  - x: 8
+    'y': 21
+    type: Stairs
+  - x: 14
+    'y': 22
+    type: Stairs
+  - x: 4
+    'y': 23
+    type: Stairs
+  - x: 14
+    'y': 23
+    type: Stairs
+  - x: 1
+    'y': 24
+    type: Chest
+  - x: 12
+    'y': 25
+    type: Stairs
+areas:
+  - name: Main Hall
+    description: The central area of the castle with a throne and multiple entrances.
+    subAreas:
+      - name: Throne Room
+        description: 'The room containing the throne, a key point of interest.'
+        coordinates:
+          from:
+            x: 12
+            'y': 5
+          to:
+            x: 13
+            'y': 5
+      - name: Entrance Corridor
+        description: The main corridor leading into the castle from the south.
+        coordinates:
+          from:
+            x: 0
+            'y': 0
+          to:
+            x: 16
+            'y': 1
+      - name: Staircase Area
+        description: A section with multiple staircases leading to different levels.
+        coordinates:
+          from:
+            x: 1
+            'y': 6
+          to:
+            x: 14
+            'y': 9
+  - name: Treasure Wing
+    description: 'A section of the castle dedicated to treasures, including chests.'
+    subAreas:
+      - name: Chest Room
+        description: The room containing a treasure chest.
+        coordinates:
+          from:
+            x: 5
+            'y': 7
+          to:
+            x: 5
+            'y': 7
+      - name: Water Area
+        description: 'An area with water features, adding complexity to movement.'
+        coordinates:
+          from:
+            x: 2
+            'y': 5
+          to:
+            x: 6
+            'y': 8
+  - name: Upper Levels
+    description: 'The upper floors of the castle, accessible via staircases.'
+    subAreas:
+      - name: Upper Staircase
+        description: A staircase leading to the upper levels of the castle.
+        coordinates:
+          from:
+            x: 2
+            'y': 4
+          to:
+            x: 4
+            'y': 4
+      - name: Pillar Room
+        description: 'A room with pillars, providing cover and strategic positioning.'
+        coordinates:
+          from:
+            x: 0
+            'y': 10
+          to:
+            x: 16
+            'y': 12

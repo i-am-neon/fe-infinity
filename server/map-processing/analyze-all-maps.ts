@@ -9,8 +9,7 @@ import { MapData } from "@/map-processing/types/MapData.ts";
 import { MapDataPreAI } from "@/map-processing/types/MapDataPreAI.ts";
 
 export default async function analyzeAllMaps(): Promise<void> {
-  let mapUrls = await getMapUrls();
-  mapUrls = mapUrls.slice(0, 1);
+  const mapUrls = await getMapUrls();
 
   for (const mapUrl of mapUrls) {
     const rawTmx = await fetch(mapUrl.tmx).then((res) => res.text());

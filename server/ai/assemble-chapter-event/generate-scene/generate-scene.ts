@@ -1,10 +1,9 @@
-import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
-import { z } from "zod";
 import { mainCharacterIdeaExample, storyArcExample } from "@/testData/ai.ts";
+import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
+import { z } from "zod";
 import { backgroundOptions } from "./background-options.ts";
 import replaceApostrophes from "./replace-apostrophes.ts";
-import { musicOptions } from "@/ai/assemble-chapter-event/generate-scene/music-options.ts";
 
 export default async function generateScene({
   sceneOverview,

@@ -1,8 +1,8 @@
 import { _internals, assignMultipleMaps } from "@/ai/maps/assign-multiple-maps.ts";
+import { MapData } from "@/map-processing/types/MapData.ts";
 import { assertEquals } from "@std/assert/equals";
 import { assertRejects } from "@std/assert/rejects";
 import { assertSpyCallAsync, assertSpyCalls, resolvesNext, stub } from "@std/testing/mock";
-import { ChapterMap } from "@/types/ChapterMap.ts";
 
 // Mock data for testing
 const mockChapterNameToBattleOverview: Record<string, string> = {
@@ -10,16 +10,26 @@ const mockChapterNameToBattleOverview: Record<string, string> = {
   "Chapter 2": "desert skirmish",
 };
 
-const mockMapOptions: ChapterMap[] = [
+const mockMapOptions: MapData[] = [
   {
     name: "Map 1",
     tmx: "<CHAPTERID>-map1.tmx",
     description: "intro battle",
+    areas: [],
+    height: 0,
+    width: 0,
+    pointsOfInterest: [],
+    terrainGrid: [],
   },
   {
     name: "Map 2",
     tmx: "<CHAPTERID>-map2.tmx",
     description: "desert skirmish",
+    areas: [],
+    height: 0,
+    width: 0,
+    pointsOfInterest: [],
+    terrainGrid: [],
   },
 ];
 
@@ -30,7 +40,7 @@ Deno.test(
     using chooseMapStub = stub(
       _internals,
       "chooseMap",
-      resolvesNext([mockMapOptions[0], mockMapOptions[1]])
+      resolvesNext([mockMapOptions[0].name, mockMapOptions[1].name])
     );
 
     const assignedMaps = await assignMultipleMaps({
@@ -49,12 +59,12 @@ Deno.test(
 
     assertSpyCallAsync(chooseMapStub, 0, {
       args: [{ mapOptions: mockMapOptions, battleOverview: "intro battle" }],
-      returned: mockMapOptions[0],
+      returned: mockMapOptions[0].name,
     });
 
     assertSpyCallAsync(chooseMapStub, 1, {
       args: [{ mapOptions: [mockMapOptions[1]], battleOverview: "desert skirmish" }],
-      returned: mockMapOptions[1],
+      returned: mockMapOptions[1].name,
     });
   }
 );

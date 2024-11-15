@@ -1,16 +1,16 @@
 import getUnitsArray from "@/ai/assemble-chapter-event/generate-unit-line/get-units-array.ts";
 import chapterTitleToChapterId from "@/ai/utilities/chapter-title-to-chapter-id.ts";
 import getEventDataReferenceFromChapterId from "@/lib/get-event-data-reference-from-chapter-name.ts";
+import { allMapOptions } from "@/map-processing/all-map-options.ts";
+import { MapData } from "@/map-processing/types/MapData.ts";
 import { storyArcExample } from "@/testData/ai.ts";
 import { exampleRomCharacters } from "@/testData/rom-characters.ts";
 import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
+import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import type { ChapterEvent } from "@/types/ChapterEvent.ts";
 import { RomCharacter } from "@/types/RomCharacter.ts";
-import generateScene from "./generate-scene/generate-scene.ts";
-import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
-import { ChapterMap } from "@/types/ChapterMap.ts";
-import { allMapOptions } from "@/ai/maps/map-metadata-creation/all-map-options.ts";
 import { randomInt } from "node:crypto";
+import generateScene from "./generate-scene/generate-scene.ts";
 
 export default async function assembleChapterEvent({
   chapterIdea,
@@ -24,7 +24,7 @@ export default async function assembleChapterEvent({
   existingPartyCharacters: RomCharacter[];
   newPlayableCharacters: RomCharacter[];
   boss: RomCharacter;
-  map: ChapterMap;
+  map: MapData;
   nextChapterId?: string;
 }): Promise<ChapterEvent> {
   const existingPartyCharacterIdeas: CharacterIdea[] =
@@ -81,6 +81,7 @@ export default async function assembleChapterEvent({
     postBattleSceneContent +
     (nextChapterId ? `\nMoveToChapter(${nextChapterId})` : ""); // TODO: End of game
 
+  // TODO: use map in unitsArray, generate unitsArray in parallel as other things. Also i think everything in this file can be generated in parallel
   const unitsArray = await getUnitsArray([
     ...existingPartyCharacters.map((c) => ({
       characterIdea: { ...c },

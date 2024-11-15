@@ -31,7 +31,7 @@ export default function prepareTmx({
   // Process the Main layer
   updatedTmx = updatedTmx.replace(
     /(<layer name="Main"[\s\S]*?)(<\/layer>)/,
-    (match, p1, p2) => {
+    (_, p1, p2) => {
       // Check if there's a <properties> tag in the Main layer
       if (/<properties>[\s\S]*?<\/properties>/.test(p1)) {
         // Main layer has properties
@@ -72,3 +72,4 @@ export default function prepareTmx({
 
   return updatedTmx;
 }
+

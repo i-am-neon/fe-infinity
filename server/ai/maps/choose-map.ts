@@ -1,15 +1,14 @@
-import { allMapOptions } from "@/ai/maps/map-metadata-creation/all-map-options.ts";
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
-import { ChapterMap } from "@/types/ChapterMap.ts";
+import { allMapOptions } from "@/map-processing/all-map-options.ts";
 import { z } from "zod";
 
 export default async function chooseMap({
   mapOptions,
   battleOverview,
 }: {
-  mapOptions: ChapterMap[];
+  mapOptions: { name: string; description: string }[];
   battleOverview: string;
-}): Promise<ChapterMap> {
+}): Promise<string> {
   const systemMessage = `Given a chapter's battle overview and a list of map options, choose the map that best fits the chapter idea.
 Return the name of the chosen map option.`;
 
@@ -28,12 +27,7 @@ ${mapOptions
     }),
   });
 
-  const chosenMap = mapOptions.find(({ name }) => name === chosenMapName);
-  if (!chosenMap) {
-    throw new Error(`Could not find map with name "${chosenMapName}"`);
-  }
-
-  return chosenMap;
+  return chosenMapName;
 }
 
 if (import.meta.main) {
