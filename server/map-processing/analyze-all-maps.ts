@@ -7,6 +7,7 @@ import defineMapAreas from "@/map-processing/ai/define-map-areas.ts";
 import { MapData } from "@/map-processing/types/MapData.ts";
 import writeMapData from "@/map-processing/fileIO/write-map-data.ts";
 import writeMapImage from "@/map-processing/fileIO/write-map-image.ts";
+import getPathWithinAssetsDir from "@/fileIO/get-path-within-assets-dir.ts";
 
 export default async function analyzeAllMaps(): Promise<void> {
   let mapUrls = await getMapUrls();
@@ -53,6 +54,10 @@ export default async function analyzeAllMaps(): Promise<void> {
 
     writeMapData(mapData);
     writeMapImage({ mapName, imageUrl: mapUrl.image });
+    Deno.writeTextFile(
+      getPathWithinAssetsDir("maps/" + mapName + ".tmx"),
+      finalTmx
+    );
   }
 }
 

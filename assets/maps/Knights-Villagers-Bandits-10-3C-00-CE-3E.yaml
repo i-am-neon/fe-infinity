@@ -499,7 +499,7 @@ areas:
             x: 1
             'y': 1
       - name: Staircase Area
-        description: Area with multiple staircases leading to different levels.
+        description: An area with multiple staircases leading to different levels.
         coordinates:
           from:
             x: 16
@@ -508,12 +508,10 @@ areas:
             x: 16
             'y': 2
   - name: Southern Plains
-    description: >-
-      An open area with plains and forests, providing a contrast to the
-      buildings.
+    description: 'An open area with grass and trees, providing a contrast to the buildings.'
     subAreas:
       - name: Forest Edge
-        description: 'A region filled with trees and bushes, providing cover.'
+        description: 'A region with trees and bushes, offering cover.'
         coordinates:
           from:
             x: 16
@@ -522,7 +520,7 @@ areas:
             x: 19
             'y': 10
       - name: Road
-        description: 'A pathway connecting different areas, facilitating movement.'
+        description: A pathway that connects different areas of the map.
         coordinates:
           from:
             x: 8
@@ -534,7 +532,7 @@ areas:
     description: A section of the map with walls and a door leading to the outside.
     subAreas:
       - name: Wall Corridor
-        description: 'A narrow corridor lined with walls, leading to the main building.'
+        description: 'A narrow path flanked by walls, leading to the main building.'
         coordinates:
           from:
             x: 0
