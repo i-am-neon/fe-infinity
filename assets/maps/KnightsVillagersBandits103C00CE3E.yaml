@@ -1,8 +1,7 @@
-name: Knights-Villagers-Bandits-10-3C-00-CE-3E
+name: KnightsVillagersBandits103C00CE3E
 description: >-
   A complex map featuring a mix of indoor and outdoor areas, with multiple
-  staircases, walls, and points of interest including chests and various
-  terrains like plains and forests.
+  staircases, walls, and points of interest including chests and stairs.
 tmx: >
   <?xml version="1.0" encoding="UTF-8"?>
 
@@ -16,8 +15,8 @@ tmx: >
      <property name="Main" value=""/>
      <property name="Anims" value="_3CAnims"/>
      <property name="ChapterID" value="<CHAPTERID>"/>
-     <property name="MapChangesID" value="Knights-Villagers-Bandits-10-3C-00-CE-3EChanges"/>
-     <property name="MapID" value="Knights-Villagers-Bandits-10-3C-00-CE-3EMap"/>
+     <property name="MapChangesID" value="KnightsVillagersBandits103C00CE3EChanges"/>
+     <property name="MapID" value="KnightsVillagersBandits103C00CE3EMap"/>
      <property name="ObjectType" value="0x3C"/>
      <property name="PaletteID" value="0xCE"/>
      <property name="TileConfig" value="0x3E"/>
@@ -478,22 +477,24 @@ pointsOfInterest:
 areas:
   - name: Northern Building
     description: >-
-      An indoor area with walls, floors, and a chest, featuring multiple
-      staircases leading to other areas.
+      An indoor area with multiple rooms and a central corridor, featuring walls
+      and pillars.
     subAreas:
       - name: Throne Room
         description: >-
           A large room with a throne and decorative elements, located at the top
-          of the building.
+          center of the building.
         coordinates:
           from:
-            x: 0
+            x: 8
             'y': 0
           to:
-            x: 19
-            'y': 5
+            x: 11
+            'y': 3
       - name: Treasure Room
-        description: 'A room containing a chest, located at coordinates (1, 1).'
+        description: >-
+          A room containing a chest, located in the upper left section of the
+          building.
         coordinates:
           from:
             x: 1
@@ -503,8 +504,8 @@ areas:
             'y': 1
       - name: Staircase Area
         description: >-
-          An area with multiple staircases leading to different levels of the
-          building.
+          A section with multiple staircases leading to different levels,
+          located on the right side of the building.
         coordinates:
           from:
             x: 16
@@ -512,51 +513,53 @@ areas:
           to:
             x: 16
             'y': 2
-  - name: Western Plains
+  - name: Southern Plains
     description: >-
-      An outdoor area characterized by plains and forests, providing open space
-      for movement and strategy.
+      An outdoor area with open fields, trees, and pathways, providing a
+      contrast to the indoor sections.
     subAreas:
+      - name: Central Pathway
+        description: >-
+          A wide path that connects different areas of the map, running through
+          the center of the plains.
+        coordinates:
+          from:
+            x: 8
+            'y': 6
+          to:
+            x: 11
+            'y': 10
       - name: Forest Edge
-        description: A region on the western side filled with trees and obstacles.
+        description: >-
+          A wooded area located on the southern edge of the map, providing cover
+          and strategic positioning.
+        coordinates:
+          from:
+            x: 16
+            'y': 6
+          to:
+            x: 19
+            'y': 10
+  - name: Western Wing
+    description: >-
+      A section of the map with walls and a few rooms, primarily consisting of
+      floors and pillars.
+    subAreas:
+      - name: Pillar Room
+        description: >-
+          A room characterized by several pillars, located in the left section
+          of the wing.
         coordinates:
           from:
             x: 0
-            'y': 6
+            'y': 0
           to:
-            x: 5
-            'y': 8
-      - name: Open Plains
+            x: 3
+            'y': 3
+      - name: Stairs to Lower Level
         description: >-
-          A wide open area ideal for movement, located in the center of the
-          western section.
-        coordinates:
-          from:
-            x: 6
-            'y': 6
-          to:
-            x: 10
-            'y': 10
-  - name: Southern Area
-    description: >-
-      A mixed terrain area with roads, plains, and additional staircases leading
-      to lower levels.
-    subAreas:
-      - name: Road Network
-        description: >-
-          A series of roads connecting various parts of the southern area,
-          facilitating movement.
-        coordinates:
-          from:
-            x: 6
-            'y': 11
-          to:
-            x: 19
-            'y': 17
-      - name: Staircase Hub
-        description: >-
-          A central area with multiple staircases leading to different parts of
-          the map.
+          A staircase leading down to a lower level, located in the bottom left
+          corner of the wing.
         coordinates:
           from:
             x: 1

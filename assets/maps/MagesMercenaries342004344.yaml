@@ -1,7 +1,7 @@
-name: Mages-Mercenaries-3-42-00-43-44
+name: MagesMercenaries342004344
 description: >-
-  A desert-themed map featuring various terrains including cliffs, forests, and
-  lakes, with several points of interest such as forts, houses, and a vendor.
+  A desert-themed map featuring various terrains including cliffs, forts, and a
+  village, with points of interest such as houses and an armory.
 tmx: >
   <?xml version="1.0" encoding="UTF-8"?>
 
@@ -15,8 +15,8 @@ tmx: >
      <property name="Main" value=""/>
      <property name="Anims" value="_42Anims"/>
      <property name="ChapterID" value="<CHAPTERID>"/>
-     <property name="MapChangesID" value="Mages-Mercenaries-3-42-00-43-44Changes"/>
-     <property name="MapID" value="Mages-Mercenaries-3-42-00-43-44Map"/>
+     <property name="MapChangesID" value="MagesMercenaries342004344Changes"/>
+     <property name="MapID" value="MagesMercenaries342004344Map"/>
      <property name="ObjectType" value="0x42"/>
      <property name="PaletteID" value="0x43"/>
      <property name="TileConfig" value="0x44"/>
@@ -462,79 +462,56 @@ pointsOfInterest:
     'y': 18
     type: Village Entrance
 areas:
-  - name: Northern Desert
+  - name: Desert Plains
     description: >-
-      A vast desert area with cliffs and sparse vegetation, featuring several
-      desert tiles and cliffs.
+      A vast area of desert terrain with scattered cliffs and some
+      fortifications.
     subAreas:
-      - name: Cliffside
-        description: A steep cliff area on the northern edge of the map.
-        coordinates:
-          from:
-            x: 8
-            'y': 0
-          to:
-            x: 11
-            'y': 2
-      - name: Desert Plains
-        description: Open desert space with minimal obstacles.
+      - name: Northern Desert
+        description: The upper section filled with desert tiles and cliffs.
         coordinates:
           from:
             x: 0
             'y': 0
           to:
-            x: 19
-            'y': 2
-  - name: Central Forts
-    description: >-
-      The central area containing multiple forts and roads, serving as a
-      strategic point.
-    subAreas:
-      - name: Fort Area
-        description: 'Contains two forts located at (11, 1) and (11, 3).'
-        coordinates:
-          from:
-            x: 10
-            'y': 1
-          to:
-            x: 12
+            x: 18
             'y': 4
-      - name: Roads and Houses
-        description: A network of roads connecting various houses and points of interest.
+      - name: Central Desert
+        description: The middle section with more varied terrain including roads and forts.
         coordinates:
           from:
             x: 0
-            'y': 8
+            'y': 5
           to:
-            x: 12
-            'y': 12
-  - name: Southern Village
-    description: 'A village area with houses, a vendor, and a village entrance.'
+            x: 18
+            'y': 14
+      - name: Southern Desert
+        description: The lower section leading to the village and lake area.
+        coordinates:
+          from:
+            x: 0
+            'y': 15
+          to:
+            x: 18
+            'y': 19
+  - name: Village Area
+    description: A small area containing village structures and a lake.
     subAreas:
       - name: Village Entrance
-        description: 'The entrance to the village located at (1, 18).'
+        description: The entrance to the village with walls and houses.
         coordinates:
           from:
             x: 1
             'y': 18
           to:
-            x: 1
+            x: 3
             'y': 18
-      - name: Vendor Area
-        description: 'The area containing a vendor located at (6, 11).'
+      - name: Lake Area
+        description: A section with lakes and surrounding plains.
         coordinates:
           from:
-            x: 6
-            'y': 11
+            x: 0
+            'y': 15
           to:
-            x: 6
-            'y': 11
-      - name: Houses
-        description: Several houses located in the southern part of the map.
-        coordinates:
-          from:
-            x: 1
-            'y': 7
-          to:
-            x: 7
-            'y': 12
+            x: 8
+            'y': 17

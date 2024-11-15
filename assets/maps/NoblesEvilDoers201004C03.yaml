@@ -1,7 +1,7 @@
-name: Nobles-Evil-Doers-2-01-00-4C-03
+name: NoblesEvilDoers201004C03
 description: >-
-  A diverse terrain map featuring forests, plains, hills, peaks, and various
-  points of interest including visitable ruins and a fort.
+  A diverse terrain map featuring forests, plains, hills, peaks, rivers, and
+  ruins, with various points of interest including visitable ruins and a fort.
 tmx: >
   <?xml version="1.0" encoding="UTF-8"?>
 
@@ -15,8 +15,8 @@ tmx: >
      <property name="Main" value=""/>
      <property name="Anims" value="_01Anims"/>
      <property name="ChapterID" value="<CHAPTERID>"/>
-     <property name="MapChangesID" value="Nobles-Evil-Doers-2-01-00-4C-03Changes"/>
-     <property name="MapID" value="Nobles-Evil-Doers-2-01-00-4C-03Map"/>
+     <property name="MapChangesID" value="NoblesEvilDoers201004C03Changes"/>
+     <property name="MapID" value="NoblesEvilDoers201004C03Map"/>
      <property name="ObjectType" value="0x01"/>
      <property name="PaletteID" value="0x4C"/>
      <property name="TileConfig" value="0x03"/>
@@ -523,11 +523,13 @@ pointsOfInterest:
 areas:
   - name: Northern Peaks
     description: >-
-      A mountainous area with several peaks and hills, providing high ground
-      advantage.
+      A mountainous area with several peaks and hills, providing high ground and
+      strategic advantages.
     subAreas:
       - name: Peak Area
-        description: 'The highest points of the map, offering strategic visibility.'
+        description: >-
+          The highest points of the map, offering a vantage point over the
+          surrounding terrain.
         coordinates:
           from:
             x: 5
@@ -536,7 +538,9 @@ areas:
             x: 11
             'y': 3
       - name: Hill Path
-        description: 'A pathway leading through the hills, connecting different areas.'
+        description: >-
+          A pathway leading through the hills, connecting different areas of the
+          map.
         coordinates:
           from:
             x: 3
@@ -550,17 +554,19 @@ areas:
       positioning.
     subAreas:
       - name: Forest Edge
-        description: 'The border of the forest, providing cover and ambush opportunities.'
+        description: >-
+          The border of the forest area, providing cover and ambush
+          opportunities.
         coordinates:
           from:
             x: 0
             'y': 0
           to:
-            x: 1
-            'y': 1
+            x: 2
+            'y': 4
       - name: Village Wall
         description: >-
-          A fortified area with walls, offering protection and strategic
+          A fortified area with walls, providing defense and strategic
           positioning.
         coordinates:
           from:
@@ -571,11 +577,13 @@ areas:
             'y': 3
   - name: Southern Ruins
     description: >-
-      An area filled with ruins and a fort, providing historical significance
-      and tactical advantages.
+      An area filled with ruins and remnants of past structures, offering
+      exploration opportunities.
     subAreas:
       - name: Visitable Ruins
-        description: Ruins that can be explored for resources or lore.
+        description: >-
+          Locations where players can explore and potentially find items or
+          lore.
         coordinates:
           from:
             x: 3
@@ -584,7 +592,9 @@ areas:
             x: 3
             'y': 9
       - name: Fort Area
-        description: 'The location of the fort, serving as a stronghold.'
+        description: >-
+          The location of a fort, providing a stronghold for defense and
+          strategy.
         coordinates:
           from:
             x: 16

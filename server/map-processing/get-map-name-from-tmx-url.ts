@@ -5,9 +5,8 @@ export default function getMapNameFromTmxUrl(tmxUrl: string): string {
   // Extract the last part of the URL and remove the ".tmx" extension
   const mapName = decodedUrl.split("/").pop()?.replace(".tmx", "") ?? "";
 
-  // Replace spaces and special characters with dashes
-  const sanitizedMapName = mapName.replace(/[^a-zA-Z0-9]+/g, "-");
+  // Remove spaces and special characters entirely
+  const sanitizedMapName = mapName.replace(/[^a-zA-Z0-9]/g, "");
 
-  // Remove any trailing dashes
-  return sanitizedMapName.replace(/-+$/, "");
+  return sanitizedMapName;
 }
