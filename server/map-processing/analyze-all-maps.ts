@@ -1,13 +1,12 @@
+import defineMapAreas from "@/map-processing/ai/define-map-areas.ts";
+import writeMapData from "@/map-processing/fileIO/write-map-data.ts";
+import writeMapImage from "@/map-processing/fileIO/write-map-image.ts";
 import getInfoFromTmx from "@/map-processing/get-info-from-tmx/get-info-from-tmx.ts";
 import getMapNameFromTmxUrl from "@/map-processing/get-map-name-from-tmx-url.ts";
 import getMapUrls from "@/map-processing/get-map-urls.ts";
 import prepareTmx from "@/map-processing/prepare-tmx.ts";
-import { MapDataPreAI } from "@/map-processing/types/MapDataPreAI.ts";
-import defineMapAreas from "@/map-processing/ai/define-map-areas.ts";
 import { MapData } from "@/map-processing/types/MapData.ts";
-import writeMapData from "@/map-processing/fileIO/write-map-data.ts";
-import writeMapImage from "@/map-processing/fileIO/write-map-image.ts";
-import getPathWithinAssetsDir from "@/fileIO/get-path-within-assets-dir.ts";
+import { MapDataPreAI } from "@/map-processing/types/MapDataPreAI.ts";
 
 export default async function analyzeAllMaps(): Promise<void> {
   let mapUrls = await getMapUrls();
