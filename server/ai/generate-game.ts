@@ -15,8 +15,10 @@ import { allMapOptions } from "@/map-processing/all-map-options.ts";
 
 export default async function generateGame({
   worldIdea,
+  numberOfChapters,
 }: {
   worldIdea: string;
+  numberOfChapters: number;
 }): Promise<Game> {
   const worldSummary = await generateWorldSummary(worldIdea);
   const mainCharacterIdea = await generateMainCharacterIdea({ worldSummary });
@@ -24,7 +26,7 @@ export default async function generateGame({
   const storyArc = await generateStoryArc({
     worldSummary,
     mainCharacterIdea,
-    numberOfChapters: 2,
+    numberOfChapters,
   });
 
   const [allRomCharacters, chapterIdToMap] = await Promise.all([
@@ -110,6 +112,6 @@ export default async function generateGame({
 }
 
 if (import.meta.main) {
-  await generateGame({ worldIdea: worldIdeaExample });
+  await generateGame({ worldIdea: worldIdeaExample, numberOfChapters: 1 });
 }
 
