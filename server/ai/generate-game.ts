@@ -81,8 +81,9 @@ export default async function generateGame({
         storyArc.chapterIdeas[chapterNumber].chapterTitle;
       const chapterId = chapterTitleToChapterId(thisChapterTitle);
       const chapterMap: ChapterMap = {
-        ...chapterIdToMap[chapterId],
-      } as ChapterMap;
+        name: chapterIdToMap[chapterId].name,
+        tmx: chapterIdToMap[chapterId].tmx,
+      };
       const chapterDataForCsv = getChapterDataForCsv({
         chapterId,
         mapName: chapterMap.name,
