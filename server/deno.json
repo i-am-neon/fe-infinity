@@ -3,7 +3,8 @@
     "dev": "deno run --watch main.ts",
     "test": "deno test --allow-all",
     "main": "deno run --allow-all main.ts",
-    "write-test": "deno run --allow-all write-chapter/write-game.ts"
+    "write-test": "deno run --allow-all write-chapter/write-game.ts",
+    "maps": "deno run --allow-all map-processing/process-all-maps.ts"
   },
   "imports": {
     "@ai-sdk/openai": "npm:@ai-sdk/openai@^0.0.70",
