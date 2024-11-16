@@ -6,3 +6,9 @@ export default async function processAllMaps(): Promise<void> {
 
   await writeAllMapOptions();
 }
+
+if (import.meta.main) {
+  await processAllMaps();
+  console.log("✅ All maps processed successfully.");
+}
+

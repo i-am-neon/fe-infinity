@@ -11,58 +11,61 @@ import { MapDataPreAI } from "@/map-processing/types/MapDataPreAI.ts";
 export default async function analyzeAllMaps(): Promise<void> {
   const mapUrls = await getMapUrls();
 
-  for (const mapUrl of mapUrls) {
-    const rawTmx = await fetch(mapUrl.tmx).then((res) => res.text());
-    if (rawTmx.includes("<!DOCTYPE html>")) {
-      throw new Error(
-        "You must first run `convertToRawUrl` to convert the tmx urls to raw text"
-      );
-    }
-    const { tileset, height, width, terrainGrid, pointsOfInterest } =
-      getInfoFromTmx(rawTmx);
-    const mapName = getMapNameFromTmxUrl(mapUrl.tmx);
+  // Run each map analysis in parallel
+  await Promise.all(
+    mapUrls.map(async (mapUrl) => {
+      const rawTmx = await fetch(mapUrl.tmx).then((res) => res.text());
+      if (rawTmx.includes("<!DOCTYPE html>")) {
+        throw new Error(
+          "You must first run `convertToRawUrl` to convert the tmx urls to raw text"
+        );
+      }
 
-    const finalTmx = prepareTmx({
-      mapName,
-      tmx: rawTmx,
-      tileset,
-    });
+      const { tileset, height, width, terrainGrid, pointsOfInterest } =
+        getInfoFromTmx(rawTmx);
+      const mapName = getMapNameFromTmxUrl(mapUrl.tmx);
 
-    const mapDataPreAI: MapDataPreAI = {
-      width,
-      height,
-      terrainGrid,
-      pointsOfInterest,
-      mapName,
-      tmx: finalTmx,
-    };
+      const finalTmx = prepareTmx({
+        mapName,
+        tmx: rawTmx,
+        tileset,
+      });
 
-    const { description, areas } = await defineMapAreas(mapDataPreAI);
+      const mapDataPreAI: MapDataPreAI = {
+        width,
+        height,
+        terrainGrid,
+        pointsOfInterest,
+        mapName,
+        tmx: finalTmx,
+      };
 
-    const mapData: MapData = {
-      name: mapName,
-      description,
-      tmx: finalTmx,
-      height,
-      width,
-      terrainGrid,
-      pointsOfInterest,
-      areas,
-    };
+      const { description, areas } = await defineMapAreas(mapDataPreAI);
 
-    writeMapData(mapData);
-    if (mapUrl.image) {
-      writeMapImage({ mapName, imageUrl: mapUrl.image });
-    }
-    // I don't think I need the tmx, since they're in the yaml
-    // Deno.writeTextFile(
-    //   getPathWithinAssetsDir("maps/" + mapName + ".tmx"),
-    //   finalTmx
-    // );
-  }
+      const mapData: MapData = {
+        name: mapName,
+        description,
+        tmx: finalTmx,
+        height,
+        width,
+        terrainGrid,
+        pointsOfInterest,
+        areas,
+      };
+
+      // Write map data and image concurrently
+      await Promise.all([
+        writeMapData(mapData),
+        mapUrl.image
+          ? writeMapImage({ mapName, imageUrl: mapUrl.image })
+          : Promise.resolve(),
+      ]);
+    })
+  );
+
+  console.log("All maps analyzed and written successfully.");
 }
 
 if (import.meta.main) {
   await analyzeAllMaps();
 }
-
