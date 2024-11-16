@@ -34,13 +34,6 @@ export async function doEverything({
     // Change to the romBuilder directory
     Deno.chdir("../romBuilder");
 
-    const deleteRomSaveFileCommand = new Deno.Command("bash", {
-      args: ["./delete-sav.sh"],
-      stdout: "inherit",
-      stderr: "inherit",
-    });
-    await deleteRomSaveFileCommand.output();
-
     const runCommand = new Deno.Command("bash", {
       args: ["./run.sh"],
       stdout: "inherit",
