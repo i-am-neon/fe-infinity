@@ -1,18 +1,19 @@
 import convertToRawUrl from "@/map-processing/convert-to-raw-url.ts";
+import { parse } from "jsr:@std/yaml";
 
 export type MapUrl = {
-  image: string;
+  image?: string;
   tmx: string;
 };
 
 const getMapUrls = async (): Promise<MapUrl[]> => {
   // Get the directory of the current script
   const thisScriptDir = new URL(".", import.meta.url).pathname;
-  const urlsPath = thisScriptDir + "urls.json";
+  const urlsPath = thisScriptDir + "urls.yaml";
 
-  // Read and parse the JSON file
+  // Read and parse the YAML file
   const rawData = await Deno.readTextFile(urlsPath);
-  const data = JSON.parse(rawData) as MapUrl[];
+  const data = parse(rawData) as MapUrl[];
 
   // Convert each tmx URL to its raw version
   const updatedData = data.map((mapUrl) => ({
@@ -29,3 +30,4 @@ if (import.meta.main) {
   const mapUrls = await getMapUrls();
   console.log(mapUrls);
 }
+
