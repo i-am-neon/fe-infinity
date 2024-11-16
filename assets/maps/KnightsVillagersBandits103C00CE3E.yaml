@@ -477,13 +477,13 @@ pointsOfInterest:
 areas:
   - name: Northern Building
     description: >-
-      An indoor area with multiple rooms and a central corridor, featuring walls
-      and pillars.
+      An indoor area with walls and floors, containing a central room and access
+      to stairs.
     subAreas:
       - name: Throne Room
         description: >-
-          A large room with a throne and decorative elements, located at the top
-          center of the building.
+          A large room with a red carpet and pillars, located at the center of
+          the northern building.
         coordinates:
           from:
             x: 8
@@ -491,9 +491,50 @@ areas:
           to:
             x: 11
             'y': 3
+      - name: Staircase Area
+        description: A section with multiple staircases leading to different levels.
+        coordinates:
+          from:
+            x: 16
+            'y': 0
+          to:
+            x: 16
+            'y': 3
+  - name: Southern Plains
+    description: >-
+      An outdoor area with plains and forests, featuring pathways and a mix of
+      terrain types.
+    subAreas:
+      - name: Forest Edge
+        description: >-
+          A region with dense trees and foliage, providing cover and strategic
+          positioning.
+        coordinates:
+          from:
+            x: 4
+            'y': 6
+          to:
+            x: 6
+            'y': 8
+      - name: Road
+        description: >-
+          A pathway that connects different areas, facilitating movement across
+          the map.
+        coordinates:
+          from:
+            x: 6
+            'y': 5
+          to:
+            x: 12
+            'y': 7
+  - name: Western Wing
+    description: >-
+      An indoor area with walls and floors, containing chests and access to
+      staircases.
+    subAreas:
       - name: Treasure Room
         description: >-
-          A room containing a chest, located in the upper left section of the
+          A room containing a chest, located in the western part of the
           building.
         coordinates:
           from:
@@ -503,63 +544,7 @@ areas:
             x: 1
             'y': 1
       - name: Staircase Area
-        description: >-
-          A section with multiple staircases leading to different levels,
-          located on the right side of the building.
-        coordinates:
-          from:
-            x: 16
-            'y': 0
-          to:
-            x: 16
-            'y': 2
-  - name: Southern Plains
-    description: >-
-      An outdoor area with open fields, trees, and pathways, providing a
-      contrast to the indoor sections.
-    subAreas:
-      - name: Central Pathway
-        description: >-
-          A wide path that connects different areas of the map, running through
-          the center of the plains.
-        coordinates:
-          from:
-            x: 8
-            'y': 6
-          to:
-            x: 11
-            'y': 10
-      - name: Forest Edge
-        description: >-
-          A wooded area located on the southern edge of the map, providing cover
-          and strategic positioning.
-        coordinates:
-          from:
-            x: 16
-            'y': 6
-          to:
-            x: 19
-            'y': 10
-  - name: Western Wing
-    description: >-
-      A section of the map with walls and a few rooms, primarily consisting of
-      floors and pillars.
-    subAreas:
-      - name: Pillar Room
-        description: >-
-          A room characterized by several pillars, located in the left section
-          of the wing.
-        coordinates:
-          from:
-            x: 0
-            'y': 0
-          to:
-            x: 3
-            'y': 3
-      - name: Stairs to Lower Level
-        description: >-
-          A staircase leading down to a lower level, located in the bottom left
-          corner of the wing.
+        description: A section with stairs leading to the upper levels.
         coordinates:
           from:
             x: 1

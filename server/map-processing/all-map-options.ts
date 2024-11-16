@@ -3,7 +3,7 @@ import { MapData } from "@/map-processing/types/MapData.ts";
   export const allMapOptions: MapData[] = [
   {
     "name": "MagesMercenaries342004344",
-    "description": "A desert-themed map featuring various terrains including cliffs, forts, and a village, with points of interest such as houses and an armory.",
+    "description": "A desert-themed map featuring various terrains including cliffs, forests, and lakes, with several points of interest such as forts and houses.",
     "tmx": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<map version=\"1.0\" orientation=\"orthogonal\" renderorder=\"right-down\" width=\"19\" height=\"20\" tilewidth=\"16\" tileheight=\"16\" nextobjectid=\"1\">\n <tileset firstgid=\"1\" name=\"42004344\" tilewidth=\"16\" tileheight=\"16\">\n  <image source=\"Tilesets/42004344.png\" width=\"512\" height=\"512\"/>\n </tileset>\n <layer name=\"Main\" width=\"19\" height=\"20\">\n  <properties>\n   <property name=\"Main\" value=\"\"/>\n   <property name=\"Anims\" value=\"_42Anims\"/>\n   <property name=\"ChapterID\" value=\"<CHAPTERID>\"/>\n   <property name=\"MapChangesID\" value=\"MagesMercenaries342004344_Changes\"/>\n   <property name=\"MapID\" value=\"MagesMercenaries342004344_Map\"/>\n   <property name=\"ObjectType\" value=\"0x42\"/>\n   <property name=\"PaletteID\" value=\"0x43\"/>\n   <property name=\"TileConfig\" value=\"0x44\"/>\n  </properties>\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxVVL1uE0EY3L1r6M070EAuwUADXSJhCRThKwIPACJICB2K+OuhgMK2LB4BExyJ2E4BtBTBSZpTLEh4gShYVAgUKJnRN6tbF6Pd2/t+Zubbu1bqXAnUgK+Jc/NYN4ER0Aam3rkvwAT7ljAHDASeN4Gu6gx1FvLHyD0G9rzFtXTeAHKg7+25pdgCawbsKicXn0x9CvEcaT+vXs2oF5/XveW1FVeqR7zn+z+J9ZhITyPS3xcf1u0q93diXNj3s3OuIz/47rTOg85cvMlhW7zmVG+QVtpG2g+VnytnU5w62pP3svYhplCvrp9Fqbhu5Hup/s2oT6E69PtIsfUIK1Ht/cQ0F2nl7bpyyPFd5BO9Y69vyHmp9WJquAQc4PlXUnHtyeuG8vd8NeNd3QPWOExs3QGPN8C+s2dyC7nbulPB4yx4FHl9T/UuIHaKGqew1rydBV7BO9ab6j625V/PV/M5Rv4P4AXwE6jj3XlgVT3o4Zb0hG8k5rIg3qx7B/mLwFvgGnBdOtmDPj5WLc4hk+993ae25ttR/Svo/QToIfYh8MrZnvXPeZtF4DYRl7E0B47hv8C8Z1hvkwfvPbAknuQ8dhW3gbSUml1HWlmT39tzxN7Cehl4nRpWsL+K82VpDbzy6JsK/5SmwO/tA/AR+EQfxIs870ov+a2ls9wyec65DtPq/3UAHALfU9O4ATySh2elc8nNzjP8AwaqOZHuE+Av8A94j5j78j3opt5FeUa9W+Jy4m02dc2BXM/g/Q15Qw70qeFsFk9R56ZqkVdNd+MB9XjzmrNZkP//AaMuz6o=\n  </data>\n </layer>\n <layer name=\"Village Destroyed\" width=\"19\" height=\"20\" visible=\"0\">\n  <properties>\n   <property name=\"Height\" value=\"3\"/>\n   <property name=\"ID\" value=\"0\"/>\n   <property name=\"Width\" value=\"3\"/>\n   <property name=\"X\" value=\"0\"/>\n   <property name=\"Y\" value=\"16\"/>\n  </properties>\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxjYBgFo2AUjIKhCTYzMzBsAeKtzJSbdRloxhUgvkoFsz4DzfgCxF+pYBY1AQBqNweQ\n  </data>\n </layer>\n <layer name=\"Village Visited\" width=\"19\" height=\"20\" visible=\"0\">\n  <properties>\n   <property name=\"Height\" value=\"1\"/>\n   <property name=\"ID\" value=\"1\"/>\n   <property name=\"Width\" value=\"1\"/>\n   <property name=\"X\" value=\"1\"/>\n   <property name=\"Y\" value=\"18\"/>\n  </properties>\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxjYBgFo2AUjIJRQG0wlXmgXYAJAF3NAJk=\n  </data>\n </layer>\n</map>\n",
     "height": 20,
     "width": 19,
@@ -478,81 +478,101 @@ import { MapData } from "@/map-processing/types/MapData.ts";
     ],
     "areas": [
       {
-        "name": "Desert Plains",
-        "description": "A vast area of desert terrain with scattered cliffs and some fortifications.",
+        "name": "Northern Desert",
+        "description": "A vast expanse of desert terrain with cliffs to the north and a few scattered points of interest.",
         "subAreas": [
           {
-            "name": "Northern Desert",
-            "description": "The upper section filled with desert tiles and cliffs.",
+            "name": "Cliffside",
+            "description": "The area along the northern edge with cliffs.",
+            "coordinates": {
+              "from": {
+                "x": 8,
+                "y": 0
+              },
+              "to": {
+                "x": 11,
+                "y": 2
+              }
+            }
+          },
+          {
+            "name": "Desert Plains",
+            "description": "Open desert area with minimal obstacles.",
             "coordinates": {
               "from": {
                 "x": 0,
                 "y": 0
               },
               "to": {
-                "x": 18,
-                "y": 4
-              }
-            }
-          },
-          {
-            "name": "Central Desert",
-            "description": "The middle section with more varied terrain including roads and forts.",
-            "coordinates": {
-              "from": {
-                "x": 0,
-                "y": 5
-              },
-              "to": {
-                "x": 18,
-                "y": 14
-              }
-            }
-          },
-          {
-            "name": "Southern Desert",
-            "description": "The lower section leading to the village and lake area.",
-            "coordinates": {
-              "from": {
-                "x": 0,
-                "y": 15
-              },
-              "to": {
-                "x": 18,
-                "y": 19
+                "x": 19,
+                "y": 2
               }
             }
           }
         ]
       },
       {
-        "name": "Village Area",
-        "description": "A small area containing village structures and a lake.",
+        "name": "Central Forts",
+        "description": "The central area containing multiple forts and roads connecting them.",
         "subAreas": [
           {
-            "name": "Village Entrance",
-            "description": "The entrance to the village with walls and houses.",
+            "name": "Fort Area",
+            "description": "Contains two forts and is a strategic point on the map.",
+            "coordinates": {
+              "from": {
+                "x": 10,
+                "y": 1
+              },
+              "to": {
+                "x": 12,
+                "y": 3
+              }
+            }
+          },
+          {
+            "name": "Roads and Paths",
+            "description": "Roads connecting the forts and leading to other areas.",
+            "coordinates": {
+              "from": {
+                "x": 0,
+                "y": 8
+              },
+              "to": {
+                "x": 19,
+                "y": 12
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Southern Village",
+        "description": "A village area with houses and a vendor, surrounded by plains and lakes.",
+        "subAreas": [
+          {
+            "name": "Village Center",
+            "description": "The main area of the village with houses and a vendor.",
             "coordinates": {
               "from": {
                 "x": 1,
                 "y": 18
               },
               "to": {
-                "x": 3,
-                "y": 18
+                "x": 8,
+                "y": 19
               }
             }
           },
           {
             "name": "Lake Area",
-            "description": "A section with lakes and surrounding plains.",
+            "description": "The area surrounding the lakes, providing a natural barrier.",
             "coordinates": {
               "from": {
                 "x": 0,
-                "y": 15
+                "y": 10
               },
               "to": {
-                "x": 8,
+                "x": 19,
                 "y": 17
               }
             }
@@ -1030,11 +1050,11 @@ import { MapData } from "@/map-processing/types/MapData.ts";
     "areas": [
       {
         "name": "Northern Building",
-        "description": "An indoor area with multiple rooms and a central corridor, featuring walls and pillars.",
+        "description": "An indoor area with walls and floors, containing a central room and access to stairs.",
         "subAreas": [
           {
             "name": "Throne Room",
-            "description": "A large room with a throne and decorative elements, located at the top center of the building.",
+            "description": "A large room with a red carpet and pillars, located at the center of the northern building.",
             "coordinates": {
               "from": {
                 "x": 8,
@@ -1047,8 +1067,62 @@ import { MapData } from "@/map-processing/types/MapData.ts";
             }
           },
           {
+            "name": "Staircase Area",
+            "description": "A section with multiple staircases leading to different levels.",
+            "coordinates": {
+              "from": {
+                "x": 16,
+                "y": 0
+              },
+              "to": {
+                "x": 16,
+                "y": 3
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Southern Plains",
+        "description": "An outdoor area with plains and forests, featuring pathways and a mix of terrain types.",
+        "subAreas": [
+          {
+            "name": "Forest Edge",
+            "description": "A region with dense trees and foliage, providing cover and strategic positioning.",
+            "coordinates": {
+              "from": {
+                "x": 4,
+                "y": 6
+              },
+              "to": {
+                "x": 6,
+                "y": 8
+              }
+            }
+          },
+          {
+            "name": "Road",
+            "description": "A pathway that connects different areas, facilitating movement across the map.",
+            "coordinates": {
+              "from": {
+                "x": 6,
+                "y": 5
+              },
+              "to": {
+                "x": 12,
+                "y": 7
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Western Wing",
+        "description": "An indoor area with walls and floors, containing chests and access to staircases.",
+        "subAreas": [
+          {
             "name": "Treasure Room",
-            "description": "A room containing a chest, located in the upper left section of the building.",
+            "description": "A room containing a chest, located in the western part of the building.",
             "coordinates": {
               "from": {
                 "x": 1,
@@ -1062,75 +1136,7 @@ import { MapData } from "@/map-processing/types/MapData.ts";
           },
           {
             "name": "Staircase Area",
-            "description": "A section with multiple staircases leading to different levels, located on the right side of the building.",
-            "coordinates": {
-              "from": {
-                "x": 16,
-                "y": 0
-              },
-              "to": {
-                "x": 16,
-                "y": 2
-              }
-            }
-          }
-        ]
-      },
-      {
-        "name": "Southern Plains",
-        "description": "An outdoor area with open fields, trees, and pathways, providing a contrast to the indoor sections.",
-        "subAreas": [
-          {
-            "name": "Central Pathway",
-            "description": "A wide path that connects different areas of the map, running through the center of the plains.",
-            "coordinates": {
-              "from": {
-                "x": 8,
-                "y": 6
-              },
-              "to": {
-                "x": 11,
-                "y": 10
-              }
-            }
-          },
-          {
-            "name": "Forest Edge",
-            "description": "A wooded area located on the southern edge of the map, providing cover and strategic positioning.",
-            "coordinates": {
-              "from": {
-                "x": 16,
-                "y": 6
-              },
-              "to": {
-                "x": 19,
-                "y": 10
-              }
-            }
-          }
-        ]
-      },
-      {
-        "name": "Western Wing",
-        "description": "A section of the map with walls and a few rooms, primarily consisting of floors and pillars.",
-        "subAreas": [
-          {
-            "name": "Pillar Room",
-            "description": "A room characterized by several pillars, located in the left section of the wing.",
-            "coordinates": {
-              "from": {
-                "x": 0,
-                "y": 0
-              },
-              "to": {
-                "x": 3,
-                "y": 3
-              }
-            }
-          },
-          {
-            "name": "Stairs to Lower Level",
-            "description": "A staircase leading down to a lower level, located in the bottom left corner of the wing.",
+            "description": "A section with stairs leading to the upper levels.",
             "coordinates": {
               "from": {
                 "x": 1,
@@ -2839,21 +2845,21 @@ import { MapData } from "@/map-processing/types/MapData.ts";
               },
               "to": {
                 "x": 14,
-                "y": 3
+                "y": 4
               }
             }
           },
           {
-            "name": "Northern Forest",
-            "description": "A forested area providing cover and strategic positioning.",
+            "name": "Forest Edge",
+            "description": "A border of forest on the northern edge, providing cover and strategic positioning.",
             "coordinates": {
               "from": {
                 "x": 4,
                 "y": 0
               },
               "to": {
-                "x": 4,
-                "y": 3
+                "x": 5,
+                "y": 4
               }
             }
           }
@@ -2861,11 +2867,11 @@ import { MapData } from "@/map-processing/types/MapData.ts";
       },
       {
         "name": "Central Village",
-        "description": "The heart of the village with houses, a vendor, and an armory, serving as a hub for resources and interactions.",
+        "description": "The main village area with houses, a vendor, and an armory, serving as a hub for resources and interactions.",
         "subAreas": [
           {
             "name": "Vendor Area",
-            "description": "A small area where players can interact with a vendor for supplies.",
+            "description": "A small area dedicated to trade and supplies, located centrally in the village.",
             "coordinates": {
               "from": {
                 "x": 3,
@@ -2879,7 +2885,7 @@ import { MapData } from "@/map-processing/types/MapData.ts";
           },
           {
             "name": "Armory",
-            "description": "A location for acquiring weapons and armor, crucial for preparing for battles.",
+            "description": "A fortified area for weaponry and supplies, located in the central part of the village.",
             "coordinates": {
               "from": {
                 "x": 3,
@@ -2900,8 +2906,8 @@ import { MapData } from "@/map-processing/types/MapData.ts";
                 "y": 11
               },
               "to": {
-                "x": 0,
-                "y": 11
+                "x": 6,
+                "y": 14
               }
             }
           }
@@ -2909,11 +2915,11 @@ import { MapData } from "@/map-processing/types/MapData.ts";
       },
       {
         "name": "Southern Fortifications",
-        "description": "A fortified area with walls and a fort, providing defensive advantages.",
+        "description": "A defensive area with fort walls and strategic points, providing a stronghold for defense.",
         "subAreas": [
           {
             "name": "Fort Gate",
-            "description": "The main entrance to the fort, a strategic point for defense.",
+            "description": "The main entrance to the fort, heavily guarded and a key strategic point.",
             "coordinates": {
               "from": {
                 "x": 11,
@@ -2926,50 +2932,16 @@ import { MapData } from "@/map-processing/types/MapData.ts";
             }
           },
           {
-            "name": "Southern Fort",
-            "description": "A stronghold that offers protection and a vantage point.",
+            "name": "Fort Area",
+            "description": "The fortified area providing defense and strategic advantages, located in the southern part of the map.",
             "coordinates": {
               "from": {
-                "x": 13,
-                "y": 4
-              },
-              "to": {
-                "x": 13,
-                "y": 4
-              }
-            }
-          }
-        ]
-      },
-      {
-        "name": "Coastal Area",
-        "description": "A sandy area leading to the sea, providing a different terrain type and potential for naval strategies.",
-        "subAreas": [
-          {
-            "name": "Beach",
-            "description": "A sandy area that can be used for landing troops or retreating.",
-            "coordinates": {
-              "from": {
-                "x": 5,
+                "x": 8,
                 "y": 6
               },
               "to": {
-                "x": 5,
-                "y": 6
-              }
-            }
-          },
-          {
-            "name": "Sea",
-            "description": "The water area that borders the map, affecting movement and strategy.",
-            "coordinates": {
-              "from": {
-                "x": 9,
-                "y": 6
-              },
-              "to": {
-                "x": 14,
-                "y": 16
+                "x": 10,
+                "y": 8
               }
             }
           }

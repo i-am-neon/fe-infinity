@@ -1,6 +1,10 @@
 import pako from "npm:pako";
 
 export default function decompressMapData(encodedData: string): number[] {
+  if (!encodedData) {
+    throw new Error("No data to decompress");
+  }
+
   // Decode base64 to a Uint8Array
   const binaryString = atob(encodedData);
   const byteArray = new Uint8Array(binaryString.length);
