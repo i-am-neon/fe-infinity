@@ -35,6 +35,7 @@ Notes:
     systemMessage,
     prompt: worldIdea,
     schema: worldSummarySchema,
+    temperature: 1,
   });
 }
 
