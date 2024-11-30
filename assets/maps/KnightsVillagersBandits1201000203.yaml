@@ -1,8 +1,8 @@
 name: KnightsVillagersBandits1201000203
 description: >-
   A diverse map featuring plains, forests, and various structures including
-  houses, a vendor, and fortifications, set in a village environment with
-  strategic points of interest.
+  houses, a vendor, and fortifications, with a mix of open areas and enclosed
+  spaces.
 tmx: >
   <?xml version="1.0" encoding="UTF-8"?>
 
@@ -370,12 +370,12 @@ pointsOfInterest:
 areas:
   - name: Northern Plains
     description: >-
-      An open area with plains and a few forest patches, providing a clear view
-      and movement space.
+      An open area with plains and a few forest patches, providing space for
+      movement and strategy.
     subAreas:
       - name: Central Plains
         description: >-
-          A large open space in the northern part of the map, ideal for troop
+          A large open space in the center of the northern area, ideal for troop
           movement.
         coordinates:
           from:
@@ -383,27 +383,25 @@ areas:
             'y': 0
           to:
             x: 14
-            'y': 4
-      - name: Forest Edge
+            'y': 3
+      - name: Northern Forest
         description: >-
-          A border of forest on the northern edge, providing cover and strategic
+          A forested area in the northern part, offering cover and strategic
           positioning.
         coordinates:
           from:
             x: 4
             'y': 0
           to:
-            x: 5
-            'y': 4
+            x: 4
+            'y': 3
   - name: Central Village
     description: >-
-      The main village area with houses, a vendor, and an armory, serving as a
-      hub for resources and interactions.
+      A village area with houses and a vendor, serving as a hub for resources
+      and interactions.
     subAreas:
       - name: Vendor Area
-        description: >-
-          A small area dedicated to trade and supplies, located centrally in the
-          village.
+        description: A small area where players can interact with a vendor for supplies.
         coordinates:
           from:
             x: 3
@@ -411,52 +409,33 @@ areas:
           to:
             x: 3
             'y': 2
-      - name: Armory
-        description: >-
-          A fortified area for weaponry and supplies, located in the central
-          part of the village.
-        coordinates:
-          from:
-            x: 3
-            'y': 4
-          to:
-            x: 3
-            'y': 4
-      - name: Houses
-        description: >-
-          Residential areas providing shelter and potential interactions with
-          villagers.
+      - name: House Area
+        description: A cluster of houses providing shelter and potential resources.
         coordinates:
           from:
             x: 0
-            'y': 11
+            'y': 1
           to:
-            x: 6
-            'y': 14
+            x: 5
+            'y': 1
   - name: Southern Fortifications
-    description: >-
-      A defensive area with fort walls and strategic points, providing a
-      stronghold for defense.
+    description: 'A fortified area with walls and a fort, providing defensive positions.'
     subAreas:
-      - name: Fort Gate
-        description: >-
-          The main entrance to the fort, heavily guarded and a key strategic
-          point.
-        coordinates:
-          from:
-            x: 11
-            'y': 2
-          to:
-            x: 11
-            'y': 2
       - name: Fort Area
-        description: >-
-          The fortified area providing defense and strategic advantages, located
-          in the southern part of the map.
+        description: A stronghold area with a fort and defensive structures.
         coordinates:
           from:
-            x: 8
-            'y': 6
-          to:
             x: 10
-            'y': 8
+            'y': 4
+          to:
+            x: 13
+            'y': 4
+      - name: Armory Area
+        description: An area containing an armory for equipment and supplies.
+        coordinates:
+          from:
+            x: 3
+            'y': 4
+          to:
+            x: 3
+            'y': 4
