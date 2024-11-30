@@ -1,5 +1,3 @@
 Dummy 0x04
 KnightsVillagersBandits1201000203_Map
 KnightsVillagersBandits1201000203_Changes
-NoblesEvilDoers201004C03_Map
-NoblesEvilDoers201004C03_Changes

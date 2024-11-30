@@ -28,6 +28,7 @@ Definitions/Characters.s
 Definitions/Portraits.s
 Definitions/Chapters.s
 Definitions/EventPointers.s
+Definitions/Maps.s
 
 # CSV-related ignores.
 CSV/Tables/*.event
