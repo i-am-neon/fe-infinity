@@ -1,3 +1,4 @@
+import { BattleQuote } from "@/types/BattleQuote.ts";
 import type { ChapterDataForCsv } from "./ChapterDataForCsv.ts";
 import type { ChapterEvent } from "./ChapterEvent.ts";
 import type { ChapterMap } from "./ChapterMap.ts";
@@ -11,5 +12,6 @@ export type RomChapter = {
   chapterEvent: ChapterEvent;
   chapterMap: ChapterMap;
   genericCharacters: GenericCharacter[];
+  battleQuotes: BattleQuote[];
 };
 

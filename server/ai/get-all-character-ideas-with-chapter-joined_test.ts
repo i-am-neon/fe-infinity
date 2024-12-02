@@ -11,7 +11,9 @@ const mockMainCharacter: CharacterIdea = {
   age: "young adult",
   backstory: "Eirika hails from the royal family...",
   firstSeenAs: "ally",
-  description: "Eirika has long blue hair and a determined gaze.",
+  deathQuote: "generic death quote[A][X]",
+  inGameDescription: "something something[X]",
+  physicalDescription: "something",
 };
 
 const mockPlayableCharacter1: CharacterIdea = {
@@ -21,7 +23,9 @@ const mockPlayableCharacter1: CharacterIdea = {
   age: "young adult",
   backstory: "A young knight serving the royal family...",
   firstSeenAs: "ally",
-  description: "Franz is a young man with short blonde hair.",
+  deathQuote: "generic death quote[A][X]",
+  inGameDescription: "something something[X]",
+  physicalDescription: "something",
 };
 
 const mockPlayableCharacter2: CharacterIdea = {
@@ -31,7 +35,9 @@ const mockPlayableCharacter2: CharacterIdea = {
   age: "young adult",
   backstory: "A skilled pegasus knight from the kingdom...",
   firstSeenAs: "ally",
-  description: "Vanessa has red hair and wears light armor.",
+  deathQuote: "generic death quote[A][X]",
+  inGameDescription: "something something[X]",
+  physicalDescription: "something",
 };
 
 const mockBossCharacter1: CharacterIdea = {
@@ -41,7 +47,9 @@ const mockBossCharacter1: CharacterIdea = {
   age: "mature adult",
   backstory: "A fearsome general known for his cruelty...",
   firstSeenAs: "boss",
-  description: "Valter wears dark armor and has a menacing expression.",
+  deathQuote: "generic death quote[A][X]",
+  inGameDescription: "something something[X]",
+  physicalDescription: "something",
 };
 
 const mockBossCharacter2: CharacterIdea = {
@@ -51,7 +59,9 @@ const mockBossCharacter2: CharacterIdea = {
   age: "mature adult",
   backstory: "A fearsome general known for his cruelty...",
   firstSeenAs: "boss",
-  description: "Valter wears dark armor and has a menacing expression.",
+  deathQuote: "generic death quote[A][X]",
+  inGameDescription: "something something[X]",
+  physicalDescription: "something",
 };
 
 const mockStoryArc: StoryArc = {

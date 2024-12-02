@@ -28,7 +28,12 @@ export default function appendToFileInRomBuilderSync({
 if (import.meta.main) {
   appendToFileInRomBuilderSync({
     pathWithinRomBuilder: "hello.txt",
-    content: "Hello World!!",
+    content: "Hello World 1",
+    isOnNewLine: true,
+  });
+  appendToFileInRomBuilderSync({
+    pathWithinRomBuilder: "hello.txt",
+    content: "Hello World 2",
     isOnNewLine: true,
   });
 }

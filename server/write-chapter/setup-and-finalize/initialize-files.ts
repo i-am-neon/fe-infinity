@@ -41,6 +41,14 @@ Defeat All[X]
 Escape[X]
 `
   );
+  await writeFileToRomBuilder(
+    `CSV/EAFiles/BattleQuotes.event`,
+    `
+//UnspecifiedBattleConvo(Character,Chapter,EventID,TextID)
+//SpecifiedBattleConvo(Character1,Character2,Chapter,EventID,TextID)
+
+`
+  );
   await writeFileToRomBuilder(`Text/Chapters/build/Names.s`, "");
   await writeFileToRomBuilder("Text/Chapters/build/DeathQuotes.s", "");
   await writeFileToRomBuilder(

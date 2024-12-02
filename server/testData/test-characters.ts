@@ -67,6 +67,9 @@ I wanted to do more...[A][A][X]`,
   csvData: seraphinaCsvData,
   portraitMetadata: seraphinaPortraitMetadata,
   chapterJoined: 0,
+  physicalDescription: "",
+  inGameDescription: "",
+  deathQuote: "",
 };
 
 export const liraPortraitMetadata: PortraitMetadata = {
@@ -132,6 +135,9 @@ I wanted to do more...[A][X]`,
   csvData: liraCsvData,
   portraitMetadata: liraPortraitMetadata,
   chapterJoined: 0,
+  physicalDescription: "",
+  inGameDescription: "",
+  deathQuote: "",
 };
 
 export const igorPortraitMetadata: PortraitMetadata = {
@@ -197,6 +203,9 @@ I wanted to do more...[A][A][X]`,
   csvData: igorCsvData,
   portraitMetadata: igorPortraitMetadata,
   chapterJoined: 0,
+  physicalDescription: "",
+  inGameDescription: "",
+  deathQuote: "",
 };
 
 export const ligmaPortraitMetadata: PortraitMetadata = {
@@ -262,6 +271,9 @@ I wanted to do more...[A][X]`,
   csvData: ligmaCsvData,
   portraitMetadata: ligmaPortraitMetadata,
   chapterJoined: 0,
+  physicalDescription: "",
+  inGameDescription: "",
+  deathQuote: "",
 };
 
 const cesarianCsvData: CharacterDataForCsv = {
@@ -304,6 +316,8 @@ export const cesarianGenericCharacter: GenericCharacter = {
   csvData: cesarianCsvData,
   formattedDescription: `A generic enemy soldier.[X]`,
   chapterJoined: 0,
+  physicalDescription: "",
+  inGameDescription: "",
 };
 
 export const pinkDancerPortraitMetadata: PortraitMetadata = {

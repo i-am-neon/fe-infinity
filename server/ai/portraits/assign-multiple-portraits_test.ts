@@ -14,7 +14,9 @@ const mockCharacterIdeas: CharacterIdea[] = [
     age: "young adult",
     backstory: "Elara hails from the Kingdom of Aetheria...",
     firstSeenAs: "ally",
-    description: "Elara is a young woman with silver hair and blue eyes.",
+    deathQuote: "generic death quote[A][X]",
+        inGameDescription: "something something[X]",
+        physicalDescription: "something",
   },
   {
     name: "Thalen",
@@ -23,7 +25,9 @@ const mockCharacterIdeas: CharacterIdea[] = [
     age: "mature adult",
     backstory: "A seasoned warrior from Eldoria...",
     firstSeenAs: "enemy non-boss",
-    description: "Thalen is a tall man with grizzled features.",
+    deathQuote: "generic death quote[A][X]",
+        inGameDescription: "something something[X]",
+        physicalDescription: "something",
   },
 ];
 
