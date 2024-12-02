@@ -12,6 +12,7 @@ import chapterTitleToChapterId from "@/ai/utilities/chapter-title-to-chapter-id.
 import { Game } from "@/types/Game.ts";
 import getChapterNumberDisplayText from "@/ai/utilities/get-chapter-number-display-text.ts";
 import { allMapOptions } from "@/map-processing/all-map-options.ts";
+import getAllBattleQuotes from "@/ai/assemble-chapter-event/battle-quotes/get-all-battle-quotes.ts";
 
 export default async function generateGame({
   worldIdea,
@@ -77,6 +78,39 @@ export default async function generateGame({
   );
   const chapterEvents = await Promise.all(chapterEventPromises);
 
+  const chapterIdToBattleQuotesPromises = storyArc.chapterIdeas.map(
+    async (chapterIdea, index) => {
+      const chapterNumberToAssemble = index;
+      const chapterId = chapterTitleToChapterId(chapterIdea.chapterTitle);
+      const _battleQuotes = await getAllBattleQuotes({
+        existingPartyCharacters: allRomCharacters.filter(
+          (c) =>
+            c.firstSeenAs !== "boss" &&
+            c.chapterJoined < chapterNumberToAssemble
+        ),
+        newPlayableCharacters: allRomCharacters.filter(
+          (c) =>
+            c.chapterJoined === chapterNumberToAssemble &&
+            c.firstSeenAs !== "boss"
+        ),
+        boss: allRomCharacters.find(
+          (c) =>
+            c.chapterJoined === chapterNumberToAssemble &&
+            c.firstSeenAs === "boss"
+        )!,
+        chapterId,
+      });
+
+      return {
+        chapterId,
+        battleQuotes: _battleQuotes,
+      };
+    }
+  );
+  const chapterIdToBattleQuotes = await Promise.all(
+    chapterIdToBattleQuotesPromises
+  );
+
   const allRomChapters: RomChapter[] = chapterEvents.map(
     (chapterEvent, chapterNumber) => {
       const thisChapterTitle =
@@ -90,6 +124,14 @@ export default async function generateGame({
         chapterId,
         mapName: chapterMap.name,
       });
+      const battleQuotes = chapterIdToBattleQuotes.find(
+        (chapterIdToBattleQuote) =>
+          chapterIdToBattleQuote.chapterId === chapterId
+      )?.battleQuotes;
+
+      if (!battleQuotes) {
+        throw new Error(`No battle quotes found for chapterId ${chapterId}`);
+      }
 
       return {
         chapterId,
@@ -101,7 +143,7 @@ export default async function generateGame({
         chapterEvent,
         chapterMap: chapterMap,
         genericCharacters: [],
-        battleQuotes: [],
+        battleQuotes,
       };
     }
   );

@@ -5,6 +5,7 @@ import {
   InBattleConversationSchema,
 } from "@/types/in-battle-conversation.ts";
 import { z } from "zod";
+import replaceApostrophes from "@/ai/assemble-chapter-event/generate-scene/replace-apostrophes.ts";
 
 export default async function generateBattleQuote({
   character1,
@@ -33,7 +34,10 @@ The conversation should be a brief back and forth, with each character speaking 
     temperature: 1,
   });
 
-  return conversation;
+  return conversation.map((c) => ({
+    characterName: c.characterName,
+    dialogue: replaceApostrophes(c.dialogue),
+  }));
 }
 
 if (import.meta.main) {

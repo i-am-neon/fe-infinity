@@ -65,11 +65,11 @@ Deno.test("should pair each existingPartyCharacter with the boss", () => {
     },
   ];
 
-  const pairs = getBattleConversationPairs(
+  const pairs = getBattleConversationPairs({
     existingPartyCharacters,
     newPlayableCharacters,
-    boss
-  );
+    boss,
+  });
   assertEquals(pairs, [
     { character1: existingPartyCharacters[0], character2: boss },
     { character1: existingPartyCharacters[1], character2: boss },
@@ -149,11 +149,11 @@ Deno.test("should pair each newPlayableCharacter with the boss", () => {
     },
   ];
 
-  const pairs = getBattleConversationPairs(
+  const pairs = getBattleConversationPairs({
     existingPartyCharacters,
     newPlayableCharacters,
-    boss
-  );
+    boss,
+  });
   assertEquals(pairs, [
     { character1: existingPartyCharacters[0], character2: boss },
     { character1: existingPartyCharacters[1], character2: boss },
@@ -235,11 +235,11 @@ Deno.test(
       },
     ];
 
-    const pairs = getBattleConversationPairs(
+    const pairs = getBattleConversationPairs({
       existingPartyCharacters,
       newPlayableCharacters,
-      boss
-    );
+      boss,
+    });
     assertEquals(pairs, [
       { character1: existingPartyCharacters[0], character2: boss },
       { character1: existingPartyCharacters[1], character2: boss },
@@ -322,11 +322,11 @@ Deno.test(
       },
     ];
 
-    const pairs = getBattleConversationPairs(
+    const pairs = getBattleConversationPairs({
       existingPartyCharacters,
       newPlayableCharacters,
-      boss
-    );
+      boss,
+    });
     assertEquals(pairs, [
       { character1: existingPartyCharacters[0], character2: boss },
       { character1: existingPartyCharacters[1], character2: boss },

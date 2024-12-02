@@ -3,7 +3,7 @@ import { InBattleConversation } from "@/types/in-battle-conversation.ts";
 export default function formatBattleQuoteText(
   battleQuoteText: InBattleConversation
 ): string {
-  const MAX_LINE_LENGTH = 30;
+  const MAX_LINE_LENGTH = 29;
   let formattedText = "";
 
   const wrapText = (text: string): string[] => {

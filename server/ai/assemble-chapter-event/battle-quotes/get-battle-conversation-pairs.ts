@@ -1,10 +1,14 @@
 import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 
-export default function getBattleConversationPairs(
-  existingPartyCharacters: CharacterIdea[],
-  newPlayableCharacters: CharacterIdea[],
-  boss: CharacterIdea
-): { character1: CharacterIdea; character2: CharacterIdea }[] {
+export default function getBattleConversationPairs({
+  existingPartyCharacters,
+  newPlayableCharacters,
+  boss,
+}: {
+  existingPartyCharacters: CharacterIdea[];
+  newPlayableCharacters: CharacterIdea[];
+  boss: CharacterIdea;
+}): { character1: CharacterIdea; character2: CharacterIdea }[] {
   const pairs: { character1: CharacterIdea; character2: CharacterIdea }[] = [];
 
   // Pair each existingPartyCharacter with the boss
