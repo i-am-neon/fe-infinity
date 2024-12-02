@@ -56,7 +56,7 @@ export const TEST_GAME: Game = {
         endingScene:
           "Text(Outside_Village_Day,the_gathering_storm_PostBattleScene)",
         localDefinitions: [""],
-        text: "## the_gathering_storm_PreBattleScene\n[ConversationText]\n[MidLeft][LoadLyra][MidRight][LoadZalrix]\nLyra! We must talk about the Order of the Slumbering One.\n[MidLeft]I know, Zalrix. Their influence is spreading, and we can't ignore it any longer.\n[MidRight]Exactly. We need to gather allies from the House of Aelora to confront Garrick.\n[MidLeft]Garrick... the rogue knight who has been terrorizing the region. He was once one of us.\n[MidRight]His ambition has turned him into a monster. We must stop him before he gains more power.\n[MidLeft]I can feel the dark energy of the sigils lingering in the air. It's unsettling.\n[MidRight]We need to act quickly. If we unite the factions, we can confront him together.\n[MidLeft]Then it's settled. Let's gather our allies and prepare for battle. We will not let our homeland fall to darkness![X]\n\n## the_gathering_storm_PostBattleScene\n[ConversationText]\n[MidRight][LoadZalrix][MidLeft][LoadLyra]\nWe did it, Lyra. Garrick is defeated.\n[MidRight]But at what cost? The village... so many lost.[CloseSpeech][MoveLeft][FarLeft][LoadGarrick]\n[FarLeft]You think you can stop the tide of ambition? You are a fool.[A]\n[MidRight]His ambition led to this destruction. We must unite the factions to prevent this from happening again.\n[MidLeft]You're right, Zalrix. We can't let the Slumbering One rise again. We need allies, and we need them now.\n[MidRight]The House of Aelora has always been divided. But if we can show them the threat we face, they might listen.\n[MidLeft]And the other factions? They won't trust us easily.\n[MidRight]Then we must earn their trust. We have to prove that unity is our only path forward.\n[MidLeft]For the fallen, and for the future of Eldralis! Let's gather our allies and prepare for the true fight ahead.[X]\n\n## LyraGarrickBattleText\n[ConversationText]\n[MidLeft][LoadLyra][MidRight][LoadGarrick]\n[MidLeft]Garrick! Your ambition has blinded you. You must be stopped.\n[MidRight]Lyra... you were always too soft. You don't have the strength to face me.\n[MidLeft]I have the strength of my convictions, Garrick. And that's more than enough to defeat you.\n[MidRight]We'll see about that. Prepare yourself, Lyra. This ends now![X]",
+        text: "## the_gathering_storm_PreBattleScene\n[ConversationText]\n[MidLeft][LoadLyra][MidRight][LoadZalrix]\nLyra! We must talk about the Order of the Slumbering One.\n[MidLeft]I know, Zalrix. Their influence is spreading, and we can't ignore it any longer.\n[MidRight]Exactly. We need to gather allies from the House of Aelora to confront Garrick.\n[MidLeft]Garrick... the rogue knight who has been terrorizing the region. He was once one of us.\n[MidRight]His ambition has turned him into a monster. We must stop him before he gains more power.\n[MidLeft]I can feel the dark energy of the sigils lingering in the air. It's unsettling.\n[MidRight]We need to act quickly. If we unite the factions, we can confront him together.\n[MidLeft]Then it's settled. Let's gather our allies and prepare for battle. We will not let our homeland fall to darkness![X]\n\n## the_gathering_storm_PostBattleScene\n[ConversationText]\n[MidRight][LoadZalrix][MidLeft][LoadLyra]\nWe did it, Lyra. Garrick is defeated.\n[MidRight]But at what cost? The village... so many lost.[CloseSpeech][MoveLeft][FarLeft][LoadGarrick]\n[FarLeft]You think you can stop the tide of ambition? You are a fool.[A]\n[MidRight]His ambition led to this destruction. We must unite the factions to prevent this from happening again.\n[MidLeft]You're right, Zalrix. We can't let the Slumbering One rise again. We need allies, and we need them now.\n[MidRight]The House of Aelora has always been divided. But if we can show them the threat we face, they might listen.\n[MidLeft]And the other factions? They won't trust us easily.\n[MidRight]Then we must earn their trust. We have to prove that unity is our only path forward.\n[MidLeft]For the fallen, and for the future of Eldralis! Let's gather our allies and prepare for the true fight ahead.[X]",
       },
       chapterMap: {
         name: "KnightsVillagersBandits1201000203",
@@ -67,8 +67,26 @@ export const TEST_GAME: Game = {
         {
           character1: "Lyra",
           character2: "Garrick",
-          chapterEventPointer: "the_gathering_storm", // just chapter name! change prop name
+          chapterId: "the_gathering_storm",
           conversationTextPointer: "LyraGarrickBattleText",
+          conversation: [
+            { characterName: "Lyra", dialogue: "Garrick! Why are you here?" },
+            {
+              characterName: "Garrick",
+              dialogue:
+                "This is my calling, Lyra! None of you here ever cared about me. You threw me to the wind after one simple mistake!",
+            },
+            {
+              characterName: "Lyra",
+              dialogue:
+                "You committed a crime, Garrick. I don't have any regrets. Do you?",
+            },
+            {
+              characterName: "Garrick",
+              dialogue: "I regret letting you live... That changes now!",
+            },
+            { characterName: "Lyra", dialogue: "I see you won't be swayed..." },
+          ],
         },
       ],
     },
