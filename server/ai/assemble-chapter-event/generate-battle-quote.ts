@@ -21,7 +21,7 @@ export default async function generateBattleQuote({
 You will be given two characters and a chapter idea. You must generate a conversation between the two characters
 that fits the chapter idea.
 
-The conversation should be a brief back and forth, with each character speaking at least once. and maximum two separate turns.`;
+The conversation should be a brief back and forth, with each character speaking at least once. and maximum three separate turns.`;
   const { conversation } = await generateStructuredData({
     systemMessage,
     prompt: `Character 1: ${JSON.stringify(
