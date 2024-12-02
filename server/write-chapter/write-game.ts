@@ -8,19 +8,22 @@ import initializeFiles from "@/write-chapter/setup-and-finalize/initialize-files
 export default async function writeGame(game: Game): Promise<void> {
   await initializeFiles();
 
-  game.chapters.forEach((romChapter) => {
-    assembleAndWriteWholeChapter(romChapter);
-  });
+  // Create arrays of promises for chapters and characters
+  const chapterPromises = game.chapters.map((romChapter) =>
+    assembleAndWriteWholeChapter(romChapter)
+  );
 
-  game.characters.forEach((character) => {
-    writeAllCharacterData(character);
-  });
+  const characterPromises = game.characters.map((character) =>
+    writeAllCharacterData(character)
+  );
 
+  // Wait for all promises to complete
+  await Promise.all([...chapterPromises, ...characterPromises]);
+
+  // Finalize files after all async operations are complete
   finalizeFiles();
 }
 
 if (import.meta.main) {
   await writeGame(TEST_GAME);
-  // await writeGame(TEST_GAME);
 }
-
