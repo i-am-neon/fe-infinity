@@ -24,8 +24,9 @@ export const mainCharacterIdeaExample: CharacterIdea = {
   backstory:
     "Elara grew up in the small village of Eldergrove, nestled between the Whispering Woods and the Silver Mountains. As the daughter of a renowned herbalist, she learned the ways of nature and healing from a young age. However, her peaceful life was shattered when a dark sorcerer began to plague the land, corrupting the forests and threatening her home. Driven by a desire to protect her village and restore balance, Elara set out on a quest to confront the sorcerer. Her strengths lie in her deep connection to nature and her ability to heal, but she struggles with self-doubt and the fear of failure. Along her journey, she seeks to uncover the truth about her family's past and the ancient magic that flows through her veins, ultimately discovering her own potential as a powerful force for good.",
   firstSeenAs: "ally",
-  description:
-    "Elara is a young woman with long, flowing auburn hair and bright green eyes that reflect her connection to nature. She wears a simple yet elegant tunic adorned with leaves and flowers, symbolizing her bond with the earth. Her demeanor is warm and inviting, but her resolve is unyielding when it comes to protecting those she loves.",
+  deathQuote: "generic death quote[A][X]",
+  inGameDescription: "something something[X]",
+  physicalDescription: "something",
 };
 
 export const worldSummaryExample: WorldSummary = {
@@ -169,8 +170,9 @@ export const storyArcExample: StoryArc = {
           backstory:
             "Kiran hails from the rugged mountains of Drakthar, where he trained as a dragon rider. He left his home in search of adventure and to prove himself as a warrior. His carefree attitude often leads him into trouble, but his loyalty to friends is unwavering.",
           firstSeenAs: "ally",
-          description:
-            "Kiran is a tall young man with tousled black hair and a mischievous grin. He wears a leather vest and trousers suited for riding, with a dragon insignia emblazoned on his back.",
+          deathQuote: "generic death quote[A][X]",
+          inGameDescription: "something something[X]",
+          physicalDescription: "something",
         },
       ],
       boss: {
@@ -182,8 +184,9 @@ export const storyArcExample: StoryArc = {
         backstory:
           "Once a respected member of the Council of Sigils, Sorren turned to dark magic in his quest for power. He seeks to harness the sigils to awaken the slumbering god, believing it will grant him ultimate control over Eldralis.",
         firstSeenAs: "boss",
-        description:
-          "Sorren is a tall man with sharp features and piercing blue eyes. He wears dark robes adorned with sigils, and his presence exudes an aura of danger.",
+        deathQuote: "generic death quote[A][X]",
+        inGameDescription: "something something[X]",
+        physicalDescription: "something",
       },
       preChapterScene:
         "Elara receives word that the dark sorcerer Sorren has been corrupting the forests near her village, threatening the balance of nature. Determined to protect her home, she sets out to confront him, seeking allies along the way. In her journey, she encounters Kiran, a brash dragon rider eager for adventure.",
@@ -204,8 +207,9 @@ export const storyArcExample: StoryArc = {
           backstory:
             "Lyra is a member of the Council of Sigils, tasked with maintaining order in Valoria. She has seen the rise and fall of many leaders and carries the weight of her decisions heavily. Her past is shrouded in mystery, and she harbors secrets about the sigils that could change everything.",
           firstSeenAs: "allied NPC",
-          description:
-            "Lyra is a dignified woman with silver hair and deep-set eyes that seem to hold centuries of wisdom. She wears elegant robes adorned with sigils, symbolizing her status within the Council.",
+          deathQuote: "generic death quote[A][X]",
+          inGameDescription: "something something[X]",
+          physicalDescription: "something",
         },
       ],
       boss: {
@@ -217,8 +221,9 @@ export const storyArcExample: StoryArc = {
         backstory:
           "Varek is a former member of the Council who was ousted for his extreme views on the use of sigils. He now leads a faction that seeks to control the sigils for their own gain, believing that only through power can peace be achieved.",
         firstSeenAs: "boss",
-        description:
-          "Varek is a muscular man with a commanding presence, dressed in ornate armor that reflects his status. His eyes burn with ambition, and he carries a large sigil-imbued weapon.",
+        deathQuote: "generic death quote[A][X]",
+        inGameDescription: "something something[X]",
+        physicalDescription: "something",
       },
       preChapterScene:
         "Elara and Kiran arrive at the Emerald City, seeking the Council's guidance on the Veil's plans. They are met with skepticism, as the Council is divided on how to handle the growing threat.",
@@ -239,8 +244,9 @@ export const storyArcExample: StoryArc = {
         backstory:
           "Morrigan is a guardian of the Ruins of Eldar, tasked with protecting the secrets of the sigils. She has witnessed the rise and fall of kingdoms and knows the true nature of the slumbering god. Her motives are unclear, and she tests those who seek her knowledge.",
         firstSeenAs: "boss",
-        description:
-          "Morrigan is an ancient woman with long, flowing white hair and eyes that seem to hold the wisdom of ages. She wears robes that shimmer with sigils, and her presence commands respect.",
+        deathQuote: "generic death quote[A][X]",
+        inGameDescription: "something something[X]",
+        physicalDescription: "something",
       },
       preChapterScene:
         "Elara, Kiran, and Lyra arrive at the Ruins of Eldar, where they hope to uncover the truth about the sigils and the slumbering god. As they explore the ancient site, they are confronted by visions of the past, revealing the consequences of the sigils' misuse. Morrigan appears, challenging their intentions and testing their resolve.",

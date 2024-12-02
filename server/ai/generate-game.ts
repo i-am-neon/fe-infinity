@@ -101,6 +101,7 @@ export default async function generateGame({
         chapterEvent,
         chapterMap: chapterMap,
         genericCharacters: [],
+        battleQuotes: [],
       };
     }
   );

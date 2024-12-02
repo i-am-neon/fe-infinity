@@ -5,6 +5,7 @@ import writeAllCharacterData from "@/write-chapter/characters/write-all-characte
 import writeChapterMap from "@/write-chapter/map/write-chapter-map.ts";
 import writeChapterName from "@/write-chapter/write-chapter-name.ts";
 import type { RomChapter } from "../types/RomChapter.ts";
+import writeBattleQuotes from "@/write-chapter/write-battle-quotes.ts";
 
 export default async function assembleAndWriteWholeChapter(
   chapter: RomChapter
@@ -24,6 +25,8 @@ export default async function assembleAndWriteWholeChapter(
   await writeChapterMap({
     chapterMap: chapter.chapterMap,
   });
+
+  writeBattleQuotes(chapter.battleQuotes);
 
   // TODO: move generic characters to Character array? not sure
   for (const character of chapter.genericCharacters) {

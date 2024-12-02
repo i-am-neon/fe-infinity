@@ -1,4 +1,4 @@
-import { mostRecentTestGame, TEST_GAME } from "@/testData/test-game-obj.ts";
+import { TEST_GAME } from "@/testData/test-game-obj.ts";
 import { Game } from "@/types/Game.ts";
 import assembleAndWriteWholeChapter from "@/write-chapter/assemble-and-write-whole-chapter.ts";
 import writeAllCharacterData from "@/write-chapter/characters/write-all-character-data.ts";
@@ -20,7 +20,7 @@ export default async function writeGame(game: Game): Promise<void> {
 }
 
 if (import.meta.main) {
-  await writeGame(mostRecentTestGame);
+  await writeGame(TEST_GAME);
   // await writeGame(TEST_GAME);
 }
 

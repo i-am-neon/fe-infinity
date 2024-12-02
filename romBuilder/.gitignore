@@ -36,6 +36,7 @@ CSV/Tables/**/*.event
 !CSV/Tables/TableDefinitions.event
 CSV/Tables/Characters/CharacterTable.csv
 CSV/Tables/ChapterData/ChapterDataTable.csv
+CSV/EAFiles/BattleQuotes.event
 
 # Map-related ignores.
 Maps/MasterMapInstaller.event
