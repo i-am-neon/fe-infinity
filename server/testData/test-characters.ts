@@ -59,8 +59,6 @@ export const seraphinaCharacter: RomCharacter = {
   backstory:
     "Seraphina was raised in a remote village where she learned archery from her father. Despite her peaceful upbringing, she always felt a calling to help those in need. When her village was attacked, she joined the resistance as an archer, using her skills to protect the innocent.",
   firstSeenAs: "ally",
-  description:
-    "Seraphina is a skilled archer, known for her precision and ability to heal her allies. She has a strong sense of justice and a kind heart.",
   formattedDescription: `A talented archer who[NL]
 fights with both magic and[NL]
 healing skills.[X]`,
@@ -126,8 +124,6 @@ export const liraCharacter: RomCharacter = {
   backstory:
     "Lira grew up in a noble family but chose a different path, abandoning her title to become a mercenary. Her skill with a bow quickly gained her a reputation as one of the best archers in the land. She now fights for those who can afford her services.",
   firstSeenAs: "allied NPC",
-  description:
-    "Lira is a confident and agile archer who has a sharp tongue but a soft spot for the underdog. Her noble origins are hinted at by her refined manners.",
   formattedDescription: `A talented archer who[NL]
 fights with both magic and[NL]
 healing skills.[X]`,
@@ -193,8 +189,6 @@ export const igorCharacter: RomCharacter = {
   backstory:
     "Once a soldier in the royal army, Igor left his post after his unit was betrayed by corrupt officials. He has since become a wandering protector, fighting for justice wherever he goes.",
   firstSeenAs: "enemy non-boss",
-  description:
-    "Igor is a veteran soldier with a gruff exterior but a strong moral compass. He distrusts authority but remains fiercely loyal to those he considers his allies.",
   formattedDescription: `A talented archer who[NL]
 fights with both magic and[NL]
 healing skills.[X]`,
@@ -260,8 +254,6 @@ export const ligmaCharacter: RomCharacter = {
   backstory:
     "Ligma grew up as a hunter in a small village, where he honed his archery skills. He joined the war effort not out of a sense of duty, but for the thrill of adventure. Despite his carefree attitude, he's reliable in a fight.",
   firstSeenAs: "ally",
-  description:
-    "Ligma is a cheerful archer who often cracks jokes in the heat of battle. His easygoing nature makes him popular among the troops.",
   formattedDescription: `A talented archer who[NL]
 fights with both magic and[NL]
 healing skills.[X]`,
@@ -309,8 +301,6 @@ export const cesarianGenericCharacter: GenericCharacter = {
   backstory:
     "A career soldier, Cesarian has served in many battles and carries the scars of countless skirmishes. He follows orders without question, serving as a model for new recruits.",
   firstSeenAs: "enemy non-boss",
-  description:
-    "Cesarian is a seasoned soldier who carries himself with a calm, stoic demeanor. He is disciplined and prefers to let his actions speak for him.",
   csvData: cesarianCsvData,
   formattedDescription: `A generic enemy soldier.[X]`,
   chapterJoined: 0,

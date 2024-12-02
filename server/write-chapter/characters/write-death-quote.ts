@@ -7,14 +7,9 @@ export default function writeDeathQuote({
   characterName: string;
   formattedDeathQuote: string;
 }): void {
-  const characterDeathQuote = `
-## ${characterName}DeathText
-[FarRight][Load${characterName}]
-${formattedDeathQuote}`;
-
   appendToFileInRomBuilderSync({
     pathWithinRomBuilder: "Text/Chapters/build/DeathQuotes.s",
-    content: characterDeathQuote,
+    content: formattedDeathQuote,
     isOnNewLine: true,
   });
 

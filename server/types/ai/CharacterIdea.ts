@@ -19,7 +19,20 @@ export const CharacterIdeaSchema = z.object({
     z.literal("enemy non-boss"),
     z.literal("boss"),
   ]),
-  description: z.string(),
+  physicalDescription: z
+    .string()
+    .describe("A physical description of the character"),
+  inGameDescription: z
+    .string()
+    .max(90)
+    .describe(
+      "very short one sentence description to be shown in-game, must not include the character's name, maximum 90 characters"
+    ),
+  deathQuote: z
+    .string()
+    .describe(
+      "What the character says when they die, 1-2 sentences. Must not include quotation marks."
+    ),
 });
 
 export type CharacterIdea = z.infer<typeof CharacterIdeaSchema>;

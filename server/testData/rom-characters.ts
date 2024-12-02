@@ -10,8 +10,6 @@ export const exampleRomCharacters: RomCharacter[] = [
     backstory:
       "Lyra hails from Valoria, where she grew up in the shadow of the Council of Elders. Her parents were farmers, instilling in her a deep appreciation for the land and its bounty. However, when a rival faction from Drakthar raided their village, she witnessed the devastation caused by the sigils' corruption firsthand. This traumatic event ignited her determination to fight against the chaos that the sigils have wrought. Lyra possesses a natural affinity for healing magic, which she uses to aid those affected by the conflicts. Her compassion is both her strength and her weakness; she often puts others' needs before her own, leading to moments of self-doubt and vulnerability. Motivated by a desire to restore peace to Eldralis, she embarks on a journey to unite the kingdoms against the Veil, believing that only through cooperation can they overcome the darkness. Along her journey, she learns to harness her powers more effectively and confronts her own fears, ultimately becoming a beacon of hope for those around her.",
     firstSeenAs: "ally",
-    description:
-      "A young woman with long, flowing auburn hair and bright green eyes, often seen wearing practical yet elegant clothing suitable for travel. She carries a staff adorned with symbols of healing.",
     portraitMetadata: {
       originalImageName: "2.png",
       gender: "female",
@@ -77,8 +75,6 @@ export const exampleRomCharacters: RomCharacter[] = [
     backstory:
       "Elias is a former soldier from Drakthar who grew disillusioned with the endless conflict between the kingdoms. After witnessing the destruction caused by the sigils, he left his homeland in search of a new purpose. He crosses paths with Lyra and, despite his initial reluctance, joins her cause, believing that perhaps there is still hope for peace.",
     firstSeenAs: "ally",
-    description:
-      "A rugged man with short, dark hair and piercing blue eyes, often clad in worn armor that tells tales of past battles.",
     portraitMetadata: {
       originalImageName: "3.png",
       gender: "male",
@@ -144,8 +140,6 @@ export const exampleRomCharacters: RomCharacter[] = [
     backstory:
       "Lyra hails from Valoria, where she grew up in the shadow of the Council of Elders. Her parents were farmers, instilling in her a deep appreciation for the land and its bounty. However, when a rival faction from Drakthar raided their village, she witnessed the devastation caused by the sigils' corruption firsthand. This traumatic event ignited her determination to fight against the chaos that the sigils have wrought. Lyra possesses a natural affinity for healing magic, which she uses to aid those affected by the conflicts. Her compassion is both her strength and her weakness; she often puts others' needs before her own, leading to moments of self-doubt and vulnerability. Motivated by a desire to restore peace to Eldralis, she embarks on a journey to unite the kingdoms against the Veil, believing that only through cooperation can they overcome the darkness. Along her journey, she learns to harness her powers more effectively and confronts her own fears, ultimately becoming a beacon of hope for those around her.",
     firstSeenAs: "ally",
-    description:
-      "A young woman with long, flowing auburn hair and bright green eyes, often seen wearing practical yet elegant clothing suitable for travel. She carries a staff adorned with symbols of healing.",
     portraitMetadata: {
       originalImageName: "4.png",
       gender: "female",
@@ -211,8 +205,6 @@ export const exampleRomCharacters: RomCharacter[] = [
     backstory:
       "Mira is a high-ranking member of the Veil, once a respected scholar who became obsessed with the sigils' power. She believes that by awakening the slumbering god, she can reshape Eldralis to her vision, free from the Council's influence. Her cunning and manipulation make her a formidable foe, willing to sacrifice anything for her goals.",
     firstSeenAs: "boss",
-    description:
-      "A tall woman with long, dark hair and an imposing presence, often dressed in dark robes that shimmer with sigil-like patterns.",
     portraitMetadata: {
       originalImageName: "0.png",
       gender: "female",
