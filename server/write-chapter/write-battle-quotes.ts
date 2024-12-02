@@ -3,12 +3,15 @@ import appendToFileInRomBuilderSync from "@/fileIO/append-to-file-in-rom-builder
 import formatBattleQuoteText from "@/ai/assemble-rom-character/format-battle-quote-text.ts";
 
 export default function writeBattleQuotes(battleQuotes: BattleQuote[]): void {
+  let hexNumber = 0x1;
   for (const battleQuote of battleQuotes) {
     const { character1, character2, chapterId, conversationTextPointer } =
       battleQuote;
     appendToFileInRomBuilderSync({
       pathWithinRomBuilder: "CSV/EAFiles/BattleQuotes.event",
-      content: `SpecifiedBattleConvo(${character1},${character2},${chapterId},0x0,${conversationTextPointer})`,
+      content: `SpecifiedBattleConvo(${character1},${character2},${chapterId},0x${hexNumber.toString(
+        16
+      )},${conversationTextPointer})`,
       isOnNewLine: true,
     });
     appendToFileInRomBuilderSync({
@@ -18,6 +21,7 @@ export default function writeBattleQuotes(battleQuotes: BattleQuote[]): void {
       )}`,
       isOnNewLine: true,
     });
+    hexNumber++;
   }
 }
 
