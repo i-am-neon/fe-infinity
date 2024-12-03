@@ -1,9 +1,10 @@
+import generateCharacterStartingAreas from "@/ai/assemble-chapter-event/generate-unit-line/generate-character-starting-areas.ts";
+import generateGenericStartingAreas from "@/ai/assemble-chapter-event/generate-unit-line/generate-generic-starting-areas.ts";
+import generateUnitCoords from "@/ai/assemble-chapter-event/generate-unit-line/generate-unit-coords.ts";
 import generateUnitLine from "@/ai/assemble-chapter-event/generate-unit-line/generate-unit-line.ts";
-import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import { MapData } from "@/map-processing/types/MapData.ts";
 import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
-import generateUnitCoords from "@/ai/assemble-chapter-event/generate-unit-line/generate-unit-coords.ts";
-import generateCharacterStartingAreas from "@/ai/assemble-chapter-event/generate-unit-line/generate-character-starting-areas.ts";
+import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 
 export default async function getUnitsArray({
   characters,
@@ -20,6 +21,12 @@ export default async function getUnitsArray({
 }): Promise<string[]> {
   const characterStartingAreas = await generateCharacterStartingAreas({
     characters,
+    map,
+    chapterData,
+  });
+
+  const genericStartingAreas = await generateGenericStartingAreas({
+    characterStartingAreas,
     map,
     chapterData,
   });
