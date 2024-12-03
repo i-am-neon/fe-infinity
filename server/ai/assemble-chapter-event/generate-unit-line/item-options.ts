@@ -135,7 +135,7 @@ export const WEAPON_OPTIONS: Record<WeaponType, string[]> = {
 export const ITEMS = [
   "Vulnerary",
   "Elixir",
-  "Pure Water",
+  "PureWater",
   "Antitoxin",
   "Torch",
   "ChestKey",
@@ -169,3 +169,4 @@ export const ITEMS = [
 ];
 
 export const ALL_ITEMS = [...ITEMS, ...Object.values(WEAPON_OPTIONS).flat()];
+

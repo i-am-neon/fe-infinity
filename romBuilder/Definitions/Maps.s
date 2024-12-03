@@ -1,3 +1,3 @@
 Dummy 0x04
-KnightsVillagersBandits103C00CE3E_Map
-KnightsVillagersBandits103C00CE3E_Changes
+MagesMercenaries342004344_Map
+MagesMercenaries342004344_Changes
