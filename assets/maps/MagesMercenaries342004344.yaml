@@ -1,7 +1,7 @@
 name: MagesMercenaries342004344
 description: >-
-  A desert-themed map featuring various terrains including cliffs, forests, and
-  lakes, with several points of interest such as forts and houses.
+  A desert-themed map featuring various terrains including cliffs, roads, and
+  points of interest such as forts and houses.
 tmx: >
   <?xml version="1.0" encoding="UTF-8"?>
 
@@ -461,14 +461,30 @@ pointsOfInterest:
   - x: 1
     'y': 18
     type: Village Entrance
+visitable:
+  - x: 1
+    'y': 8
+    type: House
+  - x: 0
+    'y': 10
+    type: Armory
+  - x: 6
+    'y': 11
+    type: Vendor
+  - x: 7
+    'y': 12
+    type: House
+  - x: 1
+    'y': 18
+    type: Village Entrance
 areas:
   - name: Northern Desert
     description: >-
-      A vast expanse of desert terrain with cliffs to the east and a few
+      A vast area of desert terrain with cliffs on the eastern side and a few
       scattered points of interest.
     subAreas:
       - name: Cliffside
-        description: The area along the cliffs with limited access and visibility.
+        description: The elevated cliff area on the eastern edge of the map.
         coordinates:
           from:
             x: 8
@@ -477,19 +493,19 @@ areas:
             x: 11
             'y': 2
       - name: Desert Plains
-        description: Open desert area with minimal obstacles.
+        description: The expansive desert area in the northern part of the map.
         coordinates:
           from:
             x: 0
             'y': 0
           to:
-            x: 7
+            x: 19
             'y': 2
   - name: Central Forts
-    description: The central area containing multiple forts and strategic locations.
+    description: The central area containing multiple forts and roads connecting them.
     subAreas:
       - name: Fort Area
-        description: Contains two forts that can be captured for strategic advantage.
+        description: 'The area containing the two forts located at (11, 1) and (11, 3).'
         coordinates:
           from:
             x: 10
@@ -497,22 +513,20 @@ areas:
           to:
             x: 12
             'y': 3
-      - name: Vendor and Armory
-        description: A small area with a vendor and an armory for supplies.
+      - name: Roads and Paths
+        description: The network of roads connecting the forts and surrounding areas.
         coordinates:
           from:
             x: 0
-            'y': 10
+            'y': 7
           to:
-            x: 1
-            'y': 11
+            x: 19
+            'y': 9
   - name: Southern Village
-    description: >-
-      A village area with houses and a village entrance, providing a safe zone
-      for players.
+    description: The southern area featuring a village entrance and several houses.
     subAreas:
       - name: Village Entrance
-        description: 'The main entrance to the village, a key point for player interaction.'
+        description: 'The entrance to the village located at (1, 18).'
         coordinates:
           from:
             x: 1
@@ -520,12 +534,12 @@ areas:
           to:
             x: 1
             'y': 18
-      - name: Residential Area
-        description: Houses and community spaces for NPC interactions.
+      - name: Houses
+        description: 'The area containing houses located at (1, 8) and (7, 12).'
         coordinates:
           from:
             x: 1
-            'y': 7
+            'y': 8
           to:
             x: 7
             'y': 12

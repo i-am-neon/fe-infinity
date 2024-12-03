@@ -474,27 +474,32 @@ pointsOfInterest:
   - x: 9
     'y': 17
     type: Stairs
+visitable:
+  - x: 1
+    'y': 1
+    type: Chest
+  - x: 19
+    'y': 10
+    type: Chest
 areas:
   - name: Northern Building
     description: >-
-      A large indoor area with multiple rooms and a central staircase leading to
-      the upper levels.
+      An indoor area with walls and floors, containing a chest and multiple
+      staircases.
     subAreas:
       - name: Throne Room
         description: >-
-          The main room with a throne and decorative elements, located at the
-          center of the northern building.
+          A large room with a red carpet and pillars, located at the center of
+          the northern building.
         coordinates:
           from:
             x: 0
             'y': 0
           to:
             x: 19
-            'y': 5
-      - name: Treasure Room
-        description: >-
-          A room containing a chest, located in the northeastern corner of the
-          northern building.
+            'y': 8
+      - name: Chest Room
+        description: 'A room containing a chest located at (1, 1).'
         coordinates:
           from:
             x: 1
@@ -503,9 +508,7 @@ areas:
             x: 1
             'y': 1
       - name: Staircase Area
-        description: >-
-          An area with multiple staircases leading to different levels of the
-          building.
+        description: An area with multiple staircases leading to different levels.
         coordinates:
           from:
             x: 16
@@ -515,51 +518,51 @@ areas:
             'y': 2
   - name: Southern Plains
     description: >-
-      An outdoor area with open fields and pathways, featuring various terrains
-      like plains and forests.
+      An outdoor area with plains and forests, featuring roads and multiple
+      staircases.
     subAreas:
-      - name: Central Pathway
-        description: A main pathway that connects different areas of the southern plains.
-        coordinates:
-          from:
-            x: 0
-            'y': 6
-          to:
-            x: 19
-            'y': 17
       - name: Forest Area
         description: >-
-          A section filled with trees and foliage, providing cover and strategic
+          A region filled with trees and bushes, providing cover and strategic
           advantages.
         coordinates:
           from:
-            x: 4
+            x: 8
             'y': 6
           to:
+            x: 9
+            'y': 16
+      - name: Road Area
+        description: >-
+          A pathway connecting different parts of the southern plains,
+          facilitating movement.
+        coordinates:
+          from:
             x: 6
-            'y': 8
+            'y': 5
+          to:
+            x: 19
+            'y': 10
   - name: Western Wing
     description: >-
-      An indoor area with walls and pillars, featuring a staircase leading to
-      the upper levels.
+      An area characterized by walls and floors, with a focus on defensive
+      structures.
     subAreas:
-      - name: Pillar Room
-        description: >-
-          A room characterized by several pillars, providing a unique layout for
-          combat.
+      - name: Wall Corridor
+        description: 'A narrow corridor lined with walls, leading to various rooms.'
         coordinates:
           from:
             x: 0
-            'y': 5
+            'y': 3
           to:
             x: 3
-            'y': 11
-      - name: Stairs to Lower Level
-        description: A staircase leading down to the lower levels of the western wing.
+            'y': 3
+      - name: Pillar Room
+        description: 'A room with pillars and walls, providing a defensive position.'
         coordinates:
           from:
-            x: 1
-            'y': 11
+            x: 0
+            'y': 10
           to:
-            x: 1
-            'y': 11
+            x: 3
+            'y': 17

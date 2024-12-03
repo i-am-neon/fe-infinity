@@ -1,22 +1,22 @@
-import { pointsOfInterestNames } from "@/map-processing/lookup-tables/points-of-interest-names.ts";
 import { MapLocation } from "@/map-processing/get-info-from-tmx/get-info-from-tmx.ts";
+import { visitableTerrainNames } from "@/map-processing/lookup-tables/visitable-terrain-names.ts";
 
-export default function getPointsOfInterestFromTerrainGrid(
+export default function getVisitableFromTerrainGrid(
   terrainGrid: string[][]
 ): MapLocation[] {
-  const pointsOfInterest: MapLocation[] = [];
+  const visitable: MapLocation[] = [];
 
   for (let y = 0; y < terrainGrid.length; y++) {
     for (let x = 0; x < terrainGrid[y].length; x++) {
       const terrainType = terrainGrid[y][x];
 
       // Check if the terrain type is a point of interest
-      if (pointsOfInterestNames.includes(terrainType)) {
-        pointsOfInterest.push({ x, y, type: terrainType });
+      if (visitableTerrainNames.includes(terrainType)) {
+        visitable.push({ x, y, type: terrainType });
       }
     }
   }
 
-  return pointsOfInterest;
+  return visitable;
 }
 

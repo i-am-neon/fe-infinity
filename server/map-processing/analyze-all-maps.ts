@@ -21,8 +21,14 @@ export default async function analyzeAllMaps(): Promise<void> {
         );
       }
 
-      const { tileset, height, width, terrainGrid, pointsOfInterest } =
-        getInfoFromTmx(rawTmx);
+      const {
+        tileset,
+        height,
+        width,
+        terrainGrid,
+        pointsOfInterest,
+        visitable,
+      } = getInfoFromTmx(rawTmx);
       const mapName = getMapNameFromTmxUrl(mapUrl.tmx);
 
       const finalTmx = prepareTmx({
@@ -50,6 +56,7 @@ export default async function analyzeAllMaps(): Promise<void> {
         width,
         terrainGrid,
         pointsOfInterest,
+        visitable,
         areas,
       };
 
@@ -69,3 +76,4 @@ export default async function analyzeAllMaps(): Promise<void> {
 if (import.meta.main) {
   await analyzeAllMaps();
 }
+

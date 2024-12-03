@@ -1,8 +1,8 @@
 name: KnightsVillagersBandits1201000203
 description: >-
   A diverse map featuring plains, forests, and various structures including
-  houses, a vendor, and fortifications, with a mix of open areas and enclosed
-  spaces.
+  houses, a vendor, and fortifications, set in a village environment with
+  multiple points of interest.
 tmx: >
   <?xml version="1.0" encoding="UTF-8"?>
 
@@ -367,15 +367,37 @@ pointsOfInterest:
   - x: 11
     'y': 14
     type: Village Entrance
+visitable:
+  - x: 5
+    'y': 1
+    type: House
+  - x: 3
+    'y': 2
+    type: Vendor
+  - x: 3
+    'y': 4
+    type: Armory
+  - x: 2
+    'y': 8
+    type: Village Entrance
+  - x: 0
+    'y': 11
+    type: House
+  - x: 6
+    'y': 14
+    type: House
+  - x: 11
+    'y': 14
+    type: Village Entrance
 areas:
   - name: Northern Plains
     description: >-
       An open area with plains and a few forest patches, providing space for
-      movement and strategy.
+      movement and engagement.
     subAreas:
       - name: Central Plains
         description: >-
-          A large open space in the center of the northern area, ideal for troop
+          A large open space in the northern part of the map, ideal for troop
           movement.
         coordinates:
           from:
@@ -385,9 +407,7 @@ areas:
             x: 14
             'y': 3
       - name: Northern Forest
-        description: >-
-          A forested area in the northern part, offering cover and strategic
-          positioning.
+        description: A forested area providing cover and strategic positioning.
         coordinates:
           from:
             x: 4
@@ -396,12 +416,10 @@ areas:
             x: 4
             'y': 3
   - name: Central Village
-    description: >-
-      A village area with houses and a vendor, serving as a hub for resources
-      and interactions.
+    description: 'The main village area containing houses, a vendor, and an armory.'
     subAreas:
       - name: Vendor Area
-        description: A small area where players can interact with a vendor for supplies.
+        description: 'Location of the vendor, providing supplies and items.'
         coordinates:
           from:
             x: 3
@@ -409,33 +427,42 @@ areas:
           to:
             x: 3
             'y': 2
-      - name: House Area
-        description: A cluster of houses providing shelter and potential resources.
+      - name: Armory
+        description: A building where players can acquire weapons and armor.
+        coordinates:
+          from:
+            x: 3
+            'y': 4
+          to:
+            x: 3
+            'y': 4
+      - name: Houses
+        description: Residential buildings that may provide shelter or quests.
         coordinates:
           from:
             x: 0
-            'y': 1
+            'y': 11
           to:
-            x: 5
-            'y': 1
+            x: 0
+            'y': 11
   - name: Southern Fortifications
     description: 'A fortified area with walls and a fort, providing defensive positions.'
     subAreas:
-      - name: Fort Area
-        description: A stronghold area with a fort and defensive structures.
+      - name: Fort Gate
+        description: 'The entrance to the fort, a key strategic point.'
+        coordinates:
+          from:
+            x: 11
+            'y': 2
+          to:
+            x: 11
+            'y': 2
+      - name: Southern Fort
+        description: A stronghold that can be used for defense or as a base.
         coordinates:
           from:
             x: 10
-            'y': 4
+            'y': 8
           to:
-            x: 13
-            'y': 4
-      - name: Armory Area
-        description: An area containing an armory for equipment and supplies.
-        coordinates:
-          from:
-            x: 3
-            'y': 4
-          to:
-            x: 3
-            'y': 4
+            x: 10
+            'y': 8

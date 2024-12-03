@@ -1,4 +1,4 @@
-import { PointOfInterest } from "@/map-processing/get-info-from-tmx/get-info-from-tmx.ts";
+import { MapLocation } from "@/map-processing/get-info-from-tmx/get-info-from-tmx.ts";
 import { MapArea } from "@/types/ai/MapAreas.ts";
 
 export type MapData = {
@@ -8,6 +8,8 @@ export type MapData = {
   height: number;
   width: number;
   terrainGrid: string[][];
-  pointsOfInterest: PointOfInterest[];
+  pointsOfInterest: MapLocation[];
+  visitable: MapLocation[];
   areas: MapArea[];
 };
+
