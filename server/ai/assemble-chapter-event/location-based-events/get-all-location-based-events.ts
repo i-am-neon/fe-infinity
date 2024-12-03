@@ -1,5 +1,6 @@
 import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
 import { MapLocation } from "@/types/map-location.ts";
+import getChestItems from "@/ai/assemble-chapter-event/location-based-events/get-chest-items.ts";
 
 export default async function getAllLocationBasedEvents({
   chapterIdea,
@@ -20,9 +21,10 @@ export default async function getAllLocationBasedEvents({
 
   for (const tile of interactableTiles) {
     if (tile.type === "Chest") {
-      locationBasedEvents.push(`A chest is hidden in the corner of the room.`);
+      locationBasedEvents.push(
+        getChestItems({ xCoord: tile.x, yCoord: tile.y })
+      );
     } else if (tile.type === "Door") {
-      locationBasedEvents.push(`A door is locked.`);
       // Visitable
     } else if (
       tile.type === "Village Entrance" ||
@@ -30,10 +32,8 @@ export default async function getAllLocationBasedEvents({
       tile.type === "Inn" ||
       tile.type === "Visitable Ruins"
     ) {
-      locationBasedEvents.push(`A village is nearby.`);
       // Shops
     } else if (tile.type === "Armory" || tile.type === "Vendor") {
-      locationBasedEvents.push(`A shop is nearby.`);
     }
   }
 

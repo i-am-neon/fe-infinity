@@ -117,7 +117,7 @@ export default async function assembleChapterEvent({
     eventDataReference: getEventDataReferenceFromChapterId(chapterId),
     turnBasedEvents: undefined,
     characterBasedEvents: undefined,
-    locationBasedEvents: undefined,
+    locationBasedEvents,
     miscBasedEvents: "DefeatAll(EndingScene)",
     trapData: undefined,
     units: unitsArray.join("\n"),
