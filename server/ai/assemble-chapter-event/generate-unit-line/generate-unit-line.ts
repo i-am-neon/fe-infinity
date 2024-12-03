@@ -14,6 +14,24 @@ export default async function generateUnitLine({
   xCoord: number;
   yCoord: number;
 }): Promise<string> {
+  let allegiance = "";
+  switch (characterIdea.firstSeenAs) {
+    case "ally":
+      allegiance = "Ally";
+      break;
+    case "allied NPC":
+      allegiance = "NPC";
+      break;
+    case "enemy non-boss":
+      allegiance = "Enemy";
+      break;
+    case "boss":
+      allegiance = "Enemy";
+      break;
+    default:
+      break;
+  }
+
   const isBoss = characterIdea.firstSeenAs === "boss";
   const level = isBoss ? randomInt(1, 2) : randomInt(15, 20);
   const inventory = await generateInventory({
@@ -27,9 +45,7 @@ export default async function generateUnitLine({
 
   return `UNIT ${
     characterIdea.name
-  } ${characterClass} ${commanderName} Level(${level}, ${
-    isBoss ? "Enemy" : "Ally"
-  }, True) [${xCoord}, ${yCoord}] 0x00 0x00 0x0 0x00 [${inventory.join(
+  } ${characterClass} ${commanderName} Level(${level}, ${allegiance}, True) [${xCoord}, ${yCoord}] 0x00 0x00 0x0 0x00 [${inventory.join(
     ", "
   )}] ${isBoss ? "GuardTileAI" : "NoAI"}`;
 }

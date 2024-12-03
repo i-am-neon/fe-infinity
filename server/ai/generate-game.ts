@@ -80,6 +80,7 @@ export default async function generateGame({
         )!,
         map: chapterIdToMap[chapterTitleToChapterId(chapterIdea.chapterTitle)],
         nextChapterId,
+        isPrologue: chapterNumberToAssemble === 0,
       });
     }
   );
