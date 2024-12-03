@@ -77,7 +77,7 @@ export const WEAPON_OPTIONS: Record<WeaponType, string[]> = {
     "Arcthunder",
     "Bolagnone",
     "Arcwind",
-    "Ragnarok",
+    // "Ragnarok",
     "Elwind",
     "Thoron",
     "Tornado",

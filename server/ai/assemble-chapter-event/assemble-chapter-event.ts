@@ -11,6 +11,7 @@ import type { ChapterEvent } from "@/types/ChapterEvent.ts";
 import { RomCharacter } from "@/types/RomCharacter.ts";
 import generateScene from "./generate-scene/generate-scene.ts";
 import getAllLocationBasedEvents from "@/ai/assemble-chapter-event/location-based-events/get-all-location-based-events.ts";
+import getAllRecruitEvents from "@/ai/assemble-chapter-event/recruit-events/get-all-recruit-events.ts";
 
 export default async function assembleChapterEvent({
   chapterIdea,
@@ -19,6 +20,7 @@ export default async function assembleChapterEvent({
   boss,
   map,
   nextChapterId,
+  isPrologue,
 }: {
   chapterIdea: ChapterIdea;
   existingPartyCharacters: RomCharacter[];
@@ -26,6 +28,7 @@ export default async function assembleChapterEvent({
   boss: RomCharacter;
   map: MapData;
   nextChapterId?: string;
+  isPrologue: boolean;
 }): Promise<ChapterEvent> {
   const existingPartyCharacterIdeas: CharacterIdea[] =
     existingPartyCharacters.map((c) => ({ ...c }));
@@ -40,7 +43,16 @@ export default async function assembleChapterEvent({
     preBattleScene,
     postBattleScene,
     unitsArray,
-    { locationBasedEvents, localDefinitions, text: locationBasedEventsText },
+    {
+      locationBasedEvents,
+      localDefinitions: locationBasedLocalDefs,
+      text: locationBasedEventsText,
+    },
+    {
+      characterBasedEvents,
+      localDefinitions: recruitLocalDefs,
+      sceneTexts: recruitSceneTexts,
+    },
   ] = await Promise.all([
     generateScene({
       sceneOverview: chapterIdea.preChapterScene,
@@ -77,6 +89,17 @@ export default async function assembleChapterEvent({
     getAllLocationBasedEvents({
       chapterIdea,
       interactableTiles: map.interactableTiles,
+    }),
+    getAllRecruitEvents({
+      // In prologue all characters are new playable characters
+      existingPartyCharacters: isPrologue
+        ? newPlayableCharacterIdeas.filter((c) => c.firstSeenAs === "ally")
+        : existingPartyCharacterIdeas,
+      newPlayableCharacters: isPrologue
+        ? newPlayableCharacterIdeas.filter((c) => c.firstSeenAs !== "ally")
+        : newPlayableCharacterIdeas,
+      preChapterScene: chapterIdea.preChapterScene,
+      battleOverview: chapterIdea.battleOverview,
     }),
   ]);
 
@@ -123,18 +146,19 @@ export default async function assembleChapterEvent({
   return {
     eventDataReference: getEventDataReferenceFromChapterId(chapterId),
     turnBasedEvents: undefined,
-    characterBasedEvents: undefined,
+    characterBasedEvents,
     locationBasedEvents,
     miscBasedEvents: "DefeatAll(EndingScene)",
     trapData: undefined,
     units: unitsArray.join("\n"),
     beginningScene,
     endingScene,
-    localDefinitions,
+    localDefinitions: [...locationBasedLocalDefs, ...recruitLocalDefs],
     text: [
       preBattleTextScene,
       postBattleTextScene,
       ...locationBasedEventsText,
+      ...recruitSceneTexts,
     ].join("\n\n"),
   };
 }
@@ -151,6 +175,7 @@ if (import.meta.main) {
     boss: exampleRomCharacters[3],
     map: allMapOptions[0],
     nextChapterId: "Chapter1",
+    isPrologue: false,
   });
   console.log(JSON.stringify(res, null, 2));
 }
