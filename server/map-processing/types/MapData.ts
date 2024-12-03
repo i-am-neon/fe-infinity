@@ -1,5 +1,5 @@
-import { MapLocation } from "@/map-processing/get-info-from-tmx/get-info-from-tmx.ts";
 import { MapArea } from "@/types/ai/MapAreas.ts";
+import { MapLocation } from "@/types/map-location.ts";
 
 export type MapData = {
   name: string;

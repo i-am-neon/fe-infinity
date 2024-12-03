@@ -73,14 +73,22 @@ export default async function assembleChapterEvent({
         ...existingPartyCharacters.map((c) => ({
           characterIdea: { ...c },
           characterClass: c.csvData.defaultClass,
+          startingAllegiance: "ally" as "ally",
         })),
         ...newPlayableCharacters.map((c) => ({
           characterIdea: { ...c },
           characterClass: c.csvData.defaultClass,
+          startingAllegiance:
+            c.firstSeenAs === "ally"
+              ? ("ally" as "ally")
+              : c.firstSeenAs === "enemy non-boss"
+              ? ("enemy" as "enemy")
+              : ("npc" as "npc"),
         })),
         {
           characterIdea: bossIdea,
           characterClass: boss.csvData.defaultClass,
+          startingAllegiance: "enemy" as "enemy",
         },
       ],
       map,
