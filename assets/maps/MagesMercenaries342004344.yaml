@@ -461,6 +461,22 @@ pointsOfInterest:
   - x: 1
     'y': 18
     type: Village Entrance
+interactableTiles:
+  - x: 1
+    'y': 8
+    type: House
+  - x: 0
+    'y': 10
+    type: Armory
+  - x: 6
+    'y': 11
+    type: Vendor
+  - x: 7
+    'y': 12
+    type: House
+  - x: 1
+    'y': 18
+    type: Village Entrance
 areas:
   - name: Northern Desert
     description: >-
@@ -468,7 +484,9 @@ areas:
       scattered points of interest.
     subAreas:
       - name: Cliffside
-        description: The area along the cliffs with limited access and visibility.
+        description: >-
+          The area along the cliffs with limited access, providing strategic
+          high ground.
         coordinates:
           from:
             x: 8
@@ -477,7 +495,9 @@ areas:
             x: 11
             'y': 2
       - name: Desert Plains
-        description: Open desert area with minimal obstacles.
+        description: >-
+          Open desert area with few obstacles, allowing for movement and
+          exploration.
         coordinates:
           from:
             x: 0
@@ -486,10 +506,12 @@ areas:
             x: 7
             'y': 2
   - name: Central Forts
-    description: The central area containing multiple forts and strategic locations.
+    description: >-
+      A central area dominated by forts and roads, serving as a strategic point
+      for battles.
     subAreas:
       - name: Fort Area
-        description: Contains two forts that can be captured for strategic advantage.
+        description: Contains multiple forts that can be captured or defended.
         coordinates:
           from:
             x: 10
@@ -497,35 +519,33 @@ areas:
           to:
             x: 12
             'y': 3
-      - name: Vendor and Armory
-        description: A small area with a vendor and an armory for supplies.
+      - name: Roads and Paths
+        description: Connecting roads that facilitate movement between different areas.
         coordinates:
           from:
-            x: 0
-            'y': 10
+            x: 7
+            'y': 8
           to:
-            x: 1
-            'y': 11
+            x: 11
+            'y': 9
   - name: Southern Village
-    description: >-
-      A village area with houses and a village entrance, providing a safe zone
-      for players.
+    description: 'A village area with houses and a vendor, providing resources and shelter.'
     subAreas:
       - name: Village Entrance
-        description: 'The main entrance to the village, a key point for player interaction.'
+        description: 'The main entry point to the village, marked by walls and a house.'
         coordinates:
           from:
             x: 1
             'y': 18
           to:
-            x: 1
+            x: 2
             'y': 18
-      - name: Residential Area
-        description: Houses and community spaces for NPC interactions.
+      - name: Vendor Area
+        description: A small area where players can purchase items and supplies.
         coordinates:
           from:
-            x: 1
-            'y': 7
+            x: 6
+            'y': 11
           to:
-            x: 7
-            'y': 12
+            x: 6
+            'y': 11

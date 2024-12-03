@@ -1,11 +1,11 @@
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
+import cleanText from "@/lib/clean-text/clean-text.ts";
 import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import {
   InBattleConversation,
   InBattleConversationSchema,
 } from "@/types/in-battle-conversation.ts";
 import { z } from "zod";
-import replaceApostrophes from "@/ai/assemble-chapter-event/generate-scene/replace-apostrophes.ts";
 
 export default async function generateBattleQuote({
   character1,
@@ -36,7 +36,7 @@ The conversation should be a brief back and forth, with each character speaking 
 
   return conversation.map((c) => ({
     characterName: c.characterName,
-    dialogue: replaceApostrophes(c.dialogue),
+    dialogue: cleanText(c.dialogue),
   }));
 }
 

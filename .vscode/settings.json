@@ -3,4 +3,8 @@
   "deno.lint": true,
   "search.useIgnoreFiles": false,
   "search.useGlobalIgnoreFiles": false,
+  "cSpell.words": [
+    "interactable",
+    "tileset"
+  ],
 }

@@ -3,6 +3,6 @@
 //SpecifiedBattleConvo(Character1,Character2,Chapter,EventID,TextID)
 
 
-SpecifiedBattleConvo(Kaelan,Ronan,the_siege_of_everglen,0x1,battle_quote_Kaelan_Ronan)
-SpecifiedBattleConvo(Serelith,Ronan,the_siege_of_everglen,0x2,battle_quote_Serelith_Ronan)
+SpecifiedBattleConvo(Eldrin,Vesper,the_gathering_storm,0x1,battle_quote_Eldrin_Vesper)
+SpecifiedBattleConvo(Bryndis,Vesper,the_gathering_storm,0x2,battle_quote_Bryndis_Vesper)
 BYTE 0xF0 0xF0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 // Terminator

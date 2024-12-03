@@ -68,7 +68,7 @@ if (import.meta.main) {
     eventDataReference: "PrologueEvent",
     turnBasedEvents: undefined,
     characterBasedEvents: undefined,
-    locationBasedEvents: undefined,
+    locationBasedEvents: `Chest(AngelicRobe,10,9)`,
     miscBasedEvents: "DefeatAll(EndingScene)",
     trapData: undefined,
     units: undefined,
@@ -247,16 +247,13 @@ when they choose to strike![A][X]
 `,
   };
 
-  console.log(
-    "Path to rom builder dir:",
-    assembleAndWriteChapterEventAndText({
-      chapterEvent: testData,
-      chapterId: "Some_Name",
-      chapterTitle: "Some Name",
-      objectiveTextPointer: "PrologueStatusText",
-      formattedObjectiveText: "Defeat all[NL]\nunits.[X]",
-      isPrologue: true,
-    })
-  );
+  await assembleAndWriteChapterEventAndText({
+    chapterEvent: testData,
+    chapterId: "Some_Name",
+    chapterTitle: "Some Name",
+    objectiveTextPointer: "PrologueStatusText",
+    formattedObjectiveText: "Defeat all[NL]\nunits.[X]",
+    isPrologue: true,
+  });
 }
 

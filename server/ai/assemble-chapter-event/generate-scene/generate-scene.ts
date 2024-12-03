@@ -1,9 +1,9 @@
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
+import cleanText from "@/lib/clean-text/clean-text.ts";
 import { mainCharacterIdeaExample, storyArcExample } from "@/testData/ai.ts";
 import type { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import { z } from "zod";
 import { backgroundOptions } from "./background-options.ts";
-import replaceApostrophes from "./replace-apostrophes.ts";
 
 export default async function generateScene({
   sceneOverview,
@@ -113,7 +113,7 @@ That's a short example of an opening scene. Yours may be longer.
   return {
     sceneContent,
     textSceneName,
-    textSceneContent: replaceApostrophes(textSceneContent),
+    textSceneContent: cleanText(textSceneContent),
   };
 }
 

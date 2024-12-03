@@ -10,7 +10,7 @@ import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import type { ChapterEvent } from "@/types/ChapterEvent.ts";
 import { RomCharacter } from "@/types/RomCharacter.ts";
 import generateScene from "./generate-scene/generate-scene.ts";
-import getAllBattleQuotes from "@/ai/assemble-chapter-event/battle-quotes/get-all-battle-quotes.ts";
+import getAllLocationBasedEvents from "@/ai/assemble-chapter-event/location-based-events/get-all-location-based-events.ts";
 
 export default async function assembleChapterEvent({
   chapterIdea,
@@ -36,7 +36,12 @@ export default async function assembleChapterEvent({
   const chapterId = chapterTitleToChapterId(chapterIdea.chapterTitle);
 
   // Run async functions in parallel
-  const [preBattleScene, postBattleScene, unitsArray] = await Promise.all([
+  const [
+    preBattleScene,
+    postBattleScene,
+    unitsArray,
+    { locationBasedEvents, localDefinitions, text: locationBasedEventsText },
+  ] = await Promise.all([
     generateScene({
       sceneOverview: chapterIdea.preChapterScene,
       existingPartyCharacters: existingPartyCharacterIdeas,
@@ -68,6 +73,10 @@ export default async function assembleChapterEvent({
       ],
       map,
       chapterData: { ...chapterIdea },
+    }),
+    getAllLocationBasedEvents({
+      chapterIdea,
+      interactableTiles: map.interactableTiles,
     }),
   ]);
 
@@ -108,18 +117,25 @@ export default async function assembleChapterEvent({
     postBattleSceneContent +
     (nextChapterId ? `\nMoveToChapter(${nextChapterId})` : "");
 
+  const preBattleTextScene = `## ${preBattleTextSceneId}\n[ConversationText]\n${preBattleTextSceneContent}[X]\n\n`;
+  const postBattleTextScene = `## ${postBattleTextSceneId}\n[ConversationText]\n${postBattleTextSceneContent}[X]`;
+
   return {
     eventDataReference: getEventDataReferenceFromChapterId(chapterId),
     turnBasedEvents: undefined,
     characterBasedEvents: undefined,
-    locationBasedEvents: undefined,
+    locationBasedEvents,
     miscBasedEvents: "DefeatAll(EndingScene)",
     trapData: undefined,
     units: unitsArray.join("\n"),
     beginningScene,
     endingScene,
-    localDefinitions: [""],
-    text: `## ${preBattleTextSceneId}\n[ConversationText]\n${preBattleTextSceneContent}[X]\n\n## ${postBattleTextSceneId}\n[ConversationText]\n${postBattleTextSceneContent}[X]`,
+    localDefinitions,
+    text: [
+      preBattleTextScene,
+      postBattleTextScene,
+      ...locationBasedEventsText,
+    ].join("\n\n"),
   };
 }
 

@@ -1,10 +1,10 @@
 import { pointsOfInterestNames } from "@/map-processing/lookup-tables/points-of-interest-names.ts";
-import { PointOfInterest } from "@/map-processing/get-info-from-tmx/get-info-from-tmx.ts";
+import { MapLocation } from "@/types/map-location.ts";
 
 export default function getPointsOfInterestFromTerrainGrid(
   terrainGrid: string[][]
-): PointOfInterest[] {
-  const pointsOfInterest: PointOfInterest[] = [];
+): MapLocation[] {
+  const pointsOfInterest: MapLocation[] = [];
 
   for (let y = 0; y < terrainGrid.length; y++) {
     for (let x = 0; x < terrainGrid[y].length; x++) {
