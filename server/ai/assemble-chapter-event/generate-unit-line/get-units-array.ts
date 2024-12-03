@@ -35,7 +35,7 @@ export default async function getUnitsArray({
     characters: characters.map((c) => ({
       characterName: c.characterIdea.name,
       characterClass: c.characterClass,
-      startingAllegiance: "ally" as "ally",
+      startingAllegiance: c.startingAllegiance,
     })),
     map,
     chapterData,
