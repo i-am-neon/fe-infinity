@@ -1,7 +1,7 @@
 name: KnightsVillagersBandits103C00CE3E
 description: >-
   A complex map featuring a mix of indoor and outdoor areas, with multiple
-  staircases, walls, and points of interest including chests and stairs.
+  staircases, chests, and varied terrain including plains, forests, and walls.
 tmx: >
   <?xml version="1.0" encoding="UTF-8"?>
 
@@ -487,77 +487,60 @@ interactableTiles:
 areas:
   - name: Northern Building
     description: >-
-      A large structure with multiple rooms and a central area, featuring walls
-      and pillars.
+      An indoor area with multiple rooms and a central staircase leading to the
+      upper levels.
+    coordinates:
+      from:
+        x: 0
+        'y': 0
+      to:
+        x: 19
+        'y': 6
     subAreas:
       - name: Throne Room
-        description: The main room with a red carpet and decorative pillars.
-        coordinates:
-          from:
-            x: 0
-            'y': 0
-          to:
-            x: 9
-            'y': 8
+        description: A large room with a red carpet and decorative pillars.
+        centerCoordinate:
+          x: 10
+          'y': 3
       - name: Treasure Room
-        description: 'A room containing a chest, located in the northwest corner.'
-        coordinates:
-          from:
-            x: 1
-            'y': 1
-          to:
-            x: 1
-            'y': 1
-      - name: Staircase Area
-        description: Area with multiple staircases leading to different levels.
-        coordinates:
-          from:
-            x: 8
-            'y': 6
-          to:
-            x: 16
-            'y': 2
+        description: 'Contains a chest located at (1, 1).'
+        centerCoordinate:
+          x: 1
+          'y': 1
   - name: Southern Plains
     description: >-
-      An open area with plains and forests, providing a contrast to the
-      buildings.
+      An outdoor area with open terrain, trees, and pathways connecting to other
+      areas.
+    coordinates:
+      from:
+        x: 0
+        'y': 7
+      to:
+        x: 19
+        'y': 17
     subAreas:
       - name: Forest Edge
-        description: 'A region filled with trees and bushes, providing cover.'
-        coordinates:
-          from:
-            x: 4
-            'y': 6
-          to:
-            x: 6
-            'y': 8
-      - name: Road
-        description: 'A pathway that connects different areas, facilitating movement.'
-        coordinates:
-          from:
-            x: 6
-            'y': 5
-          to:
-            x: 19
-            'y': 10
+        description: A region with dense trees and varied terrain.
+        centerCoordinate:
+          x: 10
+          'y': 12
+      - name: Roadway
+        description: 'A pathway running through the plains, facilitating movement.'
+        centerCoordinate:
+          x: 10
+          'y': 15
   - name: Western Wing
-    description: 'A section of the map with walls and a door, leading to other areas.'
+    description: A section of the building with walls and a door leading to the outside.
+    coordinates:
+      from:
+        x: 0
+        'y': 0
+      to:
+        x: 6
+        'y': 6
     subAreas:
-      - name: Wall Corridor
-        description: 'A narrow corridor lined with walls, leading to the main building.'
-        coordinates:
-          from:
-            x: 0
-            'y': 3
-          to:
-            x: 3
-            'y': 3
-      - name: Doorway
-        description: 'An entrance leading to the next area, marked by a door.'
-        coordinates:
-          from:
-            x: 18
-            'y': 12
-          to:
-            x: 19
-            'y': 13
+      - name: Entrance Hall
+        description: The main entry point with walls and a door.
+        centerCoordinate:
+          x: 3
+          'y': 3

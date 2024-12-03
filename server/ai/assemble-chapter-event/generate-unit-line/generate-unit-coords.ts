@@ -2,27 +2,29 @@ import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
 import { allMapOptions } from "@/map-processing/all-map-options.ts";
 import { MapData } from "@/map-processing/types/MapData.ts";
 import {
+  igorCharacter,
   ligmaCharacter,
   liraCharacter,
   seraphinaCharacter,
 } from "@/testData/test-characters.ts";
 import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
-import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
+import { CharacterStartingAreas } from "@/types/ai/CharacterStartingArea.ts";
 import { z } from "zod";
 
 const systemMessage = `You are choosing the starting character positions for a Fire Emblem chapter.
 
 Given the character ideas, chapter data, and map data, generate the coordinates for each character on the map.
 
-The "firstSeenAs" property should be handled as such:
-- "ally" means the character is an ally unit. All ally units should start near each other, unless the story dictates otherwise.
-- "allied NPC" means the character starts as a green unit. Where they are placed depends on the chapter idea.
-- "enemy non-boss" means the character starts as an enemy unit, but they can be recruited. They should be placed with other generic enemy units.
-- "boss" means the character is the chapter's boss. See below for more information.
+The "startingAllegiance" property should be handled as such:
+- "ally" means the character is an ally unit and should be placed in the CharacterStartingArea's "playerCharactersStartingAreaName". All ally units should start near each other, unless the story dictates otherwise.
+- "npc" means the character starts as a green unit. Where they are placed depends on the chapter idea.
+- "enemy" means the character starts as an enemy unit. They should be placed with other generic enemy units.
+
+IMPORTANT: Above all you must follow the character starting areas given. Use the Map's area names to get the general coordinate zones for each character.
+
+For example, if the player character starting area is "Eastern Forest", and one of the Map areas is "Eastern Forest" that has two sub-areas with coordinates listed, place those characters.
 
 ## Guidelines for ally placement
-
-Allies typically start in a corner or edge of the map. They don't have to be exactly in the corner or edge, use your best judgement.
 
 Allies should be placed at least diagonal from one another or have one tile between them.
 
@@ -57,15 +59,21 @@ Boss should be placed on the opposite corner or edge of the map as the ally unit
 
 export default async function generateUnitCoords({
   characters,
+  characterStartingAreas,
   chapterData,
   map,
 }: {
-  characters: { characterIdea: CharacterIdea; characterClass: string }[];
+  characters: {
+    characterName: string;
+    characterClass: string;
+    startingAllegiance: "ally" | "npc" | "enemy";
+  }[];
+  characterStartingAreas: CharacterStartingAreas;
   chapterData: Omit<ChapterIdea, "newPlayableCharacters" | "boss">;
   map: MapData;
 }): Promise<
   {
-    characterIdea: CharacterIdea;
+    characterName: string;
     characterClass: string;
     xCoord: number;
     yCoord: number;
@@ -77,7 +85,7 @@ export default async function generateUnitCoords({
       characters,
       null,
       2
-    )}\n\nChapterData: ${JSON.stringify(
+    )}\n\nCharacter Starting Areas: ${characterStartingAreas}\n\nChapterData: ${JSON.stringify(
       chapterData,
       null,
       2
@@ -91,16 +99,15 @@ export default async function generateUnitCoords({
         })
       ),
     }),
+    model: "gpt-4o",
   });
   return characterNameAndCoords.map(({ characterName, xCoord, yCoord }) => {
-    const character = characters.find(
-      (c) => c.characterIdea.name === characterName
-    );
+    const character = characters.find((c) => c.characterName === characterName);
     if (!character) {
       throw new Error(`Character not found: ${characterName}`);
     }
     return {
-      characterIdea: character.characterIdea,
+      characterName: character.characterName,
       characterClass: character.characterClass,
       xCoord,
       yCoord,
@@ -109,21 +116,47 @@ export default async function generateUnitCoords({
 }
 
 if (import.meta.main) {
-  const characters: { characterIdea: CharacterIdea; characterClass: string }[] =
-    [
+  const characters: {
+    characterName: string;
+    characterClass: string;
+    startingAllegiance: "ally" | "npc" | "enemy";
+  }[] = [
+    {
+      characterName: "Seraphina",
+      characterClass: seraphinaCharacter.csvData.defaultClass,
+      startingAllegiance: "ally",
+    },
+    {
+      characterName: "Lira",
+      characterClass: liraCharacter.csvData.defaultClass,
+      startingAllegiance: "npc",
+    },
+    {
+      characterName: "Ligma",
+      characterClass: ligmaCharacter.csvData.defaultClass,
+      startingAllegiance: "ally",
+    },
+    {
+      characterName: "Igor",
+      characterClass: igorCharacter.csvData.defaultClass,
+      startingAllegiance: "enemy",
+    },
+  ];
+
+  const characterStartingAreas: CharacterStartingAreas = {
+    playerCharactersStartingAreaName: "Southern Village",
+    bossStartingAreaName: "Fort Area",
+    npcStartingAreaNames: [
       {
-        characterIdea: { ...seraphinaCharacter },
-        characterClass: seraphinaCharacter.csvData.defaultClass,
+        characterName: "Lira",
+        areaName: "Desert Plains",
       },
       {
-        characterIdea: { ...liraCharacter },
-        characterClass: liraCharacter.csvData.defaultClass,
+        characterName: "Igor",
+        areaName: "Fortified Areas",
       },
-      {
-        characterIdea: { ...ligmaCharacter },
-        characterClass: ligmaCharacter.csvData.defaultClass,
-      },
-    ];
+    ],
+  };
 
   const chapterData: Omit<ChapterIdea, "newPlayableCharacters" | "boss"> = {
     chapterTitle: "Test Chapter",
@@ -139,20 +172,10 @@ if (import.meta.main) {
 
   const res = await generateUnitCoords({
     characters,
+    characterStartingAreas,
     chapterData,
     map: mapData,
   });
-  console.log(
-    "res",
-    JSON.stringify(
-      res.map((c) => ({
-        name: c.characterIdea.name,
-        xCoord: c.xCoord,
-        yCoord: c.yCoord,
-      })),
-      null,
-      2
-    )
-  );
+  console.log(JSON.stringify(res, null, 2));
 }
 

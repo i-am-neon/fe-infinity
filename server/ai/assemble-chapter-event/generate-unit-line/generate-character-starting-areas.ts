@@ -42,6 +42,16 @@ Each character that has its "startingAllegiance" property as "ally" should be pl
 The boss character is the one that has its "firstSeenAs" property as "boss" and should be placed in a separate area that makes sense with the narrative.
 For example if the story has the boss defending the castle, they should be placed at the castle gate, or in the throne room.
 
+Bosses should be placed on these types of tiles. This is an ordered list of priority:
+1. Throne
+2. Castle Gate
+3. Fort Gate
+
+If none of these tiles are available, place the boss on a tile that makes sense for a boss unit. It could be a tile like:
+- Ruins
+- Fort
+- Forest
+
 ## npcStartingAreaNames
 Each character that has its "startingAllegiance" property as "npc" or "enemy" when its "firstSeenAs" property is "enemy non-boss" should be placed in a separate area that makes sense with the narrative. You can have multiple NPCs in different areas.
 
@@ -56,7 +66,6 @@ The area names must be area names from within the map data provided.
     schema: z.object({
       characterStartingAreas: CharacterStartingAreaSchema,
     }),
-    temperature: 1,
   });
 
   return characterStartingAreas;

@@ -8,14 +8,16 @@ export default async function generateStructuredData<T>({
   systemMessage,
   prompt,
   temperature = 0,
+  model = "gpt-4o-mini",
 }: {
   schema: ZodSchema<T>;
   systemMessage: string;
   prompt: string;
   temperature?: number;
+  model?: "gpt-4o-mini" | "gpt-4o";
 }): Promise<T> {
   const { object: result } = await generateObject({
-    model: openai("gpt-4o-mini"),
+    model: openai(model),
     schema,
     system: systemMessage,
     prompt,

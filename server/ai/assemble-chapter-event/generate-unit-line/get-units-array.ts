@@ -32,14 +32,26 @@ export default async function getUnitsArray({
   });
 
   const charactersWithCoords = await generateUnitCoords({
-    characters,
+    characters: characters.map((c) => ({
+      characterName: c.characterIdea.name,
+      characterClass: c.characterClass,
+      startingAllegiance: "ally" as "ally",
+    })),
     map,
     chapterData,
+    characterStartingAreas,
   });
 
   return await Promise.all(
     charactersWithCoords.map(async (c) => {
-      return await generateUnitLine(c);
+      return await generateUnitLine({
+        characterIdea: characters.find(
+          (char) => char.characterIdea.name === c.characterName
+        )?.characterIdea!,
+        characterClass: c.characterClass,
+        xCoord: c.xCoord,
+        yCoord: c.yCoord,
+      });
     })
   );
 }

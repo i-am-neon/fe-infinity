@@ -1,8 +1,8 @@
 name: KnightsVillagersBandits1201000203
 description: >-
-  A diverse map featuring plains, forests, and various structures including
+  A map featuring a mix of plains, forests, and various structures including
   houses, a vendor, and fortifications, set in a village environment with
-  strategic points of interest.
+  pathways connecting different areas.
 tmx: >
   <?xml version="1.0" encoding="UTF-8"?>
 
@@ -390,74 +390,73 @@ interactableTiles:
     'y': 14
     type: Village Entrance
 areas:
-  - name: Northern Plains
+  - name: Northern Village
     description: >-
-      An open area with plains and a few forest patches, providing space for
-      movement and engagement.
-    subAreas:
-      - name: Central Plains
-        description: >-
-          A large open space in the northern part of the map, ideal for troop
-          movement.
-        coordinates:
-          from:
-            x: 0
-            'y': 0
-          to:
-            x: 14
-            'y': 4
-      - name: Northern Forest
-        description: A forested area providing cover and strategic positioning.
-        coordinates:
-          from:
-            x: 4
-            'y': 0
-          to:
-            x: 4
-            'y': 4
-  - name: Central Village
-    description: >-
-      The heart of the village with houses and a vendor, serving as a hub for
-      resources and interactions.
+      The upper section of the map containing houses and a vendor, surrounded by
+      plains and forests.
+    coordinates:
+      from:
+        x: 0
+        'y': 0
+      to:
+        x: 14
+        'y': 8
     subAreas:
       - name: Vendor Area
-        description: A small area where players can interact with a vendor for supplies.
-        coordinates:
-          from:
-            x: 3
-            'y': 2
-          to:
-            x: 3
-            'y': 2
+        description: 'A small area with a vendor located at (3, 2).'
+        centerCoordinate:
+          x: 3
+          'y': 2
       - name: House Area
-        description: A cluster of houses providing shelter and potential resources.
-        coordinates:
-          from:
-            x: 0
-            'y': 11
-          to:
-            x: 5
-            'y': 14
-  - name: Southern Fortifications
-    description: 'A fortified area with walls and a fort, providing defensive positions.'
+        description: >-
+          Contains several houses, including one at (5, 1) and another at (0,
+          11).
+        centerCoordinate:
+          x: 5
+          'y': 1
+  - name: Central Plains
+    description: >-
+      The central area of the map characterized by open plains and pathways
+      leading to various structures.
+    coordinates:
+      from:
+        x: 0
+        'y': 8
+      to:
+        x: 14
+        'y': 12
+    subAreas:
+      - name: Armory
+        description: 'An armory located at (3, 4).'
+        centerCoordinate:
+          x: 3
+          'y': 4
+      - name: Fort Gate
+        description: 'A fort gate located at (11, 2).'
+        centerCoordinate:
+          x: 11
+          'y': 2
+  - name: Southern Forts
+    description: >-
+      The lower section of the map featuring multiple forts and a village
+      entrance, with hills and cliffs.
+    coordinates:
+      from:
+        x: 0
+        'y': 12
+      to:
+        x: 14
+        'y': 16
     subAreas:
       - name: Fort Area
-        description: A stronghold that can be used for defense and strategic planning.
-        coordinates:
-          from:
-            x: 10
-            'y': 8
-          to:
-            x: 13
-            'y': 14
-      - name: Armory Area
         description: >-
-          A location for storing weapons and supplies, crucial for preparing for
-          battles.
-        coordinates:
-          from:
-            x: 3
-            'y': 4
-          to:
-            x: 3
-            'y': 4
+          Contains several forts, including one at (8, 6) and another at (10,
+          8).
+        centerCoordinate:
+          x: 8
+          'y': 6
+      - name: Village Entrance
+        description: 'The entrance to the village located at (2, 8).'
+        centerCoordinate:
+          x: 2
+          'y': 8

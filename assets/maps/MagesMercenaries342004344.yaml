@@ -1,7 +1,7 @@
 name: MagesMercenaries342004344
 description: >-
-  A desert-themed map featuring various terrains including cliffs, forests, and
-  lakes, with several points of interest such as forts and houses.
+  A desert-themed map featuring various terrains including cliffs, forts, and a
+  village, with points of interest such as houses and vendors.
 tmx: >
   <?xml version="1.0" encoding="UTF-8"?>
 
@@ -478,74 +478,80 @@ interactableTiles:
     'y': 18
     type: Village Entrance
 areas:
-  - name: Northern Desert
+  - name: Desert Plains
     description: >-
-      A vast expanse of desert terrain with cliffs to the east and a few
-      scattered points of interest.
+      A vast area of desert terrain with scattered cliffs and a few points of
+      interest like forts and houses.
+    coordinates:
+      from:
+        x: 0
+        'y': 0
+      to:
+        x: 18
+        'y': 9
     subAreas:
-      - name: Cliffside
-        description: >-
-          The area along the cliffs with limited access, providing strategic
-          high ground.
-        coordinates:
-          from:
-            x: 8
-            'y': 0
-          to:
-            x: 11
-            'y': 2
-      - name: Desert Plains
-        description: >-
-          Open desert area with few obstacles, allowing for movement and
-          exploration.
-        coordinates:
-          from:
-            x: 0
-            'y': 0
-          to:
-            x: 7
-            'y': 2
-  - name: Central Forts
-    description: >-
-      A central area dominated by forts and roads, serving as a strategic point
-      for battles.
-    subAreas:
-      - name: Fort Area
-        description: Contains multiple forts that can be captured or defended.
-        coordinates:
-          from:
-            x: 10
-            'y': 1
-          to:
-            x: 12
-            'y': 3
-      - name: Roads and Paths
-        description: Connecting roads that facilitate movement between different areas.
-        coordinates:
-          from:
-            x: 7
-            'y': 8
-          to:
-            x: 11
-            'y': 9
-  - name: Southern Village
-    description: 'A village area with houses and a vendor, providing resources and shelter.'
+      - name: Northern Desert
+        description: The upper section of the desert with cliffs and forts.
+        centerCoordinate:
+          x: 9
+          'y': 4
+      - name: Central Desert
+        description: The middle section with more open desert and some roads.
+        centerCoordinate:
+          x: 9
+          'y': 5
+      - name: Southern Desert
+        description: The lower section with lakes and village entrances.
+        centerCoordinate:
+          x: 9
+          'y': 15
+  - name: Village Area
+    description: A small area containing a village with houses and a vendor.
+    coordinates:
+      from:
+        x: 1
+        'y': 8
+      to:
+        x: 12
+        'y': 18
     subAreas:
       - name: Village Entrance
-        description: 'The main entry point to the village, marked by walls and a house.'
-        coordinates:
-          from:
-            x: 1
-            'y': 18
-          to:
-            x: 2
-            'y': 18
+        description: 'The entrance to the village, marked by a village wall.'
+        centerCoordinate:
+          x: 1
+          'y': 18
       - name: Vendor Area
-        description: A small area where players can purchase items and supplies.
-        coordinates:
-          from:
-            x: 6
-            'y': 11
-          to:
-            x: 6
-            'y': 11
+        description: The area where the vendor is located.
+        centerCoordinate:
+          x: 6
+          'y': 11
+      - name: House Area
+        description: The area containing houses.
+        centerCoordinate:
+          x: 7
+          'y': 12
+  - name: Fortified Areas
+    description: Regions containing forts and strategic points for defense.
+    coordinates:
+      from:
+        x: 8
+        'y': 1
+      to:
+        x: 12
+        'y': 3
+    subAreas:
+      - name: Northern Forts
+        description: 'The northern forts located at (11, 1) and (11, 3).'
+        centerCoordinate:
+          x: 11
+          'y': 2
+      - name: Central Fort
+        description: 'The central fort located at (12, 8).'
+        centerCoordinate:
+          x: 12
+          'y': 8
+      - name: Southern Fort
+        description: 'The southern fort located at (8, 9).'
+        centerCoordinate:
+          x: 8
+          'y': 9
