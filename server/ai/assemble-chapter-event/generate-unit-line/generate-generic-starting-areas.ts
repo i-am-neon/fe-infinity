@@ -3,20 +3,14 @@ import { allMapOptions } from "@/map-processing/all-map-options.ts";
 import { MapData } from "@/map-processing/types/MapData.ts";
 import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
 import { z } from "zod";
+import { CharacterStartingAreas } from "@/types/ai/CharacterStartingArea.ts";
 
 export default async function generateGenericStartingAreas({
   characterStartingAreas,
   map,
   chapterData,
 }: {
-  characterStartingAreas: {
-    playerCharactersStartingAreaName: string;
-    bossStartingAreaName: string;
-    npcStartingAreaNames: {
-      characterName: string;
-      areaName: string;
-    }[];
-  };
+  characterStartingAreas: CharacterStartingAreas;
   map: MapData;
   chapterData: Omit<ChapterIdea, "newPlayableCharacters" | "boss">;
 }) {

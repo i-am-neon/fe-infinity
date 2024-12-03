@@ -1,4 +1,7 @@
-import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
+import {
+  CharacterIdea,
+  CharacterIdeaSchema,
+} from "@/types/ai/CharacterIdea.ts";
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
 import { z } from "zod";
 import { MapData } from "@/map-processing/types/MapData.ts";
@@ -10,6 +13,10 @@ import {
   ligmaCharacter,
   igorCharacter,
 } from "@/testData/test-characters.ts";
+import {
+  CharacterStartingAreas,
+  CharacterStartingAreaSchema,
+} from "@/types/ai/CharacterStartingArea.ts";
 
 export default async function generateCharacterStartingAreas({
   characters,
@@ -23,7 +30,7 @@ export default async function generateCharacterStartingAreas({
   }[];
   map: MapData;
   chapterData: Omit<ChapterIdea, "newPlayableCharacters" | "boss">;
-}) {
+}): Promise<CharacterStartingAreas> {
   const systemMessage = `You are creating a battle idea for a Fire Emblem fan game. Given the list of characters, map, and chapter data, you must generate a battle idea that fits the context provided.
 
 The goal is to create an engaging and challenging battle scenario that aligns with the chapter's narrative.
@@ -41,24 +48,18 @@ Each character that has its "startingAllegiance" property as "npc" or "enemy" wh
 The area names must be area names from within the map data provided.
 `;
 
-  const { battleIdea } = await generateStructuredData({
+  const { characterStartingAreas } = await generateStructuredData({
     systemMessage,
     prompt: `Characters: ${JSON.stringify(characters)}\n\nMap: ${JSON.stringify(
       map
     )}\n\nChapter Data: ${JSON.stringify(chapterData)}`,
     schema: z.object({
-      battleIdea: z.object({
-        playerCharactersStartingAreaName: z.string(),
-        bossStartingAreaName: z.string(),
-        npcStartingAreaNames: z.array(
-          z.object({ characterName: z.string(), areaName: z.string() })
-        ),
-      }),
+      characterStartingAreas: CharacterStartingAreaSchema,
     }),
     temperature: 1,
   });
 
-  return battleIdea;
+  return characterStartingAreas;
 }
 
 if (import.meta.main) {
