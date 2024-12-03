@@ -3,6 +3,6 @@
 //SpecifiedBattleConvo(Character1,Character2,Chapter,EventID,TextID)
 
 
-SpecifiedBattleConvo(Liora,Korrin,shadows_of_the_past,0x1,battle_quote_Liora_Korrin)
-SpecifiedBattleConvo(Vaelant,Korrin,shadows_of_the_past,0x2,battle_quote_Vaelant_Korrin)
+SpecifiedBattleConvo(Kiran,Malik,the_gathering_storm,0x1,battle_quote_Kiran_Malik)
+SpecifiedBattleConvo(Vestra,Malik,the_gathering_storm,0x2,battle_quote_Vestra_Malik)
 BYTE 0xF0 0xF0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 // Terminator

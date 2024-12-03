@@ -40,7 +40,7 @@ export default async function assembleChapterEvent({
     preBattleScene,
     postBattleScene,
     unitsArray,
-    { locationBasedEvents, localDefinitions },
+    { locationBasedEvents, localDefinitions, text: locationBasedEventsText },
   ] = await Promise.all([
     generateScene({
       sceneOverview: chapterIdea.preChapterScene,
@@ -117,6 +117,9 @@ export default async function assembleChapterEvent({
     postBattleSceneContent +
     (nextChapterId ? `\nMoveToChapter(${nextChapterId})` : "");
 
+  const preBattleTextScene = `## ${preBattleTextSceneId}\n[ConversationText]\n${preBattleTextSceneContent}[X]\n\n`;
+  const postBattleTextScene = `## ${postBattleTextSceneId}\n[ConversationText]\n${postBattleTextSceneContent}[X]`;
+
   return {
     eventDataReference: getEventDataReferenceFromChapterId(chapterId),
     turnBasedEvents: undefined,
@@ -128,7 +131,11 @@ export default async function assembleChapterEvent({
     beginningScene,
     endingScene,
     localDefinitions,
-    text: `## ${preBattleTextSceneId}\n[ConversationText]\n${preBattleTextSceneContent}[X]\n\n## ${postBattleTextSceneId}\n[ConversationText]\n${postBattleTextSceneContent}[X]`,
+    text: [
+      preBattleTextScene,
+      postBattleTextScene,
+      ...locationBasedEventsText,
+    ].join("\n\n"),
   };
 }
 

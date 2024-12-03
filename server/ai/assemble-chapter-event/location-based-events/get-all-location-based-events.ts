@@ -2,6 +2,7 @@ import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
 import { MapLocation } from "@/types/map-location.ts";
 import getChestItems from "@/ai/assemble-chapter-event/location-based-events/get-chest-items.ts";
 import getShopItems from "@/ai/assemble-chapter-event/location-based-events/get-shop-items.ts";
+import getVisitableEvent from "@/ai/assemble-chapter-event/location-based-events/get-visitable-event.ts";
 
 export default async function getAllLocationBasedEvents({
   chapterIdea,
@@ -9,7 +10,11 @@ export default async function getAllLocationBasedEvents({
 }: {
   chapterIdea: ChapterIdea;
   interactableTiles: MapLocation[];
-}): Promise<{ locationBasedEvents: string; localDefinitions: string[] }> {
+}): Promise<{
+  locationBasedEvents: string;
+  localDefinitions: string[];
+  text: string[];
+}> {
   /*
   Types:
   Chest
@@ -20,6 +25,7 @@ export default async function getAllLocationBasedEvents({
 
   const locationBasedEvents: string[] = [];
   const localDefinitions: string[] = [];
+  const text: string[] = [];
 
   for (const tile of interactableTiles) {
     if (tile.type === "Chest") {
@@ -35,6 +41,14 @@ export default async function getAllLocationBasedEvents({
       tile.type === "Inn" ||
       tile.type === "Visitable Ruins"
     ) {
+      const {
+        locationBasedEvent,
+        localDefinition,
+        text: _text,
+      } = await getVisitableEvent({ chapterIdea, mapLocation: tile });
+      locationBasedEvents.push(locationBasedEvent);
+      localDefinitions.push(localDefinition);
+      text.push(_text);
       // Shops
     } else if (tile.type === "Armory" || tile.type === "Vendor") {
       const {
@@ -48,7 +62,8 @@ export default async function getAllLocationBasedEvents({
 
   return {
     locationBasedEvents: locationBasedEvents.join("\n"),
-    localDefinitions: localDefinitions,
+    localDefinitions,
+    text,
   };
 }
 

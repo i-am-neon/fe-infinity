@@ -21,6 +21,7 @@ export default async function generateGame({
   worldIdea: string;
   numberOfChapters: number;
 }): Promise<Game> {
+  console.log("generating world summary, main character idea, and story arc");
   const worldSummary = await generateWorldSummary(worldIdea);
   const mainCharacterIdea = await generateMainCharacterIdea({ worldSummary });
 
@@ -29,6 +30,9 @@ export default async function generateGame({
     mainCharacterIdea,
     numberOfChapters,
   });
+  console.log("✅ generated world summary, main character idea, and story arc");
+
+  console.log("generating characters and maps");
 
   const [allRomCharacters, chapterIdToMap] = await Promise.all([
     assembleAllRomCharacters({ storyArc, mainCharacterIdea }),
@@ -44,6 +48,9 @@ export default async function generateGame({
       allMapOptions,
     }),
   ]);
+  console.log("✅ generated characters and maps");
+
+  console.log("generating chapter events and battle quotes");
 
   const chapterEventPromises = storyArc.chapterIdeas.map(
     async (chapterIdea, index) => {
@@ -76,7 +83,6 @@ export default async function generateGame({
       });
     }
   );
-  const chapterEvents = await Promise.all(chapterEventPromises);
 
   const chapterIdToBattleQuotesPromises = storyArc.chapterIdeas.map(
     async (chapterIdea, index) => {
@@ -107,9 +113,12 @@ export default async function generateGame({
       };
     }
   );
-  const chapterIdToBattleQuotes = await Promise.all(
-    chapterIdToBattleQuotesPromises
-  );
+
+  const [chapterEvents, chapterIdToBattleQuotes] = await Promise.all([
+    Promise.all(chapterEventPromises),
+    Promise.all(chapterIdToBattleQuotesPromises),
+  ]);
+  console.log("✅ generated chapter events and battle quotes");
 
   const allRomChapters: RomChapter[] = chapterEvents.map(
     (chapterEvent, chapterNumber) => {
