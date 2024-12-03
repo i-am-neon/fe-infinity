@@ -3,6 +3,7 @@ import { MapLocation } from "@/types/map-location.ts";
 import { ALL_ITEMS } from "@/ai/assemble-chapter-event/generate-unit-line/item-options.ts";
 import getRandomHex from "@/lib/get-random-hex.ts";
 import terrainNameToEventFnName from "@/ai/assemble-chapter-event/location-based-events/terrain-name-to-event-fn-name.ts";
+import generateVisitingInBattleScene from "@/ai/assemble-chapter-event/generate-scene/generate-visiting-in-battle-scene.ts";
 
 export default async function getVisitableEvent({
   chapterIdea,
@@ -33,22 +34,27 @@ export default async function getVisitableEvent({
     rewardText = `GiveItem(${randomItem},0xFFFF)`;
   }
 
+  const { background, sceneTextContent } = await generateVisitingInBattleScene({
+    sceneOverview: chapterIdea.battleOverview,
+    newPlayableCharacters: chapterIdea.newPlayableCharacters,
+    boss: chapterIdea.boss,
+    buildingType: mapLocation.type,
+    reward: mapLocation.type !== "House" ? rewardText : undefined,
+  });
+
   return {
     locationBasedEvent: `${terrainNameToEventFnName(
       mapLocation.type
     )}(${getRandomHex()},${locationName},${mapLocation.x},${mapLocation.y})`,
     localDefinition: `${locationName}:
 MUSI
-Text(0x1,${textId})${mapLocation.type !== "House" ? "\n" + rewardText : ""}
+Text(${background},${textId})${
+      mapLocation.type !== "House" ? "\n" + rewardText : ""
+    }
 MUNO
 NoFade
 ENDA`,
-    text: `## ${textId}
-[MidRight][LoadCurrent][MidLeft][LoadVillagerMan3]
-I moved to Shizon to get away from the[NL]
-mainland strife... Now it's found its[A][NL]
-way here... Take this, and end this[NL]
-fight. I want to get back to my peace.[A][X]`,
+    text: `## ${textId}\n[ConversationText]\n${sceneTextContent}\n[A][X]`,
   };
 }
 
