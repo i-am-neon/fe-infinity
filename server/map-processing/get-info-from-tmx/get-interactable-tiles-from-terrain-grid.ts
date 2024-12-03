@@ -1,5 +1,5 @@
-import { MapLocation } from "@/map-processing/get-info-from-tmx/get-info-from-tmx.ts";
 import { interactableTerrainNames } from "@/map-processing/lookup-tables/interactable-terrain-names.ts";
+import { MapLocation } from "@/types/map-location.ts";
 
 export default function getInteractableTilesFromTerrainGrid(
   terrainGrid: string[][]

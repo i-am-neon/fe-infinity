@@ -2,8 +2,7 @@ import extractValuesFromTmx from "@/map-processing/get-info-from-tmx/extract-val
 import getTerrainGridFromTmxValues from "@/map-processing/get-info-from-tmx/get-terrain-grid-from-tmx-values.ts";
 import getPointsOfInterestFromTerrainGrid from "@/map-processing/get-info-from-tmx/get-points-of-interest-from-terrain-grid.ts";
 import getInteractableTilesFromTerrainGrid from "@/map-processing/get-info-from-tmx/get-interactable-tiles-from-terrain-grid.ts";
-
-export type MapLocation = { x: number; y: number; type: string };
+import { MapLocation } from "@/types/map-location.ts";
 
 export default function getInfoFromTmx(tmx: string): {
   tileset: string;

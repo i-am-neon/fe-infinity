@@ -4,6 +4,7 @@
   "search.useIgnoreFiles": false,
   "search.useGlobalIgnoreFiles": false,
   "cSpell.words": [
-    "interactable"
+    "interactable",
+    "tileset"
   ],
 }
