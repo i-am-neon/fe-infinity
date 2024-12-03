@@ -9,7 +9,7 @@ export type MapData = {
   width: number;
   terrainGrid: string[][];
   pointsOfInterest: MapLocation[];
-  visitable: MapLocation[];
+  interactableTiles: MapLocation[];
   areas: MapArea[];
 };
 

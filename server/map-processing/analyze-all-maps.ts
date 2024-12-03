@@ -27,7 +27,7 @@ export default async function analyzeAllMaps(): Promise<void> {
         width,
         terrainGrid,
         pointsOfInterest,
-        visitable,
+        interactableTiles,
       } = getInfoFromTmx(rawTmx);
       const mapName = getMapNameFromTmxUrl(mapUrl.tmx);
 
@@ -56,7 +56,7 @@ export default async function analyzeAllMaps(): Promise<void> {
         width,
         terrainGrid,
         pointsOfInterest,
-        visitable,
+        interactableTiles,
         areas,
       };
 

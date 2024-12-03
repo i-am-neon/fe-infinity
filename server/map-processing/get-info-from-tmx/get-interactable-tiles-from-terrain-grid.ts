@@ -1,7 +1,7 @@
 import { MapLocation } from "@/map-processing/get-info-from-tmx/get-info-from-tmx.ts";
-import { visitableTerrainNames } from "@/map-processing/lookup-tables/visitable-terrain-names.ts";
+import { interactableTerrainNames } from "@/map-processing/lookup-tables/interactable-terrain-names.ts";
 
-export default function getVisitableFromTerrainGrid(
+export default function getInteractableTilesFromTerrainGrid(
   terrainGrid: string[][]
 ): MapLocation[] {
   const visitable: MapLocation[] = [];
@@ -11,7 +11,7 @@ export default function getVisitableFromTerrainGrid(
       const terrainType = terrainGrid[y][x];
 
       // Check if the terrain type is a point of interest
-      if (visitableTerrainNames.includes(terrainType)) {
+      if (interactableTerrainNames.includes(terrainType)) {
         visitable.push({ x, y, type: terrainType });
       }
     }

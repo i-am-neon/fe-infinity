@@ -1,8 +1,8 @@
-import getVisitableFromTerrainGrid from "@/map-processing/get-info-from-tmx/get-visitable-from-terrain-grid.ts";
+import getInteractableTilesFromTerrainGrid from "./get-interactable-tiles-from-terrain-grid.ts";
 import { assertEquals } from "@std/assert/equals";
 
 Deno.test(
-  "getVisitableFromTerrainGrid - should return correct points of interest",
+  "getInteractableTilesFromTerrainGrid - should return correct points of interest",
   () => {
     const mockTerrainGrid = [
       ["Plains", "House", "Plains"],
@@ -15,7 +15,7 @@ Deno.test(
       { x: 0, y: 1, type: "Vendor" },
     ];
 
-    const result = getVisitableFromTerrainGrid(mockTerrainGrid);
+    const result = getInteractableTilesFromTerrainGrid(mockTerrainGrid);
     assertEquals(result, expectedPointsOfInterest);
   }
 );

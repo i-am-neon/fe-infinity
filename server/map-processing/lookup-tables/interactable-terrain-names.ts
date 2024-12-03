@@ -1,4 +1,5 @@
-export const visitableTerrainNames = [
+export const interactableTerrainNames = [
+  "Door",
   "Village Entrance",
   "House",
   "Armory",
