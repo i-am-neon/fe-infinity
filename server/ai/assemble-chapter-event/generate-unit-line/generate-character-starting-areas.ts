@@ -52,6 +52,8 @@ If none of these tiles are available, place the boss on a tile that makes sense 
 - Fort
 - Forest
 
+Make sure the boss is placed far away from the player characters. The boss should be placed on the opposite corner or edge of the map as the ally units.
+
 ## npcStartingAreaNames
 Each character that has its "startingAllegiance" property as "npc" or "enemy" when its "firstSeenAs" property is "enemy non-boss" should be placed in a separate area that makes sense with the narrative. You can have multiple NPCs in different areas.
 
@@ -102,11 +104,11 @@ if (import.meta.main) {
   const chapterData: Omit<ChapterIdea, "newPlayableCharacters" | "boss"> = {
     chapterTitle: "Test Chapter",
     preChapterScene:
-      "Seraphina receives word that the dark sorcerer Ligma has been corrupting the Whispering Woods, threatening her village. Determined to protect her home, she sets out to confront him, seeking allies along the way. In her journey, she encounters Lira, a brash dragon rider eager to join her cause.",
+      "Seraphina receives word that the dark sorcerer Ligma has been corrupting the sands of the Scorching Dunes, threatening her desert town of Sunhaven. Determined to protect her home, she sets out to confront him, seeking allies along the way. In her journey, she encounters Lira, a brash dragon rider who patrols the desert skies and is eager to join her cause.",
     battleOverview:
-      "Seraphina and Lira must navigate the corrupted forest, battling Ligma's minions and overcoming obstacles created by dark magic. The goal is to reach Ligma's lair and confront him before he can unleash further chaos.",
+      "Seraphina and Lira must traverse the perilous Scorching Dunes, navigating through shifting sands and ancient ruins corrupted by Ligma's dark magic. Along the way, they battle his desert minions and overcome traps designed to thwart their progress. The goal is to reach Ligma's stronghold within a long-abandoned oasis and confront him before he can unleash further chaos on Sunhaven.",
     postChapterScene:
-      "After a fierce battle, Seraphina and Lira manage to defeat Ligma, but not without consequences. They discover hints of the Veil's involvement in Ligma's plans, suggesting a larger threat looms over Eldralis. With newfound resolve, they decide to investigate the Veil and their intentions.",
+      "After a grueling battle, Seraphina and Lira manage to defeat Ligma, but at a cost. They uncover cryptic messages hinting at the Veil's influence in Ligma's plans, revealing that the corruption may be part of a larger scheme. With renewed determination, they decide to delve deeper into the mysteries of the Veil and its sinister intentions for Eldralis.",
   };
 
   const mapData = allMapOptions[0];
