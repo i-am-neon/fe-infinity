@@ -1,6 +1,5 @@
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
 import { igorCharacter, liraCharacter } from "@/testData/test-characters.ts";
-import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
 import { MapArea } from "@/types/ai/MapAreas.ts";
 import { z } from "zod";
 
@@ -32,7 +31,6 @@ In your return value, include the terrain type of that tile and why you decided 
 export default async function generatePlayerUnitCoords({
   characters,
   npcStartingAreaNames,
-  chapterData,
   mapAreas,
 }: {
   characters: {
@@ -44,7 +42,6 @@ export default async function generatePlayerUnitCoords({
     characterName: string;
     areaName: string;
   }[];
-  chapterData: Omit<ChapterIdea, "newPlayableCharacters" | "boss">;
   mapAreas: MapArea[];
 }): Promise<
   {
@@ -60,11 +57,11 @@ export default async function generatePlayerUnitCoords({
       characters,
       null,
       2
-    )}\n\nCharacter Starting Area: ${npcStartingAreaNames}\n\nChapterData: ${JSON.stringify(
-      chapterData,
+    )}\n\nCharacter Starting Area: ${npcStartingAreaNames}\\n\nMap Areas: ${JSON.stringify(
+      mapAreas,
       null,
       2
-    )}\n\nMap Areas: ${JSON.stringify(mapAreas, null, 2)}`,
+    )}`,
     schema: z.object({
       characterNameAndCoords: z.array(
         z.object({
@@ -125,20 +122,10 @@ if (import.meta.main) {
     },
   ];
 
-  const chapterData: Omit<ChapterIdea, "newPlayableCharacters" | "boss"> = {
-    chapterTitle: "Test Chapter",
-    preChapterScene:
-      "Seraphina receives word that the dark sorcerer Ligma has been corrupting the Whispering Woods, threatening her village. Determined to protect her home, she sets out to confront him, seeking allies along the way. In her journey, she encounters Lira, a brash dragon rider eager to join her cause.",
-    battleOverview:
-      "Seraphina and Lira must navigate the corrupted forest, battling Ligma's minions and overcoming obstacles created by dark magic. The goal is to reach Ligma's lair and confront him before he can unleash further chaos.",
-    postChapterScene:
-      "After a fierce battle, Seraphina and Lira manage to defeat Ligma, but not without consequences. They discover hints of the Veil's involvement in Ligma's plans, suggesting a larger threat looms over Eldralis. With newfound resolve, they decide to investigate the Veil and their intentions.",
-  };
-
   const res = await generatePlayerUnitCoords({
     characters,
     npcStartingAreaNames,
-    chapterData,
+    // chapterData,
     mapAreas: [
       {
         name: "Village Area",

@@ -4,6 +4,7 @@ import { MapData } from "@/map-processing/types/MapData.ts";
 import { igorCharacter } from "@/testData/test-characters.ts";
 import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
 import { z } from "zod";
+import { MapArea } from "@/types/ai/MapAreas.ts";
 
 const systemMessage = `You are choosing the starting boss character position for a Fire Emblem chapter.
 
@@ -39,18 +40,14 @@ In your return value, include the terrain type of that tile and why you decided 
 
 export default async function generatePlayerUnitCoords({
   characters,
-  bossStartingAreaName,
-  chapterData,
-  map,
+  mapArea,
 }: {
   characters: {
     characterName: string;
     characterClass: string;
     startingAllegiance: "ally" | "npc" | "enemy";
   }[];
-  bossStartingAreaName: string;
-  chapterData: Omit<ChapterIdea, "newPlayableCharacters" | "boss">;
-  map: MapData;
+  mapArea: MapArea;
 }): Promise<
   {
     characterName: string;
@@ -65,11 +62,7 @@ export default async function generatePlayerUnitCoords({
       characters,
       null,
       2
-    )}\n\nCharacter Starting Area: ${bossStartingAreaName}\n\nChapterData: ${JSON.stringify(
-      chapterData,
-      null,
-      2
-    )}\n\nMap: ${JSON.stringify(map, null, 2)}`,
+    )}\n\nMap Area: ${JSON.stringify(mapArea, null, 2)}`,
     schema: z.object({
       characterNameAndCoords: z.array(
         z.object({
@@ -114,25 +107,50 @@ if (import.meta.main) {
     },
   ];
 
-  const bossStartingAreaName = "Fort Area";
-
-  const chapterData: Omit<ChapterIdea, "newPlayableCharacters" | "boss"> = {
-    chapterTitle: "Test Chapter",
-    preChapterScene:
-      "Seraphina receives word that the dark sorcerer Ligma has been corrupting the Whispering Woods, threatening her village. Determined to protect her home, she sets out to confront him, seeking allies along the way. In her journey, she encounters Lira, a brash dragon rider eager to join her cause.",
-    battleOverview:
-      "Seraphina and Lira must navigate the corrupted forest, battling Ligma's minions and overcoming obstacles created by dark magic. The goal is to reach Ligma's lair and confront him before he can unleash further chaos.",
-    postChapterScene:
-      "After a fierce battle, Seraphina and Lira manage to defeat Ligma, but not without consequences. They discover hints of the Veil's involvement in Ligma's plans, suggesting a larger threat looms over Eldralis. With newfound resolve, they decide to investigate the Veil and their intentions.",
-  };
-
-  const mapData = allMapOptions[0];
+  const bossStartingAreaName = "Fortified Areas";
 
   const res = await generatePlayerUnitCoords({
     characters,
-    bossStartingAreaName,
-    chapterData,
-    map: mapData,
+    mapArea: {
+      name: "Fortified Areas",
+      description: "Regions containing forts and strategic points for defense.",
+      coordinates: {
+        from: {
+          x: 8,
+          y: 1,
+        },
+        to: {
+          x: 12,
+          y: 3,
+        },
+      },
+      subAreas: [
+        {
+          name: "Northern Forts",
+          description: "The northern forts located at (11, 1) and (11, 3).",
+          centerCoordinate: {
+            x: 11,
+            y: 2,
+          },
+        },
+        {
+          name: "Central Fort",
+          description: "The central fort located at (12, 8).",
+          centerCoordinate: {
+            x: 12,
+            y: 8,
+          },
+        },
+        {
+          name: "Southern Fort",
+          description: "The southern fort located at (8, 9).",
+          centerCoordinate: {
+            x: 8,
+            y: 9,
+          },
+        },
+      ],
+    },
   });
   console.log(JSON.stringify(res, null, 2));
 }
