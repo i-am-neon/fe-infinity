@@ -42,6 +42,8 @@ export default async function getUnitsArray({
     characterStartingAreas,
   });
 
+  // NEXT: implement generateGenericUnitCoords, then call generateUnitLine on each.
+
   return await Promise.all(
     charactersWithCoords.map(async (c) => {
       return await generateUnitLine({
