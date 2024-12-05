@@ -5,7 +5,7 @@ import { igorCharacter } from "@/testData/test-characters.ts";
 import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
 import { z } from "zod";
 
-const systemMessage = `You are choosing the starting box character position for a Fire Emblem chapter.
+const systemMessage = `You are choosing the starting boss character position for a Fire Emblem chapter.
 
 Given the areas the character should be, use the map data to determine the coordinates for each character on the map.
 
