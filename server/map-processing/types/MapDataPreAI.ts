@@ -1,9 +1,9 @@
-import { MapLocation } from "@/map-processing/get-info-from-tmx/get-info-from-tmx.ts";
+import { MapLocation } from "@/types/map-location.ts";
 
 export type MapDataPreAI = {
   width: number;
   height: number;
-  terrainGrid: string[][];
+  terrainGrid: MapLocation[];
   pointsOfInterest: MapLocation[];
   mapName: string;
   tmx: string;

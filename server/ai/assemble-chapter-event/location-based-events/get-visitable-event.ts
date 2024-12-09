@@ -19,10 +19,9 @@ export default async function getVisitableEvent({
   const isMoneyReward = Math.random() < 1 / 5;
 
   let rewardText = "";
-  const locationName = `${terrainNameToEventFnName(mapLocation.type)}_${crypto
-    .randomUUID()
-    .replace(/-/g, "")
-    .slice(0, 8)}`;
+  const locationName = `${terrainNameToEventFnName(
+    mapLocation.terrain
+  )}_${crypto.randomUUID().replace(/-/g, "").slice(0, 8)}`;
   const textId = locationName + "_Text";
 
   if (isMoneyReward) {
@@ -38,18 +37,18 @@ export default async function getVisitableEvent({
     sceneOverview: chapterIdea.battleOverview,
     newPlayableCharacters: chapterIdea.newPlayableCharacters,
     boss: chapterIdea.boss,
-    buildingType: mapLocation.type,
-    reward: mapLocation.type !== "House" ? rewardText : undefined,
+    buildingType: mapLocation.terrain,
+    reward: mapLocation.terrain !== "House" ? rewardText : undefined,
   });
 
   return {
     locationBasedEvent: `${terrainNameToEventFnName(
-      mapLocation.type
+      mapLocation.terrain
     )}(${getRandomHex()},${locationName},${mapLocation.x},${mapLocation.y})`,
     localDefinition: `${locationName}:
 MUSI
 Text(${background},${textId})${
-      mapLocation.type !== "House" ? "\n" + rewardText : ""
+      mapLocation.terrain !== "House" ? "\n" + rewardText : ""
     }
 MUNO
 NoFade

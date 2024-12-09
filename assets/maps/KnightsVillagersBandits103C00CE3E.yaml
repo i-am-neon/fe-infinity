@@ -1,7 +1,7 @@
 name: KnightsVillagersBandits103C00CE3E
 description: >-
   A mixed indoor and outdoor map featuring a central courtyard surrounded by
-  buildings with various rooms and pathways.
+  various rooms and pathways.
 tmx: >
   <?xml version="1.0" encoding="UTF-8"?>
 
@@ -77,477 +77,1195 @@ tmx: >
 height: 18
 width: 20
 terrainGrid:
-  - - Floor
-    - Floor
-    - Floor
-    - Wall
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Pillar
-    - Floor
-    - Floor
-    - Stairs
-    - Plains
-    - Plains
-    - Forest
-  - - Floor
-    - Chest
-    - Floor
-    - Wall
-    - Floor
-    - Pillar
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Pillar
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Stairs
-    - Road
-    - Plains
-    - Plains
-  - - Floor
-    - Floor
-    - Floor
-    - Wall
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Stairs
-    - Plains
-    - Road
-    - Plains
-  - - Wall
-    - Wall
-    - Wall
-    - Wall
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Stairs
-    - Wall
-    - Wall
-    - Wall
-    - Wall
-    - Plains
-    - Plains
-    - Plains
-  - - Wall
-    - Wall
-    - Wall
-    - Wall
-    - Wall
-    - Wall
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Wall
-    - Wall
-    - Wall
-    - Wall
-    - Wall
-    - Wall
-    - Plains
-    - Plains
-    - Plains
-  - - Plains
-    - Plains
-    - Plains
-    - Wall
-    - Wall
-    - Wall
-    - Wall
-    - Brace
-    - Floor
-    - Brace
-    - Wall
-    - Wall
-    - Wall
-    - Wall
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Road
-    - Road
-  - - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Wall
-    - Wall
-    - Brace
-    - Stairs
-    - Brace
-    - Wall
-    - Wall
-    - Plains
-    - Plains
-    - Plains
-    - Forest
-    - Plains
-    - Sand
-    - Plains
-    - Forest
-  - - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Forest
-    - Plains
-    - Plains
-    - Plains
-    - Road
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Forest
-    - Plains
-    - Plains
-    - Road
-    - Plains
-    - Plains
-    - Plains
-  - - Wall
-    - Plains
-    - Forest
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Road
-    - Road
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Wall
-    - Wall
-    - Wall
-  - - Wall
-    - Plains
-    - Plains
-    - Forest
-    - Plains
-    - Road
-    - Road
-    - Plains
-    - Plains
-    - Forest
-    - Plains
-    - Plains
-    - Road
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Wall
-    - Floor
-    - Floor
-  - - Wall
-    - Wall
-    - Wall
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Forest
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Wall
-    - Floor
-    - Chest
-  - - Floor
-    - Stairs
-    - Wall
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Hill
-    - Hill
-    - Plains
-    - Forest
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Wall
-    - Floor
-    - Floor
-  - - Floor
-    - Floor
-    - Wall
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Forest
-    - Plains
-    - Plains
-    - Forest
-    - Plains
-    - Plains
-    - Plains
-    - Wall
-    - Wall
-    - Wall
-    - Wall
-    - Door
-  - - Floor
-    - Floor
-    - Wall
-    - Wall
-    - Plains
-    - Forest
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Wall
-    - Wall
-    - Wall
-    - Wall
-    - Stairs
-    - Floor
-    - Floor
-    - Floor
-  - - Floor
-    - Pillar
-    - Floor
-    - Wall
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Wall
-    - Wall
-    - Wall
-    - Wall
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-  - - Floor
-    - Floor
-    - Floor
-    - Wall
-    - Plains
-    - Plains
-    - Road
-    - Road
-    - Plains
-    - Wall
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Pillar
-    - Floor
-    - Floor
-    - Floor
-    - Pillar
-    - Floor
-  - - Pillar
-    - Floor
-    - Floor
-    - Wall
-    - Road
-    - Plains
-    - Plains
-    - Road
-    - Road
-    - Stairs
-    - Floor
-    - Floor
-    - Pillar
-    - Floor
-    - Floor
-    - Floor
-    - Pillar
-    - Floor
-    - Floor
-    - Floor
-  - - Floor
-    - Floor
-    - Floor
-    - Stairs
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Stairs
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
-    - Floor
+  - terrain: Floor
+    x: 0
+    'y': 0
+  - terrain: Floor
+    x: 1
+    'y': 0
+  - terrain: Floor
+    x: 2
+    'y': 0
+  - terrain: Wall
+    x: 3
+    'y': 0
+  - terrain: Floor
+    x: 4
+    'y': 0
+  - terrain: Floor
+    x: 5
+    'y': 0
+  - terrain: Floor
+    x: 6
+    'y': 0
+  - terrain: Floor
+    x: 7
+    'y': 0
+  - terrain: Floor
+    x: 8
+    'y': 0
+  - terrain: Floor
+    x: 9
+    'y': 0
+  - terrain: Floor
+    x: 10
+    'y': 0
+  - terrain: Floor
+    x: 11
+    'y': 0
+  - terrain: Floor
+    x: 12
+    'y': 0
+  - terrain: Pillar
+    x: 13
+    'y': 0
+  - terrain: Floor
+    x: 14
+    'y': 0
+  - terrain: Floor
+    x: 15
+    'y': 0
+  - terrain: Stairs
+    x: 16
+    'y': 0
+  - terrain: Plains
+    x: 17
+    'y': 0
+  - terrain: Plains
+    x: 18
+    'y': 0
+  - terrain: Forest
+    x: 19
+    'y': 0
+  - terrain: Floor
+    x: 0
+    'y': 1
+  - terrain: Chest
+    x: 1
+    'y': 1
+  - terrain: Floor
+    x: 2
+    'y': 1
+  - terrain: Wall
+    x: 3
+    'y': 1
+  - terrain: Floor
+    x: 4
+    'y': 1
+  - terrain: Pillar
+    x: 5
+    'y': 1
+  - terrain: Floor
+    x: 6
+    'y': 1
+  - terrain: Floor
+    x: 7
+    'y': 1
+  - terrain: Floor
+    x: 8
+    'y': 1
+  - terrain: Floor
+    x: 9
+    'y': 1
+  - terrain: Floor
+    x: 10
+    'y': 1
+  - terrain: Pillar
+    x: 11
+    'y': 1
+  - terrain: Floor
+    x: 12
+    'y': 1
+  - terrain: Floor
+    x: 13
+    'y': 1
+  - terrain: Floor
+    x: 14
+    'y': 1
+  - terrain: Floor
+    x: 15
+    'y': 1
+  - terrain: Stairs
+    x: 16
+    'y': 1
+  - terrain: Road
+    x: 17
+    'y': 1
+  - terrain: Plains
+    x: 18
+    'y': 1
+  - terrain: Plains
+    x: 19
+    'y': 1
+  - terrain: Floor
+    x: 0
+    'y': 2
+  - terrain: Floor
+    x: 1
+    'y': 2
+  - terrain: Floor
+    x: 2
+    'y': 2
+  - terrain: Wall
+    x: 3
+    'y': 2
+  - terrain: Floor
+    x: 4
+    'y': 2
+  - terrain: Floor
+    x: 5
+    'y': 2
+  - terrain: Floor
+    x: 6
+    'y': 2
+  - terrain: Floor
+    x: 7
+    'y': 2
+  - terrain: Floor
+    x: 8
+    'y': 2
+  - terrain: Floor
+    x: 9
+    'y': 2
+  - terrain: Floor
+    x: 10
+    'y': 2
+  - terrain: Floor
+    x: 11
+    'y': 2
+  - terrain: Floor
+    x: 12
+    'y': 2
+  - terrain: Floor
+    x: 13
+    'y': 2
+  - terrain: Floor
+    x: 14
+    'y': 2
+  - terrain: Floor
+    x: 15
+    'y': 2
+  - terrain: Stairs
+    x: 16
+    'y': 2
+  - terrain: Plains
+    x: 17
+    'y': 2
+  - terrain: Road
+    x: 18
+    'y': 2
+  - terrain: Plains
+    x: 19
+    'y': 2
+  - terrain: Wall
+    x: 0
+    'y': 3
+  - terrain: Wall
+    x: 1
+    'y': 3
+  - terrain: Wall
+    x: 2
+    'y': 3
+  - terrain: Wall
+    x: 3
+    'y': 3
+  - terrain: Floor
+    x: 4
+    'y': 3
+  - terrain: Floor
+    x: 5
+    'y': 3
+  - terrain: Floor
+    x: 6
+    'y': 3
+  - terrain: Floor
+    x: 7
+    'y': 3
+  - terrain: Floor
+    x: 8
+    'y': 3
+  - terrain: Floor
+    x: 9
+    'y': 3
+  - terrain: Floor
+    x: 10
+    'y': 3
+  - terrain: Floor
+    x: 11
+    'y': 3
+  - terrain: Stairs
+    x: 12
+    'y': 3
+  - terrain: Wall
+    x: 13
+    'y': 3
+  - terrain: Wall
+    x: 14
+    'y': 3
+  - terrain: Wall
+    x: 15
+    'y': 3
+  - terrain: Wall
+    x: 16
+    'y': 3
+  - terrain: Plains
+    x: 17
+    'y': 3
+  - terrain: Plains
+    x: 18
+    'y': 3
+  - terrain: Plains
+    x: 19
+    'y': 3
+  - terrain: Wall
+    x: 0
+    'y': 4
+  - terrain: Wall
+    x: 1
+    'y': 4
+  - terrain: Wall
+    x: 2
+    'y': 4
+  - terrain: Wall
+    x: 3
+    'y': 4
+  - terrain: Wall
+    x: 4
+    'y': 4
+  - terrain: Wall
+    x: 5
+    'y': 4
+  - terrain: Floor
+    x: 6
+    'y': 4
+  - terrain: Floor
+    x: 7
+    'y': 4
+  - terrain: Floor
+    x: 8
+    'y': 4
+  - terrain: Floor
+    x: 9
+    'y': 4
+  - terrain: Floor
+    x: 10
+    'y': 4
+  - terrain: Wall
+    x: 11
+    'y': 4
+  - terrain: Wall
+    x: 12
+    'y': 4
+  - terrain: Wall
+    x: 13
+    'y': 4
+  - terrain: Wall
+    x: 14
+    'y': 4
+  - terrain: Wall
+    x: 15
+    'y': 4
+  - terrain: Wall
+    x: 16
+    'y': 4
+  - terrain: Plains
+    x: 17
+    'y': 4
+  - terrain: Plains
+    x: 18
+    'y': 4
+  - terrain: Plains
+    x: 19
+    'y': 4
+  - terrain: Plains
+    x: 0
+    'y': 5
+  - terrain: Plains
+    x: 1
+    'y': 5
+  - terrain: Plains
+    x: 2
+    'y': 5
+  - terrain: Wall
+    x: 3
+    'y': 5
+  - terrain: Wall
+    x: 4
+    'y': 5
+  - terrain: Wall
+    x: 5
+    'y': 5
+  - terrain: Wall
+    x: 6
+    'y': 5
+  - terrain: Brace
+    x: 7
+    'y': 5
+  - terrain: Floor
+    x: 8
+    'y': 5
+  - terrain: Brace
+    x: 9
+    'y': 5
+  - terrain: Wall
+    x: 10
+    'y': 5
+  - terrain: Wall
+    x: 11
+    'y': 5
+  - terrain: Wall
+    x: 12
+    'y': 5
+  - terrain: Wall
+    x: 13
+    'y': 5
+  - terrain: Plains
+    x: 14
+    'y': 5
+  - terrain: Plains
+    x: 15
+    'y': 5
+  - terrain: Plains
+    x: 16
+    'y': 5
+  - terrain: Plains
+    x: 17
+    'y': 5
+  - terrain: Road
+    x: 18
+    'y': 5
+  - terrain: Road
+    x: 19
+    'y': 5
+  - terrain: Plains
+    x: 0
+    'y': 6
+  - terrain: Plains
+    x: 1
+    'y': 6
+  - terrain: Plains
+    x: 2
+    'y': 6
+  - terrain: Plains
+    x: 3
+    'y': 6
+  - terrain: Plains
+    x: 4
+    'y': 6
+  - terrain: Wall
+    x: 5
+    'y': 6
+  - terrain: Wall
+    x: 6
+    'y': 6
+  - terrain: Brace
+    x: 7
+    'y': 6
+  - terrain: Stairs
+    x: 8
+    'y': 6
+  - terrain: Brace
+    x: 9
+    'y': 6
+  - terrain: Wall
+    x: 10
+    'y': 6
+  - terrain: Wall
+    x: 11
+    'y': 6
+  - terrain: Plains
+    x: 12
+    'y': 6
+  - terrain: Plains
+    x: 13
+    'y': 6
+  - terrain: Plains
+    x: 14
+    'y': 6
+  - terrain: Forest
+    x: 15
+    'y': 6
+  - terrain: Plains
+    x: 16
+    'y': 6
+  - terrain: Sand
+    x: 17
+    'y': 6
+  - terrain: Plains
+    x: 18
+    'y': 6
+  - terrain: Forest
+    x: 19
+    'y': 6
+  - terrain: Plains
+    x: 0
+    'y': 7
+  - terrain: Plains
+    x: 1
+    'y': 7
+  - terrain: Plains
+    x: 2
+    'y': 7
+  - terrain: Plains
+    x: 3
+    'y': 7
+  - terrain: Forest
+    x: 4
+    'y': 7
+  - terrain: Plains
+    x: 5
+    'y': 7
+  - terrain: Plains
+    x: 6
+    'y': 7
+  - terrain: Plains
+    x: 7
+    'y': 7
+  - terrain: Road
+    x: 8
+    'y': 7
+  - terrain: Plains
+    x: 9
+    'y': 7
+  - terrain: Plains
+    x: 10
+    'y': 7
+  - terrain: Plains
+    x: 11
+    'y': 7
+  - terrain: Plains
+    x: 12
+    'y': 7
+  - terrain: Forest
+    x: 13
+    'y': 7
+  - terrain: Plains
+    x: 14
+    'y': 7
+  - terrain: Plains
+    x: 15
+    'y': 7
+  - terrain: Road
+    x: 16
+    'y': 7
+  - terrain: Plains
+    x: 17
+    'y': 7
+  - terrain: Plains
+    x: 18
+    'y': 7
+  - terrain: Plains
+    x: 19
+    'y': 7
+  - terrain: Wall
+    x: 0
+    'y': 8
+  - terrain: Plains
+    x: 1
+    'y': 8
+  - terrain: Forest
+    x: 2
+    'y': 8
+  - terrain: Plains
+    x: 3
+    'y': 8
+  - terrain: Plains
+    x: 4
+    'y': 8
+  - terrain: Plains
+    x: 5
+    'y': 8
+  - terrain: Plains
+    x: 6
+    'y': 8
+  - terrain: Plains
+    x: 7
+    'y': 8
+  - terrain: Plains
+    x: 8
+    'y': 8
+  - terrain: Plains
+    x: 9
+    'y': 8
+  - terrain: Plains
+    x: 10
+    'y': 8
+  - terrain: Road
+    x: 11
+    'y': 8
+  - terrain: Road
+    x: 12
+    'y': 8
+  - terrain: Plains
+    x: 13
+    'y': 8
+  - terrain: Plains
+    x: 14
+    'y': 8
+  - terrain: Plains
+    x: 15
+    'y': 8
+  - terrain: Plains
+    x: 16
+    'y': 8
+  - terrain: Wall
+    x: 17
+    'y': 8
+  - terrain: Wall
+    x: 18
+    'y': 8
+  - terrain: Wall
+    x: 19
+    'y': 8
+  - terrain: Wall
+    x: 0
+    'y': 9
+  - terrain: Plains
+    x: 1
+    'y': 9
+  - terrain: Plains
+    x: 2
+    'y': 9
+  - terrain: Forest
+    x: 3
+    'y': 9
+  - terrain: Plains
+    x: 4
+    'y': 9
+  - terrain: Road
+    x: 5
+    'y': 9
+  - terrain: Road
+    x: 6
+    'y': 9
+  - terrain: Plains
+    x: 7
+    'y': 9
+  - terrain: Plains
+    x: 8
+    'y': 9
+  - terrain: Forest
+    x: 9
+    'y': 9
+  - terrain: Plains
+    x: 10
+    'y': 9
+  - terrain: Plains
+    x: 11
+    'y': 9
+  - terrain: Road
+    x: 12
+    'y': 9
+  - terrain: Plains
+    x: 13
+    'y': 9
+  - terrain: Plains
+    x: 14
+    'y': 9
+  - terrain: Plains
+    x: 15
+    'y': 9
+  - terrain: Plains
+    x: 16
+    'y': 9
+  - terrain: Wall
+    x: 17
+    'y': 9
+  - terrain: Floor
+    x: 18
+    'y': 9
+  - terrain: Floor
+    x: 19
+    'y': 9
+  - terrain: Wall
+    x: 0
+    'y': 10
+  - terrain: Wall
+    x: 1
+    'y': 10
+  - terrain: Wall
+    x: 2
+    'y': 10
+  - terrain: Plains
+    x: 3
+    'y': 10
+  - terrain: Plains
+    x: 4
+    'y': 10
+  - terrain: Plains
+    x: 5
+    'y': 10
+  - terrain: Plains
+    x: 6
+    'y': 10
+  - terrain: Forest
+    x: 7
+    'y': 10
+  - terrain: Plains
+    x: 8
+    'y': 10
+  - terrain: Plains
+    x: 9
+    'y': 10
+  - terrain: Plains
+    x: 10
+    'y': 10
+  - terrain: Plains
+    x: 11
+    'y': 10
+  - terrain: Plains
+    x: 12
+    'y': 10
+  - terrain: Plains
+    x: 13
+    'y': 10
+  - terrain: Plains
+    x: 14
+    'y': 10
+  - terrain: Plains
+    x: 15
+    'y': 10
+  - terrain: Plains
+    x: 16
+    'y': 10
+  - terrain: Wall
+    x: 17
+    'y': 10
+  - terrain: Floor
+    x: 18
+    'y': 10
+  - terrain: Chest
+    x: 19
+    'y': 10
+  - terrain: Floor
+    x: 0
+    'y': 11
+  - terrain: Stairs
+    x: 1
+    'y': 11
+  - terrain: Wall
+    x: 2
+    'y': 11
+  - terrain: Plains
+    x: 3
+    'y': 11
+  - terrain: Plains
+    x: 4
+    'y': 11
+  - terrain: Plains
+    x: 5
+    'y': 11
+  - terrain: Plains
+    x: 6
+    'y': 11
+  - terrain: Plains
+    x: 7
+    'y': 11
+  - terrain: Plains
+    x: 8
+    'y': 11
+  - terrain: Hill
+    x: 9
+    'y': 11
+  - terrain: Hill
+    x: 10
+    'y': 11
+  - terrain: Plains
+    x: 11
+    'y': 11
+  - terrain: Forest
+    x: 12
+    'y': 11
+  - terrain: Plains
+    x: 13
+    'y': 11
+  - terrain: Plains
+    x: 14
+    'y': 11
+  - terrain: Plains
+    x: 15
+    'y': 11
+  - terrain: Plains
+    x: 16
+    'y': 11
+  - terrain: Wall
+    x: 17
+    'y': 11
+  - terrain: Floor
+    x: 18
+    'y': 11
+  - terrain: Floor
+    x: 19
+    'y': 11
+  - terrain: Floor
+    x: 0
+    'y': 12
+  - terrain: Floor
+    x: 1
+    'y': 12
+  - terrain: Wall
+    x: 2
+    'y': 12
+  - terrain: Plains
+    x: 3
+    'y': 12
+  - terrain: Plains
+    x: 4
+    'y': 12
+  - terrain: Plains
+    x: 5
+    'y': 12
+  - terrain: Plains
+    x: 6
+    'y': 12
+  - terrain: Plains
+    x: 7
+    'y': 12
+  - terrain: Forest
+    x: 8
+    'y': 12
+  - terrain: Plains
+    x: 9
+    'y': 12
+  - terrain: Plains
+    x: 10
+    'y': 12
+  - terrain: Forest
+    x: 11
+    'y': 12
+  - terrain: Plains
+    x: 12
+    'y': 12
+  - terrain: Plains
+    x: 13
+    'y': 12
+  - terrain: Plains
+    x: 14
+    'y': 12
+  - terrain: Wall
+    x: 15
+    'y': 12
+  - terrain: Wall
+    x: 16
+    'y': 12
+  - terrain: Wall
+    x: 17
+    'y': 12
+  - terrain: Wall
+    x: 18
+    'y': 12
+  - terrain: Door
+    x: 19
+    'y': 12
+  - terrain: Floor
+    x: 0
+    'y': 13
+  - terrain: Floor
+    x: 1
+    'y': 13
+  - terrain: Wall
+    x: 2
+    'y': 13
+  - terrain: Wall
+    x: 3
+    'y': 13
+  - terrain: Plains
+    x: 4
+    'y': 13
+  - terrain: Forest
+    x: 5
+    'y': 13
+  - terrain: Plains
+    x: 6
+    'y': 13
+  - terrain: Plains
+    x: 7
+    'y': 13
+  - terrain: Plains
+    x: 8
+    'y': 13
+  - terrain: Plains
+    x: 9
+    'y': 13
+  - terrain: Plains
+    x: 10
+    'y': 13
+  - terrain: Plains
+    x: 11
+    'y': 13
+  - terrain: Wall
+    x: 12
+    'y': 13
+  - terrain: Wall
+    x: 13
+    'y': 13
+  - terrain: Wall
+    x: 14
+    'y': 13
+  - terrain: Wall
+    x: 15
+    'y': 13
+  - terrain: Stairs
+    x: 16
+    'y': 13
+  - terrain: Floor
+    x: 17
+    'y': 13
+  - terrain: Floor
+    x: 18
+    'y': 13
+  - terrain: Floor
+    x: 19
+    'y': 13
+  - terrain: Floor
+    x: 0
+    'y': 14
+  - terrain: Pillar
+    x: 1
+    'y': 14
+  - terrain: Floor
+    x: 2
+    'y': 14
+  - terrain: Wall
+    x: 3
+    'y': 14
+  - terrain: Plains
+    x: 4
+    'y': 14
+  - terrain: Plains
+    x: 5
+    'y': 14
+  - terrain: Plains
+    x: 6
+    'y': 14
+  - terrain: Plains
+    x: 7
+    'y': 14
+  - terrain: Plains
+    x: 8
+    'y': 14
+  - terrain: Wall
+    x: 9
+    'y': 14
+  - terrain: Wall
+    x: 10
+    'y': 14
+  - terrain: Wall
+    x: 11
+    'y': 14
+  - terrain: Wall
+    x: 12
+    'y': 14
+  - terrain: Floor
+    x: 13
+    'y': 14
+  - terrain: Floor
+    x: 14
+    'y': 14
+  - terrain: Floor
+    x: 15
+    'y': 14
+  - terrain: Floor
+    x: 16
+    'y': 14
+  - terrain: Floor
+    x: 17
+    'y': 14
+  - terrain: Floor
+    x: 18
+    'y': 14
+  - terrain: Floor
+    x: 19
+    'y': 14
+  - terrain: Floor
+    x: 0
+    'y': 15
+  - terrain: Floor
+    x: 1
+    'y': 15
+  - terrain: Floor
+    x: 2
+    'y': 15
+  - terrain: Wall
+    x: 3
+    'y': 15
+  - terrain: Plains
+    x: 4
+    'y': 15
+  - terrain: Plains
+    x: 5
+    'y': 15
+  - terrain: Road
+    x: 6
+    'y': 15
+  - terrain: Road
+    x: 7
+    'y': 15
+  - terrain: Plains
+    x: 8
+    'y': 15
+  - terrain: Wall
+    x: 9
+    'y': 15
+  - terrain: Floor
+    x: 10
+    'y': 15
+  - terrain: Floor
+    x: 11
+    'y': 15
+  - terrain: Floor
+    x: 12
+    'y': 15
+  - terrain: Floor
+    x: 13
+    'y': 15
+  - terrain: Pillar
+    x: 14
+    'y': 15
+  - terrain: Floor
+    x: 15
+    'y': 15
+  - terrain: Floor
+    x: 16
+    'y': 15
+  - terrain: Floor
+    x: 17
+    'y': 15
+  - terrain: Pillar
+    x: 18
+    'y': 15
+  - terrain: Floor
+    x: 19
+    'y': 15
+  - terrain: Pillar
+    x: 0
+    'y': 16
+  - terrain: Floor
+    x: 1
+    'y': 16
+  - terrain: Floor
+    x: 2
+    'y': 16
+  - terrain: Wall
+    x: 3
+    'y': 16
+  - terrain: Road
+    x: 4
+    'y': 16
+  - terrain: Plains
+    x: 5
+    'y': 16
+  - terrain: Plains
+    x: 6
+    'y': 16
+  - terrain: Road
+    x: 7
+    'y': 16
+  - terrain: Road
+    x: 8
+    'y': 16
+  - terrain: Stairs
+    x: 9
+    'y': 16
+  - terrain: Floor
+    x: 10
+    'y': 16
+  - terrain: Floor
+    x: 11
+    'y': 16
+  - terrain: Pillar
+    x: 12
+    'y': 16
+  - terrain: Floor
+    x: 13
+    'y': 16
+  - terrain: Floor
+    x: 14
+    'y': 16
+  - terrain: Floor
+    x: 15
+    'y': 16
+  - terrain: Pillar
+    x: 16
+    'y': 16
+  - terrain: Floor
+    x: 17
+    'y': 16
+  - terrain: Floor
+    x: 18
+    'y': 16
+  - terrain: Floor
+    x: 19
+    'y': 16
+  - terrain: Floor
+    x: 0
+    'y': 17
+  - terrain: Floor
+    x: 1
+    'y': 17
+  - terrain: Floor
+    x: 2
+    'y': 17
+  - terrain: Stairs
+    x: 3
+    'y': 17
+  - terrain: Plains
+    x: 4
+    'y': 17
+  - terrain: Plains
+    x: 5
+    'y': 17
+  - terrain: Plains
+    x: 6
+    'y': 17
+  - terrain: Plains
+    x: 7
+    'y': 17
+  - terrain: Plains
+    x: 8
+    'y': 17
+  - terrain: Stairs
+    x: 9
+    'y': 17
+  - terrain: Floor
+    x: 10
+    'y': 17
+  - terrain: Floor
+    x: 11
+    'y': 17
+  - terrain: Floor
+    x: 12
+    'y': 17
+  - terrain: Floor
+    x: 13
+    'y': 17
+  - terrain: Floor
+    x: 14
+    'y': 17
+  - terrain: Floor
+    x: 15
+    'y': 17
+  - terrain: Floor
+    x: 16
+    'y': 17
+  - terrain: Floor
+    x: 17
+    'y': 17
+  - terrain: Floor
+    x: 18
+    'y': 17
+  - terrain: Floor
+    x: 19
+    'y': 17
 pointsOfInterest:
   - x: 16
     'y': 0
-    type: Stairs
+    terrain: Stairs
   - x: 1
     'y': 1
-    type: Chest
+    terrain: Chest
   - x: 16
     'y': 1
-    type: Stairs
+    terrain: Stairs
   - x: 16
     'y': 2
-    type: Stairs
+    terrain: Stairs
   - x: 12
     'y': 3
-    type: Stairs
+    terrain: Stairs
   - x: 8
     'y': 6
-    type: Stairs
+    terrain: Stairs
   - x: 19
     'y': 10
-    type: Chest
+    terrain: Chest
   - x: 1
     'y': 11
-    type: Stairs
+    terrain: Stairs
   - x: 16
     'y': 13
-    type: Stairs
+    terrain: Stairs
   - x: 9
     'y': 16
-    type: Stairs
+    terrain: Stairs
   - x: 3
     'y': 17
-    type: Stairs
+    terrain: Stairs
   - x: 9
     'y': 17
-    type: Stairs
+    terrain: Stairs
 interactableTiles:
   - x: 1
     'y': 1
-    type: Chest
+    terrain: Chest
   - x: 19
     'y': 10
-    type: Chest
+    terrain: Chest
   - x: 19
     'y': 12
-    type: Door
+    terrain: Door
 areas:
-  - name: Central Courtyard
-    description: >-
-      An open outdoor area with plains and forests, serving as the main
-      battleground.
-    coordinateArea:
-      from:
-        x: 0
-        'y': 5
-      to:
-        x: 19
-        'y': 11
-  - name: Upper Left Room
-    description: >-
-      An indoor area with a chest, accessible via stairs, likely containing
-      valuable items.
+  - name: Entrance Hall
+    description: 'The starting area with a chest, leading into the main building.'
     coordinateArea:
       from:
         x: 0
         'y': 0
       to:
         x: 3
-        'y': 3
-  - name: Upper Right Room
+        'y': 2
+  - name: Central Courtyard
     description: >-
-      A room with a chest, accessible from the central courtyard, possibly
-      guarded.
+      An open outdoor area with plains and forests, connecting different parts
+      of the map.
+    coordinateArea:
+      from:
+        x: 3
+        'y': 5
+      to:
+        x: 16
+        'y': 11
+  - name: Left Wing
+    description: >-
+      A series of rooms and corridors on the left side, featuring stairs and a
+      chest.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 11
+      to:
+        x: 3
+        'y': 17
+  - name: Right Wing
+    description: >-
+      A series of rooms and corridors on the right side, featuring stairs and a
+      chest.
     coordinateArea:
       from:
         x: 16
-        'y': 0
+        'y': 9
       to:
         x: 19
-        'y': 3
-  - name: Lower Left Room
+        'y': 17
+  - name: Upper Hallway
     description: >-
-      A small indoor area with stairs, providing strategic access to the
-      courtyard.
-    coordinateArea:
-      from:
-        x: 0
-        'y': 12
-      to:
-        x: 3
-        'y': 15
-  - name: Lower Right Room
-    description: >-
-      An indoor area with a chest, accessible through a door, likely containing
-      treasures.
-    coordinateArea:
-      from:
-        x: 18
-        'y': 10
-      to:
-        x: 19
-        'y': 13
-  - name: Central Hallway
-    description: >-
-      A connecting indoor hallway with pillars, leading to various rooms and the
-      courtyard.
+      A long hallway with pillars and stairs, connecting the entrance to the
+      central courtyard.
     coordinateArea:
       from:
         x: 4
         'y': 0
       to:
-        x: 15
+        x: 16
         'y': 3
+  - name: Lower Hallway
+    description: >-
+      A corridor with pillars and stairs, connecting the central courtyard to
+      the right wing.
+    coordinateArea:
+      from:
+        x: 10
+        'y': 14
+      to:
+        x: 19
+        'y': 17

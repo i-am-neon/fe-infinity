@@ -1,1 +1,2 @@
-export type MapLocation = { x: number; y: number; type: string };
+export type MapLocation = { x: number; y: number; terrain: string };
+

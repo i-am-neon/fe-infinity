@@ -7,7 +7,7 @@ export type MapData = {
   tmx: string;
   height: number;
   width: number;
-  terrainGrid: string[][];
+  terrainGrid: MapLocation[];
   pointsOfInterest: MapLocation[];
   interactableTiles: MapLocation[];
   areas: MapArea[];

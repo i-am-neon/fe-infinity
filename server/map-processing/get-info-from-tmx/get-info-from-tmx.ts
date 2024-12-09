@@ -1,14 +1,14 @@
 import extractValuesFromTmx from "@/map-processing/get-info-from-tmx/extract-values-from-tmx.ts";
-import getTerrainGridFromTmxValues from "@/map-processing/get-info-from-tmx/get-terrain-grid-from-tmx-values.ts";
-import getPointsOfInterestFromTerrainGrid from "@/map-processing/get-info-from-tmx/get-points-of-interest-from-terrain-grid.ts";
 import getInteractableTilesFromTerrainGrid from "@/map-processing/get-info-from-tmx/get-interactable-tiles-from-terrain-grid.ts";
+import getPointsOfInterestFromTerrainGrid from "@/map-processing/get-info-from-tmx/get-points-of-interest-from-terrain-grid.ts";
+import getTerrainGridFromTmxValues from "@/map-processing/get-info-from-tmx/get-terrain-grid-from-tmx-values.ts";
 import { MapLocation } from "@/types/map-location.ts";
 
 export default function getInfoFromTmx(tmx: string): {
   tileset: string;
   width: number;
   height: number;
-  terrainGrid: string[][];
+  terrainGrid: MapLocation[];
   pointsOfInterest: MapLocation[];
   interactableTiles: MapLocation[];
 } {

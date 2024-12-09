@@ -29,14 +29,10 @@ In your return value, include the terrain type of that tile and why you decided 
 `;
 
 export default async function generatePlayerUnitCoords({
-  characters,
+  numberOfCharacters,
   mapArea,
 }: {
-  characters: {
-    characterName: string;
-    characterClass: string;
-    startingAllegiance: "ally" | "npc" | "enemy";
-  }[];
+  numberOfCharacters: number;
   mapArea: MapArea;
 }): Promise<
   {
@@ -48,11 +44,11 @@ export default async function generatePlayerUnitCoords({
 > {
   const { characterNameAndCoords } = await generateStructuredData({
     systemMessage,
-    prompt: `Characters: ${JSON.stringify(
-      characters,
+    prompt: `Number of Characters: ${numberOfCharacters}\\n\nMap Area: ${JSON.stringify(
+      mapArea,
       null,
       2
-    )}\\n\nMap Area: ${JSON.stringify(mapArea, null, 2)}`,
+    )}`,
     schema: z.object({
       characterNameAndCoords: z.array(
         z.object({

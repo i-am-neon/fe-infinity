@@ -28,18 +28,18 @@ export default async function getAllLocationBasedEvents({
   const text: string[] = [];
 
   for (const tile of interactableTiles) {
-    if (tile.type === "Chest") {
+    if (tile.terrain === "Chest") {
       locationBasedEvents.push(
         getChestItems({ xCoord: tile.x, yCoord: tile.y })
       );
-    } else if (tile.type === "Door") {
+    } else if (tile.terrain === "Door") {
       locationBasedEvents.push(`Door(${tile.x},${tile.y})`);
       // Visitable
     } else if (
-      tile.type === "Village Entrance" ||
-      tile.type === "House" ||
-      tile.type === "Inn" ||
-      tile.type === "Visitable Ruins"
+      tile.terrain === "Village Entrance" ||
+      tile.terrain === "House" ||
+      tile.terrain === "Inn" ||
+      tile.terrain === "Visitable Ruins"
     ) {
       const {
         locationBasedEvent,
@@ -50,11 +50,15 @@ export default async function getAllLocationBasedEvents({
       localDefinitions.push(localDefinition);
       text.push(_text);
       // Shops
-    } else if (tile.type === "Armory" || tile.type === "Vendor") {
+    } else if (tile.terrain === "Armory" || tile.terrain === "Vendor") {
       const {
         locationBasedEvents: _locationBasedEvents,
         localDefinitions: _localDefinitions,
-      } = getShopItems({ xCoord: tile.x, yCoord: tile.y, tileType: tile.type });
+      } = getShopItems({
+        xCoord: tile.x,
+        yCoord: tile.y,
+        tileType: tile.terrain,
+      });
       locationBasedEvents.push(_locationBasedEvents);
       localDefinitions.push(_localDefinitions);
     }
