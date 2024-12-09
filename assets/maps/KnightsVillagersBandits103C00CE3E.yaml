@@ -1,7 +1,7 @@
 name: KnightsVillagersBandits103C00CE3E
 description: >-
-  A complex map featuring a mix of indoor and outdoor areas, with multiple
-  staircases, chests, and varied terrain including plains, forests, and walls.
+  A mixed indoor and outdoor map featuring a central courtyard surrounded by
+  buildings with various rooms and pathways.
 tmx: >
   <?xml version="1.0" encoding="UTF-8"?>
 
@@ -485,62 +485,69 @@ interactableTiles:
     'y': 12
     type: Door
 areas:
-  - name: Northern Building
+  - name: Central Courtyard
     description: >-
-      An indoor area with multiple rooms and a central staircase leading to the
-      upper levels.
-    coordinates:
+      An open outdoor area with plains and forests, serving as the main
+      battleground.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 5
+      to:
+        x: 19
+        'y': 11
+  - name: Upper Left Room
+    description: >-
+      An indoor area with a chest, accessible via stairs, likely containing
+      valuable items.
+    coordinateArea:
       from:
         x: 0
         'y': 0
       to:
-        x: 19
-        'y': 6
-    subAreas:
-      - name: Throne Room
-        description: A large room with a red carpet and decorative pillars.
-        centerCoordinate:
-          x: 10
-          'y': 3
-      - name: Treasure Room
-        description: 'Contains a chest located at (1, 1).'
-        centerCoordinate:
-          x: 1
-          'y': 1
-  - name: Southern Plains
+        x: 3
+        'y': 3
+  - name: Upper Right Room
     description: >-
-      An outdoor area with open terrain, trees, and pathways connecting to other
-      areas.
-    coordinates:
+      A room with a chest, accessible from the central courtyard, possibly
+      guarded.
+    coordinateArea:
       from:
-        x: 0
-        'y': 7
-      to:
-        x: 19
-        'y': 17
-    subAreas:
-      - name: Forest Edge
-        description: A region with dense trees and varied terrain.
-        centerCoordinate:
-          x: 10
-          'y': 12
-      - name: Roadway
-        description: 'A pathway running through the plains, facilitating movement.'
-        centerCoordinate:
-          x: 10
-          'y': 15
-  - name: Western Wing
-    description: A section of the building with walls and a door leading to the outside.
-    coordinates:
-      from:
-        x: 0
+        x: 16
         'y': 0
       to:
-        x: 6
-        'y': 6
-    subAreas:
-      - name: Entrance Hall
-        description: The main entry point with walls and a door.
-        centerCoordinate:
-          x: 3
-          'y': 3
+        x: 19
+        'y': 3
+  - name: Lower Left Room
+    description: >-
+      A small indoor area with stairs, providing strategic access to the
+      courtyard.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 12
+      to:
+        x: 3
+        'y': 15
+  - name: Lower Right Room
+    description: >-
+      An indoor area with a chest, accessible through a door, likely containing
+      treasures.
+    coordinateArea:
+      from:
+        x: 18
+        'y': 10
+      to:
+        x: 19
+        'y': 13
+  - name: Central Hallway
+    description: >-
+      A connecting indoor hallway with pillars, leading to various rooms and the
+      courtyard.
+    coordinateArea:
+      from:
+        x: 4
+        'y': 0
+      to:
+        x: 15
+        'y': 3

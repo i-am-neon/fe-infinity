@@ -5,19 +5,25 @@ import { openai } from "@ai-sdk/openai";
 import { MapArea, MapAreaSchema } from "@/types/ai/MapAreas.ts";
 import { MapDataPreAI } from "@/map-processing/types/MapDataPreAI.ts";
 
-const systemMessage = `You are an expert in Fire Emblem map design and analysis. Given a terrain grid and a description of the map, your task is to divide the map into Areas and Sub-Areas. Each Area is a larger, distinct section of the map (e.g., a building, an outdoor field), while Sub-Areas are smaller, specific regions within each Area (e.g., a treasure room, a corridor).
+const systemMessage = `You are an expert in Fire Emblem map design and analysis.
+Given a terrain grid and a description of the map, your task is to divide the map into Areas.
 
-Follow these steps:
- - Analyze the Map: Review the grid and identify distinct features or thematic sections (e.g., indoor sections, outdoor sections, pathways).
- - Define Areas: Create Areas based on these features (e.g., Northern Building, Western Wing, Southern Plains, Beach, Southeastern Forest, etc). Each map typically has three or more areas. Assume the top of the map is the north, the bottom is the south, the left is the west, and the right is the east.
- - Create Sub-Areas: Within each Area, define smaller Sub-Areas that correspond to specific rooms, paths, or key locations (e.g., Throne Room, Treasure Room, Corridor).
- - List Coordinates: For each Area, provide a range of (x, y) coordinates that it encompasses. Assume the top-left corner of the grid is (0, 0). As X increases, it moves more right on the map. As Y increases, it moves more down on the map.`;
+Each Area is a distinct section of the map (e.g., a town area, a field, treasure room, hallway to throne room, etc).
+If it is an indoor map, each area should be rooms, hallways, etc.
+If it is an outdoor map, each area should be distinct sections of the map.
+If it is a mixed indoor/outdoor map, you will know what's indoor or outdoor by the tiles. If you see floor, it's indoor. Plains, sand, etc are outdoor.
+
+Areas should be small, self-contained areas. Each map should have 4-8 Areas.
+
+The terrain grid will give you terrain tiles from Fire Emblem 8. This means that stairways are common points for enemy reinforcements, forts give extra defense and healing, etc.
+
+`;
 
 export default async function defineMapAreas(
   mapData: MapDataPreAI
 ): Promise<{ description: string; areas: MapArea[] }> {
   const { object } = await generateObject({
-    model: openai("gpt-4o-mini"),
+    model: openai("gpt-4o"),
     system: systemMessage,
     messages: [
       {

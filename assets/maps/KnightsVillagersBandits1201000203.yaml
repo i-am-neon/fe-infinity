@@ -1,8 +1,7 @@
 name: KnightsVillagersBandits1201000203
 description: >-
-  A map featuring a mix of plains, forests, and various structures including
-  houses, a vendor, and fortifications, set in a village environment with
-  pathways connecting different areas.
+  A mixed terrain map featuring a village, cliffs, and a fort, with various
+  points of interest like houses and vendors.
 tmx: >
   <?xml version="1.0" encoding="UTF-8"?>
 
@@ -390,73 +389,69 @@ interactableTiles:
     'y': 14
     type: Village Entrance
 areas:
-  - name: Northern Village
+  - name: Northern Plains and Castle Wall
     description: >-
-      The upper section of the map containing houses and a vendor, surrounded by
-      plains and forests.
-    coordinates:
+      This area features open plains with a castle wall to the south, providing
+      a defensive position. It includes a vendor and a fort gate.
+    coordinateArea:
       from:
         x: 0
         'y': 0
       to:
         x: 14
-        'y': 8
-    subAreas:
-      - name: Vendor Area
-        description: 'A small area with a vendor located at (3, 2).'
-        centerCoordinate:
-          x: 3
-          'y': 2
-      - name: House Area
-        description: >-
-          Contains several houses, including one at (5, 1) and another at (0,
-          11).
-        centerCoordinate:
-          x: 5
-          'y': 1
-  - name: Central Plains
+        'y': 2
+  - name: Central Cliffs and Forest
     description: >-
-      The central area of the map characterized by open plains and pathways
-      leading to various structures.
-    coordinates:
+      A rugged area with cliffs and forests, offering strategic high ground and
+      cover. It includes an armory and a fort.
+    coordinateArea:
       from:
         x: 0
-        'y': 8
+        'y': 3
       to:
         x: 14
-        'y': 12
-    subAreas:
-      - name: Armory
-        description: 'An armory located at (3, 4).'
-        centerCoordinate:
-          x: 3
-          'y': 4
-      - name: Fort Gate
-        description: 'A fort gate located at (11, 2).'
-        centerCoordinate:
-          x: 11
-          'y': 2
-  - name: Southern Forts
+        'y': 5
+  - name: Western Village
     description: >-
-      The lower section of the map featuring multiple forts and a village
-      entrance, with hills and cliffs.
-    coordinates:
+      A small village area enclosed by walls, featuring a village entrance and a
+      house. It provides a safe haven and strategic point.
+    coordinateArea:
       from:
         x: 0
-        'y': 12
+        'y': 6
+      to:
+        x: 4
+        'y': 8
+  - name: Eastern Fort and Sea
+    description: >-
+      This area includes a fort near the sea, providing a strong defensive
+      position. It features sandy terrain and a fort.
+    coordinateArea:
+      from:
+        x: 8
+        'y': 6
       to:
         x: 14
+        'y': 9
+  - name: Southern Hills and Village
+    description: >-
+      A hilly region with a village entrance and houses, offering a mix of
+      elevation and residential areas.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 10
+      to:
+        x: 14
+        'y': 14
+  - name: Southwestern Peaks
+    description: >-
+      A mountainous area with peaks and hills, providing high ground and a
+      natural barrier.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 15
+      to:
+        x: 4
         'y': 16
-    subAreas:
-      - name: Fort Area
-        description: >-
-          Contains several forts, including one at (8, 6) and another at (10,
-          8).
-        centerCoordinate:
-          x: 8
-          'y': 6
-      - name: Village Entrance
-        description: 'The entrance to the village located at (2, 8).'
-        centerCoordinate:
-          x: 2
-          'y': 8

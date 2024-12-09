@@ -3,7 +3,7 @@ import { MapData } from "@/map-processing/types/MapData.ts";
   export const allMapOptions: MapData[] = [
   {
     "name": "MagesMercenaries342004344",
-    "description": "A desert-themed map featuring various terrains including cliffs, forts, and a village, with points of interest such as houses and vendors.",
+    "description": "A desert map with scattered cliffs, forts, and a village area.",
     "tmx": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<map version=\"1.0\" orientation=\"orthogonal\" renderorder=\"right-down\" width=\"19\" height=\"20\" tilewidth=\"16\" tileheight=\"16\" nextobjectid=\"1\">\n <tileset firstgid=\"1\" name=\"42004344\" tilewidth=\"16\" tileheight=\"16\">\n  <image source=\"Tilesets/42004344.png\" width=\"512\" height=\"512\"/>\n </tileset>\n <layer name=\"Main\" width=\"19\" height=\"20\">\n  <properties>\n   <property name=\"Main\" value=\"\"/>\n   <property name=\"Anims\" value=\"_42Anims\"/>\n   <property name=\"ChapterID\" value=\"<CHAPTERID>\"/>\n   <property name=\"MapChangesID\" value=\"MagesMercenaries342004344_Changes\"/>\n   <property name=\"MapID\" value=\"MagesMercenaries342004344_Map\"/>\n   <property name=\"ObjectType\" value=\"0x42\"/>\n   <property name=\"PaletteID\" value=\"0x43\"/>\n   <property name=\"TileConfig\" value=\"0x44\"/>\n  </properties>\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxVVL1uE0EY3L1r6M070EAuwUADXSJhCRThKwIPACJICB2K+OuhgMK2LB4BExyJ2E4BtBTBSZpTLEh4gShYVAgUKJnRN6tbF6Pd2/t+Zubbu1bqXAnUgK+Jc/NYN4ER0Aam3rkvwAT7ljAHDASeN4Gu6gx1FvLHyD0G9rzFtXTeAHKg7+25pdgCawbsKicXn0x9CvEcaT+vXs2oF5/XveW1FVeqR7zn+z+J9ZhITyPS3xcf1u0q93diXNj3s3OuIz/47rTOg85cvMlhW7zmVG+QVtpG2g+VnytnU5w62pP3svYhplCvrp9Fqbhu5Hup/s2oT6E69PtIsfUIK1Ht/cQ0F2nl7bpyyPFd5BO9Y69vyHmp9WJquAQc4PlXUnHtyeuG8vd8NeNd3QPWOExs3QGPN8C+s2dyC7nbulPB4yx4FHl9T/UuIHaKGqew1rydBV7BO9ab6j625V/PV/M5Rv4P4AXwE6jj3XlgVT3o4Zb0hG8k5rIg3qx7B/mLwFvgGnBdOtmDPj5WLc4hk+993ae25ttR/Svo/QToIfYh8MrZnvXPeZtF4DYRl7E0B47hv8C8Z1hvkwfvPbAknuQ8dhW3gbSUml1HWlmT39tzxN7Cehl4nRpWsL+K82VpDbzy6JsK/5SmwO/tA/AR+EQfxIs870ov+a2ls9wyec65DtPq/3UAHALfU9O4ATySh2elc8nNzjP8AwaqOZHuE+Av8A94j5j78j3opt5FeUa9W+Jy4m02dc2BXM/g/Q15Qw70qeFsFk9R56ZqkVdNd+MB9XjzmrNZkP//AaMuz6o=\n  </data>\n </layer>\n <layer name=\"Village Destroyed\" width=\"19\" height=\"20\" visible=\"0\">\n  <properties>\n   <property name=\"Height\" value=\"3\"/>\n   <property name=\"ID\" value=\"0\"/>\n   <property name=\"Width\" value=\"3\"/>\n   <property name=\"X\" value=\"0\"/>\n   <property name=\"Y\" value=\"16\"/>\n  </properties>\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxjYBgFo2AUjIKhCTYzMzBsAeKtzJSbdRloxhUgvkoFsz4DzfgCxF+pYBY1AQBqNweQ\n  </data>\n </layer>\n <layer name=\"Village Visited\" width=\"19\" height=\"20\" visible=\"0\">\n  <properties>\n   <property name=\"Height\" value=\"1\"/>\n   <property name=\"ID\" value=\"1\"/>\n   <property name=\"Width\" value=\"1\"/>\n   <property name=\"X\" value=\"1\"/>\n   <property name=\"Y\" value=\"18\"/>\n  </properties>\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxjYBgFo2AUjIJRQG0wlXmgXYAJAF3NAJk=\n  </data>\n </layer>\n</map>\n",
     "height": 20,
     "width": 19,
@@ -505,130 +505,66 @@ import { MapData } from "@/map-processing/types/MapData.ts";
     ],
     "areas": [
       {
-        "name": "Desert Plains",
-        "description": "A vast area of desert terrain with scattered cliffs and a few points of interest like forts and houses.",
-        "coordinates": {
+        "name": "Northern Desert",
+        "description": "A vast desert area with scattered cliffs and a fort, providing strategic defense points.",
+        "coordinateArea": {
           "from": {
             "x": 0,
             "y": 0
           },
           "to": {
             "x": 18,
-            "y": 9
+            "y": 5
           }
-        },
-        "subAreas": [
-          {
-            "name": "Northern Desert",
-            "description": "The upper section of the desert with cliffs and forts.",
-            "centerCoordinate": {
-              "x": 9,
-              "y": 4
-            }
+        }
+      },
+      {
+        "name": "Central Desert",
+        "description": "The central part of the map with a mix of desert and sand, featuring a fort and a house.",
+        "coordinateArea": {
+          "from": {
+            "x": 0,
+            "y": 6
           },
-          {
-            "name": "Central Desert",
-            "description": "The middle section with more open desert and some roads.",
-            "centerCoordinate": {
-              "x": 9,
-              "y": 5
-            }
-          },
-          {
-            "name": "Southern Desert",
-            "description": "The lower section with lakes and village entrances.",
-            "centerCoordinate": {
-              "x": 9,
-              "y": 15
-            }
+          "to": {
+            "x": 18,
+            "y": 10
           }
-        ]
+        }
+      },
+      {
+        "name": "Southern Plains",
+        "description": "A region with plains and a lake, bordered by village walls and a bridge.",
+        "coordinateArea": {
+          "from": {
+            "x": 0,
+            "y": 11
+          },
+          "to": {
+            "x": 18,
+            "y": 15
+          }
+        }
       },
       {
         "name": "Village Area",
-        "description": "A small area containing a village with houses and a vendor.",
-        "coordinates": {
+        "description": "A small village area with a vendor, armory, and houses, surrounded by village walls.",
+        "coordinateArea": {
           "from": {
-            "x": 1,
-            "y": 8
+            "x": 0,
+            "y": 16
           },
           "to": {
-            "x": 12,
-            "y": 18
+            "x": 18,
+            "y": 19
           }
-        },
-        "subAreas": [
-          {
-            "name": "Village Entrance",
-            "description": "The entrance to the village, marked by a village wall.",
-            "centerCoordinate": {
-              "x": 1,
-              "y": 18
-            }
-          },
-          {
-            "name": "Vendor Area",
-            "description": "The area where the vendor is located.",
-            "centerCoordinate": {
-              "x": 6,
-              "y": 11
-            }
-          },
-          {
-            "name": "House Area",
-            "description": "The area containing houses.",
-            "centerCoordinate": {
-              "x": 7,
-              "y": 12
-            }
-          }
-        ]
-      },
-      {
-        "name": "Fortified Areas",
-        "description": "Regions containing forts and strategic points for defense.",
-        "coordinates": {
-          "from": {
-            "x": 8,
-            "y": 1
-          },
-          "to": {
-            "x": 12,
-            "y": 3
-          }
-        },
-        "subAreas": [
-          {
-            "name": "Northern Forts",
-            "description": "The northern forts located at (11, 1) and (11, 3).",
-            "centerCoordinate": {
-              "x": 11,
-              "y": 2
-            }
-          },
-          {
-            "name": "Central Fort",
-            "description": "The central fort located at (12, 8).",
-            "centerCoordinate": {
-              "x": 12,
-              "y": 8
-            }
-          },
-          {
-            "name": "Southern Fort",
-            "description": "The southern fort located at (8, 9).",
-            "centerCoordinate": {
-              "x": 8,
-              "y": 9
-            }
-          }
-        ]
+        }
       }
     ]
   },
   {
     "name": "KnightsVillagersBandits103C00CE3E",
-    "description": "A complex map featuring a mix of indoor and outdoor areas, with multiple staircases, chests, and varied terrain including plains, forests, and walls.",
+    "description": "A mixed indoor and outdoor map featuring a central courtyard surrounded by buildings with various rooms and pathways.",
     "tmx": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<map version=\"1.0\" orientation=\"orthogonal\" renderorder=\"right-down\" width=\"20\" height=\"18\" tilewidth=\"16\" tileheight=\"16\" nextobjectid=\"1\">\n <tileset firstgid=\"1\" name=\"3C00CE3E\" tilewidth=\"16\" tileheight=\"16\">\n  <image source=\"Tilesets/3C00CE3E.png\" width=\"512\" height=\"512\"/>\n </tileset>\n <layer name=\"Main\" width=\"20\" height=\"18\">\n  <properties>\n   <property name=\"Main\" value=\"\"/>\n   <property name=\"Anims\" value=\"_3CAnims\"/>\n   <property name=\"ChapterID\" value=\"<CHAPTERID>\"/>\n   <property name=\"MapChangesID\" value=\"KnightsVillagersBandits103C00CE3E_Changes\"/>\n   <property name=\"MapID\" value=\"KnightsVillagersBandits103C00CE3E_Map\"/>\n   <property name=\"ObjectType\" value=\"0x3C\"/>\n   <property name=\"PaletteID\" value=\"0xCE\"/>\n   <property name=\"TileConfig\" value=\"0x3E\"/>\n  </properties>\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJx1lMFLVFEUxs97jzCLBGtW+QckaRBaqW0NMkQj0H9AR4KUrKi/oBQEEWzZNhujGNFZuosZUqioBqJNW1G0shFXtun7uN/l3l60+HHmnnfOd885994pZGZnxKnUrAHq4AAsghHwVGvv/xTFlRKzj2bWD2qgFTpjsu/w7bPiaUfBA/BIud7/CxxKexs5X2ALsO+lw9pOS68Rxcd6B5G/HtVLvW3ofMXvn7Cvk8AJ7e9j18BDUIk0lhDXnIacFTAMnRuqrwPfTqbOliPdRq4OWq9Djc4o7y50mpkHpi2Q193SPGkrOZ0mxL8EK2ADrMPXhpkNIKYFXIOvnNM9BmqJs76Pe5FOTVojiBmHrYI9cA7rOmxRMWXFf7Bwdi3qZT5xeRPgJjiLmnZ0X+jjrIalMy6NTTCrmZwHF0A3eJa6c+TeQ+AVeGx/nw/vyCp8z1XvD82CuZfw7bv8/M57wRkN8jzBLdVAjYLuXXymrJOxC2BfOv2aw4RyWc99cAdMmZs79fy7uJq5O+XrnOM8wYDyZ8BbsCVN7jEpraK+ez3Wx7d5JQt6t6Pz87Mvap5V5bOmpdzcyJvEvaUe9e17rupceBZP1CP7Ltm/b4O9sce+zNmK3nlvVGNJZ8v3+MLCjL1GbxY02FtPzl4Eo2AvcW9nQ/fud+rqO56G/b0Ga7gcafh17G/H7yOwa+6+UfMbWE7C/j7e15Bfe8t4/vfwzl03N0fet67E6eV7+d/6D92xtrA=\n  </data>\n </layer>\n <layer name=\"Broken_Wall\" width=\"20\" height=\"18\" visible=\"0\">\n  <properties>\n   <property name=\"Height\" value=\"1\"/>\n   <property name=\"ID\" value=\"0\"/>\n   <property name=\"Width\" value=\"2\"/>\n   <property name=\"X\" value=\"3\"/>\n   <property name=\"Y\" value=\"0\"/>\n  </properties>\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxjYEAAYWYGhk9MDKNgFIyCUTAKBgEAAM3eAQs=\n  </data>\n </layer>\n <layer name=\"Left Chest\" width=\"20\" height=\"18\" visible=\"0\">\n  <properties>\n   <property name=\"Height\" value=\"1\"/>\n   <property name=\"ID\" value=\"1\"/>\n   <property name=\"Width\" value=\"1\"/>\n   <property name=\"X\" value=\"1\"/>\n   <property name=\"Y\" value=\"1\"/>\n  </properties>\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxjYKA+cKKBmaNgFIyCUTDSAABjRwBD\n  </data>\n </layer>\n <layer name=\"Right Chest\" width=\"20\" height=\"18\" visible=\"0\">\n  <properties>\n   <property name=\"Height\" value=\"1\"/>\n   <property name=\"ID\" value=\"2\"/>\n   <property name=\"Width\" value=\"1\"/>\n   <property name=\"X\" value=\"19\"/>\n   <property name=\"Y\" value=\"10\"/>\n  </properties>\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxjYBgFo2AU0AM4DbQDRsGQAwCXCABD\n  </data>\n </layer>\n <layer name=\"Door\" width=\"20\" height=\"18\" visible=\"0\">\n  <properties>\n   <property name=\"Height\" value=\"2\"/>\n   <property name=\"ID\" value=\"3\"/>\n   <property name=\"Width\" value=\"2\"/>\n   <property name=\"X\" value=\"18\"/>\n   <property name=\"Y\" value=\"12\"/>\n  </properties>\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxjYBgFo2AUjHSwjpGBQZCZeuZZAs0yo6J5IxUAANEhATk=\n  </data>\n </layer>\n</map>\n",
     "height": 18,
     "width": 20,
@@ -1111,98 +1047,94 @@ import { MapData } from "@/map-processing/types/MapData.ts";
     ],
     "areas": [
       {
-        "name": "Northern Building",
-        "description": "An indoor area with multiple rooms and a central staircase leading to the upper levels.",
-        "coordinates": {
+        "name": "Central Courtyard",
+        "description": "An open outdoor area with plains and forests, serving as the main battleground.",
+        "coordinateArea": {
+          "from": {
+            "x": 0,
+            "y": 5
+          },
+          "to": {
+            "x": 19,
+            "y": 11
+          }
+        }
+      },
+      {
+        "name": "Upper Left Room",
+        "description": "An indoor area with a chest, accessible via stairs, likely containing valuable items.",
+        "coordinateArea": {
           "from": {
             "x": 0,
             "y": 0
           },
           "to": {
-            "x": 19,
-            "y": 6
+            "x": 3,
+            "y": 3
           }
-        },
-        "subAreas": [
-          {
-            "name": "Throne Room",
-            "description": "A large room with a red carpet and decorative pillars.",
-            "centerCoordinate": {
-              "x": 10,
-              "y": 3
-            }
-          },
-          {
-            "name": "Treasure Room",
-            "description": "Contains a chest located at (1, 1).",
-            "centerCoordinate": {
-              "x": 1,
-              "y": 1
-            }
-          }
-        ]
+        }
       },
       {
-        "name": "Southern Plains",
-        "description": "An outdoor area with open terrain, trees, and pathways connecting to other areas.",
-        "coordinates": {
+        "name": "Upper Right Room",
+        "description": "A room with a chest, accessible from the central courtyard, possibly guarded.",
+        "coordinateArea": {
           "from": {
-            "x": 0,
-            "y": 7
-          },
-          "to": {
-            "x": 19,
-            "y": 17
-          }
-        },
-        "subAreas": [
-          {
-            "name": "Forest Edge",
-            "description": "A region with dense trees and varied terrain.",
-            "centerCoordinate": {
-              "x": 10,
-              "y": 12
-            }
-          },
-          {
-            "name": "Roadway",
-            "description": "A pathway running through the plains, facilitating movement.",
-            "centerCoordinate": {
-              "x": 10,
-              "y": 15
-            }
-          }
-        ]
-      },
-      {
-        "name": "Western Wing",
-        "description": "A section of the building with walls and a door leading to the outside.",
-        "coordinates": {
-          "from": {
-            "x": 0,
+            "x": 16,
             "y": 0
           },
           "to": {
-            "x": 6,
-            "y": 6
+            "x": 19,
+            "y": 3
           }
-        },
-        "subAreas": [
-          {
-            "name": "Entrance Hall",
-            "description": "The main entry point with walls and a door.",
-            "centerCoordinate": {
-              "x": 3,
-              "y": 3
-            }
+        }
+      },
+      {
+        "name": "Lower Left Room",
+        "description": "A small indoor area with stairs, providing strategic access to the courtyard.",
+        "coordinateArea": {
+          "from": {
+            "x": 0,
+            "y": 12
+          },
+          "to": {
+            "x": 3,
+            "y": 15
           }
-        ]
+        }
+      },
+      {
+        "name": "Lower Right Room",
+        "description": "An indoor area with a chest, accessible through a door, likely containing treasures.",
+        "coordinateArea": {
+          "from": {
+            "x": 18,
+            "y": 10
+          },
+          "to": {
+            "x": 19,
+            "y": 13
+          }
+        }
+      },
+      {
+        "name": "Central Hallway",
+        "description": "A connecting indoor hallway with pillars, leading to various rooms and the courtyard.",
+        "coordinateArea": {
+          "from": {
+            "x": 4,
+            "y": 0
+          },
+          "to": {
+            "x": 15,
+            "y": 3
+          }
+        }
       }
     ]
   },
   {
     "name": "KnightsVillagersBandits1201000203",
-    "description": "A map featuring a mix of plains, forests, and various structures including houses, a vendor, and fortifications, set in a village environment with pathways connecting different areas.",
+    "description": "A mixed terrain map featuring a village, cliffs, and a fort, with various points of interest like houses and vendors.",
     "tmx": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<map version=\"1.0\" orientation=\"orthogonal\" renderorder=\"right-down\" width=\"15\" height=\"17\" tilewidth=\"16\" tileheight=\"16\" nextobjectid=\"1\">\n <tileset firstgid=\"1\" name=\"01000203\" tilewidth=\"16\" tileheight=\"16\">\n  <image source=\"Tilesets/01000203.png\" width=\"512\" height=\"512\"/>\n </tileset>\n <layer name=\"Main\" width=\"15\" height=\"17\">\n  <properties>\n   <property name=\"Main\" value=\"\"/>\n   <property name=\"Anims\" value=\"_01Anims\"/>\n   <property name=\"ChapterID\" value=\"<CHAPTERID>\"/>\n   <property name=\"MapChangesID\" value=\"KnightsVillagersBandits1201000203_Changes\"/>\n   <property name=\"MapID\" value=\"KnightsVillagersBandits1201000203_Map\"/>\n   <property name=\"ObjectType\" value=\"0x01\"/>\n   <property name=\"PaletteID\" value=\"0x02\"/>\n   <property name=\"TileConfig\" value=\"0x03\"/>\n  </properties>\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxdk01LlFEUx++dh/BlkYISpG4lFRyl2pS2UsFxVuFHmBF1dCN+hGmMSEL7CukYgq8Lv4JBoBmUfQMXiePGkmjh73D+wzy4+HGfe8495/zPufeZDiE8gWnYhrNMCJuss7As32vYTULYg32o6twa6w4MwyKMQS/+POtbKMl+gu0UvsEb9p9Uq6LvCdlPYSGVz2pc4avBNXzF1hHd15a4/4zvSWz56PsHpi/jWqyPdfgOLfhfQVH2caufuP2K7xWDuGPW5uh1DoLnr3LuVnrKOmv2A+UxLf+VP83H4OtI9P76ONcPA3AhXef4jmKjRhfffxVn+z9QsB7x52Aqaei4SdXqhvPg60t4BDfSNgfzUEp8Lqv4/sVGjceq/0v1fsILbBvq8xA62T+MPs8jxdr5Uem1PD+0Nx1F1bZZXSiHzWsQ/7OUbsvRoxjbP4/+huyN1d/RJNRgRndQS+V5Cn2QjT4Ti2mHXPD3OaT5WR/vo99X+d5dVKX1nd78Z9iCrOxF9fBFd5++i4rek9XZQdsH2M14zg39D/UZWnz6Lupa63HN9h6hNXGNY+rXNOfQPqE3mVd/TaY104g3nVa7IN0FafgNl5rhkv5p+//uAB6ufEQ=\n  </data>\n </layer>\n <layer name=\"Left Village Destroyed\" width=\"15\" height=\"17\" visible=\"0\">\n  <properties>\n   <property name=\"Height\" value=\"3\"/>\n   <property name=\"ID\" value=\"0\"/>\n   <property name=\"Width\" value=\"3\"/>\n   <property name=\"X\" value=\"1\"/>\n   <property name=\"Y\" value=\"6\"/>\n  </properties>\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxjYBgF9AIdzAwMnUDcxUy63hVAPSuBeBUZek8A9ZwE4lNk6B0FwxcAANNMBg0=\n  </data>\n </layer>\n <layer name=\"Left Village Visited\" width=\"15\" height=\"17\" visible=\"0\">\n  <properties>\n   <property name=\"Height\" value=\"1\"/>\n   <property name=\"ID\" value=\"1\"/>\n   <property name=\"Width\" value=\"1\"/>\n   <property name=\"X\" value=\"2\"/>\n   <property name=\"Y\" value=\"8\"/>\n  </properties>\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxjYBgFIwEoDrQDRsGgAwBIkAAi\n  </data>\n </layer>\n <layer name=\"Right Village Destroyed\" width=\"15\" height=\"17\" visible=\"0\">\n  <properties>\n   <property name=\"Height\" value=\"3\"/>\n   <property name=\"ID\" value=\"2\"/>\n   <property name=\"Width\" value=\"3\"/>\n   <property name=\"X\" value=\"10\"/>\n   <property name=\"Y\" value=\"12\"/>\n  </properties>\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxjYBgFo2DkgQ5mBoZOIO5iJl3vCqCelUC8igy9J4B6TgLxKTL0UhsAAHg1Bg0=\n  </data>\n </layer>\n <layer name=\"Right Village Visited\" width=\"15\" height=\"17\" visible=\"0\">\n  <properties>\n   <property name=\"Height\" value=\"1\"/>\n   <property name=\"ID\" value=\"3\"/>\n   <property name=\"Width\" value=\"1\"/>\n   <property name=\"X\" value=\"11\"/>\n   <property name=\"Y\" value=\"14\"/>\n  </properties>\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxjYBgFo2AU0BMoDrQDoAAAFYQAIg==\n  </data>\n </layer>\n</map>\n",
     "height": 17,
     "width": 15,
@@ -1593,100 +1525,88 @@ import { MapData } from "@/map-processing/types/MapData.ts";
     ],
     "areas": [
       {
-        "name": "Northern Village",
-        "description": "The upper section of the map containing houses and a vendor, surrounded by plains and forests.",
-        "coordinates": {
+        "name": "Northern Plains and Castle Wall",
+        "description": "This area features open plains with a castle wall to the south, providing a defensive position. It includes a vendor and a fort gate.",
+        "coordinateArea": {
           "from": {
             "x": 0,
             "y": 0
           },
           "to": {
             "x": 14,
-            "y": 8
+            "y": 2
           }
-        },
-        "subAreas": [
-          {
-            "name": "Vendor Area",
-            "description": "A small area with a vendor located at (3, 2).",
-            "centerCoordinate": {
-              "x": 3,
-              "y": 2
-            }
-          },
-          {
-            "name": "House Area",
-            "description": "Contains several houses, including one at (5, 1) and another at (0, 11).",
-            "centerCoordinate": {
-              "x": 5,
-              "y": 1
-            }
-          }
-        ]
+        }
       },
       {
-        "name": "Central Plains",
-        "description": "The central area of the map characterized by open plains and pathways leading to various structures.",
-        "coordinates": {
+        "name": "Central Cliffs and Forest",
+        "description": "A rugged area with cliffs and forests, offering strategic high ground and cover. It includes an armory and a fort.",
+        "coordinateArea": {
           "from": {
             "x": 0,
-            "y": 8
+            "y": 3
           },
           "to": {
             "x": 14,
-            "y": 12
+            "y": 5
           }
-        },
-        "subAreas": [
-          {
-            "name": "Armory",
-            "description": "An armory located at (3, 4).",
-            "centerCoordinate": {
-              "x": 3,
-              "y": 4
-            }
-          },
-          {
-            "name": "Fort Gate",
-            "description": "A fort gate located at (11, 2).",
-            "centerCoordinate": {
-              "x": 11,
-              "y": 2
-            }
-          }
-        ]
+        }
       },
       {
-        "name": "Southern Forts",
-        "description": "The lower section of the map featuring multiple forts and a village entrance, with hills and cliffs.",
-        "coordinates": {
+        "name": "Western Village",
+        "description": "A small village area enclosed by walls, featuring a village entrance and a house. It provides a safe haven and strategic point.",
+        "coordinateArea": {
           "from": {
             "x": 0,
-            "y": 12
+            "y": 6
+          },
+          "to": {
+            "x": 4,
+            "y": 8
+          }
+        }
+      },
+      {
+        "name": "Eastern Fort and Sea",
+        "description": "This area includes a fort near the sea, providing a strong defensive position. It features sandy terrain and a fort.",
+        "coordinateArea": {
+          "from": {
+            "x": 8,
+            "y": 6
           },
           "to": {
             "x": 14,
+            "y": 9
+          }
+        }
+      },
+      {
+        "name": "Southern Hills and Village",
+        "description": "A hilly region with a village entrance and houses, offering a mix of elevation and residential areas.",
+        "coordinateArea": {
+          "from": {
+            "x": 0,
+            "y": 10
+          },
+          "to": {
+            "x": 14,
+            "y": 14
+          }
+        }
+      },
+      {
+        "name": "Southwestern Peaks",
+        "description": "A mountainous area with peaks and hills, providing high ground and a natural barrier.",
+        "coordinateArea": {
+          "from": {
+            "x": 0,
+            "y": 15
+          },
+          "to": {
+            "x": 4,
             "y": 16
           }
-        },
-        "subAreas": [
-          {
-            "name": "Fort Area",
-            "description": "Contains several forts, including one at (8, 6) and another at (10, 8).",
-            "centerCoordinate": {
-              "x": 8,
-              "y": 6
-            }
-          },
-          {
-            "name": "Village Entrance",
-            "description": "The entrance to the village located at (2, 8).",
-            "centerCoordinate": {
-              "x": 2,
-              "y": 8
-            }
-          }
-        ]
+        }
       }
     ]
   }
