@@ -28,7 +28,7 @@ NPCs must NOT be placed on these types of tiles:
 
 In your return value, include the terrain type of that tile and why you decided to put the character there.`;
 
-export default async function generatePlayerUnitCoords({
+export default async function generateNpcUnitCoords({
   characters,
   npcStartingAreaNames,
   mapAreas,
@@ -75,10 +75,7 @@ export default async function generatePlayerUnitCoords({
     }),
     model: "gpt-4o",
   });
-  console.log(
-    "characterNameAndCoords",
-    JSON.stringify(characterNameAndCoords, null, 2)
-  );
+
   return characterNameAndCoords.map(({ characterName, xCoord, yCoord }) => {
     const character = characters.find((c) => c.characterName === characterName);
     if (!character) {
@@ -122,7 +119,7 @@ if (import.meta.main) {
     },
   ];
 
-  const res = await generatePlayerUnitCoords({
+  const res = await generateNpcUnitCoords({
     characters,
     npcStartingAreaNames,
     // chapterData,

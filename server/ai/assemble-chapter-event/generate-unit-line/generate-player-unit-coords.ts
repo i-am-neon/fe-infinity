@@ -1,13 +1,10 @@
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
-import { allMapOptions } from "@/map-processing/all-map-options.ts";
-import { MapData } from "@/map-processing/types/MapData.ts";
 import {
   ligmaCharacter,
   seraphinaCharacter,
 } from "@/testData/test-characters.ts";
-import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
-import { z } from "zod";
 import { MapArea } from "@/types/ai/MapAreas.ts";
+import { z } from "zod";
 
 const systemMessage = `You are choosing the starting allied character positions for a Fire Emblem chapter.
 
@@ -69,10 +66,7 @@ export default async function generatePlayerUnitCoords({
     }),
     model: "gpt-4o",
   });
-  console.log(
-    "characterNameAndCoords",
-    JSON.stringify(characterNameAndCoords, null, 2)
-  );
+
   return characterNameAndCoords.map(({ characterName, xCoord, yCoord }) => {
     const character = characters.find((c) => c.characterName === characterName);
     if (!character) {

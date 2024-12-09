@@ -1,10 +1,7 @@
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
-import { allMapOptions } from "@/map-processing/all-map-options.ts";
-import { MapData } from "@/map-processing/types/MapData.ts";
 import { igorCharacter } from "@/testData/test-characters.ts";
-import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
-import { z } from "zod";
 import { MapArea } from "@/types/ai/MapAreas.ts";
+import { z } from "zod";
 
 const systemMessage = `You are choosing the starting boss character position for a Fire Emblem chapter.
 
@@ -38,7 +35,7 @@ Boss must NOT be placed on these types of tiles:
 In your return value, include the terrain type of that tile and why you decided to put the character there.
 `;
 
-export default async function generatePlayerUnitCoords({
+export default async function generateBossUnitCoords({
   characters,
   mapArea,
 }: {
@@ -76,10 +73,7 @@ export default async function generatePlayerUnitCoords({
     }),
     model: "gpt-4o",
   });
-  console.log(
-    "characterNameAndCoords",
-    JSON.stringify(characterNameAndCoords, null, 2)
-  );
+
   return characterNameAndCoords.map(({ characterName, xCoord, yCoord }) => {
     const character = characters.find((c) => c.characterName === characterName);
     if (!character) {
@@ -107,9 +101,7 @@ if (import.meta.main) {
     },
   ];
 
-  const bossStartingAreaName = "Fortified Areas";
-
-  const res = await generatePlayerUnitCoords({
+  const res = await generateBossUnitCoords({
     characters,
     mapArea: {
       name: "Fortified Areas",
