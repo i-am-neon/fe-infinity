@@ -36,112 +36,73 @@ In your return value, include the terrain type of that tile and why you decided 
 `;
 
 export default async function generateBossUnitCoords({
-  characters,
+  boss,
   mapArea,
 }: {
-  characters: {
+  boss: {
     characterName: string;
     characterClass: string;
     startingAllegiance: "ally" | "npc" | "enemy";
-  }[];
+  };
   mapArea: MapArea;
-}): Promise<
-  {
-    characterName: string;
-    characterClass: string;
-    xCoord: number;
-    yCoord: number;
-  }[]
-> {
-  const { characterNameAndCoords } = await generateStructuredData({
+}): Promise<{
+  characterName: string;
+  characterClass: string;
+  xCoord: number;
+  yCoord: number;
+}> {
+  const { bossCoords } = await generateStructuredData({
     systemMessage,
-    prompt: `Characters: ${JSON.stringify(
-      characters,
+    prompt: `boss: ${JSON.stringify(
+      boss,
       null,
       2
     )}\n\nMap Area: ${JSON.stringify(mapArea, null, 2)}`,
     schema: z.object({
-      characterNameAndCoords: z.array(
-        z.object({
-          characterName: z.string(),
-          xCoord: z.number(),
-          yCoord: z.number(),
-          terrain: z.string(),
-          reasoning: z.string(),
-        })
-      ),
+      bossCoords: z.object({
+        xCoord: z.number(),
+        yCoord: z.number(),
+        terrain: z.string(),
+        reasoning: z.string(),
+      }),
     }),
     model: "gpt-4o",
   });
 
-  return characterNameAndCoords.map(({ characterName, xCoord, yCoord }) => {
-    const character = characters.find((c) => c.characterName === characterName);
-    if (!character) {
-      throw new Error(`Character not found: ${characterName}`);
-    }
-    return {
-      characterName: character.characterName,
-      characterClass: character.characterClass,
-      xCoord,
-      yCoord,
-    };
-  });
+  return {
+    characterName: boss.characterName,
+    characterClass: boss.characterClass,
+    xCoord: bossCoords.xCoord,
+    yCoord: bossCoords.yCoord,
+  };
 }
 
 if (import.meta.main) {
-  const characters: {
+  const boss: {
     characterName: string;
     characterClass: string;
     startingAllegiance: "ally" | "npc" | "enemy";
-  }[] = [
-    {
-      characterName: "Igor",
-      characterClass: igorCharacter.csvData.defaultClass,
-      startingAllegiance: "enemy",
-    },
-  ];
-
+  } = {
+    characterName: "Igor",
+    characterClass: igorCharacter.csvData.defaultClass,
+    startingAllegiance: "enemy",
+  };
   const res = await generateBossUnitCoords({
-    characters,
+    boss,
     mapArea: {
-      name: "Fortified Areas",
-      description: "Regions containing forts and strategic points for defense.",
-      coordinates: {
+      name: "Southern Plains",
+      description:
+        "A region with plains and a lake, bordered by village walls and a bridge.",
+      coordinateArea: {
         from: {
-          x: 8,
-          y: 1,
+          x: 0,
+          y: 11,
         },
         to: {
-          x: 12,
-          y: 3,
+          x: 18,
+          y: 15,
         },
       },
-      subAreas: [
-        {
-          name: "Northern Forts",
-          description: "The northern forts located at (11, 1) and (11, 3).",
-          centerCoordinate: {
-            x: 11,
-            y: 2,
-          },
-        },
-        {
-          name: "Central Fort",
-          description: "The central fort located at (12, 8).",
-          centerCoordinate: {
-            x: 12,
-            y: 8,
-          },
-        },
-        {
-          name: "Southern Fort",
-          description: "The southern fort located at (8, 9).",
-          centerCoordinate: {
-            x: 8,
-            y: 9,
-          },
-        },
-      ],
     },
   });
   console.log(JSON.stringify(res, null, 2));

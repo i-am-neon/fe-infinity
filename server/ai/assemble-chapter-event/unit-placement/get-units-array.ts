@@ -116,23 +116,62 @@ if (import.meta.main) {
     startingAllegiance: "ally" | "npc" | "enemy";
   }[] = [
     {
-      characterIdea: { ...seraphinaCharacter },
-      characterClass: seraphinaCharacter.csvData.defaultClass,
+      characterIdea: {
+        name: "Zynra",
+        gender: "female",
+        personality:
+          "Curious and empathetic, driven by a deep sense of justice.",
+        age: "young adult",
+        backstory:
+          "Zynra grew up in the outskirts of the Elderwood Thicket, where ancient sigils whispered through the trees. She witnessed a close friend fall into corruption due to forbidden magic, which fueled her resolve to understand and protect against such dangers. Over the years, she studied these sigils, striving to grasp their nature and prevent their misuse. Guided by compassion and courage, she now ventures forth to unite the fractured kingdoms and avert the awakening of Noxareth.",
+        firstSeenAs: "ally",
+        physicalDescription:
+          "A slender woman with flowing silver hair and vibrant green eyes, dressed in forest garb adorned with subtle sigils.",
+        inGameDescription:
+          "A seeker of truth and unity, battling to protect the realm from dark influences.",
+        deathQuote:
+          "This can't be how it ends... for Eldralis. The truth must live on.",
+      },
+      characterClass: "Mage",
       startingAllegiance: "ally",
     },
     {
-      characterIdea: { ...liraCharacter },
-      characterClass: liraCharacter.csvData.defaultClass,
-      startingAllegiance: "npc",
-    },
-    {
-      characterIdea: { ...ligmaCharacter },
-      characterClass: ligmaCharacter.csvData.defaultClass,
+      characterIdea: {
+        name: "Elysia",
+        gender: "female",
+        personality:
+          "Wise and nurturing, Elysia is deeply connected to the forest and its spirits.",
+        age: "mature adult",
+        backstory:
+          "Elysia has spent decades as a guardian of the Elderwood Thicket, learning the ancient ways of the druids. She witnessed the corruption of many sigil wielders and has dedicated her life to protecting the grove from those who would exploit its power. Her wisdom and connection to nature make her a valuable ally to Zynra, as she seeks to guide the young hero on her quest.",
+        firstSeenAs: "ally",
+        physicalDescription:
+          "A tall woman with long, braided brown hair and deep-set amber eyes, often wearing robes made of leaves and vines.",
+        inGameDescription:
+          "A guardian of the Elderwood, she protects the ancient sigils and their secrets.",
+        deathQuote:
+          "The forest... must remain safe. Do not let my sacrifice be in vain.",
+      },
+      characterClass: "Shaman",
       startingAllegiance: "ally",
     },
     {
-      characterIdea: { ...igorCharacter },
-      characterClass: igorCharacter.csvData.defaultClass,
+      characterIdea: {
+        name: "Kieran",
+        gender: "male",
+        personality:
+          "Ambitious and ruthless, Kieran is willing to do anything to achieve his goals, including sacrificing others.",
+        age: "young adult",
+        backstory:
+          "Once a promising scholar at the Sigil Academy, Kieran became disillusioned with the limitations of knowledge and sought power through the Chosen of Nihilus. He believes that awakening Noxareth will grant him the strength to reshape Eldralis according to his vision. His mastery of corrupted sigils makes him a formidable foe, as he wields their power without regard for the consequences.",
+        firstSeenAs: "boss",
+        physicalDescription:
+          "A tall man with short black hair and piercing blue eyes, clad in dark armor adorned with sigils that pulse with a sinister glow.",
+        inGameDescription:
+          "A former scholar turned dark enforcer, he seeks to awaken the slumbering god.",
+        deathQuote: "You... will never understand the power I sought...!",
+      },
+      characterClass: "Shaman",
       startingAllegiance: "enemy",
     },
   ];
