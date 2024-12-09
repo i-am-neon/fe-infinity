@@ -1,7 +1,4 @@
-import {
-  ITEMS,
-  WEAPON_OPTIONS,
-} from "@/ai/assemble-chapter-event/generate-unit-line/item-options.ts";
+import { ITEMS, WEAPON_OPTIONS } from "../unit-placement/item-options.ts";
 
 type TileType = "Armory" | "Vendor";
 

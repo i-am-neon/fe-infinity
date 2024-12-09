@@ -1,4 +1,4 @@
-import { ALL_ITEMS } from "@/ai/assemble-chapter-event/generate-unit-line/item-options.ts";
+import { ALL_ITEMS } from "../unit-placement/item-options.ts";
 
 export default function getChestItems({
   xCoord,

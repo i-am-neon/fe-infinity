@@ -1,11 +1,11 @@
-import generateCharacterStartingAreas from "@/ai/assemble-chapter-event/generate-unit-line/generate-character-starting-areas.ts";
-import generateGenericStartingAreas from "@/ai/assemble-chapter-event/generate-unit-line/generate-generic-starting-areas.ts";
-import generateUnitLine from "@/ai/assemble-chapter-event/generate-unit-line/generate-unit-line.ts";
+import generateCharacterStartingAreas from "./generate-character-starting-areas.ts";
+import generateGenericStartingAreas from "./generate-generic-starting-areas.ts";
+import generateUnitLine from "./generate-unit-line.ts";
 import { MapData } from "@/map-processing/types/MapData.ts";
 import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
 import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
-import generatePlayerUnitCoords from "@/ai/assemble-chapter-event/generate-unit-line/generate-player-unit-coords.ts";
-import generateNpcUnitCoords from "@/ai/assemble-chapter-event/generate-unit-line/generate-npc-unit-coords.ts";
+import generatePlayerUnitCoords from "./generate-player-unit-coords.ts";
+import generateNpcUnitCoords from "./generate-npc-unit-coords.ts";
 import { MapArea } from "@/types/ai/MapAreas.ts";
 import {
   igorCharacter,

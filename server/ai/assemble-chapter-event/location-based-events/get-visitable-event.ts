@@ -1,6 +1,6 @@
 import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
 import { MapLocation } from "@/types/map-location.ts";
-import { ALL_ITEMS } from "@/ai/assemble-chapter-event/generate-unit-line/item-options.ts";
+import { ALL_ITEMS } from "../unit-placement/item-options.ts";
 import getRandomHex from "@/lib/get-random-hex.ts";
 import terrainNameToEventFnName from "@/ai/assemble-chapter-event/location-based-events/terrain-name-to-event-fn-name.ts";
 import generateVisitingInBattleScene from "@/ai/assemble-chapter-event/generate-scene/generate-visiting-in-battle-scene.ts";

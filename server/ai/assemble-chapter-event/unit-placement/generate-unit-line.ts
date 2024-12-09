@@ -1,5 +1,5 @@
-import generateInventory from "@/ai/assemble-chapter-event/generate-unit-line/generate-inventory.ts";
-import { getWeaponTypesForClass } from "@/ai/assemble-chapter-event/generate-unit-line/getWeaponTypesForClass.ts";
+import generateInventory from "./generate-inventory.ts";
+import { getWeaponTypesForClass } from "./getWeaponTypesForClass.ts";
 import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import { randomInt } from "node:crypto";
 
