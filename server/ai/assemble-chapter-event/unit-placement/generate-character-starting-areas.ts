@@ -103,6 +103,7 @@ if (import.meta.main) {
 
   const chapterData: Omit<ChapterIdea, "newPlayableCharacters" | "boss"> = {
     chapterTitle: "Test Chapter",
+    premise: "",
     preChapterScene:
       "Seraphina receives word that the dark sorcerer Ligma has been corrupting the sands of the Scorching Dunes, threatening her desert town of Sunhaven. Determined to protect her home, she sets out to confront him, seeking allies along the way. In her journey, she encounters Lira, a brash dragon rider who patrols the desert skies and is eager to join her cause.",
     battleOverview:

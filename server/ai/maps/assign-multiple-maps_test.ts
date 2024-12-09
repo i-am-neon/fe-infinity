@@ -20,6 +20,7 @@ const mockMapOptions: MapData[] = [
     width: 0,
     pointsOfInterest: [],
     terrainGrid: [],
+    interactableTiles: [],
   },
   {
     name: "Map 2",
@@ -30,6 +31,7 @@ const mockMapOptions: MapData[] = [
     width: 0,
     pointsOfInterest: [],
     terrainGrid: [],
+    interactableTiles: [],
   },
 ];
 
