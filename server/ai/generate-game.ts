@@ -13,6 +13,10 @@ import { Game } from "@/types/Game.ts";
 import getChapterNumberDisplayText from "@/ai/utilities/get-chapter-number-display-text.ts";
 import { allMapOptions } from "@/map-processing/all-map-options.ts";
 import getAllBattleQuotes from "@/ai/assemble-chapter-event/battle-quotes/get-all-battle-quotes.ts";
+import reDoAllBattleOverviews from "@/ai/maps/re-do-all-battle-overviews.ts";
+import { StoryArc } from "@/types/ai/StoryArc.ts";
+import { MapData } from "@/map-processing/types/MapData.ts";
+import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
 
 export default async function generateGame({
   worldIdea,
@@ -48,17 +52,40 @@ export default async function generateGame({
       allMapOptions,
     }),
   ]);
+
+  const chapterIdToIdeaAndMap: Record<
+    string,
+    { idea: ChapterIdea; map: MapData }
+  > = storyArc.chapterIdeas.reduce((acc, chapterIdea) => {
+    const chapterId = chapterTitleToChapterId(chapterIdea.chapterTitle);
+    acc[chapterId] = {
+      idea: chapterIdea,
+      map: chapterIdToMap[chapterId],
+    };
+    return acc;
+  }, {} as Record<string, { idea: ChapterIdea; map: MapData }>);
+  const updatedChapters = await reDoAllBattleOverviews(chapterIdToIdeaAndMap);
+  const updatedStoryArc: StoryArc = {
+    ...storyArc,
+    chapterIdeas: storyArc.chapterIdeas.map((chapterIdea) => {
+      const chapterId = chapterTitleToChapterId(chapterIdea.chapterTitle);
+      return updatedChapters[chapterId].idea;
+    }),
+  };
+  console.log("updatedStoryArc 🔥", JSON.stringify(updatedStoryArc, null, 2));
+  console.log("🔥🔥🔥");
   console.log("✅ generated characters and maps");
 
   console.log("generating chapter events and battle quotes");
 
-  const chapterEventPromises = storyArc.chapterIdeas.map(
+  const chapterEventPromises = updatedStoryArc.chapterIdeas.map(
     async (chapterIdea, index) => {
       const chapterNumberToAssemble = index;
       const nextChapterId =
-        chapterNumberToAssemble < storyArc.chapterIdeas.length - 1
+        chapterNumberToAssemble < updatedStoryArc.chapterIdeas.length - 1
           ? chapterTitleToChapterId(
-              storyArc.chapterIdeas[chapterNumberToAssemble + 1].chapterTitle
+              updatedStoryArc.chapterIdeas[chapterNumberToAssemble + 1]
+                .chapterTitle
             )
           : undefined;
       return await assembleChapterEvent({
@@ -85,7 +112,7 @@ export default async function generateGame({
     }
   );
 
-  const chapterIdToBattleQuotesPromises = storyArc.chapterIdeas.map(
+  const chapterIdToBattleQuotesPromises = updatedStoryArc.chapterIdeas.map(
     async (chapterIdea, index) => {
       const chapterNumberToAssemble = index;
       const chapterId = chapterTitleToChapterId(chapterIdea.chapterTitle);
@@ -124,7 +151,7 @@ export default async function generateGame({
   const allRomChapters: RomChapter[] = chapterEvents.map(
     (chapterEvent, chapterNumber) => {
       const thisChapterTitle =
-        storyArc.chapterIdeas[chapterNumber].chapterTitle;
+        updatedStoryArc.chapterIdeas[chapterNumber].chapterTitle;
       const chapterId = chapterTitleToChapterId(thisChapterTitle);
       const chapterMap: ChapterMap = {
         name: chapterIdToMap[chapterId].name,
