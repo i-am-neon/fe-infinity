@@ -1,10 +1,7 @@
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
-import {
-  ligmaCharacter,
-  seraphinaCharacter,
-} from "@/testData/test-characters.ts";
 import { MapArea } from "@/types/ai/MapAreas.ts";
 import { z } from "zod";
+import { MapLocation } from "@/types/map-location.ts";
 
 const systemMessage = `You are choosing the starting allied character positions for a Fire Emblem chapter.
 
@@ -31,28 +28,27 @@ In your return value, include the terrain type of that tile and why you decided 
 export default async function generatePlayerUnitCoords({
   numberOfCharacters,
   mapArea,
+  areaTerrain,
 }: {
   numberOfCharacters: number;
   mapArea: MapArea;
+  areaTerrain: MapLocation[];
 }): Promise<
   {
-    characterName: string;
-    characterClass: string;
     xCoord: number;
     yCoord: number;
   }[]
 > {
-  const { characterNameAndCoords } = await generateStructuredData({
+  const { characterCoords } = await generateStructuredData({
     systemMessage,
-    prompt: `Number of Characters: ${numberOfCharacters}\\n\nMap Area: ${JSON.stringify(
+    prompt: `Number of Characters: ${numberOfCharacters}\n\nMap Area: ${JSON.stringify(
       mapArea,
       null,
       2
-    )}`,
+    )}\n\nArea Terrain: ${JSON.stringify(areaTerrain, null, 2)}`,
     schema: z.object({
-      characterNameAndCoords: z.array(
+      characterCoords: z.array(
         z.object({
-          characterName: z.string(),
           xCoord: z.number(),
           yCoord: z.number(),
           terrain: z.string(),
@@ -63,81 +59,603 @@ export default async function generatePlayerUnitCoords({
     model: "gpt-4o",
   });
 
-  return characterNameAndCoords.map(({ characterName, xCoord, yCoord }) => {
-    const character = characters.find((c) => c.characterName === characterName);
-    if (!character) {
-      throw new Error(`Character not found: ${characterName}`);
-    }
-    return {
-      characterName: character.characterName,
-      characterClass: character.characterClass,
-      xCoord,
-      yCoord,
-    };
-  });
+  console.log("characterCoords :>> ", characterCoords);
+  return characterCoords.map((coord) => ({
+    xCoord: coord.xCoord,
+    yCoord: coord.yCoord,
+  }));
 }
 
 if (import.meta.main) {
-  const characters: {
-    characterName: string;
-    characterClass: string;
-    startingAllegiance: "ally" | "npc" | "enemy";
-  }[] = [
-    {
-      characterName: "Seraphina",
-      characterClass: seraphinaCharacter.csvData.defaultClass,
-      startingAllegiance: "ally",
-    },
-    {
-      characterName: "Ligma",
-      characterClass: ligmaCharacter.csvData.defaultClass,
-      startingAllegiance: "ally",
-    },
-  ];
-
   const res = await generatePlayerUnitCoords({
-    characters,
+    numberOfCharacters: 6,
     mapArea: {
-      name: "Village Area",
+      name: "Northern Desert",
       description:
-        "A small area containing a village with houses and a vendor.",
-      coordinates: {
+        "A vast desert area with scattered cliffs and a fort, providing strategic defense points.",
+      coordinateArea: {
         from: {
-          x: 1,
-          y: 8,
+          x: 0,
+          y: 0,
         },
         to: {
-          x: 12,
-          y: 18,
+          x: 18,
+          y: 5,
         },
       },
-      subAreas: [
-        {
-          name: "Village Entrance",
-          description: "The entrance to the village, marked by a village wall.",
-          centerCoordinate: {
-            x: 1,
-            y: 18,
-          },
-        },
-        {
-          name: "Vendor Area",
-          description: "The area where the vendor is located.",
-          centerCoordinate: {
-            x: 6,
-            y: 11,
-          },
-        },
-        {
-          name: "House Area",
-          description: "The area containing houses.",
-          centerCoordinate: {
-            x: 7,
-            y: 12,
-          },
-        },
-      ],
     },
+    areaTerrain: [
+      {
+        terrain: "Desert",
+        x: 0,
+        y: 0,
+      },
+      {
+        terrain: "Desert",
+        x: 1,
+        y: 0,
+      },
+      {
+        terrain: "--",
+        x: 2,
+        y: 0,
+      },
+      {
+        terrain: "--",
+        x: 3,
+        y: 0,
+      },
+      {
+        terrain: "Desert",
+        x: 4,
+        y: 0,
+      },
+      {
+        terrain: "Desert",
+        x: 5,
+        y: 0,
+      },
+      {
+        terrain: "Desert",
+        x: 6,
+        y: 0,
+      },
+      {
+        terrain: "Desert",
+        x: 7,
+        y: 0,
+      },
+      {
+        terrain: "Cliff",
+        x: 8,
+        y: 0,
+      },
+      {
+        terrain: "Cliff",
+        x: 9,
+        y: 0,
+      },
+      {
+        terrain: "Desert",
+        x: 10,
+        y: 0,
+      },
+      {
+        terrain: "Desert",
+        x: 11,
+        y: 0,
+      },
+      {
+        terrain: "Desert",
+        x: 12,
+        y: 0,
+      },
+      {
+        terrain: "Desert",
+        x: 13,
+        y: 0,
+      },
+      {
+        terrain: "Desert",
+        x: 14,
+        y: 0,
+      },
+      {
+        terrain: "Desert",
+        x: 15,
+        y: 0,
+      },
+      {
+        terrain: "Desert",
+        x: 16,
+        y: 0,
+      },
+      {
+        terrain: "Desert",
+        x: 17,
+        y: 0,
+      },
+      {
+        terrain: "Desert",
+        x: 18,
+        y: 0,
+      },
+      {
+        terrain: "Desert",
+        x: 0,
+        y: 1,
+      },
+      {
+        terrain: "Desert",
+        x: 1,
+        y: 1,
+      },
+      {
+        terrain: "Desert",
+        x: 2,
+        y: 1,
+      },
+      {
+        terrain: "Desert",
+        x: 3,
+        y: 1,
+      },
+      {
+        terrain: "Desert",
+        x: 4,
+        y: 1,
+      },
+      {
+        terrain: "Cliff",
+        x: 5,
+        y: 1,
+      },
+      {
+        terrain: "Cliff",
+        x: 6,
+        y: 1,
+      },
+      {
+        terrain: "Cliff",
+        x: 7,
+        y: 1,
+      },
+      {
+        terrain: "Desert",
+        x: 8,
+        y: 1,
+      },
+      {
+        terrain: "Desert",
+        x: 9,
+        y: 1,
+      },
+      {
+        terrain: "Desert",
+        x: 10,
+        y: 1,
+      },
+      {
+        terrain: "Fort",
+        x: 11,
+        y: 1,
+      },
+      {
+        terrain: "Desert",
+        x: 12,
+        y: 1,
+      },
+      {
+        terrain: "Cliff",
+        x: 13,
+        y: 1,
+      },
+      {
+        terrain: "Desert",
+        x: 14,
+        y: 1,
+      },
+      {
+        terrain: "Desert",
+        x: 15,
+        y: 1,
+      },
+      {
+        terrain: "Cliff",
+        x: 16,
+        y: 1,
+      },
+      {
+        terrain: "Desert",
+        x: 17,
+        y: 1,
+      },
+      {
+        terrain: "Desert",
+        x: 18,
+        y: 1,
+      },
+      {
+        terrain: "Cliff",
+        x: 0,
+        y: 2,
+      },
+      {
+        terrain: "Cliff",
+        x: 1,
+        y: 2,
+      },
+      {
+        terrain: "Desert",
+        x: 2,
+        y: 2,
+      },
+      {
+        terrain: "Desert",
+        x: 3,
+        y: 2,
+      },
+      {
+        terrain: "Desert",
+        x: 4,
+        y: 2,
+      },
+      {
+        terrain: "Desert",
+        x: 5,
+        y: 2,
+      },
+      {
+        terrain: "Desert",
+        x: 6,
+        y: 2,
+      },
+      {
+        terrain: "--",
+        x: 7,
+        y: 2,
+      },
+      {
+        terrain: "Desert",
+        x: 8,
+        y: 2,
+      },
+      {
+        terrain: "Desert",
+        x: 9,
+        y: 2,
+      },
+      {
+        terrain: "Desert",
+        x: 10,
+        y: 2,
+      },
+      {
+        terrain: "Desert",
+        x: 11,
+        y: 2,
+      },
+      {
+        terrain: "Desert",
+        x: 12,
+        y: 2,
+      },
+      {
+        terrain: "Cliff",
+        x: 13,
+        y: 2,
+      },
+      {
+        terrain: "Cliff",
+        x: 14,
+        y: 2,
+      },
+      {
+        terrain: "Desert",
+        x: 15,
+        y: 2,
+      },
+      {
+        terrain: "Cliff",
+        x: 16,
+        y: 2,
+      },
+      {
+        terrain: "Desert",
+        x: 17,
+        y: 2,
+      },
+      {
+        terrain: "Desert",
+        x: 18,
+        y: 2,
+      },
+      {
+        terrain: "Desert",
+        x: 0,
+        y: 3,
+      },
+      {
+        terrain: "Desert",
+        x: 1,
+        y: 3,
+      },
+      {
+        terrain: "Desert",
+        x: 2,
+        y: 3,
+      },
+      {
+        terrain: "Desert",
+        x: 3,
+        y: 3,
+      },
+      {
+        terrain: "Desert",
+        x: 4,
+        y: 3,
+      },
+      {
+        terrain: "Desert",
+        x: 5,
+        y: 3,
+      },
+      {
+        terrain: "Desert",
+        x: 6,
+        y: 3,
+      },
+      {
+        terrain: "--",
+        x: 7,
+        y: 3,
+      },
+      {
+        terrain: "Desert",
+        x: 8,
+        y: 3,
+      },
+      {
+        terrain: "Desert",
+        x: 9,
+        y: 3,
+      },
+      {
+        terrain: "Desert",
+        x: 10,
+        y: 3,
+      },
+      {
+        terrain: "Fort",
+        x: 11,
+        y: 3,
+      },
+      {
+        terrain: "Desert",
+        x: 12,
+        y: 3,
+      },
+      {
+        terrain: "Desert",
+        x: 13,
+        y: 3,
+      },
+      {
+        terrain: "Cliff",
+        x: 14,
+        y: 3,
+      },
+      {
+        terrain: "Desert",
+        x: 15,
+        y: 3,
+      },
+      {
+        terrain: "Cliff",
+        x: 16,
+        y: 3,
+      },
+      {
+        terrain: "Desert",
+        x: 17,
+        y: 3,
+      },
+      {
+        terrain: "Desert",
+        x: 18,
+        y: 3,
+      },
+      {
+        terrain: "--",
+        x: 0,
+        y: 4,
+      },
+      {
+        terrain: "Desert",
+        x: 1,
+        y: 4,
+      },
+      {
+        terrain: "Desert",
+        x: 2,
+        y: 4,
+      },
+      {
+        terrain: "Forest",
+        x: 3,
+        y: 4,
+      },
+      {
+        terrain: "Desert",
+        x: 4,
+        y: 4,
+      },
+      {
+        terrain: "Desert",
+        x: 5,
+        y: 4,
+      },
+      {
+        terrain: "Desert",
+        x: 6,
+        y: 4,
+      },
+      {
+        terrain: "--",
+        x: 7,
+        y: 4,
+      },
+      {
+        terrain: "Desert",
+        x: 8,
+        y: 4,
+      },
+      {
+        terrain: "Desert",
+        x: 9,
+        y: 4,
+      },
+      {
+        terrain: "Desert",
+        x: 10,
+        y: 4,
+      },
+      {
+        terrain: "Desert",
+        x: 11,
+        y: 4,
+      },
+      {
+        terrain: "Desert",
+        x: 12,
+        y: 4,
+      },
+      {
+        terrain: "Desert",
+        x: 13,
+        y: 4,
+      },
+      {
+        terrain: "Cliff",
+        x: 14,
+        y: 4,
+      },
+      {
+        terrain: "Desert",
+        x: 15,
+        y: 4,
+      },
+      {
+        terrain: "Desert",
+        x: 16,
+        y: 4,
+      },
+      {
+        terrain: "Cliff",
+        x: 17,
+        y: 4,
+      },
+      {
+        terrain: "Desert",
+        x: 18,
+        y: 4,
+      },
+      {
+        terrain: "Desert",
+        x: 0,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 1,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 2,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 3,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 4,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 5,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 6,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 7,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 8,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 9,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 10,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 11,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 12,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 13,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 14,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 15,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 16,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 17,
+        y: 5,
+      },
+      {
+        terrain: "Desert",
+        x: 18,
+        y: 5,
+      },
+    ],
   });
   console.log(JSON.stringify(res, null, 2));
 }

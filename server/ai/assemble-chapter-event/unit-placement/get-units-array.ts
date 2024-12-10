@@ -1,19 +1,13 @@
-import generateCharacterStartingAreas from "./generate-character-starting-areas.ts";
-import generateGenericStartingAreas from "./generate-generic-starting-areas.ts";
-import generateUnitLine from "./generate-unit-line.ts";
+import { allMapOptions } from "@/map-processing/all-map-options.ts";
 import { MapData } from "@/map-processing/types/MapData.ts";
 import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
 import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
-import generatePlayerUnitCoords from "./generate-player-unit-coords.ts";
-import generateNpcUnitCoords from "./generate-npc-unit-coords.ts";
 import { MapArea } from "@/types/ai/MapAreas.ts";
-import {
-  igorCharacter,
-  ligmaCharacter,
-  liraCharacter,
-  seraphinaCharacter,
-} from "@/testData/test-characters.ts";
-import { allMapOptions } from "@/map-processing/all-map-options.ts";
+import generateCharacterStartingAreas from "./generate-character-starting-areas.ts";
+import generateGenericStartingAreas from "./generate-generic-starting-areas.ts";
+import generateNpcUnitCoords from "./generate-npc-unit-coords.ts";
+import generatePlayerUnitCoords from "./generate-player-unit-coords.ts";
+import getTerrainFromCoordinateArea from "@/ai/assemble-chapter-event/unit-placement/get-terrain-from-coordinate-area.ts";
 
 export default async function getUnitsArray({
   characters,
@@ -40,17 +34,21 @@ export default async function getUnitsArray({
     chapterData,
   });
 
+  const playerMapArea = map.areas.find(
+    (a) => a.name === characterStartingAreas.playerCharactersStartingAreaName
+  )!;
   const playerCoords = await generatePlayerUnitCoords({
-    characters: characters
-      .filter((c) => c.startingAllegiance === "ally")
-      .map((c) => ({
-        characterName: c.characterIdea.name,
-        characterClass: c.characterClass,
-        startingAllegiance: c.startingAllegiance,
-      })),
-    mapArea: map.areas.find(
-      (a) => a.name === characterStartingAreas.playerCharactersStartingAreaName
-    )!,
+    numberOfCharacters: characters.filter(
+      (c) => c.startingAllegiance === "ally"
+    ).length,
+    mapArea: playerMapArea,
+    areaTerrain: getTerrainFromCoordinateArea({
+      terrainGrid: map.terrainGrid,
+      fromX: playerMapArea.coordinateArea.from.x,
+      fromY: playerMapArea.coordinateArea.from.y,
+      toX: playerMapArea.coordinateArea.to.x,
+      toY: playerMapArea.coordinateArea.to.y,
+    }),
   });
   const npcMapAreas: MapArea[] =
     characterStartingAreas.npcStartingAreaNames.map(
