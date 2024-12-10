@@ -2,8 +2,8 @@ import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
 import { allMapOptions } from "@/map-processing/all-map-options.ts";
 import { MapData } from "@/map-processing/types/MapData.ts";
 import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
-import { z } from "zod";
 import { CharacterStartingAreas } from "@/types/ai/CharacterStartingArea.ts";
+import { z } from "zod";
 
 export default async function generateGenericStartingAreas({
   characterStartingAreas,
@@ -57,24 +57,22 @@ if (import.meta.main) {
     bossStartingAreaName: "Fort Area",
     npcStartingAreaNames: [
       {
-        characterName: "Lira",
+        characterName: "Elysia",
         areaName: "Desert Plains",
-      },
-      {
-        characterName: "Igor",
-        areaName: "Fort Area",
       },
     ],
   };
 
   const chapterData: Omit<ChapterIdea, "newPlayableCharacters" | "boss"> = {
-    chapterTitle: "Test Chapter",
+    chapterTitle: "The Awakening Shadows",
+    premise:
+      "Zynra arrives at the Elderwood Thicket, where she discovers that the Chosen of Nihilus are attempting to harness the power of the ancient sigils to awaken Noxareth. She must rally the druids of Ryndor to protect the sacred grove and confront the leader of the Chosen, who seeks to corrupt the sigils for their own gain. The battle will test Zynra's resolve and her understanding of the sigils' true nature.",
     preChapterScene:
-      "Seraphina receives word that the dark sorcerer Ligma has been corrupting the Whispering Woods, threatening her village. Determined to protect her home, she sets out to confront him, seeking allies along the way. In her journey, she encounters Lira, a brash dragon rider eager to join her cause.",
+      "Zynra arrives at the Elderwood Thicket, feeling the weight of the ancient sigils' presence. The druids are on high alert, sensing a disturbance as the Chosen of Nihilus encroach upon their sacred ground. Determined to protect the grove and uncover the truth, Zynra prepares to confront the dark forces threatening to awaken Noxareth.",
     battleOverview:
-      "Seraphina and Lira must navigate the corrupted forest, battling Ligma's minions and overcoming obstacles created by dark magic. The goal is to reach Ligma's lair and confront him before he can unleash further chaos.",
+      "The battle unfolds in the mixed terrain of the Elderwood Thicket, where Zynra and Elysia must defend against the Chosen of Nihilus soldiers attempting to breach the sacred grove. The Northern Plains and Castle Wall area provides a strategic defensive position, allowing Zynra to utilize the castle walls for cover while engaging the enemy. The Central Cliffs and Forest area offers high ground and natural cover, which can be advantageous for ambushing the advancing foes. \n\nAs the battle progresses, Zynra and Elysia will need to navigate through the Western Village, where they can find refuge and resources to bolster their defenses. The Eastern Fort and Sea area serves as a stronghold for the Chosen, and Zynra must be cautious as she approaches this fortified position. \n\nUltimately, Zynra will confront Kieran in the heart of the battlefield, where the sigils' power is most concentrated. The terrain will play a crucial role in this final confrontation, as Zynra must harness the ancient sigils' true nature to thwart Kieran's ambitions and protect the grove from corruption.",
     postChapterScene:
-      "After a fierce battle, Seraphina and Lira manage to defeat Ligma, but not without consequences. They discover hints of the Veil's involvement in Ligma's plans, suggesting a larger threat looms over Eldralis. With newfound resolve, they decide to investigate the Veil and their intentions.",
+      "With Kieran defeated, Zynra and Elysia stand amidst the remnants of the battle, the grove still intact but the threat of the Chosen of Nihilus looming larger than ever. Elysia shares her knowledge of the sigils, revealing their true nature and the importance of protecting them from corruption. Zynra vows to continue her quest, determined to unite the kingdoms and prevent the awakening of Noxareth.",
   };
 
   const mapData = allMapOptions[0];

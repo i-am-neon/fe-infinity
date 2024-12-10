@@ -1,22 +1,13 @@
-import {
-  CharacterIdea,
-  CharacterIdeaSchema,
-} from "@/types/ai/CharacterIdea.ts";
 import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
-import { z } from "zod";
+import { allMapOptions } from "@/map-processing/all-map-options.ts";
 import { MapData } from "@/map-processing/types/MapData.ts";
 import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
-import { allMapOptions } from "@/map-processing/all-map-options.ts";
-import {
-  seraphinaCharacter,
-  liraCharacter,
-  ligmaCharacter,
-  igorCharacter,
-} from "@/testData/test-characters.ts";
+import { CharacterIdea } from "@/types/ai/CharacterIdea.ts";
 import {
   CharacterStartingAreas,
   CharacterStartingAreaSchema,
 } from "@/types/ai/CharacterStartingArea.ts";
+import { z } from "zod";
 
 export default async function generateCharacterStartingAreas({
   characters,
