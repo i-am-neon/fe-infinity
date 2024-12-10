@@ -21,7 +21,7 @@ The goal is to create an engaging and challenging battle scenario that aligns wi
 ## genericEnemyStartingAreaNames
 Based on your knowledge of Fire Emblem 8, assign starting areas for generic enemy units that make sense within the context of the chapter. Consider the terrain, objectives, and overall difficulty of the battle.
 
-The area names must be area names from within the map data provided.
+The area names must be area names from within the map data provided. You must never make up names for areas that do not exist in the map data.
 `;
 
   const { genericEnemyStartingAreaNames } = await generateStructuredData({
@@ -30,7 +30,7 @@ The area names must be area names from within the map data provided.
       characterStartingAreas
     )}\n\nMap: ${JSON.stringify(map)}\n\nChapter Data: ${JSON.stringify(
       chapterData
-    )}`,
+    )}Map Area Options: ${JSON.stringify(map.areas.map((area) => area.name))}`,
     schema: z.object({
       genericEnemyStartingAreaNames: z.array(
         z.object({

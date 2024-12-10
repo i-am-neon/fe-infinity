@@ -10,6 +10,7 @@ import generatePlayerUnitCoords from "./generate-player-unit-coords.ts";
 import getTerrainFromCoordinateArea from "@/ai/assemble-chapter-event/unit-placement/get-terrain-from-coordinate-area.ts";
 import { MapLocation } from "@/types/map-location.ts";
 import generateGenericUnitCoords from "@/ai/assemble-chapter-event/unit-placement/generate-generic-unit-coords.ts";
+import generateUnitLine from "@/ai/assemble-chapter-event/unit-placement/generate-unit-line.ts";
 
 export default async function getUnitsArray({
   characters,
@@ -36,24 +37,10 @@ export default async function getUnitsArray({
     chapterData,
   });
 
-  console.log("genericStartingAreas :>> ", genericStartingAreas);
-
   const playerMapArea = map.areas.find(
     (a) => a.name === characterStartingAreas.playerCharactersStartingAreaName
   )!;
-  // const playerCoords = await generatePlayerUnitCoords({
-  //   numberOfCharacters: characters.filter(
-  //     (c) => c.startingAllegiance === "ally"
-  //   ).length,
-  //   mapArea: playerMapArea,
-  //   areaTerrain: getTerrainFromCoordinateArea({
-  //     terrainGrid: map.terrainGrid,
-  //     fromX: playerMapArea.coordinateArea.from.x,
-  //     fromY: playerMapArea.coordinateArea.from.y,
-  //     toX: playerMapArea.coordinateArea.to.x,
-  //     toY: playerMapArea.coordinateArea.to.y,
-  //   }),
-  // });
+
   const npcMapAreas: MapArea[] =
     characterStartingAreas.npcStartingAreaNames.map(
       (characterArea) =>
@@ -70,23 +57,6 @@ export default async function getUnitsArray({
       });
       return acc;
     }, {} as Record<string, MapLocation[]>);
-  // const npcCoords = await generateNpcUnitCoords({
-  //   characters: characters
-  //     .filter(
-  //       (c) =>
-  //         c.startingAllegiance === "npc" ||
-  //         (c.startingAllegiance === "enemy" &&
-  //           c.characterIdea.firstSeenAs === "enemy non-boss")
-  //     )
-  //     .map((c) => ({
-  //       characterName: c.characterIdea.name,
-  //       characterClass: c.characterClass,
-  //       startingAllegiance: c.startingAllegiance,
-  //     })),
-  //   npcStartingAreaNames: characterStartingAreas.npcStartingAreaNames,
-  //   mapAreas: npcMapAreas,
-  //   areaNameToAreaTerrain: areaNameToAreaTerrainForNpc,
-  // });
 
   const areaNameToAreaTerrainForGenericEnemies: Record<string, MapLocation[]> =
     genericStartingAreas.reduce((acc, area) => {
@@ -104,15 +74,6 @@ export default async function getUnitsArray({
       });
       return acc;
     }, {} as Record<string, MapLocation[]>);
-
-  // const genericEnemyCoords = await generateGenericUnitCoords({
-  //   battleOverview: chapterData.battleOverview,
-  //   genericStartingAreas: genericStartingAreas.map((area) => ({
-  //     area: map.areas.find((a) => a.name === area.areaName)!,
-  //     unitTypes: area.unitTypes,
-  //   })),
-  //   areaNameToAreaTerrain: areaNameToAreaTerrainForGenericEnemies,
-  // });
 
   const [playerCoords, npcCoords, genericEnemyCoords] = await Promise.all([
     generatePlayerUnitCoords({
@@ -155,44 +116,61 @@ export default async function getUnitsArray({
     }),
   ]);
 
-  console.log(
-    "characterStartingAreas",
-    JSON.stringify(characterStartingAreas, null, 2)
+  // playerCoords aren't specific to the characters, so randomly assign.
+  const playerCharacters = characters.filter(
+    (c) => c.startingAllegiance === "ally"
   );
-  console.log("playerCoords", JSON.stringify(playerCoords, null, 2));
-  console.log("npcCoords", JSON.stringify(npcCoords, null, 2));
-  console.log(
-    "genericEnemyCoords",
-    JSON.stringify(genericEnemyCoords, null, 2)
-  );
+  const unitLinePromises = [];
+  for (const p of playerCharacters) {
+    const coords = playerCoords.pop();
+    unitLinePromises.push(
+      generateUnitLine({
+        characterClass: p.characterClass,
+        characterIdea: p.characterIdea,
+        xCoord: coords!.xCoord,
+        yCoord: coords!.yCoord,
+      })
+    );
+  }
 
-  // const charactersWithCoords = await generateUnitCoords({
-  //   characters: characters.map((c) => ({
-  //     characterName: c.characterIdea.name,
-  //     characterClass: c.characterClass,
-  //     startingAllegiance: c.startingAllegiance,
-  //   })),
-  //   map,
-  //   chapterData,
-  //   characterStartingAreas,
-  // });
+  for (const n of npcCoords) {
+    unitLinePromises.push(
+      generateUnitLine({
+        characterClass: n.characterClass,
+        characterIdea: characters.find(
+          (c) => c.characterIdea.name === n.characterName
+        )!.characterIdea,
+        xCoord: n.xCoord,
+        yCoord: n.yCoord,
+      })
+    );
+  }
 
-  // NEXT: implement generateGenericUnitCoords, then call generateUnitLine on each.
+  for (const g of genericEnemyCoords) {
+    unitLinePromises.push(
+      generateUnitLine({
+        characterClass: g.characterClass,
+        characterIdea: {
+          name: g.characterClass,
+          age: "mature adult",
+          backstory: "A generic enemy unit.",
+          deathQuote: "",
+          firstSeenAs: "enemy non-boss",
+          // random between "male" and "female"
+          gender: Math.random() > 0.5 ? "female" : "male",
+          inGameDescription: "A generic enemy unit.",
+          personality: "None.",
+          physicalDescription: "A generic enemy unit.",
+        },
+        xCoord: g.xCoord,
+        yCoord: g.yCoord,
+      })
+    );
+  }
 
-  // return await Promise.all(
-  //   charactersWithCoords.map(async (c) => {
-  //     return await generateUnitLine({
-  //       characterIdea: characters.find(
-  //         (char) => char.characterIdea.name === c.characterName
-  //       )?.characterIdea!,
-  //       characterClass: c.characterClass,
-  //       xCoord: c.xCoord,
-  //       yCoord: c.yCoord,
-  //     });
-  //   })
-  // );
+  const unitLines = await Promise.all(unitLinePromises);
 
-  return [];
+  return unitLines;
 }
 
 if (import.meta.main) {
