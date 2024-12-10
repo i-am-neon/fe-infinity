@@ -160,6 +160,7 @@ export const storyArcExample: StoryArc = {
   chapterIdeas: [
     {
       chapterTitle: "The Call to Adventure",
+      premise: "",
       newPlayableCharacters: [
         {
           name: "Kiran",
@@ -197,6 +198,7 @@ export const storyArcExample: StoryArc = {
     },
     {
       chapterTitle: "The Council's Dilemma",
+      premise: "",
       newPlayableCharacters: [
         {
           name: "Lyra",
@@ -234,6 +236,7 @@ export const storyArcExample: StoryArc = {
     },
     {
       chapterTitle: "The Awakening",
+      premise: "",
       newPlayableCharacters: [],
       boss: {
         name: "Morrigan",

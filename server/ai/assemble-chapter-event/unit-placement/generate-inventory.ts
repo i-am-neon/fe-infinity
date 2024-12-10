@@ -3,10 +3,7 @@ import generateStructuredData from "@/ai/utilities/generate-structured-data.ts";
 import z from "zod";
 import { mainCharacterIdeaExample } from "@/testData/ai.ts";
 import type { WeaponType } from "@/types/WeaponType.ts";
-import {
-  WEAPON_OPTIONS,
-  ITEMS,
-} from "@/ai/assemble-chapter-event/generate-unit-line/item-options.ts";
+import { WEAPON_OPTIONS, ITEMS } from "./item-options.ts";
 
 export default async function generateInventory({
   characterIdea,

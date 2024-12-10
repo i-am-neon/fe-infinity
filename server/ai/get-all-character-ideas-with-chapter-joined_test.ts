@@ -69,6 +69,7 @@ const mockStoryArc: StoryArc = {
   chapterIdeas: [
     {
       chapterTitle: "Prologue",
+      premise: "",
       newPlayableCharacters: [mockPlayableCharacter1],
       boss: mockBossCharacter1,
       preChapterScene: "Introduction scene...",
@@ -77,6 +78,7 @@ const mockStoryArc: StoryArc = {
     },
     {
       chapterTitle: "Chapter 1",
+      premise: "",
       newPlayableCharacters: [mockPlayableCharacter2],
       boss: mockBossCharacter2,
       preChapterScene: "A new threat emerges...",
@@ -143,6 +145,7 @@ Deno.test("Handles chapter with no new playable characters", () => {
     chapterIdeas: [
       {
         chapterTitle: "Boss Only Chapter",
+        premise: "",
         newPlayableCharacters: [],
         boss: mockBossCharacter1,
         preChapterScene: "A sinister presence looms...",

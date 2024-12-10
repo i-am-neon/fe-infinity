@@ -1,4 +1,4 @@
-import getUnitsArray from "@/ai/assemble-chapter-event/generate-unit-line/get-units-array.ts";
+import getUnitsArray from "./unit-placement/get-units-array.ts";
 import chapterTitleToChapterId from "@/ai/utilities/chapter-title-to-chapter-id.ts";
 import getEventDataReferenceFromChapterId from "@/lib/get-event-data-reference-from-chapter-name.ts";
 import { allMapOptions } from "@/map-processing/all-map-options.ts";
@@ -73,14 +73,22 @@ export default async function assembleChapterEvent({
         ...existingPartyCharacters.map((c) => ({
           characterIdea: { ...c },
           characterClass: c.csvData.defaultClass,
+          startingAllegiance: "ally" as "ally",
         })),
         ...newPlayableCharacters.map((c) => ({
           characterIdea: { ...c },
           characterClass: c.csvData.defaultClass,
+          startingAllegiance:
+            c.firstSeenAs === "ally"
+              ? ("ally" as "ally")
+              : c.firstSeenAs === "enemy non-boss"
+              ? ("enemy" as "enemy")
+              : ("npc" as "npc"),
         })),
         {
           characterIdea: bossIdea,
           characterClass: boss.csvData.defaultClass,
+          startingAllegiance: "enemy" as "enemy",
         },
       ],
       map,

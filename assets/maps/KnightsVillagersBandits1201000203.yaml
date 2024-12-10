@@ -1,8 +1,7 @@
 name: KnightsVillagersBandits1201000203
 description: >-
-  A diverse map featuring plains, forests, and various structures including
-  houses, a vendor, and fortifications, set in a village environment with
-  strategic points of interest.
+  A diverse map featuring plains, forests, cliffs, and a coastal area with
+  villages and forts.
 tmx: >
   <?xml version="1.0" encoding="UTF-8"?>
 
@@ -78,386 +77,902 @@ tmx: >
 height: 17
 width: 15
 terrainGrid:
-  - - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Forest
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Castle Wall
-    - Castle Wall
-    - Castle Wall
-    - Plains
-    - Forest
-  - - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - House
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Castle Wall
-    - Castle Wall
-    - Castle Wall
-    - Plains
-    - Plains
-  - - Plains
-    - Plains
-    - Plains
-    - Vendor
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Forest
-    - Castle Wall
-    - Fort Gate
-    - Castle Wall
-    - Plains
-    - Plains
-  - - Plains
-    - Forest
-    - Forest
-    - Plains
-    - Plains
-    - Plains
-    - Forest
-    - Cliff
-    - Cliff
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Sand
-  - - Plains
-    - Plains
-    - Plains
-    - Armory
-    - Plains
-    - Plains
-    - Plains
-    - Cliff
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Fort
-    - Sand
-  - - Forest
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Forest
-    - Cliff
-    - Sand
-    - Sand
-    - Sand
-    - Sand
-    - Plains
-    - Sand
-    - Sea
-  - - Plains
-    - Village Wall
-    - Village Wall
-    - Village Wall
-    - Plains
-    - Plains
-    - Cliff
-    - Plains
-    - Fort
-    - Sand
-    - Sea
-    - Sand
-    - Sand
-    - Sand
-    - Sea
-  - - Plains
-    - Village Wall
-    - Village Wall
-    - Village Wall
-    - Forest
-    - Plains
-    - Cliff
-    - Sand
-    - Sand
-    - Sea
-    - Sand
-    - Sea
-    - Sea
-    - Sea
-    - Sea
-  - - Forest
-    - Village Wall
-    - Village Entrance
-    - Village Wall
-    - Plains
-    - Plains
-    - Cliff
-    - Sand
-    - Sand
-    - Sea
-    - Fort
-    - Sand
-    - Sea
-    - Sea
-    - Sea
-  - - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Sand
-    - Sand
-    - Sea
-    - Sand
-    - Sand
-    - Sea
-    - Sea
-    - Sand
-  - - Plains
-    - Forest
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Sand
-    - Sand
-    - Sand
-    - Sea
-    - Sand
-    - Sand
-    - Plains
-  - - House
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Forest
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-  - - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Village Wall
-    - Village Wall
-    - Village Wall
-    - Plains
-    - Forest
-  - - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Forest
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Village Wall
-    - Village Wall
-    - Village Wall
-    - Plains
-    - Plains
-  - - Plains
-    - Hill
-    - Hill
-    - Hill
-    - Plains
-    - Plains
-    - House
-    - Plains
-    - Plains
-    - Plains
-    - Village Wall
-    - Village Entrance
-    - Village Wall
-    - Plains
-    - Plains
-  - - Hill
-    - Hill
-    - Peak
-    - Peak
-    - Plains
-    - Plains
-    - Plains
-    - Forest
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-  - - Peak
-    - Hill
-    - Hill
-    - Plains
-    - Hill
-    - Plains
-    - Forest
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
-    - Plains
+  - terrain: Plains
+    x: 0
+    'y': 0
+  - terrain: Plains
+    x: 1
+    'y': 0
+  - terrain: Plains
+    x: 2
+    'y': 0
+  - terrain: Plains
+    x: 3
+    'y': 0
+  - terrain: Forest
+    x: 4
+    'y': 0
+  - terrain: Plains
+    x: 5
+    'y': 0
+  - terrain: Plains
+    x: 6
+    'y': 0
+  - terrain: Plains
+    x: 7
+    'y': 0
+  - terrain: Plains
+    x: 8
+    'y': 0
+  - terrain: Plains
+    x: 9
+    'y': 0
+  - terrain: Castle Wall
+    x: 10
+    'y': 0
+  - terrain: Castle Wall
+    x: 11
+    'y': 0
+  - terrain: Castle Wall
+    x: 12
+    'y': 0
+  - terrain: Plains
+    x: 13
+    'y': 0
+  - terrain: Forest
+    x: 14
+    'y': 0
+  - terrain: Plains
+    x: 0
+    'y': 1
+  - terrain: Plains
+    x: 1
+    'y': 1
+  - terrain: Plains
+    x: 2
+    'y': 1
+  - terrain: Plains
+    x: 3
+    'y': 1
+  - terrain: Plains
+    x: 4
+    'y': 1
+  - terrain: House
+    x: 5
+    'y': 1
+  - terrain: Plains
+    x: 6
+    'y': 1
+  - terrain: Plains
+    x: 7
+    'y': 1
+  - terrain: Plains
+    x: 8
+    'y': 1
+  - terrain: Plains
+    x: 9
+    'y': 1
+  - terrain: Castle Wall
+    x: 10
+    'y': 1
+  - terrain: Castle Wall
+    x: 11
+    'y': 1
+  - terrain: Castle Wall
+    x: 12
+    'y': 1
+  - terrain: Plains
+    x: 13
+    'y': 1
+  - terrain: Plains
+    x: 14
+    'y': 1
+  - terrain: Plains
+    x: 0
+    'y': 2
+  - terrain: Plains
+    x: 1
+    'y': 2
+  - terrain: Plains
+    x: 2
+    'y': 2
+  - terrain: Vendor
+    x: 3
+    'y': 2
+  - terrain: Plains
+    x: 4
+    'y': 2
+  - terrain: Plains
+    x: 5
+    'y': 2
+  - terrain: Plains
+    x: 6
+    'y': 2
+  - terrain: Plains
+    x: 7
+    'y': 2
+  - terrain: Plains
+    x: 8
+    'y': 2
+  - terrain: Forest
+    x: 9
+    'y': 2
+  - terrain: Castle Wall
+    x: 10
+    'y': 2
+  - terrain: Fort Gate
+    x: 11
+    'y': 2
+  - terrain: Castle Wall
+    x: 12
+    'y': 2
+  - terrain: Plains
+    x: 13
+    'y': 2
+  - terrain: Plains
+    x: 14
+    'y': 2
+  - terrain: Plains
+    x: 0
+    'y': 3
+  - terrain: Forest
+    x: 1
+    'y': 3
+  - terrain: Forest
+    x: 2
+    'y': 3
+  - terrain: Plains
+    x: 3
+    'y': 3
+  - terrain: Plains
+    x: 4
+    'y': 3
+  - terrain: Plains
+    x: 5
+    'y': 3
+  - terrain: Forest
+    x: 6
+    'y': 3
+  - terrain: Cliff
+    x: 7
+    'y': 3
+  - terrain: Cliff
+    x: 8
+    'y': 3
+  - terrain: Plains
+    x: 9
+    'y': 3
+  - terrain: Plains
+    x: 10
+    'y': 3
+  - terrain: Plains
+    x: 11
+    'y': 3
+  - terrain: Plains
+    x: 12
+    'y': 3
+  - terrain: Plains
+    x: 13
+    'y': 3
+  - terrain: Sand
+    x: 14
+    'y': 3
+  - terrain: Plains
+    x: 0
+    'y': 4
+  - terrain: Plains
+    x: 1
+    'y': 4
+  - terrain: Plains
+    x: 2
+    'y': 4
+  - terrain: Armory
+    x: 3
+    'y': 4
+  - terrain: Plains
+    x: 4
+    'y': 4
+  - terrain: Plains
+    x: 5
+    'y': 4
+  - terrain: Plains
+    x: 6
+    'y': 4
+  - terrain: Cliff
+    x: 7
+    'y': 4
+  - terrain: Plains
+    x: 8
+    'y': 4
+  - terrain: Plains
+    x: 9
+    'y': 4
+  - terrain: Plains
+    x: 10
+    'y': 4
+  - terrain: Plains
+    x: 11
+    'y': 4
+  - terrain: Plains
+    x: 12
+    'y': 4
+  - terrain: Fort
+    x: 13
+    'y': 4
+  - terrain: Sand
+    x: 14
+    'y': 4
+  - terrain: Forest
+    x: 0
+    'y': 5
+  - terrain: Plains
+    x: 1
+    'y': 5
+  - terrain: Plains
+    x: 2
+    'y': 5
+  - terrain: Plains
+    x: 3
+    'y': 5
+  - terrain: Plains
+    x: 4
+    'y': 5
+  - terrain: Plains
+    x: 5
+    'y': 5
+  - terrain: Forest
+    x: 6
+    'y': 5
+  - terrain: Cliff
+    x: 7
+    'y': 5
+  - terrain: Sand
+    x: 8
+    'y': 5
+  - terrain: Sand
+    x: 9
+    'y': 5
+  - terrain: Sand
+    x: 10
+    'y': 5
+  - terrain: Sand
+    x: 11
+    'y': 5
+  - terrain: Plains
+    x: 12
+    'y': 5
+  - terrain: Sand
+    x: 13
+    'y': 5
+  - terrain: Sea
+    x: 14
+    'y': 5
+  - terrain: Plains
+    x: 0
+    'y': 6
+  - terrain: Village Wall
+    x: 1
+    'y': 6
+  - terrain: Village Wall
+    x: 2
+    'y': 6
+  - terrain: Village Wall
+    x: 3
+    'y': 6
+  - terrain: Plains
+    x: 4
+    'y': 6
+  - terrain: Plains
+    x: 5
+    'y': 6
+  - terrain: Cliff
+    x: 6
+    'y': 6
+  - terrain: Plains
+    x: 7
+    'y': 6
+  - terrain: Fort
+    x: 8
+    'y': 6
+  - terrain: Sand
+    x: 9
+    'y': 6
+  - terrain: Sea
+    x: 10
+    'y': 6
+  - terrain: Sand
+    x: 11
+    'y': 6
+  - terrain: Sand
+    x: 12
+    'y': 6
+  - terrain: Sand
+    x: 13
+    'y': 6
+  - terrain: Sea
+    x: 14
+    'y': 6
+  - terrain: Plains
+    x: 0
+    'y': 7
+  - terrain: Village Wall
+    x: 1
+    'y': 7
+  - terrain: Village Wall
+    x: 2
+    'y': 7
+  - terrain: Village Wall
+    x: 3
+    'y': 7
+  - terrain: Forest
+    x: 4
+    'y': 7
+  - terrain: Plains
+    x: 5
+    'y': 7
+  - terrain: Cliff
+    x: 6
+    'y': 7
+  - terrain: Sand
+    x: 7
+    'y': 7
+  - terrain: Sand
+    x: 8
+    'y': 7
+  - terrain: Sea
+    x: 9
+    'y': 7
+  - terrain: Sand
+    x: 10
+    'y': 7
+  - terrain: Sea
+    x: 11
+    'y': 7
+  - terrain: Sea
+    x: 12
+    'y': 7
+  - terrain: Sea
+    x: 13
+    'y': 7
+  - terrain: Sea
+    x: 14
+    'y': 7
+  - terrain: Forest
+    x: 0
+    'y': 8
+  - terrain: Village Wall
+    x: 1
+    'y': 8
+  - terrain: Village Entrance
+    x: 2
+    'y': 8
+  - terrain: Village Wall
+    x: 3
+    'y': 8
+  - terrain: Plains
+    x: 4
+    'y': 8
+  - terrain: Plains
+    x: 5
+    'y': 8
+  - terrain: Cliff
+    x: 6
+    'y': 8
+  - terrain: Sand
+    x: 7
+    'y': 8
+  - terrain: Sand
+    x: 8
+    'y': 8
+  - terrain: Sea
+    x: 9
+    'y': 8
+  - terrain: Fort
+    x: 10
+    'y': 8
+  - terrain: Sand
+    x: 11
+    'y': 8
+  - terrain: Sea
+    x: 12
+    'y': 8
+  - terrain: Sea
+    x: 13
+    'y': 8
+  - terrain: Sea
+    x: 14
+    'y': 8
+  - terrain: Plains
+    x: 0
+    'y': 9
+  - terrain: Plains
+    x: 1
+    'y': 9
+  - terrain: Plains
+    x: 2
+    'y': 9
+  - terrain: Plains
+    x: 3
+    'y': 9
+  - terrain: Plains
+    x: 4
+    'y': 9
+  - terrain: Plains
+    x: 5
+    'y': 9
+  - terrain: Plains
+    x: 6
+    'y': 9
+  - terrain: Sand
+    x: 7
+    'y': 9
+  - terrain: Sand
+    x: 8
+    'y': 9
+  - terrain: Sea
+    x: 9
+    'y': 9
+  - terrain: Sand
+    x: 10
+    'y': 9
+  - terrain: Sand
+    x: 11
+    'y': 9
+  - terrain: Sea
+    x: 12
+    'y': 9
+  - terrain: Sea
+    x: 13
+    'y': 9
+  - terrain: Sand
+    x: 14
+    'y': 9
+  - terrain: Plains
+    x: 0
+    'y': 10
+  - terrain: Forest
+    x: 1
+    'y': 10
+  - terrain: Plains
+    x: 2
+    'y': 10
+  - terrain: Plains
+    x: 3
+    'y': 10
+  - terrain: Plains
+    x: 4
+    'y': 10
+  - terrain: Plains
+    x: 5
+    'y': 10
+  - terrain: Plains
+    x: 6
+    'y': 10
+  - terrain: Plains
+    x: 7
+    'y': 10
+  - terrain: Sand
+    x: 8
+    'y': 10
+  - terrain: Sand
+    x: 9
+    'y': 10
+  - terrain: Sand
+    x: 10
+    'y': 10
+  - terrain: Sea
+    x: 11
+    'y': 10
+  - terrain: Sand
+    x: 12
+    'y': 10
+  - terrain: Sand
+    x: 13
+    'y': 10
+  - terrain: Plains
+    x: 14
+    'y': 10
+  - terrain: House
+    x: 0
+    'y': 11
+  - terrain: Plains
+    x: 1
+    'y': 11
+  - terrain: Plains
+    x: 2
+    'y': 11
+  - terrain: Plains
+    x: 3
+    'y': 11
+  - terrain: Plains
+    x: 4
+    'y': 11
+  - terrain: Plains
+    x: 5
+    'y': 11
+  - terrain: Plains
+    x: 6
+    'y': 11
+  - terrain: Forest
+    x: 7
+    'y': 11
+  - terrain: Plains
+    x: 8
+    'y': 11
+  - terrain: Plains
+    x: 9
+    'y': 11
+  - terrain: Plains
+    x: 10
+    'y': 11
+  - terrain: Plains
+    x: 11
+    'y': 11
+  - terrain: Plains
+    x: 12
+    'y': 11
+  - terrain: Plains
+    x: 13
+    'y': 11
+  - terrain: Plains
+    x: 14
+    'y': 11
+  - terrain: Plains
+    x: 0
+    'y': 12
+  - terrain: Plains
+    x: 1
+    'y': 12
+  - terrain: Plains
+    x: 2
+    'y': 12
+  - terrain: Plains
+    x: 3
+    'y': 12
+  - terrain: Plains
+    x: 4
+    'y': 12
+  - terrain: Plains
+    x: 5
+    'y': 12
+  - terrain: Plains
+    x: 6
+    'y': 12
+  - terrain: Plains
+    x: 7
+    'y': 12
+  - terrain: Plains
+    x: 8
+    'y': 12
+  - terrain: Plains
+    x: 9
+    'y': 12
+  - terrain: Village Wall
+    x: 10
+    'y': 12
+  - terrain: Village Wall
+    x: 11
+    'y': 12
+  - terrain: Village Wall
+    x: 12
+    'y': 12
+  - terrain: Plains
+    x: 13
+    'y': 12
+  - terrain: Forest
+    x: 14
+    'y': 12
+  - terrain: Plains
+    x: 0
+    'y': 13
+  - terrain: Plains
+    x: 1
+    'y': 13
+  - terrain: Plains
+    x: 2
+    'y': 13
+  - terrain: Plains
+    x: 3
+    'y': 13
+  - terrain: Plains
+    x: 4
+    'y': 13
+  - terrain: Forest
+    x: 5
+    'y': 13
+  - terrain: Plains
+    x: 6
+    'y': 13
+  - terrain: Plains
+    x: 7
+    'y': 13
+  - terrain: Plains
+    x: 8
+    'y': 13
+  - terrain: Plains
+    x: 9
+    'y': 13
+  - terrain: Village Wall
+    x: 10
+    'y': 13
+  - terrain: Village Wall
+    x: 11
+    'y': 13
+  - terrain: Village Wall
+    x: 12
+    'y': 13
+  - terrain: Plains
+    x: 13
+    'y': 13
+  - terrain: Plains
+    x: 14
+    'y': 13
+  - terrain: Plains
+    x: 0
+    'y': 14
+  - terrain: Hill
+    x: 1
+    'y': 14
+  - terrain: Hill
+    x: 2
+    'y': 14
+  - terrain: Hill
+    x: 3
+    'y': 14
+  - terrain: Plains
+    x: 4
+    'y': 14
+  - terrain: Plains
+    x: 5
+    'y': 14
+  - terrain: House
+    x: 6
+    'y': 14
+  - terrain: Plains
+    x: 7
+    'y': 14
+  - terrain: Plains
+    x: 8
+    'y': 14
+  - terrain: Plains
+    x: 9
+    'y': 14
+  - terrain: Village Wall
+    x: 10
+    'y': 14
+  - terrain: Village Entrance
+    x: 11
+    'y': 14
+  - terrain: Village Wall
+    x: 12
+    'y': 14
+  - terrain: Plains
+    x: 13
+    'y': 14
+  - terrain: Plains
+    x: 14
+    'y': 14
+  - terrain: Hill
+    x: 0
+    'y': 15
+  - terrain: Hill
+    x: 1
+    'y': 15
+  - terrain: Peak
+    x: 2
+    'y': 15
+  - terrain: Peak
+    x: 3
+    'y': 15
+  - terrain: Plains
+    x: 4
+    'y': 15
+  - terrain: Plains
+    x: 5
+    'y': 15
+  - terrain: Plains
+    x: 6
+    'y': 15
+  - terrain: Forest
+    x: 7
+    'y': 15
+  - terrain: Plains
+    x: 8
+    'y': 15
+  - terrain: Plains
+    x: 9
+    'y': 15
+  - terrain: Plains
+    x: 10
+    'y': 15
+  - terrain: Plains
+    x: 11
+    'y': 15
+  - terrain: Plains
+    x: 12
+    'y': 15
+  - terrain: Plains
+    x: 13
+    'y': 15
+  - terrain: Plains
+    x: 14
+    'y': 15
+  - terrain: Peak
+    x: 0
+    'y': 16
+  - terrain: Hill
+    x: 1
+    'y': 16
+  - terrain: Hill
+    x: 2
+    'y': 16
+  - terrain: Plains
+    x: 3
+    'y': 16
+  - terrain: Hill
+    x: 4
+    'y': 16
+  - terrain: Plains
+    x: 5
+    'y': 16
+  - terrain: Forest
+    x: 6
+    'y': 16
+  - terrain: Plains
+    x: 7
+    'y': 16
+  - terrain: Plains
+    x: 8
+    'y': 16
+  - terrain: Plains
+    x: 9
+    'y': 16
+  - terrain: Plains
+    x: 10
+    'y': 16
+  - terrain: Plains
+    x: 11
+    'y': 16
+  - terrain: Plains
+    x: 12
+    'y': 16
+  - terrain: Plains
+    x: 13
+    'y': 16
+  - terrain: Plains
+    x: 14
+    'y': 16
 pointsOfInterest:
   - x: 5
     'y': 1
-    type: House
+    terrain: House
   - x: 3
     'y': 2
-    type: Vendor
+    terrain: Vendor
   - x: 11
     'y': 2
-    type: Fort Gate
+    terrain: Fort Gate
   - x: 3
     'y': 4
-    type: Armory
+    terrain: Armory
   - x: 13
     'y': 4
-    type: Fort
+    terrain: Fort
   - x: 8
     'y': 6
-    type: Fort
+    terrain: Fort
   - x: 2
     'y': 8
-    type: Village Entrance
+    terrain: Village Entrance
   - x: 10
     'y': 8
-    type: Fort
+    terrain: Fort
   - x: 0
     'y': 11
-    type: House
+    terrain: House
   - x: 6
     'y': 14
-    type: House
+    terrain: House
   - x: 11
     'y': 14
-    type: Village Entrance
+    terrain: Village Entrance
 interactableTiles:
   - x: 5
     'y': 1
-    type: House
+    terrain: House
   - x: 3
     'y': 2
-    type: Vendor
+    terrain: Vendor
   - x: 3
     'y': 4
-    type: Armory
+    terrain: Armory
   - x: 2
     'y': 8
-    type: Village Entrance
+    terrain: Village Entrance
   - x: 0
     'y': 11
-    type: House
+    terrain: House
   - x: 6
     'y': 14
-    type: House
+    terrain: House
   - x: 11
     'y': 14
-    type: Village Entrance
+    terrain: Village Entrance
 areas:
   - name: Northern Plains
     description: >-
-      An open area with plains and a few forest patches, providing space for
-      movement and engagement.
-    subAreas:
-      - name: Central Plains
-        description: >-
-          A large open space in the northern part of the map, ideal for troop
-          movement.
-        coordinates:
-          from:
-            x: 0
-            'y': 0
-          to:
-            x: 14
-            'y': 4
-      - name: Northern Forest
-        description: A forested area providing cover and strategic positioning.
-        coordinates:
-          from:
-            x: 4
-            'y': 0
-          to:
-            x: 4
-            'y': 4
-  - name: Central Village
+      An open area with scattered forests and a vendor, ideal for movement and
+      skirmishes.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 0
+      to:
+        x: 9
+        'y': 2
+  - name: Castle Entrance
     description: >-
-      The heart of the village with houses and a vendor, serving as a hub for
-      resources and interactions.
-    subAreas:
-      - name: Vendor Area
-        description: A small area where players can interact with a vendor for supplies.
-        coordinates:
-          from:
-            x: 3
-            'y': 2
-          to:
-            x: 3
-            'y': 2
-      - name: House Area
-        description: A cluster of houses providing shelter and potential resources.
-        coordinates:
-          from:
-            x: 0
-            'y': 11
-          to:
-            x: 5
-            'y': 14
-  - name: Southern Fortifications
-    description: 'A fortified area with walls and a fort, providing defensive positions.'
-    subAreas:
-      - name: Fort Area
-        description: A stronghold that can be used for defense and strategic planning.
-        coordinates:
-          from:
-            x: 10
-            'y': 8
-          to:
-            x: 13
-            'y': 14
-      - name: Armory Area
-        description: >-
-          A location for storing weapons and supplies, crucial for preparing for
-          battles.
-        coordinates:
-          from:
-            x: 3
-            'y': 4
-          to:
-            x: 3
-            'y': 4
+      A fortified area with castle walls and a fort gate, serving as a defensive
+      stronghold.
+    coordinateArea:
+      from:
+        x: 10
+        'y': 0
+      to:
+        x: 12
+        'y': 2
+  - name: Central Forest and Cliffs
+    description: >-
+      A mix of forests and cliffs providing strategic cover and elevation
+      advantages.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 3
+      to:
+        x: 8
+        'y': 5
+  - name: Southern Coastline
+    description: >-
+      A sandy and sea-bordered area with forts, offering defensive positions and
+      limited movement.
+    coordinateArea:
+      from:
+        x: 7
+        'y': 6
+      to:
+        x: 14
+        'y': 10
+  - name: Western Village
+    description: >-
+      A small village area with a house and village entrance, providing
+      resources and shelter.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 6
+      to:
+        x: 3
+        'y': 8
+  - name: Eastern Village
+    description: >-
+      A village area with a house and village entrance, offering strategic
+      points and resources.
+    coordinateArea:
+      from:
+        x: 10
+        'y': 12
+      to:
+        x: 12
+        'y': 14
+  - name: Southern Hills and Peaks
+    description: >-
+      A hilly region with peaks, offering high ground and visibility over the
+      map.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 14
+      to:
+        x: 4
+        'y': 16

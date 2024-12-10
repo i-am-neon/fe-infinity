@@ -13,6 +13,13 @@ import { Game } from "@/types/Game.ts";
 import getChapterNumberDisplayText from "@/ai/utilities/get-chapter-number-display-text.ts";
 import { allMapOptions } from "@/map-processing/all-map-options.ts";
 import getAllBattleQuotes from "@/ai/assemble-chapter-event/battle-quotes/get-all-battle-quotes.ts";
+import reDoAllBattleOverviews from "@/ai/maps/re-do-all-battle-overviews.ts";
+import { StoryArc } from "@/types/ai/StoryArc.ts";
+import { MapData } from "@/map-processing/types/MapData.ts";
+import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
+import { GenericCharacter } from "@/types/GenericCharacter.ts";
+import getDescText from "@/lib/get-desc-text.ts";
+import getNameText from "@/lib/get-name-text.ts";
 
 export default async function generateGame({
   worldIdea,
@@ -48,17 +55,40 @@ export default async function generateGame({
       allMapOptions,
     }),
   ]);
+
+  const chapterIdToIdeaAndMap: Record<
+    string,
+    { idea: ChapterIdea; map: MapData }
+  > = storyArc.chapterIdeas.reduce((acc, chapterIdea) => {
+    const chapterId = chapterTitleToChapterId(chapterIdea.chapterTitle);
+    acc[chapterId] = {
+      idea: chapterIdea,
+      map: chapterIdToMap[chapterId],
+    };
+    return acc;
+  }, {} as Record<string, { idea: ChapterIdea; map: MapData }>);
+  const updatedChapters = await reDoAllBattleOverviews(chapterIdToIdeaAndMap);
+  const updatedStoryArc: StoryArc = {
+    ...storyArc,
+    chapterIdeas: storyArc.chapterIdeas.map((chapterIdea) => {
+      const chapterId = chapterTitleToChapterId(chapterIdea.chapterTitle);
+      return updatedChapters[chapterId].idea;
+    }),
+  };
+  console.log("updatedStoryArc 🔥", JSON.stringify(updatedStoryArc, null, 2));
+  console.log("🔥🔥🔥");
   console.log("✅ generated characters and maps");
 
   console.log("generating chapter events and battle quotes");
 
-  const chapterEventPromises = storyArc.chapterIdeas.map(
+  const chapterEventPromises = updatedStoryArc.chapterIdeas.map(
     async (chapterIdea, index) => {
       const chapterNumberToAssemble = index;
       const nextChapterId =
-        chapterNumberToAssemble < storyArc.chapterIdeas.length - 1
+        chapterNumberToAssemble < updatedStoryArc.chapterIdeas.length - 1
           ? chapterTitleToChapterId(
-              storyArc.chapterIdeas[chapterNumberToAssemble + 1].chapterTitle
+              updatedStoryArc.chapterIdeas[chapterNumberToAssemble + 1]
+                .chapterTitle
             )
           : undefined;
       return await assembleChapterEvent({
@@ -85,7 +115,7 @@ export default async function generateGame({
     }
   );
 
-  const chapterIdToBattleQuotesPromises = storyArc.chapterIdeas.map(
+  const chapterIdToBattleQuotesPromises = updatedStoryArc.chapterIdeas.map(
     async (chapterIdea, index) => {
       const chapterNumberToAssemble = index;
       const chapterId = chapterTitleToChapterId(chapterIdea.chapterTitle);
@@ -124,7 +154,7 @@ export default async function generateGame({
   const allRomChapters: RomChapter[] = chapterEvents.map(
     (chapterEvent, chapterNumber) => {
       const thisChapterTitle =
-        storyArc.chapterIdeas[chapterNumber].chapterTitle;
+        updatedStoryArc.chapterIdeas[chapterNumber].chapterTitle;
       const chapterId = chapterTitleToChapterId(thisChapterTitle);
       const chapterMap: ChapterMap = {
         name: chapterIdToMap[chapterId].name,
@@ -143,6 +173,50 @@ export default async function generateGame({
         throw new Error(`No battle quotes found for chapterId ${chapterId}`);
       }
 
+      const genericCharacters: GenericCharacter[] = [
+        {
+          name: "Soldier",
+          age: "mature adult",
+          backstory: "A generic enemy unit.",
+          firstSeenAs: "enemy non-boss",
+          // random between "male" and "female"
+          gender: Math.random() > 0.5 ? "female" : "male",
+          inGameDescription: "A generic enemy unit.",
+          personality: "None.",
+          physicalDescription: "",
+          chapterJoined: chapterNumber,
+          formattedDescription: "An enemy unit[X]",
+          csvData: {
+            name: "Soldier",
+            nameTextPointer: getNameText("Soldier"),
+            descriptionTextPointer: getDescText("Soldier"),
+            characterNumber: "Soldier",
+            defaultClass: "0x0",
+            portrait: "0x0",
+            isGeneric: true,
+            affinity: "NoAff",
+            baseLevel: 1,
+            baseHP: 5,
+            basePwr: 3,
+            baseMagic: 1,
+            baseSkl: 3,
+            baseSpd: 2,
+            baseDef: 3,
+            baseRes: 2,
+            baseLck: 5,
+            baseCon: 1,
+            hpGrowth: 75,
+            pwrGrowth: 30,
+            magicGrowth: 10,
+            sklGrowth: 20,
+            spdGrowth: 25,
+            defGrowth: 10,
+            resGrowth: 20,
+            lckGrowth: 0,
+          },
+        },
+      ];
+
       return {
         chapterId,
         displayName: `${getChapterNumberDisplayText(
@@ -152,7 +226,7 @@ export default async function generateGame({
         chapterDataForCsv,
         chapterEvent,
         chapterMap: chapterMap,
-        genericCharacters: [],
+        genericCharacters,
         battleQuotes,
       };
     }
