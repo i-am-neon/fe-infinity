@@ -185,7 +185,7 @@ export default async function generateGame({
           personality: "None.",
           physicalDescription: "",
           chapterJoined: chapterNumber,
-          formattedDescription: "An enemy unit",
+          formattedDescription: "An enemy unit[X]",
           csvData: {
             name: "Soldier",
             nameTextPointer: getNameText("Soldier"),
