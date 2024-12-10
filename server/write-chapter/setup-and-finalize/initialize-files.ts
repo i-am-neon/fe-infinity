@@ -3,11 +3,16 @@ import initializeChapterDataCsv from "@/write-chapter/chapter-data-csv/initializ
 import initializeCharacterTableCsv from "@/write-chapter/characters/character-table-csv/initialize-character-table-csv.ts";
 import initializeMapDirectory from "@/write-chapter/map/initialize-map-directory.ts";
 import initializeTextChaptersDotS from "./initialize-chapters-dot-s.ts";
+import clearDir from "@/fileIO/clear-dir.ts";
+import getPathWithinRomBuilderDir from "@/fileIO/get-path-within-rom-builder-dir.ts";
 
 export default async function initializeFiles(): Promise<void> {
   // Clear previously generated files
-  // await clearDir(getPathWithinRomBuilderDir("Events/build"));
-  // await clearDir(getPathWithinRomBuilderDir("Text/Chapters/build"));
+  await clearDir(getPathWithinRomBuilderDir("Events/build"));
+  await clearDir(getPathWithinRomBuilderDir("Text/Chapters/build"));
+  await clearDir(getPathWithinRomBuilderDir("Graphics/Portraits/build/images"));
+  await clearDir(getPathWithinRomBuilderDir("Graphics/Portraits/build/dmp"));
+
   await initializeCharacterTableCsv();
   await initializeChapterDataCsv();
   // Initialize Chapter Data files

@@ -5,9 +5,9 @@ export const allPortraitOptions: PortraitMetadata[] = [
     originalImageName: "0.png",
     eyeMouthOffsets: {
       eyeX: 3,
-      eyeY: 5,
+      eyeY: 4,
       mouthX: 3,
-      mouthY: 5,
+      mouthY: 6,
     },
     gender: "female",
     age: "young adult",
@@ -1279,3 +1279,4 @@ export const allPortraitOptions: PortraitMetadata[] = [
     clothing: "hooded robe",
   },
 ];
+
