@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const CharacterIdeaSchema = z.object({
-  name: z.string().min(1, "Must be first name only"),
+  name: z.string().min(1, "Must be first name only and contain no spaces"),
   gender: z.union([z.literal("male"), z.literal("female")]),
   personality: z
     .string()

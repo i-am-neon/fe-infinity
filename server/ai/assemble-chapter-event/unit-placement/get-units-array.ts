@@ -191,16 +191,16 @@ export default async function getUnitsArray({
       generateUnitLine({
         characterClass: g.characterClass,
         characterIdea: {
-          name: g.characterClass,
+          name: "Soldier",
           age: "mature adult",
           backstory: "A generic enemy unit.",
           deathQuote: "",
           firstSeenAs: "enemy non-boss",
           // random between "male" and "female"
           gender: Math.random() > 0.5 ? "female" : "male",
-          inGameDescription: "A generic enemy unit.",
+          inGameDescription: "",
           personality: "None.",
-          physicalDescription: "A generic enemy unit.",
+          physicalDescription: "",
         },
         xCoord: g.xCoord,
         yCoord: g.yCoord,

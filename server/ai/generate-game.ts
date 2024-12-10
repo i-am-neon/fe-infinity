@@ -17,6 +17,9 @@ import reDoAllBattleOverviews from "@/ai/maps/re-do-all-battle-overviews.ts";
 import { StoryArc } from "@/types/ai/StoryArc.ts";
 import { MapData } from "@/map-processing/types/MapData.ts";
 import { ChapterIdea } from "@/types/ai/ChapterIdea.ts";
+import { GenericCharacter } from "@/types/GenericCharacter.ts";
+import getDescText from "@/lib/get-desc-text.ts";
+import getNameText from "@/lib/get-name-text.ts";
 
 export default async function generateGame({
   worldIdea,
@@ -170,6 +173,50 @@ export default async function generateGame({
         throw new Error(`No battle quotes found for chapterId ${chapterId}`);
       }
 
+      const genericCharacters: GenericCharacter[] = [
+        {
+          name: "Soldier",
+          age: "mature adult",
+          backstory: "A generic enemy unit.",
+          firstSeenAs: "enemy non-boss",
+          // random between "male" and "female"
+          gender: Math.random() > 0.5 ? "female" : "male",
+          inGameDescription: "A generic enemy unit.",
+          personality: "None.",
+          physicalDescription: "",
+          chapterJoined: chapterNumber,
+          formattedDescription: "An enemy unit",
+          csvData: {
+            name: "Soldier",
+            nameTextPointer: getNameText("Soldier"),
+            descriptionTextPointer: getDescText("Soldier"),
+            characterNumber: "Soldier",
+            defaultClass: "0x0",
+            portrait: "0x0",
+            isGeneric: true,
+            affinity: "NoAff",
+            baseLevel: 1,
+            baseHP: 5,
+            basePwr: 3,
+            baseMagic: 1,
+            baseSkl: 3,
+            baseSpd: 2,
+            baseDef: 3,
+            baseRes: 2,
+            baseLck: 5,
+            baseCon: 1,
+            hpGrowth: 75,
+            pwrGrowth: 30,
+            magicGrowth: 10,
+            sklGrowth: 20,
+            spdGrowth: 25,
+            defGrowth: 10,
+            resGrowth: 20,
+            lckGrowth: 0,
+          },
+        },
+      ];
+
       return {
         chapterId,
         displayName: `${getChapterNumberDisplayText(
@@ -179,7 +226,7 @@ export default async function generateGame({
         chapterDataForCsv,
         chapterEvent,
         chapterMap: chapterMap,
-        genericCharacters: [],
+        genericCharacters,
         battleQuotes,
       };
     }

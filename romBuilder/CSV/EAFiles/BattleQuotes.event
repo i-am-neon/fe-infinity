@@ -3,6 +3,6 @@
 //SpecifiedBattleConvo(Character1,Character2,Chapter,EventID,TextID)
 
 
-SpecifiedBattleConvo(Liora,Kieran,the_twilight_grove,0x1,battle_quote_Liora_Kieran)
-SpecifiedBattleConvo(Zephyra,Kieran,the_twilight_grove,0x2,battle_quote_Zephyra_Kieran)
+SpecifiedBattleConvo(Liora,Kaden,the_ruins_of_elysia,0x1,battle_quote_Liora_Kaden)
+SpecifiedBattleConvo(Zerithe,Kaden,the_ruins_of_elysia,0x2,battle_quote_Zerithe_Kaden)
 BYTE 0xF0 0xF0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 // Terminator
