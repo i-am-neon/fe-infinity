@@ -60,7 +60,7 @@ export default async function generateNpcUnitCoords({
       characters,
       null,
       2
-    )}\n\nCharacter Starting Area: ${npcStartingAreaNames}\\n\nMap Areas: ${JSON.stringify(
+    )}\n\nCharacter Starting Area: ${npcStartingAreaNames}\n\nMap Areas: ${JSON.stringify(
       mapAreas,
       null,
       2

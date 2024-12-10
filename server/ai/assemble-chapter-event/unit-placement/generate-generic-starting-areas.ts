@@ -24,7 +24,7 @@ Based on your knowledge of Fire Emblem 8, assign starting areas for generic enem
 The area names must be area names from within the map data provided.
 `;
 
-  const { battleIdea } = await generateStructuredData({
+  const { genericEnemyStartingAreaNames } = await generateStructuredData({
     systemMessage,
     prompt: `Character starting areas: ${JSON.stringify(
       characterStartingAreas
@@ -32,23 +32,20 @@ The area names must be area names from within the map data provided.
       chapterData
     )}`,
     schema: z.object({
-      battleIdea: z.object({
-        genericEnemyStartingAreaNames: z.array(
-          z.object({
-            unitTypes: z
-              .array(z.string())
-              .describe(
-                "list of Fire Emblem 8 unit types that start in this area"
-              ),
-            areaName: z.string(),
-          })
-        ),
-      }),
+      genericEnemyStartingAreaNames: z.array(
+        z.object({
+          unitTypes: z
+            .array(z.string())
+            .describe(
+              "list of Fire Emblem 8 unit types that start in this area"
+            ),
+          areaName: z.string(),
+        })
+      ),
     }),
-    temperature: 1,
   });
 
-  return battleIdea;
+  return genericEnemyStartingAreaNames;
 }
 
 if (import.meta.main) {
