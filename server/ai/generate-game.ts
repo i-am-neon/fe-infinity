@@ -75,8 +75,6 @@ export default async function generateGame({
       return updatedChapters[chapterId].idea;
     }),
   };
-  console.log("updatedStoryArc 🔥", JSON.stringify(updatedStoryArc, null, 2));
-  console.log("🔥🔥🔥");
   console.log("✅ generated characters and maps");
 
   console.log("generating chapter events and battle quotes");

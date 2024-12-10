@@ -20,7 +20,9 @@ export async function assignMultiplePortraits({
 
   for (const characterIdea of characterIdeas) {
     const chosenPortrait = await _internals.choosePortrait({
-      portraitOptions,
+      portraitOptions: shuffleArray(
+        portraitOptions.filter((p) => p.gender === characterIdea.gender)
+      ),
       characterIdea,
     });
 
@@ -40,3 +42,10 @@ export async function assignMultiplePortraits({
 
 export const _internals = { choosePortrait };
 
+function shuffleArray(array: PortraitMetadata[]): PortraitMetadata[] {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}

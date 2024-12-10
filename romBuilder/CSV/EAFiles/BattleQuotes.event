@@ -3,6 +3,6 @@
 //SpecifiedBattleConvo(Character1,Character2,Chapter,EventID,TextID)
 
 
-SpecifiedBattleConvo(Kieran,Ronan,the_gathering_storm,0x1,battle_quote_Kieran_Ronan)
-SpecifiedBattleConvo(Seraphel,Ronan,the_gathering_storm,0x2,battle_quote_Seraphel_Ronan)
+SpecifiedBattleConvo(Elysia,Gideon,the_gathering_storm,0x1,battle_quote_Elysia_Gideon)
+SpecifiedBattleConvo(Aluriel,Gideon,the_gathering_storm,0x2,battle_quote_Aluriel_Gideon)
 BYTE 0xF0 0xF0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 // Terminator
