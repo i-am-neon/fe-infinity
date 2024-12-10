@@ -8,6 +8,7 @@ import generateGenericStartingAreas from "./generate-generic-starting-areas.ts";
 import generateNpcUnitCoords from "./generate-npc-unit-coords.ts";
 import generatePlayerUnitCoords from "./generate-player-unit-coords.ts";
 import getTerrainFromCoordinateArea from "@/ai/assemble-chapter-event/unit-placement/get-terrain-from-coordinate-area.ts";
+import { MapLocation } from "@/types/map-location.ts";
 
 export default async function getUnitsArray({
   characters,
@@ -55,6 +56,17 @@ export default async function getUnitsArray({
       (characterArea) =>
         map.areas.find((a) => a.name === characterArea.areaName)!
     );
+  const areaNameToAreaTerrain: Record<string, MapLocation[]> =
+    npcMapAreas.reduce((acc, area) => {
+      acc[area.name] = getTerrainFromCoordinateArea({
+        terrainGrid: map.terrainGrid,
+        fromX: area.coordinateArea.from.x,
+        fromY: area.coordinateArea.from.y,
+        toX: area.coordinateArea.to.x,
+        toY: area.coordinateArea.to.y,
+      });
+      return acc;
+    }, {} as Record<string, MapLocation[]>);
   const npcCoords = await generateNpcUnitCoords({
     characters: characters
       .filter(
@@ -70,6 +82,7 @@ export default async function getUnitsArray({
       })),
     npcStartingAreaNames: characterStartingAreas.npcStartingAreaNames,
     mapAreas: npcMapAreas,
+    areaNameToAreaTerrain,
   });
 
   console.log(
@@ -142,7 +155,7 @@ if (import.meta.main) {
         age: "mature adult",
         backstory:
           "Elysia has spent decades as a guardian of the Elderwood Thicket, learning the ancient ways of the druids. She witnessed the corruption of many sigil wielders and has dedicated her life to protecting the grove from those who would exploit its power. Her wisdom and connection to nature make her a valuable ally to Zynra, as she seeks to guide the young hero on her quest.",
-        firstSeenAs: "ally",
+        firstSeenAs: "allied NPC",
         physicalDescription:
           "A tall woman with long, braided brown hair and deep-set amber eyes, often wearing robes made of leaves and vines.",
         inGameDescription:
@@ -151,7 +164,7 @@ if (import.meta.main) {
           "The forest... must remain safe. Do not let my sacrifice be in vain.",
       },
       characterClass: "Shaman",
-      startingAllegiance: "ally",
+      startingAllegiance: "npc",
     },
     {
       characterIdea: {

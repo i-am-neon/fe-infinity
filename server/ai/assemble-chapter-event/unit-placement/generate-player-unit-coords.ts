@@ -59,7 +59,6 @@ export default async function generatePlayerUnitCoords({
     model: "gpt-4o",
   });
 
-  console.log("characterCoords :>> ", characterCoords);
   return characterCoords.map((coord) => ({
     xCoord: coord.xCoord,
     yCoord: coord.yCoord,
