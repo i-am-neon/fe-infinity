@@ -11,6 +11,7 @@ import getTerrainFromCoordinateArea from "@/ai/assemble-chapter-event/unit-place
 import { MapLocation } from "@/types/map-location.ts";
 import generateGenericUnitCoords from "@/ai/assemble-chapter-event/unit-placement/generate-generic-unit-coords.ts";
 import generateUnitLine from "@/ai/assemble-chapter-event/unit-placement/generate-unit-line.ts";
+import generateBossUnitCoords from "@/ai/assemble-chapter-event/unit-placement/generate-boss-unit-coords.ts";
 
 export default async function getUnitsArray({
   characters,
@@ -60,7 +61,6 @@ export default async function getUnitsArray({
 
   const areaNameToAreaTerrainForGenericEnemies: Record<string, MapLocation[]> =
     genericStartingAreas.reduce((acc, area) => {
-      console.log("area.areaName :>> ", area.areaName);
       acc[area.areaName] = getTerrainFromCoordinateArea({
         terrainGrid: map.terrainGrid,
         fromX: map.areas.find((a) => a.name === area.areaName)!.coordinateArea
@@ -75,52 +75,92 @@ export default async function getUnitsArray({
       return acc;
     }, {} as Record<string, MapLocation[]>);
 
-  const [playerCoords, npcCoords, genericEnemyCoords] = await Promise.all([
-    generatePlayerUnitCoords({
-      numberOfCharacters: characters.filter(
-        (c) => c.startingAllegiance === "ally"
-      ).length,
-      mapArea: playerMapArea,
-      areaTerrain: getTerrainFromCoordinateArea({
-        terrainGrid: map.terrainGrid,
-        fromX: playerMapArea.coordinateArea.from.x,
-        fromY: playerMapArea.coordinateArea.from.y,
-        toX: playerMapArea.coordinateArea.to.x,
-        toY: playerMapArea.coordinateArea.to.y,
+  const boss = characters.find(
+    (c) =>
+      c.startingAllegiance === "enemy" && c.characterIdea.firstSeenAs === "boss"
+  )!;
+  const [playerCoords, npcCoords, genericEnemyCoords, bossCoords] =
+    await Promise.all([
+      generatePlayerUnitCoords({
+        numberOfCharacters: characters.filter(
+          (c) => c.startingAllegiance === "ally"
+        ).length,
+        mapArea: playerMapArea,
+        areaTerrain: getTerrainFromCoordinateArea({
+          terrainGrid: map.terrainGrid,
+          fromX: playerMapArea.coordinateArea.from.x,
+          fromY: playerMapArea.coordinateArea.from.y,
+          toX: playerMapArea.coordinateArea.to.x,
+          toY: playerMapArea.coordinateArea.to.y,
+        }),
       }),
-    }),
-    generateNpcUnitCoords({
-      characters: characters
-        .filter(
-          (c) =>
-            c.startingAllegiance === "npc" ||
-            (c.startingAllegiance === "enemy" &&
-              c.characterIdea.firstSeenAs === "enemy non-boss")
-        )
-        .map((c) => ({
-          characterName: c.characterIdea.name,
-          characterClass: c.characterClass,
-          startingAllegiance: c.startingAllegiance,
+      generateNpcUnitCoords({
+        characters: characters
+          .filter(
+            (c) =>
+              c.startingAllegiance === "npc" ||
+              (c.startingAllegiance === "enemy" &&
+                c.characterIdea.firstSeenAs === "enemy non-boss")
+          )
+          .map((c) => ({
+            characterName: c.characterIdea.name,
+            characterClass: c.characterClass,
+            startingAllegiance: c.startingAllegiance,
+          })),
+        npcStartingAreaNames: characterStartingAreas.npcStartingAreaNames,
+        mapAreas: npcMapAreas,
+        areaNameToAreaTerrain: areaNameToAreaTerrainForNpc,
+      }),
+      generateGenericUnitCoords({
+        battleOverview: chapterData.battleOverview,
+        genericStartingAreas: genericStartingAreas.map((area) => ({
+          area: map.areas.find((a) => a.name === area.areaName)!,
+          unitTypes: area.unitTypes,
         })),
-      npcStartingAreaNames: characterStartingAreas.npcStartingAreaNames,
-      mapAreas: npcMapAreas,
-      areaNameToAreaTerrain: areaNameToAreaTerrainForNpc,
-    }),
-    generateGenericUnitCoords({
-      battleOverview: chapterData.battleOverview,
-      genericStartingAreas: genericStartingAreas.map((area) => ({
-        area: map.areas.find((a) => a.name === area.areaName)!,
-        unitTypes: area.unitTypes,
-      })),
-      areaNameToAreaTerrain: areaNameToAreaTerrainForGenericEnemies,
-    }),
-  ]);
+        areaNameToAreaTerrain: areaNameToAreaTerrainForGenericEnemies,
+      }),
+      generateBossUnitCoords({
+        areaTerrain: getTerrainFromCoordinateArea({
+          terrainGrid: map.terrainGrid,
+          fromX: map.areas.find(
+            (a) => a.name === genericStartingAreas[0].areaName
+          )!.coordinateArea.from.x,
+          fromY: map.areas.find(
+            (a) => a.name === genericStartingAreas[0].areaName
+          )!.coordinateArea.from.y,
+          toX: map.areas.find(
+            (a) => a.name === genericStartingAreas[0].areaName
+          )!.coordinateArea.to.x,
+          toY: map.areas.find(
+            (a) => a.name === genericStartingAreas[0].areaName
+          )!.coordinateArea.to.y,
+        }),
+        boss: {
+          characterName: boss.characterIdea.name,
+          characterClass: boss.characterClass,
+          startingAllegiance: boss.startingAllegiance,
+        },
+        mapArea: map.areas.find(
+          (a) => a.name === genericStartingAreas[0].areaName
+        )!,
+      }),
+    ]);
 
   // playerCoords aren't specific to the characters, so randomly assign.
   const playerCharacters = characters.filter(
     (c) => c.startingAllegiance === "ally"
   );
   const unitLinePromises = [];
+
+  unitLinePromises.push(
+    generateUnitLine({
+      characterClass: boss.characterClass,
+      characterIdea: boss.characterIdea,
+      xCoord: bossCoords.xCoord,
+      yCoord: bossCoords.yCoord,
+    })
+  );
+
   for (const p of playerCharacters) {
     const coords = playerCoords.pop();
     unitLinePromises.push(
