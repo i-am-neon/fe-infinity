@@ -4,6 +4,16 @@
   <image source="Tilesets/3C00CE3E.png" width="512" height="512"/>
  </tileset>
  <layer name="Tile Layer 1" width="16" height="15">
+  <properties>
+   <property name="Anims" value="_3CAnims"/>
+   <property name="ChapterID" value="<CHAPTERID>"/>
+   <property name="Main" value=""/>
+   <property name="MapChangesID" value="ArcanaeEscape_Changes"/>
+   <property name="MapID" value="ArcanaeEscape_Map"/>
+   <property name="ObjectType" value="0x3C"/>
+   <property name="PaletteID" value="0xCE"/>
+   <property name="TileConfig" value="0x3E"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJylUrsKwjAUTVMXHYTWfoSPwckG+x/+gB/Qz3LxB5wFdejSURwFcQg4180bmounlxQEh0OSm5z7OCdNpFTTgzfhSljFSuUeRux3dD/VSi16UHl+rbt5+PyMWkziMJi/JGygLp/3dP8gJLRPA7DQv4F8vD8QboQT4SJwhvl57gry/cu3P/DHup1x4Gd9QT6nfUHrWniCHrl6WUDP3GuPviCPz0fQdqu6+jk++zD0fTqMIOfd8x03C+iPvmSiR44nPp4G9OdeLfSJns+gL4e5/ua2UL/UrQdO8xLeOG0LsXLNIvCvjXhT667/RsTxX4c8kPcy/gEsUWMf
   </data>

@@ -3,13 +3,6 @@
 //SpecifiedBattleConvo(Character1,Character2,Chapter,EventID,TextID)
 
 
-SpecifiedBattleConvo(Elysia,Garrick,the_gathering_storm,0x1,battle_quote_Elysia_Garrick)
-SpecifiedBattleConvo(Zalvynn,Garrick,the_gathering_storm,0x2,battle_quote_Zalvynn_Garrick)
-SpecifiedBattleConvo(Elysia,Lirael,shadows_of_the_past,0x1,battle_quote_Elysia_Lirael)
-SpecifiedBattleConvo(Zalvynn,Lirael,shadows_of_the_past,0x2,battle_quote_Zalvynn_Lirael)
-SpecifiedBattleConvo(Kael,Lirael,shadows_of_the_past,0x3,battle_quote_Kael_Lirael)
-SpecifiedBattleConvo(Elysia,Malakar,the_final_confrontation,0x1,battle_quote_Elysia_Malakar)
-SpecifiedBattleConvo(Kael,Malakar,the_final_confrontation,0x2,battle_quote_Kael_Malakar)
-SpecifiedBattleConvo(Zalvynn,Malakar,the_final_confrontation,0x3,battle_quote_Zalvynn_Malakar)
-SpecifiedBattleConvo(Thorne,Malakar,the_final_confrontation,0x4,battle_quote_Thorne_Malakar)
+SpecifiedBattleConvo(Kiran,Mira,the_awakening_shadows,0x1,battle_quote_Kiran_Mira)
+SpecifiedBattleConvo(Zyrel,Mira,the_awakening_shadows,0x2,battle_quote_Zyrel_Mira)
 BYTE 0xF0 0xF0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 // Terminator

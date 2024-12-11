@@ -11,8 +11,8 @@ export default function extractValuesFromTmx(tmx: string): {
   const mainLayerEncoded =
     tmx
       .match(
-        /<layer name="Main"[^>]*>[\s\S]*?<data encoding="base64"[^>]*>([\s\S]*?)<\/data>/
-      )?.[1]
+        /<layer name="(Main|Tile Layer 1)"[^>]*>[\s\S]*?<data encoding="base64"[^>]*>([\s\S]*?)<\/data>/
+      )?.[2]
       ?.trim() ?? "";
 
   return { tileset, width, height, mainLayerEncoded };

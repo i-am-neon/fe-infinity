@@ -9,7 +9,7 @@ export async function doEverything({
 }): Promise<void> {
   const startTime = performance.now();
 
-  const game = await generateGame({ worldIdea, numberOfChapters: 3 });
+  const game = await generateGame({ worldIdea, numberOfChapters: 1 });
 
   console.log("game", JSON.stringify(game, null, 2));
 

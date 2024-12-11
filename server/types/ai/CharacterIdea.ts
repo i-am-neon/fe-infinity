@@ -1,7 +1,12 @@
 import { z } from "zod";
 
 export const CharacterIdeaSchema = z.object({
-  name: z.string().min(1, "Must be first name only and contain no spaces"),
+  name: z
+    .string()
+    .min(
+      1,
+      "Must be first name only and contain no spaces. That means no last names or titles ('King', 'Sir', etc are not allowed, just the first name.)."
+    ),
   gender: z.union([z.literal("male"), z.literal("female")]),
   personality: z
     .string()
