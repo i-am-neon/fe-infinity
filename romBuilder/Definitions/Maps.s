@@ -1,3 +1,7 @@
 Dummy 0x04
-ArcanaeEscape_Map
-ArcanaeEscape_Changes
+RipBlaine_Map
+RipBlaine_Changes
+HaedricIgnefront_Map
+HaedricIgnefront_Changes
+PeakRiver_Map
+PeakRiver_Changes

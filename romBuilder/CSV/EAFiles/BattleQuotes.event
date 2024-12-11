@@ -3,6 +3,12 @@
 //SpecifiedBattleConvo(Character1,Character2,Chapter,EventID,TextID)
 
 
-SpecifiedBattleConvo(Kiran,Vesper,the_awakening_shadows,0x1,battle_quote_Kiran_Vesper)
-SpecifiedBattleConvo(Zynara,Vesper,the_awakening_shadows,0x2,battle_quote_Zynara_Vesper)
+SpecifiedBattleConvo(Korin,Riven,whispers_of_unity,0x1,battle_quote_Korin_Riven)
+SpecifiedBattleConvo(Velcyan,Riven,whispers_of_unity,0x2,battle_quote_Velcyan_Riven)
+SpecifiedBattleConvo(Korin,Thorne,echoes_of_the_past,0x1,battle_quote_Korin_Thorne)
+SpecifiedBattleConvo(Velcyan,Thorne,echoes_of_the_past,0x2,battle_quote_Velcyan_Thorne)
+SpecifiedBattleConvo(Liora,Thorne,echoes_of_the_past,0x3,battle_quote_Liora_Thorne)
+SpecifiedBattleConvo(Korin,Riven,the_veil_s_citadel,0x1,battle_quote_Korin_Riven)
+SpecifiedBattleConvo(Liora,Riven,the_veil_s_citadel,0x2,battle_quote_Liora_Riven)
+SpecifiedBattleConvo(Velcyan,Riven,the_veil_s_citadel,0x3,battle_quote_Velcyan_Riven)
 BYTE 0xF0 0xF0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 // Terminator
