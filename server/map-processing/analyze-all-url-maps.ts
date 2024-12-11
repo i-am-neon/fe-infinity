@@ -8,7 +8,7 @@ import prepareTmx from "@/map-processing/prepare-tmx.ts";
 import { MapData } from "@/map-processing/types/MapData.ts";
 import { MapDataPreAI } from "@/map-processing/types/MapDataPreAI.ts";
 
-export default async function analyzeAllMaps(): Promise<void> {
+export default async function analyzeAllUrlMaps(): Promise<void> {
   const mapUrls = await getMapUrls();
 
   // Run each map analysis in parallel
@@ -74,6 +74,6 @@ export default async function analyzeAllMaps(): Promise<void> {
 }
 
 if (import.meta.main) {
-  await analyzeAllMaps();
+  await analyzeAllUrlMaps();
 }
 

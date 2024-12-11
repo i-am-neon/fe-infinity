@@ -15,6 +15,10 @@ export default function getInfoFromTmx(tmx: string): {
   const { tileset, height, width, mainLayerEncoded } =
     extractValuesFromTmx(tmx);
 
+  if (!mainLayerEncoded) {
+    throw new Error("main layer is not compressed for map:" + tmx);
+  }
+
   // last two digits
   const tileConfigId = tileset.slice(-2);
 
