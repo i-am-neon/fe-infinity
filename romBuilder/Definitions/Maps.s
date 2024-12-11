@@ -1,3 +1,3 @@
 Dummy 0x04
-Aegris_Map
-Aegris_Changes
+ArcanaeEscape_Map
+ArcanaeEscape_Changes

@@ -3,6 +3,6 @@
 //SpecifiedBattleConvo(Character1,Character2,Chapter,EventID,TextID)
 
 
-SpecifiedBattleConvo(Kiran,Mira,the_awakening_shadows,0x1,battle_quote_Kiran_Mira)
-SpecifiedBattleConvo(Zyrel,Mira,the_awakening_shadows,0x2,battle_quote_Zyrel_Mira)
+SpecifiedBattleConvo(Kiran,Vesper,the_awakening_shadows,0x1,battle_quote_Kiran_Vesper)
+SpecifiedBattleConvo(Zynara,Vesper,the_awakening_shadows,0x2,battle_quote_Zynara_Vesper)
 BYTE 0xF0 0xF0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 // Terminator

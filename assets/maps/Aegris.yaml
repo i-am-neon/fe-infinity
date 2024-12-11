@@ -1,7 +1,7 @@
 name: Aegris
 description: >-
-  Aegris is a coastal village map with a mix of plains, forests, and a docked
-  ship.
+  Aegris is a coastal village map with a mix of plains, forests, and a ship
+  docked at the eastern edge.
 tmx: >
   <?xml version="1.0" encoding="UTF-8"?>
 
@@ -1915,56 +1915,67 @@ interactableTiles:
 areas:
   - name: Northern Village
     description: >-
-      A small village area with a few houses and a village entrance, surrounded
-      by walls and roads.
+      A small village area with a road leading through it, surrounded by village
+      walls and a vendor.
+    coordinateArea:
+      from:
+        x: 11
+        'y': 0
+      to:
+        x: 18
+        'y': 2
+  - name: Central Village
+    description: >-
+      The main part of the village with multiple roads and a village entrance,
+      surrounded by walls.
+    coordinateArea:
+      from:
+        x: 6
+        'y': 7
+      to:
+        x: 14
+        'y': 11
+  - name: Southern Village
+    description: >-
+      A quieter part of the village with an inn and a house, surrounded by
+      village walls.
+    coordinateArea:
+      from:
+        x: 9
+        'y': 16
+      to:
+        x: 18
+        'y': 18
+  - name: Western Plains
+    description: >-
+      Open plains with scattered forests and a few roads, leading to the
+      village.
     coordinateArea:
       from:
         x: 0
         'y': 0
       to:
-        x: 17
-        'y': 4
-  - name: Central Village
-    description: >-
-      The heart of the village with multiple roads, a vendor, and a village
-      entrance.
-    coordinateArea:
-      from:
-        x: 0
-        'y': 5
-      to:
-        x: 18
-        'y': 12
-  - name: Southern Village
-    description: >-
-      A quieter part of the village with an inn and a house, surrounded by walls
-      and roads.
-    coordinateArea:
-      from:
-        x: 0
-        'y': 13
-      to:
-        x: 19
-        'y': 19
-  - name: Western Forest
-    description: >-
-      A dense forest area providing cover and strategic advantage, located on
-      the western side of the map.
-    coordinateArea:
-      from:
-        x: 0
-        'y': 20
-      to:
-        x: 9
-        'y': 22
+        x: 10
+        'y': 10
   - name: Eastern Ship
     description: >-
-      A docked ship with a deck and various ship elements, connected by a bridge
-      to the mainland.
+      A large ship docked at the eastern edge, with a deck and various ship
+      elements.
     coordinateArea:
       from:
         x: 20
         'y': 10
       to:
         x: 24
+        'y': 22
+  - name: Southern Forest
+    description: >-
+      Dense forest area with a few clearings, providing cover and strategic
+      positioning.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 19
+      to:
+        x: 8
         'y': 22
