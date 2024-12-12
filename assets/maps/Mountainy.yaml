@@ -1,0 +1,861 @@
+name: Mountainy
+description: >-
+  A mountainous map with a mix of peaks, plains, and strategic points like forts
+  and a village.
+tmx: >
+  <?xml version="1.0" encoding="UTF-8"?>
+
+  <map version="1.0" orientation="orthogonal" renderorder="right-down"
+  width="15" height="16" tilewidth="16" tileheight="16" nextobjectid="1">
+   <tileset firstgid="1" name="01004C03" tilewidth="16" tileheight="16">
+    <image source="Tilesets/01004C03.png" width="512" height="512"/>
+    <tile id="32">
+     <properties>
+      <property name="Height" value="1"/>
+      <property name="ID" value="0"/>
+      <property name="Width" value="1"/>
+      <property name="X" value="4"/>
+      <property name="Y" value="12"/>
+     </properties>
+    </tile>
+   </tileset>
+   <layer name="Tile Layer 1" width="15" height="16">
+    <properties>
+     <property name="Anims" value="_01Anims"/>
+     <property name="ChapterID" value="<CHAPTERID>"/>
+     <property name="Main" value=""/>
+     <property name="MapChangesID" value="Mountainy_Changes"/>
+     <property name="MapID" value="Mountainy_Map"/>
+     <property name="ObjectType" value="0x01"/>
+     <property name="PaletteID" value="0x4C"/>
+     <property name="TileConfig" value="0x03"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxNkj0vRFEQhs+9t/C9rFpDsr6WglplC6xdwUZE1OwSKyGRUCloFCLRKUVEFFbiP4iG6+MnKJD4Wv/AMzuz2Vs8uWfeM++ZM3Nu0XfuwnOuBA8QwgzamHOuAPswTTwAReiE0cC5Fos/zSO8eJqfhBJ7f+YbNKTOt6f+tch5og3xbQ3U+0McI86Yrxi5Y5r1RESTusO+1jvCOwU5X+8n/mzE28M672tt0a6sZ/Hn8a1bv1V/M7yx3+WrfyziDa2Xkvn3zSv3yJlXuLTcgnlX/NqcKzMnnpXenfYvvbdEvFIjZ72swq955I2epT98dTBuc7tHO3XqlZwY3xvph7NTTlkK9K4H5i2YVt0vkz8HSbQBGIR6zol7ep5485H/Y5vcDhgxdmESTway0At90A+hq9WRGvPSB/o1vMCW/A/sHXvKONoEpOELvQmtGXas/xD9EZ7g3M59hzaZOdoKrFpvDWiNcILvTOaF/gtl8yYC1RPkzMIm3BG3yxsbpFRynqHbU1/c5lldtwd6B7n/R6TfBbtzynJvYc/Xt6vWlr1l1oeexjLbRZvTudXeYP/V4n//Xm0L
+    </data>
+   </layer>
+   <layer name="CloseVillage" width="15" height="16" visible="0">
+    <properties>
+     <property name="Height" value="1"/>
+     <property name="ID" value="0"/>
+     <property name="Width" value="1"/>
+     <property name="X" value="4"/>
+     <property name="Y" value="12"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBgFo2D4AsWBdgCNAQAgoAAi
+    </data>
+   </layer>
+  </map>
+height: 16
+width: 15
+terrainGrid:
+  - terrain: Peak
+    x: 0
+    'y': 0
+  - terrain: Peak
+    x: 1
+    'y': 0
+  - terrain: Peak
+    x: 2
+    'y': 0
+  - terrain: Peak
+    x: 3
+    'y': 0
+  - terrain: Peak
+    x: 4
+    'y': 0
+  - terrain: Peak
+    x: 5
+    'y': 0
+  - terrain: Plains
+    x: 6
+    'y': 0
+  - terrain: Plains
+    x: 7
+    'y': 0
+  - terrain: Plains
+    x: 8
+    'y': 0
+  - terrain: Peak
+    x: 9
+    'y': 0
+  - terrain: Peak
+    x: 10
+    'y': 0
+  - terrain: Peak
+    x: 11
+    'y': 0
+  - terrain: Peak
+    x: 12
+    'y': 0
+  - terrain: Peak
+    x: 13
+    'y': 0
+  - terrain: Peak
+    x: 14
+    'y': 0
+  - terrain: Peak
+    x: 0
+    'y': 1
+  - terrain: Peak
+    x: 1
+    'y': 1
+  - terrain: Peak
+    x: 2
+    'y': 1
+  - terrain: Peak
+    x: 3
+    'y': 1
+  - terrain: Peak
+    x: 4
+    'y': 1
+  - terrain: Plains
+    x: 5
+    'y': 1
+  - terrain: Plains
+    x: 6
+    'y': 1
+  - terrain: Hill
+    x: 7
+    'y': 1
+  - terrain: Peak
+    x: 8
+    'y': 1
+  - terrain: Peak
+    x: 9
+    'y': 1
+  - terrain: Peak
+    x: 10
+    'y': 1
+  - terrain: Peak
+    x: 11
+    'y': 1
+  - terrain: Peak
+    x: 12
+    'y': 1
+  - terrain: Peak
+    x: 13
+    'y': 1
+  - terrain: Peak
+    x: 14
+    'y': 1
+  - terrain: Peak
+    x: 0
+    'y': 2
+  - terrain: Peak
+    x: 1
+    'y': 2
+  - terrain: Peak
+    x: 2
+    'y': 2
+  - terrain: Peak
+    x: 3
+    'y': 2
+  - terrain: Peak
+    x: 4
+    'y': 2
+  - terrain: Forest
+    x: 5
+    'y': 2
+  - terrain: Plains
+    x: 6
+    'y': 2
+  - terrain: Peak
+    x: 7
+    'y': 2
+  - terrain: Peak
+    x: 8
+    'y': 2
+  - terrain: Peak
+    x: 9
+    'y': 2
+  - terrain: Peak
+    x: 10
+    'y': 2
+  - terrain: Peak
+    x: 11
+    'y': 2
+  - terrain: Peak
+    x: 12
+    'y': 2
+  - terrain: Peak
+    x: 13
+    'y': 2
+  - terrain: Peak
+    x: 14
+    'y': 2
+  - terrain: Peak
+    x: 0
+    'y': 3
+  - terrain: Peak
+    x: 1
+    'y': 3
+  - terrain: Peak
+    x: 2
+    'y': 3
+  - terrain: Peak
+    x: 3
+    'y': 3
+  - terrain: Peak
+    x: 4
+    'y': 3
+  - terrain: Hill
+    x: 5
+    'y': 3
+  - terrain: Plains
+    x: 6
+    'y': 3
+  - terrain: Plains
+    x: 7
+    'y': 3
+  - terrain: Peak
+    x: 8
+    'y': 3
+  - terrain: Peak
+    x: 9
+    'y': 3
+  - terrain: Peak
+    x: 10
+    'y': 3
+  - terrain: Peak
+    x: 11
+    'y': 3
+  - terrain: Peak
+    x: 12
+    'y': 3
+  - terrain: Peak
+    x: 13
+    'y': 3
+  - terrain: Peak
+    x: 14
+    'y': 3
+  - terrain: Peak
+    x: 0
+    'y': 4
+  - terrain: Peak
+    x: 1
+    'y': 4
+  - terrain: Peak
+    x: 2
+    'y': 4
+  - terrain: Peak
+    x: 3
+    'y': 4
+  - terrain: Peak
+    x: 4
+    'y': 4
+  - terrain: Peak
+    x: 5
+    'y': 4
+  - terrain: Plains
+    x: 6
+    'y': 4
+  - terrain: Plains
+    x: 7
+    'y': 4
+  - terrain: Plains
+    x: 8
+    'y': 4
+  - terrain: Peak
+    x: 9
+    'y': 4
+  - terrain: Peak
+    x: 10
+    'y': 4
+  - terrain: Peak
+    x: 11
+    'y': 4
+  - terrain: Peak
+    x: 12
+    'y': 4
+  - terrain: Peak
+    x: 13
+    'y': 4
+  - terrain: Peak
+    x: 14
+    'y': 4
+  - terrain: Peak
+    x: 0
+    'y': 5
+  - terrain: Peak
+    x: 1
+    'y': 5
+  - terrain: Peak
+    x: 2
+    'y': 5
+  - terrain: Peak
+    x: 3
+    'y': 5
+  - terrain: Peak
+    x: 4
+    'y': 5
+  - terrain: Peak
+    x: 5
+    'y': 5
+  - terrain: Peak
+    x: 6
+    'y': 5
+  - terrain: Plains
+    x: 7
+    'y': 5
+  - terrain: Plains
+    x: 8
+    'y': 5
+  - terrain: Hill
+    x: 9
+    'y': 5
+  - terrain: Peak
+    x: 10
+    'y': 5
+  - terrain: Peak
+    x: 11
+    'y': 5
+  - terrain: Peak
+    x: 12
+    'y': 5
+  - terrain: Peak
+    x: 13
+    'y': 5
+  - terrain: Peak
+    x: 14
+    'y': 5
+  - terrain: Peak
+    x: 0
+    'y': 6
+  - terrain: Peak
+    x: 1
+    'y': 6
+  - terrain: Peak
+    x: 2
+    'y': 6
+  - terrain: Peak
+    x: 3
+    'y': 6
+  - terrain: Peak
+    x: 4
+    'y': 6
+  - terrain: Peak
+    x: 5
+    'y': 6
+  - terrain: Peak
+    x: 6
+    'y': 6
+  - terrain: Plains
+    x: 7
+    'y': 6
+  - terrain: Plains
+    x: 8
+    'y': 6
+  - terrain: Forest
+    x: 9
+    'y': 6
+  - terrain: Peak
+    x: 10
+    'y': 6
+  - terrain: Peak
+    x: 11
+    'y': 6
+  - terrain: Peak
+    x: 12
+    'y': 6
+  - terrain: Peak
+    x: 13
+    'y': 6
+  - terrain: Peak
+    x: 14
+    'y': 6
+  - terrain: Peak
+    x: 0
+    'y': 7
+  - terrain: Peak
+    x: 1
+    'y': 7
+  - terrain: Peak
+    x: 2
+    'y': 7
+  - terrain: Peak
+    x: 3
+    'y': 7
+  - terrain: Peak
+    x: 4
+    'y': 7
+  - terrain: Peak
+    x: 5
+    'y': 7
+  - terrain: Forest
+    x: 6
+    'y': 7
+  - terrain: Plains
+    x: 7
+    'y': 7
+  - terrain: Plains
+    x: 8
+    'y': 7
+  - terrain: Plains
+    x: 9
+    'y': 7
+  - terrain: Peak
+    x: 10
+    'y': 7
+  - terrain: Peak
+    x: 11
+    'y': 7
+  - terrain: Peak
+    x: 12
+    'y': 7
+  - terrain: Peak
+    x: 13
+    'y': 7
+  - terrain: Peak
+    x: 14
+    'y': 7
+  - terrain: Plains
+    x: 0
+    'y': 8
+  - terrain: Peak
+    x: 1
+    'y': 8
+  - terrain: Peak
+    x: 2
+    'y': 8
+  - terrain: Plains
+    x: 3
+    'y': 8
+  - terrain: Plains
+    x: 4
+    'y': 8
+  - terrain: Fort
+    x: 5
+    'y': 8
+  - terrain: Plains
+    x: 6
+    'y': 8
+  - terrain: Plains
+    x: 7
+    'y': 8
+  - terrain: Plains
+    x: 8
+    'y': 8
+  - terrain: Plains
+    x: 9
+    'y': 8
+  - terrain: Fort
+    x: 10
+    'y': 8
+  - terrain: Plains
+    x: 11
+    'y': 8
+  - terrain: Plains
+    x: 12
+    'y': 8
+  - terrain: Peak
+    x: 13
+    'y': 8
+  - terrain: River
+    x: 14
+    'y': 8
+  - terrain: Castle Wall
+    x: 0
+    'y': 9
+  - terrain: Castle Wall
+    x: 1
+    'y': 9
+  - terrain: Castle Wall
+    x: 2
+    'y': 9
+  - terrain: Plains
+    x: 3
+    'y': 9
+  - terrain: Plains
+    x: 4
+    'y': 9
+  - terrain: Plains
+    x: 5
+    'y': 9
+  - terrain: Plains
+    x: 6
+    'y': 9
+  - terrain: Plains
+    x: 7
+    'y': 9
+  - terrain: Plains
+    x: 8
+    'y': 9
+  - terrain: Plains
+    x: 9
+    'y': 9
+  - terrain: River
+    x: 10
+    'y': 9
+  - terrain: River
+    x: 11
+    'y': 9
+  - terrain: River
+    x: 12
+    'y': 9
+  - terrain: River
+    x: 13
+    'y': 9
+  - terrain: River
+    x: 14
+    'y': 9
+  - terrain: Castle Wall
+    x: 0
+    'y': 10
+  - terrain: Fort Gate
+    x: 1
+    'y': 10
+  - terrain: Castle Wall
+    x: 2
+    'y': 10
+  - terrain: Village Wall
+    x: 3
+    'y': 10
+  - terrain: Village Wall
+    x: 4
+    'y': 10
+  - terrain: Village Wall
+    x: 5
+    'y': 10
+  - terrain: Plains
+    x: 6
+    'y': 10
+  - terrain: Plains
+    x: 7
+    'y': 10
+  - terrain: Plains
+    x: 8
+    'y': 10
+  - terrain: River
+    x: 9
+    'y': 10
+  - terrain: River
+    x: 10
+    'y': 10
+  - terrain: Castle Wall
+    x: 11
+    'y': 10
+  - terrain: Castle Wall
+    x: 12
+    'y': 10
+  - terrain: Castle Wall
+    x: 13
+    'y': 10
+  - terrain: River
+    x: 14
+    'y': 10
+  - terrain: Plains
+    x: 0
+    'y': 11
+  - terrain: Plains
+    x: 1
+    'y': 11
+  - terrain: Plains
+    x: 2
+    'y': 11
+  - terrain: Village Wall
+    x: 3
+    'y': 11
+  - terrain: Village Wall
+    x: 4
+    'y': 11
+  - terrain: Village Wall
+    x: 5
+    'y': 11
+  - terrain: Plains
+    x: 6
+    'y': 11
+  - terrain: Plains
+    x: 7
+    'y': 11
+  - terrain: Plains
+    x: 8
+    'y': 11
+  - terrain: River
+    x: 9
+    'y': 11
+  - terrain: Forest
+    x: 10
+    'y': 11
+  - terrain: Castle Wall
+    x: 11
+    'y': 11
+  - terrain: Castle Wall
+    x: 12
+    'y': 11
+  - terrain: Castle Wall
+    x: 13
+    'y': 11
+  - terrain: Plains
+    x: 14
+    'y': 11
+  - terrain: Plains
+    x: 0
+    'y': 12
+  - terrain: Plains
+    x: 1
+    'y': 12
+  - terrain: Plains
+    x: 2
+    'y': 12
+  - terrain: Village Wall
+    x: 3
+    'y': 12
+  - terrain: Village Entrance
+    x: 4
+    'y': 12
+  - terrain: Village Wall
+    x: 5
+    'y': 12
+  - terrain: Plains
+    x: 6
+    'y': 12
+  - terrain: Plains
+    x: 7
+    'y': 12
+  - terrain: Plains
+    x: 8
+    'y': 12
+  - terrain: River
+    x: 9
+    'y': 12
+  - terrain: Plains
+    x: 10
+    'y': 12
+  - terrain: Castle Wall
+    x: 11
+    'y': 12
+  - terrain: Fort Gate
+    x: 12
+    'y': 12
+  - terrain: Castle Wall
+    x: 13
+    'y': 12
+  - terrain: Plains
+    x: 14
+    'y': 12
+  - terrain: House
+    x: 0
+    'y': 13
+  - terrain: Plains
+    x: 1
+    'y': 13
+  - terrain: Plains
+    x: 2
+    'y': 13
+  - terrain: Plains
+    x: 3
+    'y': 13
+  - terrain: Plains
+    x: 4
+    'y': 13
+  - terrain: Plains
+    x: 5
+    'y': 13
+  - terrain: Plains
+    x: 6
+    'y': 13
+  - terrain: Plains
+    x: 7
+    'y': 13
+  - terrain: Plains
+    x: 8
+    'y': 13
+  - terrain: Bridge
+    x: 9
+    'y': 13
+  - terrain: Plains
+    x: 10
+    'y': 13
+  - terrain: Plains
+    x: 11
+    'y': 13
+  - terrain: Plains
+    x: 12
+    'y': 13
+  - terrain: Plains
+    x: 13
+    'y': 13
+  - terrain: Forest
+    x: 14
+    'y': 13
+  - terrain: Plains
+    x: 0
+    'y': 14
+  - terrain: Plains
+    x: 1
+    'y': 14
+  - terrain: Forest
+    x: 2
+    'y': 14
+  - terrain: Forest
+    x: 3
+    'y': 14
+  - terrain: Plains
+    x: 4
+    'y': 14
+  - terrain: Plains
+    x: 5
+    'y': 14
+  - terrain: Plains
+    x: 6
+    'y': 14
+  - terrain: Plains
+    x: 7
+    'y': 14
+  - terrain: Plains
+    x: 8
+    'y': 14
+  - terrain: River
+    x: 9
+    'y': 14
+  - terrain: Forest
+    x: 10
+    'y': 14
+  - terrain: Plains
+    x: 11
+    'y': 14
+  - terrain: Plains
+    x: 12
+    'y': 14
+  - terrain: Plains
+    x: 13
+    'y': 14
+  - terrain: Cliff
+    x: 14
+    'y': 14
+  - terrain: Plains
+    x: 0
+    'y': 15
+  - terrain: House
+    x: 1
+    'y': 15
+  - terrain: Plains
+    x: 2
+    'y': 15
+  - terrain: Plains
+    x: 3
+    'y': 15
+  - terrain: Fort
+    x: 4
+    'y': 15
+  - terrain: Plains
+    x: 5
+    'y': 15
+  - terrain: Plains
+    x: 6
+    'y': 15
+  - terrain: River
+    x: 7
+    'y': 15
+  - terrain: River
+    x: 8
+    'y': 15
+  - terrain: River
+    x: 9
+    'y': 15
+  - terrain: Plains
+    x: 10
+    'y': 15
+  - terrain: Plains
+    x: 11
+    'y': 15
+  - terrain: Forest
+    x: 12
+    'y': 15
+  - terrain: Cliff
+    x: 13
+    'y': 15
+  - terrain: Plains
+    x: 14
+    'y': 15
+pointsOfInterest:
+  - x: 5
+    'y': 8
+    terrain: Fort
+  - x: 10
+    'y': 8
+    terrain: Fort
+  - x: 1
+    'y': 10
+    terrain: Fort Gate
+  - x: 4
+    'y': 12
+    terrain: Village Entrance
+  - x: 12
+    'y': 12
+    terrain: Fort Gate
+  - x: 0
+    'y': 13
+    terrain: House
+  - x: 1
+    'y': 15
+    terrain: House
+  - x: 4
+    'y': 15
+    terrain: Fort
+interactableTiles:
+  - x: 4
+    'y': 12
+    terrain: Village Entrance
+  - x: 0
+    'y': 13
+    terrain: House
+  - x: 1
+    'y': 15
+    terrain: House
+areas:
+  - name: Northern Peaks
+    description: >-
+      A rugged area dominated by peaks, providing high ground and defensive
+      advantages.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 0
+      to:
+        x: 14
+        'y': 7
+  - name: Central Plains
+    description: >-
+      Open plains with a few hills and forests, ideal for movement and
+      skirmishes.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 8
+      to:
+        x: 14
+        'y': 11
+  - name: Eastern River
+    description: >-
+      A river running through the eastern side, creating a natural barrier and
+      strategic chokepoint.
+    coordinateArea:
+      from:
+        x: 9
+        'y': 8
+      to:
+        x: 14
+        'y': 15
+  - name: Southern Village
+    description: >-
+      A small village area with houses and a fort, offering resources and
+      strategic positions.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 12
+      to:
+        x: 8
+        'y': 15
+  - name: Western Fort
+    description: 'A fortified area with a fort gate, providing a strong defensive position.'
+    coordinateArea:
+      from:
+        x: 0
+        'y': 9
+      to:
+        x: 2
+        'y': 12

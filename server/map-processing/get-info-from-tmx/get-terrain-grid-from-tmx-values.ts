@@ -16,6 +16,9 @@ export default function getTerrainGridFromTmxValues({
 }): MapLocation[] {
   const mapTiles: number[] = decompressMapData(mainLayerEncoded);
   const terrainTags = tileConfigToTerrain[tileConfigId];
+  if (!terrainTags) {
+    throw new Error("Invalid tile config id: " + tileConfigId);
+  }
   const terrainTagsArray = terrainTags.split(" ");
 
   const tileDataArray: MapLocation[] = [];

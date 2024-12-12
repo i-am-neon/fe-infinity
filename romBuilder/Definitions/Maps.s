@@ -1,7 +1,7 @@
 Dummy 0x04
-KnightsVillagersBandits1201000203_Map
-KnightsVillagersBandits1201000203_Changes
-KnightsVillagersBandits103C00CE3E_Map
-KnightsVillagersBandits103C00CE3E_Changes
-MagesMercenaries342004344_Map
-MagesMercenaries342004344_Changes
+RipBlaine_Map
+RipBlaine_Changes
+HaedricIgnefront_Map
+HaedricIgnefront_Changes
+PeakRiver_Map
+PeakRiver_Changes

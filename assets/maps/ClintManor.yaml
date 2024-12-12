@@ -1,0 +1,1643 @@
+name: ClintManor
+description: >-
+  Clint Manor is a complex indoor map with multiple rooms and corridors,
+  featuring a throne room and various staircases.
+tmx: >
+  <?xml version="1.0" encoding="UTF-8"?>
+
+  <map version="1.0" orientation="orthogonal" renderorder="right-down"
+  width="20" height="22" tilewidth="16" tileheight="16" nextobjectid="1">
+   <tileset firstgid="1" name="3C003D3E" tilewidth="16" tileheight="16">
+    <image source="Tilesets/3C003D3E.png" width="512" height="512"/>
+   </tileset>
+   <layer name="Tile Layer 1" width="20" height="22">
+    <properties>
+     <property name="Anims" value="_3CAnims"/>
+     <property name="ChapterID" value="<CHAPTERID>"/>
+     <property name="Main" value=""/>
+     <property name="MapChangesID" value="ClintManor_Changes"/>
+     <property name="MapID" value="ClintManor_Map"/>
+     <property name="ObjectType" value="0x3C"/>
+     <property name="PaletteID" value="0x3D"/>
+     <property name="TileConfig" value="0x3E"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJyNkz1KQ0EQx3ffK7QSjd5A8AMrEQTLYCEIFqIXUCMoVoIXECKI2Ch4AKNJFElQKy0lfoBpNDcQEixs4tMD+B/fDm+y2dVAfszOvNl/dmdmq1qpJiiB+UCpsvGzWKfBoINpsU6LPLJV7O2DXQSbxh6CO7AElkFG2L/WGaM3DrsluAZvYBtUrHzmXqwrIvZ7vlCpFLgMYktocAw/54DiJx7/A3oP4EnwCEbx7QK2bqyNL14A3/h2IGoXgTPE+8OEEcTGBHnd6neDCeS963j/FTgytauBok7unjJ5XQr/A4pgDRRABuyoJJ/1iEujFQm9lyCuL+VJjWHEV2BXjW/rkQ7tfbX0esGCycubvcQMcvBTdZD1nK8ZxLWMPPclnRyogDmwC/at89G8fBqNkujTLPxznfCs4/Pw+TbAOthT8b2lHt9R9qvHMw8+ymaO+XxUvy8BxQfC1pn5D3lf6gXrnurWd8M9Tlm44nxf2Qtbj3ts67nish88e5H1romG5Zc8dfT1t2ztp/fG75ze9y24ccD3rQXt71HeheZvMkyw3zMj50X21zXPUo/8qbAdX/060ZM+45tPu/6NDufaVVNiyKo/+b4eSH4AB4LgOA==
+    </data>
+   </layer>
+   <layer name="Door2" width="20" height="22" visible="0">
+    <properties>
+     <property name="Height" value="1"/>
+     <property name="ID" value="7"/>
+     <property name="Width" value="3"/>
+     <property name="X" value="13"/>
+     <property name="Y" value="4"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBgF9AbrGBkYBJkZGNYyDrRLRsEoGAWjYPgCANIwAXI=
+    </data>
+   </layer>
+   <layer name="Door1" width="20" height="22" visible="0">
+    <properties>
+     <property name="Height" value="2"/>
+     <property name="ID" value="6"/>
+     <property name="Width" value="3"/>
+     <property name="X" value="7"/>
+     <property name="Y" value="4"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBgFtALrGBkYBJkZGNYyUsc8kDFCzBB6FIyCUTAKRgF+AABsJAGJ
+    </data>
+   </layer>
+   <layer name="OpenRoom" width="20" height="22" visible="0">
+    <properties>
+     <property name="Height" value="4"/>
+     <property name="ID" value="0"/>
+     <property name="Width" value="14"/>
+     <property name="X" value="6"/>
+     <property name="Y" value="0"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYMAOOJkYGFYzko5xgdNAORFmBgZhIE5iQLCR+ejiIIzPPEEkPUJAfIEJIiaMQ1yICPOEkLAAEAdD2cI4xEfBKBgFo2AUDE4AADDoEeg=
+    </data>
+   </layer>
+   <layer name="Chest5" width="20" height="22" visible="0">
+    <properties>
+     <property name="Height" value="1"/>
+     <property name="ID" value="5"/>
+     <property name="Width" value="1"/>
+     <property name="X" value="14"/>
+     <property name="Y" value="2"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBiewGmgHTAKRsEoGAWjYEABAJT/AEM=
+    </data>
+   </layer>
+   <layer name="Chest4" width="20" height="22" visible="0">
+    <properties>
+     <property name="Height" value="1"/>
+     <property name="ID" value="4"/>
+     <property name="Width" value="1"/>
+     <property name="X" value="8"/>
+     <property name="Y" value="2"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBjawGmgHTAKRsEoGAWjYFACAJsvAEM=
+    </data>
+   </layer>
+   <layer name="Chest3" width="20" height="22" visible="0">
+    <properties>
+     <property name="Height" value="1"/>
+     <property name="ID" value="3"/>
+     <property name="Width" value="1"/>
+     <property name="X" value="15"/>
+     <property name="Y" value="1"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBg8wGmgHTAKRsEoGAWjYNgAAKiXAEM=
+    </data>
+   </layer>
+   <layer name="Chest2" width="20" height="22" visible="0">
+    <properties>
+     <property name="Height" value="1"/>
+     <property name="ID" value="2"/>
+     <property name="Width" value="1"/>
+     <property name="X" value="13"/>
+     <property name="Y" value="1"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBh44DTQDhgFo2AUjIJRMOwAAKqnAEM=
+    </data>
+   </layer>
+   <layer name="Chest1" width="20" height="22" visible="0">
+    <properties>
+     <property name="Height" value="1"/>
+     <property name="ID" value="1"/>
+     <property name="Width" value="1"/>
+     <property name="X" value="9"/>
+     <property name="Y" value="1"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYKA/cBoAO0fBKBgFo2AUjCwAAK7HAEM=
+    </data>
+   </layer>
+  </map>
+height: 22
+width: 20
+terrainGrid:
+  - terrain: Wall
+    x: 0
+    'y': 0
+  - terrain: Floor
+    x: 1
+    'y': 0
+  - terrain: Wall
+    x: 2
+    'y': 0
+  - terrain: Wall
+    x: 3
+    'y': 0
+  - terrain: Wall
+    x: 4
+    'y': 0
+  - terrain: Floor
+    x: 5
+    'y': 0
+  - terrain: Roof
+    x: 6
+    'y': 0
+  - terrain: Wall
+    x: 7
+    'y': 0
+  - terrain: Wall
+    x: 8
+    'y': 0
+  - terrain: Wall
+    x: 9
+    'y': 0
+  - terrain: Wall
+    x: 10
+    'y': 0
+  - terrain: Wall
+    x: 11
+    'y': 0
+  - terrain: Wall
+    x: 12
+    'y': 0
+  - terrain: Wall
+    x: 13
+    'y': 0
+  - terrain: Wall
+    x: 14
+    'y': 0
+  - terrain: Wall
+    x: 15
+    'y': 0
+  - terrain: Wall
+    x: 16
+    'y': 0
+  - terrain: Wall
+    x: 17
+    'y': 0
+  - terrain: Wall
+    x: 18
+    'y': 0
+  - terrain: Wall
+    x: 19
+    'y': 0
+  - terrain: Wall
+    x: 0
+    'y': 1
+  - terrain: Floor
+    x: 1
+    'y': 1
+  - terrain: Floor
+    x: 2
+    'y': 1
+  - terrain: Throne
+    x: 3
+    'y': 1
+  - terrain: Floor
+    x: 4
+    'y': 1
+  - terrain: Floor
+    x: 5
+    'y': 1
+  - terrain: Roof
+    x: 6
+    'y': 1
+  - terrain: Roof
+    x: 7
+    'y': 1
+  - terrain: Roof
+    x: 8
+    'y': 1
+  - terrain: Roof
+    x: 9
+    'y': 1
+  - terrain: Roof
+    x: 10
+    'y': 1
+  - terrain: Roof
+    x: 11
+    'y': 1
+  - terrain: Roof
+    x: 12
+    'y': 1
+  - terrain: Roof
+    x: 13
+    'y': 1
+  - terrain: Roof
+    x: 14
+    'y': 1
+  - terrain: Roof
+    x: 15
+    'y': 1
+  - terrain: Roof
+    x: 16
+    'y': 1
+  - terrain: Roof
+    x: 17
+    'y': 1
+  - terrain: Roof
+    x: 18
+    'y': 1
+  - terrain: Roof
+    x: 19
+    'y': 1
+  - terrain: Wall
+    x: 0
+    'y': 2
+  - terrain: Floor
+    x: 1
+    'y': 2
+  - terrain: Floor
+    x: 2
+    'y': 2
+  - terrain: Floor
+    x: 3
+    'y': 2
+  - terrain: Floor
+    x: 4
+    'y': 2
+  - terrain: Floor
+    x: 5
+    'y': 2
+  - terrain: Roof
+    x: 6
+    'y': 2
+  - terrain: Roof
+    x: 7
+    'y': 2
+  - terrain: Roof
+    x: 8
+    'y': 2
+  - terrain: Roof
+    x: 9
+    'y': 2
+  - terrain: Roof
+    x: 10
+    'y': 2
+  - terrain: Roof
+    x: 11
+    'y': 2
+  - terrain: Roof
+    x: 12
+    'y': 2
+  - terrain: Roof
+    x: 13
+    'y': 2
+  - terrain: Roof
+    x: 14
+    'y': 2
+  - terrain: Roof
+    x: 15
+    'y': 2
+  - terrain: Roof
+    x: 16
+    'y': 2
+  - terrain: Roof
+    x: 17
+    'y': 2
+  - terrain: Roof
+    x: 18
+    'y': 2
+  - terrain: Roof
+    x: 19
+    'y': 2
+  - terrain: Wall
+    x: 0
+    'y': 3
+  - terrain: Floor
+    x: 1
+    'y': 3
+  - terrain: Floor
+    x: 2
+    'y': 3
+  - terrain: Floor
+    x: 3
+    'y': 3
+  - terrain: Floor
+    x: 4
+    'y': 3
+  - terrain: Floor
+    x: 5
+    'y': 3
+  - terrain: Roof
+    x: 6
+    'y': 3
+  - terrain: Roof
+    x: 7
+    'y': 3
+  - terrain: Roof
+    x: 8
+    'y': 3
+  - terrain: Roof
+    x: 9
+    'y': 3
+  - terrain: Roof
+    x: 10
+    'y': 3
+  - terrain: Roof
+    x: 11
+    'y': 3
+  - terrain: Roof
+    x: 12
+    'y': 3
+  - terrain: Roof
+    x: 13
+    'y': 3
+  - terrain: Roof
+    x: 14
+    'y': 3
+  - terrain: Roof
+    x: 15
+    'y': 3
+  - terrain: Roof
+    x: 16
+    'y': 3
+  - terrain: Roof
+    x: 17
+    'y': 3
+  - terrain: Roof
+    x: 18
+    'y': 3
+  - terrain: Roof
+    x: 19
+    'y': 3
+  - terrain: Wall
+    x: 0
+    'y': 4
+  - terrain: Stairs
+    x: 1
+    'y': 4
+  - terrain: Stairs
+    x: 2
+    'y': 4
+  - terrain: Stairs
+    x: 3
+    'y': 4
+  - terrain: Stairs
+    x: 4
+    'y': 4
+  - terrain: Stairs
+    x: 5
+    'y': 4
+  - terrain: Wall
+    x: 6
+    'y': 4
+  - terrain: Wall
+    x: 7
+    'y': 4
+  - terrain: Door
+    x: 8
+    'y': 4
+  - terrain: Wall
+    x: 9
+    'y': 4
+  - terrain: Wall
+    x: 10
+    'y': 4
+  - terrain: Wall
+    x: 11
+    'y': 4
+  - terrain: Wall
+    x: 12
+    'y': 4
+  - terrain: Wall
+    x: 13
+    'y': 4
+  - terrain: Door
+    x: 14
+    'y': 4
+  - terrain: Wall
+    x: 15
+    'y': 4
+  - terrain: Wall
+    x: 16
+    'y': 4
+  - terrain: Wall
+    x: 17
+    'y': 4
+  - terrain: Wall
+    x: 18
+    'y': 4
+  - terrain: Wall
+    x: 19
+    'y': 4
+  - terrain: Stairs
+    x: 0
+    'y': 5
+  - terrain: Floor
+    x: 1
+    'y': 5
+  - terrain: Floor
+    x: 2
+    'y': 5
+  - terrain: Floor
+    x: 3
+    'y': 5
+  - terrain: Floor
+    x: 4
+    'y': 5
+  - terrain: Floor
+    x: 5
+    'y': 5
+  - terrain: Stairs
+    x: 6
+    'y': 5
+  - terrain: Floor
+    x: 7
+    'y': 5
+  - terrain: Floor
+    x: 8
+    'y': 5
+  - terrain: Floor
+    x: 9
+    'y': 5
+  - terrain: Wall
+    x: 10
+    'y': 5
+  - terrain: Wall
+    x: 11
+    'y': 5
+  - terrain: Wall
+    x: 12
+    'y': 5
+  - terrain: Wall
+    x: 13
+    'y': 5
+  - terrain: Stairs
+    x: 14
+    'y': 5
+  - terrain: Wall
+    x: 15
+    'y': 5
+  - terrain: Wall
+    x: 16
+    'y': 5
+  - terrain: Wall
+    x: 17
+    'y': 5
+  - terrain: Wall
+    x: 18
+    'y': 5
+  - terrain: Floor
+    x: 19
+    'y': 5
+  - terrain: Stairs
+    x: 0
+    'y': 6
+  - terrain: Floor
+    x: 1
+    'y': 6
+  - terrain: Floor
+    x: 2
+    'y': 6
+  - terrain: Floor
+    x: 3
+    'y': 6
+  - terrain: Floor
+    x: 4
+    'y': 6
+  - terrain: Floor
+    x: 5
+    'y': 6
+  - terrain: Stairs
+    x: 6
+    'y': 6
+  - terrain: Floor
+    x: 7
+    'y': 6
+  - terrain: Floor
+    x: 8
+    'y': 6
+  - terrain: Floor
+    x: 9
+    'y': 6
+  - terrain: Stairs
+    x: 10
+    'y': 6
+  - terrain: Plains
+    x: 11
+    'y': 6
+  - terrain: Plains
+    x: 12
+    'y': 6
+  - terrain: Plains
+    x: 13
+    'y': 6
+  - terrain: Plains
+    x: 14
+    'y': 6
+  - terrain: Plains
+    x: 15
+    'y': 6
+  - terrain: Plains
+    x: 16
+    'y': 6
+  - terrain: Plains
+    x: 17
+    'y': 6
+  - terrain: Stairs
+    x: 18
+    'y': 6
+  - terrain: Floor
+    x: 19
+    'y': 6
+  - terrain: Stairs
+    x: 0
+    'y': 7
+  - terrain: Floor
+    x: 1
+    'y': 7
+  - terrain: Floor
+    x: 2
+    'y': 7
+  - terrain: Floor
+    x: 3
+    'y': 7
+  - terrain: Floor
+    x: 4
+    'y': 7
+  - terrain: Floor
+    x: 5
+    'y': 7
+  - terrain: Stairs
+    x: 6
+    'y': 7
+  - terrain: Floor
+    x: 7
+    'y': 7
+  - terrain: Pillar
+    x: 8
+    'y': 7
+  - terrain: Floor
+    x: 9
+    'y': 7
+  - terrain: Stairs
+    x: 10
+    'y': 7
+  - terrain: Plains
+    x: 11
+    'y': 7
+  - terrain: Plains
+    x: 12
+    'y': 7
+  - terrain: Plains
+    x: 13
+    'y': 7
+  - terrain: Brace
+    x: 14
+    'y': 7
+  - terrain: Plains
+    x: 15
+    'y': 7
+  - terrain: Plains
+    x: 16
+    'y': 7
+  - terrain: Plains
+    x: 17
+    'y': 7
+  - terrain: Stairs
+    x: 18
+    'y': 7
+  - terrain: Floor
+    x: 19
+    'y': 7
+  - terrain: Stairs
+    x: 0
+    'y': 8
+  - terrain: Floor
+    x: 1
+    'y': 8
+  - terrain: Floor
+    x: 2
+    'y': 8
+  - terrain: Pillar
+    x: 3
+    'y': 8
+  - terrain: Floor
+    x: 4
+    'y': 8
+  - terrain: Floor
+    x: 5
+    'y': 8
+  - terrain: Stairs
+    x: 6
+    'y': 8
+  - terrain: Floor
+    x: 7
+    'y': 8
+  - terrain: Floor
+    x: 8
+    'y': 8
+  - terrain: Floor
+    x: 9
+    'y': 8
+  - terrain: Stairs
+    x: 10
+    'y': 8
+  - terrain: Plains
+    x: 11
+    'y': 8
+  - terrain: Plains
+    x: 12
+    'y': 8
+  - terrain: Plains
+    x: 13
+    'y': 8
+  - terrain: Brace
+    x: 14
+    'y': 8
+  - terrain: Plains
+    x: 15
+    'y': 8
+  - terrain: Forest
+    x: 16
+    'y': 8
+  - terrain: Plains
+    x: 17
+    'y': 8
+  - terrain: Stairs
+    x: 18
+    'y': 8
+  - terrain: Floor
+    x: 19
+    'y': 8
+  - terrain: Stairs
+    x: 0
+    'y': 9
+  - terrain: Floor
+    x: 1
+    'y': 9
+  - terrain: Floor
+    x: 2
+    'y': 9
+  - terrain: Floor
+    x: 3
+    'y': 9
+  - terrain: Floor
+    x: 4
+    'y': 9
+  - terrain: Floor
+    x: 5
+    'y': 9
+  - terrain: Stairs
+    x: 6
+    'y': 9
+  - terrain: Floor
+    x: 7
+    'y': 9
+  - terrain: Floor
+    x: 8
+    'y': 9
+  - terrain: Floor
+    x: 9
+    'y': 9
+  - terrain: Stairs
+    x: 10
+    'y': 9
+  - terrain: Plains
+    x: 11
+    'y': 9
+  - terrain: Plains
+    x: 12
+    'y': 9
+  - terrain: Forest
+    x: 13
+    'y': 9
+  - terrain: Plains
+    x: 14
+    'y': 9
+  - terrain: Plains
+    x: 15
+    'y': 9
+  - terrain: Plains
+    x: 16
+    'y': 9
+  - terrain: Plains
+    x: 17
+    'y': 9
+  - terrain: Stairs
+    x: 18
+    'y': 9
+  - terrain: Floor
+    x: 19
+    'y': 9
+  - terrain: Wall
+    x: 0
+    'y': 10
+  - terrain: Floor
+    x: 1
+    'y': 10
+  - terrain: Floor
+    x: 2
+    'y': 10
+  - terrain: Wall
+    x: 3
+    'y': 10
+  - terrain: Wall
+    x: 4
+    'y': 10
+  - terrain: Wall
+    x: 5
+    'y': 10
+  - terrain: Wall
+    x: 6
+    'y': 10
+  - terrain: Wall
+    x: 7
+    'y': 10
+  - terrain: Wall
+    x: 8
+    'y': 10
+  - terrain: Wall
+    x: 9
+    'y': 10
+  - terrain: Wall
+    x: 10
+    'y': 10
+  - terrain: Plains
+    x: 11
+    'y': 10
+  - terrain: Plains
+    x: 12
+    'y': 10
+  - terrain: Plains
+    x: 13
+    'y': 10
+  - terrain: Plains
+    x: 14
+    'y': 10
+  - terrain: Plains
+    x: 15
+    'y': 10
+  - terrain: Plains
+    x: 16
+    'y': 10
+  - terrain: Plains
+    x: 17
+    'y': 10
+  - terrain: Stairs
+    x: 18
+    'y': 10
+  - terrain: Floor
+    x: 19
+    'y': 10
+  - terrain: Wall
+    x: 0
+    'y': 11
+  - terrain: Floor
+    x: 1
+    'y': 11
+  - terrain: Floor
+    x: 2
+    'y': 11
+  - terrain: Wall
+    x: 3
+    'y': 11
+  - terrain: Wall
+    x: 4
+    'y': 11
+  - terrain: Wall
+    x: 5
+    'y': 11
+  - terrain: Wall
+    x: 6
+    'y': 11
+  - terrain: Wall
+    x: 7
+    'y': 11
+  - terrain: Wall
+    x: 8
+    'y': 11
+  - terrain: Wall
+    x: 9
+    'y': 11
+  - terrain: Wall
+    x: 10
+    'y': 11
+  - terrain: Wall
+    x: 11
+    'y': 11
+  - terrain: Wall
+    x: 12
+    'y': 11
+  - terrain: Wall
+    x: 13
+    'y': 11
+  - terrain: Wall
+    x: 14
+    'y': 11
+  - terrain: Wall
+    x: 15
+    'y': 11
+  - terrain: Wall
+    x: 16
+    'y': 11
+  - terrain: Wall
+    x: 17
+    'y': 11
+  - terrain: Wall
+    x: 18
+    'y': 11
+  - terrain: Floor
+    x: 19
+    'y': 11
+  - terrain: Wall
+    x: 0
+    'y': 12
+  - terrain: Floor
+    x: 1
+    'y': 12
+  - terrain: Floor
+    x: 2
+    'y': 12
+  - terrain: Floor
+    x: 3
+    'y': 12
+  - terrain: Floor
+    x: 4
+    'y': 12
+  - terrain: Floor
+    x: 5
+    'y': 12
+  - terrain: Wall
+    x: 6
+    'y': 12
+  - terrain: Floor
+    x: 7
+    'y': 12
+  - terrain: Floor
+    x: 8
+    'y': 12
+  - terrain: Floor
+    x: 9
+    'y': 12
+  - terrain: Floor
+    x: 10
+    'y': 12
+  - terrain: Floor
+    x: 11
+    'y': 12
+  - terrain: Floor
+    x: 12
+    'y': 12
+  - terrain: Floor
+    x: 13
+    'y': 12
+  - terrain: Floor
+    x: 14
+    'y': 12
+  - terrain: Floor
+    x: 15
+    'y': 12
+  - terrain: Floor
+    x: 16
+    'y': 12
+  - terrain: Floor
+    x: 17
+    'y': 12
+  - terrain: Floor
+    x: 18
+    'y': 12
+  - terrain: Floor
+    x: 19
+    'y': 12
+  - terrain: Wall
+    x: 0
+    'y': 13
+  - terrain: Floor
+    x: 1
+    'y': 13
+  - terrain: Pillar
+    x: 2
+    'y': 13
+  - terrain: Floor
+    x: 3
+    'y': 13
+  - terrain: Floor
+    x: 4
+    'y': 13
+  - terrain: Stairs
+    x: 5
+    'y': 13
+  - terrain: Wall
+    x: 6
+    'y': 13
+  - terrain: Floor
+    x: 7
+    'y': 13
+  - terrain: Floor
+    x: 8
+    'y': 13
+  - terrain: Pillar
+    x: 9
+    'y': 13
+  - terrain: Floor
+    x: 10
+    'y': 13
+  - terrain: Floor
+    x: 11
+    'y': 13
+  - terrain: Floor
+    x: 12
+    'y': 13
+  - terrain: Floor
+    x: 13
+    'y': 13
+  - terrain: Floor
+    x: 14
+    'y': 13
+  - terrain: Pillar
+    x: 15
+    'y': 13
+  - terrain: Floor
+    x: 16
+    'y': 13
+  - terrain: Floor
+    x: 17
+    'y': 13
+  - terrain: Floor
+    x: 18
+    'y': 13
+  - terrain: Floor
+    x: 19
+    'y': 13
+  - terrain: Wall
+    x: 0
+    'y': 14
+  - terrain: Floor
+    x: 1
+    'y': 14
+  - terrain: Floor
+    x: 2
+    'y': 14
+  - terrain: Floor
+    x: 3
+    'y': 14
+  - terrain: Floor
+    x: 4
+    'y': 14
+  - terrain: Stairs
+    x: 5
+    'y': 14
+  - terrain: Wall
+    x: 6
+    'y': 14
+  - terrain: Floor
+    x: 7
+    'y': 14
+  - terrain: Floor
+    x: 8
+    'y': 14
+  - terrain: Floor
+    x: 9
+    'y': 14
+  - terrain: Floor
+    x: 10
+    'y': 14
+  - terrain: Floor
+    x: 11
+    'y': 14
+  - terrain: Floor
+    x: 12
+    'y': 14
+  - terrain: Floor
+    x: 13
+    'y': 14
+  - terrain: Floor
+    x: 14
+    'y': 14
+  - terrain: Floor
+    x: 15
+    'y': 14
+  - terrain: Floor
+    x: 16
+    'y': 14
+  - terrain: Floor
+    x: 17
+    'y': 14
+  - terrain: Floor
+    x: 18
+    'y': 14
+  - terrain: Floor
+    x: 19
+    'y': 14
+  - terrain: Wall
+    x: 0
+    'y': 15
+  - terrain: Floor
+    x: 1
+    'y': 15
+  - terrain: Floor
+    x: 2
+    'y': 15
+  - terrain: Floor
+    x: 3
+    'y': 15
+  - terrain: Floor
+    x: 4
+    'y': 15
+  - terrain: Floor
+    x: 5
+    'y': 15
+  - terrain: Wall
+    x: 6
+    'y': 15
+  - terrain: Floor
+    x: 7
+    'y': 15
+  - terrain: Floor
+    x: 8
+    'y': 15
+  - terrain: Floor
+    x: 9
+    'y': 15
+  - terrain: Brace
+    x: 10
+    'y': 15
+  - terrain: Floor
+    x: 11
+    'y': 15
+  - terrain: Floor
+    x: 12
+    'y': 15
+  - terrain: Floor
+    x: 13
+    'y': 15
+  - terrain: Wall
+    x: 14
+    'y': 15
+  - terrain: Wall
+    x: 15
+    'y': 15
+  - terrain: Wall
+    x: 16
+    'y': 15
+  - terrain: Wall
+    x: 17
+    'y': 15
+  - terrain: Wall
+    x: 18
+    'y': 15
+  - terrain: Wall
+    x: 19
+    'y': 15
+  - terrain: Wall
+    x: 0
+    'y': 16
+  - terrain: Floor
+    x: 1
+    'y': 16
+  - terrain: Floor
+    x: 2
+    'y': 16
+  - terrain: Wall
+    x: 3
+    'y': 16
+  - terrain: Wall
+    x: 4
+    'y': 16
+  - terrain: Wall
+    x: 5
+    'y': 16
+  - terrain: Wall
+    x: 6
+    'y': 16
+  - terrain: Floor
+    x: 7
+    'y': 16
+  - terrain: Floor
+    x: 8
+    'y': 16
+  - terrain: Floor
+    x: 9
+    'y': 16
+  - terrain: Wall
+    x: 10
+    'y': 16
+  - terrain: Stairs
+    x: 11
+    'y': 16
+  - terrain: Stairs
+    x: 12
+    'y': 16
+  - terrain: Stairs
+    x: 13
+    'y': 16
+  - terrain: Wall
+    x: 14
+    'y': 16
+  - terrain: Wall
+    x: 15
+    'y': 16
+  - terrain: Wall
+    x: 16
+    'y': 16
+  - terrain: Wall
+    x: 17
+    'y': 16
+  - terrain: Wall
+    x: 18
+    'y': 16
+  - terrain: Wall
+    x: 19
+    'y': 16
+  - terrain: Wall
+    x: 0
+    'y': 17
+  - terrain: Floor
+    x: 1
+    'y': 17
+  - terrain: Floor
+    x: 2
+    'y': 17
+  - terrain: Wall
+    x: 3
+    'y': 17
+  - terrain: Wall
+    x: 4
+    'y': 17
+  - terrain: Wall
+    x: 5
+    'y': 17
+  - terrain: Wall
+    x: 6
+    'y': 17
+  - terrain: Floor
+    x: 7
+    'y': 17
+  - terrain: Floor
+    x: 8
+    'y': 17
+  - terrain: Floor
+    x: 9
+    'y': 17
+  - terrain: Stairs
+    x: 10
+    'y': 17
+  - terrain: Floor
+    x: 11
+    'y': 17
+  - terrain: Floor
+    x: 12
+    'y': 17
+  - terrain: Floor
+    x: 13
+    'y': 17
+  - terrain: Wall
+    x: 14
+    'y': 17
+  - terrain: Wall
+    x: 15
+    'y': 17
+  - terrain: Wall
+    x: 16
+    'y': 17
+  - terrain: Wall
+    x: 17
+    'y': 17
+  - terrain: Wall
+    x: 18
+    'y': 17
+  - terrain: Wall
+    x: 19
+    'y': 17
+  - terrain: Wall
+    x: 0
+    'y': 18
+  - terrain: Floor
+    x: 1
+    'y': 18
+  - terrain: Floor
+    x: 2
+    'y': 18
+  - terrain: Floor
+    x: 3
+    'y': 18
+  - terrain: Floor
+    x: 4
+    'y': 18
+  - terrain: Floor
+    x: 5
+    'y': 18
+  - terrain: Stairs
+    x: 6
+    'y': 18
+  - terrain: Floor
+    x: 7
+    'y': 18
+  - terrain: Floor
+    x: 8
+    'y': 18
+  - terrain: Floor
+    x: 9
+    'y': 18
+  - terrain: Stairs
+    x: 10
+    'y': 18
+  - terrain: Floor
+    x: 11
+    'y': 18
+  - terrain: Floor
+    x: 12
+    'y': 18
+  - terrain: Floor
+    x: 13
+    'y': 18
+  - terrain: Stairs
+    x: 14
+    'y': 18
+  - terrain: Floor
+    x: 15
+    'y': 18
+  - terrain: Floor
+    x: 16
+    'y': 18
+  - terrain: Floor
+    x: 17
+    'y': 18
+  - terrain: Floor
+    x: 18
+    'y': 18
+  - terrain: Floor
+    x: 19
+    'y': 18
+  - terrain: Wall
+    x: 0
+    'y': 19
+  - terrain: Floor
+    x: 1
+    'y': 19
+  - terrain: Floor
+    x: 2
+    'y': 19
+  - terrain: Floor
+    x: 3
+    'y': 19
+  - terrain: Floor
+    x: 4
+    'y': 19
+  - terrain: Floor
+    x: 5
+    'y': 19
+  - terrain: Stairs
+    x: 6
+    'y': 19
+  - terrain: Floor
+    x: 7
+    'y': 19
+  - terrain: Floor
+    x: 8
+    'y': 19
+  - terrain: Floor
+    x: 9
+    'y': 19
+  - terrain: Stairs
+    x: 10
+    'y': 19
+  - terrain: Floor
+    x: 11
+    'y': 19
+  - terrain: Floor
+    x: 12
+    'y': 19
+  - terrain: Floor
+    x: 13
+    'y': 19
+  - terrain: Stairs
+    x: 14
+    'y': 19
+  - terrain: Floor
+    x: 15
+    'y': 19
+  - terrain: Floor
+    x: 16
+    'y': 19
+  - terrain: Floor
+    x: 17
+    'y': 19
+  - terrain: Floor
+    x: 18
+    'y': 19
+  - terrain: Floor
+    x: 19
+    'y': 19
+  - terrain: Wall
+    x: 0
+    'y': 20
+  - terrain: Wall
+    x: 1
+    'y': 20
+  - terrain: Wall
+    x: 2
+    'y': 20
+  - terrain: Wall
+    x: 3
+    'y': 20
+  - terrain: Wall
+    x: 4
+    'y': 20
+  - terrain: Wall
+    x: 5
+    'y': 20
+  - terrain: Brace
+    x: 6
+    'y': 20
+  - terrain: Floor
+    x: 7
+    'y': 20
+  - terrain: Floor
+    x: 8
+    'y': 20
+  - terrain: Floor
+    x: 9
+    'y': 20
+  - terrain: Brace
+    x: 10
+    'y': 20
+  - terrain: Wall
+    x: 11
+    'y': 20
+  - terrain: Wall
+    x: 12
+    'y': 20
+  - terrain: Wall
+    x: 13
+    'y': 20
+  - terrain: Wall
+    x: 14
+    'y': 20
+  - terrain: Wall
+    x: 15
+    'y': 20
+  - terrain: Wall
+    x: 16
+    'y': 20
+  - terrain: Wall
+    x: 17
+    'y': 20
+  - terrain: Wall
+    x: 18
+    'y': 20
+  - terrain: Wall
+    x: 19
+    'y': 20
+  - terrain: Wall
+    x: 0
+    'y': 21
+  - terrain: Wall
+    x: 1
+    'y': 21
+  - terrain: Wall
+    x: 2
+    'y': 21
+  - terrain: Wall
+    x: 3
+    'y': 21
+  - terrain: Wall
+    x: 4
+    'y': 21
+  - terrain: Wall
+    x: 5
+    'y': 21
+  - terrain: Wall
+    x: 6
+    'y': 21
+  - terrain: Stairs
+    x: 7
+    'y': 21
+  - terrain: Stairs
+    x: 8
+    'y': 21
+  - terrain: Stairs
+    x: 9
+    'y': 21
+  - terrain: Wall
+    x: 10
+    'y': 21
+  - terrain: Wall
+    x: 11
+    'y': 21
+  - terrain: Wall
+    x: 12
+    'y': 21
+  - terrain: Wall
+    x: 13
+    'y': 21
+  - terrain: Wall
+    x: 14
+    'y': 21
+  - terrain: Wall
+    x: 15
+    'y': 21
+  - terrain: Wall
+    x: 16
+    'y': 21
+  - terrain: Wall
+    x: 17
+    'y': 21
+  - terrain: Wall
+    x: 18
+    'y': 21
+  - terrain: Wall
+    x: 19
+    'y': 21
+pointsOfInterest:
+  - x: 3
+    'y': 1
+    terrain: Throne
+  - x: 1
+    'y': 4
+    terrain: Stairs
+  - x: 2
+    'y': 4
+    terrain: Stairs
+  - x: 3
+    'y': 4
+    terrain: Stairs
+  - x: 4
+    'y': 4
+    terrain: Stairs
+  - x: 5
+    'y': 4
+    terrain: Stairs
+  - x: 0
+    'y': 5
+    terrain: Stairs
+  - x: 6
+    'y': 5
+    terrain: Stairs
+  - x: 14
+    'y': 5
+    terrain: Stairs
+  - x: 0
+    'y': 6
+    terrain: Stairs
+  - x: 6
+    'y': 6
+    terrain: Stairs
+  - x: 10
+    'y': 6
+    terrain: Stairs
+  - x: 18
+    'y': 6
+    terrain: Stairs
+  - x: 0
+    'y': 7
+    terrain: Stairs
+  - x: 6
+    'y': 7
+    terrain: Stairs
+  - x: 10
+    'y': 7
+    terrain: Stairs
+  - x: 18
+    'y': 7
+    terrain: Stairs
+  - x: 0
+    'y': 8
+    terrain: Stairs
+  - x: 6
+    'y': 8
+    terrain: Stairs
+  - x: 10
+    'y': 8
+    terrain: Stairs
+  - x: 18
+    'y': 8
+    terrain: Stairs
+  - x: 0
+    'y': 9
+    terrain: Stairs
+  - x: 6
+    'y': 9
+    terrain: Stairs
+  - x: 10
+    'y': 9
+    terrain: Stairs
+  - x: 18
+    'y': 9
+    terrain: Stairs
+  - x: 18
+    'y': 10
+    terrain: Stairs
+  - x: 5
+    'y': 13
+    terrain: Stairs
+  - x: 5
+    'y': 14
+    terrain: Stairs
+  - x: 11
+    'y': 16
+    terrain: Stairs
+  - x: 12
+    'y': 16
+    terrain: Stairs
+  - x: 13
+    'y': 16
+    terrain: Stairs
+  - x: 10
+    'y': 17
+    terrain: Stairs
+  - x: 6
+    'y': 18
+    terrain: Stairs
+  - x: 10
+    'y': 18
+    terrain: Stairs
+  - x: 14
+    'y': 18
+    terrain: Stairs
+  - x: 6
+    'y': 19
+    terrain: Stairs
+  - x: 10
+    'y': 19
+    terrain: Stairs
+  - x: 14
+    'y': 19
+    terrain: Stairs
+  - x: 7
+    'y': 21
+    terrain: Stairs
+  - x: 8
+    'y': 21
+    terrain: Stairs
+  - x: 9
+    'y': 21
+    terrain: Stairs
+interactableTiles:
+  - x: 8
+    'y': 4
+    terrain: Door
+  - x: 14
+    'y': 4
+    terrain: Door
+areas:
+  - name: Throne Room
+    description: >-
+      The central area with a throne, surrounded by walls and a roof, indicating
+      a place of importance.
+    coordinateArea:
+      from:
+        x: 1
+        'y': 0
+      to:
+        x: 5
+        'y': 3
+  - name: Main Hallway
+    description: >-
+      A long hallway with multiple staircases, connecting different parts of the
+      manor.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 4
+      to:
+        x: 19
+        'y': 9
+  - name: Outdoor Courtyard
+    description: >-
+      An open area with plains and a few forest tiles, providing a contrast to
+      the indoor sections.
+    coordinateArea:
+      from:
+        x: 11
+        'y': 6
+      to:
+        x: 17
+        'y': 10
+  - name: Left Wing
+    description: >-
+      A section of the manor with several rooms and staircases, leading to the
+      main hallway.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 10
+      to:
+        x: 9
+        'y': 19
+  - name: Right Wing
+    description: >-
+      Another section of the manor with rooms and staircases, mirroring the left
+      wing.
+    coordinateArea:
+      from:
+        x: 10
+        'y': 10
+      to:
+        x: 19
+        'y': 19
+  - name: Basement Entrance
+    description: 'A small area with stairs leading down, located at the bottom of the map.'
+    coordinateArea:
+      from:
+        x: 7
+        'y': 20
+      to:
+        x: 9
+        'y': 21

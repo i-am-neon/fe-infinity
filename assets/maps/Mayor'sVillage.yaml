@@ -1,0 +1,1380 @@
+name: Mayor'sVillage
+description: >-
+  A village surrounded by peaks and cliffs with a central river and scattered
+  houses.
+tmx: >
+  <?xml version="1.0" encoding="UTF-8"?>
+
+  <map version="1.0" orientation="orthogonal" renderorder="right-down"
+  width="21" height="18" tilewidth="16" tileheight="16" nextobjectid="1">
+   <tileset firstgid="1" name="01000203" tilewidth="16" tileheight="16">
+    <image source="Tilesets/01000203.png" width="512" height="512"/>
+   </tileset>
+   <layer name="Tile Layer 1" width="21" height="18">
+    <properties>
+     <property name="Anims" value="_01Anims"/>
+     <property name="ChapterID" value="<CHAPTERID>"/>
+     <property name="Main" value=""/>
+     <property name="MapChangesID" value="MayorsVillage_Changes"/>
+     <property name="MapID" value="MayorsVillage_Map"/>
+     <property name="ObjectType" value="0x01"/>
+     <property name="PaletteID" value="0x02"/>
+     <property name="TileConfig" value="0x03"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJx1lMtqU1EUhvfZQRGNWiKKSJ0oVWuSSgJaRWcp9GKENuAFwVGFREVURDNylBYcqfgKwVuhBe0DOHBSQVu84Cs4kFJQ69hvsf/DOUnTwcde+/ZnnbX/lap37nXk3Cp81lhi7VjGuUE4DhXn3IzrXLN53iAuQFFrK1Dg/ivpLUvPNMY4Mw4T0GY+lelcs/sn4DxxFS7AFu4/h6ryXICvUdDrY78BN+Bm6vfTa/dgB+d3wR2owRFowFE03yjHKeIFH/IynXHWslGIBxlzUNb9rXAbFqVlZ2b1W1a/Wz7oWY4Dqfrl2StE4dwv5kO6a6xpP14btXrBW86uqYZxfhXtD+mu6S3CN86dZn4SmvBdWlbnGtSJn+nOObSaytF4kQm1fwAPU5yC97AuzupMU7nVdG8WrfvEVxj7fdAfhsPs7SWPH4z/FK+73hyELz7k1/IhLvukhkWYtPeFfrgIl+DyJnrGNdVhmrHtQ2y+LOvbraZ51aTS5fEDzK9uojusXP9EQXe5S7eu9ylnNvr+OuxT/t25n0m96SGf+L1P/m718HjbbezXtP4j9cqeTPD7vPo8h/6S6j0gb7+DbfCpR7+OyM/2zftd8I95YE56DeYefst3Vh/Lt2i9BtujzrxbLvG/efelT/yzpF4fI876UIuc/G9v9lNxnHdZfRm/8wcf9P6ytlu/FeusSjfufdOd1Nxyt7PTqb60sZQJbxm/wYzqkU3p2Pd/VN4TxDu1V/LJd1rfPoYnLtEaUVxUz9v/55z8NJr6/npKc4VxXrpP4a4ouKT2sa558T/7s6uU
+    </data>
+   </layer>
+   <layer name="D8" width="21" height="18" visible="0">
+    <properties>
+     <property name="Height" value="1"/>
+     <property name="ID" value="7"/>
+     <property name="Width" value="1"/>
+     <property name="X" value="16"/>
+     <property name="Y" value="12"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBgFo2AUjALiQAvzQLtgFJADAO3tAIg=
+    </data>
+   </layer>
+   <layer name="D7" width="21" height="18" visible="0">
+    <properties>
+     <property name="Height" value="3"/>
+     <property name="ID" value="6"/>
+     <property name="Width" value="3"/>
+     <property name="X" value="11"/>
+     <property name="Y" value="11"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBgFo2AUDHXQwczA0AnEXczUM3MF0KyVQLyKimaeAJp1EohPUdHMUUAYAACMqwYN
+    </data>
+   </layer>
+   <layer name="D6" width="21" height="18" visible="0">
+    <properties>
+     <property name="Height" value="3"/>
+     <property name="ID" value="5"/>
+     <property name="Width" value="3"/>
+     <property name="X" value="7"/>
+     <property name="Y" value="9"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBgFo2AUwEAHMwNDJxB3MVPPzBVAs1YC8SoqmnkCaNZJID5FRTNHwfAFAOWHBg0=
+    </data>
+   </layer>
+   <layer name="D5" width="21" height="18" visible="0">
+    <properties>
+     <property name="Height" value="1"/>
+     <property name="ID" value="4"/>
+     <property name="Width" value="1"/>
+     <property name="X" value="1"/>
+     <property name="Y" value="8"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBgFo2BwgxbmgXbBKBgFQxsAAL7QAIg=
+    </data>
+   </layer>
+   <layer name="D4" width="21" height="18" visible="0">
+    <properties>
+     <property name="Height" value="1"/>
+     <property name="ID" value="3"/>
+     <property name="Width" value="1"/>
+     <property name="X" value="4"/>
+     <property name="Y" value="4"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBgFtAQtzAPtglEwCkbBSAcAabsAiA==
+    </data>
+   </layer>
+   <layer name="D3" width="21" height="18" visible="0">
+    <properties>
+     <property name="Height" value="1"/>
+     <property name="ID" value="2"/>
+     <property name="Width" value="1"/>
+     <property name="X" value="19"/>
+     <property name="Y" value="3"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYBgF1AAtzAPtglEwCkbBKMAOAHZjAIg=
+    </data>
+   </layer>
+   <layer name="D2" width="21" height="18" visible="0">
+    <properties>
+     <property name="Height" value="3"/>
+     <property name="ID" value="1"/>
+     <property name="Width" value="3"/>
+     <property name="X" value="11"/>
+     <property name="Y" value="0"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYCAedDAzMHQCcRczCZoIgBVAs1YC8SoqmnkCaNZJID5FRTNHwSgYBaNgqAIAYUUGDQ==
+    </data>
+   </layer>
+   <layer name="D1" width="21" height="18" visible="0">
+    <properties>
+     <property name="Height" value="3"/>
+     <property name="ID" value="0"/>
+     <property name="Width" value="3"/>
+     <property name="X" value="6"/>
+     <property name="Y" value="0"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJxjYMAOOpgZGDqBuIsZhwIywAqgWSuBeBUVzTwBNOskEJ+iopmjYBSMglEwnAAA2jUGDQ==
+    </data>
+   </layer>
+  </map>
+height: 18
+width: 21
+terrainGrid:
+  - terrain: Peak
+    x: 0
+    'y': 0
+  - terrain: Peak
+    x: 1
+    'y': 0
+  - terrain: Peak
+    x: 2
+    'y': 0
+  - terrain: Peak
+    x: 3
+    'y': 0
+  - terrain: Peak
+    x: 4
+    'y': 0
+  - terrain: Peak
+    x: 5
+    'y': 0
+  - terrain: Village Wall
+    x: 6
+    'y': 0
+  - terrain: Village Wall
+    x: 7
+    'y': 0
+  - terrain: Village Wall
+    x: 8
+    'y': 0
+  - terrain: Plains
+    x: 9
+    'y': 0
+  - terrain: Plains
+    x: 10
+    'y': 0
+  - terrain: Village Wall
+    x: 11
+    'y': 0
+  - terrain: Village Wall
+    x: 12
+    'y': 0
+  - terrain: Village Wall
+    x: 13
+    'y': 0
+  - terrain: Plains
+    x: 14
+    'y': 0
+  - terrain: Plains
+    x: 15
+    'y': 0
+  - terrain: Castle Wall
+    x: 16
+    'y': 0
+  - terrain: Castle Wall
+    x: 17
+    'y': 0
+  - terrain: Castle Wall
+    x: 18
+    'y': 0
+  - terrain: Plains
+    x: 19
+    'y': 0
+  - terrain: Plains
+    x: 20
+    'y': 0
+  - terrain: Peak
+    x: 0
+    'y': 1
+  - terrain: Peak
+    x: 1
+    'y': 1
+  - terrain: Peak
+    x: 2
+    'y': 1
+  - terrain: Peak
+    x: 3
+    'y': 1
+  - terrain: Peak
+    x: 4
+    'y': 1
+  - terrain: Plains
+    x: 5
+    'y': 1
+  - terrain: Village Wall
+    x: 6
+    'y': 1
+  - terrain: Village Wall
+    x: 7
+    'y': 1
+  - terrain: Village Wall
+    x: 8
+    'y': 1
+  - terrain: Plains
+    x: 9
+    'y': 1
+  - terrain: Forest
+    x: 10
+    'y': 1
+  - terrain: Village Wall
+    x: 11
+    'y': 1
+  - terrain: Village Wall
+    x: 12
+    'y': 1
+  - terrain: Village Wall
+    x: 13
+    'y': 1
+  - terrain: Plains
+    x: 14
+    'y': 1
+  - terrain: Plains
+    x: 15
+    'y': 1
+  - terrain: Castle Wall
+    x: 16
+    'y': 1
+  - terrain: Fort Gate
+    x: 17
+    'y': 1
+  - terrain: Castle Wall
+    x: 18
+    'y': 1
+  - terrain: Plains
+    x: 19
+    'y': 1
+  - terrain: Plains
+    x: 20
+    'y': 1
+  - terrain: Peak
+    x: 0
+    'y': 2
+  - terrain: Peak
+    x: 1
+    'y': 2
+  - terrain: Peak
+    x: 2
+    'y': 2
+  - terrain: Peak
+    x: 3
+    'y': 2
+  - terrain: Plains
+    x: 4
+    'y': 2
+  - terrain: Forest
+    x: 5
+    'y': 2
+  - terrain: Village Wall
+    x: 6
+    'y': 2
+  - terrain: Village Entrance
+    x: 7
+    'y': 2
+  - terrain: Village Wall
+    x: 8
+    'y': 2
+  - terrain: Plains
+    x: 9
+    'y': 2
+  - terrain: Plains
+    x: 10
+    'y': 2
+  - terrain: Village Wall
+    x: 11
+    'y': 2
+  - terrain: Village Entrance
+    x: 12
+    'y': 2
+  - terrain: Village Wall
+    x: 13
+    'y': 2
+  - terrain: Forest
+    x: 14
+    'y': 2
+  - terrain: Plains
+    x: 15
+    'y': 2
+  - terrain: Plains
+    x: 16
+    'y': 2
+  - terrain: Plains
+    x: 17
+    'y': 2
+  - terrain: Plains
+    x: 18
+    'y': 2
+  - terrain: Plains
+    x: 19
+    'y': 2
+  - terrain: Plains
+    x: 20
+    'y': 2
+  - terrain: Peak
+    x: 0
+    'y': 3
+  - terrain: Peak
+    x: 1
+    'y': 3
+  - terrain: Peak
+    x: 2
+    'y': 3
+  - terrain: Peak
+    x: 3
+    'y': 3
+  - terrain: Hill
+    x: 4
+    'y': 3
+  - terrain: Plains
+    x: 5
+    'y': 3
+  - terrain: Plains
+    x: 6
+    'y': 3
+  - terrain: Plains
+    x: 7
+    'y': 3
+  - terrain: Plains
+    x: 8
+    'y': 3
+  - terrain: Plains
+    x: 9
+    'y': 3
+  - terrain: Plains
+    x: 10
+    'y': 3
+  - terrain: Plains
+    x: 11
+    'y': 3
+  - terrain: Plains
+    x: 12
+    'y': 3
+  - terrain: Plains
+    x: 13
+    'y': 3
+  - terrain: Plains
+    x: 14
+    'y': 3
+  - terrain: Plains
+    x: 15
+    'y': 3
+  - terrain: Plains
+    x: 16
+    'y': 3
+  - terrain: Plains
+    x: 17
+    'y': 3
+  - terrain: Plains
+    x: 18
+    'y': 3
+  - terrain: Armory
+    x: 19
+    'y': 3
+  - terrain: Forest
+    x: 20
+    'y': 3
+  - terrain: Peak
+    x: 0
+    'y': 4
+  - terrain: Peak
+    x: 1
+    'y': 4
+  - terrain: Peak
+    x: 2
+    'y': 4
+  - terrain: Plains
+    x: 3
+    'y': 4
+  - terrain: House
+    x: 4
+    'y': 4
+  - terrain: Plains
+    x: 5
+    'y': 4
+  - terrain: Plains
+    x: 6
+    'y': 4
+  - terrain: Plains
+    x: 7
+    'y': 4
+  - terrain: Plains
+    x: 8
+    'y': 4
+  - terrain: Forest
+    x: 9
+    'y': 4
+  - terrain: Plains
+    x: 10
+    'y': 4
+  - terrain: Plains
+    x: 11
+    'y': 4
+  - terrain: Plains
+    x: 12
+    'y': 4
+  - terrain: Plains
+    x: 13
+    'y': 4
+  - terrain: Plains
+    x: 14
+    'y': 4
+  - terrain: Plains
+    x: 15
+    'y': 4
+  - terrain: Plains
+    x: 16
+    'y': 4
+  - terrain: Plains
+    x: 17
+    'y': 4
+  - terrain: Plains
+    x: 18
+    'y': 4
+  - terrain: Plains
+    x: 19
+    'y': 4
+  - terrain: Forest
+    x: 20
+    'y': 4
+  - terrain: Peak
+    x: 0
+    'y': 5
+  - terrain: Peak
+    x: 1
+    'y': 5
+  - terrain: Hill
+    x: 2
+    'y': 5
+  - terrain: Plains
+    x: 3
+    'y': 5
+  - terrain: Plains
+    x: 4
+    'y': 5
+  - terrain: Plains
+    x: 5
+    'y': 5
+  - terrain: Plains
+    x: 6
+    'y': 5
+  - terrain: Plains
+    x: 7
+    'y': 5
+  - terrain: Forest
+    x: 8
+    'y': 5
+  - terrain: Forest
+    x: 9
+    'y': 5
+  - terrain: Plains
+    x: 10
+    'y': 5
+  - terrain: Cliff
+    x: 11
+    'y': 5
+  - terrain: Cliff
+    x: 12
+    'y': 5
+  - terrain: Cliff
+    x: 13
+    'y': 5
+  - terrain: Plains
+    x: 14
+    'y': 5
+  - terrain: Plains
+    x: 15
+    'y': 5
+  - terrain: Forest
+    x: 16
+    'y': 5
+  - terrain: Forest
+    x: 17
+    'y': 5
+  - terrain: Plains
+    x: 18
+    'y': 5
+  - terrain: Plains
+    x: 19
+    'y': 5
+  - terrain: Plains
+    x: 20
+    'y': 5
+  - terrain: River
+    x: 0
+    'y': 6
+  - terrain: River
+    x: 1
+    'y': 6
+  - terrain: Plains
+    x: 2
+    'y': 6
+  - terrain: Plains
+    x: 3
+    'y': 6
+  - terrain: Fort
+    x: 4
+    'y': 6
+  - terrain: Plains
+    x: 5
+    'y': 6
+  - terrain: Cliff
+    x: 6
+    'y': 6
+  - terrain: Cliff
+    x: 7
+    'y': 6
+  - terrain: Cliff
+    x: 8
+    'y': 6
+  - terrain: Cliff
+    x: 9
+    'y': 6
+  - terrain: Cliff
+    x: 10
+    'y': 6
+  - terrain: Sea
+    x: 11
+    'y': 6
+  - terrain: Sea
+    x: 12
+    'y': 6
+  - terrain: Sea
+    x: 13
+    'y': 6
+  - terrain: Cliff
+    x: 14
+    'y': 6
+  - terrain: Cliff
+    x: 15
+    'y': 6
+  - terrain: Cliff
+    x: 16
+    'y': 6
+  - terrain: Forest
+    x: 17
+    'y': 6
+  - terrain: Forest
+    x: 18
+    'y': 6
+  - terrain: Plains
+    x: 19
+    'y': 6
+  - terrain: Cliff
+    x: 20
+    'y': 6
+  - terrain: Forest
+    x: 0
+    'y': 7
+  - terrain: River
+    x: 1
+    'y': 7
+  - terrain: River
+    x: 2
+    'y': 7
+  - terrain: River
+    x: 3
+    'y': 7
+  - terrain: River
+    x: 4
+    'y': 7
+  - terrain: Bridge
+    x: 5
+    'y': 7
+  - terrain: Sea
+    x: 6
+    'y': 7
+  - terrain: Sea
+    x: 7
+    'y': 7
+  - terrain: Sea
+    x: 8
+    'y': 7
+  - terrain: Sea
+    x: 9
+    'y': 7
+  - terrain: Sea
+    x: 10
+    'y': 7
+  - terrain: Sea
+    x: 11
+    'y': 7
+  - terrain: Sea
+    x: 12
+    'y': 7
+  - terrain: Sea
+    x: 13
+    'y': 7
+  - terrain: Sea
+    x: 14
+    'y': 7
+  - terrain: Sea
+    x: 15
+    'y': 7
+  - terrain: Cliff
+    x: 16
+    'y': 7
+  - terrain: Forest
+    x: 17
+    'y': 7
+  - terrain: Plains
+    x: 18
+    'y': 7
+  - terrain: Cliff
+    x: 19
+    'y': 7
+  - terrain: Forest
+    x: 20
+    'y': 7
+  - terrain: Peak
+    x: 0
+    'y': 8
+  - terrain: House
+    x: 1
+    'y': 8
+  - terrain: Plains
+    x: 2
+    'y': 8
+  - terrain: Plains
+    x: 3
+    'y': 8
+  - terrain: Plains
+    x: 4
+    'y': 8
+  - terrain: Plains
+    x: 5
+    'y': 8
+  - terrain: Cliff
+    x: 6
+    'y': 8
+  - terrain: Cliff
+    x: 7
+    'y': 8
+  - terrain: Cliff
+    x: 8
+    'y': 8
+  - terrain: Cliff
+    x: 9
+    'y': 8
+  - terrain: Sea
+    x: 10
+    'y': 8
+  - terrain: Sea
+    x: 11
+    'y': 8
+  - terrain: Sea
+    x: 12
+    'y': 8
+  - terrain: Sea
+    x: 13
+    'y': 8
+  - terrain: Sea
+    x: 14
+    'y': 8
+  - terrain: Sea
+    x: 15
+    'y': 8
+  - terrain: Cliff
+    x: 16
+    'y': 8
+  - terrain: Plains
+    x: 17
+    'y': 8
+  - terrain: Plains
+    x: 18
+    'y': 8
+  - terrain: Cliff
+    x: 19
+    'y': 8
+  - terrain: Plains
+    x: 20
+    'y': 8
+  - terrain: Peak
+    x: 0
+    'y': 9
+  - terrain: Peak
+    x: 1
+    'y': 9
+  - terrain: Plains
+    x: 2
+    'y': 9
+  - terrain: Hill
+    x: 3
+    'y': 9
+  - terrain: Plains
+    x: 4
+    'y': 9
+  - terrain: Plains
+    x: 5
+    'y': 9
+  - terrain: Plains
+    x: 6
+    'y': 9
+  - terrain: Village Wall
+    x: 7
+    'y': 9
+  - terrain: Village Wall
+    x: 8
+    'y': 9
+  - terrain: Village Wall
+    x: 9
+    'y': 9
+  - terrain: Cliff
+    x: 10
+    'y': 9
+  - terrain: Cliff
+    x: 11
+    'y': 9
+  - terrain: Sea
+    x: 12
+    'y': 9
+  - terrain: Sea
+    x: 13
+    'y': 9
+  - terrain: Sea
+    x: 14
+    'y': 9
+  - terrain: Sea
+    x: 15
+    'y': 9
+  - terrain: Sea
+    x: 16
+    'y': 9
+  - terrain: Cliff
+    x: 17
+    'y': 9
+  - terrain: Forest
+    x: 18
+    'y': 9
+  - terrain: Plains
+    x: 19
+    'y': 9
+  - terrain: Cliff
+    x: 20
+    'y': 9
+  - terrain: Peak
+    x: 0
+    'y': 10
+  - terrain: Peak
+    x: 1
+    'y': 10
+  - terrain: Peak
+    x: 2
+    'y': 10
+  - terrain: Plains
+    x: 3
+    'y': 10
+  - terrain: Plains
+    x: 4
+    'y': 10
+  - terrain: Plains
+    x: 5
+    'y': 10
+  - terrain: Forest
+    x: 6
+    'y': 10
+  - terrain: Village Wall
+    x: 7
+    'y': 10
+  - terrain: Village Wall
+    x: 8
+    'y': 10
+  - terrain: Village Wall
+    x: 9
+    'y': 10
+  - terrain: Plains
+    x: 10
+    'y': 10
+  - terrain: Plains
+    x: 11
+    'y': 10
+  - terrain: Cliff
+    x: 12
+    'y': 10
+  - terrain: Cliff
+    x: 13
+    'y': 10
+  - terrain: Cliff
+    x: 14
+    'y': 10
+  - terrain: Sea
+    x: 15
+    'y': 10
+  - terrain: Sea
+    x: 16
+    'y': 10
+  - terrain: Sea
+    x: 17
+    'y': 10
+  - terrain: Cliff
+    x: 18
+    'y': 10
+  - terrain: Plains
+    x: 19
+    'y': 10
+  - terrain: Forest
+    x: 20
+    'y': 10
+  - terrain: Peak
+    x: 0
+    'y': 11
+  - terrain: Peak
+    x: 1
+    'y': 11
+  - terrain: Peak
+    x: 2
+    'y': 11
+  - terrain: Forest
+    x: 3
+    'y': 11
+  - terrain: Plains
+    x: 4
+    'y': 11
+  - terrain: Plains
+    x: 5
+    'y': 11
+  - terrain: Plains
+    x: 6
+    'y': 11
+  - terrain: Village Wall
+    x: 7
+    'y': 11
+  - terrain: Village Entrance
+    x: 8
+    'y': 11
+  - terrain: Village Wall
+    x: 9
+    'y': 11
+  - terrain: Plains
+    x: 10
+    'y': 11
+  - terrain: Village Wall
+    x: 11
+    'y': 11
+  - terrain: Village Wall
+    x: 12
+    'y': 11
+  - terrain: Village Wall
+    x: 13
+    'y': 11
+  - terrain: Plains
+    x: 14
+    'y': 11
+  - terrain: Cliff
+    x: 15
+    'y': 11
+  - terrain: Cliff
+    x: 16
+    'y': 11
+  - terrain: Cliff
+    x: 17
+    'y': 11
+  - terrain: Cliff
+    x: 18
+    'y': 11
+  - terrain: Forest
+    x: 19
+    'y': 11
+  - terrain: Thicket
+    x: 20
+    'y': 11
+  - terrain: Peak
+    x: 0
+    'y': 12
+  - terrain: Peak
+    x: 1
+    'y': 12
+  - terrain: Peak
+    x: 2
+    'y': 12
+  - terrain: Peak
+    x: 3
+    'y': 12
+  - terrain: Peak
+    x: 4
+    'y': 12
+  - terrain: Plains
+    x: 5
+    'y': 12
+  - terrain: Plains
+    x: 6
+    'y': 12
+  - terrain: Plains
+    x: 7
+    'y': 12
+  - terrain: Plains
+    x: 8
+    'y': 12
+  - terrain: Plains
+    x: 9
+    'y': 12
+  - terrain: Plains
+    x: 10
+    'y': 12
+  - terrain: Village Wall
+    x: 11
+    'y': 12
+  - terrain: Village Wall
+    x: 12
+    'y': 12
+  - terrain: Village Wall
+    x: 13
+    'y': 12
+  - terrain: Plains
+    x: 14
+    'y': 12
+  - terrain: Plains
+    x: 15
+    'y': 12
+  - terrain: House
+    x: 16
+    'y': 12
+  - terrain: Plains
+    x: 17
+    'y': 12
+  - terrain: Cliff
+    x: 18
+    'y': 12
+  - terrain: River
+    x: 19
+    'y': 12
+  - terrain: Forest
+    x: 20
+    'y': 12
+  - terrain: Peak
+    x: 0
+    'y': 13
+  - terrain: Peak
+    x: 1
+    'y': 13
+  - terrain: Peak
+    x: 2
+    'y': 13
+  - terrain: Peak
+    x: 3
+    'y': 13
+  - terrain: Peak
+    x: 4
+    'y': 13
+  - terrain: Plains
+    x: 5
+    'y': 13
+  - terrain: Forest
+    x: 6
+    'y': 13
+  - terrain: Plains
+    x: 7
+    'y': 13
+  - terrain: Plains
+    x: 8
+    'y': 13
+  - terrain: Plains
+    x: 9
+    'y': 13
+  - terrain: Plains
+    x: 10
+    'y': 13
+  - terrain: Village Wall
+    x: 11
+    'y': 13
+  - terrain: Village Entrance
+    x: 12
+    'y': 13
+  - terrain: Village Wall
+    x: 13
+    'y': 13
+  - terrain: Plains
+    x: 14
+    'y': 13
+  - terrain: Plains
+    x: 15
+    'y': 13
+  - terrain: Plains
+    x: 16
+    'y': 13
+  - terrain: Plains
+    x: 17
+    'y': 13
+  - terrain: Cliff
+    x: 18
+    'y': 13
+  - terrain: River
+    x: 19
+    'y': 13
+  - terrain: River
+    x: 20
+    'y': 13
+  - terrain: Peak
+    x: 0
+    'y': 14
+  - terrain: Peak
+    x: 1
+    'y': 14
+  - terrain: Peak
+    x: 2
+    'y': 14
+  - terrain: Peak
+    x: 3
+    'y': 14
+  - terrain: Peak
+    x: 4
+    'y': 14
+  - terrain: Peak
+    x: 5
+    'y': 14
+  - terrain: Plains
+    x: 6
+    'y': 14
+  - terrain: Hill
+    x: 7
+    'y': 14
+  - terrain: Plains
+    x: 8
+    'y': 14
+  - terrain: Plains
+    x: 9
+    'y': 14
+  - terrain: Plains
+    x: 10
+    'y': 14
+  - terrain: Plains
+    x: 11
+    'y': 14
+  - terrain: Plains
+    x: 12
+    'y': 14
+  - terrain: Plains
+    x: 13
+    'y': 14
+  - terrain: Plains
+    x: 14
+    'y': 14
+  - terrain: Cliff
+    x: 15
+    'y': 14
+  - terrain: Cliff
+    x: 16
+    'y': 14
+  - terrain: Cliff
+    x: 17
+    'y': 14
+  - terrain: Plains
+    x: 18
+    'y': 14
+  - terrain: Forest
+    x: 19
+    'y': 14
+  - terrain: Plains
+    x: 20
+    'y': 14
+  - terrain: Peak
+    x: 0
+    'y': 15
+  - terrain: Peak
+    x: 1
+    'y': 15
+  - terrain: Peak
+    x: 2
+    'y': 15
+  - terrain: Peak
+    x: 3
+    'y': 15
+  - terrain: Peak
+    x: 4
+    'y': 15
+  - terrain: Peak
+    x: 5
+    'y': 15
+  - terrain: Peak
+    x: 6
+    'y': 15
+  - terrain: Peak
+    x: 7
+    'y': 15
+  - terrain: Peak
+    x: 8
+    'y': 15
+  - terrain: Peak
+    x: 9
+    'y': 15
+  - terrain: Plains
+    x: 10
+    'y': 15
+  - terrain: Plains
+    x: 11
+    'y': 15
+  - terrain: Plains
+    x: 12
+    'y': 15
+  - terrain: Plains
+    x: 13
+    'y': 15
+  - terrain: Plains
+    x: 14
+    'y': 15
+  - terrain: Forest
+    x: 15
+    'y': 15
+  - terrain: Forest
+    x: 16
+    'y': 15
+  - terrain: Plains
+    x: 17
+    'y': 15
+  - terrain: Plains
+    x: 18
+    'y': 15
+  - terrain: Plains
+    x: 19
+    'y': 15
+  - terrain: Plains
+    x: 20
+    'y': 15
+  - terrain: Peak
+    x: 0
+    'y': 16
+  - terrain: Peak
+    x: 1
+    'y': 16
+  - terrain: Peak
+    x: 2
+    'y': 16
+  - terrain: Peak
+    x: 3
+    'y': 16
+  - terrain: Peak
+    x: 4
+    'y': 16
+  - terrain: Peak
+    x: 5
+    'y': 16
+  - terrain: Peak
+    x: 6
+    'y': 16
+  - terrain: Peak
+    x: 7
+    'y': 16
+  - terrain: Peak
+    x: 8
+    'y': 16
+  - terrain: Peak
+    x: 9
+    'y': 16
+  - terrain: Plains
+    x: 10
+    'y': 16
+  - terrain: Plains
+    x: 11
+    'y': 16
+  - terrain: Plains
+    x: 12
+    'y': 16
+  - terrain: Plains
+    x: 13
+    'y': 16
+  - terrain: Plains
+    x: 14
+    'y': 16
+  - terrain: Plains
+    x: 15
+    'y': 16
+  - terrain: Plains
+    x: 16
+    'y': 16
+  - terrain: Plains
+    x: 17
+    'y': 16
+  - terrain: Plains
+    x: 18
+    'y': 16
+  - terrain: Plains
+    x: 19
+    'y': 16
+  - terrain: Plains
+    x: 20
+    'y': 16
+  - terrain: Peak
+    x: 0
+    'y': 17
+  - terrain: Peak
+    x: 1
+    'y': 17
+  - terrain: Peak
+    x: 2
+    'y': 17
+  - terrain: Peak
+    x: 3
+    'y': 17
+  - terrain: Peak
+    x: 4
+    'y': 17
+  - terrain: Peak
+    x: 5
+    'y': 17
+  - terrain: Peak
+    x: 6
+    'y': 17
+  - terrain: Peak
+    x: 7
+    'y': 17
+  - terrain: Peak
+    x: 8
+    'y': 17
+  - terrain: Peak
+    x: 9
+    'y': 17
+  - terrain: Hill
+    x: 10
+    'y': 17
+  - terrain: Plains
+    x: 11
+    'y': 17
+  - terrain: Plains
+    x: 12
+    'y': 17
+  - terrain: Plains
+    x: 13
+    'y': 17
+  - terrain: Plains
+    x: 14
+    'y': 17
+  - terrain: Plains
+    x: 15
+    'y': 17
+  - terrain: Plains
+    x: 16
+    'y': 17
+  - terrain: Forest
+    x: 17
+    'y': 17
+  - terrain: Plains
+    x: 18
+    'y': 17
+  - terrain: Plains
+    x: 19
+    'y': 17
+  - terrain: Plains
+    x: 20
+    'y': 17
+pointsOfInterest:
+  - x: 17
+    'y': 1
+    terrain: Fort Gate
+  - x: 7
+    'y': 2
+    terrain: Village Entrance
+  - x: 12
+    'y': 2
+    terrain: Village Entrance
+  - x: 19
+    'y': 3
+    terrain: Armory
+  - x: 4
+    'y': 4
+    terrain: House
+  - x: 4
+    'y': 6
+    terrain: Fort
+  - x: 1
+    'y': 8
+    terrain: House
+  - x: 8
+    'y': 11
+    terrain: Village Entrance
+  - x: 16
+    'y': 12
+    terrain: House
+  - x: 12
+    'y': 13
+    terrain: Village Entrance
+interactableTiles:
+  - x: 7
+    'y': 2
+    terrain: Village Entrance
+  - x: 12
+    'y': 2
+    terrain: Village Entrance
+  - x: 19
+    'y': 3
+    terrain: Armory
+  - x: 4
+    'y': 4
+    terrain: House
+  - x: 1
+    'y': 8
+    terrain: House
+  - x: 8
+    'y': 11
+    terrain: Village Entrance
+  - x: 16
+    'y': 12
+    terrain: House
+  - x: 12
+    'y': 13
+    terrain: Village Entrance
+areas:
+  - name: Northern Village
+    description: >-
+      A small village area with walls and entrances, providing a defensive
+      position.
+    coordinateArea:
+      from:
+        x: 6
+        'y': 0
+      to:
+        x: 13
+        'y': 2
+  - name: Central Plains
+    description: 'Open plains with scattered forests, ideal for movement and skirmishes.'
+    coordinateArea:
+      from:
+        x: 0
+        'y': 3
+      to:
+        x: 20
+        'y': 5
+  - name: Western River Crossing
+    description: >-
+      A strategic bridge over the river, connecting the northern and southern
+      parts of the map.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 6
+      to:
+        x: 5
+        'y': 7
+  - name: Southern Cliffs
+    description: 'A rugged area with cliffs and a house, providing a defensive advantage.'
+    coordinateArea:
+      from:
+        x: 0
+        'y': 8
+      to:
+        x: 9
+        'y': 10
+  - name: Eastern Armory
+    description: >-
+      An armory located near the edge of the map, offering supplies and
+      equipment.
+    coordinateArea:
+      from:
+        x: 18
+        'y': 3
+      to:
+        x: 20
+        'y': 4
+  - name: Central River
+    description: >-
+      A wide river with cliffs on both sides, limiting movement and providing
+      natural defense.
+    coordinateArea:
+      from:
+        x: 6
+        'y': 6
+      to:
+        x: 20
+        'y': 8

@@ -3,13 +3,12 @@
 //SpecifiedBattleConvo(Character1,Character2,Chapter,EventID,TextID)
 
 
-SpecifiedBattleConvo(Elysia,Garrick,the_gathering_storm,0x1,battle_quote_Elysia_Garrick)
-SpecifiedBattleConvo(Zalvynn,Garrick,the_gathering_storm,0x2,battle_quote_Zalvynn_Garrick)
-SpecifiedBattleConvo(Elysia,Lirael,shadows_of_the_past,0x1,battle_quote_Elysia_Lirael)
-SpecifiedBattleConvo(Zalvynn,Lirael,shadows_of_the_past,0x2,battle_quote_Zalvynn_Lirael)
-SpecifiedBattleConvo(Kael,Lirael,shadows_of_the_past,0x3,battle_quote_Kael_Lirael)
-SpecifiedBattleConvo(Elysia,Malakar,the_final_confrontation,0x1,battle_quote_Elysia_Malakar)
-SpecifiedBattleConvo(Kael,Malakar,the_final_confrontation,0x2,battle_quote_Kael_Malakar)
-SpecifiedBattleConvo(Zalvynn,Malakar,the_final_confrontation,0x3,battle_quote_Zalvynn_Malakar)
-SpecifiedBattleConvo(Thorne,Malakar,the_final_confrontation,0x4,battle_quote_Thorne_Malakar)
+SpecifiedBattleConvo(Korin,Riven,whispers_of_unity,0x1,battle_quote_Korin_Riven)
+SpecifiedBattleConvo(Velcyan,Riven,whispers_of_unity,0x2,battle_quote_Velcyan_Riven)
+SpecifiedBattleConvo(Korin,Thorne,echoes_of_the_past,0x1,battle_quote_Korin_Thorne)
+SpecifiedBattleConvo(Velcyan,Thorne,echoes_of_the_past,0x2,battle_quote_Velcyan_Thorne)
+SpecifiedBattleConvo(Liora,Thorne,echoes_of_the_past,0x3,battle_quote_Liora_Thorne)
+SpecifiedBattleConvo(Korin,Riven,the_veil_s_citadel,0x1,battle_quote_Korin_Riven)
+SpecifiedBattleConvo(Liora,Riven,the_veil_s_citadel,0x2,battle_quote_Liora_Riven)
+SpecifiedBattleConvo(Velcyan,Riven,the_veil_s_citadel,0x3,battle_quote_Velcyan_Riven)
 BYTE 0xF0 0xF0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 // Terminator

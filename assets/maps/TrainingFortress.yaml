@@ -1,0 +1,758 @@
+name: TrainingFortress
+description: >-
+  A mixed indoor and outdoor map with a fortress and surrounding plains and
+  forest.
+tmx: >
+  <?xml version="1.0" encoding="UTF-8"?>
+
+  <map version="1.0" orientation="orthogonal" renderorder="right-down"
+  width="15" height="15" tilewidth="16" tileheight="16" nextobjectid="1">
+   <tileset firstgid="1" name="0E000F10" tilewidth="16" tileheight="16">
+    <image source="Tilesets/0E000F10.png" width="512" height="512"/>
+   </tileset>
+   <layer name="Tile Layer 1" width="15" height="15">
+    <properties>
+     <property name="Anims" value="_0EAnims"/>
+     <property name="ChapterID" value="Military1"/>
+     <property name="Main" value=""/>
+     <property name="MapId" value="<CHAPTERID>"/>
+     <property name="ObjectType" value="0x0E"/>
+     <property name="PaletteID" value="0x0F"/>
+     <property name="TileConfig" value="0x10"/>
+    </properties>
+    <data encoding="base64" compression="zlib">
+     eJyNkzEOwjAMRZ1WsCAqOAKVYADUcgeYqETPwMYA4gwM3blYB8QNGJG4A9/CVkyoSoenNGme47huFhFlAVewAi9wbiH0rDv+Q1O8JP64O1CCXGLmZr53RLf4l7u41tFRny8dXKZuyInXu7h8/xGo3OeemvsEcwemRDQD88i/t+4qWONapGDD+YvXC/bYumemVswCrCPvPd23mweurpWyfyljIXHq4DupWznv8fpWzirk7g/ytdFzbH/ZmHzXVOrFHo+2NmVDP9k6q8MxNiZHzU171c65rwbwEtCn75z1XNuXFu6rE/YewBEM4/b/JuQNzaNJNQ==
+    </data>
+   </layer>
+  </map>
+height: 15
+width: 15
+terrainGrid:
+  - terrain: Floor
+    x: 0
+    'y': 0
+  - terrain: Floor
+    x: 1
+    'y': 0
+  - terrain: Floor
+    x: 2
+    'y': 0
+  - terrain: Floor
+    x: 3
+    'y': 0
+  - terrain: Floor
+    x: 4
+    'y': 0
+  - terrain: Wall
+    x: 5
+    'y': 0
+  - terrain: Floor
+    x: 6
+    'y': 0
+  - terrain: Wall
+    x: 7
+    'y': 0
+  - terrain: Wall
+    x: 8
+    'y': 0
+  - terrain: Wall
+    x: 9
+    'y': 0
+  - terrain: Wall
+    x: 10
+    'y': 0
+  - terrain: Wall
+    x: 11
+    'y': 0
+  - terrain: Wall
+    x: 12
+    'y': 0
+  - terrain: Wall
+    x: 13
+    'y': 0
+  - terrain: Wall
+    x: 14
+    'y': 0
+  - terrain: Floor
+    x: 0
+    'y': 1
+  - terrain: Floor
+    x: 1
+    'y': 1
+  - terrain: Floor
+    x: 2
+    'y': 1
+  - terrain: Floor
+    x: 3
+    'y': 1
+  - terrain: Floor
+    x: 4
+    'y': 1
+  - terrain: Wall
+    x: 5
+    'y': 1
+  - terrain: Floor
+    x: 6
+    'y': 1
+  - terrain: Floor
+    x: 7
+    'y': 1
+  - terrain: Floor
+    x: 8
+    'y': 1
+  - terrain: Floor
+    x: 9
+    'y': 1
+  - terrain: Floor
+    x: 10
+    'y': 1
+  - terrain: Floor
+    x: 11
+    'y': 1
+  - terrain: Floor
+    x: 12
+    'y': 1
+  - terrain: Floor
+    x: 13
+    'y': 1
+  - terrain: Floor
+    x: 14
+    'y': 1
+  - terrain: Wall
+    x: 0
+    'y': 2
+  - terrain: Wall
+    x: 1
+    'y': 2
+  - terrain: Wall
+    x: 2
+    'y': 2
+  - terrain: Wall
+    x: 3
+    'y': 2
+  - terrain: Wall
+    x: 4
+    'y': 2
+  - terrain: Wall
+    x: 5
+    'y': 2
+  - terrain: Floor
+    x: 6
+    'y': 2
+  - terrain: Floor
+    x: 7
+    'y': 2
+  - terrain: Floor
+    x: 8
+    'y': 2
+  - terrain: Floor
+    x: 9
+    'y': 2
+  - terrain: Floor
+    x: 10
+    'y': 2
+  - terrain: Floor
+    x: 11
+    'y': 2
+  - terrain: Floor
+    x: 12
+    'y': 2
+  - terrain: Floor
+    x: 13
+    'y': 2
+  - terrain: Barrel
+    x: 14
+    'y': 2
+  - terrain: Wall
+    x: 0
+    'y': 3
+  - terrain: Wall
+    x: 1
+    'y': 3
+  - terrain: Wall
+    x: 2
+    'y': 3
+  - terrain: Wall
+    x: 3
+    'y': 3
+  - terrain: Wall
+    x: 4
+    'y': 3
+  - terrain: Wall
+    x: 5
+    'y': 3
+  - terrain: Floor
+    x: 6
+    'y': 3
+  - terrain: Floor
+    x: 7
+    'y': 3
+  - terrain: Floor
+    x: 8
+    'y': 3
+  - terrain: Floor
+    x: 9
+    'y': 3
+  - terrain: Floor
+    x: 10
+    'y': 3
+  - terrain: Floor
+    x: 11
+    'y': 3
+  - terrain: Floor
+    x: 12
+    'y': 3
+  - terrain: Floor
+    x: 13
+    'y': 3
+  - terrain: Deck
+    x: 14
+    'y': 3
+  - terrain: Wall
+    x: 0
+    'y': 4
+  - terrain: Wall
+    x: 1
+    'y': 4
+  - terrain: Wall
+    x: 2
+    'y': 4
+  - terrain: Wall
+    x: 3
+    'y': 4
+  - terrain: Wall
+    x: 4
+    'y': 4
+  - terrain: Wall
+    x: 5
+    'y': 4
+  - terrain: Floor
+    x: 6
+    'y': 4
+  - terrain: Floor
+    x: 7
+    'y': 4
+  - terrain: Floor
+    x: 8
+    'y': 4
+  - terrain: Wall
+    x: 9
+    'y': 4
+  - terrain: Wall
+    x: 10
+    'y': 4
+  - terrain: Wall
+    x: 11
+    'y': 4
+  - terrain: Wall
+    x: 12
+    'y': 4
+  - terrain: Floor
+    x: 13
+    'y': 4
+  - terrain: Floor
+    x: 14
+    'y': 4
+  - terrain: Wall
+    x: 0
+    'y': 5
+  - terrain: Wall
+    x: 1
+    'y': 5
+  - terrain: Wall
+    x: 2
+    'y': 5
+  - terrain: Wall
+    x: 3
+    'y': 5
+  - terrain: Wall
+    x: 4
+    'y': 5
+  - terrain: Wall
+    x: 5
+    'y': 5
+  - terrain: Floor
+    x: 6
+    'y': 5
+  - terrain: Floor
+    x: 7
+    'y': 5
+  - terrain: Floor
+    x: 8
+    'y': 5
+  - terrain: Wall
+    x: 9
+    'y': 5
+  - terrain: Floor
+    x: 10
+    'y': 5
+  - terrain: Stairs
+    x: 11
+    'y': 5
+  - terrain: Floor
+    x: 12
+    'y': 5
+  - terrain: Floor
+    x: 13
+    'y': 5
+  - terrain: Floor
+    x: 14
+    'y': 5
+  - terrain: Plains
+    x: 0
+    'y': 6
+  - terrain: Plains
+    x: 1
+    'y': 6
+  - terrain: Plains
+    x: 2
+    'y': 6
+  - terrain: Plains
+    x: 3
+    'y': 6
+  - terrain: Road
+    x: 4
+    'y': 6
+  - terrain: Floor
+    x: 5
+    'y': 6
+  - terrain: Floor
+    x: 6
+    'y': 6
+  - terrain: Floor
+    x: 7
+    'y': 6
+  - terrain: Floor
+    x: 8
+    'y': 6
+  - terrain: Wall
+    x: 9
+    'y': 6
+  - terrain: Floor
+    x: 10
+    'y': 6
+  - terrain: Floor
+    x: 11
+    'y': 6
+  - terrain: Floor
+    x: 12
+    'y': 6
+  - terrain: Floor
+    x: 13
+    'y': 6
+  - terrain: Floor
+    x: 14
+    'y': 6
+  - terrain: Forest
+    x: 0
+    'y': 7
+  - terrain: Forest
+    x: 1
+    'y': 7
+  - terrain: Plains
+    x: 2
+    'y': 7
+  - terrain: Road
+    x: 3
+    'y': 7
+  - terrain: Road
+    x: 4
+    'y': 7
+  - terrain: Floor
+    x: 5
+    'y': 7
+  - terrain: Floor
+    x: 6
+    'y': 7
+  - terrain: Floor
+    x: 7
+    'y': 7
+  - terrain: Floor
+    x: 8
+    'y': 7
+  - terrain: Wall
+    x: 9
+    'y': 7
+  - terrain: Floor
+    x: 10
+    'y': 7
+  - terrain: Floor
+    x: 11
+    'y': 7
+  - terrain: Floor
+    x: 12
+    'y': 7
+  - terrain: Floor
+    x: 13
+    'y': 7
+  - terrain: Floor
+    x: 14
+    'y': 7
+  - terrain: Road
+    x: 0
+    'y': 8
+  - terrain: Forest
+    x: 1
+    'y': 8
+  - terrain: Road
+    x: 2
+    'y': 8
+  - terrain: Road
+    x: 3
+    'y': 8
+  - terrain: Road
+    x: 4
+    'y': 8
+  - terrain: Floor
+    x: 5
+    'y': 8
+  - terrain: Floor
+    x: 6
+    'y': 8
+  - terrain: Floor
+    x: 7
+    'y': 8
+  - terrain: Floor
+    x: 8
+    'y': 8
+  - terrain: Wall
+    x: 9
+    'y': 8
+  - terrain: Floor
+    x: 10
+    'y': 8
+  - terrain: Floor
+    x: 11
+    'y': 8
+  - terrain: Floor
+    x: 12
+    'y': 8
+  - terrain: Floor
+    x: 13
+    'y': 8
+  - terrain: Floor
+    x: 14
+    'y': 8
+  - terrain: Road
+    x: 0
+    'y': 9
+  - terrain: Road
+    x: 1
+    'y': 9
+  - terrain: Road
+    x: 2
+    'y': 9
+  - terrain: Road
+    x: 3
+    'y': 9
+  - terrain: Forest
+    x: 4
+    'y': 9
+  - terrain: Wall
+    x: 5
+    'y': 9
+  - terrain: Wall
+    x: 6
+    'y': 9
+  - terrain: Floor
+    x: 7
+    'y': 9
+  - terrain: Floor
+    x: 8
+    'y': 9
+  - terrain: Wall
+    x: 9
+    'y': 9
+  - terrain: Floor
+    x: 10
+    'y': 9
+  - terrain: Stairs
+    x: 11
+    'y': 9
+  - terrain: Floor
+    x: 12
+    'y': 9
+  - terrain: Floor
+    x: 13
+    'y': 9
+  - terrain: Floor
+    x: 14
+    'y': 9
+  - terrain: Road
+    x: 0
+    'y': 10
+  - terrain: Road
+    x: 1
+    'y': 10
+  - terrain: Road
+    x: 2
+    'y': 10
+  - terrain: Plains
+    x: 3
+    'y': 10
+  - terrain: Plains
+    x: 4
+    'y': 10
+  - terrain: Wall
+    x: 5
+    'y': 10
+  - terrain: Floor
+    x: 6
+    'y': 10
+  - terrain: Floor
+    x: 7
+    'y': 10
+  - terrain: Floor
+    x: 8
+    'y': 10
+  - terrain: Wall
+    x: 9
+    'y': 10
+  - terrain: Wall
+    x: 10
+    'y': 10
+  - terrain: Wall
+    x: 11
+    'y': 10
+  - terrain: Wall
+    x: 12
+    'y': 10
+  - terrain: Floor
+    x: 13
+    'y': 10
+  - terrain: Floor
+    x: 14
+    'y': 10
+  - terrain: Forest
+    x: 0
+    'y': 11
+  - terrain: Plains
+    x: 1
+    'y': 11
+  - terrain: Plains
+    x: 2
+    'y': 11
+  - terrain: Plains
+    x: 3
+    'y': 11
+  - terrain: Plains
+    x: 4
+    'y': 11
+  - terrain: Wall
+    x: 5
+    'y': 11
+  - terrain: Floor
+    x: 6
+    'y': 11
+  - terrain: Floor
+    x: 7
+    'y': 11
+  - terrain: Floor
+    x: 8
+    'y': 11
+  - terrain: Floor
+    x: 9
+    'y': 11
+  - terrain: Floor
+    x: 10
+    'y': 11
+  - terrain: Floor
+    x: 11
+    'y': 11
+  - terrain: Floor
+    x: 12
+    'y': 11
+  - terrain: Floor
+    x: 13
+    'y': 11
+  - terrain: Floor
+    x: 14
+    'y': 11
+  - terrain: Plains
+    x: 0
+    'y': 12
+  - terrain: Plains
+    x: 1
+    'y': 12
+  - terrain: Plains
+    x: 2
+    'y': 12
+  - terrain: Plains
+    x: 3
+    'y': 12
+  - terrain: Forest
+    x: 4
+    'y': 12
+  - terrain: Wall
+    x: 5
+    'y': 12
+  - terrain: Floor
+    x: 6
+    'y': 12
+  - terrain: Floor
+    x: 7
+    'y': 12
+  - terrain: Floor
+    x: 8
+    'y': 12
+  - terrain: Floor
+    x: 9
+    'y': 12
+  - terrain: Floor
+    x: 10
+    'y': 12
+  - terrain: Floor
+    x: 11
+    'y': 12
+  - terrain: Floor
+    x: 12
+    'y': 12
+  - terrain: Floor
+    x: 13
+    'y': 12
+  - terrain: Barrel
+    x: 14
+    'y': 12
+  - terrain: Plains
+    x: 0
+    'y': 13
+  - terrain: Plains
+    x: 1
+    'y': 13
+  - terrain: Plains
+    x: 2
+    'y': 13
+  - terrain: Plains
+    x: 3
+    'y': 13
+  - terrain: Plains
+    x: 4
+    'y': 13
+  - terrain: Wall
+    x: 5
+    'y': 13
+  - terrain: Floor
+    x: 6
+    'y': 13
+  - terrain: Floor
+    x: 7
+    'y': 13
+  - terrain: Floor
+    x: 8
+    'y': 13
+  - terrain: Floor
+    x: 9
+    'y': 13
+  - terrain: Floor
+    x: 10
+    'y': 13
+  - terrain: Floor
+    x: 11
+    'y': 13
+  - terrain: Floor
+    x: 12
+    'y': 13
+  - terrain: Floor
+    x: 13
+    'y': 13
+  - terrain: Deck
+    x: 14
+    'y': 13
+  - terrain: Plains
+    x: 0
+    'y': 14
+  - terrain: Plains
+    x: 1
+    'y': 14
+  - terrain: Plains
+    x: 2
+    'y': 14
+  - terrain: Wall
+    x: 3
+    'y': 14
+  - terrain: Wall
+    x: 4
+    'y': 14
+  - terrain: Wall
+    x: 5
+    'y': 14
+  - terrain: Wall
+    x: 6
+    'y': 14
+  - terrain: Wall
+    x: 7
+    'y': 14
+  - terrain: Wall
+    x: 8
+    'y': 14
+  - terrain: Wall
+    x: 9
+    'y': 14
+  - terrain: Wall
+    x: 10
+    'y': 14
+  - terrain: Wall
+    x: 11
+    'y': 14
+  - terrain: Wall
+    x: 12
+    'y': 14
+  - terrain: Wall
+    x: 13
+    'y': 14
+  - terrain: Wall
+    x: 14
+    'y': 14
+pointsOfInterest:
+  - x: 11
+    'y': 5
+    terrain: Stairs
+  - x: 11
+    'y': 9
+    terrain: Stairs
+interactableTiles: []
+areas:
+  - name: Entrance Hall
+    description: >-
+      The main entryway of the fortress, featuring a wide open space for initial
+      engagements.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 0
+      to:
+        x: 5
+        'y': 1
+  - name: Central Corridor
+    description: >-
+      A long hallway connecting various rooms, with stairs leading to different
+      levels.
+    coordinateArea:
+      from:
+        x: 6
+        'y': 0
+      to:
+        x: 14
+        'y': 5
+  - name: Training Grounds
+    description: >-
+      An outdoor area with plains and forest, ideal for training exercises and
+      skirmishes.
+    coordinateArea:
+      from:
+        x: 0
+        'y': 6
+      to:
+        x: 4
+        'y': 11
+  - name: Inner Chambers
+    description: >-
+      A series of rooms and corridors within the fortress, providing strategic
+      positions for defense.
+    coordinateArea:
+      from:
+        x: 5
+        'y': 6
+      to:
+        x: 14
+        'y': 14
