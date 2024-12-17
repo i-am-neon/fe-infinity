@@ -22,19 +22,6 @@
 	#define FreeSpaceBLRange BLRange
 	#define BlRange BLRange
 	
-	#ifndef __PUBLIC__
-		#define __DEBUG__
-	#endif
-	#ifdef __PRIVATE__
-		MESSAGE Assembling PRIVATE release
-	#endif
-	#ifdef __PUBLIC__
-		MESSAGE Assembling PUBLIC release
-	#endif
-	#ifdef __DEBUG__
-		MESSAGE Assembling with debug features
-	#endif
-	
 	ORG EndOfAnimations
 	
 	//Text
