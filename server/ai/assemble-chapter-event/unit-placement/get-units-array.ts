@@ -193,7 +193,7 @@ export default async function getUnitsArray({
     unitLinePromises.push(
       generateUnitLine({
         characterClass: g.characterClass,
-        startingAllegiance: "ally",
+        startingAllegiance: "enemy",
         characterIdea: {
           name: "Soldier",
           age: "mature adult",

@@ -17,15 +17,19 @@ export default async function generateUnitLine({
   yCoord: number;
 }): Promise<string> {
   let allegiance = "";
+  let aiType = "";
   switch (startingAllegiance) {
     case "ally":
       allegiance = "Ally";
+      aiType = "NoAI";
       break;
     case "npc":
       allegiance = "NPC";
+      aiType = "AttackInRangeAI";
       break;
     case "enemy":
       allegiance = "Enemy";
+      aiType = "ChaseOnceApproachedAI";
       break;
     default:
       break;
@@ -50,6 +54,6 @@ export default async function generateUnitLine({
     characterIdea.name
   } ${characterClass} ${commanderName} Level(${level}, ${allegiance}, True) [${xCoord}, ${yCoord}] 0x00 0x00 0x0 0x00 [${inventory.join(
     ", "
-  )}] ${isBoss ? "GuardTileAI" : "NoAI"}`;
+  )}] ${isBoss ? "GuardTileAI" : aiType}`;
 }
 
