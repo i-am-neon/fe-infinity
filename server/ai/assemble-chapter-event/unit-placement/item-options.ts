@@ -1,6 +1,15 @@
 // weapon-options.ts
 import type { WeaponType } from "@/types/WeaponType.ts";
 
+export const ARMORY_MAINSTAYS = [
+  "IronSword",
+  "IronLance",
+  "IronAxe",
+  "IronBow",
+];
+
+export const VENDOR_MAINSTAYS = ["Fire", "Thunder", "Flux", "Heal"];
+
 export const WEAPON_OPTIONS: Record<WeaponType, string[]> = {
   Sword: [
     "IronSword",

@@ -1,4 +1,8 @@
-import { ITEMS, WEAPON_OPTIONS } from "../unit-placement/item-options.ts";
+import {
+  ARMORY_MAINSTAYS,
+  ITEMS,
+  WEAPON_OPTIONS,
+} from "../unit-placement/item-options.ts";
 
 type TileType = "Armory" | "Vendor";
 
@@ -20,7 +24,6 @@ export default function getShopItems({
     return items;
   };
 
-  const itemCount = Math.floor(Math.random() * 8) + 3; // Random number between 3 and 10
   let items: string[];
 
   if (tileType === "Armory") {
@@ -30,7 +33,7 @@ export default function getShopItems({
       ...WEAPON_OPTIONS.Axe,
       ...WEAPON_OPTIONS.Bow,
     ];
-    items = getRandomItems(armoryItems, itemCount);
+    items = [...ARMORY_MAINSTAYS, ...getRandomItems(armoryItems, 5)];
   } else {
     const vendorItems = [
       ...WEAPON_OPTIONS.Anima,
@@ -39,7 +42,7 @@ export default function getShopItems({
       ...WEAPON_OPTIONS.Staff,
       ...ITEMS,
     ];
-    items = getRandomItems(vendorItems, itemCount);
+    items = [...ARMORY_MAINSTAYS, ...getRandomItems(vendorItems, 5)];
   }
 
   return {

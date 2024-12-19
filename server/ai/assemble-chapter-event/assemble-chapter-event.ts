@@ -126,7 +126,7 @@ export default async function assembleChapterEvent({
 
   // Construct beginning scene
   const beginningScene =
-    "LOAD1 0x1 Units\nMUSC Legends_of_Avenir\n" +
+    "LOAD1 0x1 Units\nGiveGoldSilent(3000)\nMUSC Legends_of_Avenir\n" +
     preBattleSceneContent +
     "\nFadeOutMusic";
 
