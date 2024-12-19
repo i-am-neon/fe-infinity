@@ -1,7 +1,7 @@
 Dummy 0x04
 RipBlaine_Map
 RipBlaine_Changes
-HaedricIgnefront_Map
-HaedricIgnefront_Changes
-PeakRiver_Map
-PeakRiver_Changes
+TrainingFortress_Map
+TrainingFortress_Changes
+Deidar_Map
+Deidar_Changes

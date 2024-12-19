@@ -6662,7 +6662,7 @@ export const allMapOptions: MapData[] = [
     name: "TrainingFortress",
     description:
       "A mixed indoor and outdoor map with a fortress and surrounding plains and forest.",
-    tmx: '<?xml version="1.0" encoding="UTF-8"?>\n<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="16" tileheight="16" nextobjectid="1">\n <tileset firstgid="1" name="0E000F10" tilewidth="16" tileheight="16">\n  <image source="Tilesets/0E000F10.png" width="512" height="512"/>\n </tileset>\n <layer name="Tile Layer 1" width="15" height="15">\n  <properties>\n   <property name="Anims" value="_0EAnims"/>\n   <property name="ChapterID" value="Military1"/>\n   <property name="Main" value=""/>\n   <property name="MapId" value="<CHAPTERID>"/>\n   <property name="ObjectType" value="0x0E"/>\n   <property name="PaletteID" value="0x0F"/>\n   <property name="TileConfig" value="0x10"/>\n  </properties>\n  <data encoding="base64" compression="zlib">\n   eJyNkzEOwjAMRZ1WsCAqOAKVYADUcgeYqETPwMYA4gwM3blYB8QNGJG4A9/CVkyoSoenNGme47huFhFlAVewAi9wbiH0rDv+Q1O8JP64O1CCXGLmZr53RLf4l7u41tFRny8dXKZuyInXu7h8/xGo3OeemvsEcwemRDQD88i/t+4qWONapGDD+YvXC/bYumemVswCrCPvPd23mweurpWyfyljIXHq4DupWznv8fpWzirk7g/ytdFzbH/ZmHzXVOrFHo+2NmVDP9k6q8MxNiZHzU171c65rwbwEtCn75z1XNuXFu6rE/YewBEM4/b/JuQNzaNJNQ==\n  </data>\n </layer>\n</map>\n',
+    tmx: '<?xml version="1.0" encoding="UTF-8"?>\n<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="16" tileheight="16" nextobjectid="1">\n <tileset firstgid="1" name="0E000F10" tilewidth="16" tileheight="16">\n  <image source="Tilesets/0E000F10.png" width="512" height="512"/>\n </tileset>\n <layer name="Tile Layer 1" width="15" height="15">\n  <properties>\n   <property name="Anims" value="_0EAnims"/>\n   <property name="ChapterID" value="<CHAPTERID>"/>\n   <property name="Main" value=""/>\n   <property name="MapId" value="TrainingFortress_Map"/>\n   <property name="ObjectType" value="0x0E"/>\n   <property name="PaletteID" value="0x0F"/>\n   <property name="TileConfig" value="0x10"/>\n  </properties>\n  <data encoding="base64" compression="zlib">\n   eJyNkzEOwjAMRZ1WsCAqOAKVYADUcgeYqETPwMYA4gwM3blYB8QNGJG4A9/CVkyoSoenNGme47huFhFlAVewAi9wbiH0rDv+Q1O8JP64O1CCXGLmZr53RLf4l7u41tFRny8dXKZuyInXu7h8/xGo3OeemvsEcwemRDQD88i/t+4qWONapGDD+YvXC/bYumemVswCrCPvPd23mweurpWyfyljIXHq4DupWznv8fpWzirk7g/ytdFzbH/ZmHzXVOrFHo+2NmVDP9k6q8MxNiZHzU171c65rwbwEtCn75z1XNuXFu6rE/YewBEM4/b/JuQNzaNJNQ==\n  </data>\n </layer>\n</map>\n',
     height: 15,
     width: 15,
     terrainGrid: [
@@ -59158,3 +59158,4 @@ export const allMapOptions: MapData[] = [
     ],
   },
 ];
+

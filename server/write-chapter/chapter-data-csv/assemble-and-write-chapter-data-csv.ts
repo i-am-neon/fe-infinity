@@ -24,7 +24,7 @@ if (import.meta.main) {
       objectType: "0x0",
       palette: "0x0",
       tileConfiguration: "0x0",
-      mapId: "TrainingFortressMap",
+      mapId: "TrainingFortress_Map",
       tileAnimation1: "0x0",
       tileAnimation2: "0x0",
       triggerableMapChanges: "0x0",

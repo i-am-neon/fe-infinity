@@ -13,9 +13,9 @@ tmx: >
    <layer name="Tile Layer 1" width="15" height="15">
     <properties>
      <property name="Anims" value="_0EAnims"/>
-     <property name="ChapterID" value="Military1"/>
+     <property name="ChapterID" value="<CHAPTERID>"/>
      <property name="Main" value=""/>
-     <property name="MapId" value="<CHAPTERID>"/>
+     <property name="MapId" value="TrainingFortress_Map"/>
      <property name="ObjectType" value="0x0E"/>
      <property name="PaletteID" value="0x0F"/>
      <property name="TileConfig" value="0x10"/>
