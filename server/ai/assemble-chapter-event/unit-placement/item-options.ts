@@ -22,7 +22,6 @@ export const WEAPON_OPTIONS: Record<WeaponType, string[]> = {
     "WindSword",
     "LightBrand",
     "Runesword",
-    "Dasher",
     "DevilSword",
     "ToxinSword",
     "Lanceslayer",

@@ -109,7 +109,6 @@ MUSS Comrades
 Text(${textId})
 TurnAlly(${characterToRecruit.name})
 ENUT ${recruitEventHex} // ENUT: Make this event ID "used"
-MURE 0x5 // MURE: Returns to previous music with given fade speed
 NoFade
 ENDA
 `,
