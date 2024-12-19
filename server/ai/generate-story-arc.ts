@@ -35,6 +35,9 @@ Your task is to create the general idea of the story for the game based on the p
 - The names created for characters and bosses should only be their first name.
 
 - The preChapterScene and postChapterScene should be 3 sentence descriptions of the events leading up to and following the chapter. Be sure to include relevant existing characters, new characters, and the boss for the map.
+
+- The first chapter must have two characters that start as allies (one of which is the main character) and one character that is a "allied NPC" that is recruitable on the battle field. This means that there should be 2 newPlayableCharacters in the first chapter (one who's firstSeenAs is "ally" the others is "allied NPC" the main character is always given).
+- The second chapter must have a character that starts as an enemy (firstSeenAs is "enemy non-boss") and is recruitable on the battle field.
 `;
 
   const prompt = `WorldSummary: ${JSON.stringify(
@@ -51,6 +54,7 @@ Your task is to create the general idea of the story for the game based on the p
     schema: StoryArcSchema,
     systemMessage,
     prompt,
+    temperature: 1,
   });
 
   return storyArc;
