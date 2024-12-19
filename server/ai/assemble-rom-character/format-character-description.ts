@@ -1,3 +1,5 @@
+import cleanText from "@/lib/clean-text/clean-text.ts";
+
 export default function formatCharacterDescription(
   description: string
 ): string {
@@ -21,7 +23,8 @@ export default function formatCharacterDescription(
     lines.push(currentLine.trim());
   }
 
-  return lines.join("").trim() + "[X]";
+  const resultPreClean = lines.join("").trim() + "[X]";
+  return cleanText(resultPreClean);
 }
 
 if (import.meta.main) {

@@ -1,7 +1,7 @@
 Dummy 0x04
+ShizonDefense_Map
+ShizonDefense_Changes
+Deidar_Map
+Deidar_Changes
 RipBlaine_Map
 RipBlaine_Changes
-MountainyLake_Map
-MountainyLake_Changes
-PrisonBreak_Map
-PrisonBreak_Changes

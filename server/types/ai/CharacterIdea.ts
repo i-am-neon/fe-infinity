@@ -29,9 +29,8 @@ export const CharacterIdeaSchema = z.object({
     .describe("A physical description of the character"),
   inGameDescription: z
     .string()
-    .max(90)
     .describe(
-      "very short one sentence description to be shown in-game, must not include the character's name, maximum 90 characters"
+      "very short one sentence description to be shown in-game, must not include the character's name, maximum 90 characters, just a handful of words"
     ),
   deathQuote: z
     .string()

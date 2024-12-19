@@ -54,7 +54,8 @@ Your task is to create the general idea of the story for the game based on the p
     schema: StoryArcSchema,
     systemMessage,
     prompt,
-    temperature: 0.7,
+    // model: "gpt-4o",
+    temperature: 1,
   });
 
   return storyArc;
