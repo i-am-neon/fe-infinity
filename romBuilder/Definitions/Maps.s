@@ -1,7 +1,7 @@
 Dummy 0x04
-ShizonDefense_Map
-ShizonDefense_Changes
-Mountainy_Map
-Mountainy_Changes
-KilthelTemple_Map
-KilthelTemple_Changes
+LotsofRooms_Map
+LotsofRooms_Changes
+RipBlaine_Map
+RipBlaine_Changes
+Deidar_Map
+Deidar_Changes

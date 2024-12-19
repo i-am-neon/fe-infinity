@@ -8,8 +8,8 @@
    <property name="Anims" value="_6CAnims"/>
    <property name="ChapterID" value="<CHAPTERID>"/>
    <property name="Main" value=""/>
-   <property name="MapChangesID" value="LotsOfRooms_Changes"/>
-   <property name="MapID" value="LotsOfRooms_Map"/>
+   <property name="MapChangesID" value="LotsofRooms_Changes"/>
+   <property name="MapID" value="LotsofRooms_Map"/>
    <property name="ObjectType" value="0x6C"/>
    <property name="PaletteID" value="0x6D"/>
    <property name="TileConfig" value="0x6E"/>

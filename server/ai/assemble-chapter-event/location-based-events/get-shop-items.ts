@@ -1,6 +1,7 @@
 import {
   ARMORY_MAINSTAYS,
   ITEMS,
+  VENDOR_MAINSTAYS,
   WEAPON_OPTIONS,
 } from "../unit-placement/item-options.ts";
 
@@ -42,7 +43,7 @@ export default function getShopItems({
       ...WEAPON_OPTIONS.Staff,
       ...ITEMS,
     ];
-    items = [...ARMORY_MAINSTAYS, ...getRandomItems(vendorItems, 5)];
+    items = [...VENDOR_MAINSTAYS, ...getRandomItems(vendorItems, 5)];
   }
 
   return {
