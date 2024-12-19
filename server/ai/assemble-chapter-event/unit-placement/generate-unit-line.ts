@@ -32,7 +32,11 @@ export default async function generateUnitLine({
   }
 
   const isBoss = characterIdea.firstSeenAs === "boss";
-  const level = isBoss ? randomInt(1, 2) : randomInt(15, 20);
+  const level = isBoss
+    ? randomInt(3, 5)
+    : startingAllegiance === "ally"
+    ? randomInt(3, 5)
+    : randomInt(1, 3);
   const inventory = await generateInventory({
     characterIdea: characterIdea,
     characterClass: characterClass,
