@@ -5,27 +5,26 @@ import { randomInt } from "node:crypto";
 
 export default async function generateUnitLine({
   characterIdea,
+  startingAllegiance,
   characterClass,
   xCoord,
   yCoord,
 }: {
   characterIdea: CharacterIdea;
+  startingAllegiance: "ally" | "enemy" | "npc";
   characterClass: string;
   xCoord: number;
   yCoord: number;
 }): Promise<string> {
   let allegiance = "";
-  switch (characterIdea.firstSeenAs) {
+  switch (startingAllegiance) {
     case "ally":
       allegiance = "Ally";
       break;
-    case "allied NPC":
+    case "npc":
       allegiance = "NPC";
       break;
-    case "enemy non-boss":
-      allegiance = "Enemy";
-      break;
-    case "boss":
+    case "enemy":
       allegiance = "Enemy";
       break;
     default:

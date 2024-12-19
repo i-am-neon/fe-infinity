@@ -155,6 +155,7 @@ export default async function getUnitsArray({
   unitLinePromises.push(
     generateUnitLine({
       characterClass: boss.characterClass,
+      startingAllegiance: boss.startingAllegiance,
       characterIdea: boss.characterIdea,
       xCoord: bossCoords.xCoord,
       yCoord: bossCoords.yCoord,
@@ -166,6 +167,7 @@ export default async function getUnitsArray({
     unitLinePromises.push(
       generateUnitLine({
         characterClass: p.characterClass,
+        startingAllegiance: p.startingAllegiance,
         characterIdea: p.characterIdea,
         xCoord: coords!.xCoord,
         yCoord: coords!.yCoord,
@@ -177,6 +179,7 @@ export default async function getUnitsArray({
     unitLinePromises.push(
       generateUnitLine({
         characterClass: n.characterClass,
+        startingAllegiance: "npc",
         characterIdea: characters.find(
           (c) => c.characterIdea.name === n.characterName
         )!.characterIdea,
@@ -190,6 +193,7 @@ export default async function getUnitsArray({
     unitLinePromises.push(
       generateUnitLine({
         characterClass: g.characterClass,
+        startingAllegiance: "ally",
         characterIdea: {
           name: "Soldier",
           age: "mature adult",
