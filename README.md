@@ -30,3 +30,7 @@ cd romBuilder # If in root directory
 chmod +x ./run.sh # Only need to do this once
 ./run.sh
 ```
+
+## Credits
+The buildfiles part of this system was adapted from [Legends of Avenir](https://github.com/Snakey11/Legends-of-Avenir)
+Character portrait options for AI to choose from are by [Kanna](https://github.com/Klokinator/FE-Repo/tree/main/Portrait%20Repository/Spriting%20Community%20OC's%20(Grouped%20by%20Artist)/Kanna)
