@@ -1,4 +1,4 @@
-# Hack Factory
+# FE Infinity
 
 [Demo Video](https://youtu.be/-bf9_vbjbSQ)
 
